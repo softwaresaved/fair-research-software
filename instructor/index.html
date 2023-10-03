@@ -137,12 +137,19 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Schedule
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+        
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#learning-objectives">Learning Objectives</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
         
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -207,15 +214,49 @@
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
 
-<p>This is a new lesson built with <a href="https://carpentries.github.io/sandpaper-docs" class="external-link">The Carpentries
-Workbench</a>.</p>
+<p>This is a training curriculum teaching tools and practices to help
+reseachers produce and share open and quality software for FAIR
+(Findable, Accessible, Interoperable and Reusable) research.</p>
+<section id="learning-objectives"><h2 class="section-heading">Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a>
+</h2>
+<hr class="half-width"><p>After attending this training, participants will:</p>
+<ul><li>Understand challenges typically faced by researchers developing
+software for modern computational research, including requirements for
+research software commensurate with the FAIR principles</li>
+<li>Know the tools and practices to make their research, data and
+software open and FAIR wherever possible for reuse / repurpose</li>
+<li>Understand how to automate their research and help replicate their
+research results by writing software to implement the research
+methodology</li>
+<li>Know how to backup and version control their software using
+GitHub</li>
+<li>Know how to develop software (code, documentation, licencing,
+packaging, citation) for someone else (including themselves 6 months
+down the line)</li>
+<li>Know how to ensure the code does what it intends to do and continues
+to be fit for purpose</li>
+<li>Know how to collaboratively develop and maintain software</li>
+</ul><div id="prerequisites" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<div id="prerequisites" class="callout-inner">
+<h3 class="callout-title">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h3>
+<div class="callout-content">
+<p>Before joining this training, participants should have foundational
+knowledge of Python or another programming language used to write
+scientific code. For example, attending a <a href="https://software-carpentry.org/lessons/" class="external-link">Software Carpentry</a>/<a href="https://datacarpentry.org/lessons/" class="external-link">Data Carpentry</a>/<a href="https://library-carpentry.org/lessons/" class="external-link">Library Carpentry</a> or a
+similar introductory Python course could help with this requirement and
+ganing necesssary prerequisite skills.</p>
+</div>
+</div>
+</div>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-
-
-      <section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
+</section><section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
           </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
@@ -274,7 +315,7 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Use PuTTY</p>
 </div>
@@ -288,7 +329,7 @@ e.g. online setup) in the solutions blocks.</p>
   MacOS
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Use Terminal.app</p>
 </div>
@@ -302,7 +343,7 @@ e.g. online setup) in the solutions blocks.</p>
   Linux
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Use Terminal</p>
 </div>
