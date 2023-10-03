@@ -1,5 +1,5 @@
 ---
-title: Open collaboration
+title: Open project collaboration & management
 teaching: 60
 exercises: 30
 ---
