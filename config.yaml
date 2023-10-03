@@ -59,7 +59,7 @@ contact: 'a.nenadic@software.ac.uk' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-#- introduction.md
+#- writing-content.md
 - 01-introduction.md
 - 02-tools.md
 - 03-version-control.md
@@ -68,6 +68,7 @@ episodes:
 - 06-documenting-code.md
 - 07-research-ethics.md
 - 08-open-collaboration.md
+- 09-wrap-up.md
 
 # Information for Learners
 learners: 
