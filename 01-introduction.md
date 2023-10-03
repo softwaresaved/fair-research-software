@@ -6,7 +6,7 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What is FAIR research?
+- What is FAIR (research)?
 -  ...
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
