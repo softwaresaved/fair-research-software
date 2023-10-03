@@ -1,7 +1,7 @@
 ---
 title: Wrap-up
-teaching: 30
-exercises: 0
+teaching: 20
+exercises: 10
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
