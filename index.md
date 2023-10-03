@@ -28,12 +28,9 @@ After attending this training, participants will:
 ## Prerequisites
 
 Before joining this training, participants should have foundational knowledge of Python or another programming language used to write scientific code. 
-For example, attending a [Software Carpentry][swc]/[Data Carpentry][dc]/[Library Carpentry][lc] or a similar introductory Python course could help with this requirement and 
+For example, attending a [Software Carpentry][swc-lessons]/[Data Carpentry][dc-lessons]/[Library Carpentry][lc-lessons] or a similar introductory Python course could help with this requirement and 
 ganing necesssary prerequisite skills.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-[swc]: https://software-carpentry.org/lessons/
-[dc]: https://datacarpentry.org/lessons/
-[lc]: https://librarycarpentry.org/lessons/
