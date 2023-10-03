@@ -1,4 +1,5 @@
 "file" "checksum" "built" "date"
+"AUTHORS.md" "93bf4bb16c55391f3ccf76e8266d99fa" "site/built/AUTHORS.md" "2023-10-03"
 "CODE_OF_CONDUCT.md" "c93c83c630db2fe2462240bf72552548" "site/built/CODE_OF_CONDUCT.md" "2023-10-03"
 "LICENSE.md" "b24ebbb41b14ca25cf6b8216dda83e5f" "site/built/LICENSE.md" "2023-10-03"
 "config.yaml" "8c2d6a83ab2957f51e018bdc7b140fc3" "site/built/config.yaml" "2023-10-03"
