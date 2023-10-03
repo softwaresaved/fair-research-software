@@ -1,7 +1,7 @@
 ---
 title: Research (code & data) ethics
-teaching: 60
-exercises: 30
+teaching: 45
+exercises: 15
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
