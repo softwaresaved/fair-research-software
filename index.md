@@ -5,6 +5,12 @@ site: sandpaper::sandpaper_site
 This is a training curriculum teaching tools and practices to help reseachers produce and share 
 open and quality software for FAIR (Findable, Accessible, Interoperable and Reusable) research.
 
+## Target Audience
+
+- Post-graduate students or early career researchers who are starting their research projects and want to develop software to support their research using established best practices
+- Researchers who had foundational software training before but wish to refresh, reinforce or improve their skills and practices in the wider context of FAIR research and sharing and writing software for open and reproducible research 
+
+
 ## Learning Objectives
 
 After attending this training, participants will:
