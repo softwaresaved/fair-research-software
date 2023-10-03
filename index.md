@@ -3,7 +3,7 @@ site: sandpaper::sandpaper_site
 ---
 
 This is a training curriculum teaching tools and practices to help reseachers produce and share 
-open and quality software for FAIR (Findable, Accessible, Interoperable and Reusable) research.
+open and quality [software for [FAIR (Findable, Accessible, Interoperable and Reusable) research][fair-software].
 
 ## Target Audience
 
@@ -33,4 +33,3 @@ ganing necesssary prerequisite skills.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
