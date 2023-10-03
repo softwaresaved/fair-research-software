@@ -2,8 +2,9 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a training curriculum teaching tools and practices to help reseachers produce and share 
-open and quality [software for [FAIR (Findable, Accessible, Interoperable and Reusable) research][fair-software].
+This repository contains a short (2-day) course teaching tools and practices for producing and sharing quality and [FAIR 
+(Findable, Accessible, Interoperable and Reusable) research software][fair-software] to support open and reproducible research. 
+
 
 ## Target Audience
 
