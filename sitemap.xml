@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/02-tools.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/03-version-control.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/04-code-readability.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/05-code-testing.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/06-documenting-code.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/07-research-ethics.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/08-open-collaboration.html</loc>
+  </url>
+  <url>
     <loc>https://softwaresaved.github.io/fair-research-software/404.html</loc>
   </url>
   <url>
@@ -17,6 +41,30 @@
   </url>
   <url>
     <loc>https://softwaresaved.github.io/fair-research-software/index.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/02-tools.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/03-version-control.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/04-code-readability.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/05-code-testing.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/06-documenting-code.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/07-research-ethics.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/08-open-collaboration.html</loc>
   </url>
   <url>
     <loc>https://softwaresaved.github.io/fair-research-software/instructor/404.html</loc>
