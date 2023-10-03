@@ -30,4 +30,4 @@ ganing necesssary prerequisite skills.
 
 [swc]: https://software-carpentry.org/lessons/
 [dc]: https://datacarpentry.org/lessons/
-[lc]: https://library-carpentry.org/lessons/
+[lc]: https://librarycarpentry.org/lessons/
