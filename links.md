@@ -32,3 +32,5 @@ any links that you are not going to use.
 [swc]: https://software-carpentry.org/
 [swc-lessons]: https://software-carpentry.org/lessons/
 [workbench]: https://carpentries.github.io/workbench/
+[fair-software]: https://www.nature.com/articles/s41597-022-01710-x
+[fair-software-recommendations]: https://fair-software.nl/
