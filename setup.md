@@ -2,7 +2,13 @@
 title: Setup
 ---
 
-## Data Sets
+## Setup
+
+### GitHub Account
+
+...
+
+### Data Sets
 
 <!--
 FIXME: place any data you want learners to use in `episodes/data` and then use
@@ -11,7 +17,7 @@ FIXME: place any data you want learners to use in `episodes/data` and then use
 -->
 Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
 
-## Software Setup
+### Software Setup
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
