@@ -1,7 +1,7 @@
 ---
 title: "Introduction to FAIR research"
-teaching: 60
-exercises: 20
+teaching: 45
+exercises: 15
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
