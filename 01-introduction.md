@@ -1,5 +1,5 @@
 ---
-title: "Introduction to FAIR research"
+title: "Introduction to software for FAIR research"
 teaching: 45
 exercises: 15
 ---
