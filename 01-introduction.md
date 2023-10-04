@@ -19,13 +19,12 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
 Content of the episode goes here.
 
 
 ## Acknowledgements
 
-The content of this episode was inspired / hevily borrowed from the following resources:
+The content of this episode was inspired / heavily borrowed from the following resources:
 
 - ...
 - ...
@@ -36,7 +35,6 @@ We recommend the following resources for some additional reading on the topic of
 
 - ...
 - ...
-
 
 
 
