@@ -28,7 +28,7 @@ The content of this episode was inspired / heavily borrowed from the following r
 - ...
 - ...
 
-## Furhter reading
+## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:
 
