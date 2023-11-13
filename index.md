@@ -16,13 +16,13 @@ This repository contains a short (2-day) course teaching tools and practices for
 
 After attending this training, participants will:
 
-- Understand challenges typically faced by researchers developing software for modern computational research, including requirements for research software commensurate with the FAIR principles
+- Understand challenges typically faced by researchers developing software and managing data for modern computational research, including requirements commensurate with the FAIR principles
 - Know the tools and practices to make their research, data and software open and FAIR wherever possible for reuse / repurpose
 - Understand how to automate their research and help replicate their research results by writing software to implement the research methodology
-- Know how to backup and version control their software using GitHub
-- Know how to develop software (code, documentation, licencing, packaging, citation) for someone else (including themselves 6 months down the line)
-- Know how to ensure the code does what it intends to do and continues to be fit for purpose
-- Know how to collaboratively develop and maintain software
+- Apply a version control to back up and share software using GitHub
+- Undestand and apply best practices for developing and sharing sustainable software (including writing readable code, code documentation, licencing and citation)
+- Know how assess if the code does what it intends to
+- Recognise tools and techniques for collaborative software development and maintainance
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
