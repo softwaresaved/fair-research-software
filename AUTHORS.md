@@ -1,2 +1,6 @@
-- [Steve Crouch](https://github.com/steve-crouch), UK Software Sustainability Institute
-- [Aleksandra Nenadic](https://github.com/anenadic), UK Software Sustainability Institute
+- [Steve Crouch](https://github.com/steve-crouch)
+- [Sarah Gibson](https://github.com/sgibson91)
+- [Sarah Jaffa](https://github.com/sjaffa)
+- [Kamilla Kopec-Harding](https://github.com/kkh451)
+- [Aleksandra Nenadic](https://github.com/anenadic)
+- [Colin Sauze](https://github.com/colinsauze)
