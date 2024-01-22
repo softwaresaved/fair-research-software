@@ -220,7 +220,14 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#acknowledgements">Acknowledgements</a></li>
+        <ul><li><a href="#what-is-licensing-and-why-is-it-important">What is licensing and why is it important?</a></li>
+<li><a href="#types-of-licenses">Types of licenses</a></li>
+<li><a href="#adding-a-license-to-your-codedata">Adding a license to your code/data</a></li>
+<li><a href="#relicensing">Relicensing</a></li>
+<li><a href="#going-commercial">Going commercial</a></li>
+<li><a href="#sharing-your-code">Sharing your code</a></li>
+<li><a href="#pull-requests">Pull Requests</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -295,7 +302,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Open project collaboration &amp; management</h1>
-        <p>Last updated on 2023-10-18 |
+        <p>Last updated on 2024-01-22 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/08-open-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -314,7 +321,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>…</li>
+<ul><li>What licensing information should I include with my code and
+data?</li>
+<li>How do I share my code on Github?</li>
+<li>How do I ensure my code is citable?</li>
 </ul></div>
 </div>
 </div>
@@ -322,25 +332,266 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>…</li>
+<ul><li>Explain why adding licensing information to a repository is
+important.</li>
+<li>Choose an apporpriate open source license.</li>
+<li>Understand that some licenses are intended for code and others for
+data.</li>
+<li>Understand your rights and obligations under the GPL, MIT, BSD,
+Apache 2 and Creative Commons licenses.</li>
+<li>Recall that open source software can be sold and used in commercial
+products but that license declaration will need to be included and any
+other terms of the license adhered to.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+<section id="what-is-licensing-and-why-is-it-important"><h2 class="section-heading">What is licensing and why is it important?<a class="anchor" aria-label="anchor" href="#what-is-licensing-and-why-is-it-important"></a>
+</h2>
+<hr class="half-width"><p>Explain Copyright What does it permit/control What is open
+source/free software</p>
+<p>Four freedoms/open source definition</p>
+<ol style="list-style-type: decimal"><li>The freedom to run the program as you wish, for any purpose.</li>
+<li>The freedom to study how the program works, and change it so it does
+your computing as you wish. Access to the source code is a precondition
+for this.</li>
+<li>The freedom to redistribute copies so you can help your
+neighbor.</li>
+<li>The freedom to distribute copies of your modified versions to
+others. By doing this you can give the whole community a chance to
+benefit from your changes. Access to the source code is a precondition
+for this.</li>
+</ol><p>Open source definition</p>
+<ol style="list-style-type: decimal"><li>Free Redistribution must be allowed</li>
+<li>Source Code must be included</li>
+<li>Derived Works must be allowed</li>
+<li>Integrity of The Author’s Source Code - Restrict distribution of
+modifications if patches can be distributed instead. Must explicitly
+permit distribution of software built from modified source code. The
+license may require derived works to carry a different name or version
+number from the original software.</li>
+<li>No Discrimination Against Persons or Groups</li>
+<li>No Discrimination Against Fields of Endeavor</li>
+<li>Distribution of License - License applies to anyone the software is
+distributed to</li>
+<li>License Must Not Be Specific to a Product - the program can be
+extracted from other software it is distributed with</li>
+<li>License Must Not Restrict Other Software, e.g. can’t insist it is
+only distribted alongside other open source software.</li>
+<li>License Must Be Technology-Neutral</li>
+</ol></section><section id="types-of-licenses"><h2 class="section-heading">Types of licenses<a class="anchor" aria-label="anchor" href="#types-of-licenses"></a>
+</h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="public-domain">Public Domain<a class="anchor" aria-label="anchor" href="#public-domain"></a></h3>
+<ul><li>No restrictions on use</li>
+<li>Some countries anybody can declare anything public domain</li>
+<li>In others you need to explicitly register it</li>
+<li>US Government work automatically public domain, many other countries
+have a default open source license, e.g. UK’s Open Government
+Licence.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="permissive-licenses">Permissive Licenses<a class="anchor" aria-label="anchor" href="#permissive-licenses"></a></h3>
+<div class="section level4">
+<h4 id="mit-license">MIT License<a class="anchor" aria-label="anchor" href="#mit-license"></a></h4>
+</div>
+<div class="section level4">
+<h4 id="bsd">BSD<a class="anchor" aria-label="anchor" href="#bsd"></a></h4>
+<ul><li>2 clause</li>
+<li>3 clause</li>
+<li>4 clause</li>
+</ul></div>
+<div class="section level4">
+<h4 id="apache-2-0">Apache 2.0<a class="anchor" aria-label="anchor" href="#apache-2-0"></a></h4>
+</div>
+</div>
+<div class="section level3">
+<h3 id="copyleft-licenses">Copyleft Licenses<a class="anchor" aria-label="anchor" href="#copyleft-licenses"></a></h3>
+<ul><li>GPLv2</li>
+<li>GPLv3</li>
+<li>LGPL</li>
+<li>AGPL</li>
+</ul></div>
+<div class="section level3">
+<h3 id="tools-to-help-you-choose">Tools to help you choose<a class="anchor" aria-label="anchor" href="#tools-to-help-you-choose"></a></h3>
+<ul><li>Choosealicense.com</li>
+</ul><div id="license-selection-exercise" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="license-selection-exercise" class="callout-inner">
+<h3 class="callout-title">License selection exercise<a class="anchor" aria-label="anchor" href="#license-selection-exercise"></a>
+</h3>
+<div class="callout-content">
+<p>Q: choose a license for a scenario</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>A:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="creative-commons-licenses">Creative Commons Licenses<a class="anchor" aria-label="anchor" href="#creative-commons-licenses"></a></h3>
+<p>Explain code vs data/documentation licenses</p>
+<ul><li><p>BY</p></li>
+<li><p>SA</p></li>
+<li><p>NC</p></li>
+<li><p>ND</p></li>
+<li><p>CC0</p></li>
+<li><p>Older CC licenses, less suitable internationally, more variants
+in newer versions</p></li>
+</ul><div id="license-selection-exercise-2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="license-selection-exercise-2" class="callout-inner">
+<h3 class="callout-title">License selection exercise 2<a class="anchor" aria-label="anchor" href="#license-selection-exercise-2"></a>
+</h3>
+<div class="callout-content">
+<p>Q: choose a license for a scenario involving code and data</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>A:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="adding-a-license-to-your-codedata"><h2 class="section-heading">Adding a license to your code/data<a class="anchor" aria-label="anchor" href="#adding-a-license-to-your-codedata"></a>
+</h2>
+<hr class="half-width"><ul><li>Add a license file</li>
+<li>Add license statement to the top of every file</li>
+</ul><div id="license-file-exercise" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="license-file-exercise" class="callout-inner">
+<h3 class="callout-title">License file exercise<a class="anchor" aria-label="anchor" href="#license-file-exercise"></a>
+</h3>
+<div class="callout-content">
+<p>Q: add a license file to your git repo</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>A:</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="relicensing"><h2 class="section-heading">Relicensing<a class="anchor" aria-label="anchor" href="#relicensing"></a>
+</h2>
+<hr class="half-width"><ul><li>License compatibility</li>
+<li>CC0/PD to anything</li>
+<li>Permissive to Copyleft</li>
+</ul></section><section id="going-commercial"><h2 class="section-heading">Going commercial<a class="anchor" aria-label="anchor" href="#going-commercial"></a>
+</h2>
+<hr class="half-width"><ul><li>Dual licensing</li>
+<li>Contributor license agreements</li>
+<li>Don’t try to write your own</li>
+</ul><div id="relicensing-exercise" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="relicensing-exercise" class="callout-inner">
+<h3 class="callout-title">Relicensing exercise<a class="anchor" aria-label="anchor" href="#relicensing-exercise"></a>
+</h3>
+<div class="callout-content">
+<p>Q: somebody has code under license X, can they relicense under Y?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<p>A:</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="sharing-your-code"><h2 class="section-heading">Sharing your code<a class="anchor" aria-label="anchor" href="#sharing-your-code"></a>
+</h2>
+<hr class="half-width"><ul><li>Make code public</li>
+<li>Transferring to an organisation</li>
+<li>Archive to Zenodo</li>
+<li>Add a DOI</li>
+<li>Add a citation file</li>
+<li>Add a codemeta file, FAIR principles</li>
+</ul></section><section id="pull-requests"><h2 class="section-heading">Pull Requests<a class="anchor" aria-label="anchor" href="#pull-requests"></a>
+</h2>
+<hr class="half-width"><ul><li>show pull request workflow</li>
+<li>get a helper to pull reuqest a change into a file</li>
+<li>demonstrate review process</li>
+</ul><div id="pull-request-exercise" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="pull-request-exercise" class="callout-inner">
+<h3 class="callout-title">Pull Request Exercise<a class="anchor" aria-label="anchor" href="#pull-request-exercise"></a>
+</h3>
+<div class="callout-content">
+<p>Q: add yourself to the authors or citation file and submit a pull
+request</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div class="accordion-body">
+<p>A:</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
 </h2>
 <hr class="half-width"><p>The content of this episode was inspired / heavily borrowed from the
 following resources:</p>
-<ul><li>…</li>
+<ul><li>Software carpentry git lesson licensing and citation sections - <a href="https://swcarpentry.github.io/git-novice/11-licensing.html" class="external-link uri">https://swcarpentry.github.io/git-novice/11-licensing.html</a>
+and <a href="https://swcarpentry.github.io/git-novice/12-citation.html" class="external-link uri">https://swcarpentry.github.io/git-novice/12-citation.html</a>
+</li>
 <li>…</li>
 </ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
 the topic of this episode:</p>
-<ul><li>…</li>
-<li>…</li>
+<ul><li>Open source definition - <a href="https://opensource.org/osd/" class="external-link uri">https://opensource.org/osd/</a>
+</li>
+<li>What is free software - <a href="https://www.gnu.org/philosophy/free-sw.en.html" class="external-link uri">https://www.gnu.org/philosophy/free-sw.en.html</a>
+</li>
 </ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -349,7 +600,15 @@ the topic of this episode:</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>…</li>
+<ul><li>Open source applies Copyright licenses permitting others to reuse
+and adapt your code or data.</li>
+<li>Permissive licenses</li>
+<li>Copyleft licenses</li>
+<li>Creative commons</li>
+<li>Open source software can be sold</li>
+<li>Add license file to your repo, add a license to each file in case it
+gets detached</li>
+<li>Unless you are a lawyer don’t try to create your own license.</li>
 </ul></div>
 </div>
 </div>
@@ -415,8 +674,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/08-open-collaboration.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/08-open-collaboration.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2023-10-18",
-  "datePublished": "2024-01-16"
+  "dateModified": "2024-01-22",
+  "datePublished": "2024-01-22"
 }
 
   </script><script>
