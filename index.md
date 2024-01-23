@@ -2,9 +2,8 @@
 site: sandpaper::sandpaper_site
 ---
 
-This repository contains a short (2-day) course teaching tools and practices for producing and sharing quality and [FAIR 
+This repository contains a short (2-day) course teaching tools and practices for producing and sharing quality, sustaiable and [FAIR 
 (Findable, Accessible, Interoperable and Reusable) research software][fair-software] to support open and reproducible research. 
-
 
 ## Target Audience
 
@@ -17,12 +16,12 @@ This repository contains a short (2-day) course teaching tools and practices for
 After attending this training, you will be able to:
 
 - List challenges typically faced by researchers developing software and managing data for modern computational research, including requirements commensurate with the FAIR (Findable, Accessible, Interoprable, Reusable) principles
-- List some tools and practices that can help make your research, data and software FAIR
+- List some tools and practices that can help make your research, data and software open and FAIR
 - Automate your research and enable replication of your research results by writing software to implement the research methodology
 - Share and version control your software using GitHub
-- List best practices for developing and sharing sustainable software (including writing readable code, code documentation, licencing and citation)
+- List best practices for developing and sharing opena and sustainable software (including writing readable code, code documentation, licencing and citation)
 - Assess if the code does what it intends to do
-- List tools and techniques for collaborative software development and maintenance
+- List tools and techniques for collaborative and sustainable software development and maintenance
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
