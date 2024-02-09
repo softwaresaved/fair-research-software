@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/00-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html</loc>
+  </url>
+  <url>
     <loc>https://softwaresaved.github.io/fair-research-software/01-introduction.html</loc>
   </url>
   <url>
@@ -47,6 +53,12 @@
   </url>
   <url>
     <loc>https://softwaresaved.github.io/fair-research-software/index.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/00-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/01-fair-research-software.html</loc>
   </url>
   <url>
     <loc>https://softwaresaved.github.io/fair-research-software/instructor/01-introduction.html</loc>
