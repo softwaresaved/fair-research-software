@@ -8,11 +8,10 @@ to support open and reproducible research.
 
 ## Target Audience
 
-- Post-graduate students or early career researchers who are starting/working on research projects and want to 
-develop FAIR (Findable, Accessible, Interoperable and Reusable) software to support their research 
-using the established reproducibility practices
-- Researchers who had foundational software training before but wish to refresh, reinforce or improve their 
-skills and practices in the wider context of FAIR research software for open and reproducible research
+- Post-graduate students or early career researchers who are starting their research projects and want to develop software to support their research using established best practices
+- Researchers or scientists who had foundational software training before but wish to refresh, reinforce or improve their skills and practices in the wider context of FAIR research and sharing and writing software for open and reproducible research 
+
+Check out a few example [learner profiles](./profiles.html), to see if this course is a right fit for you.
 
 ## Learning Objectives
 

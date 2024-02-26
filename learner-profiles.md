@@ -3,34 +3,52 @@ title: Learner Profiles
 ---
 
 ## Bobby the Bioinformatician
-* Postdoc in bioinformatics, finished PhD 2 years ago
-* Did a software Carpentry workshop covering Shell, Python and Git 3 years ago during his PhD. 
-* Wrote a couple of analysis scripts during his PhD, but hasn't done much recently.
-* Now needs to run a set of Python scripts written by another research who has recently left. This is in github, but Bobby doesn't have much experience with Git apart from the course he did 3 years ago, he's never posted any code of his own on Github.
-* These read data in FASTQ format and write out a set of CSVs with summary information.
-* This code might need a few minor bugs fixing, but don't currently require any major work. 
-* Bobby's favourite journal has started requesting all the raw data, scripts and environments used to generate the results. So he'd like to have an up to date github repository with his bugfixes, environments and some supporting scripts. 
+* Bobby is a postdoctoral researcher in bioinformatics who finished his PhD 2 years ago.
+* Bobby attended a Software Carpentry workshop 3 years ago during his PhD, which covered foundational knowledge of 
+UNIX shell, version control Git and Python programming language. 
+* Bobby wrote a couple of Python data analysis scripts during his PhD, but has not done much coding recently. 
+* He now needs to run a set of Python scripts written by another researcher who has recently left his group. 
+These scripts read data in FASTQ format (textual file format for storing biological sequence data and its 
+corresponding quality score) and write out a set of CSV files with summary information. 
+The scripts may need some minor bug fixes and improved documentation so that others can more easily understand and 
+reuse them in the future.
+* The scripts are located in GitHub, but Bobby does not have much experience with Git nor GitHub, 
+apart from the course he did 3 years ago. Bobby has also never shared any of his code on GitHub. 
+* In addition, Bobby's favourite journal has started requesting that the raw data, scripts and computational 
+environments used to generate the results are submitted along with a manuscript. 
+This is an extra motivation for Bobby to have an up-to-date GitHub repository with the latest working code, 
+data, documentation on how to run the code, results and any supporting information. 
 
 ## Gerry the Geographer
-* Research assistant in human geography
-* Has masters degree in geography
-* Did some python modules during masters degree and wrote a few scripts for downloading and analysing data.
-* She's now responsible for developing some new analysis scripts that take CSV and JSON time series georeferenced data from several online sources and performs some statistical analysis and generates some visualisations on them.
-* Some of the data sources have gaps and inconsistencies and will require some cleaning first.
-* A senior researcher has given Gerry some sources for the data and some example R code which does the analysis.  
+* Gerry is a research assistant in human geography, with a Masters degree in geography.
+* During her Masters degree, Gerry wrote some Python modules and a few Python scripts for downloading and analysing data.
+* Gerry is now responsible for developing new Python analysis scripts that take CSV and JSON geo-referenced time series  data from several online sources, perform some statistical analysis and generate visualisations. 
+* Some of the data sources Gerry has to use have gaps and inconsistencies and require cleaning first.
+* A senior researcher has given Gerry some example R code which does the analysis.  
 
 ## Philippa the Physicist
-* Reserach fellow in particle physics
-* Has a PhD in particle physics and several years of postdoc experience
-* Did some Fortran modules as an undergraduate, self-taught Python programmer. 
-* Has built a large set of python routines which perform a novel type of simulation on an HPC system.
-* The simulation uses a JSON file to configure itself and writes out data in a custom binary format. Another set of scripts produce visualisations of these. 
-* Some collaborators are asking to use Philippa's code as part of a big project, but she's the only one who understands most of it, some of the code isn't very readable, it's not under version control and has no unit tests. 
+* Philippa is a Research Fellow with a PhD in particle physics and several years of postdoc experience.
+* Philippa wrote some Fortran modules as an undergraduate, and is a self-taught Python programmer. 
+* She has built a large set of Python routines which perform a novel type of simulation on an HPC system. 
+The simulation is configured via a JSON file and writes out data in a custom binary format. 
+Another set of scripts produce visualisations out of the resulting simulation data. 
+* Collaborators on another project have heard about Philippa's work and would like to reuse her code, 
+but she is the only one who fully understands the whole workflow, most of the code is not documented and 
+is not very readable, has no unit tests and only exist on Philippa's machine and her external back-up drive. 
+* Phillipa now wants to improve documentation on her code and set up a GitHub project to share her work and provide 
+other collaborators (and wider community) with access to it.
 
 ## Sam the Sociologist
-* Lecturer in sociology
-* Has several datasets on political groups on different social media platforms in a mix of JSON formats.
-* These require some complex statistical analysis, which is proving too complex to analyse in Excel or SPSS and Sam wants to use Python instead.
-* He hasn't programmed much before, did an R course many years ago but mainly uses Excel or SPSS.
-* He has some funding to employ a computer science undergraduate student over the summer, but he wants to be able to direct them towards best practices for building reserach software. A colleague has told him that the code should be shared on Github, but he doesn't know how to use Github.
+* Sam is a Lecturer in sociology. 
+* Sam has several datasets on political groups on different social media platforms in a mix of different structures in 
+JSON format. These datasets require some complex statistical analysis, which is proving too complex to analyse in 
+Excel or SPSS (the tools that Sam has mainly used so far). 
+* Sam has never shared his code, apart from emailing it to a few close collaborators. 
+* Sam has now received some funding to employ a computer science undergraduate student over the summer, and 
+he wants to be able to direct them towards best practices for building research software. 
+* Sam wants the student to use Python for this project to make this work more easily reproducible. 
+In addition, members of Sam's current group all use Python 
+and could verify and contribute to the code, and maintain it after the summer placement finishes.
+* In addition, a colleague has told Sam that the code should be shared on GitHub (so that the wider community can 
+access and benefit from it), but Sam does not know how to use GitHub nor how to license the code and data for reuse.
   
