@@ -1,5 +1,5 @@
 ---
-title: "Introduction to FAIR research software"
+title: "FAIR research software"
 teaching: 45
 exercises: 15
 ---
@@ -22,7 +22,29 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-Content of the episode goes here.
+## Icebreaker discussion
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+Why have you attended this course? Is it by your own choice or did someone advise you to come?
+
+What do you want to learn or change in your current research software work? Describe how your knowledge, work or attitude will be different afterwards.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## The purpose of this course
+
+## What is open, reproducible research?
+
+::::::::::::::::::::::::::::::::::::: exercise
+
+- What do you understand by the words:
+  - Reproducible research?
+  - Open research?
+
+- How many people or groups can you list that might benefit from your work being open and reproducible?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Acknowledgements
