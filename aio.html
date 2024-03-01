@@ -193,7 +193,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="01-fair-research-software.html">2. Introduction to FAIR research software</a>
+        <a href="01-fair-research-software.html">2. FAIR research software</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -354,21 +354,288 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Course introduction</a></p>
 <hr>
-<p>Last updated on 2024-02-09 |
+<p>Last updated on 2024-03-01 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<section id="course-introduction---setting-the-scene"><h2 class="section-heading">Course introduction - setting the scene<a class="anchor" aria-label="anchor" href="#course-introduction---setting-the-scene"></a>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is open, reproducible and FAIR research?</li>
+<li>Why are these practices important?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the concept of open and reproducible research</li>
+<li>Understand why these principles are of value in the research
+community</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="jargon-busting"><h2 class="section-heading">Jargon busting<a class="anchor" aria-label="anchor" href="#jargon-busting"></a>
 </h2>
 <hr class="half-width">
+<p>Before we start with the course, below we cover the terminology and
+explain terms, phrases, and concepts associated with software
+development in reproducible research that we will use in this
+course.</p>
+<ul>
+<li>
+<strong>Reproducibility</strong> - the ability to be reproduced or
+copied; the extent to which consistent results are obtained when an
+experiment is repeated (definition from <a href="https://languages.oup.com/google-dictionary-en/" class="external-link">Oxford
+Languages</a>)</li>
+<li>
+<strong>Computational reproducibility</strong> - obtaining
+consistent results using the same input data, computational methods
+(code), and conditions of analysis; work that can be independently
+recreated from the same data and the same code (<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions" class="external-link">definition</a>
+by the Turing Way’s “Guide to Reproducible Research”)</li>
+<li>
+<strong>Reproducible research</strong> - the idea that scientific
+results should be documented in such a way that their deduction is fully
+transparent (<a href="https://en.wikipedia.org/wiki/Reproducibility" class="external-link">definition</a> from
+Wikipedia)</li>
+<li>
+<strong>Open research</strong> - research that is openly accessible
+by others; concerned with making research more transparent, more
+collaborative, more wide-reaching, and more efficient (<a href="https://en.wikipedia.org/wiki/Open_research" class="external-link">definition</a> from
+Wikipedia)</li>
+<li>
+<strong>FAIR</strong> - an acronym that stands for Findable,
+Accessible, Interoperable, and Reusable</li>
+<li>
+<strong>Sustainable software development</strong> - software
+development practice that takes into account longevity and
+maintainability of code (e.g. beyond the lifetime of the project),
+environmental impact, societal responsibility and ethics in our software
+practices.</li>
+</ul>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>In this course, we use the term “reproducibility” as synonym for
+“computational reproducibility”.</p>
+</div>
+</div>
+</div>
+</section><section id="what-is-reproducible-research"><h2 class="section-heading">What is reproducible research?<a class="anchor" aria-label="anchor" href="#what-is-reproducible-research"></a>
+</h2>
+<hr class="half-width">
+<p><a href="https://the-turing-way.netlify.app/index.html#citing-the-turing-way" class="external-link">The
+Turing Way’s “Guide to Reproducible Research”</a> provides an <a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions" class="external-link">excellent
+overview of definitions of “reproducibility” and “replicability”</a>
+found in literature, and their different aspects and levels. According
+to one definition, <em>reproducible</em> means that a measurement can be
+obtained with a stated precision by a different team using a different
+experimental setup in a different location on multiple trials (different
+team, different experimental setup). By the same definition,
+<em>replicable</em> means that a measurement can be obtained with stated
+precision by a different team using the same measurement procedure, the
+same measuring system, under the same operating conditions, in the same
+or a different location on multiple trials (different team, same
+experimental setup).</p>
+<p>We can also further differentiate between:</p>
+<ul>
+<li>Computational reproducibility: when detailed information is provided
+about code, software, hardware and implementation details.</li>
+<li>Empirical reproducibility: when detailed information is provided
+about non-computational empirical scientific experiments and
+observations. In practice, this is enabled by making the data and
+details of how it was collected freely available.</li>
+<li>Statistical reproducibility: when detailed information is provided,
+for example, about the choice of statistical tests, model parameters,
+and threshold values. This mostly relates to pre-registration of study
+design to prevent p-value hacking and other manipulations.</li>
+</ul>
+<p>In this course, we are concerned with computational
+reproducibility.</p>
+</section><section id="why-do-reproducible-research"><h2 class="section-heading">Why do reproducible research?<a class="anchor" aria-label="anchor" href="#why-do-reproducible-research"></a>
+</h2>
+<hr class="half-width">
+<p>Scientific transparency and rigor are key factors in research.
+Scientific methodology and results need to be published openly and
+replicated and confirmed by several independent parties. However,
+research papers often lack the full details required for independent
+replication. Many attempts at replicating the results of well-known
+scientific studies have failed in a variety of disciplines [reference].
+This is called <a href="https://en.wikipedia.org/wiki/Replication_crisis" class="external-link"><strong>the
+reproducibility crisis</strong></a> - an ongoing methodological crisis
+in which the results of many scientific studies are difficult or
+impossible to reproduce.</p>
+<p>Reproducible research is a practice that ensures that researchers can
+repeat the same analysis multiple times with the same results. It offers
+many benefits to those who practice it:</p>
+<ul>
+<li>Reproducible research helps researchers remember how and why they
+performed specific tasks and analyses; this enables easier explanation
+of work to collaborators and reviewers.</li>
+<li>Reproducible research enables researchers to quickly modify analyses
+and figures - this is often required at all stages of research and
+automating this process saves loads of time.</li>
+<li>Reproducible research enables reusability of previously conducted
+tasks so that new projects that require the same or similar tasks become
+much easier and efficient by reusing or reconfiguring previous
+work.</li>
+<li>Reproducible research has greater impact on professional lives of
+researchers through the ability to reuse and cite all research outputs -
+including code and data.</li>
+<li>Reproducible research is a strong indicator of rigor,
+trustworthiness, and transparency in scientific research. This can
+increase the quality and speed of peer review, because reviewers can
+directly access the analytical process described in a manuscript. It
+increases the probability that errors are caught early on - by
+collaborators or during the peer-review process, helping alleviate the
+reproducibility crisis.</li>
+</ul>
+<p>However, reproducible research often requires that researchers
+implement new practices and learn new tools. This course aims to teach
+some of these practices and tools pertaining to the use of software to
+conduct reproducible research.</p>
+</section><section id="software-in-research"><h2 class="section-heading">Software in research<a class="anchor" aria-label="anchor" href="#software-in-research"></a>
+</h2>
+<hr class="half-width">
+<p>Software is fundamental to modern research - some of it would even be
+impossible without software [ssi survey reference]. From short,
+thrown-together temporary scripts to solve a specific problem and help
+with day-to-day research tasks, through an abundance of complex
+spreadsheets analysing collected data, to the hundreds of software
+engineers and millions of lines of code behind international efforts
+such as the Large Hadron Collider and the Square Kilometre Array, there
+are few areas of research where software does not have a fundamental
+role.</p>
+<p>In the survey conducted by the Software Sustainability Institute in
+2014 [ref], 92% of researchers indicated they used research software
+[reference]. We define “research software” as software or code that is
+used to generate, process or analyse results of a research for
+publication. Even formulas in spreadsheets are considered code - they
+are a form of computer programming in that allow you to create,
+calculate, and change data sets in a number of different ways. So,
+software is not reserved for <a href="https://en.wikipedia.org/wiki/Computational_science" class="external-link">computational
+science</a> (aka scientific computing) and “traditional” uses of
+computing capabilities and infrastructures (e.g. simulations and
+computational methods) any more. Nor its use is restricted to “hard”
+sciences - the use of research software is ubiquitous and fairly even
+across all disciplines [ssi survey ref].</p>
+<p>Research software is also widely developed - researchers do not just
+use “off the shelf” software and the majority of researchers develop
+their own. In order to be able to produce quality software that outputs
+correct and verifiable results and that can be reused over time -
+researchers require training. This course teaches good practises and
+reproducible working methods that are agnostic of a programming language
+(although we will use Python code as examples) and aims to provide
+researchers with the tools and knowledge to feel confident when writing
+good quality and sustainable software to support their research.
+Typically, we think of such software as being <strong>FAIR</strong>.</p>
+</section><section id="fair-software"><h2 class="section-heading">FAIR software<a class="anchor" aria-label="anchor" href="#fair-software"></a>
+</h2>
+<hr class="half-width">
+<p>FAIR stands for Findable, Accessible, Interoperable, and Reusable and
+comprises a set of principles designed to increase the visibility and
+usefulness of your research to others. The FAIR data principles [ref]
+are widely known and applied today. Similar FAIR principles [ref] have
+now been defined for software too. In general, they mean:</p>
+<ul>
+<li>
+<strong>Findable</strong> - software and its associated metadata
+must be easy to discover by humans and machines alike.</li>
+<li>
+<strong>Accessible</strong> - in order to reuse software, software
+and its metadata must be retrievable.</li>
+<li>
+<strong>Interoperable</strong> - when interacting with other
+software it must be done by exchanging data and/or metadata through
+standardised protocols and application programming interfaces
+(APIs).</li>
+<li>
+<strong>Reusable</strong> - software should be usable (can be
+executed) and reusable (can be understood, modified, built upon, or
+incorporated into other software).</li>
+</ul>
+<p>Each of the above principles can be achieved by a number of practices
+listed below. This is not exact science, and by all means the list below
+is not exhaustive, but any of the practices that you employ to your
+research software methodology will bring you closer to the gold standard
+of a fully reproducible research. (Also check out the following <a href="https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf" class="external-link">“10
+easy things to make your research software FAIR”</a>.)</p>
+<ul>
+<li>Findable
+<ul>
+<li>Create a description of your software</li>
+<li>Place your software in a software repository (and ideally register
+it in a software registry)</li>
+<li>Use a unique and persistent identifier for your software (also
+useful for citations)</li>
+</ul>
+</li>
+<li>Accessible
+<ul>
+<li>Make sure people can download your software</li>
+</ul>
+</li>
+<li>Interoperable
+<ul>
+<li>Explain the functionality of your software</li>
+<li>Use standard formats for inputs and outputs</li>
+<li>Communicate with other software via standard protocols and APIs</li>
+</ul>
+</li>
+<li>Reusable
+<ul>
+<li>Document your software (including its functionality, and how to
+install and run it)</li>
+<li>Follow best practices for software development (including coding
+conventions, code readability and verifying its correctness)</li>
+<li>Give a licence to your software clearly stating how it can be
+reused</li>
+<li>State how to cite your software</li>
+</ul>
+</li>
+</ul>
+<p>We are going to explore the above practices on an example software
+project we will be working on as part of this course.</p>
+</section><section id="software-and-data-used-in-this-course"><h2 class="section-heading">Software and data used in this course<a class="anchor" aria-label="anchor" href="#software-and-data-used-in-this-course"></a>
+</h2>
+<hr class="half-width">
+<p>TODO</p>
+</section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
+</h2>
+<hr class="half-width">
+<p>The content of this episode borrows from or references the following
+work, which we also recommend for further reading:</p>
+<p>[1] <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801" class="external-link">A
+Beginner’s Guide to Conducting Reproducible Research</a>, Jesse M.
+Alston, Jessica A. Rick, <a href="https://doi.org/10.1002/bes2.1801" class="external-link uri">https://doi.org/10.1002/bes2.1801</a> [2] The Turing Way
+“Guide for reproducible research”, <a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions" class="external-link uri">https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions</a></p>
+<p>TODO…</p>
+<p>[2] SSI survey</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- --></section></section><section id="aio-01-fair-research-software"><p>Content from <a href="01-fair-research-software.html">Introduction to FAIR research software</a></p>
+ -->
+</section></section><section id="aio-01-fair-research-software"><p>Content from <a href="01-fair-research-software.html">FAIR research software</a></p>
 <hr>
-<p>Last updated on 2024-02-09 |
+<p>Last updated on 2024-03-01 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1462,8 +1729,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/aio.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/aio.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "dateModified": "2024-03-01",
+  "datePublished": "2024-03-01"
 }
 
   </script><script>
