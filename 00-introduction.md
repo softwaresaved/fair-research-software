@@ -41,7 +41,7 @@ our software practices.
 ::: callout
 ## Computational reproducibility
 
-In this course, we use the term "reproducibility" as synonym for "computational reproducibility".
+In this course, we use the term "reproducibility" as a synonym for "computational reproducibility".
 :::
 
 ## What is reproducible research?
