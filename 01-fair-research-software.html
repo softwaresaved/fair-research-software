@@ -166,7 +166,12 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#acknowledgements">Acknowledgements</a></li>
+        <ul><li><a href="#icebreaker-discussion">Icebreaker discussion</a></li>
+<li><a href="#the-purpose-of-this-course">The purpose of this course</a></li>
+<li><a href="#what-is-open-reproducible-research">What is open, reproducible research?</a></li>
+<li><a href="#fair-software">FAIR software</a></li>
+<li><a href="#software-and-data-used-in-this-course">Software and data used in this course</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -304,7 +309,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>FAIR research software</h1>
-        <p>Last updated on 2024-03-01 |
+        <p>Last updated on 2024-03-04 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -344,8 +349,103 @@ community</li>
 </div>
 </div>
 </div>
-<p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+<section id="icebreaker-discussion"><h2 class="section-heading">Icebreaker discussion<a class="anchor" aria-label="anchor" href="#icebreaker-discussion"></a>
+</h2>
+<hr class="half-width"><div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>Why have you attended this course? Is it by your own choice or did
+someone advise you to come?</p>
+<p>What do you want to learn or change in your current research software
+work? Describe how your knowledge, work or attitude will be different
+afterwards.</p>
+</div>
+</div>
+</div>
+</section><section id="the-purpose-of-this-course"><h2 class="section-heading">The purpose of this course<a class="anchor" aria-label="anchor" href="#the-purpose-of-this-course"></a>
+</h2>
+<hr class="half-width"></section><section id="what-is-open-reproducible-research"><h2 class="section-heading">What is open, reproducible research?<a class="anchor" aria-label="anchor" href="#what-is-open-reproducible-research"></a>
+</h2>
+<hr class="half-width"><div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</h3>
+<div class="callout-content">
+<ul><li>What do you understand by the words:
+<ul><li>Reproducible research?</li>
+<li>Open research?</li>
+</ul></li>
+<li>How many people or groups can you list that might benefit from your
+work being open and reproducible?</li>
+</ul></div>
+</div>
+</div>
+</section><section id="fair-software"><h2 class="section-heading">FAIR software<a class="anchor" aria-label="anchor" href="#fair-software"></a>
+</h2>
+<hr class="half-width"><p>FAIR stands for Findable, Accessible, Interoperable, and Reusable and
+comprises a set of principles designed to increase the visibility and
+usefulness of your research to others. The FAIR data principles [ref]
+are widely known and applied today. Similar FAIR principles [ref] have
+now been defined for software too. In general, they mean:</p>
+<ul><li>
+<strong>Findable</strong> - software and its associated metadata
+must be easy to discover by humans and machines alike.</li>
+<li>
+<strong>Accessible</strong> - in order to reuse software, software
+and its metadata must be retrievable.</li>
+<li>
+<strong>Interoperable</strong> - when interacting with other
+software it must be done by exchanging data and/or metadata through
+standardised protocols and application programming interfaces
+(APIs).</li>
+<li>
+<strong>Reusable</strong> - software should be usable (can be
+executed) and reusable (can be understood, modified, built upon, or
+incorporated into other software).</li>
+</ul><p>Each of the above principles can be achieved by a number of practices
+listed below. This is not exact science, and by all means the list below
+is not exhaustive, but any of the practices that you employ to your
+research software methodology will bring you closer to the gold standard
+of a fully reproducible research. (Also check out the following <a href="https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf" class="external-link">“10
+easy things to make your research software FAIR”</a>.)</p>
+<ul><li>Findable
+<ul><li>Create a description of your software</li>
+<li>Place your software in a software repository (and ideally register
+it in a software registry)</li>
+<li>Use a unique and persistent identifier for your software (also
+useful for citations)</li>
+</ul></li>
+<li>Accessible
+<ul><li>Make sure people can download your software</li>
+</ul></li>
+<li>Interoperable
+<ul><li>Explain the functionality of your software</li>
+<li>Use standard formats for inputs and outputs</li>
+<li>Communicate with other software via standard protocols and APIs</li>
+</ul></li>
+<li>Reusable
+<ul><li>Document your software (including its functionality, and how to
+install and run it)</li>
+<li>Follow best practices for software development (including coding
+conventions, code readability and verifying its correctness)</li>
+<li>Give a licence to your software clearly stating how it can be
+reused</li>
+<li>State how to cite your software</li>
+</ul></li>
+</ul><p>We are going to explore the above practices on an example software
+project we will be working on as part of this course.</p>
+</section><section id="software-and-data-used-in-this-course"><h2 class="section-heading">Software and data used in this course<a class="anchor" aria-label="anchor" href="#software-and-data-used-in-this-course"></a>
+</h2>
+<hr class="half-width"><p>TODO</p>
+</section><section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
 </h2>
 <hr class="half-width"><p>The content of this episode was inspired / heavily borrowed from the
 following resources:</p>
@@ -448,8 +548,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-03-01",
-  "datePublished": "2024-03-01"
+  "dateModified": "2024-03-04",
+  "datePublished": "2024-03-04"
 }
 
   </script><script>

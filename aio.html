@@ -354,7 +354,7 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Course introduction</a></p>
 <hr>
-<p>Last updated on 2024-03-01 |
+<p>Last updated on 2024-03-04 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -432,7 +432,8 @@ practices.</li>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="section level3 callout-title callout-inner">
-<h3 class="callout-title">Callout</h3>
+<h3 class="callout-title" id="computational-reproducibility">Computational reproducibility<a class="anchor" aria-label="anchor" href="#computational-reproducibility"></a>
+</h3>
 <div class="callout-content">
 <p>In this course, we use the term “reproducibility” as synonym for
 “computational reproducibility”.</p>
@@ -445,31 +446,53 @@ practices.</li>
 <p><a href="https://the-turing-way.netlify.app/index.html#citing-the-turing-way" class="external-link">The
 Turing Way’s “Guide to Reproducible Research”</a> provides an <a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions" class="external-link">excellent
 overview of definitions of “reproducibility” and “replicability”</a>
-found in literature, and their different aspects and levels. According
-to one definition, <em>reproducible</em> means that a measurement can be
-obtained with a stated precision by a different team using a different
-experimental setup in a different location on multiple trials (different
-team, different experimental setup). By the same definition,
-<em>replicable</em> means that a measurement can be obtained with stated
-precision by a different team using the same measurement procedure, the
-same measuring system, under the same operating conditions, in the same
-or a different location on multiple trials (different team, same
-experimental setup).</p>
+found in literature, and their different aspects and levels.</p>
+<p>In this course, we adopt the Turing Way’s definitions:</p>
+<ul>
+<li>
+<strong>Reproducible research</strong>: a result is reproducible
+when the same analysis steps performed on the same data consistently
+produce the same answer.</li>
+<li>
+<strong>Replicable research</strong>: a result is replicable when
+the same analysis performed on different data produces qualitatively
+similar answers.</li>
+<li>
+<strong>Robust research</strong>: a result is robust when the same
+data is subjected to different analysis workflows to answer the same
+research question and a qualitatively similar or identical answer is
+produced.</li>
+<li>
+<strong>Generalisable research</strong>: combining replicable and
+robust findings allow us to form generalisable results that are broadly
+applicable to different types of data or contexts.</li>
+</ul>
+<p><img src="https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg" alt="Aspects of reproducible research including reproducibility, replicability, robustness and generalisability" class="figure"><em>The Turing Way project illustration of aspects of reproducible
+research by Scriberia, used under a CC-BY 4.0 licence, <a href="https://doi.org/10.5281/zenodo.3332807" class="external-link">DOI:
+10.5281/zenodo.3332807</a>.</em></p>
+<p>In this course we mainly address reproducibility, as the first step
+towards generalisability (the ultimate goal of research).</p>
 <p>We can also further differentiate between:</p>
 <ul>
-<li>Computational reproducibility: when detailed information is provided
-about code, software, hardware and implementation details.</li>
-<li>Empirical reproducibility: when detailed information is provided
-about non-computational empirical scientific experiments and
-observations. In practice, this is enabled by making the data and
-details of how it was collected freely available.</li>
-<li>Statistical reproducibility: when detailed information is provided,
-for example, about the choice of statistical tests, model parameters,
-and threshold values. This mostly relates to pre-registration of study
-design to prevent p-value hacking and other manipulations.</li>
+<li>
+<strong>Computational reproducibility</strong>: when detailed
+information is provided about code, software, hardware and
+implementation details.</li>
+<li>
+<strong>Empirical reproducibility</strong>: when detailed
+information is provided about non-computational empirical scientific
+experiments and observations. In practice, this is enabled by making the
+data and details of how it was collected freely available.</li>
+<li>
+<strong>Statistical reproducibility</strong>: when detailed
+information is provided, for example, about the choice of statistical
+tests, model parameters, and threshold values. This mostly relates to
+pre-registration of study design to prevent p-value hacking and other
+manipulations.</li>
 </ul>
-<p>In this course, we are concerned with computational
-reproducibility.</p>
+<p>In this course, we are concerned with computational reproducibility,
+i.e. when the application of computer science and software engineering
+is used to aid solving research problems.</p>
 </section><section id="why-do-reproducible-research"><h2 class="section-heading">Why do reproducible research?<a class="anchor" aria-label="anchor" href="#why-do-reproducible-research"></a>
 </h2>
 <hr class="half-width">
@@ -547,6 +570,106 @@ reproducible working methods that are agnostic of a programming language
 researchers with the tools and knowledge to feel confident when writing
 good quality and sustainable software to support their research.
 Typically, we think of such software as being <strong>FAIR</strong>.</p>
+</section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
+</h2>
+<hr class="half-width">
+<p>The content of this episode borrows from or references the following
+work, which we also recommend for further reading:</p>
+<p>[1] <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801" class="external-link">A
+Beginner’s Guide to Conducting Reproducible Research</a>, Jesse M.
+Alston, Jessica A. Rick, <a href="https://doi.org/10.1002/bes2.1801" class="external-link uri">https://doi.org/10.1002/bes2.1801</a> [2] The Turing Way
+“Guide for reproducible research”, <a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions" class="external-link uri">https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions</a></p>
+<p>TODO…</p>
+<p>[2] SSI survey</p>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-01-fair-research-software"><p>Content from <a href="01-fair-research-software.html">FAIR research software</a></p>
+<hr>
+<p>Last updated on 2024-03-04 |
+        
+        <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is open, reproducible and FAIR research?</li>
+<li>Why are these practices important?</li>
+<li>How do these apply to data?</li>
+<li>How do these apply to software?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain open and reproducible research</li>
+<li>Explain the FAIR research principles in the context of research
+software and data</li>
+<li>Explain why these principles are of value in the research
+community</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="icebreaker-discussion"><h2 class="section-heading">Icebreaker discussion<a class="anchor" aria-label="anchor" href="#icebreaker-discussion"></a>
+</h2>
+<hr class="half-width">
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>Why have you attended this course? Is it by your own choice or did
+someone advise you to come?</p>
+<p>What do you want to learn or change in your current research software
+work? Describe how your knowledge, work or attitude will be different
+afterwards.</p>
+</div>
+</div>
+</div>
+</section><section id="the-purpose-of-this-course"><h2 class="section-heading">The purpose of this course<a class="anchor" aria-label="anchor" href="#the-purpose-of-this-course"></a>
+</h2>
+<hr class="half-width"></section><section id="what-is-open-reproducible-research"><h2 class="section-heading">What is open, reproducible research?<a class="anchor" aria-label="anchor" href="#what-is-open-reproducible-research"></a>
+</h2>
+<hr class="half-width">
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>What do you understand by the words:
+<ul>
+<li>Reproducible research?</li>
+<li>Open research?</li>
+</ul>
+</li>
+<li>How many people or groups can you list that might benefit from your
+work being open and reproducible?</li>
+</ul>
+</div>
+</div>
+</div>
 </section><section id="fair-software"><h2 class="section-heading">FAIR software<a class="anchor" aria-label="anchor" href="#fair-software"></a>
 </h2>
 <hr class="half-width">
@@ -618,63 +741,7 @@ project we will be working on as part of this course.</p>
 </h2>
 <hr class="half-width">
 <p>TODO</p>
-</section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode borrows from or references the following
-work, which we also recommend for further reading:</p>
-<p>[1] <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801" class="external-link">A
-Beginner’s Guide to Conducting Reproducible Research</a>, Jesse M.
-Alston, Jessica A. Rick, <a href="https://doi.org/10.1002/bes2.1801" class="external-link uri">https://doi.org/10.1002/bes2.1801</a> [2] The Turing Way
-“Guide for reproducible research”, <a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions" class="external-link uri">https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions</a></p>
-<p>TODO…</p>
-<p>[2] SSI survey</p>
-<!-- 
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
- -->
-</section></section><section id="aio-01-fair-research-software"><p>Content from <a href="01-fair-research-software.html">FAIR research software</a></p>
-<hr>
-<p>Last updated on 2024-03-01 |
-        
-        <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What is open, reproducible and FAIR research?</li>
-<li>Why are these practices important?</li>
-<li>How do these apply to data?</li>
-<li>How do these apply to software?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Explain open and reproducible research</li>
-<li>Explain the FAIR research principles in the context of research
-software and data</li>
-<li>Explain why these principles are of value in the research
-community</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+</section><section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
 </h2>
 <hr class="half-width">
 <p>The content of this episode was inspired / heavily borrowed from the
@@ -730,7 +797,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-tools"><p>Content from <a href="02-tools.html">Tools and practices for research software development</a></p>
 <hr>
-<p>Last updated on 2024-02-26 |
+<p>Last updated on 2024-03-04 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/02-tools.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -764,7 +831,14 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<div class="exercise">
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
 <ul>
 <li>List the tools, platforms and standards you currently use in your
 research.</li>
@@ -777,12 +851,30 @@ research.</li>
 </li>
 </ul>
 </div>
-<div class="exercise">
+</div>
+</div>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</h3>
+<div class="callout-content">
 <p>Looking at the list you made earlier, give each item a mark for how:
 - Findable - Accessible - Interoperable - Reuseable you think they are
 in themselves. Do they help you work in a FAIR way?</p>
 </div>
-<div class="exercise">
+</div>
+</div>
+<div id="discussion3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion3"></a>
+</h3>
+<div class="callout-content">
 <p>Open a terminal and look at the prompt. Compare with oyur neighbour,
 does it look different? What information is it telling you and why might
 this be useful?</p>
@@ -791,7 +883,16 @@ comes before it, that is shown on every new line before you type in
 commands.</p>
 <p>Solution:</p>
 </div>
-<div class="exercise">
+</div>
+</div>
+<div id="discussion4" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion4"></a>
+</h3>
+<div class="callout-content">
 <p>Run the following commands to check you have installed the tools
 listed in the Setup page. Compare the output with your neightbour and
 see if you can see any differences.</p>
@@ -805,6 +906,8 @@ see if you can see any differences.</p>
 <li><code>code</code></li>
 </ol>
 <p>Solution:</p>
+</div>
+</div>
 </div>
 <section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
 </h2>
@@ -1428,7 +1531,7 @@ Licence.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -1466,7 +1569,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -1498,7 +1601,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -1537,7 +1640,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -1580,7 +1683,7 @@ request</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -1729,8 +1832,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/aio.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/aio.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-03-01",
-  "datePublished": "2024-03-01"
+  "dateModified": "2024-03-04",
+  "datePublished": "2024-03-04"
 }
 
   </script><script>
