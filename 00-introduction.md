@@ -39,31 +39,46 @@ maintainability of code (e.g. beyond the lifetime of the project), environmental
 our software practices. 
 
 ::: callout
+## Computational reproducibility
+
 In this course, we use the term "reproducibility" as synonym for "computational reproducibility".
 :::
 
 ## What is reproducible research?
 
 [The Turing Way's "Guide to Reproducible Research"](https://the-turing-way.netlify.app/index.html#citing-the-turing-way)
-provides an [excellent overview of definitions of "reproducibility" and "replicability"](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions) found in literature, and their 
-different aspects and levels. According to one definition, *reproducible* means that a measurement can be obtained 
-with a stated precision by a different team using a different experimental setup in a different location on multiple 
-trials (different team, different experimental setup). By the same 
-definition, *replicable* means that a measurement can be obtained with stated precision by a different team 
-using the same measurement procedure, the same measuring system, under the same operating conditions, 
-in the same or a different location on multiple trials (different team, same experimental setup).
+provides an [excellent overview of definitions of "reproducibility" and "replicability"](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions) found in literature, 
+and their different aspects and levels. 
+
+In this course, we adopt the Turing Way's definitions: 
+
+* **Reproducible research**: a result is reproducible when the same analysis steps performed on the same data 
+consistently produce the same answer.
+* **Replicable research**: a result is replicable when the same analysis performed on different data produces 
+qualitatively similar answers.
+* **Robust research**: a result is robust when the same data is subjected to different analysis workflows to answer the 
+same research question and a qualitatively similar or identical answer is produced.
+* **Generalisable research**: combining replicable and robust findings allow us to form generalisable results 
+that are broadly applicable to different types of data or contexts.
+
+![Aspects of reproducible research including reproducibility, replicability, robustness and generalisability](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg)
+*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807).*
+
+In this course we mainly address reproducibility, as the first step towards generalisability 
+(the ultimate goal of research).
 
 We can also further differentiate between:
 
-* Computational reproducibility: when detailed information is provided about code, software, hardware and 
+* **Computational reproducibility**: when detailed information is provided about code, software, hardware and 
 implementation details.
-* Empirical reproducibility: when detailed information is provided about non-computational empirical scientific 
+* **Empirical reproducibility**: when detailed information is provided about non-computational empirical scientific 
 experiments and observations. In practice, this is enabled by making the data and details of how it was 
 collected freely available.
-* Statistical reproducibility: when detailed information is provided, for example, about the choice of 
+* **Statistical reproducibility**: when detailed information is provided, for example, about the choice of 
 statistical tests, model parameters, and threshold values. This mostly relates to pre-registration of study design to prevent p-value hacking and other manipulations.
 
-In this course, we are concerned with computational reproducibility.
+In this course, we are concerned with computational reproducibility, i.e. when the application of computer science and 
+software engineering is used to aid solving research problems.
 
 ## Why do reproducible research?
 
@@ -123,49 +138,6 @@ This course teaches good practises and reproducible working methods that are agn
 programming language (although we will use Python code as examples) and aims to provide 
 researchers with the tools and knowledge to feel confident when writing good quality and sustainable 
 software to support their research. Typically, we think of such software as being **FAIR**.
-
-## FAIR software
-
-FAIR stands for Findable, Accessible, Interoperable, and Reusable and comprises a set of principles designed to 
-increase the visibility and usefulness of your research to others. 
-The FAIR data principles [ref] are widely known and applied today. 
-Similar FAIR principles [ref] have now been defined for software too. In general, they mean: 
-
-* **Findable** - software and its associated metadata must be easy to discover by humans and machines alike.
-* **Accessible** - in order to reuse software, software and its metadata must be retrievable.
-* **Interoperable** - when interacting with other software it must be done by exchanging data and/or metadata through 
-standardised protocols and application programming interfaces (APIs).
-* **Reusable** - software should be usable (can be executed) and reusable 
-(can be understood, modified, built upon, or incorporated into other software).
-
-Each of the above principles can be achieved by a number of practices listed below. 
-This is not exact science, and by all means the list below is not exhaustive, 
-but any of the practices that you employ to your research software methodology will bring you 
-closer to the gold standard of a fully reproducible research.
-(Also check out the following ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf
-).)
-
-* Findable
-  * Create a description of your software
-  * Place your software in a software repository (and ideally register it in a software registry)
-  * Use a unique and persistent identifier for your software (also useful for citations)
-* Accessible
-  * Make sure people can download your software
-* Interoperable
-  * Explain the functionality of your software 
-  * Use standard formats for inputs and outputs
-  * Communicate with other software via standard protocols and APIs
-* Reusable
-  * Document your software (including its functionality, and how to install and run it) 
-  * Follow best practices for software development (including coding conventions, code readability and verifying its correctness)
-  * Give a licence to your software clearly stating how it can be reused
-  * State how to cite your software
-
-We are going to explore the above practices on an example software project we will be working on as part of this 
-course. 
-
-## Software and data used in this course
-TODO
 
 ## Acknowledgements and references
 The content of this episode borrows from or references the following work, which we also recommend for further reading:

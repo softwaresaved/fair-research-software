@@ -20,7 +20,7 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::::::::::::::::::::::::::::::::::::: exercise
+::::::::::::::::::::::::::::::::::::: challenge
 
 - List the tools, platforms and standards you currently use in your research.
 - Note down whether you they could be easily used or understood by:
@@ -35,7 +35,7 @@ exercises: 30
 
 
 
-::::::::::::::::::::::::::::::::::::: exercise
+::::::::::::::::::::::::::::::::::::: challenge
 
 Looking at the list you made earlier, give each item a mark for how:
   - Findable
@@ -48,7 +48,7 @@ you think they are in themselves. Do they help you work in a FAIR way?
 
 
 
-::::::::::::::::::::::::::::::::::::: exercise
+::::::::::::::::::::::::::::::::::::: challenge
 
 Open a terminal and look at the prompt. Compare with oyur neighbour, does it look different?
 What information is it telling you and why might this be useful?
@@ -60,7 +60,7 @@ Solution:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::::::::::::::::::::::::::::::::::::: exercise
+::::::::::::::::::::::::::::::::::::: challenge
 
 Run the following commands to check you have installed the tools listed in the Setup page. Compare the output with your neightbour and see if you can see any differences.
 

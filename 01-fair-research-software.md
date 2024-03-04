@@ -22,7 +22,72 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-Content of the episode goes here.
+## Icebreaker discussion
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+Why have you attended this course? Is it by your own choice or did someone advise you to come?
+
+What do you want to learn or change in your current research software work? Describe how your knowledge, work or attitude will be different afterwards.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## The purpose of this course
+
+## What is open, reproducible research?
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+- What do you understand by the words:
+  - Reproducible research?
+  - Open research?
+
+- How many people or groups can you list that might benefit from your work being open and reproducible?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## FAIR software
+
+FAIR stands for Findable, Accessible, Interoperable, and Reusable and comprises a set of principles designed to
+increase the visibility and usefulness of your research to others.
+The FAIR data principles [ref] are widely known and applied today.
+Similar FAIR principles [ref] have now been defined for software too. In general, they mean:
+
+* **Findable** - software and its associated metadata must be easy to discover by humans and machines alike.
+* **Accessible** - in order to reuse software, software and its metadata must be retrievable.
+* **Interoperable** - when interacting with other software it must be done by exchanging data and/or metadata through
+  standardised protocols and application programming interfaces (APIs).
+* **Reusable** - software should be usable (can be executed) and reusable
+  (can be understood, modified, built upon, or incorporated into other software).
+
+Each of the above principles can be achieved by a number of practices listed below.
+This is not exact science, and by all means the list below is not exhaustive,
+but any of the practices that you employ to your research software methodology will bring you
+closer to the gold standard of a fully reproducible research.
+(Also check out the following ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf
+).)
+
+* Findable
+  * Create a description of your software
+  * Place your software in a software repository (and ideally register it in a software registry)
+  * Use a unique and persistent identifier for your software (also useful for citations)
+* Accessible
+  * Make sure people can download your software
+* Interoperable
+  * Explain the functionality of your software
+  * Use standard formats for inputs and outputs
+  * Communicate with other software via standard protocols and APIs
+* Reusable
+  * Document your software (including its functionality, and how to install and run it)
+  * Follow best practices for software development (including coding conventions, code readability and verifying its correctness)
+  * Give a licence to your software clearly stating how it can be reused
+  * State how to cite your software
+
+We are going to explore the above practices on an example software project we will be working on as part of this
+course.
+
+## Software and data used in this course
+TODO
 
 
 ## Acknowledgements
