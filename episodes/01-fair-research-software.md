@@ -97,7 +97,7 @@ The code is a short Python script which does some common research tasks:
 * Perform some calculations to generate summary statistics about the data
 * Make a plot to visualise the data
 
-![A screenshot of the first few lines of the Python code](episodes/fig/astronaut-analysis-bad-code-screenshot.png)
+![A first few lines of a Python script](episodes/fig/astronaut-analysis-bad-code-screenshot.png)
 
 Let's think about how FAIR this piece of software is.
 
