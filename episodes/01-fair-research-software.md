@@ -49,7 +49,7 @@ Each of the above principles can be achieved by a number of practices listed bel
 This is not exact science, and by all means the list below is not exhaustive,
 but any of the practices that you employ to your research software methodology will bring you
 closer to the gold standard of a fully reproducible research.
-(Other sets of checklists nad recommendations are available, such as ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf)
+(Other sets of checklists and recommendations are available, such as ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf)
 and ["Five recommendations for FAIR software"](https://fair-software.eu/))
 
 * Findable
