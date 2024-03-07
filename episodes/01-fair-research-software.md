@@ -89,7 +89,7 @@ You should have downlaoded a CSV data file and a Python code file in the setup f
 
 The CSV file contains data about Extra-vehicular Activity (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013.
 
-![A screenshot of the CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows](episodes/fig/Astronaut-csv-screenshot.png)
+![CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows](episodes/fig/Astronaut-csv-screenshot.png)
 
 The code is a short Python script which does some common research tasks:
 * Read in the data from the CSV file
