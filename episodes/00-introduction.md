@@ -61,8 +61,7 @@ same research question and a qualitatively similar or identical answer is produc
 * **Generalisable research**: combining replicable and robust findings allow us to form generalisable results 
 that are broadly applicable to different types of data or contexts.
 
-![Aspects of reproducible research including reproducibility, replicability, robustness and generalisability](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg)
-*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807).*
+![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Aspects of reproducible research including reproducibility, replicability, robustness and generalisability according to The Turing Way project'}
 
 In this course we mainly address reproducibility, as the first step towards generalisability 
 (the ultimate goal of research).

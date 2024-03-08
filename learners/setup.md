@@ -263,8 +263,7 @@ If you want to change it - you may do that from the drop-down menu to the right 
 and you can change the default command line tool from the same menu by using the option "Select Default Profile" (so 
 it will use that one next time you open a terminal window).
 
-![*VS Code terminal window*](episodes/fig/vscode-terminal.png){
-alt='Terminal window in VS Code with "Select Default Profile" option highlighted'}
+![*VS Code terminal window*](episodes/fig/vscode-terminal.png){alt='Terminal window in VS Code with "Select Default Profile" option highlighted'}
 
 #### Python Integration
 
