@@ -27,7 +27,7 @@ when an experiment is repeated (definition from [Oxford Languages](https://langu
 * **Computational reproducibility** - obtaining consistent results using the same input data, computational methods (code),
 and conditions of analysis; work that can be independently recreated from the same data and the same code 
 ([definition](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions) 
-by the Turing Way's "Guide to Reproducible Research")
+by the [Turing Way's "Guide to Reproducible Research"](https://the-turing-way.netlify.app/reproducible-research/reproducible-research))
 * **Reproducible research** - the idea that scientific results should be documented in such a way that their deduction
 is fully transparent ([definition](https://en.wikipedia.org/wiki/Reproducibility) from Wikipedia)
 * **Open research** - research that is openly accessible by others; concerned with making research more transparent, 
@@ -42,6 +42,16 @@ our software practices.
 ## Computational reproducibility
 
 In this course, we use the term "reproducibility" as a synonym for "computational reproducibility".
+:::
+
+::: discussion
+## What does open and reproducible research mean to you? (10 minutes)
+Think about the questions below. Your trainers may ask you to share your answers in a shared notes document and/or 
+discuss them with other participants.
+
+- What do you understand by the words "open" and "reproducible" in the context of research?
+- How many people or groups can you list that might benefit from your work being open and reproducible?
+- How many times did you wish that someone else's work you came across was more open or accessible to you?
 :::
 
 ## What is reproducible research?
@@ -61,8 +71,7 @@ same research question and a qualitatively similar or identical answer is produc
 * **Generalisable research**: combining replicable and robust findings allow us to form generalisable results 
 that are broadly applicable to different types of data or contexts.
 
-![Aspects of reproducible research including reproducibility, replicability, robustness and generalisability](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg)
-*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807).*
+![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Aspects of reproducible research including reproducibility, replicability, robustness and generalisability according to The Turing Way project'}
 
 In this course we mainly address reproducibility, as the first step towards generalisability 
 (the ultimate goal of research).

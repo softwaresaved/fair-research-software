@@ -6,45 +6,30 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What is open, reproducible and FAIR research?
-- Why are these practices important?
-- How do these apply to data?
-- How do these apply to software?
+- What are FAIR research principles?
+- How do FAIR principles apply to software (and data)?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain open and reproducible research
 - Explain the FAIR research principles in the context of research software and data
 - Explain why these principles are of value in the research community 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Icebreaker discussion
-
 ::::::::::::::::::::::::::::::::::::: discussion
 
-Why have you attended this course? Is it by your own choice or did someone advise you to come?
+## Motivation (10 minutes)
+Think about the questions below. Your trainers may ask you to share your answers in a shared notes document and/or
+discuss them with other participants.
 
-What do you want to learn or change in your current research software work? Describe how your knowledge, work or attitude will be different afterwards.
-
+- What motivated you to attend this course? Did you come by your own choice or were you advised to attend?
+- What do you hope to learn or change in your current research software practice? Describe how your knowledge, 
+work or attitude may be different afterwards.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The purpose of this course
-
-## What is open, reproducible research?
-
-::::::::::::::::::::::::::::::::::::: discussion
-
-- What do you understand by the words:
-  - Reproducible research?
-  - Open research?
-
-- How many people or groups can you list that might benefit from your work being open and reproducible?
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## FAIR software
 
