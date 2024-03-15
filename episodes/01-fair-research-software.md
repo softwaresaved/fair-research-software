@@ -49,8 +49,6 @@ Each of the above principles can be achieved by a number of practices listed bel
 This is not exact science, and by all means the list below is not exhaustive,
 but any of the practices that you employ to your research software methodology will bring you
 closer to the gold standard of a fully reproducible research.
-(Other sets of checklists nad recommendations are available, such as ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf)
-and ["Five recommendations for FAIR software"](https://fair-software.eu/))
 
 * Findable
   * Create a description of your software
@@ -109,7 +107,7 @@ Give it a score from 1 (very bad) to 5 (perfect) in each category and then we wi
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: spoiler
+::::::::::::::::::::::::::::::::::::: hint
 
 Here are some questions to help you assess the FAIRness of the code:
 
@@ -131,7 +129,7 @@ Here are some questions to help you assess the FAIRness of the code:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: instructor
+::::::::::::::::::::::::::::::::::::: solution
 
 I would give the following scores:
 F - 1/5
@@ -163,6 +161,8 @@ We recommend the following resources for some additional reading on the topic of
 - [The FAIR Guiding Principles for scientific data management and stewardship](https://www.nature.com/articles/sdata201618)
 - [The FAIR Cookbook](https://faircookbook.elixir-europe.org/content/home.html)
 - [The Turing Way Guide for Reproducible Research: Open Research](https://the-turing-way.netlify.app/reproducible-research/open)
+- ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf)
+- ["Five recommendations for FAIR software"](https://fair-software.eu/))
 
 
 
