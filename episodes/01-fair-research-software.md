@@ -87,7 +87,7 @@ You should have downlaoded a CSV data file and a Python code file in the setup f
 
 The CSV file contains data about Extra-vehicular Activity (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013.
 
-![A screenshot of the CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows](episodes/fig/Astronaut-csv-screenshot.png)
+![CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows](episodes/fig/Astronaut-csv-screenshot.png)
 
 The code is a short Python script which does some common research tasks:
 * Read in the data from the CSV file
@@ -95,7 +95,7 @@ The code is a short Python script which does some common research tasks:
 * Perform some calculations to generate summary statistics about the data
 * Make a plot to visualise the data
 
-![A screenshot of the first few lines of the Python code](episodes/fig/astronaut-analysis-bad-code-screenshot.png)
+![A first few lines of a Python script](episodes/fig/astronaut-analysis-bad-code-screenshot.png)
 
 Let's think about how FAIR this piece of software is.
 
