@@ -306,7 +306,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>FAIR research software</h1>
-        <p>Last updated on 2024-03-11 |
+        <p>Last updated on 2024-03-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -366,15 +366,18 @@ different afterwards.</li>
 </h2>
 <hr class="half-width"><p>FAIR stands for Findable, Accessible, Interoperable, and Reusable and
 comprises a set of principles designed to increase the visibility and
-usefulness of your research to others. The FAIR data principles [ref]
-are widely known and applied today. Similar FAIR principles [ref] have
-now been defined for software too. In general, they mean:</p>
+usefulness of your research to others. The FAIR data principles, first
+published <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4792175/" class="external-link">in
+2016</a>, are widely known and applied today. Similar <a href="https://www.nature.com/articles/s41597-022-01710-x" class="external-link">FAIR
+principles for software</a> have now been defined too. In general, they
+mean:</p>
 <ul><li>
 <strong>Findable</strong> - software and its associated metadata
-must be easy to discover by humans and machines alike.</li>
+must be easy to discover by humans and machines.</li>
 <li>
-<strong>Accessible</strong> - in order to reuse software, software
-and its metadata must be retrievable.</li>
+<strong>Accessible</strong> - in order to reuse software, the
+software and its metadata must be retrievable by standard
+protocols.</li>
 <li>
 <strong>Interoperable</strong> - when interacting with other
 software it must be done by exchanging data and/or metadata through
@@ -388,8 +391,7 @@ incorporated into other software).</li>
 listed below. This is not exact science, and by all means the list below
 is not exhaustive, but any of the practices that you employ to your
 research software methodology will bring you closer to the gold standard
-of a fully reproducible research. (Also check out the following <a href="https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf" class="external-link">“10
-easy things to make your research software FAIR”</a>.)</p>
+of a fully reproducible research.</p>
 <ul><li>Findable
 <ul><li>Create a description of your software</li>
 <li>Place your software in a software repository (and ideally register
@@ -398,7 +400,8 @@ it in a software registry)</li>
 useful for citations)</li>
 </ul></li>
 <li>Accessible
-<ul><li>Make sure people can download your software</li>
+<ul><li>Make sure people can freely, legally and easily get a copy your
+software</li>
 </ul></li>
 <li>Interoperable
 <ul><li>Explain the functionality of your software</li>
@@ -416,9 +419,135 @@ reused</li>
 </ul></li>
 </ul><p>We are going to explore the above practices on an example software
 project we will be working on as part of this course.</p>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</h3>
+<div class="callout-content">
+<p>Think of a piece of software you use in your research - any
+computational tool used for data gathering, modelling &amp; simulation,
+processing &amp; visualising results or others. If you have a bit of
+code or software you wrote yourself, in any language, feel free to use
+that.</p>
+<p>Do you think it is Findable, Accessible, Interoperable and Reusable?
+Give it a score from 1 to 5 in each category (1 - very bad, 2 - bad, 3 -
+passable, 4 - good, 5 - perfect).</p>
+</div>
+</div>
+</div>
 </section><section id="software-and-data-used-in-this-course"><h2 class="section-heading">Software and data used in this course<a class="anchor" aria-label="anchor" href="#software-and-data-used-in-this-course"></a>
 </h2>
-<hr class="half-width"><p>TODO</p>
+<hr class="half-width"><p>We are going to follow a fairly typical experience of a new PhD or
+postdoc joining a research group. They are given some data and an
+analysis script written by another group member who works on similar
+things, and they want to run this, check they understand it and then
+adapt it to their own project. You should have downlaoded a CSV data
+file and a Python code file in the setup for this lesson.</p>
+<p>The CSV file contains data about Extra-vehicular Activity (EVAs or
+spacewalks) undertaken by astronauts and cosmonauts from 1965 to
+2013.</p>
+<figure><img src="fig/Astronaut-csv-screenshot.png" alt="CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows" class="figure mx-auto d-block"><div class="figcaption">CSV file showing the column headers (EVA #,
+Country, Crew, Vehicle, Date, Duration, Purpose) and first few
+rows</div>
+</figure><p>The code is a short Python script which does some common research
+tasks: * Read in the data from the CSV file * Change the data from one
+format to another and save to a file the new format * Perform some
+calculations to generate summary statistics about the data * Make a plot
+to visualise the data</p>
+<figure><img src="fig/astronaut-analysis-bad-code-screenshot.png" alt="A first few lines of a Python script" class="figure mx-auto d-block"><div class="figcaption">A first few lines of a Python script</div>
+</figure><p>Let’s think about how FAIR this piece of software is.</p>
+<div id="discussion3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion3"></a>
+</h3>
+<div class="callout-content">
+<p>Compare this data and code to the software you chose earler. Do you
+think it is Findable, Accessible, Interoperable and Reusable? Give it a
+score from 1 (very bad) to 5 (perfect) in each category and then we will
+discuss it together.</p>
+</div>
+</div>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div class="accordion-body">
+<p>Here are some questions to help you assess the FAIRness of the
+code:</p>
+<ol style="list-style-type: decimal"><li><strong>Findable</strong></li>
+</ol><ul><li>If these files were emailed to you, or sent on a chat platform, or
+handed to you on a memory stick, how easy would it be to find them again
+in 6 months, or 3 years?</li>
+<li>If you asked your collaborator to give you the files again later on,
+how would you describe them? Do they have a clear name?</li>
+<li>If more data was added to the data set later, could you explain
+exactly which data you used in the original analysis?</li>
+</ul><ol start="2" style="list-style-type: decimal"><li><strong>Accessible</strong></li>
+</ol><ul><li>If the person who gave you the files left your institution, how
+could you get access to the files again?</li>
+<li>Do you need to log into anything to use this? Does it require
+purchase or subscription to a service, platform or tool?</li>
+</ul><ol start="3" style="list-style-type: decimal"><li><strong>Interoperable</strong></li>
+</ol><ul><li>Is it clear what kind of input data it can read and what kind of
+output data is produced? Will you be able to create the input files and
+read the output files with the tools your community generally uses?</li>
+<li>If you wanted to use this tool as part of a larger data processing
+pipeline, does it allow you to link it with other tools in standard ways
+such as an API or command-line interface?</li>
+</ul><ol start="4" style="list-style-type: decimal"><li><strong>Reusable</strong></li>
+</ol><ul><li>Can you run the code? What programs or libraries do you need to
+install to make it work (and which versions)? Are these commonly used
+tools in your field?</li>
+<li>Do you have explicit permission to use your collaborators code in
+your own research and do they expect credit of some form (paper
+authorship, citation or acknowledgement)? Are you allowed to edit,
+publish or share the files with others?</li>
+<li>Is the language used familiar to you and people in your research
+field? Can you read the variable names in the code and the column names
+in the data file and understand what they mean?</li>
+<li>Is the code written in a way that allows you to easily modify or
+extend it? Can you easily see what parameters to change to make it
+calculate a different statistic, or run on a different input file?</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>I would give the following scores: F - 1/5 - Positive: None -
+Negative: No descriptive name, identifier or version number. No way to
+find again except through one person and they might not remember what
+file you mean. A - 2/5 - Positive: No accounts or paid services needed.
+Python is free, the data is free and under a shareable license -
+Negative: No way to get the code without that one person. Not clear
+where the data comes or what license it has unless you check the URL in
+the comment. I - 3/5 - Positive: CSV and JSON files are common and well
+documented formats. They are machine- and human-readable. They could be
+generated by or fed into other programs in a pipeline. - Negative: JSON
+might not be well used in some fields. No API or CLI. R - 2/5 -
+Positive: Can ask collaborator for explicit permissions for using and
+modifying and how to credit them, if they did not specify before. Python
+is a common language. - Negative: Python and library versions not
+specified. Bad variable names, hardcoded inputs, no clear structure or
+documentation.</p>
+</div>
+</div>
+</div>
+</div>
 </section><section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
 </h2>
 <hr class="half-width"><p>The content of this episode was inspired / heavily borrowed from the
@@ -436,6 +565,11 @@ stewardship</a></li>
 Cookbook</a></li>
 <li><a href="https://the-turing-way.netlify.app/reproducible-research/open" class="external-link">The
 Turing Way Guide for Reproducible Research: Open Research</a></li>
+<li><a href="https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf" class="external-link">“10
+easy things to make your research software FAIR”</a></li>
+<li>
+<a href="https://fair-software.eu/" class="external-link">“Five recommendations for FAIR
+software”</a>)</li>
 </ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -500,7 +634,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.2" class="external-link">sandpaper (0.16.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -522,8 +656,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-03-11",
-  "datePublished": "2024-03-12"
+  "dateModified": "2024-03-15",
+  "datePublished": "2024-03-15"
 }
 
   </script><script>
