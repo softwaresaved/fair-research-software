@@ -297,10 +297,11 @@
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
 
-<p>This repository contains a short (2-day) course teaching tools and
-practices for producing and sharing quality, sustainable and <a href="https://www.nature.com/articles/s41597-022-01710-x" class="external-link">FAIR
+<p>This short course is teaching tools and practices for producing and
+sharing quality, sustainable and <a href="https://www.nature.com/articles/s41597-022-01710-x" class="external-link">FAIR
 (Findable, Accessible, Interoperable and Reusable) research software</a>
-to support open and reproducible research.</p>
+to support open and reproducible research. The course can be delivered
+over 2 full or 4 half days.</p>
 <section id="target-audience"><h2 class="section-heading">Target Audience<a class="anchor" aria-label="anchor" href="#target-audience"></a>
 </h2>
 <hr class="half-width"><ul><li>Post-graduate students or early career researchers who are starting
@@ -340,9 +341,16 @@ development and maintenance</li>
 <div class="callout-content">
 <p>Before joining this training, participants should have foundational
 knowledge of Python or another programming language used to write
-scientific code. For example, attending a <a href="https://software-carpentry.org/lessons/" class="external-link">Software Carpentry</a>/<a href="https://datacarpentry.org/lessons" class="external-link">Data Carpentry</a>/<a href="https://librarycarpentry.org/lessons" class="external-link">Library Carpentry</a> or a
-similar introductory Python course could help with this requirement and
-gaining necessary prerequisite skills.</p>
+scientific code, Git and a command line (shell) tool. While we are not
+focussing on teaching you to code in Python or write Command Line tool
+scripts, we will be using code and command examples and will be teaching
+you how to use these tools in combination to make your research and work
+more automated and reproducible so basic understanding would be very
+beneficial. Attending a <a href="https://software-carpentry.org/lessons/" class="external-link">Software Carpentry</a> or
+a similar course could help with these requirements and gaining
+necessary prerequisite skills.</p>
+<p>Please also make sure you have the <a href="index.html#setup">required software</a> installed before attending
+this course.</p>
 </div>
 </div>
 </div>
@@ -474,80 +482,399 @@ any links that you are not going to use.
       </p>
       </section><section id="setup"><section id="setup"><h2 class="section-heading">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
 </h2>
-<hr class="half-width"><div class="section level3">
+<hr class="half-width"><p>To go through the course material on your own or at a workshop, you
+will need the following software installed and working correctly on your
+system:</p>
+<ul><li>
+<a href="index.html#visual-studio-code-vs-code">Visual Studio Code
+(VS Code)</a> integrated development environment (IDE)</li>
+<li>
+<a href="index.html#command-line-tool">Command line tool</a> (such
+as <strong>Bash</strong>, <strong>Zsh</strong> or <strong>Git
+Bash</strong>)<br></li>
+<li>
+<a href="index.html#git-version-control-program">Git version control
+program</a> for command line</li>
+<li><a href="index.html#github-account">GitHub account</a></li>
+<li><a href="index.html#python-3-distribution">Python 3</a></li>
+</ul><p>The installation instructions for these tools are below. Windows
+users should install them in the order they are listed (making sure they
+have VS Code installed before installing Git Bash so that the two can
+integrate nicely). For masOS and Linux users, the order of installation
+does not matter much.</p>
+<div class="section level3">
+<h3 id="visual-studio-code-vs-code">Visual Studio Code (VS Code)<a class="anchor" aria-label="anchor" href="#visual-studio-code-vs-code"></a></h3>
+<p>We will use Microsoft <a href="https://code.visualstudio.com/" class="external-link">Visual
+Studio Code (VS Code)</a> as an Integrated Development Environment (IDE)
+to type and execute Python code and run command line and Git commands
+(through its integrations with the tools we have installed separately so
+far).</p>
+<p>Please make sure to <a href="https://code.visualstudio.com/Download" class="external-link">download VS Code</a> for
+your platform.</p>
+<p>Once all the other tools are installed, we will come back to VS Code
+to verify that VS Code can find and integrate them.</p>
+</div>
+<div class="section level3">
+<h3 id="command-line-tool">Command Line Tool<a class="anchor" aria-label="anchor" href="#command-line-tool"></a></h3>
+<p>You will need a command line tool (also referred to as a terminal or
+a shell) in order to run Python scripts, various commands that interact
+with your filesystem and use Git.</p>
+<div class="section level4">
+<h4 id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a></h4>
+<p>It is <strong>strongly</strong> recommended to install <strong>Git
+Bash</strong> (which is included in <a href="https://gitforwindows.org/" class="external-link">Git For Windows package</a>). This
+will install the Bash command line tool emulation and Git command line
+tool together (which will behave in the same way as in Linux
+environments).</p>
+<p>Note that the use of Windows command line tools
+<strong>Powershell</strong> or <code>cmd</code> is not suitable for the
+course. We also advise against using <a href="https://learn.microsoft.com/en-us/windows/wsl/" class="external-link">Windows Subsystem
+for Linux (WSL)</a> for this course as we do not provide instructions
+for troubleshooting any potential issues between WSL and Visual Studio
+Code (VS Code).</p>
+<p><strong>Important:</strong> when installing Git Bash (aka Git for
+Windows), make sure to select “VS Code” as the default editor used by
+Git (as shown below) - this will ensure that VS Code “knows” about Git
+and Bash command line tool that come as part of Git Bash and to
+integrate nicely.</p>
+<figure><img src="../fig/GitBash-default-editor.png" class="image-with-shadow figure mx-auto d-block" alt-text="Setting VS Code as  default editor for Git in GitBash installation" alt="Setting VS Code as default editor for Git in GitBash installation"><div class="figcaption"><em>Setting VS Code as default editor for Git in
+GitBash installation</em></div>
+</figure></div>
+<div class="section level4">
+<h4 id="macos-and-linux">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux"></a></h4>
+<p>You will already have a command line tool available on your system.
+You can use a command line tool such as <a href="https://www.gnu.org/software/bash/" class="external-link">Bash</a>, or any other <a href="https://en.wikipedia.org/wiki/Comparison_of_command_shells" class="external-link">command
+line tool that has similar syntax to Bash</a>, since none of the content
+of this course is specific to Bash. Note that starting with macOS
+Catalina, Macs will use <a href="https://www.zsh.org/" class="external-link">Zsh (Z shell)</a>
+as the default command line tool instead of Bash.</p>
+</div>
+<div class="section level4">
+<h4 id="testing-your-command-line-tool">Testing Your Command Line Tool<a class="anchor" aria-label="anchor" href="#testing-your-command-line-tool"></a></h4>
+<p>To test your command line tool, start it up and type:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> date</span></code></pre>
+</div>
+<p>If your command line program is working - it should return the
+current date and time similar to:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Wed 21 Apr 2021 11:38:19 BST</code></pre>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="git-version-control-program">Git Version Control Program<a class="anchor" aria-label="anchor" href="#git-version-control-program"></a></h3>
+<p>Git is a program that is run from within a command line tool to
+provide version control for your work. Git is also used to interact with
+online code and project sharing platform GitHub.</p>
+<p>Follow the installation instructions below, then proceed to test and
+configure Git on your machine in additional steps.</p>
+<div class="section level4">
+<h4 id="windows-1">Windows<a class="anchor" aria-label="anchor" href="#windows-1"></a></h4>
+<p>It is recommended to use <strong>Git Bash</strong> (part of the <a href="https://gitforwindows.org/" class="external-link">Git For Windows package</a>) - this
+will install the Bash command line tool emulation and Git command line
+tool (which will behave in the same way as in Linux environments).</p>
+</div>
+<div class="section level4">
+<h4 id="macos-and-linux-1">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux-1"></a></h4>
+<p>On macOS, Git is included as part of Apple’s <a href="https://en.wikipedia.org/wiki/Xcode" class="external-link">Xcode tools</a> and should be
+available from the command line as long as you have Xcode. If you do not
+have Xcode installed, you can download it from <a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12" class="external-link">Apple’s App
+Store</a> or you can <a href="https://git-scm.com/download/mac" class="external-link">install
+Git using alternative methods</a>.</p>
+<p>On Linux, Git can be installed using your favourite package
+manager.</p>
+</div>
+<div class="section level4">
+<h4 id="testing-your-git">Testing Your Git<a class="anchor" aria-label="anchor" href="#testing-your-git"></a></h4>
+<p>To test your Git installation, start your command line tool and
+type:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git help</span></code></pre>
+</div>
+<p>If your Git installation is working you should see something
+like:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>usage: git [-v | --version] [-h | --help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
+           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+           [--config-env=&lt;name&gt;=&lt;envvar&gt;] &lt;command&gt; [&lt;args&gt;]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help &lt;command&gt;' or 'git help &lt;concept&gt;'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.</code></pre>
+</div>
+</div>
+<div class="section level4">
+<h4 id="configuring-your-git">Configuring Your Git<a class="anchor" aria-label="anchor" href="#configuring-your-git"></a></h4>
+<p>When you use Git on a machine for the first time, you also need to
+configure a few additional things:</p>
+<ul><li>your name,</li>
+<li>your email address (the one you used to open <a href="index.html#github-account">your GitHub account</a> with, which
+will be used to identify your commits),</li>
+<li>preferred text editor for Git to use (e.g. <strong>Nano</strong> or
+another text editor of your choice),</li>
+<li>whether you want to use these settings globally (i.e. for every Git
+project on your machine).</li>
+</ul><p>This can be done from a command line tool as follows:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.email <span class="st">"name@example.com"</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"nano -w"</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="section level3">
 <h3 id="github-account">GitHub Account<a class="anchor" aria-label="anchor" href="#github-account"></a></h3>
-<p>Before joining this training, participants should have a <a href="https://github.com" class="external-link">GitHub</a> account. <a href="https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account" class="external-link">Detailed
-instructions on how to create a GitHub account can be found in the
-GitHub Docs pages</a>.</p>
+<p>GitHub is a free, online host for Git repositories that you will use
+during the course to store your work in so you will need to open a free
+<a href="https://github.com/" class="external-link">GitHub</a> account unless you do not
+already have one.</p>
+<div class="section level4">
+<h4 id="github-configuration">GitHub Configuration<a class="anchor" aria-label="anchor" href="#github-configuration"></a></h4>
+<p>In order to access GitHub using Git from your machine securely, you
+need to set up a way of authenticating yourself with GitHub through Git.
+The recommended way to do that for this course is to set up <a href="https://www.ssh.com/academy/ssh/public-key-authentication" class="external-link"><strong>SSH
+authentication</strong></a> which requires a pair of keys - one public
+that you upload to your GitHub account, and one private that remains on
+your machine.</p>
+<p>GitHub provides full documentation and guides on how to:</p>
+<ul><li>
+<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" class="external-link">generate
+an SSH key</a>, and</li>
+<li>
+<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" class="external-link">add
+an SSH key to a GitHub account</a>.</li>
+</ul><p>A short summary of the commands you need to perform is shown
+below.</p>
+<p>To generate an SSH key pair, you will need to run the
+<code>ssh-keygen</code> command from your command line tool and provide
+<strong>your identity for the key pair</strong> (e.g. the email address
+you used to register with GitHub) via the <code>-C</code> parameter as
+shown below.</p>
+<p>You will then be prompted to answer a few questions - e.g. where to
+save the keys on your machine and a passphrase to use to protect your
+private key. Pressing ‘Enter’ on these prompts will get
+<code>ssh-keygen</code> to use the default key location (within
+<code>.ssh</code> folder in your home directory) and set the passphrase
+to empty.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your-github-email@example.com"</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/&lt;YOUR_USERNAME&gt;/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/&lt;YOUR_USERNAME&gt;/.ssh/id_ed25519
+Your public key has been saved in /Users/&lt;YOUR_USERNAME&gt;/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:qjhN/iO42nnYmlpink2UTzaJpP8084yx6L2iQkVKdHk your-github-email@example.com
+The key's randomart image is:
++--[ED25519 256]--+
+|.. ..            |
+| ..o A           |
+|. o..            |
+| .o.o .          |
+| ..+ =  B        |
+| .o = ..         |
+|o..X *.          |
+|++B=@.X          |
+|+*XOoOo+         |
++----[SHA256]-----+</code></pre>
+</div>
+<p>Next, you need to copy your public key (<strong>not your private key
+- this is important!</strong>) over to your GitHub account. The
+<code>ssh-keygen</code> command above will let you know where your
+public key is saved (the file should have the extension “.pub”), and you
+can get its contents from a command line tool as follows:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> cat /Users/<span class="op">&lt;</span>YOUR_USERNAME<span class="op">&gt;</span>/.ssh/id_ed25519.pub</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>ssh-ed25519 AABAC3NzaC1lZDI1NTE5AAAAICWGVRsl/pZsxx85QHLwSgJWyfMB1L8RCkEvYNkP4mZC your-github-email@example.com</code></pre>
+</div>
+<p>Copy the line of output that starts with “ssh-ed25519” and ends with
+your email address (it may start with a different algorithm name based
+on which one you used to generate the key pair and it may have gone over
+multiple lines if your command line window is not wide enough).</p>
+<p>Finally, go to your <a href="https://github.com/settings/ssh/new" class="external-link">GitHub Settings -&gt; SSH and
+GPG keys -&gt; Add New</a> page to add a new SSH public key. Give your
+key a memorable name (e.g. the name of the computer you are working on
+that contains the private key counterpart), paste the public key from
+your clipboard into the box labelled “Key” (making sure it does not
+contain any line breaks), then click the “Add SSH key” button.</p>
+</div>
 </div>
 <div class="section level3">
-<h3 id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h3>
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-<p>Download the <a href="https://example.com/FIXME" class="external-link">data zip file</a>
-and unzip it to your Desktop</p>
+<h3 id="python-3-distribution">Python 3 Distribution<a class="anchor" aria-label="anchor" href="#python-3-distribution"></a></h3>
+<p>You will need Python 3 for this course (note that while Python 2 may
+work as well, it is not supported by this course). You may already have
+Python 3 installed on your system, in which case you do not have to do
+anything.</p>
+<p>To download the latest Python distribution for your operating system,
+please head to <a href="https://www.python.org/downloads/" class="external-link">Python.org</a>. Then use the
+appropriate command for your platform to test your installation.</p>
+<div class="section level4">
+<h4 id="testing-python-3">Testing Python 3<a class="anchor" aria-label="anchor" href="#testing-python-3"></a></h4>
+<p>You can check that you have Python 3 installed from the command line
+using the commands below.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">--version</span> <span class="co"># on macOS/Linux</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span> <span class="co"># on Windows — Windows installation comes with a python.exe file rather than a python3.exe file </span></span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h3>
-<div id="details" class="callout discussion">
+<p>You should see something like the output below.</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Python 3.11.7</code></pre>
+</div>
+<div id="callout1" class="callout">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details<a class="anchor" aria-label="anchor" href="#details"></a>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
 </h3>
 <div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>solution</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
+<p>If you are using Windows and invoking <code>python</code> command
+causes your Git Bash terminal to hang with no error message or output,
+you may need to create an alias for the python executable
+<code>python.exe</code> like so:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> alias python=<span class="st">"winpty python.exe"</span></span></code></pre>
 </div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Windows</h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">MacOS</h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>Use Terminal.app</p>
+<p>This alias will be valid for the duration of the shell session. For a
+more permanent solution, from the shell do:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"alias python='winpty python.exe'"</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Linux</h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
-<p>Use Terminal</p>
 </div>
 </div>
+<div class="section level3">
+<h3 id="vs-code-integration">VS Code Integration<a class="anchor" aria-label="anchor" href="#vs-code-integration"></a></h3>
+<p>Finally, after installing everything - we need to make sure that VS
+Code knows about all the tools and programs (command line, Git and
+Python), so that we can use them all from within the VS Code interface
+and not have to switch between different windows all the time.</p>
+<div class="section level4">
+<h4 id="command-line-tool-git-integration-in-vs-code">Command Line Tool &amp; Git Integration in VS Code<a class="anchor" aria-label="anchor" href="#command-line-tool-git-integration-in-vs-code"></a></h4>
+<p>On macOS and Linux systems, VS Code will typically recognise a
+command line tool you already have on your system (along with all
+programs/commands such as Git you can run from it) and you will not need
+to do anything.</p>
+<p>On Windows, if you have <a href="index.html#windows">selected VS Code
+as the default editor</a> for Git at the time of installing Git Bash -
+VS Code will know about your command line tool Git Bash as well as Git
+and you should be set.</p>
+<p>To check the command line tool integration and that VS Code knows
+about different command line tool(s) installed on your system select
+“Terminal -&gt; New Terminal” from the top level menu. This should open
+a terminal window within VS Code. Within the terminal window, the
+command line tool the terminal is using is indicated towards the right
+of the window (e.g. in the image below, the current command line tool is
+<code>bash</code>). This can be changed (provided you have more command
+line tools installed on your machine) by clicking the “+” drop-down menu
+button next to the command line tool indicator. Windows users may have
+“Powershell” selected by default here - you should select “Git Bash”
+from the list.</p>
+<p>You can also change the default command line tool from the same drop
+down menu by using the option “Select Default Profile” (so it will use
+that one next time you open a terminal window).</p>
+<figure><img src="../fig/vscode-terminal.png" alt='Terminal window in VS Code with "Select Default Profile" option highlighted' class="figure mx-auto d-block"><div class="figcaption"><em>Terminal window in VS Code</em></div>
+</figure><div class="section level5">
+<h5 id="vs-code-extentions-for-git">VS Code Extentions for Git<a class="anchor" aria-label="anchor" href="#vs-code-extentions-for-git"></a></h5>
+<p>You should also install the following VS Code extensions to make your
+Python experience in VS Code better:</p>
+<ul><li>GitLense - Git Supercharged (adds a few nice additions to Git
+support in VS Code)</li>
+<li>Git Graph (provides nice graphs and visualisations of a Git
+repository in VS Code)</li>
+</ul><figure><img src="../fig/vscode-git-extensions.png" class="image-with-shadow figure mx-auto d-block" alt-text="GitLens and Git Graph extensions for VS Code" alt="GitLens and Git Graph extensions for VS Code"><div class="figcaption"><em>GitLens and Git Graph extensions for VS
+Code</em></div>
+</figure></div>
 </div>
-</div>
-<!-- 
+<div class="section level4">
+<h4 id="python-integration-in-vs-code">Python Integration in VS Code<a class="anchor" aria-label="anchor" href="#python-integration-in-vs-code"></a></h4>
+<p>If you open a Python file or create a new one from VS Code - it
+should recognise it as a Python file already. VS Code may ask you to
+select a Python interpreter if you try to run the file, at which point
+you should select the Python 3 you installed.</p>
+<div class="section level5">
+<h5 id="vs-code-extensions-for-python">VS Code Extensions for Python<a class="anchor" aria-label="anchor" href="#vs-code-extensions-for-python"></a></h5>
+<p>You should also install the following VS Code extensions to make your
+Python experience in VS Code better:</p>
+<ul><li>Python extension for Visual Studio Code by Microsoft</li>
+</ul><figure><img src="../fig/vscode-python-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Python extension for VS Code by Microsoft" alt="Python extension for VS Code by Microsoft"><div class="figcaption"><em>Python extension for VS Code by
+Microsoft</em></div>
+</figure><!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- -->
+ --></div>
+</div>
 </div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="../instructor/00-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -598,8 +925,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/index.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/index.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-03-19",
-  "datePublished": "2024-03-19"
+  "dateModified": "2024-03-22",
+  "datePublished": "2024-03-22"
 }
 
   </script><script>
