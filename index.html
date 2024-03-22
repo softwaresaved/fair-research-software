@@ -363,9 +363,6 @@ any links that you are not going to use.
 will need the following software installed and working correctly on your
 system:</p>
 <ul><li>
-<a href="index.html#visual-studio-code-vs-code">Visual Studio Code
-(VS Code)</a> integrated development environment (IDE)</li>
-<li>
 <a href="index.html#command-line-tool">Command line tool</a> (such
 as <strong>Bash</strong>, <strong>Zsh</strong> or <strong>Git
 Bash</strong>)<br></li>
@@ -374,23 +371,14 @@ Bash</strong>)<br></li>
 program</a> for command line</li>
 <li><a href="index.html#github-account">GitHub account</a></li>
 <li><a href="index.html#python-3-distribution">Python 3</a></li>
-</ul><p>The installation instructions for these tools are below. Windows
-users should install them in the order they are listed (making sure they
-have VS Code installed before installing Git Bash so that the two can
-integrate nicely). For masOS and Linux users, the order of installation
-does not matter much.</p>
-<div class="section level3">
-<h3 id="visual-studio-code-vs-code">Visual Studio Code (VS Code)<a class="anchor" aria-label="anchor" href="#visual-studio-code-vs-code"></a></h3>
-<p>We will use Microsoft <a href="https://code.visualstudio.com/" class="external-link">Visual
-Studio Code (VS Code)</a> as an Integrated Development Environment (IDE)
-to type and execute Python code and run command line and Git commands
-(through its integrations with the tools we have installed separately so
-far).</p>
-<p>Please make sure to <a href="https://code.visualstudio.com/Download" class="external-link">download VS Code</a> for
-your platform.</p>
-<p>Once all the other tools are installed, we will come back to VS Code
-to verify that VS Code can find and integrate them.</p>
-</div>
+<li>
+<a href="index.html#visual-studio-code-vs-code">Visual Studio Code
+(VS Code)</a> integrated development environment (IDE)</li>
+<li>
+<a href="index.html#astronaut-data-and-analysis-code">Astronaut data
+and analysis code</a> which we will be used for exercises in the
+course</li>
+</ul><p>The installation instructions for these tools are below.</p>
 <div class="section level3">
 <h3 id="command-line-tool">Command Line Tool<a class="anchor" aria-label="anchor" href="#command-line-tool"></a></h3>
 <p>You will need a command line tool (also referred to as a terminal or
@@ -398,36 +386,29 @@ a shell) in order to run Python scripts, various commands that interact
 with your filesystem and use Git.</p>
 <div class="section level4">
 <h4 id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a></h4>
-<p>It is <strong>strongly</strong> recommended to install <strong>Git
-Bash</strong> (which is included in <a href="https://gitforwindows.org/" class="external-link">Git For Windows package</a>). This
-will install the Bash command line tool emulation and Git command line
-tool together (which will behave in the same way as in Linux
-environments).</p>
+<p>Windows users <em>will have to</em> install <strong>Git Bash</strong>
+(which is included in <a href="https://gitforwindows.org/" class="external-link">Git For
+Windows package</a>). This will install the Bash command line tool
+emulation and Git command line tool together (which will behave in the
+same way as in Linux environments).</p>
 <p>Note that the use of Windows command line tools
 <strong>Powershell</strong> or <code>cmd</code> is not suitable for the
 course. We also advise against using <a href="https://learn.microsoft.com/en-us/windows/wsl/" class="external-link">Windows Subsystem
 for Linux (WSL)</a> for this course as we do not provide instructions
 for troubleshooting any potential issues between WSL and Visual Studio
 Code (VS Code).</p>
-<p><strong>Important:</strong> when installing Git Bash (aka Git for
-Windows), make sure to select “VS Code” as the default editor used by
-Git (as shown below) - this will ensure that VS Code “knows” about Git
-and Bash command line tool that come as part of Git Bash and to
-integrate nicely.</p>
-<figure><img src="fig/GitBash-default-editor.png" class="image-with-shadow figure mx-auto d-block" alt-text="Setting VS Code as  default editor for Git in GitBash installation" alt="Setting VS Code as default editor for Git in GitBash installation"><div class="figcaption"><em>Setting VS Code as default editor for Git in
-GitBash installation</em></div>
-</figure></div>
+</div>
 <div class="section level4">
 <h4 id="macos-and-linux">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux"></a></h4>
-<p>You will already have a command line tool available on your system.
-You can use a command line tool such as <a href="https://www.gnu.org/software/bash/" class="external-link">Bash</a>, or any other <a href="https://en.wikipedia.org/wiki/Comparison_of_command_shells" class="external-link">command
+<p>MacOS and Linux users will already have a command line tool available
+on their systems. You can use a command line tool such as <a href="https://www.gnu.org/software/bash/" class="external-link">Bash</a>, or any other <a href="https://en.wikipedia.org/wiki/Comparison_of_command_shells" class="external-link">command
 line tool that has similar syntax to Bash</a>, since none of the content
 of this course is specific to Bash. Note that starting with macOS
 Catalina, Macs will use <a href="https://www.zsh.org/" class="external-link">Zsh (Z shell)</a>
 as the default command line tool instead of Bash.</p>
 </div>
 <div class="section level4">
-<h4 id="testing-your-command-line-tool">Testing Your Command Line Tool<a class="anchor" aria-label="anchor" href="#testing-your-command-line-tool"></a></h4>
+<h4 id="testing-command-line-tool">Testing Command Line Tool<a class="anchor" aria-label="anchor" href="#testing-command-line-tool"></a></h4>
 <p>To test your command line tool, start it up and type:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -452,9 +433,9 @@ online code and project sharing platform GitHub.</p>
 configure Git on your machine in additional steps.</p>
 <div class="section level4">
 <h4 id="windows-1">Windows<a class="anchor" aria-label="anchor" href="#windows-1"></a></h4>
-<p>It is recommended to use <strong>Git Bash</strong> (part of the <a href="https://gitforwindows.org/" class="external-link">Git For Windows package</a>) - this
-will install the Bash command line tool emulation and Git command line
-tool (which will behave in the same way as in Linux environments).</p>
+<p>Windows users <em>will have to</em> use <strong>Git Bash</strong> -
+as explained in the <a href="index.html#command-line-tool">command line
+tool installation section</a>.</p>
 </div>
 <div class="section level4">
 <h4 id="macos-and-linux-1">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux-1"></a></h4>
@@ -467,7 +448,7 @@ Git using alternative methods</a>.</p>
 manager.</p>
 </div>
 <div class="section level4">
-<h4 id="testing-your-git">Testing Your Git<a class="anchor" aria-label="anchor" href="#testing-your-git"></a></h4>
+<h4 id="testing-git">Testing Git<a class="anchor" aria-label="anchor" href="#testing-git"></a></h4>
 <p>To test your Git installation, start your command line tool and
 type:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -527,7 +508,7 @@ See 'git help git' for an overview of the system.</code></pre>
 </div>
 </div>
 <div class="section level4">
-<h4 id="configuring-your-git">Configuring Your Git<a class="anchor" aria-label="anchor" href="#configuring-your-git"></a></h4>
+<h4 id="configuring-git">Configuring Git<a class="anchor" aria-label="anchor" href="#configuring-git"></a></h4>
 <p>When you use Git on a machine for the first time, you also need to
 configure a few additional things:</p>
 <ul><li>your name,</li>
@@ -554,7 +535,7 @@ during the course to store your work in so you will need to open a free
 <a href="https://github.com/" class="external-link">GitHub</a> account unless you do not
 already have one.</p>
 <div class="section level4">
-<h4 id="github-configuration">GitHub Configuration<a class="anchor" aria-label="anchor" href="#github-configuration"></a></h4>
+<h4 id="configuring-github-account">Configuring GitHub Account<a class="anchor" aria-label="anchor" href="#configuring-github-account"></a></h4>
 <p>In order to access GitHub using Git from your machine securely, you
 need to set up a way of authenticating yourself with GitHub through Git.
 The recommended way to do that for this course is to set up <a href="https://www.ssh.com/academy/ssh/public-key-authentication" class="external-link"><strong>SSH
@@ -644,8 +625,9 @@ work as well, it is not supported by this course). You may already have
 Python 3 installed on your system, in which case you do not have to do
 anything.</p>
 <p>To download the latest Python distribution for your operating system,
-please head to <a href="https://www.python.org/downloads/" class="external-link">Python.org</a>. Then use the
-appropriate command for your platform to test your installation.</p>
+please head to <a href="https://www.python.org/downloads/" class="external-link">Python.org</a>. Then use an
+appropriate command for your platform (see below) to test your
+installation.</p>
 <div class="section level4">
 <h4 id="testing-python-3">Testing Python 3<a class="anchor" aria-label="anchor" href="#testing-python-3"></a></h4>
 <p>You can check that you have Python 3 installed from the command line
@@ -692,22 +674,26 @@ more permanent solution, from the shell do:</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="vs-code-integration">VS Code Integration<a class="anchor" aria-label="anchor" href="#vs-code-integration"></a></h3>
-<p>Finally, after installing everything - we need to make sure that VS
-Code knows about all the tools and programs (command line, Git and
-Python), so that we can use them all from within the VS Code interface
-and not have to switch between different windows all the time.</p>
+<h3 id="visual-studio-code-vs-code">Visual Studio Code (VS Code)<a class="anchor" aria-label="anchor" href="#visual-studio-code-vs-code"></a></h3>
+<p>We will use Microsoft <a href="https://code.visualstudio.com/" class="external-link">Visual
+Studio Code (VS Code)</a> as an Integrated Development Environment (IDE)
+to type and execute Python code and run command line and Git commands
+(through its integrations with the tools we have installed separately so
+far).</p>
+<p>Please make sure to <a href="https://code.visualstudio.com/Download" class="external-link">download VS Code</a> for
+your platform.</p>
 <div class="section level4">
 <h4 id="command-line-tool-git-integration-in-vs-code">Command Line Tool &amp; Git Integration in VS Code<a class="anchor" aria-label="anchor" href="#command-line-tool-git-integration-in-vs-code"></a></h4>
 <p>On macOS and Linux systems, VS Code will typically recognise a
 command line tool you already have on your system (along with all
 programs/commands such as Git you can run from it) and you will not need
-to do anything.</p>
-<p>On Windows, if you have <a href="index.html#windows">selected VS Code
-as the default editor</a> for Git at the time of installing Git Bash -
-VS Code will know about your command line tool Git Bash as well as Git
-and you should be set.</p>
-<p>To check the command line tool integration and that VS Code knows
+to do anything and it will be available as a “Terminal” in VS Code.</p>
+<p>On Windows, if VS Code does not automatically recognise Git Bash as a
+command line tool to be used as a “Terminal”, installing VS Code plugin
+“Start git-bash” should help.</p>
+<figure><img src="fig/vscode-gitbash-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Git Bash extension for VS Code on Windows" alt="Git Bash extension for VS Code on Window"><div class="figcaption"><em>Git Bash extension for VS Code on
+Window</em></div>
+</figure><p>To check the command line tool integration and that VS Code knows
 about different command line tool(s) installed on your system select
 “Terminal -&gt; New Terminal” from the top level menu. This should open
 a terminal window within VS Code. Within the terminal window, the
@@ -722,10 +708,11 @@ from the list.</p>
 down menu by using the option “Select Default Profile” (so it will use
 that one next time you open a terminal window).</p>
 <figure><img src="fig/vscode-terminal.png" alt='Terminal window in VS Code with "Select Default Profile" option highlighted' class="figure mx-auto d-block"><div class="figcaption"><em>Terminal window in VS Code</em></div>
-</figure><div class="section level5">
-<h5 id="vs-code-extentions-for-git">VS Code Extentions for Git<a class="anchor" aria-label="anchor" href="#vs-code-extentions-for-git"></a></h5>
-<p>You should also install the following VS Code extensions to make your
-Python experience in VS Code better:</p>
+</figure></div>
+<div class="section level4">
+<h4 id="vs-code-extentions-for-git">VS Code Extentions for Git<a class="anchor" aria-label="anchor" href="#vs-code-extentions-for-git"></a></h4>
+<p>You could also install the following VS Code extensions to make your
+Git experience in VS Code better:</p>
 <ul><li>GitLense - Git Supercharged (adds a few nice additions to Git
 support in VS Code)</li>
 <li>Git Graph (provides nice graphs and visualisations of a Git
@@ -733,25 +720,36 @@ repository in VS Code)</li>
 </ul><figure><img src="fig/vscode-git-extensions.png" class="image-with-shadow figure mx-auto d-block" alt-text="GitLens and Git Graph extensions for VS Code" alt="GitLens and Git Graph extensions for VS Code"><div class="figcaption"><em>GitLens and Git Graph extensions for VS
 Code</em></div>
 </figure></div>
-</div>
 <div class="section level4">
 <h4 id="python-integration-in-vs-code">Python Integration in VS Code<a class="anchor" aria-label="anchor" href="#python-integration-in-vs-code"></a></h4>
-<p>If you open a Python file or create a new one from VS Code - it
-should recognise it as a Python file already. VS Code may ask you to
-select a Python interpreter if you try to run the file, at which point
-you should select the Python 3 you installed.</p>
-<div class="section level5">
-<h5 id="vs-code-extensions-for-python">VS Code Extensions for Python<a class="anchor" aria-label="anchor" href="#vs-code-extensions-for-python"></a></h5>
-<p>You should also install the following VS Code extensions to make your
-Python experience in VS Code better:</p>
-<ul><li>Python extension for Visual Studio Code by Microsoft</li>
-</ul><figure><img src="fig/vscode-python-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Python extension for VS Code by Microsoft" alt="Python extension for VS Code by Microsoft"><div class="figcaption"><em>Python extension for VS Code by
+<p>If you open an existing Python file or create a new blank one (with
+extension “.py”) from VS Code - it should recognise it as a Python file
+already. VS Code may ask you to select a Python interpreter if you try
+to run the file, at which point you should select the Python 3 you
+installed.</p>
+</div>
+<div class="section level4">
+<h4 id="vs-code-extensions-for-python">VS Code Extensions for Python<a class="anchor" aria-label="anchor" href="#vs-code-extensions-for-python"></a></h4>
+<p>You should also install the Python extension for VS Code by Microsoft
+to make your Python experience in VS Code better.</p>
+<figure><img src="fig/vscode-python-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Python extension for VS Code by Microsoft" alt="Python extension for VS Code by Microsoft"><div class="figcaption"><em>Python extension for VS Code by
 Microsoft</em></div>
-</figure><!-- 
+</figure></div>
+</div>
+<div class="section level3">
+<h3 id="astronaut-data-and-analysis-code">Astronaut data and analysis code<a class="anchor" aria-label="anchor" href="#astronaut-data-and-analysis-code"></a></h3>
+<p>Download the data and code from the <a href="https://github.com/carpentries-incubator/astronout-data-analyses-bad/" class="external-link">software
+repository</a> by clicking the green <code>Code</code> button, then
+<code>Download ZIP</code>.</p>
+<figure><img src="fig/github-code-download.png" class="image-with-shadow figure mx-auto d-block" alt-text="Code download as a zip file from GitHub" alt="Code download as a zip file from GitHub"><div class="figcaption"><em>Code download as a zip file from
+GitHub</em></div>
+</figure><p>This repository contains data on spacewalks by astronauts and code to
+analyse this data. We will use it for code examples and exercises
+throughout this course.</p>
+<!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- --></div>
-</div>
+ -->
 </div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="00-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
