@@ -7,26 +7,14 @@ title: Setup
 To go through the course material on your own or at a workshop, 
 you will need the following software installed and working correctly on your system:
 
-- [Visual Studio Code (VS Code)](index.html#visual-studio-code-vs-code) integrated development environment (IDE)
 - [Command line tool](index.html#command-line-tool) (such as **Bash**, **Zsh** or **Git Bash**)  
 - [Git version control program](index.html#git-version-control-program) for command line
 - [GitHub account](index.html#github-account)
 - [Python 3](index.html#python-3-distribution)
+- [Visual Studio Code (VS Code)](index.html#visual-studio-code-vs-code) integrated development environment (IDE)
+- [Astronaut data and analysis code](index.html#astronaut-data-and-analysis-code) which we will be used for exercises in the course
 
-The installation instructions for these tools are below. 
-Windows users should install them in the order they are listed (making sure they have VS Code installed 
-before installing Git Bash so that the two can integrate nicely). 
-For masOS and Linux users, the order of installation does not matter much.
-
-
-### Visual Studio Code (VS Code)
-We will use Microsoft [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as an
-Integrated Development Environment (IDE) to type and execute Python code and run command line and Git commands
-(through its integrations with the tools we have installed separately so far).
-
-Please make sure to [download VS Code](https://code.visualstudio.com/Download) for your platform.
-
-Once all the other tools are installed, we will come back to VS Code to verify that VS Code can find and integrate them.
+The installation instructions for these tools are below.
 
 
 ### Command Line Tool
@@ -35,7 +23,7 @@ in order to run Python scripts, various commands that interact with your filesys
 
 #### Windows 
 
-It is **strongly** recommended to install **Git Bash** 
+Windows users *will have to* install **Git Bash** 
 (which is included in [Git For Windows package](https://gitforwindows.org/)).
 This will install the Bash command line tool emulation and Git command line tool together 
 (which will behave in the same way as in Linux environments).
@@ -44,21 +32,15 @@ Note that the use of Windows command line tools **Powershell** or `cmd` is not s
 We also advise against using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) for this course as we do not
 provide instructions for troubleshooting any potential issues between WSL and Visual Studio Code (VS Code).
 
-**Important:** when installing Git Bash (aka Git for Windows), make sure to select "VS Code" as the default editor 
-used by Git (as shown below) - this will ensure that VS Code "knows" about Git and Bash command line tool that come as part of 
-Git Bash and to integrate nicely.
-
-![*Setting VS Code as default editor for Git in GitBash installation*](fig/GitBash-default-editor.png){ alt-text="Setting VS Code as  default editor for Git in GitBash installation" .image-with-shadow }
-
 #### macOS and Linux 
 
-You will already have a command line tool available on your system. 
+MacOS and Linux users will already have a command line tool available on their systems. 
 You can use a command line tool such as [Bash](https://www.gnu.org/software/bash/),
 or any other [command line tool that has similar syntax to Bash](https://en.wikipedia.org/wiki/Comparison_of_command_shells),
 since none of the content of this course is specific to Bash. Note that starting with macOS Catalina,
 Macs will use [Zsh (Z shell)](https://www.zsh.org/) as the default command line tool instead of Bash.
 
-#### Testing Your Command Line Tool
+#### Testing Command Line Tool
 
 To test your command line tool, start it up and type:
 
@@ -82,9 +64,8 @@ additional steps.
 
 #### Windows
 
-It is recommended to use **Git Bash** (part of the [Git For Windows package](https://gitforwindows.org/)) - 
-this will install the Bash command line tool emulation and Git command line tool (which will behave in the same way 
-as in Linux environments).
+Windows users *will have to* use **Git Bash** - as explained in the 
+[command line tool installation section](index.html#command-line-tool).
 
 #### macOS and Linux
 
@@ -95,7 +76,7 @@ and should be available from the command line as long as you have Xcode. If you 
 
 On Linux, Git can be installed using your favourite package manager.
 
-#### Testing Your Git
+#### Testing Git
 
 To test your Git installation, start your command line tool and type:
 
@@ -152,7 +133,7 @@ to read about a specific subcommand or concept.
 See 'git help git' for an overview of the system.
 ```
 
-#### Configuring Your Git
+#### Configuring Git
 When you use Git on a machine for the first time, you also need to configure a few additional things:
 
 * your name,
@@ -169,13 +150,12 @@ $ git config --global user.email "name@example.com"
 $ git config --global core.editor "nano -w"
 ```
 
-
 ### GitHub Account
 
 GitHub is a free, online host for Git repositories that you will use during the course to store your work in so
 you will need to open a free [GitHub](https://github.com/) account unless you do not already have one.
 
-#### GitHub Configuration
+#### Configuring GitHub Account
 
 In order to access GitHub using Git from your machine securely,
 you need to set up a way of authenticating yourself with GitHub through Git.
@@ -255,8 +235,8 @@ You will need Python 3 for this course (note that while Python 2 may work as wel
 You may already have Python 3 installed on your system, in which case you do not have to do anything.
 
 To download the latest Python distribution for your operating system,
-please head to [Python.org](https://www.python.org/downloads/).
-Then use the appropriate command for your platform to test your installation.
+please head to [Python.org](https://www.python.org/downloads/). 
+Then use an appropriate command for your platform (see below) to test your installation.
 
 #### Testing Python 3
 
@@ -274,6 +254,7 @@ Python 3.11.7
 ```
 
 ::: callout
+
 If you are using Windows and invoking `python` command causes your Git Bash terminal to hang with no error message 
 or output, you may need to create an alias for the python executable `python.exe` like so:
 
@@ -287,21 +268,25 @@ $ echo "alias python='winpty python.exe'" >> ~/.bashrc
 ```
 :::
 
-### VS Code Integration
 
-Finally, after installing everything - we need to make sure that VS Code knows about all the tools and programs
-(command line, Git and Python), so that we can use them all from within the VS Code interface and not have to switch 
-between different windows all the time.
+### Visual Studio Code (VS Code)
+We will use Microsoft [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as an
+Integrated Development Environment (IDE) to type and execute Python code and run command line and Git commands
+(through its integrations with the tools we have installed separately so far).
 
+Please make sure to [download VS Code](https://code.visualstudio.com/Download) for your platform.
 
 #### Command Line Tool & Git Integration in VS Code
 
 On macOS and Linux systems, VS Code will typically recognise a command line tool you already have on your system
-(along with all programs/commands such as Git you can run from it) and you will not need to do anything.
+(along with all programs/commands such as Git you can run from it) and you will not need to do anything and 
+it will be available as a "Terminal" in VS Code.
 
-On Windows, if you have [selected VS Code as the default editor](index.html#windows) 
-for Git at the time of installing Git Bash - VS Code will know about your command line tool Git Bash as well as Git 
-and you should be set.
+On Windows, if VS Code does not automatically recognise Git Bash as a command line tool to be used as a "Terminal", 
+installing VS Code plugin "Start git-bash" should help.
+
+![*Git Bash extension for VS Code on Window*](fig/vscode-gitbash-extension.png){ alt-text="Git Bash extension for VS Code on Windows" .image-with-shadow }
+
 
 To check the command line tool integration and that VS Code knows about different command line tool(s) installed 
 on your system select "Terminal -> New Terminal" from the top level menu.
@@ -316,26 +301,37 @@ You can also change the default command line tool from the same drop down menu b
 
 ![*Terminal window in VS Code*](episodes/fig/vscode-terminal.png){alt='Terminal window in VS Code with "Select Default Profile" option highlighted'}
 
-##### VS Code Extentions for Git 
+#### VS Code Extentions for Git 
 
-You should also install the following VS Code extensions to make your Python experience in VS Code better:
+You could also install the following VS Code extensions to make your Git experience in VS Code better:
 
 - GitLense - Git Supercharged (adds a few nice additions to Git support in VS Code)
 - Git Graph (provides nice graphs and visualisations of a Git repository in VS Code)
 
 ![*GitLens and Git Graph extensions for VS Code*](fig/vscode-git-extensions.png){ alt-text="GitLens and Git Graph extensions for VS Code" .image-with-shadow }
 
-
 #### Python Integration in VS Code
 
-If you open a Python file or create a new one from VS Code - it should recognise it as a Python file already.
+If you open an existing Python file or create a new blank one (with extension ".py") from VS Code - 
+it should recognise it as a Python file already.
 VS Code may ask you to select a Python interpreter if you try to run the file, at which point you should select the 
 Python 3 you installed.
 
-##### VS Code Extensions for Python
+#### VS Code Extensions for Python
 
-You should also install the following VS Code extensions to make your Python experience in VS Code better:
-
-- Python extension for Visual Studio Code by Microsoft
+You should also install the Python extension for VS Code by Microsoft to make your Python experience in VS Code better.
 
 ![*Python extension for VS Code by Microsoft*](fig/vscode-python-extension.png){ alt-text="Python extension for VS Code by Microsoft" .image-with-shadow }
+
+
+### Astronaut data and analysis code 
+
+Download the data and code from the 
+[software repository](https://github.com/carpentries-incubator/astronout-data-analyses-bad/) by clicking the
+green `Code` button, then `Download ZIP`.
+
+![*Code download as a zip file from GitHub*](fig/github-code-download.png){ alt-text="Code download as a zip file from GitHub" .image-with-shadow }
+
+This repository contains data on spacewalks by astronauts and code to analyse this data. 
+We will use it for code examples and exercises throughout this course.
+

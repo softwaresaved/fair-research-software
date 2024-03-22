@@ -17,5 +17,5 @@
 "episodes/09-wrap-up.md" "ae72260be203b23af4237f76259d73f9" "site/built/09-wrap-up.md" "2023-10-03"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-10-03"
 "learners/reference.md" "1c7cc4e229304d9806a13f69ca1b8ba4" "site/built/reference.md" "2023-10-03"
-"learners/setup.md" "a0342c988b1abcd64f648c654f613a0c" "site/built/setup.md" "2024-03-22"
+"learners/setup.md" "1793c8e4b51273c897ace8f1bc1fdb5e" "site/built/setup.md" "2024-03-22"
 "profiles/learner-profiles.md" "fabab0b05b25927169be5bb1b4ef1301" "site/built/learner-profiles.md" "2024-02-26"
