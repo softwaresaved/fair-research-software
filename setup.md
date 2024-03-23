@@ -328,7 +328,7 @@ You should also install the Python extension for VS Code by Microsoft to make yo
 
 Download the data and code from the 
 [software repository](https://github.com/carpentries-incubator/astronout-data-analyses-bad/) by clicking the
-green `Code` button, then `Download ZIP`.
+green `<> Code` button, then `Download ZIP` form the drop-down menu.
 
 ![*Code download as a zip file from GitHub*](fig/github-code-download.png){ alt-text="Code download as a zip file from GitHub" .image-with-shadow }
 
