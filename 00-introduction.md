@@ -23,16 +23,16 @@ Before we start with the course, below we cover the terminology and explain term
 concepts associated with software development in reproducible research that we will use in this course.
 
 * **Reproducibility** - the ability to be reproduced or copied; the extent to which consistent results are obtained 
-when an experiment is repeated (definition from [Oxford Languages](https://languages.oup.com/google-dictionary-en/))
+when an experiment is repeated (definition from [Google’s English dictionary is provided by Oxford Languages][google-oxford-dict])
 * **Computational reproducibility** - obtaining consistent results using the same input data, computational methods (code),
 and conditions of analysis; work that can be independently recreated from the same data and the same code 
-([definition](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions) 
-by the [Turing Way's "Guide to Reproducible Research"](https://the-turing-way.netlify.app/reproducible-research/reproducible-research))
+([definition][ttw-reproducibility-def] 
+by the [Turing Way's "Guide to Reproducible Research"][ttw-guide-reproducible-research])
 * **Reproducible research** - the idea that scientific results should be documented in such a way that their deduction
-is fully transparent ([definition](https://en.wikipedia.org/wiki/Reproducibility) from Wikipedia)
+is fully transparent ([definition][wiki-reproducibility-def] from Wikipedia)
 * **Open research** - research that is openly accessible by others; concerned with making research more transparent, 
 more collaborative, more wide-reaching, and more efficient 
-([definition](https://en.wikipedia.org/wiki/Open_research) from Wikipedia)
+([definition][wiki-open-research-def] from Wikipedia)
 * **FAIR** - an acronym that stands for Findable, Accessible, Interoperable, and Reusable
 * **Sustainable software development** - software development practice that takes into account longevity and 
 maintainability of code (e.g. beyond the lifetime of the project), environmental impact, societal responsibility and ethics in 
@@ -56,8 +56,8 @@ discuss them with other participants.
 
 ## What is reproducible research?
 
-[The Turing Way's "Guide to Reproducible Research"](https://the-turing-way.netlify.app/index.html#citing-the-turing-way)
-provides an [excellent overview of definitions of "reproducibility" and "replicability"](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions) found in literature, 
+[The Turing Way's "Guide to Reproducible Research"][ttw-guide-reproducible-research]
+provides an [excellent overview of definitions of "reproducibility" and "replicability"][ttw-reproducibility-def] found in literature, 
 and their different aspects and levels. 
 
 In this course, we adopt the Turing Way's definitions: 
@@ -71,7 +71,7 @@ same research question and a qualitatively similar or identical answer is produc
 * **Generalisable research**: combining replicable and robust findings allow us to form generalisable results 
 that are broadly applicable to different types of data or contexts.
 
-![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Aspects of reproducible research including reproducibility, replicability, robustness and generalisability according to The Turing Way project'}
+![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807][ttw-illustrations]*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Aspects of reproducible research including reproducibility, replicability, robustness and generalisability according to The Turing Way project'}
 
 In this course we mainly address reproducibility, as the first step towards generalisability 
 (the ultimate goal of research).
@@ -95,7 +95,7 @@ Scientific transparency and rigor are key factors in research. Scientific method
 results need to be published openly and replicated and confirmed by several independent parties.
 However, research papers often lack the full details required for independent replication. 
 Many attempts at replicating the results of well-known scientific studies have failed in a variety of disciplines [reference].
-This is called [**the reproducibility crisis**](https://en.wikipedia.org/wiki/Replication_crisis) - an ongoing 
+This is called [**the reproducibility crisis**][reproducibility-crisis] - an ongoing 
 methodological crisis in which the results of many scientific studies are difficult or impossible to reproduce.
 
 Reproducible research is a practice that ensures that researchers can repeat the same analysis multiple times with the 
@@ -127,17 +127,17 @@ data, to the hundreds of software engineers and millions of lines of code behind
 efforts such as the Large Hadron Collider and the Square Kilometre Array, there are few areas of
 research where software does not have a fundamental role.
 
-In the survey conducted by the Software Sustainability Institute in 2014 [ref], 
-92% of researchers indicated they used research software [reference]. 
+In the [software survey conducted by the Software Sustainability Institute in 2014][ssi-survey-2014], 
+92% of researchers indicated they used research software. 
 We define "research software" as software or code that is used to generate, process or analyse results of a research 
 for publication. 
 Even formulas in spreadsheets are considered code - they are a form of computer programming in that allow you to 
 create, calculate, and change data sets in a number of different ways. 
-So, software is not reserved for [computational science](https://en.wikipedia.org/wiki/Computational_science) 
+So, software is not reserved for [computational science][computational-science] 
 (aka scientific computing) and “traditional” uses of computing capabilities and infrastructures (e.g.
 simulations and computational methods) any more.
-Nor its use is restricted to "hard" sciences - the use of research software is ubiquitous and 
-fairly even across all disciplines [ssi survey ref].
+Nor is its restricted to "hard" sciences - the **use of research software is ubiquitous and 
+fairly even across all disciplines**.
 
 Research software is also widely developed - researchers do not just use “off the shelf” software and
 the majority of researchers develop their own. 
@@ -148,13 +148,8 @@ programming language (although we will use Python code as examples) and aims to 
 researchers with the tools and knowledge to feel confident when writing good quality and sustainable 
 software to support their research. Typically, we think of such software as being **FAIR**.
 
+In the rest of the course, we will explore what exactly we mean by "FAIR research software", why 
+it is important and what practices can help us along our "FAIRification" journey.
+
 ## Acknowledgements and references
-The content of this episode borrows from or references the following work, which we also recommend for further reading:
-
-[1] [A Beginner's Guide to Conducting Reproducible Research](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801), 
-Jesse M. Alston, Jessica A. Rick, https://doi.org/10.1002/bes2.1801
-[2] The Turing Way "Guide for reproducible research", https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions
-
-TODO...
-
-[2] SSI survey
+The content of this course borrows from or references [various work](learners/reference.md#litref), which we also recommend for further reading.

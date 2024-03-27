@@ -35,8 +35,8 @@ work or attitude may be different afterwards.
 
 FAIR stands for Findable, Accessible, Interoperable, and Reusable and comprises a set of principles designed to
 increase the visibility and usefulness of your research to others.
-The FAIR data principles, first published [in 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4792175/), are widely known and applied today.
-Similar [FAIR principles for software](https://www.nature.com/articles/s41597-022-01710-x) have now been defined too. In general, they mean:
+The FAIR data principles, first published [in 2016][fair-data-principles], are widely known and applied today.
+Similar [FAIR principles for software][fair-principles-research-software] have now been defined too. In general, they mean:
 
 * **Findable** - software and its associated metadata must be easy to discover by humans and machines.
 * **Accessible** - in order to reuse software, the software and its metadata must be retrievable by standard protocols.
@@ -146,23 +146,6 @@ R - 2/5
   - Negative: Python and library versions not specified. Bad variable names, hardcoded inputs, no clear structure or documentation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Acknowledgements
-
-The content of this episode was inspired / heavily borrowed from the following resources:
-
-- ...
-- ...
-
-## Further reading
-
-We recommend the following resources for some additional reading on the topic of this episode:
-
-- [The FAIR Guiding Principles for scientific data management and stewardship](https://www.nature.com/articles/sdata201618)
-- [The FAIR Cookbook](https://faircookbook.elixir-europe.org/content/home.html)
-- [The Turing Way Guide for Reproducible Research: Open Research](https://the-turing-way.netlify.app/reproducible-research/open)
-- ["10 easy things to make your research software FAIR"](https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf)
-- ["Five recommendations for FAIR software"](https://fair-software.eu/))
 
 
 

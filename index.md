@@ -3,7 +3,7 @@ site: sandpaper::sandpaper_site
 ---
 
 This short course is teaching tools and practices for producing and sharing quality, 
-sustainable and [FAIR (Findable, Accessible, Interoperable and Reusable) research software][fair-software] 
+sustainable and [FAIR (Findable, Accessible, Interoperable and Reusable) research software][fair-principles-research-software] 
 to support open and reproducible research. 
 The course can be delivered over 2 full or 4 half days.
 
