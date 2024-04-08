@@ -354,7 +354,7 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Course introduction</a></p>
 <hr>
-<p>Last updated on 2024-03-27 |
+<p>Last updated on 2024-04-08 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -598,7 +598,19 @@ Typically, we think of such software as being <strong>FAIR</strong>.</p>
 <p>In the rest of the course, we will explore what exactly we mean by
 “FAIR research software”, why it is important and what practices can
 help us along our “FAIRification” journey.</p>
-</section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
+</section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research" class="external-link">The
+Turing Way’s “Guide for Reproducible Research”</a></li>
+<li>
+<a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801" class="external-link">A
+Beginner’s Guide to Conducting Reproducible Research</a>, Jesse M.
+Alston, Jessica A. Rick, Bulletin of The Ecological Society of America
+102 (2) (2021), <a href="https://doi.org/10.1002/bes2.1801" class="external-link uri">https://doi.org/10.1002/bes2.1801</a>
+</li>
+</ul></section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
 </h2>
 <hr class="half-width">
 <p>The content of this course borrows from or references <a href="reference.html#litref">various work</a>, which we also recommend
@@ -609,7 +621,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-01-fair-research-software"><p>Content from <a href="01-fair-research-software.html">FAIR research software</a></p>
 <hr>
-<p>Last updated on 2024-03-27 |
+<p>Last updated on 2024-04-08 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -702,8 +714,9 @@ of a fully reproducible research.</p>
 <li>Findable
 <ul>
 <li>Create a description of your software</li>
-<li>Place your software in a software repository (and ideally register
-it in a software registry)</li>
+<li>Place your software in a public software repository (and ideally
+register it in a <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">software
+registry</a>)</li>
 <li>Use a unique and persistent identifier for your software (also
 useful for citations)</li>
 </ul>
@@ -712,6 +725,8 @@ useful for citations)</li>
 <ul>
 <li>Make sure people can freely, legally and easily get a copy your
 software</li>
+<li>Use coding conventions and comments to make your code readable and
+understandable by people (once they get a copy of it)</li>
 </ul>
 </li>
 <li>Interoperable
@@ -727,6 +742,8 @@ software</li>
 install and run it)</li>
 <li>Follow best practices for software development (including coding
 conventions, code readability and verifying its correctness)</li>
+<li>Test your software and make sure it works on different
+platforms/operating systems</li>
 <li>Give a licence to your software clearly stating how it can be
 reused</li>
 <li>State how to cite your software</li>
@@ -761,7 +778,7 @@ passable, 4 - good, 5 - perfect).</p>
 postdoc joining a research group. They are given some data and an
 analysis script written by another group member who works on similar
 things, and they want to run this, check they understand it and then
-adapt it to their own project. You should have downlaoded a CSV data
+adapt it to their own project. You should have downloaded a CSV data
 file and a Python code file in the setup for this lesson.</p>
 <p>The CSV file contains data about Extra-vehicular Activity (EVAs or
 spacewalks) undertaken by astronauts and cosmonauts from 1965 to
@@ -784,7 +801,7 @@ to visualise the data</p>
 <h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion3"></a>
 </h3>
 <div class="callout-content">
-<p>Compare this data and code to the software you chose earler. Do you
+<p>Compare this data and code to the software you chose earlier. Do you
 think it is Findable, Accessible, Interoperable and Reusable? Give it a
 score from 1 (very bad) to 5 (perfect) in each category and then we will
 discuss it together.</p>
@@ -818,6 +835,8 @@ exactly which data you used in the original analysis?</li>
 <ul>
 <li>If the person who gave you the files left your institution, how
 could you get access to the files again?</li>
+<li>Once you have the files, can you understand the code? Does it make
+sense to you?</li>
 <li>Do you need to log into anything to use this? Does it require
 purchase or subscription to a service, platform or tool?</li>
 </ul>
@@ -836,9 +855,9 @@ such as an API or command-line interface?</li>
 <li><strong>Reusable</strong></li>
 </ol>
 <ul>
-<li>Can you run the code? What programs or libraries do you need to
-install to make it work (and which versions)? Are these commonly used
-tools in your field?</li>
+<li>Can you run the code on your platform/operating system? What
+programs or libraries do you need to install to make it work (and which
+versions)? Are these commonly used tools in your field?</li>
 <li>Do you have explicit permission to use your collaborators code in
 your own research and do they expect credit of some form (paper
 authorship, citation or acknowledgement)? Are you allowed to edit,
@@ -861,26 +880,51 @@ calculate a different statistic, or run on a different input file?</li>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>I would give the following scores: F - 1/5 - Positive: None -
-Negative: No descriptive name, identifier or version number. No way to
-find again except through one person and they might not remember what
-file you mean. A - 2/5 - Positive: No accounts or paid services needed.
-Python is free, the data is free and under a shareable license -
-Negative: No way to get the code without that one person. Not clear
-where the data comes or what license it has unless you check the URL in
-the comment. I - 3/5 - Positive: CSV and JSON files are common and well
-documented formats. They are machine- and human-readable. They could be
-generated by or fed into other programs in a pipeline. - Negative: JSON
-might not be well used in some fields. No API or CLI. R - 2/5 -
-Positive: Can ask collaborator for explicit permissions for using and
-modifying and how to credit them, if they did not specify before. Python
-is a common language. - Negative: Python and library versions not
-specified. Bad variable names, hardcoded inputs, no clear structure or
-documentation.</p>
+<p>I would give the following scores:</p>
+<p>F - 1/5 - Positive: None - Negative: No descriptive name, identifier
+or version number. No way to find again except through one person and
+they might not remember what file you mean. A - 2/5 - Positive: No
+accounts or paid services needed. Python is free, the data is free and
+under a shareable license - Negative: No way to get the code without
+that one person. Not clear where the data comes or what license it has
+unless you check the URL in the comment. I - 3/5 - Positive: CSV and
+JSON files are common and well documented formats. They are machine- and
+human-readable. They could be generated by or fed into other programs in
+a pipeline. - Negative: JSON might not be well used in some fields. No
+API or CLI. R - 2/5 - Positive: Can ask collaborator for explicit
+permissions for using and modifying and how to credit them, if they did
+not specify before. Python is a common language. - Negative: Python and
+library versions not specified. Bad variable names, hardcoded inputs, no
+clear structure or documentation.</p>
 </div>
 </div>
 </div>
 </div>
+</section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research" class="external-link">The
+Turing Way’s “Guide for Reproducible Research”</a></li>
+<li><a href="https://fair-software.eu/" class="external-link">“Five recommendations for FAIR
+software”</a></li>
+<li><a href="https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf" class="external-link">“10
+easy things to make your research software FAIR”</a></li>
+<li>
+<a href="https://www.nature.com/articles/sdata201618" class="external-link">The FAIR
+guiding principles for scientific data management and stewardship</a> -
+equivalent principles for FAIR data</li>
+<li>
+<a href="https://faircookbook.elixir-europe.org/content/home.html" class="external-link">The FAIR
+Cookbook</a> - recipes guiding you through the key steps of a data
+FAIRification journey</li>
+<li>
+<a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">Awesome
+Research Software Registries</a> - a list of research software
+registries (by country, organisation, domain and programming language)
+where research software can be registered to help promote its
+discovery</li>
+</ul>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -894,14 +938,8 @@ documentation.</p>
 publicly accessible with no or minimal restrictions.</li>
 <li>Reproducible research means the data and software is available to
 recreate the analysis.</li>
-<li>FAIR data and software is:
-<ul>
-<li>Findable</li>
-<li>Accessible</li>
-<li>Interoperable</li>
-<li>Reusable</li>
-</ul>
-</li>
+<li>FAIR data and software is Findable, Accessible, Interoperable,
+Reusable.</li>
 <li>These principles support research and researchers by saving time,
 reducing barriers to discovery, and increasing impact of the research
 output.</li>
@@ -1525,9 +1563,9 @@ commit we make should only change one, logical thing. By “logical” here,
 we mean that one aspect of updating the files has been achieved to
 completion - such as adding docstrings or refactoring a function - we
 don’t mean that changes are committed line-by-line. See the <a href="https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits" class="external-link">“Things
-to avoid when creating commits” section</a> of Openstack’s “Git Commit
-Good Practice” documentation for examples of logical, self-contained
-commits, and commits that don’t follow this practice.</p>
+to avoid when creating commits” section</a> of <a href="https://wiki.openstack.org/wiki/GitCommitMessages" class="external-link">Openstack’s
+“Git Commit Good Practice” documentation</a> for examples of logical,
+self-contained commits, and commits that don’t follow this practice.</p>
 <p>The reasons that self-contained commits are important are that: it
 helps with reviewing changes if each commit tackles one step; if code
 breaks, tracking down the specific change that caused the break is
@@ -1897,25 +1935,14 @@ basics here as a brief introduction. For a deeper and more complete dive
 into the subject matter, please see the “Further reading” section
 below.</p>
 </div>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
 <ul>
 <li><a href="https://swcarpentry.github.io/git-novice" class="external-link">Software
-Carpentry’s Git Novice lesson</a></li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
-</h2>
-<hr class="half-width">
-<p>We recommend the following resources for some additional reading on
-the topic of this episode:</p>
-<ul>
-<li>The full <a href="https://swcarpentry.github.io/git-novice" class="external-link">Software
-Carpentry Git Novice lesson</a>
-</li>
-<li><a href="https://the-turing-way.netlify.app/reproducible-research/vcs" class="external-link"><em>The
-Turing Way</em>’s guide to version control</a></li>
+Carpentry’s Git novice lesson</a></li>
+<li><a href="https://the-turing-way.netlify.app/reproducible-research/vcs" class="external-link">The
+Turing Way’s “Guide to Version Control”</a></li>
 <li><a href="https://www.pluralsight.com/courses/how-git-works" class="external-link">“How Git
 Works” course on Pluralsight</a></li>
 <li><a href="https://cbea.ms/git-commit/" class="external-link">How to Write a Good Commit
@@ -2439,7 +2466,7 @@ Licence.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2477,7 +2504,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2509,7 +2536,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2548,7 +2575,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2591,7 +2618,7 @@ request</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>A:</p>
 </div>
