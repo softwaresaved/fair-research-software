@@ -34,3 +34,11 @@ any links that you are not going to use.
 [fair-cookbook]: https://faircookbook.elixir-europe.org/content/home.html
 [10-easy-fair-things]: https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf
 [top-10-fair-things-per-domain]: https://librarycarpentry.org/Top-10-FAIR/
+[awesome-research-software-registries]: https://github.com/NLeSC/awesome-research-software-registries
+[beginner-guide-reproducible-research]: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801
+[swc-git-lesson]: https://swcarpentry.github.io/git-novice
+[ttw-guide-version-control]: https://the-turing-way.netlify.app/reproducible-research/vcs
+[how-git-works]: https://www.pluralsight.com/courses/how-git-works
+[good-commit-message]: https://cbea.ms/git-commit/
+[git-commit-good-practice]: https://wiki.openstack.org/wiki/GitCommitMessages
+[git-commit-avoid]: https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits

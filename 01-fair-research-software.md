@@ -52,10 +52,11 @@ closer to the gold standard of a fully reproducible research.
 
 * Findable
   * Create a description of your software
-  * Place your software in a software repository (and ideally register it in a software registry)
+  * Place your software in a public software repository (and ideally register it in a [software registry](https://github.com/NLeSC/awesome-research-software-registries))
   * Use a unique and persistent identifier for your software (also useful for citations)
 * Accessible
   * Make sure people can freely, legally and easily get a copy your software
+  * Use coding conventions and comments to make your code readable and understandable by people (once they get a copy of it)
 * Interoperable
   * Explain the functionality of your software
   * Use standard formats for inputs and outputs
@@ -63,6 +64,7 @@ closer to the gold standard of a fully reproducible research.
 * Reusable
   * Document your software (including its functionality, and how to install and run it)
   * Follow best practices for software development (including coding conventions, code readability and verifying its correctness)
+  * Test your software and make sure it works on different platforms/operating systems
   * Give a licence to your software clearly stating how it can be reused
   * State how to cite your software
 
@@ -83,7 +85,7 @@ Give it a score from 1 to 5 in each category (1 - very bad, 2 - bad, 3 - passabl
 
 We are going to follow a fairly typical experience of a new PhD or postdoc joining a research group. 
 They are given some data and an analysis script written by another group member who works on similar things, and they want to run this, check they understand it and then adapt it to their own project.
-You should have downlaoded a CSV data file and a Python code file in the setup for this lesson.
+You should have downloaded a CSV data file and a Python code file in the setup for this lesson.
 
 The CSV file contains data about Extra-vehicular Activity (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013.
 
@@ -101,7 +103,7 @@ Let's think about how FAIR this piece of software is.
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
-Compare this data and code to the software you chose earler.
+Compare this data and code to the software you chose earlier.
 Do you think it is Findable, Accessible, Interoperable and Reusable? 
 Give it a score from 1 (very bad) to 5 (perfect) in each category and then we will discuss it together.
 
@@ -117,12 +119,13 @@ Here are some questions to help you assess the FAIRness of the code:
   * If more data was added to the data set later, could you explain exactly which data you used in the original analysis?
 2. **Accessible**
   * If the person who gave you the files left your institution, how could you get access to the files again?
+  * Once you have the files, can you understand the code? Does it make sense to you?
   * Do you need to log into anything to use this? Does it require purchase or subscription to a service, platform or tool?
 3. **Interoperable**
   * Is it clear what kind of input data it can read and what kind of output data is produced? Will you be able to create the input files and read the output files with the tools your community generally uses? 
   * If you wanted to use this tool as part of a larger data processing pipeline, does it allow you to link it with other tools in standard ways such as an API or command-line interface?
 4. **Reusable**
-  * Can you run the code? What programs or libraries do you need to install to make it work (and which versions)? Are these commonly used tools in your field?
+  * Can you run the code on your platform/operating system? What programs or libraries do you need to install to make it work (and which versions)? Are these commonly used tools in your field?
   * Do you have explicit permission to use your collaborators code in your own research and do they expect credit of some form (paper authorship, citation or acknowledgement)? Are you allowed to edit, publish or share the files with others?
   * Is the language used familiar to you and people in your research field? Can you read the variable names in the code and the column names in the data file and understand what they mean?
   * Is the code written in a way that allows you to easily modify or extend it? Can you easily see what parameters to change to make it calculate a different statistic, or run on a different input file?
@@ -132,6 +135,7 @@ Here are some questions to help you assess the FAIRness of the code:
 ::::::::::::::::::::::::::::::::::::: solution
 
 I would give the following scores:
+
 F - 1/5
   - Positive: None
   - Negative: No descriptive name, identifier or version number. No way to find again except through one person and they might not remember what file you mean.
@@ -148,16 +152,21 @@ R - 2/5
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+## Further reading
+
+- [The Turing Way's "Guide for Reproducible Research"][ttw-guide-reproducible-research]
+- ["Five recommendations for FAIR software"][5-fair-software-recommendations]
+- ["10 easy things to make your research software FAIR"][10-easy-fair-things]
+- [The FAIR guiding principles for scientific data management and stewardship][fair-data-principles] - equivalent principles for FAIR data
+- [The FAIR Cookbook][fair-cookbook] - recipes guiding you through the key steps of a data FAIRification journey
+- [Awesome Research Software Registries][awesome-research-software-registries] - a list of research software registries (by country, organisation, domain and programming language) where research software can be registered to help promote its discovery
+
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Open research means the outputs of publicly funded research are publicly accessible with no or minimal restrictions.
 - Reproducible research means the data and software is available to recreate the analysis.
-- FAIR data and software is:
-  - Findable
-  - Accessible
-  - Interoperable
-  - Reusable
+- FAIR data and software is Findable, Accessible, Interoperable, Reusable.
 - These principles support research and researchers by saving time, reducing barriers to discovery, and increasing impact of the research output.
 
 

@@ -350,8 +350,8 @@ very self-contained. That is to say that each commit we make should only change
 one, logical thing. By "logical" here, we mean that one aspect of updating the
 files has been achieved to completion - such as adding docstrings or refactoring
 a function - we don't mean that changes are committed line-by-line. See the
-["Things to avoid when creating commits" section](https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits)
-of Openstack's "Git Commit Good Practice" documentation for examples of logical,
+["Things to avoid when creating commits" section][git-commit-avoid]
+of [Openstack's "Git Commit Good Practice" documentation][git-commit-good-practice] for examples of logical,
 self-contained commits, and commits that don't follow this practice.
 
 The reasons that self-contained commits are important are that: it helps with
@@ -662,21 +662,13 @@ Version control is a vast topic and we have only covered the absolute basics
 here as a brief introduction. For a deeper and more complete dive into the
 subject matter, please see the "Further reading" section below.
 
-## Acknowledgements
-
-The content of this episode was inspired / heavily borrowed from the following resources:
-
-- [Software Carpentry's Git Novice lesson](https://swcarpentry.github.io/git-novice)
-
 ## Further reading
 
-We recommend the following resources for some additional reading on the topic of this episode:
-
-- The full [Software Carpentry Git Novice lesson](https://swcarpentry.github.io/git-novice)
-- [_The Turing Way_'s guide to version control](https://the-turing-way.netlify.app/reproducible-research/vcs)
-- ["How Git Works" course on Pluralsight](https://www.pluralsight.com/courses/how-git-works)
-- [How to Write a Good Commit Message](https://cbea.ms/git-commit/)
-- [Git Commit Good Practice](https://wiki.openstack.org/wiki/GitCommitMessages)
+- [Software Carpentry's Git novice lesson][swc-git-lesson]
+- [The Turing Way's "Guide to Version Control"][ttw-guide-version-control]
+- ["How Git Works" course on Pluralsight][how-git-works]
+- [How to Write a Good Commit Message][good-commit-message]
+- [Git Commit Good Practice][git-commit-good-practice]
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

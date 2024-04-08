@@ -5,8 +5,8 @@ title: Reference
 ## Reference and further reading {#litref}
 The content of this course borrows from or references the following work, which we also recommend for further reading.
 
-[1.] [A Beginner's Guide to Conducting Reproducible Research](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801), 
-Jesse M. Alston, Jessica A. Rick, https://doi.org/10.1002/bes2.1801
+[1.] [A Beginner's Guide to Conducting Reproducible Research][beginner-guide-reproducible-research], 
+Jesse M. Alston, Jessica A. Rick, Bulletin of The Ecological Society of America 102 (2) (2021), https://doi.org/10.1002/bes2.1801
 
 [2.] The Turing Way Community. (2022). [The Turing Way: A handbook for reproducible, ethical and collaborative research][ttw-handbook]. Zenodo. https://doi.org/10.5281/zenodo.3233853
 
@@ -26,6 +26,17 @@ Jesse M. Alston, Jessica A. Rick, https://doi.org/10.1002/bes2.1801
 
 [10.] [Five recommendations for FAIR software][5-fair-software-recommendations], by the Netherlands eScience Center and DANS
 
+[11.] [Awesome Research Software Registries][awesome-research-software-registries], a list of research software registries (by country, organisation, domain and programming language) where research software can be registered to help promote its discovery
+
+[12.] [Software Carpentry's Git novice lesson][swc-git-lesson]
+
+[13.] [The Turing Way's "Guide to Version Control"][ttw-guide-version-control]
+
+[14.] ["How Git Works" course on Pluralsight][how-git-works]
+
+[15.] [How to Write a Good Commit Message][good-commit-message]
+
+[16.] [Git Commit Good Practice][git-commit-good-practice]
 
 ## Glossary
 

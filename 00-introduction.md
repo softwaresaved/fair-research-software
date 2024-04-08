@@ -151,5 +151,11 @@ software to support their research. Typically, we think of such software as bein
 In the rest of the course, we will explore what exactly we mean by "FAIR research software", why 
 it is important and what practices can help us along our "FAIRification" journey.
 
+
+## Further reading
+- [The Turing Way's "Guide for Reproducible Research"][ttw-guide-reproducible-research]
+- [A Beginner's Guide to Conducting Reproducible Research][beginner-guide-reproducible-research],
+  Jesse M. Alston, Jessica A. Rick, Bulletin of The Ecological Society of America 102 (2) (2021), https://doi.org/10.1002/bes2.1801
+
 ## Acknowledgements and references
 The content of this course borrows from or references [various work](learners/reference.md#litref), which we also recommend for further reading.
