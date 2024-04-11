@@ -83,7 +83,7 @@ The exact wording of this output may be slightly different if you are using a di
 
 ### Add initial files into our repository
 
-During the setup for this lesson, you will have been provided with two files:
+During the [setup](./index.html#astronaut-data-and-analysis-code) for this course, you have been provided with a `.zip` archive with two files:
 
 - `bad code.py`
 - `Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv`

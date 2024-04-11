@@ -85,7 +85,8 @@ Give it a score from 1 to 5 in each category (1 - very bad, 2 - bad, 3 - passabl
 
 We are going to follow a fairly typical experience of a new PhD or postdoc joining a research group. 
 They are given some data and an analysis script written by another group member who works on similar things, and they want to run this, check they understand it and then adapt it to their own project.
-You should have downloaded a CSV data file and a Python code file in the setup for this lesson.
+You should have downloaded a `.zip` archive containing a CSV data file (`Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv`) and a Python code file (`bad code.py`) as explained 
+in the [setup section](./index.html#astronaut-data-and-analysis-code) for this course.
 
 The CSV file contains data about Extra-vehicular Activity (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013.
 
