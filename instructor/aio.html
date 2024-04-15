@@ -69,7 +69,7 @@
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
-        <i role="img" aria-label="search button" data-feather="search"></i>
+        <i role="img" aria-label="Search the All In One page" data-feather="search"></i>
       -->
     </div>
     <div class="desktop-nav">
@@ -99,13 +99,17 @@
 </li>
       </ul>
 </div>
+    <!--
     <form class="d-flex col-md-2 search-form">
       <fieldset disabled>
-<input class="form-control me-2 searchbox" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success tablet-search-button" type="submit">
-          <i class="search-icon" data-feather="search" role="img" aria-label="search button"></i>
+      <input class="form-control me-2 searchbox" type="search" placeholder="" aria-label="">
+        <button class="btn btn-outline-success tablet-search-button"  type="submit">
+          <i class="search-icon" data-feather="search" role="img" aria-label="Search the All In One page"></i>
         </button>
       </fieldset>
-</form>
+    </form>
+    -->
+    <a class="btn btn-primary" href="../aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
@@ -356,7 +360,7 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Course introduction</a></p>
 <hr>
-<p>Last updated on 2024-04-08 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -604,6 +608,8 @@ help us along our “FAIRification” journey.</p>
 </section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
+<p>We recommend the following resources for some additional reading on
+the topic of this episode:</p>
 <ul>
 <li><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research" class="external-link">The
 Turing Way’s “Guide for Reproducible Research”</a></li>
@@ -613,18 +619,36 @@ Beginner’s Guide to Conducting Reproducible Research</a>, Jesse M.
 Alston, Jessica A. Rick, Bulletin of The Ecological Society of America
 102 (2) (2021), <a href="https://doi.org/10.1002/bes2.1801" class="external-link uri">https://doi.org/10.1002/bes2.1801</a>
 </li>
+<li><a href="https://guereslib.github.io/ten-reproducible-research-things/" class="external-link">“Ten
+reproducible research things” tutorial</a></li>
+<li><a href="https://carpentries-lab.github.io/good-enough-practices/index.html" class="external-link">“Good
+Enough Practices in Scientific Computing” course</a></li>
+<li>
+<a href="https://www.repro4everyone.org/" class="external-link">Reproducibility for
+Everyone’s (R4E) resources</a>, community-led education initiative to
+increase adoption of open research practices at scale</li>
+<li>
+<a href="https://intersect-training.org/training-links/" class="external-link">Training
+materials on different aspects of research software engineering</a>
+(including open source, reproducibility, research software testing,
+engineering, design, continuous integration, collaboration, version
+control, packaging, etc.), compiled by the <a href="https://intersect-training.org/" class="external-link">INTERSECT project</a>
+</li>
+<li>
+<a href="https://forrt.org/resources/" class="external-link">Curated resources</a> by the
+<a href="https://forrt.org/" class="external-link">Framework for Open and Reproducible
+Research Training</a> (FORRT)</li>
 </ul></section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
 </h2>
 <hr class="half-width">
-<p>The content of this course borrows from or references <a href="reference.html#litref">various work</a>, which we also recommend
-for further reading.</p>
+<p>The content of this course borrows from or references <a href="reference.html#litref">various work</a>.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
 </section></section><section id="aio-01-fair-research-software"><p>Content from <a href="01-fair-research-software.html">FAIR research software</a></p>
 <hr>
-<p>Last updated on 2024-04-11 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -820,7 +844,7 @@ discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Here are some questions to help you assess the FAIRness of the
 code:</p>
@@ -885,7 +909,7 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
 <p>F - 1/5 - Positive: None - Negative: No descriptive name, identifier
@@ -910,21 +934,20 @@ clear structure or documentation.</p>
 </section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
+<p>We recommend the following resources for some additional reading on
+the topic of this episode:</p>
 <ul>
-<li><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research" class="external-link">The
-Turing Way’s “Guide for Reproducible Research”</a></li>
 <li><a href="https://fair-software.eu/" class="external-link">“Five recommendations for FAIR
 software”</a></li>
 <li><a href="https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf" class="external-link">“10
 easy things to make your research software FAIR”</a></li>
 <li>
-<a href="https://www.nature.com/articles/sdata201618" class="external-link">The FAIR
-guiding principles for scientific data management and stewardship</a> -
-equivalent principles for FAIR data</li>
-<li>
-<a href="https://faircookbook.elixir-europe.org/content/home.html" class="external-link">The FAIR
-Cookbook</a> - recipes guiding you through the key steps of a data
-FAIRification journey</li>
+<a href="https://esciencecenter-digital-skills.github.io/software-support-essentials/" class="external-link">Short
+online courses</a> on various aspects of research software (including <a href="https://esciencecenter-digital-skills.github.io/software-support-essentials/fairsoftware" class="external-link">FAIR</a>),
+by the NESC Research Software Support</li>
+<li>A <a href="https://fairsoftwarechecklist.net/" class="external-link">self-assessment
+checklist for FAIR research software</a>, by the Netherlands eScience
+Center and Australian Research Data Commons</li>
 <li>
 <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">Awesome
 Research Software Registries</a> - a list of research software
@@ -932,6 +955,8 @@ registries (by country, organisation, domain and programming language)
 where research software can be registered to help promote its
 discovery</li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -960,7 +985,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-tools"><p>Content from <a href="02-tools.html">Tools and practices for research software development</a></p>
 <hr>
-<p>Last updated on 2024-03-04 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/02-tools.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -1026,8 +1051,8 @@ research.</li>
 </h3>
 <div class="callout-content">
 <p>Looking at the list you made earlier, give each item a mark for how:
-- Findable - Accessible - Interoperable - Reuseable you think they are
-in themselves. Do they help you work in a FAIR way?</p>
+- Findable - Accessible - Interoperable - Reusable you think they are in
+themselves. Do they help you work in a FAIR way?</p>
 </div>
 </div>
 </div>
@@ -1073,15 +1098,7 @@ see if you can see any differences.</p>
 </div>
 </div>
 </div>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
@@ -1090,6 +1107,8 @@ the topic of this episode:</p>
 <li>…</li>
 <li>…</li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1121,7 +1140,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-version-control"><p>Content from <a href="03-version-control.html">Version control</a></p>
 <hr>
-<p>Last updated on 2024-04-11 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/03-version-control.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -1948,9 +1967,11 @@ below.</p>
 <section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
+<p>We recommend the following resources for some additional reading on
+the topic of this episode:</p>
 <ul>
 <li><a href="https://swcarpentry.github.io/git-novice" class="external-link">Software
-Carpentry’s Git novice lesson</a></li>
+Carpentry’s Git Novice lesson</a></li>
 <li><a href="https://the-turing-way.netlify.app/reproducible-research/vcs" class="external-link">The
 Turing Way’s “Guide to Version Control”</a></li>
 <li><a href="https://www.pluralsight.com/courses/how-git-works" class="external-link">“How Git
@@ -1960,6 +1981,8 @@ Message</a></li>
 <li><a href="https://wiki.openstack.org/wiki/GitCommitMessages" class="external-link">Git
 Commit Good Practice</a></li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1987,7 +2010,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-code-readability"><p>Content from <a href="04-code-readability.html">Code readability</a></p>
 <hr>
-<p>Last updated on 2023-11-13 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/04-code-readability.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -2028,15 +2051,7 @@ detail about what the code is doing</li>
 </div>
 </div>
 <p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
@@ -2045,6 +2060,8 @@ the topic of this episode:</p>
 <li>…</li>
 <li>…</li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2074,7 +2091,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05-code-testing"><p>Content from <a href="05-code-testing.html">Code testing</a></p>
 <hr>
-<p>Last updated on 2023-12-11 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/05-code-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -2127,15 +2144,7 @@ based on whether it includes sufficient tests</li>
 </div>
 </div>
 <p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
@@ -2144,6 +2153,8 @@ the topic of this episode:</p>
 <li>…</li>
 <li>…</li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2191,7 +2202,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06-documenting-code"><p>Content from <a href="06-documenting-code.html">Documenting code</a></p>
 <hr>
-<p>Last updated on 2023-10-18 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/06-documenting-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -2224,15 +2235,7 @@ any links that you are not going to use.
 </div>
 </div>
 <p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
@@ -2241,6 +2244,8 @@ the topic of this episode:</p>
 <li>…</li>
 <li>…</li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2261,7 +2266,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07-research-ethics"><p>Content from <a href="07-research-ethics.html">Ethical considerations for code &amp; data</a></p>
 <hr>
-<p>Last updated on 2023-10-18 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-research-ethics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -2294,15 +2299,7 @@ any links that you are not going to use.
 </div>
 </div>
 <p>Content of the episode goes here.</p>
-<section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
@@ -2311,6 +2308,8 @@ the topic of this episode:</p>
 <li>…</li>
 <li>…</li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2331,7 +2330,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-08-open-collaboration"><p>Content from <a href="08-open-collaboration.html">Open project collaboration &amp; management</a></p>
 <hr>
-<p>Last updated on 2024-01-22 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/08-open-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -2481,7 +2480,7 @@ Licence.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2519,7 +2518,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2551,7 +2550,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2590,7 +2589,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2633,34 +2632,31 @@ request</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>A:</p>
 </div>
 </div>
 </div>
 </div>
-</section><section id="acknowledgements"><h2 class="section-heading">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<hr class="half-width">
-<p>The content of this episode was inspired / heavily borrowed from the
-following resources:</p>
-<ul>
-<li>Software carpentry git lesson licensing and citation sections - <a href="https://swcarpentry.github.io/git-novice/11-licensing.html" class="external-link uri">https://swcarpentry.github.io/git-novice/11-licensing.html</a>
-and <a href="https://swcarpentry.github.io/git-novice/12-citation.html" class="external-link uri">https://swcarpentry.github.io/git-novice/12-citation.html</a>
-</li>
-<li>…</li>
-</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
 the topic of this episode:</p>
 <ul>
-<li>Open source definition - <a href="https://opensource.org/osd/" class="external-link uri">https://opensource.org/osd/</a>
+<li>Licencing and citation episodes from the <a href="https://swcarpentry.github.io/git-novice" class="external-link">Software Carpentry’s Git
+Novice lesson</a>
 </li>
-<li>What is free software - <a href="https://www.gnu.org/philosophy/free-sw.en.html" class="external-link uri">https://www.gnu.org/philosophy/free-sw.en.html</a>
+<li>
+<a href="https://opensource.org/osd/" class="external-link">Open source definition</a>, by
+the <a href="https://opensource.org" class="external-link">Open Source Initiative</a>
 </li>
+<li><a href="https://www.gnu.org/philosophy/free-sw.en.html" class="external-link">What is
+free software?</a></li>
 </ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2689,7 +2685,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-09-wrap-up"><p>Content from <a href="09-wrap-up.html">Wrap-up</a></p>
 <hr>
-<p>Last updated on 2023-10-03 |
+<p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/09-wrap-up.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -2722,6 +2718,17 @@ any links that you are not going to use.
 </div>
 </div>
 <p>Content goes here.</p>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</h2>
+<hr class="half-width">
+<p>We recommend the following resources for some additional reading on
+the topic of this episode:</p>
+<ul>
+<li>…</li>
+<li>…</li>
+</ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2735,7 +2742,12 @@ any links that you are not going to use.
 </ul>
 </div>
 </div>
-</div></section>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section>
 </div>
     </main>
 </div>
@@ -2760,7 +2772,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.4" class="external-link">sandpaper (0.16.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.5" class="external-link">pegboard (0.7.5)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.2" class="external-link">varnish (1.0.2)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -2783,8 +2795,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/aio.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/aio.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-04-11",
-  "datePublished": "2024-04-11"
+  "dateModified": "2024-04-15",
+  "datePublished": "2024-04-15"
 }
 
   </script><script>

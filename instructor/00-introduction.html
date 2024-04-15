@@ -51,7 +51,7 @@
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
-        <i role="img" aria-label="search button" data-feather="search"></i>
+        <i role="img" aria-label="Search the All In One page" data-feather="search"></i>
       -->
     </div>
     <div class="desktop-nav">
@@ -76,11 +76,17 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li>
           </ul></li>
       </ul></div>
+    <!--
     <form class="d-flex col-md-2 search-form">
-      <fieldset disabled><input class="form-control me-2 searchbox" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success tablet-search-button" type="submit">
-          <i class="search-icon" data-feather="search" role="img" aria-label="search button"></i>
+      <fieldset disabled>
+      <input class="form-control me-2 searchbox" type="search" placeholder="" aria-label="">
+        <button class="btn btn-outline-success tablet-search-button"  type="submit">
+          <i class="search-icon" data-feather="search" role="img" aria-label="Search the All In One page"></i>
         </button>
-      </fieldset></form>
+      </fieldset>
+    </form>
+    -->
+    <a class="btn btn-primary" href="../aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
   Tools and practices for FAIR research software
@@ -308,7 +314,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Course introduction</h1>
-        <p>Last updated on 2024-04-08 |
+        <p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -544,7 +550,9 @@ Typically, we think of such software as being <strong>FAIR</strong>.</p>
 help us along our “FAIRification” journey.</p>
 </section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
-<hr class="half-width"><ul><li><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research" class="external-link">The
+<hr class="half-width"><p>We recommend the following resources for some additional reading on
+the topic of this episode:</p>
+<ul><li><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research" class="external-link">The
 Turing Way’s “Guide for Reproducible Research”</a></li>
 <li>
 <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801" class="external-link">A
@@ -552,10 +560,28 @@ Beginner’s Guide to Conducting Reproducible Research</a>, Jesse M.
 Alston, Jessica A. Rick, Bulletin of The Ecological Society of America
 102 (2) (2021), <a href="https://doi.org/10.1002/bes2.1801" class="external-link uri">https://doi.org/10.1002/bes2.1801</a>
 </li>
+<li><a href="https://guereslib.github.io/ten-reproducible-research-things/" class="external-link">“Ten
+reproducible research things” tutorial</a></li>
+<li><a href="https://carpentries-lab.github.io/good-enough-practices/index.html" class="external-link">“Good
+Enough Practices in Scientific Computing” course</a></li>
+<li>
+<a href="https://www.repro4everyone.org/" class="external-link">Reproducibility for
+Everyone’s (R4E) resources</a>, community-led education initiative to
+increase adoption of open research practices at scale</li>
+<li>
+<a href="https://intersect-training.org/training-links/" class="external-link">Training
+materials on different aspects of research software engineering</a>
+(including open source, reproducibility, research software testing,
+engineering, design, continuous integration, collaboration, version
+control, packaging, etc.), compiled by the <a href="https://intersect-training.org/" class="external-link">INTERSECT project</a>
+</li>
+<li>
+<a href="https://forrt.org/resources/" class="external-link">Curated resources</a> by the
+<a href="https://forrt.org/" class="external-link">Framework for Open and Reproducible
+Research Training</a> (FORRT)</li>
 </ul></section><section id="acknowledgements-and-references"><h2 class="section-heading">Acknowledgements and references<a class="anchor" aria-label="anchor" href="#acknowledgements-and-references"></a>
 </h2>
-<hr class="half-width"><p>The content of this course borrows from or references <a href="reference.html#litref">various work</a>, which we also recommend
-for further reading.</p>
+<hr class="half-width"><p>The content of this course borrows from or references <a href="reference.html#litref">various work</a>.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -596,7 +622,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.4" class="external-link">sandpaper (0.16.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.5" class="external-link">pegboard (0.7.5)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.2" class="external-link">varnish (1.0.2)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -618,8 +644,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/00-introduction.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/00-introduction.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-04-08",
-  "datePublished": "2024-04-11"
+  "dateModified": "2024-04-15",
+  "datePublished": "2024-04-15"
 }
 
   </script><script>
