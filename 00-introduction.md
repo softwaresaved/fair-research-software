@@ -153,9 +153,19 @@ it is important and what practices can help us along our "FAIRification" journey
 
 
 ## Further reading
+
+We recommend the following resources for some additional reading on the topic of this episode:
+
 - [The Turing Way's "Guide for Reproducible Research"][ttw-guide-reproducible-research]
 - [A Beginner's Guide to Conducting Reproducible Research][beginner-guide-reproducible-research],
   Jesse M. Alston, Jessica A. Rick, Bulletin of The Ecological Society of America 102 (2) (2021), https://doi.org/10.1002/bes2.1801
+- ["Ten reproducible research things" tutorial][10-reproducible-research-things] 
+- ["Good Enough Practices in Scientific Computing" course][good-enough-practices]
+- [Reproducibility for Everyone's (R4E) resources][repro4everyone], community-led education initiative to increase 
+adoption of open research practices at scale
+- [Training materials on different aspects of research software engineering][intersect-rse-training] (including open source, reproducibility,
+research software testing, engineering, design, continuous integration, collaboration, version control, packaging,  etc.), compiled by the [INTERSECT project](https://intersect-training.org/) 
+- [Curated resources][forrt-resources] by the [Framework for Open and Reproducible Research Training](https://forrt.org/) (FORRT)
 
 ## Acknowledgements and references
-The content of this course borrows from or references [various work](learners/reference.md#litref), which we also recommend for further reading.
+The content of this course borrows from or references [various work](learners/reference.md#litref).

@@ -35,13 +35,6 @@ exercises: 30
 Content of the episode goes here.
 
 
-## Acknowledgements
-
-The content of this episode was inspired / heavily borrowed from the following resources:
-
-- ...
-- ...
-
 ## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:
@@ -49,7 +42,7 @@ We recommend the following resources for some additional reading on the topic of
 - ...
 - ...
 
-
+Also check the [full reference set](learners/reference.md#litref) for the course.
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

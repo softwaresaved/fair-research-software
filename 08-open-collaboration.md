@@ -192,21 +192,16 @@ A:
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-## Acknowledgements
-
-The content of this episode was inspired / heavily borrowed from the following resources:
-
-- Software carpentry git lesson licensing and citation sections - https://swcarpentry.github.io/git-novice/11-licensing.html and https://swcarpentry.github.io/git-novice/12-citation.html
-- ...
 
 ## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:
 
-- Open source definition - https://opensource.org/osd/
-- What is free software - https://www.gnu.org/philosophy/free-sw.en.html
+- Licencing and citation episodes from the [Software Carpentry's Git Novice lesson][swc-git-lesson]
+- [Open source definition][osd-definition], by the [Open Source Initiative][osd]
+- [What is free software?][free-software]
 
-
+Also check the [full reference set](learners/reference.md#litref) for the course.
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

@@ -152,15 +152,22 @@ R - 2/5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 ## Further reading
 
-- [The Turing Way's "Guide for Reproducible Research"][ttw-guide-reproducible-research]
+We recommend the following resources for some additional reading on the topic of this episode:
+
 - ["Five recommendations for FAIR software"][5-fair-software-recommendations]
 - ["10 easy things to make your research software FAIR"][10-easy-fair-things]
-- [The FAIR guiding principles for scientific data management and stewardship][fair-data-principles] - equivalent principles for FAIR data
-- [The FAIR Cookbook][fair-cookbook] - recipes guiding you through the key steps of a data FAIRification journey
-- [Awesome Research Software Registries][awesome-research-software-registries] - a list of research software registries (by country, organisation, domain and programming language) where research software can be registered to help promote its discovery
+- [Short online courses][nesc-rs-support-courses] on various aspects of research software 
+(including [FAIR][nesc-rs-support-course-fair]), by the NESC Research Software Support
+- A [self-assessment checklist for FAIR research software][fair-rs-checklist], by the Netherlands eScience Center
+    and Australian Research Data Commons 
+- [Awesome Research Software Registries][awesome-research-software-registries] - a list of research software 
+registries (by country, organisation, domain and programming language) where research software can be registered 
+to help promote its discovery
+
+Also check the [full reference set](learners/reference.md#litref) for the course.
+
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

@@ -41,7 +41,7 @@ Looking at the list you made earlier, give each item a mark for how:
   - Findable
   - Accessible
   - Interoperable
-  - Reuseable
+  - Reusable
 you think they are in themselves. Do they help you work in a FAIR way?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -77,13 +77,6 @@ Solution:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Acknowledgements
-
-The content of this episode was inspired / heavily borrowed from the following resources:
-
-- ...
-- ...
-
 ## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:
@@ -91,7 +84,7 @@ We recommend the following resources for some additional reading on the topic of
 - ...
 - ...
 
-
+Also check the [full reference set](learners/reference.md#litref) for the course.
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
