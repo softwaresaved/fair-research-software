@@ -309,7 +309,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code readability</h1>
-        <p>Last updated on 2024-04-15 |
+        <p>Last updated on 2024-05-08 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/04-code-readability.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -352,13 +352,252 @@ detail about what the code is doing</li>
 </div>
 </div>
 </div>
-<p>Content of the episode goes here.</p>
+<div class="section level3">
+<h3 id="variable-names">Variable names<a class="anchor" aria-label="anchor" href="#variable-names"></a></h3>
+<div id="give-a-descriptive-name-to-a-variable" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="give-a-descriptive-name-to-a-variable" class="callout-inner">
+<h3 class="callout-title">Give a descriptive name to a variable<a class="anchor" aria-label="anchor" href="#give-a-descriptive-name-to-a-variable"></a>
+</h3>
+<div class="callout-content">
+<p>Below we have a variable called <code>var</code> being set the value
+of 9.81. <code>var</code> is not a very descriptive name here as it
+doesn’t tell us what 9.81 means, yet it is a very common constant in
+orbital mechanics! Go online and find out which constant 9.81 relates to
+and suggest a new name for this variable.</p>
+<p>Hint: the units are <em>metres per second squared</em>!</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>var <span class="op">=</span> <span class="fl">9.81</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Yes, 9.81 m/s^2 is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
+force exerted by the Earth</a>. It is often referred to as “little g” to
+distinguish it from “big G” which is the <a href="https://en.wikipedia.org/wiki/Gravitational_constant" class="external-link">Gravitational
+Constant</a>. A more decriptive name for this variable therefore might
+be:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>g_earth <span class="op">=</span> <span class="fl">9.81</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="inline-comments">Inline comments<a class="anchor" aria-label="anchor" href="#inline-comments"></a></h3>
+<div id="add-some-comments-to-a-code-block" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="add-some-comments-to-a-code-block" class="callout-inner">
+<h3 class="callout-title">Add some comments to a code block<a class="anchor" aria-label="anchor" href="#add-some-comments-to-a-code-block"></a>
+</h3>
+<div class="callout-content">
+<p>Examine lines 7 to 20 of the <code>bad-code.py</code> script. Add (or
+change!) as many inline comments as you think is required to help
+yourself and others understand what that code block is doing.</p>
+<p>Hint: Inline comments in Python are denoted by a <code>#</code>
+symbol.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Some good inline comments may look like the below example.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Loop through 370 iterations</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> count <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">370</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="co"># Read a line from the CSV file as a string, and split it up into a</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="co"># list wherever the ',' character appears</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    line <span class="op">=</span> csvfile.readline().split(<span class="st">','</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="co"># Create a temporary dictionary to store data in</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    l <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="co"># Loop over the items in the line from the CSV file</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="cf">for</span> thing <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(line[:<span class="dv">7</span>])):</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>        <span class="co"># Add the item to the temporary dictionary</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>        l[fieldnames[thing]] <span class="op">=</span> line[thing]</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="co"># Using the json library, output the dictionary to a json file</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    <span class="im">import</span> json</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    json.dump(l, jsonfile)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="co"># Add a newline to the json file ready for the next entry</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    jsonfile.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co"># Close the json file</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>jsonfile.close()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h3>
+<div id="create-a-function" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="create-a-function" class="callout-inner">
+<h3 class="callout-title">Create a function<a class="anchor" aria-label="anchor" href="#create-a-function"></a>
+</h3>
+<div class="callout-content">
+<p>Below is a function that reads in a JSON file into a dataframe
+structure using the <a href="https://pandas.pydata.org/" class="external-link"><code>pandas</code> library</a> - but
+the code is out of order! Reorder the lines of code within the function
+so that the JSON file is read in using the <code>read_json</code>
+function, any incomplete rows are <em>dropped</em>, the values are
+<em>sorted</em> by date, and then the cleaned dataframe is
+<em>returned</em>. There is also a <code>print</code> statement that
+will display which file is being read in on the command line for
+verification.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>Here is the correct order of the code for the function.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="docstrings">Docstrings<a class="anchor" aria-label="anchor" href="#docstrings"></a></h3>
+<div id="writing-docstrings" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="writing-docstrings" class="callout-inner">
+<h3 class="callout-title">Writing docstrings<a class="anchor" aria-label="anchor" href="#writing-docstrings"></a>
+</h3>
+<div class="callout-content">
+<p>Write a docstring for the <code>read_json_to_dataframe</code>
+function from the previous exercise. Things you may want to consider
+when writing your docstring are:</p>
+<ul><li>Describing what the function does</li>
+<li>What kind of inputs does the function take? Are they required or
+optional? Do they have default values?</li>
+<li>What output will the function produce?</li>
+</ul><p>Hint: Python docstrings are defined by enclosing the text with
+<code>"""</code> above and below. This text is also indented to the same
+level as the code defined beneath it.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<p>A good enough docstring for this function would look like this:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">    Read the data from a JSON file into a Pandas dataframe</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">    Clean the data by removing any incomplete rows and sort by date</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, </span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>                          convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
+</div>
+<p>Using <a href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard" class="external-link">numpy’s
+docstring convention</a>, the docstring may look more like this:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    Ingest data from a JSON file into a pandas DataFrame.</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    input_file</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">        The path to the target JSON file</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">    eva_df : pandas.DataFrame</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">        The cleaned and sorted data as a dataframe structure</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, </span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>                          convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
 the topic of this episode:</p>
-<ul><li>…</li>
-<li>…</li>
+<ul><li><a href="https://introtopython.org/introducing_functions.html" class="external-link">Introducing
+Functions from Introduction to Python</a></li>
+<li><a href="https://www.w3schools.com/python/python_functions.asp" class="external-link">W3Schools.com
+Python Functions</a></li>
 </ul><p>Also check the <a href="reference.html#litref">full reference set</a>
 for the course.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -444,7 +683,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/04-code-readability.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/04-code-readability.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-04-15",
+  "dateModified": "2024-05-08",
   "datePublished": "2024-05-08"
 }
 
