@@ -29,8 +29,19 @@ This will install the Bash command line tool emulation and Git command line tool
 (which will behave in the same way as in Linux environments).
 
 Note that the use of Windows command line tools **Powershell** or `cmd` is not suitable for the course. 
-We also advise against using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) for this course as we do not
-provide instructions for troubleshooting any potential issues between WSL and Visual Studio Code (VS Code).
+We also advise against using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) 
+for this course as we do not provide instructions for troubleshooting any potential issues between WSL and 
+Visual Studio Code (VS Code).
+
+The Git Bash installation presents the user with lots of configuration options - we recommend changing the following 
+two and accepting the default values for all of the others:
+
+- "Git Editor" option for Git Bash - by default this is set to **Vim**; make sure to select **VS Code** instead -  
+if that option is available to you - otherwise accept the default option and we will help you change that later on;
+- "Adjusting the name of the initial branch in new repositories" option - by default this is set to "Let Git decide"; 
+make sure to select the "Override the default branch name for new repositories" option and 
+type the name "main" in the text field.
+
 
 #### macOS and Linux 
 
@@ -170,7 +181,7 @@ GitHub provides full documentation and guides on how to:
 
 A short summary of the commands you need to perform is shown below.
 
-To generate an SSH key pair, you will need to run the `ssh-keygen` command from your command line tool
+To generate an SSH key pair, you will need to run the `ssh-keygen` command (included with your command line tool)
 and provide **your identity for the key pair** (e.g. the email address you used to register with GitHub)
 via the `-C` parameter as shown below.
 
@@ -238,9 +249,12 @@ To download the latest Python distribution for your operating system,
 please head to [Python.org](https://www.python.org/downloads/). 
 Then use an appropriate command for your platform (see below) to test your installation.
 
+Windows users should make sure to check the "Add python.exe to PATH" option to make sure that Python executable 
+is found after installation.
+
 #### Testing Python 3
 
-You can check that you have Python 3 installed from the command line using the commands below.
+You can check that you have Python 3 installed correctly from the command line using the commands below.
 
 ```bash
 $ python3 --version # on macOS/Linux
@@ -256,7 +270,7 @@ Python 3.11.7
 ::: callout
 
 If you are using Windows and invoking `python` command causes your Git Bash terminal to hang with no error message 
-or output, you may need to create an alias for the python executable `python.exe` like so:
+or output, you may need to create an alias for the Python executable `python.exe` like so:
 
 ```bash
 $ alias python="winpty python.exe"
@@ -283,10 +297,10 @@ On macOS and Linux systems, VS Code will typically recognise a command line tool
 it will be available as a "Terminal" in VS Code.
 
 On Windows, if VS Code does not automatically recognise Git Bash as a command line tool to be used as a "Terminal", 
-installing VS Code plugin "Start git-bash" should help.
+installing VS Code extension "Start git-bash" should help (to view available and installed extensions, 
+go to `View > Extensions` from the top-level menu).
 
 ![*Git Bash extension for VS Code on Window*](fig/vscode-gitbash-extension.png){ alt-text="Git Bash extension for VS Code on Windows" .image-with-shadow }
-
 
 To check the command line tool integration and that VS Code knows about different command line tool(s) installed 
 on your system select "Terminal -> New Terminal" from the top level menu.
@@ -303,7 +317,8 @@ You can also change the default command line tool from the same drop down menu b
 
 #### VS Code Extentions for Git 
 
-You could also install the following VS Code extensions to make your Git experience in VS Code better:
+You could also install the following VS Code extensions (from `View > Extensions` top-level menu) 
+to make your Git experience in VS Code better:
 
 - GitLense - Git Supercharged (adds a few nice additions to Git support in VS Code)
 - Git Graph (provides nice graphs and visualisations of a Git repository in VS Code)
@@ -319,7 +334,8 @@ Python 3 you installed.
 
 #### VS Code Extensions for Python
 
-You should install the Python extension for VS Code by Microsoft to make your Python experience in VS Code better.
+You should also install the Python extension for VS Code by Microsoft (from `View > Extensions` top-level menu) 
+to make your Python experience in VS Code better.
 
 ![*Python extension for VS Code by Microsoft*](fig/vscode-python-extension.png){ alt-text="Python extension for VS Code by Microsoft" .image-with-shadow }
 
