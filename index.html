@@ -402,7 +402,19 @@ course. We also advise against using <a href="https://learn.microsoft.com/en-us/
 for Linux (WSL)</a> for this course as we do not provide instructions
 for troubleshooting any potential issues between WSL and Visual Studio
 Code (VS Code).</p>
-</div>
+<p>The Git Bash installation presents the user with lots of
+configuration options - we recommend changing the following two and
+accepting the default values for all of the others:</p>
+<ul><li>“Git Editor” option for Git Bash - by default this is set to
+<strong>Vim</strong>; make sure to select <strong>VS Code</strong>
+instead -<br>
+if that option is available to you - otherwise accept the default option
+and we will help you change that later on;</li>
+<li>“Adjusting the name of the initial branch in new repositories”
+option - by default this is set to “Let Git decide”; make sure to select
+the “Override the default branch name for new repositories” option and
+type the name “main” in the text field.</li>
+</ul></div>
 <div class="section level4">
 <h4 id="macos-and-linux">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux"></a></h4>
 <p>MacOS and Linux users will already have a command line tool available
@@ -557,10 +569,10 @@ an SSH key to a GitHub account</a>.</li>
 </ul><p>A short summary of the commands you need to perform is shown
 below.</p>
 <p>To generate an SSH key pair, you will need to run the
-<code>ssh-keygen</code> command from your command line tool and provide
-<strong>your identity for the key pair</strong> (e.g. the email address
-you used to register with GitHub) via the <code>-C</code> parameter as
-shown below.</p>
+<code>ssh-keygen</code> command (included with your command line tool)
+and provide <strong>your identity for the key pair</strong> (e.g. the
+email address you used to register with GitHub) via the <code>-C</code>
+parameter as shown below.</p>
 <p>You will then be prompted to answer a few questions - e.g. where to
 save the keys on your machine and a passphrase to use to protect your
 private key. Pressing ‘Enter’ on these prompts will get
@@ -633,10 +645,13 @@ anything.</p>
 please head to <a href="https://www.python.org/downloads/" class="external-link">Python.org</a>. Then use an
 appropriate command for your platform (see below) to test your
 installation.</p>
+<p>Windows users should make sure to check the “Add python.exe to PATH”
+option to make sure that Python executable is found after
+installation.</p>
 <div class="section level4">
 <h4 id="testing-python-3">Testing Python 3<a class="anchor" aria-label="anchor" href="#testing-python-3"></a></h4>
-<p>You can check that you have Python 3 installed from the command line
-using the commands below.</p>
+<p>You can check that you have Python 3 installed correctly from the
+command line using the commands below.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -659,7 +674,7 @@ using the commands below.</p>
 <div class="callout-content">
 <p>If you are using Windows and invoking <code>python</code> command
 causes your Git Bash terminal to hang with no error message or output,
-you may need to create an alias for the python executable
+you may need to create an alias for the Python executable
 <code>python.exe</code> like so:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -694,8 +709,10 @@ command line tool you already have on your system (along with all
 programs/commands such as Git you can run from it) and you will not need
 to do anything and it will be available as a “Terminal” in VS Code.</p>
 <p>On Windows, if VS Code does not automatically recognise Git Bash as a
-command line tool to be used as a “Terminal”, installing VS Code plugin
-“Start git-bash” should help.</p>
+command line tool to be used as a “Terminal”, installing VS Code
+extension “Start git-bash” should help (to view available and installed
+extensions, go to <code>View &gt; Extensions</code> from the top-level
+menu).</p>
 <figure><img src="fig/vscode-gitbash-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Git Bash extension for VS Code on Windows" alt="Git Bash extension for VS Code on Window"><div class="figcaption"><em>Git Bash extension for VS Code on
 Window</em></div>
 </figure><p>To check the command line tool integration and that VS Code knows
@@ -716,8 +733,9 @@ that one next time you open a terminal window).</p>
 </figure></div>
 <div class="section level4">
 <h4 id="vs-code-extentions-for-git">VS Code Extentions for Git<a class="anchor" aria-label="anchor" href="#vs-code-extentions-for-git"></a></h4>
-<p>You could also install the following VS Code extensions to make your
-Git experience in VS Code better:</p>
+<p>You could also install the following VS Code extensions (from
+<code>View &gt; Extensions</code> top-level menu) to make your Git
+experience in VS Code better:</p>
 <ul><li>GitLense - Git Supercharged (adds a few nice additions to Git
 support in VS Code)</li>
 <li>Git Graph (provides nice graphs and visualisations of a Git
@@ -735,8 +753,9 @@ installed.</p>
 </div>
 <div class="section level4">
 <h4 id="vs-code-extensions-for-python">VS Code Extensions for Python<a class="anchor" aria-label="anchor" href="#vs-code-extensions-for-python"></a></h4>
-<p>You should install the Python extension for VS Code by Microsoft to
-make your Python experience in VS Code better.</p>
+<p>You should also install the Python extension for VS Code by Microsoft
+(from <code>View &gt; Extensions</code> top-level menu) to make your
+Python experience in VS Code better.</p>
 <figure><img src="fig/vscode-python-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Python extension for VS Code by Microsoft" alt="Python extension for VS Code by Microsoft"><div class="figcaption"><em>Python extension for VS Code by
 Microsoft</em></div>
 </figure></div>
@@ -817,8 +836,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/index.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/index.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-05-08",
-  "datePublished": "2024-05-08"
+  "dateModified": "2024-05-09",
+  "datePublished": "2024-05-09"
 }
 
   </script><script>
