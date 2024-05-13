@@ -22,7 +22,7 @@ exercises: 30
 
 In this episode, we will begin to cover the basics of version control and explore
 how this tool assists us in producing reproducible and sustainable scientific projects.
-We will create a new project, make some changes to it and track them with
+We will create a new software project from our existing code, make some changes to it and track them with
 version control, and then push those changes to a remote server for safe-keeping.
 
 ### What is a version control system?
