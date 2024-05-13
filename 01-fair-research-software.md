@@ -77,7 +77,13 @@ Think of a piece of software you use in your research - any computational tool u
 If you have a bit of code or software you wrote yourself, in any language, feel free to use that.
 
 Do you think it is Findable, Accessible, Interoperable and Reusable? 
-Give it a score from 1 to 5 in each category (1 - very bad, 2 - bad, 3 - passable, 4 - good, 5 - perfect).
+Give it a score from 1 to 5 in each category, where:
+
+- 1 - requires loads of improvement
+- 2 - on a good path, but improvements still needed
+- 3 - decent, a few things could still be improved
+- 4 - very good, only tiny things to improve upon
+- 5 - excellent
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -106,7 +112,7 @@ Let's think about how FAIR this piece of software is.
 
 Compare this data and code to the software you chose earlier.
 Do you think it is Findable, Accessible, Interoperable and Reusable? 
-Give it a score from 1 (very bad) to 5 (perfect) in each category and then we will discuss it together.
+Give it a score from 1 to 5 in each category, as in the previous exercise, and then we will discuss it together.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
