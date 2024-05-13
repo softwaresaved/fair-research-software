@@ -68,6 +68,23 @@ closer to the gold standard of a fully reproducible research.
   * Give a licence to your software clearly stating how it can be reused
   * State how to cite your software
 
+
+:::::: callout
+
+## FAIR is a process, not a perfect metric
+
+FAIR is not a binary metric - there is no such thing as "FAIR or not FAIR".
+
+FAIR is not a perfect metric, nor does it provide a full and exhaustive software quality checklist. 
+
+FAIR refers to the specific **values** of and describes a set of **priciples** for open and reproducible science and 
+can be a helpful guide if you wish to stick to these principles and find out where you are 
+on the **FAIR spectrum** and help you on a **journey** to make your software more FAIR. 
+
+![*FAIR as a 4D spectrum, image by the Netherlands eScience Center licensed under CC-BY 4.0*][https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png]{alt='FAIR represented as as a 4-dimensional spectrum  with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
+
+::::::
+
 We are going to explore the above practices on an example software project we will be working on as part of this
 course.
 
