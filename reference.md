@@ -27,7 +27,11 @@ part of the [The Turing Way: A handbook for reproducible, ethical and collaborat
 collaboration, version control, packaging,  etc.), compiled 
 by the [INTERSECT project](https://intersect-training.org/)
 
+- [Automating assessment of the FAIR Principles for Research Software (FAIR4RS)][automated-assessment-fairrs]
+
 - ["Good Enough Practices in Scientific Computing" course][good-enough-practices]
+
+- [CodeRefinery][coderefinery] - training and e-Infrastructure for research software development
 
 - [Curated resources][forrt-resources] by the 
 [Framework for Open and Reproducible Research Training](https://forrt.org/) (FORRT)

@@ -57,3 +57,5 @@ any links that you are not going to use.
 [osd-definition]: https://opensource.org/osd/
 [free-software]: https://www.gnu.org/philosophy/free-sw.en.html
 [codecheck]: https://codecheck.org.uk/project/
+[automated-assessment-fairrs]: https://zenodo.org/records/11096498
+[coderefinery]: https://coderefinery.org/lessons/
