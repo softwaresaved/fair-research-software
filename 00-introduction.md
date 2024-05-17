@@ -134,7 +134,7 @@ For example, software used to guide a telescope is not considered "research soft
 On the other hand, formulas or macros in spreadsheets used to analyse data are considered "research code" - 
 they are a form of computer programming in that allow one to create, calculate, and change data sets in a number of different ways.
 
-![*Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0*][https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png]{alt='Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
+![*Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0*](https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png){alt='Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
 
 In the [software survey conducted by the Software Sustainability Institute in 2014][ssi-survey-2014], 
 92% of researchers indicated they used some kind of software to aid or conduct their research.
