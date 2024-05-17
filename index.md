@@ -25,7 +25,7 @@ research, including requirements commensurate with the FAIR (Findable, Accessibl
 research methodology
 - Share and version control your software using Git and GitHub
 - List best practices for developing and sharing open and sustainable software (including writing readable code, 
-- code documentation, licencing and citation)
+code documentation, licencing and citation)
 - Assess if the code does what it intends to do
 - List tools and techniques for collaborative and sustainable software development and maintenance
 
