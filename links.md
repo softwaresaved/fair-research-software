@@ -44,8 +44,8 @@ any links that you are not going to use.
 [git-commit-avoid]: https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits
 [9-rs-principles]: https://rsecon24.society-rse.org/about/research-software-development-principles/
 [9-rs-principles-keynote]: https://rsecon24.society-rse.org/about/research-software-development-principles/#neil-chue-hong-rse23-keynote
-[nesc-rs-support-courses]: https://esciencecenter-digital-skills.github.io/software-support-essentials/
-[nesc-rs-support-course-fair]: https://esciencecenter-digital-skills.github.io/software-support-essentials/fairsoftware
+[nesc-rs-support-courses]: https://esciencecenter-digital-skills.github.io/research-software-support/
+[nesc-rs-support-course-fair]: https://esciencecenter-digital-skills.github.io/research-software-support/modules/fairsoftware/info
 [good-enough-practices]: https://carpentries-lab.github.io/good-enough-practices/index.html
 [10-reproducible-research-things]: https://guereslib.github.io/ten-reproducible-research-things/
 [repro4everyone]: https://www.repro4everyone.org/

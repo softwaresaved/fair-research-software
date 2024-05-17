@@ -59,8 +59,8 @@ can be used by the research community to understand how they can make their rese
 
 - [Five recommendations for FAIR software][5-fair-software-recommendations], by the Netherlands eScience Center and DANS
 
-- [Short online courses on various aspects of research software (including FAIR)][nesc-rs-support-courses], by the NESC 
-Research Software Support
+- [Short online courses on various aspects of research software (including FAIR)][nesc-rs-support-courses], by the NeSC 
+Research Software Support 
 
 - [Awesome Research Software Registries][awesome-research-software-registries], a list of research software registries 
 (by country, organisation, domain and programming language) where research software can be registered to help promote 
