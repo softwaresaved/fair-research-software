@@ -358,7 +358,7 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Course introduction</a></p>
 <hr>
-<p>Last updated on 2024-04-15 |
+<p>Last updated on 2024-05-17 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -564,36 +564,45 @@ reproducibility crisis.</li>
 implement new practices and learn new tools. This course aims to teach
 some of these practices and tools pertaining to the use of software to
 conduct reproducible research.</p>
-</section><section id="software-in-research"><h2 class="section-heading">Software in research<a class="anchor" aria-label="anchor" href="#software-in-research"></a>
+</section><section id="software-in-research-and-research-software"><h2 class="section-heading">Software in research and research software<a class="anchor" aria-label="anchor" href="#software-in-research-and-research-software"></a>
 </h2>
 <hr class="half-width">
-<p>Software is fundamental to modern research - some of it would even be
-impossible without software [ssi survey reference]. From short,
-thrown-together temporary scripts to solve a specific problem and help
-with day-to-day research tasks, through an abundance of complex
-spreadsheets analysing collected data, to the hundreds of software
-engineers and millions of lines of code behind international efforts
-such as the Large Hadron Collider and the Square Kilometre Array, there
-are few areas of research where software does not have a fundamental
-role.</p>
+<p>Software is <a href="https://www.software.ac.uk/blog/quick-and-dirty-analysis-software-being-used-research-python-matlab-and-r" class="external-link">fundamental
+to modern research</a> - some of it would even be impossible without
+software. From short, thrown-together temporary scripts to solve a
+specific problem and help with day-to-day research tasks, through an
+abundance of complex spreadsheets analysing collected data, to the
+hundreds of software engineers and millions of lines of code behind
+international efforts such as the Large Hadron Collider and the Square
+Kilometre Array, there are few areas of research where software does not
+have a fundamental role.</p>
+<p>However, it is important to note that not all software that is used
+in research is research software. We define “research software” as
+software or code that is used to generate, process or analyse results of
+a research for publication. For example, software used to guide a
+telescope is not considered “research software”. On the other hand,
+formulas or macros in spreadsheets used to analyse data are considered
+“research code” - they are a form of computer programming in that allow
+one to create, calculate, and change data sets in a number of different
+ways.</p>
+<p>![<em>Definition of “research software” from the FAIR4RS working
+group, image by the Netherlands eScience Center licensed under CC-BY
+4.0</em>][<a href="https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png" class="external-link uri">https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png</a>]</p>
 <p>In the <a href="https://www.software.ac.uk/blog/quick-and-dirty-analysis-software-being-used-research-python-matlab-and-r" class="external-link">software
 survey conducted by the Software Sustainability Institute in 2014</a>,
-92% of researchers indicated they used research software. We define
-“research software” as software or code that is used to generate,
-process or analyse results of a research for publication. Even formulas
-in spreadsheets are considered code - they are a form of computer
-programming in that allow you to create, calculate, and change data sets
-in a number of different ways. So, software is not reserved for <a href="https://en.wikipedia.org/wiki/Computational_science" class="external-link">computational
+92% of researchers indicated they used some kind of software to aid or
+conduct their research. Regardless of the type of the software used,
+software is not reserved for <a href="https://en.wikipedia.org/wiki/Computational_science" class="external-link">computational
 science</a> (aka scientific computing) and “traditional” uses of
 computing capabilities and infrastructures (e.g. simulations and
 computational methods) any more. Nor is its restricted to “hard”
 sciences - the <strong>use of research software is ubiquitous and fairly
 even across all disciplines</strong>.</p>
-<p>Research software is also widely developed - researchers do not just
-use “off the shelf” software and the majority of researchers develop
-their own. In order to be able to produce quality software that outputs
-correct and verifiable results and that can be reused over time -
-researchers require training. This course teaches good practises and
+<p>Research software is increasingly being developed - researchers do
+not just use “off the shelf” software and the majority of researchers
+develop their own. In order to be able to produce quality software that
+outputs correct and verifiable results and that can be reused over time
+- researchers require training. This course teaches good practises and
 reproducible working methods that are agnostic of a programming language
 (although we will use Python code as examples) and aims to provide
 researchers with the tools and knowledge to feel confident when writing
@@ -618,6 +627,8 @@ Alston, Jessica A. Rick, Bulletin of The Ecological Society of America
 </li>
 <li><a href="https://guereslib.github.io/ten-reproducible-research-things/" class="external-link">“Ten
 reproducible research things” tutorial</a></li>
+<li><a href="https://force11.org/groups/fair-4-research-software-fair4rs-working-group/" class="external-link">FORCE11’s
+FAIR 4 Research Software (FAIR4RS) Working Group</a></li>
 <li><a href="https://carpentries-lab.github.io/good-enough-practices/index.html" class="external-link">“Good
 Enough Practices in Scientific Computing” course</a></li>
 <li>
@@ -1476,7 +1487,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -1604,7 +1615,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -1764,7 +1775,7 @@ Alternatively, add screenshots from GitHub UI -->
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -1960,7 +1971,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -2753,7 +2764,7 @@ Licence.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2791,7 +2802,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2823,7 +2834,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2862,7 +2873,7 @@ in newer versions</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -2905,7 +2916,7 @@ request</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>A:</p>
 </div>
@@ -3067,8 +3078,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/aio.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/aio.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-05-14",
-  "datePublished": "2024-05-14"
+  "dateModified": "2024-05-17",
+  "datePublished": "2024-05-17"
 }
 
   </script><script>
