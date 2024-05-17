@@ -22,6 +22,8 @@ part of the [The Turing Way: A handbook for reproducible, ethical and collaborat
 - [Reproducibility for Everyone's (R4E) resources][repro4everyone], community-led education initiative to increase
     adoption of open research practices at scale
 
+- [FORCE11's FAIR 4 Research Software (FAIR4RS) Working Group][fair4rs-working-group/]
+
 - [Training materials on different aspects of research software engineering][intersect-rse-training] 
 (including open source, reproducibility, research software testing, engineering, design, continuous integration, 
 collaboration, version control, packaging,  etc.), compiled 

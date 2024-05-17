@@ -118,8 +118,8 @@ However, reproducible research often requires that researchers implement new pra
 This course aims to teach some of these practices and tools pertaining to the use of software to conduct 
 reproducible research.
 
-## Software in research
-Software is fundamental to modern research - some of it would even be impossible without software [ssi survey reference]. 
+## Software in research and research software
+Software is [fundamental to modern research][ssi-survey-2014] - some of it would even be impossible without software. 
 From short, thrown-together temporary scripts to
 solve a specific problem and help with day-to-day research tasks, 
 through an abundance of complex spreadsheets analysing collected
@@ -127,19 +127,24 @@ data, to the hundreds of software engineers and millions of lines of code behind
 efforts such as the Large Hadron Collider and the Square Kilometre Array, there are few areas of
 research where software does not have a fundamental role.
 
-In the [software survey conducted by the Software Sustainability Institute in 2014][ssi-survey-2014], 
-92% of researchers indicated they used research software. 
+However, it is important to note that not all software that is used in research is research software. 
 We define "research software" as software or code that is used to generate, process or analyse results of a research 
 for publication. 
-Even formulas in spreadsheets are considered code - they are a form of computer programming in that allow you to 
-create, calculate, and change data sets in a number of different ways. 
-So, software is not reserved for [computational science][computational-science] 
+For example, software used to guide a telescope is not considered "research software". 
+On the other hand, formulas or macros in spreadsheets used to analyse data are considered "research code" - 
+they are a form of computer programming in that allow one to create, calculate, and change data sets in a number of different ways.
+
+![*Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0*][https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png]{alt='Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
+
+In the [software survey conducted by the Software Sustainability Institute in 2014][ssi-survey-2014], 
+92% of researchers indicated they used some kind of software to aid or conduct their research.
+Regardless of the type of the software used, software is not reserved for [computational science][computational-science] 
 (aka scientific computing) and “traditional” uses of computing capabilities and infrastructures (e.g.
 simulations and computational methods) any more.
 Nor is its restricted to "hard" sciences - the **use of research software is ubiquitous and 
 fairly even across all disciplines**.
 
-Research software is also widely developed - researchers do not just use “off the shelf” software and
+Research software is increasingly being developed - researchers do not just use “off the shelf” software and
 the majority of researchers develop their own. 
 In order to be able to produce quality software that outputs correct and verifiable results and 
 that can be reused over time - researchers require training.
@@ -159,7 +164,8 @@ We recommend the following resources for some additional reading on the topic of
 - [The Turing Way's "Guide for Reproducible Research"][ttw-guide-reproducible-research]
 - [A Beginner's Guide to Conducting Reproducible Research][beginner-guide-reproducible-research],
   Jesse M. Alston, Jessica A. Rick, Bulletin of The Ecological Society of America 102 (2) (2021), https://doi.org/10.1002/bes2.1801
-- ["Ten reproducible research things" tutorial][10-reproducible-research-things] 
+- ["Ten reproducible research things" tutorial][10-reproducible-research-things]
+- [FORCE11's FAIR 4 Research Software (FAIR4RS) Working Group][fair4rs-working-group/]
 - ["Good Enough Practices in Scientific Computing" course][good-enough-practices]
 - [Reproducibility for Everyone's (R4E) resources][repro4everyone], community-led education initiative to increase 
 adoption of open research practices at scale

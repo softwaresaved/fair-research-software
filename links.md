@@ -57,5 +57,6 @@ any links that you are not going to use.
 [osd-definition]: https://opensource.org/osd/
 [free-software]: https://www.gnu.org/philosophy/free-sw.en.html
 [codecheck]: https://codecheck.org.uk/project/
+[fair4rs-working-group/]: https://force11.org/groups/fair-4-research-software-fair4rs-working-group/
 [automated-assessment-fairrs]: https://zenodo.org/records/11096498
 [coderefinery]: https://coderefinery.org/lessons/
