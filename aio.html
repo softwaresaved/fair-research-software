@@ -884,7 +884,7 @@ then we will discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Here are some questions to help you assess the FAIRness of the
 code:</p>
@@ -949,7 +949,7 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
 <p>F - 1/5 - Positive: None - Negative: No descriptive name, identifier
@@ -1031,7 +1031,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-tools"><p>Content from <a href="02-tools.html">Tools and practices for research software development</a></p>
 <hr>
-<p>Last updated on 2024-05-13 |
+<p>Last updated on 2024-06-14 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/02-tools.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1045,7 +1045,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What tools are available to help us work in a FAIR way?</li>
+<li>What tools are available to help us develop research software in a
+FAIR way?</li>
 <li>How do the tools fit together to enable FAIR research?</li>
 </ul>
 </div>
@@ -1057,14 +1058,289 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Identify some key tools for FAIR research</li>
-<li>Install and run key tools on their own workstation</li>
 <li>Explain why these help us work in a FAIR way</li>
+<li>Install and run key tools on their own workstation</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
+<p>In this course we will introduce you to a group of tools and
+practices that are commonly used in research to help you develop
+software in a FAIR way. You should already have these tools installed on
+your machine following the setup instructions. Here we will give an
+overview of the tools, how they help you achieve the aims of FAIR
+research software and how they work together. In later episodes we will
+describe some tools in more detail.</p>
+<p>The table below summarises which tools and practices help to meet
+which parts of the FAIR software guidelines.</p>
+<table class="table">
+<colgroup>
+<col width="48%">
+<col width="10%">
+<col width="13%">
+<col width="16%">
+<col width="10%">
+</colgroup>
+<thead><tr class="header">
+<th>Tools and practices</th>
+<th>Findable</th>
+<th>Accessible</th>
+<th>Interoperable</th>
+<th>Reusable</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Integrated development environment - VSCode</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Reproducible workflows - Bash shell</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Version control - Git</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Testing</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Documentation</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>License</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Citation</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Software repository - GitHub</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="writing-your-code"><h2 class="section-heading">Writing your code<a class="anchor" aria-label="anchor" href="#writing-your-code"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="development-environment">Development environment<a class="anchor" aria-label="anchor" href="#development-environment"></a>
+</h3>
+<p>One of the first choices we make when writing code is what tool to
+use to do the writing. You can use a simple text editor such as Notepad,
+a terminal based editor with syntax highlighting such as Vim or Emacs,
+or one of many Integrated Development Environments (IDEs) which give you
+the tools to write, run and debug your code and inspect the output all
+in one place. (Note that you should not use word processing software
+such as Microsoft Word or Apple Pages to write code - these tools are
+designed to create nicely formatted text for humans to read, so they may
+add or change formatting, or insert invisible characters that the
+programming language can’t interpret. Try opening a Word document in
+Notepad to see an example.)</p>
+<p>This is mostly a personal choice as an experienced user of any of
+these tools can write good, FAIR software efficiently, but IDEs are
+popular because they are designed specifically for writing and running
+code. There are some language specific IDEs such as PyCharm, and some
+that can work with many languages like VSCode (Visual Studio Code). IDEs
+also have add-ons that provide extra functionality, such as checking you
+are code as you type (similar to a spell-checker in Word), highlighting
+when you are not following best practice, or even automatically
+generating bits of code for you.</p>
+
+<p>In this course we will use VSCode, as it is free, available on
+Windows, Mac and Linux operating systems, and can be used with many
+programming languages. It gives us a single program in which we can:</p>
+<ul>
+<li>view our file system</li>
+<li>open many kinds of files</li>
+<li>edit, compile, run and debug code</li>
+<li>open a terminal to run command line tools or view code outputs</li>
+</ul>
+<p>Please open the Python file and the data file in VSCode now.</p>
+</div>
+<div class="section level3">
+<h3 id="command-lineshell">Command line/shell<a class="anchor" aria-label="anchor" href="#command-lineshell"></a>
+</h3>
+<p>In VSCode and other IDEs you can often run the code by clicking a
+button or pressing some keyboard shortcut. If you gave your code to a
+colleague or collaborator they might use the same IDE or something
+different, so you can’t guarantee that they will have the same buttons
+and shortcuts as you.</p>
+<p>In the last lesson we mentioned that Interoperable software should
+use standard protocols so that it can integrate with other tools One of
+these standard protocols is the command line or shell. This is one of
+the oldest ways of interacting with computers so many programs will have
+command line interfaces. Command line languages such as Bash and Zsh
+allow you to group or chain commands together to build up complex
+workflows using several programs in different steps. They also use less
+resources than a graphical user interface like and IDE so are commonly
+used on high-performance computers and other shared systems where time,
+memory and processing power are expensive or in high demand.</p>
+<p>In this course we will use the Bash shell, which is one of the most
+common and comes already installed on Mac and Linux operating systems.
+You can create a command line interface to your program which will allow
+it to be run on any system that has a Bash shell, and allow users to
+change things like input and output files or choose different settings
+or parameters without editing your code. With a command line interface,
+your code can be built into automated workflows so that the whole
+process from data gathering to analysis to saving publication-quality
+results can be written in one Bash script and saved and reused.</p>
+</div>
+<div class="section level3">
+<h3 id="version-control">Version control<a class="anchor" aria-label="anchor" href="#version-control"></a>
+</h3>
+<p>Version control means knowing what changes were made to your code and
+when. Many people who have worked on large documents such as essays
+start doing this by saving files called <code>essay_draft</code>,
+<code>essay_version1.doc</code>, <code>essay_version2.doc</code>, and so
+on. This can work on a small scale but most people find it quickly gets
+confusing which version a certain change was made, or which version is
+the one that you got feedback from a supervisor on. Using a version
+control system helps you keep track of changes, including when you might
+be working on shared code being edited by more than one person at a
+time.</p>
+<p>It also lets you assign version numbers or tags to particular
+versions so you can then use those to refer back to them later. For
+example you can run your code and output some results and add a comment
+to your output that those results were produced by version 2.4 of your
+code, so if you try to run the same thing later and find it is
+different, you can check if it is a change in the code due to using a
+newer version, or a change in the data, or something else.</p>
+<p>We will be using the Git version control system, which can be used
+through the command line, in a browser or in a desktop application.</p>
+</div>
+<div class="section level3">
+<h3 id="testing">Testing<a class="anchor" aria-label="anchor" href="#testing"></a>
+</h3>
+<p>Testing ensures that your code is correct and does what it is set out
+to do. When you write code you often feel very confident that it is
+perfect, but when writing bigger codes or code that is meant to do
+complex operations it is very hard to consider all possible edge cases
+or notice every single typing mistake. Testing also gives other people
+confidence in your code as they can see an example of how it is meant to
+run and be assured that it does work correctly on their machine.</p>
+<p>We will show different ways to test your code for different purposes.
+You need to think about what it is that is important to you and any
+future users or collaborators to decide what kind of testing is most
+useful for you.</p>
+</div>
+<div class="section level3">
+<h3 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
+</h3>
+<p>Documentation comes in many forms - from the names of variables and
+functions in your code, additional comments that explain some lines, up
+to a whole website full of documentation in function definitions and
+usage, tutorials and guides. You many not need as much documentation as
+a large commercial software product, but making your code Reusable
+relies on other people being able to understand what your code does and
+how to use it.</p>
+</div>
+<div class="section level3">
+<h3 id="licences-and-citation">Licences and citation<a class="anchor" aria-label="anchor" href="#licences-and-citation"></a>
+</h3>
+<p>A licence states what people can legally do with your code, and what
+restrictions you have placed on it. Whenever you want to use someone
+else’s code you should check what license they have and make sure your
+use is legal. You may be restricted by your institution, your grant
+funding, or by other tools you use that require certain licenses for you
+to be compatible with them.</p>
+<p>Having a citation guidance is not a legal requirement but if you want
+to get academic credit for your work you can make other people’s life
+much easier by telling them how you would like to be credited, and
+making sure when you use ohers code in your research that you give them
+credit as they want.</p>
+<p>Both licensing law and citation proceedures can vary depending on
+your country and institution, so remember to check with a local team
+where you are. Your local research IT or library team would be a good
+place to start.</p>
+</div>
+<div class="section level3">
+<h3 id="code-repositories-and-registries">Code repositories and registries<a class="anchor" aria-label="anchor" href="#code-repositories-and-registries"></a>
+</h3>
+<p>Having somewhere to share your code is fundamental to making it
+Findable. Your institution might have a code repository, your research
+field may have a practice of sharing code in a specific website or
+journal, or your version control system might include an online
+component that makes sharing different versions of your code easy.
+Again, remember to check the rules of your institution and grant on
+publising code, and any licenses for code you depend on or reuse.</p>
+<p>We will discuss later how to share your code on GitHub and make it
+easy for others to find and use.</p>
+</div>
+</section><section id="summary"><h2 class="section-heading">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="findable">Findable<a class="anchor" aria-label="anchor" href="#findable"></a>
+</h3>
+<ul>
+<li>Describe your software - README</li>
+<li>Software repository/registry - GitHub, registries</li>
+<li>Unique persistent identifier - GitHub commits/tags/releases,
+Zenodo</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="accessible">Accessible<a class="anchor" aria-label="anchor" href="#accessible"></a>
+</h3>
+<ul>
+<li>Software repository/registry</li>
+<li>License</li>
+<li>Language and dependencies</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="interoperable">Interoperable<a class="anchor" aria-label="anchor" href="#interoperable"></a>
+</h3>
+<ul>
+<li>Explain functionality - readme, inline comments and
+documentation</li>
+<li>Standard formats</li>
+<li>Communication protocols - CLI/API</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="reusable">Reusable<a class="anchor" aria-label="anchor" href="#reusable"></a>
+</h3>
+<ul>
+<li>Document functionality/installation/running</li>
+<li>Follow best practices where appropriate</li>
+<li>License</li>
+<li>Citation</li>
+</ul>
+</div>
+</section><section id="checking-your-setup"><h2 class="section-heading">Checking your setup<a class="anchor" aria-label="anchor" href="#checking-your-setup"></a>
+</h2>
+<hr class="half-width">
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1073,63 +1349,9 @@ any links that you are not going to use.
 <h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
 </h3>
 <div class="callout-content">
-<ul>
-<li>List the tools, platforms and standards you currently use in your
-research.</li>
-<li>Note down whether you they could be easily used or understood by:
-<ul>
-<li>Someone else in your research group</li>
-<li>Another researcher in your field but from a different group</li>
-<li>An untrained member of the public</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="discussion2" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
-</h3>
-<div class="callout-content">
-<p>Looking at the list you made earlier, give each item a mark for how:
-- Findable - Accessible - Interoperable - Reusable you think they are in
-themselves. Do they help you work in a FAIR way?</p>
-</div>
-</div>
-</div>
-<div id="discussion3" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion3"></a>
-</h3>
-<div class="callout-content">
-<p>Open a terminal and look at the prompt. Compare with oyur neighbour,
-does it look different? What information is it telling you and why might
-this be useful?</p>
-<p>Hint: The prompt is the <code>$</code> character and any text that
-comes before it, that is shown on every new line before you type in
-commands.</p>
-<p>Solution:</p>
-</div>
-</div>
-</div>
-<div id="discussion4" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion4"></a>
-</h3>
-<div class="callout-content">
-<p>Run the following commands to check you have installed the tools
-listed in the Setup page. Compare the output with your neightbour and
-see if you can see any differences.</p>
+<p>Run the following commands in a Bash shell to check you have
+installed the tools listed in the Setup page. Compare the output with
+your neightbour and see if you can see any differences.</p>
 <ol style="list-style-type: decimal">
 <li><code>echo $SHELL</code></li>
 <li><code>pwd</code></li>
@@ -1143,12 +1365,22 @@ see if you can see any differences.</p>
 </div>
 </div>
 </div>
+<div class="exercise">
+<p>Open a terminal and look at the prompt. Compare what you see in the
+terminal with your neighbour, does it look the same or different? What
+information is it telling you and why might this be useful? What other
+information might you want?</p>
+<p>Hint: The prompt is the <code>$</code> character and any text that
+comes before it, that is shown on every new line before you type in
+commands.</p>
+<p>Solution:</p>
+</div>
 <p>You may have noticed that our researcher has received the software
 project they are meant to be working as a <code>.zip</code> archive via
 email. In the next episode, we will learn a better practice for sharing
 and tracking changes to a software project using version control
 software Git and project sharing and collaboration platform GitHub.</p>
-<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend the following resources for some additional reading on
@@ -1493,7 +1725,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -1621,7 +1853,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -1781,7 +2013,7 @@ Alternatively, add screenshots from GitHub UI -->
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -1977,7 +2209,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul>
 <li>
