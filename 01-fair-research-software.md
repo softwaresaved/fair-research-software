@@ -53,7 +53,9 @@ closer to the gold standard of a fully reproducible research.
 * Findable
   * Create a description of your software
   * Place your software in a public software repository (and ideally register it in a [software registry](https://github.com/NLeSC/awesome-research-software-registries))
-  * Use a unique and persistent identifier for your software (also useful for citations)
+  * Use a unique and persistent identifier (DOI) for your software (e.g. by depositing your code on Zenodo), 
+  which is also useful for citations - note that depositing your data/code on GitHub and similar software repositories 
+  may not be enough as they may change their open access model or disappear completely
 * Accessible
   * Make sure people can freely, legally and easily get a copy your software
   * Use coding conventions and comments to make your code readable and understandable by people (once they get a copy of it)
@@ -75,13 +77,16 @@ closer to the gold standard of a fully reproducible research.
 
 FAIR is not a binary metric - there is no such thing as "FAIR or not FAIR".
 
-FAIR is not a perfect metric, nor does it provide a full and exhaustive software quality checklist. 
+FAIR is not a perfect metric, nor does it provide a full and exhaustive software quality checklist.
+Software may be FAIR but still not very good in terms of its functionality.
+
+FAIR is meant to criticise or discredit work. 
 
 FAIR refers to the specific **values** of and describes a set of **principles** for open and reproducible science and 
 can be a helpful guide if you wish to stick to these principles and find out where you are 
 on the **FAIR spectrum** and help you on a **journey** to make your software more FAIR. 
 
-![*FAIR as a 4D spectrum, image by the Netherlands eScience Center licensed under CC-BY 4.0*](https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png){alt='FAIR represented as as a 4-dimensional spectrum  with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
+![*FAIR as a 4D spectrum, image by the Netherlands eScience Center licensed under CC-BY 4.0*](episodes/fig/fair-spectrum.png){alt='FAIR represented as as a 4-dimensional spectrum  with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
 
 ::::::
 
@@ -93,8 +98,7 @@ course.
 Think of a piece of software you use in your research - any computational tool used for data gathering, modelling & simulation, processing & visualising results or others. 
 If you have a bit of code or software you wrote yourself, in any language, feel free to use that.
 
-Do you think it is Findable, Accessible, Interoperable and Reusable? 
-Give it a score from 1 to 5 in each category, where:
+Think where on the FAIR spectrum it fits, using the following scale as a guide for each principle:
 
 - 1 - requires loads of improvement
 - 2 - on a good path, but improvements still needed
@@ -107,22 +111,26 @@ Give it a score from 1 to 5 in each category, where:
 ## Software and data used in this course
 
 We are going to follow a fairly typical experience of a new PhD or postdoc joining a research group. 
-They were emailed some data and an analysis code bundled in a `.zip` archive and written by another group member who works on similar things. 
-They need to be able to install and run this code on their machine, check they understand it and then adapt it to their own project.
+They were emailed some data and analysis code bundled in a `.zip` archive and written by another group member 
+who works on similar things. 
+They need to be able to install and run this code on their machine, check they understand it and then adapt it to 
+their own project.
 
 As part of the [setup for this course](./index.html#astronaut-data-and-analysis-code), you should have downloaded a `.zip` archive containing the software project
 the new research team member was given. 
 Let's unzip this archive and inspect its content in VS Code. 
-
 The software project contains:
-- a JSON file (`data.json`) with data on extra-vehicular activities (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA via its [Open Data Portal](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data)), and
-- a Python code file (`my code v2.py`) contaning some analysis
 
-![JSON data file snippet showing EVA/spacewalk data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)](episodes/fig/astronaut-data-json-snippet.png)
+- a JSON file (`data.json`) - a snippet of which is shown below - with data on extra-vehicular activities (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA via its [Open Data Portal](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data)), and
+- a Python script (`my code v2.py`) containing some analysis.
 
-The code is a short Python script which does some common research tasks:
+![JSON data file snippet showing EVA/spacewalk data including EVA id, country, crew members, vehicle type, date of the spacewalk, duration, and purpose)](episodes/fig/astronaut-data-json-snippet.png){alt='JSON data file snippet showing EVA/spacewalk data including EVA id, country, crew members, vehicle type, date of the spacewalk, duration, and purpose'}
+
+
+The code in the Python script does some common research tasks:
+
 * Read in the data from the JSON file
-* Change the data from one format to another and save to a file in the new format
+* Change the data from one data format to another and save to a file in the new format (CSV)
 * Perform some calculations to generate summary statistics about the data
 * Make a plot to visualise the data
 
@@ -140,14 +148,14 @@ Give it a score from 1 to 5 in each category, as in the previous exercise, and t
 
 ::::::::::::::::::::::::::::::::::::: hint
 
-Here are some questions to help you assess the FAIRness of the code:
+Here are some questions to help you assess where on the FAIR spectrum the code is:
 
 1. **Findable**
   * If these files were emailed to you, or sent on a chat platform, or handed to you on a memory stick, how easy would it be to find them again in 6 months, or 3 years?
   * If you asked your collaborator to give you the files again later on, how would you describe them? Do they have a clear name? 
   * If more data was added to the data set later, could you explain exactly which data you used in the original analysis?
 2. **Accessible**
-  * If the person who gave you the files left your institution, how could you get access to the files again?
+  * If the person who gave you the files left your institution, how would you get access to the files again?
   * Once you have the files, can you understand the code? Does it make sense to you?
   * Do you need to log into anything to use this? Does it require purchase or subscription to a service, platform or tool?
 3. **Interoperable**
@@ -166,19 +174,30 @@ Here are some questions to help you assess the FAIRness of the code:
 I would give the following scores:
 
 F - 1/5
+
   - Positive: None
   - Negative: No descriptive name, identifier or version number. No way to find again except through one person and they might not remember what file you mean.
+
 A - 2/5
+
   - Positive: No accounts or paid services needed. Python is free, the data is free and under a shareable license
   - Negative: No way to get the code without that one person.  Not clear where the data comes or what license it has unless you check the URL in the comment.
+
 I - 3/5
+
   - Positive: CSV and JSON files are common and well documented formats. They are machine- and human-readable. They could be generated by or fed into other programs in a pipeline.
   - Negative: JSON might not be well used in some fields. No API or CLI.
+
 R - 2/5
+
   - Positive: Can ask collaborator for explicit permissions for using and modifying and how to credit them, if they did not specify before. Python is a common language.
   - Negative: Python and library versions not specified. Bad variable names, hardcoded inputs, no clear structure or documentation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+Let's have a look into tools and practices that are commonly used in research that can help us develop software in a 
+more FAIR way.
+
 
 ## Further reading
 

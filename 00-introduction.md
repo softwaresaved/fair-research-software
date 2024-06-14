@@ -51,7 +51,8 @@ discuss them with other participants.
 
 - What do you understand by the words "open" and "reproducible" in the context of research?
 - How many people or groups can you list that might benefit from your work being open and reproducible?
-- How many times did you wish that someone else's work you came across was more open or accessible to you?
+- How many times did you wish that someone else's work you came across was more open or accessible to you? 
+Can you provide some examples?
 :::
 
 ## What is reproducible research?

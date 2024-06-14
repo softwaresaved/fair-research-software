@@ -13,26 +13,31 @@ exercises: 30
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify some key tools for FAIR research
-- Explain why these help us work in a FAIR way
-- Install and run key tools on their own workstation
+- Identify some key tools for FAIR research software
+- Explain how can these tools help us work in a FAIR way
+- Install and run these key tools on learner's machines
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In this course we will introduce you to a group of tools and practices that are commonly used in research to help you develop software in a FAIR way. You should already have these tools installed on your machine following the setup instructions. Here we will give an overview of the tools, how they help you achieve the aims of FAIR research software and how they work together. In later episodes we will describe some tools in more detail.
+In this course we will introduce you to a group of tools and practices that are commonly used in research to help you 
+develop software in a FAIR way. 
+You should already have these tools installed on your machine following the setup instructions. 
+Here we will give an overview of the tools, how they help you achieve the aims of FAIR research software and how 
+they work together. 
+In later episodes we will describe some of these tools in more detail.
 
-The table below summarises which tools and practices help to meet which parts of the FAIR software guidelines.
+The table below summarises some tools and practices that can help with each of the FAIR software principles.
 
-| Tools and practices                         | Findable | Accessible | Interoperable | Reusable |
-|---------------------------------------------|----------|------------|---------------|----------|
-| Integrated development environment - VSCode |          |            |               | x        |
-| Reproducible workflows - Bash shell         |          |            | x             | x        |
-| Version control - Git                       | x        |            |               |          |
-| Testing                                     |          |            |               | x        |
-| Documentation                               | x        |            | x             | x        |
-| License                                     |          | x          |               | x        |
-| Citation                                    | x        |            |               | x        |
-| Software repository - GitHub                | x        | x          |               |          |
+| Tools and practices                                                                              | Findable | Accessible | Interoperable | Reusable |
+|--------------------------------------------------------------------------------------------------|----------|------------|---------------|----------|
+| Integrated development environments (e.g. VS Code) - development environments (run, test, debug) |          |            |               | x        |
+| Command line (e.g. Bash)- reproducible workflows/pipelines                                       |          |            | x             | x        |
+| Version control tools                                                                            | x        |            |               |          |
+| Testing                                                                                          |          |            |               | x        |
+| Coding conventions and documentation                                                             | x        |            | x             | x        |
+| License                                                                                          |          | x          |               | x        |
+| Citation                                                                                         | x        |            |               | x        |
+| Software repositories (e.g. GitHub)                                                              | x        | x          |               |          |
 
 
 ## Writing your code
@@ -40,36 +45,53 @@ The table below summarises which tools and practices help to meet which parts of
 ### Development environment
 
 One of the first choices we make when writing code is what tool to use to do the writing.
-You can use a simple text editor such as Notepad, a terminal based editor with syntax highlighting such as Vim or Emacs, or one of many Integrated Development Environments (IDEs) which give you the tools to write, run and debug your code and inspect the output all in one place. 
-(Note that you should not use word processing software such as Microsoft Word or Apple Pages to write code - these tools are designed to create nicely formatted text for humans to read, so they may add or change formatting, or insert invisible characters that the programming language can't interpret. 
-Try opening a Word document in Notepad to see an example.)
+You can use a simple text editor such as Notepad, a terminal based editor with syntax highlighting such as Vim or Emacs, 
+or one of many Integrated Development Environments (IDEs) which give you the tools to write, run and debug your code 
+and inspect the output all in one place. 
+Note that you should not use word processing software such as Microsoft Word or Apple Pages to write code - 
+these tools are designed to create nicely formatted text for humans to read, so they may add or change formatting, 
+or insert invisible characters that the programming language cannot interpret. 
+Try opening a Word document in Notepad to see an example.
 
-This is mostly a personal choice as an experienced user of any of these tools can write good, FAIR software efficiently, but IDEs are popular because they are designed specifically for writing and running code.
-There are some language specific IDEs such as PyCharm, and some that can work with many languages like VSCode (Visual Studio Code). 
-IDEs also have add-ons that provide extra functionality, such as checking you are code as you type (similar to a spell-checker in Word), highlighting when you are not following best practice, or even automatically generating bits of code for you.
+This is mostly a personal choice as an experienced user of any of these tools can write good, FAIR software efficiently, 
+but IDEs are popular because they are designed specifically for writing and running code.
+There are some language specific IDEs such as PyCharm, and some that can work with many languages like 
+VS Code (Visual Studio Code). 
+IDEs also have add-ons that provide extra functionality, such as checking you are code as you type 
+(similar to a spell-checker in Word), highlighting when you are not following best practice, or even automatically 
+generating bits of code for you.
 
 ::::::::::::::::::::::::::: instructor
-At this point you could open the Python file or another file in VSCode to show all the squiggly lines suggesting improvements.
+At this point you could open the Python file or another file in VS Code to show all the squiggly lines suggesting 
+improvements.
 ::::::::::::::::::::::::::::::::
 
-In this course we will use VSCode, as it is free, available on Windows, Mac and Linux operating systems, and can be used with many programming languages. It gives us a single program in which we can:
+In this course we will use VS Code IDE, as it is free, available on Windows, Mac and Linux operating systems, 
+and can be used with many programming languages. 
+It is a single tool in which we can:
 
 - view our file system
 - open many kinds of files
 - edit, compile, run and debug code
-- open a terminal to run command line tools or view code outputs
+- open a terminal to run command line tools (including version control tool Git) or view code outputs
 
-Please open the Python file and the data file in VSCode now.
+Use VS Code to open the Python script and the data file from our project.
 
-### Command line/shell
+### Command line tool/shell
 
-In VSCode and other IDEs you can often run the code by clicking a button or pressing some keyboard shortcut.
-If you gave your code to a colleague or collaborator they might use the same IDE or something different, so you can't guarantee that they will have the same buttons and shortcuts as you.
+In VS Code and similar IDEs you can often run the code by clicking a button or pressing some keyboard shortcut.
+If you gave your code to a colleague or collaborator they might use the same IDE or something different, 
+so you cannot guarantee that they will have the same buttons and shortcuts as you.
 
-In the last lesson we mentioned that Interoperable software should use standard protocols so that it can integrate with other tools
-One of these standard protocols is the command line or shell.
+In the previous episode we mentioned that interoperable software should use standard protocols so that it can 
+integrate with other tools.
+One of these standard protocols/tools is the command line tool or shell.
 This is one of the oldest ways of interacting with computers so many programs will have command line interfaces.
-Command line languages such as Bash and Zsh allow you to group or chain commands together to build up complex workflows using several programs in different steps. They also use less resources than a graphical user interface like and IDE so are commonly used on high-performance computers and other shared systems where time, memory and processing power are expensive or in high demand.
+Command line tools, such as Bash and Zsh, have their own language syntax that allow you to write scripts and/or 
+group and chain commands together to build up complex workflows using several programs in different steps. 
+They also use less resources than a graphical user interface tool like an IDE, so are commonly used on 
+high-performance computers and other shared systems where time, memory and processing power are expensive or in 
+high demand.
 
 In this course we will use the Bash shell, which is one of the most common and comes already installed on Mac and Linux operating systems.
 You can create a command line interface to your program which will allow it to be run on any system that has a Bash shell, and allow users to change things like input and output files or choose different settings or parameters without editing your code.
