@@ -358,7 +358,7 @@ green `<> Code` button, then selecting `Download ZIP` option from the drop-down 
 
 ![*Code and data bundle download as a zip file from GitHub*](fig/github-code-download.png){ alt-text="Code download as a zip file from GitHub" .image-with-shadow }
 
-This repository contains data on spacewalks (extravehicular activities, EVAs) by astronauts and 
-some code to analyse and plot this data. 
+This repository contains [NASA's open data on spacewalks](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/data_preview) 
+(i.e. extravehicular activities - EVAs) undertaken by astronauts and cosmonauts from 1965 to 2013
+and some Python code to analyse and plot this data. 
 We will use it for code examples and exercises throughout this course.
-

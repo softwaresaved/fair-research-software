@@ -107,23 +107,28 @@ Give it a score from 1 to 5 in each category, where:
 ## Software and data used in this course
 
 We are going to follow a fairly typical experience of a new PhD or postdoc joining a research group. 
-They are given some data and an analysis script written by another group member who works on similar things, and they want to run this, check they understand it and then adapt it to their own project.
-You should have downloaded a `.zip` archive containing a CSV data file (`Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv`) and a Python code file (`bad code.py`) as explained 
-in the [setup section](./index.html#astronaut-data-and-analysis-code) for this course.
+They were emailed some data and an analysis code bundled in a `.zip` archive and written by another group member who works on similar things. 
+They need to be able to install and run this code on their machine, check they understand it and then adapt it to their own project.
 
-The CSV file contains data about Extra-vehicular Activity (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013.
+As part of the [setup for this course](./index.html#astronaut-data-and-analysis-code), you should have downloaded a `.zip` archive containing the software project
+the new research team member was given. 
+Let's unzip this archive and inspect its content in VS Code. 
 
-![CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows](episodes/fig/Astronaut-csv-screenshot.png)
+The software project contains:
+- a JSON file (`data.json`) with data on extra-vehicular activities (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA via its [Open Data Portal](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data)), and
+- a Python code file (`my code v2.py`) contaning some analysis
+
+![JSON data file snippet showing EVA/spacewalk data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)](episodes/fig/astronaut-data-json-snippet.png)
 
 The code is a short Python script which does some common research tasks:
-* Read in the data from the CSV file
-* Change the data from one format to another and save to a file the new format
+* Read in the data from the JSON file
+* Change the data from one format to another and save to a file in the new format
 * Perform some calculations to generate summary statistics about the data
 * Make a plot to visualise the data
 
 ![A first few lines of a Python script](episodes/fig/astronaut-analysis-bad-code-screenshot.png)
 
-Let's think about how FAIR this piece of software is.
+Let's have a critical look at this code and think about how FAIR this piece of software is.
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
