@@ -311,7 +311,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>FAIR research software</h1>
-        <p>Last updated on 2024-05-29 |
+        <p>Last updated on 2024-06-14 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/01-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -477,27 +477,31 @@ Give it a score from 1 to 5 in each category, where:</p>
 </section><section id="software-and-data-used-in-this-course"><h2 class="section-heading">Software and data used in this course<a class="anchor" aria-label="anchor" href="#software-and-data-used-in-this-course"></a>
 </h2>
 <hr class="half-width"><p>We are going to follow a fairly typical experience of a new PhD or
-postdoc joining a research group. They are given some data and an
-analysis script written by another group member who works on similar
-things, and they want to run this, check they understand it and then
-adapt it to their own project. You should have downloaded a
-<code>.zip</code> archive containing a CSV data file
-(<code>Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv</code>)
-and a Python code file (<code>bad code.py</code>) as explained in the <a href="./index.html#astronaut-data-and-analysis-code">setup section</a>
-for this course.</p>
-<p>The CSV file contains data about Extra-vehicular Activity (EVAs or
-spacewalks) undertaken by astronauts and cosmonauts from 1965 to
-2013.</p>
-<figure><img src="fig/Astronaut-csv-screenshot.png" alt="CSV file showing the column headers (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose) and first few rows" class="figure mx-auto d-block"><div class="figcaption">CSV file showing the column headers (EVA #,
-Country, Crew, Vehicle, Date, Duration, Purpose) and first few
-rows</div>
+postdoc joining a research group. They were emailed some data and an
+analysis code bundled in a <code>.zip</code> archive and written by
+another group member who works on similar things. They need to be able
+to install and run this code on their machine, check they understand it
+and then adapt it to their own project.</p>
+<p>As part of the <a href="./index.html#astronaut-data-and-analysis-code">setup for this
+course</a>, you should have downloaded a <code>.zip</code> archive
+containing the software project the new research team member was given.
+Let’s unzip this archive and inspect its content in VS Code.</p>
+<p>The software project contains: - a JSON file (<code>data.json</code>)
+with data on extra-vehicular activities (EVAs or spacewalks) undertaken
+by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA
+via its <a href="https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data" class="external-link">Open
+Data Portal</a>), and - a Python code file (<code>my code v2.py</code>)
+contaning some analysis</p>
+<figure><img src="fig/astronaut-data-json-snippet.png" alt="JSON data file snippet showing EVA/spacewalk data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)" class="figure mx-auto d-block"><div class="figcaption">JSON data file snippet showing EVA/spacewalk
+data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)</div>
 </figure><p>The code is a short Python script which does some common research
-tasks: * Read in the data from the CSV file * Change the data from one
-format to another and save to a file the new format * Perform some
+tasks: * Read in the data from the JSON file * Change the data from one
+format to another and save to a file in the new format * Perform some
 calculations to generate summary statistics about the data * Make a plot
 to visualise the data</p>
 <figure><img src="fig/astronaut-analysis-bad-code-screenshot.png" alt="A first few lines of a Python script" class="figure mx-auto d-block"><div class="figcaption">A first few lines of a Python script</div>
-</figure><p>Let’s think about how FAIR this piece of software is.</p>
+</figure><p>Let’s have a critical look at this code and think about how FAIR this
+piece of software is.</p>
 <div id="discussion3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -518,7 +522,7 @@ then we will discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Here are some questions to help you assess the FAIRness of the
 code:</p>
@@ -567,7 +571,7 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
 <p>F - 1/5 - Positive: None - Negative: No descriptive name, identifier
@@ -700,8 +704,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/01-fair-research-software.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-05-29",
-  "datePublished": "2024-06-04"
+  "dateModified": "2024-06-14",
+  "datePublished": "2024-06-14"
 }
 
   </script><script>
