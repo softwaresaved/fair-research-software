@@ -230,7 +230,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="07-research-ethics.html">8. Ethical considerations for code &amp; data</a>
+        <a href="07-open-collaboration.html">8. Open project collaboration &amp; management</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -239,7 +239,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="08-open-collaboration.html">9. Open project collaboration &amp; management</a>
+        <a href="08-code-ethics.html">9. Ethical considerations for code &amp; data</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -343,9 +343,9 @@ FAIR way?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Identify some key tools for FAIR research</li>
-<li>Explain why these help us work in a FAIR way</li>
-<li>Install and run key tools on their own workstation</li>
+<ul><li>Identify some key tools for FAIR research software</li>
+<li>Explain how can these tools help us work in a FAIR way</li>
+<li>Install and run these key tools on learner’s machines</li>
 </ul></div>
 </div>
 </div>
@@ -357,25 +357,26 @@ software in a FAIR way. You should already have these tools installed on
 your machine following the setup instructions. Here we will give an
 overview of the tools, how they help you achieve the aims of FAIR
 research software and how they work together. In later episodes we will
-describe some tools in more detail.</p>
-<p>The table below summarises which tools and practices help to meet
-which parts of the FAIR software guidelines.</p>
-<table class="table"><colgroup><col width="48%"><col width="10%"><col width="13%"><col width="16%"><col width="10%"></colgroup><thead><tr class="header"><th>Tools and practices</th>
+describe some of these tools in more detail.</p>
+<p>The table below summarises some tools and practices that can help
+with each of the FAIR software principles.</p>
+<table class="table"><colgroup><col width="67%"><col width="6%"><col width="8%"><col width="10%"><col width="6%"></colgroup><thead><tr class="header"><th>Tools and practices</th>
 <th>Findable</th>
 <th>Accessible</th>
 <th>Interoperable</th>
 <th>Reusable</th>
-</tr></thead><tbody><tr class="odd"><td>Integrated development environment - VSCode</td>
+</tr></thead><tbody><tr class="odd"><td>Integrated development environments (e.g. VS Code) - development
+environments (run, test, debug)</td>
 <td></td>
 <td></td>
 <td></td>
 <td>x</td>
-</tr><tr class="even"><td>Reproducible workflows - Bash shell</td>
+</tr><tr class="even"><td>Command line (e.g. Bash)- reproducible workflows/pipelines</td>
 <td></td>
 <td></td>
 <td>x</td>
 <td>x</td>
-</tr><tr class="odd"><td>Version control - Git</td>
+</tr><tr class="odd"><td>Version control tools</td>
 <td>x</td>
 <td></td>
 <td></td>
@@ -385,7 +386,7 @@ which parts of the FAIR software guidelines.</p>
 <td></td>
 <td></td>
 <td>x</td>
-</tr><tr class="odd"><td>Documentation</td>
+</tr><tr class="odd"><td>Coding conventions and documentation</td>
 <td>x</td>
 <td></td>
 <td>x</td>
@@ -400,7 +401,7 @@ which parts of the FAIR software guidelines.</p>
 <td></td>
 <td></td>
 <td>x</td>
-</tr><tr class="even"><td>Software repository - GitHub</td>
+</tr><tr class="even"><td>Software repositories (e.g. GitHub)</td>
 <td>x</td>
 <td>x</td>
 <td></td>
@@ -414,21 +415,21 @@ use to do the writing. You can use a simple text editor such as Notepad,
 a terminal based editor with syntax highlighting such as Vim or Emacs,
 or one of many Integrated Development Environments (IDEs) which give you
 the tools to write, run and debug your code and inspect the output all
-in one place. (Note that you should not use word processing software
-such as Microsoft Word or Apple Pages to write code - these tools are
+in one place. Note that you should not use word processing software such
+as Microsoft Word or Apple Pages to write code - these tools are
 designed to create nicely formatted text for humans to read, so they may
 add or change formatting, or insert invisible characters that the
-programming language can’t interpret. Try opening a Word document in
-Notepad to see an example.)</p>
+programming language cannot interpret. Try opening a Word document in
+Notepad to see an example.</p>
 <p>This is mostly a personal choice as an experienced user of any of
 these tools can write good, FAIR software efficiently, but IDEs are
 popular because they are designed specifically for writing and running
 code. There are some language specific IDEs such as PyCharm, and some
-that can work with many languages like VSCode (Visual Studio Code). IDEs
-also have add-ons that provide extra functionality, such as checking you
-are code as you type (similar to a spell-checker in Word), highlighting
-when you are not following best practice, or even automatically
-generating bits of code for you.</p>
+that can work with many languages like VS Code (Visual Studio Code).
+IDEs also have add-ons that provide extra functionality, such as
+checking you are code as you type (similar to a spell-checker in Word),
+highlighting when you are not following best practice, or even
+automatically generating bits of code for you.</p>
 <div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
@@ -437,38 +438,42 @@ generating bits of code for you.</p>
 </button>
 <div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
-<p>At this point you could open the Python file or another file in
-VSCode to show all the squiggly lines suggesting improvements.</p>
+<p>At this point you could open the Python file or another file in VS
+Code to show all the squiggly lines suggesting improvements.</p>
 </div>
 </div>
 </div>
 </div>
-<p>In this course we will use VSCode, as it is free, available on
+<p>In this course we will use VS Code IDE, as it is free, available on
 Windows, Mac and Linux operating systems, and can be used with many
-programming languages. It gives us a single program in which we can:</p>
+programming languages. It is a single tool in which we can:</p>
 <ul><li>view our file system</li>
 <li>open many kinds of files</li>
 <li>edit, compile, run and debug code</li>
-<li>open a terminal to run command line tools or view code outputs</li>
-</ul><p>Please open the Python file and the data file in VSCode now.</p>
+<li>open a terminal to run command line tools (including version control
+tool Git) or view code outputs</li>
+</ul><p>Use VS Code to open the Python script and the data file from our
+project.</p>
 </div>
 <div class="section level3">
-<h3 id="command-lineshell">Command line/shell<a class="anchor" aria-label="anchor" href="#command-lineshell"></a></h3>
-<p>In VSCode and other IDEs you can often run the code by clicking a
+<h3 id="command-line-toolshell">Command line tool/shell<a class="anchor" aria-label="anchor" href="#command-line-toolshell"></a></h3>
+<p>In VS Code and similar IDEs you can often run the code by clicking a
 button or pressing some keyboard shortcut. If you gave your code to a
 colleague or collaborator they might use the same IDE or something
-different, so you can’t guarantee that they will have the same buttons
+different, so you cannot guarantee that they will have the same buttons
 and shortcuts as you.</p>
-<p>In the last lesson we mentioned that Interoperable software should
-use standard protocols so that it can integrate with other tools One of
-these standard protocols is the command line or shell. This is one of
-the oldest ways of interacting with computers so many programs will have
-command line interfaces. Command line languages such as Bash and Zsh
-allow you to group or chain commands together to build up complex
+<p>In the previous episode we mentioned that interoperable software
+should use standard protocols so that it can integrate with other tools.
+One of these standard protocols/tools is the command line tool or shell.
+This is one of the oldest ways of interacting with computers so many
+programs will have command line interfaces. Command line tools, such as
+Bash and Zsh, have their own language syntax that allow you to write
+scripts and/or group and chain commands together to build up complex
 workflows using several programs in different steps. They also use less
-resources than a graphical user interface like and IDE so are commonly
-used on high-performance computers and other shared systems where time,
-memory and processing power are expensive or in high demand.</p>
+resources than a graphical user interface tool like an IDE, so are
+commonly used on high-performance computers and other shared systems
+where time, memory and processing power are expensive or in high
+demand.</p>
 <p>In this course we will use the Bash shell, which is one of the most
 common and comes already installed on Mac and Linux operating systems.
 You can create a command line interface to your program which will allow

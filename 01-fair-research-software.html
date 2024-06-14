@@ -229,7 +229,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="07-research-ethics.html">8. Ethical considerations for code &amp; data</a>
+        <a href="07-open-collaboration.html">8. Open project collaboration &amp; management</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -238,7 +238,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="08-open-collaboration.html">9. Open project collaboration &amp; management</a>
+        <a href="08-code-ethics.html">9. Ethical considerations for code &amp; data</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -402,8 +402,11 @@ of a fully reproducible research.</p>
 <li>Place your software in a public software repository (and ideally
 register it in a <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">software
 registry</a>)</li>
-<li>Use a unique and persistent identifier for your software (also
-useful for citations)</li>
+<li>Use a unique and persistent identifier (DOI) for your software
+(e.g. by depositing your code on Zenodo), which is also useful for
+citations - note that depositing your data/code on GitHub and similar
+software repositories may not be enough as they may change their open
+access model or disappear completely</li>
 </ul></li>
 <li>Accessible
 <ul><li>Make sure people can freely, legally and easily get a copy your
@@ -438,13 +441,15 @@ reused</li>
 <p>FAIR is not a binary metric - there is no such thing as “FAIR or not
 FAIR”.</p>
 <p>FAIR is not a perfect metric, nor does it provide a full and
-exhaustive software quality checklist.</p>
+exhaustive software quality checklist. Software may be FAIR but still
+not very good in terms of its functionality.</p>
+<p>FAIR is meant to criticise or discredit work.</p>
 <p>FAIR refers to the specific <strong>values</strong> of and describes
 a set of <strong>principles</strong> for open and reproducible science
 and can be a helpful guide if you wish to stick to these principles and
 find out where you are on the <strong>FAIR spectrum</strong> and help
 you on a <strong>journey</strong> to make your software more FAIR.</p>
-<figure><img src="https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png" alt="FAIR represented as as a 4-dimensional spectrum with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0" class="figure mx-auto d-block"><div class="figcaption"><em>FAIR as a 4D spectrum, image by the
+<figure><img src="fig/fair-spectrum.png" alt="FAIR represented as as a 4-dimensional spectrum with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0" class="figure mx-auto d-block"><div class="figcaption"><em>FAIR as a 4D spectrum, image by the
 Netherlands eScience Center licensed under CC-BY 4.0</em></div>
 </figure></div>
 </div>
@@ -464,8 +469,8 @@ computational tool used for data gathering, modelling &amp; simulation,
 processing &amp; visualising results or others. If you have a bit of
 code or software you wrote yourself, in any language, feel free to use
 that.</p>
-<p>Do you think it is Findable, Accessible, Interoperable and Reusable?
-Give it a score from 1 to 5 in each category, where:</p>
+<p>Think where on the FAIR spectrum it fits, using the following scale
+as a guide for each principle:</p>
 <ul><li>1 - requires loads of improvement</li>
 <li>2 - on a good path, but improvements still needed</li>
 <li>3 - decent, a few things could still be improved</li>
@@ -477,7 +482,7 @@ Give it a score from 1 to 5 in each category, where:</p>
 </section><section id="software-and-data-used-in-this-course"><h2 class="section-heading">Software and data used in this course<a class="anchor" aria-label="anchor" href="#software-and-data-used-in-this-course"></a>
 </h2>
 <hr class="half-width"><p>We are going to follow a fairly typical experience of a new PhD or
-postdoc joining a research group. They were emailed some data and an
+postdoc joining a research group. They were emailed some data and
 analysis code bundled in a <code>.zip</code> archive and written by
 another group member who works on similar things. They need to be able
 to install and run this code on their machine, check they understand it
@@ -485,21 +490,26 @@ and then adapt it to their own project.</p>
 <p>As part of the <a href="./index.html#astronaut-data-and-analysis-code">setup for this
 course</a>, you should have downloaded a <code>.zip</code> archive
 containing the software project the new research team member was given.
-Let’s unzip this archive and inspect its content in VS Code.</p>
-<p>The software project contains: - a JSON file (<code>data.json</code>)
-with data on extra-vehicular activities (EVAs or spacewalks) undertaken
-by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA
-via its <a href="https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data" class="external-link">Open
-Data Portal</a>), and - a Python code file (<code>my code v2.py</code>)
-contaning some analysis</p>
-<figure><img src="fig/astronaut-data-json-snippet.png" alt="JSON data file snippet showing EVA/spacewalk data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)" class="figure mx-auto d-block"><div class="figcaption">JSON data file snippet showing EVA/spacewalk
-data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)</div>
-</figure><p>The code is a short Python script which does some common research
-tasks: * Read in the data from the JSON file * Change the data from one
-format to another and save to a file in the new format * Perform some
-calculations to generate summary statistics about the data * Make a plot
-to visualise the data</p>
-<figure><img src="fig/astronaut-analysis-bad-code-screenshot.png" alt="A first few lines of a Python script" class="figure mx-auto d-block"><div class="figcaption">A first few lines of a Python script</div>
+Let’s unzip this archive and inspect its content in VS Code. The
+software project contains:</p>
+<ul><li>a JSON file (<code>data.json</code>) - a snippet of which is shown
+below - with data on extra-vehicular activities (EVAs or spacewalks)
+undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided
+by NASA via its <a href="https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data" class="external-link">Open
+Data Portal</a>), and</li>
+<li>a Python script (<code>my code v2.py</code>) containing some
+analysis.</li>
+</ul><figure><img src="fig/astronaut-data-json-snippet.png" alt="JSON data file snippet showing EVA/spacewalk data including EVA id, country, crew members, vehicle type, date of the spacewalk, duration, and purpose" class="figure mx-auto d-block"><div class="figcaption">JSON data file snippet showing EVA/spacewalk
+data including EVA id, country, crew members, vehicle type, date of the
+spacewalk, duration, and purpose)</div>
+</figure><p>The code in the Python script does some common research tasks:</p>
+<ul><li>Read in the data from the JSON file</li>
+<li>Change the data from one data format to another and save to a file
+in the new format (CSV)</li>
+<li>Perform some calculations to generate summary statistics about the
+data</li>
+<li>Make a plot to visualise the data</li>
+</ul><figure><img src="fig/astronaut-analysis-bad-code-screenshot.png" alt="A first few lines of a Python script" class="figure mx-auto d-block"><div class="figcaption">A first few lines of a Python script</div>
 </figure><p>Let’s have a critical look at this code and think about how FAIR this
 piece of software is.</p>
 <div id="discussion3" class="callout discussion">
@@ -522,10 +532,10 @@ then we will discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
-<p>Here are some questions to help you assess the FAIRness of the
-code:</p>
+<p>Here are some questions to help you assess where on the FAIR spectrum
+the code is:</p>
 <ol style="list-style-type: decimal"><li><strong>Findable</strong></li>
 </ol><ul><li>If these files were emailed to you, or sent on a chat platform, or
 handed to you on a memory stick, how easy would it be to find them again
@@ -536,7 +546,7 @@ how would you describe them? Do they have a clear name?</li>
 exactly which data you used in the original analysis?</li>
 </ul><ol start="2" style="list-style-type: decimal"><li><strong>Accessible</strong></li>
 </ol><ul><li>If the person who gave you the files left your institution, how
-could you get access to the files again?</li>
+would you get access to the files again?</li>
 <li>Once you have the files, can you understand the code? Does it make
 sense to you?</li>
 <li>Do you need to log into anything to use this? Does it require
@@ -571,28 +581,38 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
-<p>F - 1/5 - Positive: None - Negative: No descriptive name, identifier
-or version number. No way to find again except through one person and
-they might not remember what file you mean. A - 2/5 - Positive: No
-accounts or paid services needed. Python is free, the data is free and
-under a shareable license - Negative: No way to get the code without
-that one person. Not clear where the data comes or what license it has
-unless you check the URL in the comment. I - 3/5 - Positive: CSV and
-JSON files are common and well documented formats. They are machine- and
-human-readable. They could be generated by or fed into other programs in
-a pipeline. - Negative: JSON might not be well used in some fields. No
-API or CLI. R - 2/5 - Positive: Can ask collaborator for explicit
-permissions for using and modifying and how to credit them, if they did
-not specify before. Python is a common language. - Negative: Python and
-library versions not specified. Bad variable names, hardcoded inputs, no
-clear structure or documentation.</p>
+<p>F - 1/5</p>
+<ul><li>Positive: None</li>
+<li>Negative: No descriptive name, identifier or version number. No way
+to find again except through one person and they might not remember what
+file you mean.</li>
+</ul><p>A - 2/5</p>
+<ul><li>Positive: No accounts or paid services needed. Python is free, the
+data is free and under a shareable license</li>
+<li>Negative: No way to get the code without that one person. Not clear
+where the data comes or what license it has unless you check the URL in
+the comment.</li>
+</ul><p>I - 3/5</p>
+<ul><li>Positive: CSV and JSON files are common and well documented formats.
+They are machine- and human-readable. They could be generated by or fed
+into other programs in a pipeline.</li>
+<li>Negative: JSON might not be well used in some fields. No API or
+CLI.</li>
+</ul><p>R - 2/5</p>
+<ul><li>Positive: Can ask collaborator for explicit permissions for using
+and modifying and how to credit them, if they did not specify before.
+Python is a common language.</li>
+<li>Negative: Python and library versions not specified. Bad variable
+names, hardcoded inputs, no clear structure or documentation.</li>
+</ul></div>
 </div>
 </div>
 </div>
-</div>
+<p>Let’s have a look into tools and practices that are commonly used in
+research that can help us develop software in a more FAIR way.</p>
 </section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on

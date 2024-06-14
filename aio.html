@@ -269,7 +269,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="07-research-ethics.html">8. Ethical considerations for code &amp; data</a>
+        <a href="07-open-collaboration.html">8. Open project collaboration &amp; management</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -281,7 +281,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="08-open-collaboration.html">9. Open project collaboration &amp; management</a>
+        <a href="08-code-ethics.html">9. Ethical considerations for code &amp; data</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -358,7 +358,7 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Course introduction</a></p>
 <hr>
-<p>Last updated on 2024-05-21 |
+<p>Last updated on 2024-06-14 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/00-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -463,7 +463,7 @@ context of research?</li>
 <li>How many people or groups can you list that might benefit from your
 work being open and reproducible?</li>
 <li>How many times did you wish that someone else’s work you came across
-was more open or accessible to you?</li>
+was more open or accessible to you? Can you provide some examples?</li>
 </ul>
 </div>
 </div>
@@ -752,8 +752,11 @@ of a fully reproducible research.</p>
 <li>Place your software in a public software repository (and ideally
 register it in a <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">software
 registry</a>)</li>
-<li>Use a unique and persistent identifier for your software (also
-useful for citations)</li>
+<li>Use a unique and persistent identifier (DOI) for your software
+(e.g. by depositing your code on Zenodo), which is also useful for
+citations - note that depositing your data/code on GitHub and similar
+software repositories may not be enough as they may change their open
+access model or disappear completely</li>
 </ul>
 </li>
 <li>Accessible
@@ -796,13 +799,15 @@ reused</li>
 <p>FAIR is not a binary metric - there is no such thing as “FAIR or not
 FAIR”.</p>
 <p>FAIR is not a perfect metric, nor does it provide a full and
-exhaustive software quality checklist.</p>
+exhaustive software quality checklist. Software may be FAIR but still
+not very good in terms of its functionality.</p>
+<p>FAIR is meant to criticise or discredit work.</p>
 <p>FAIR refers to the specific <strong>values</strong> of and describes
 a set of <strong>principles</strong> for open and reproducible science
 and can be a helpful guide if you wish to stick to these principles and
 find out where you are on the <strong>FAIR spectrum</strong> and help
 you on a <strong>journey</strong> to make your software more FAIR.</p>
-<figure><img src="https://esciencecenter-digital-skills.github.io/software-support-essentials/stories/_fairsoftware/definition.png" alt="FAIR represented as as a 4-dimensional spectrum with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0" class="figure mx-auto d-block"><div class="figcaption"><em>FAIR as a 4D spectrum, image by the
+<figure><img src="fig/fair-spectrum.png" alt="FAIR represented as as a 4-dimensional spectrum with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0" class="figure mx-auto d-block"><div class="figcaption"><em>FAIR as a 4D spectrum, image by the
 Netherlands eScience Center licensed under CC-BY 4.0</em></div>
 </figure>
 </div>
@@ -823,8 +828,8 @@ computational tool used for data gathering, modelling &amp; simulation,
 processing &amp; visualising results or others. If you have a bit of
 code or software you wrote yourself, in any language, feel free to use
 that.</p>
-<p>Do you think it is Findable, Accessible, Interoperable and Reusable?
-Give it a score from 1 to 5 in each category, where:</p>
+<p>Think where on the FAIR spectrum it fits, using the following scale
+as a guide for each principle:</p>
 <ul>
 <li>1 - requires loads of improvement</li>
 <li>2 - on a good path, but improvements still needed</li>
@@ -839,7 +844,7 @@ Give it a score from 1 to 5 in each category, where:</p>
 </h2>
 <hr class="half-width">
 <p>We are going to follow a fairly typical experience of a new PhD or
-postdoc joining a research group. They were emailed some data and an
+postdoc joining a research group. They were emailed some data and
 analysis code bundled in a <code>.zip</code> archive and written by
 another group member who works on similar things. They need to be able
 to install and run this code on their machine, check they understand it
@@ -847,20 +852,29 @@ and then adapt it to their own project.</p>
 <p>As part of the <a href="./index.html#astronaut-data-and-analysis-code">setup for this
 course</a>, you should have downloaded a <code>.zip</code> archive
 containing the software project the new research team member was given.
-Let’s unzip this archive and inspect its content in VS Code.</p>
-<p>The software project contains: - a JSON file (<code>data.json</code>)
-with data on extra-vehicular activities (EVAs or spacewalks) undertaken
-by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA
-via its <a href="https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data" class="external-link">Open
-Data Portal</a>), and - a Python code file (<code>my code v2.py</code>)
-contaning some analysis</p>
-<figure><img src="fig/astronaut-data-json-snippet.png" alt="JSON data file snippet showing EVA/spacewalk data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)" class="figure mx-auto d-block"><div class="figcaption">JSON data file snippet showing EVA/spacewalk
-data (EVA #, Country, Crew, Vehicle, Date, Duration, Purpose)</div>
-</figure><p>The code is a short Python script which does some common research
-tasks: * Read in the data from the JSON file * Change the data from one
-format to another and save to a file in the new format * Perform some
-calculations to generate summary statistics about the data * Make a plot
-to visualise the data</p>
+Let’s unzip this archive and inspect its content in VS Code. The
+software project contains:</p>
+<ul>
+<li>a JSON file (<code>data.json</code>) - a snippet of which is shown
+below - with data on extra-vehicular activities (EVAs or spacewalks)
+undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided
+by NASA via its <a href="https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data" class="external-link">Open
+Data Portal</a>), and</li>
+<li>a Python script (<code>my code v2.py</code>) containing some
+analysis.</li>
+</ul>
+<figure><img src="fig/astronaut-data-json-snippet.png" alt="JSON data file snippet showing EVA/spacewalk data including EVA id, country, crew members, vehicle type, date of the spacewalk, duration, and purpose" class="figure mx-auto d-block"><div class="figcaption">JSON data file snippet showing EVA/spacewalk
+data including EVA id, country, crew members, vehicle type, date of the
+spacewalk, duration, and purpose)</div>
+</figure><p>The code in the Python script does some common research tasks:</p>
+<ul>
+<li>Read in the data from the JSON file</li>
+<li>Change the data from one data format to another and save to a file
+in the new format (CSV)</li>
+<li>Perform some calculations to generate summary statistics about the
+data</li>
+<li>Make a plot to visualise the data</li>
+</ul>
 <figure><img src="fig/astronaut-analysis-bad-code-screenshot.png" alt="A first few lines of a Python script" class="figure mx-auto d-block"><div class="figcaption">A first few lines of a Python script</div>
 </figure><p>Let’s have a critical look at this code and think about how FAIR this
 piece of software is.</p>
@@ -884,10 +898,10 @@ then we will discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
-<p>Here are some questions to help you assess the FAIRness of the
-code:</p>
+<p>Here are some questions to help you assess where on the FAIR spectrum
+the code is:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Findable</strong></li>
 </ol>
@@ -905,7 +919,7 @@ exactly which data you used in the original analysis?</li>
 </ol>
 <ul>
 <li>If the person who gave you the files left your institution, how
-could you get access to the files again?</li>
+would you get access to the files again?</li>
 <li>Once you have the files, can you understand the code? Does it make
 sense to you?</li>
 <li>Do you need to log into anything to use this? Does it require
@@ -949,28 +963,46 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
-<p>F - 1/5 - Positive: None - Negative: No descriptive name, identifier
-or version number. No way to find again except through one person and
-they might not remember what file you mean. A - 2/5 - Positive: No
-accounts or paid services needed. Python is free, the data is free and
-under a shareable license - Negative: No way to get the code without
-that one person. Not clear where the data comes or what license it has
-unless you check the URL in the comment. I - 3/5 - Positive: CSV and
-JSON files are common and well documented formats. They are machine- and
-human-readable. They could be generated by or fed into other programs in
-a pipeline. - Negative: JSON might not be well used in some fields. No
-API or CLI. R - 2/5 - Positive: Can ask collaborator for explicit
-permissions for using and modifying and how to credit them, if they did
-not specify before. Python is a common language. - Negative: Python and
-library versions not specified. Bad variable names, hardcoded inputs, no
-clear structure or documentation.</p>
+<p>F - 1/5</p>
+<ul>
+<li>Positive: None</li>
+<li>Negative: No descriptive name, identifier or version number. No way
+to find again except through one person and they might not remember what
+file you mean.</li>
+</ul>
+<p>A - 2/5</p>
+<ul>
+<li>Positive: No accounts or paid services needed. Python is free, the
+data is free and under a shareable license</li>
+<li>Negative: No way to get the code without that one person. Not clear
+where the data comes or what license it has unless you check the URL in
+the comment.</li>
+</ul>
+<p>I - 3/5</p>
+<ul>
+<li>Positive: CSV and JSON files are common and well documented formats.
+They are machine- and human-readable. They could be generated by or fed
+into other programs in a pipeline.</li>
+<li>Negative: JSON might not be well used in some fields. No API or
+CLI.</li>
+</ul>
+<p>R - 2/5</p>
+<ul>
+<li>Positive: Can ask collaborator for explicit permissions for using
+and modifying and how to credit them, if they did not specify before.
+Python is a common language.</li>
+<li>Negative: Python and library versions not specified. Bad variable
+names, hardcoded inputs, no clear structure or documentation.</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
+<p>Let’s have a look into tools and practices that are commonly used in
+research that can help us develop software in a more FAIR way.</p>
 </section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width">
@@ -1057,9 +1089,9 @@ FAIR way?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Identify some key tools for FAIR research</li>
-<li>Explain why these help us work in a FAIR way</li>
-<li>Install and run key tools on their own workstation</li>
+<li>Identify some key tools for FAIR research software</li>
+<li>Explain how can these tools help us work in a FAIR way</li>
+<li>Install and run these key tools on learner’s machines</li>
 </ul>
 </div>
 </div>
@@ -1072,16 +1104,16 @@ software in a FAIR way. You should already have these tools installed on
 your machine following the setup instructions. Here we will give an
 overview of the tools, how they help you achieve the aims of FAIR
 research software and how they work together. In later episodes we will
-describe some tools in more detail.</p>
-<p>The table below summarises which tools and practices help to meet
-which parts of the FAIR software guidelines.</p>
+describe some of these tools in more detail.</p>
+<p>The table below summarises some tools and practices that can help
+with each of the FAIR software principles.</p>
 <table class="table">
 <colgroup>
-<col width="48%">
+<col width="67%">
+<col width="6%">
+<col width="8%">
 <col width="10%">
-<col width="13%">
-<col width="16%">
-<col width="10%">
+<col width="6%">
 </colgroup>
 <thead><tr class="header">
 <th>Tools and practices</th>
@@ -1092,21 +1124,22 @@ which parts of the FAIR software guidelines.</p>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Integrated development environment - VSCode</td>
+<td>Integrated development environments (e.g. VS Code) - development
+environments (run, test, debug)</td>
 <td></td>
 <td></td>
 <td></td>
 <td>x</td>
 </tr>
 <tr class="even">
-<td>Reproducible workflows - Bash shell</td>
+<td>Command line (e.g. Bash)- reproducible workflows/pipelines</td>
 <td></td>
 <td></td>
 <td>x</td>
 <td>x</td>
 </tr>
 <tr class="odd">
-<td>Version control - Git</td>
+<td>Version control tools</td>
 <td>x</td>
 <td></td>
 <td></td>
@@ -1120,7 +1153,7 @@ which parts of the FAIR software guidelines.</p>
 <td>x</td>
 </tr>
 <tr class="odd">
-<td>Documentation</td>
+<td>Coding conventions and documentation</td>
 <td>x</td>
 <td></td>
 <td>x</td>
@@ -1141,7 +1174,7 @@ which parts of the FAIR software guidelines.</p>
 <td>x</td>
 </tr>
 <tr class="even">
-<td>Software repository - GitHub</td>
+<td>Software repositories (e.g. GitHub)</td>
 <td>x</td>
 <td>x</td>
 <td></td>
@@ -1160,51 +1193,55 @@ use to do the writing. You can use a simple text editor such as Notepad,
 a terminal based editor with syntax highlighting such as Vim or Emacs,
 or one of many Integrated Development Environments (IDEs) which give you
 the tools to write, run and debug your code and inspect the output all
-in one place. (Note that you should not use word processing software
-such as Microsoft Word or Apple Pages to write code - these tools are
+in one place. Note that you should not use word processing software such
+as Microsoft Word or Apple Pages to write code - these tools are
 designed to create nicely formatted text for humans to read, so they may
 add or change formatting, or insert invisible characters that the
-programming language can’t interpret. Try opening a Word document in
-Notepad to see an example.)</p>
+programming language cannot interpret. Try opening a Word document in
+Notepad to see an example.</p>
 <p>This is mostly a personal choice as an experienced user of any of
 these tools can write good, FAIR software efficiently, but IDEs are
 popular because they are designed specifically for writing and running
 code. There are some language specific IDEs such as PyCharm, and some
-that can work with many languages like VSCode (Visual Studio Code). IDEs
-also have add-ons that provide extra functionality, such as checking you
-are code as you type (similar to a spell-checker in Word), highlighting
-when you are not following best practice, or even automatically
-generating bits of code for you.</p>
+that can work with many languages like VS Code (Visual Studio Code).
+IDEs also have add-ons that provide extra functionality, such as
+checking you are code as you type (similar to a spell-checker in Word),
+highlighting when you are not following best practice, or even
+automatically generating bits of code for you.</p>
 
-<p>In this course we will use VSCode, as it is free, available on
+<p>In this course we will use VS Code IDE, as it is free, available on
 Windows, Mac and Linux operating systems, and can be used with many
-programming languages. It gives us a single program in which we can:</p>
+programming languages. It is a single tool in which we can:</p>
 <ul>
 <li>view our file system</li>
 <li>open many kinds of files</li>
 <li>edit, compile, run and debug code</li>
-<li>open a terminal to run command line tools or view code outputs</li>
+<li>open a terminal to run command line tools (including version control
+tool Git) or view code outputs</li>
 </ul>
-<p>Please open the Python file and the data file in VSCode now.</p>
+<p>Use VS Code to open the Python script and the data file from our
+project.</p>
 </div>
 <div class="section level3">
-<h3 id="command-lineshell">Command line/shell<a class="anchor" aria-label="anchor" href="#command-lineshell"></a>
+<h3 id="command-line-toolshell">Command line tool/shell<a class="anchor" aria-label="anchor" href="#command-line-toolshell"></a>
 </h3>
-<p>In VSCode and other IDEs you can often run the code by clicking a
+<p>In VS Code and similar IDEs you can often run the code by clicking a
 button or pressing some keyboard shortcut. If you gave your code to a
 colleague or collaborator they might use the same IDE or something
-different, so you can’t guarantee that they will have the same buttons
+different, so you cannot guarantee that they will have the same buttons
 and shortcuts as you.</p>
-<p>In the last lesson we mentioned that Interoperable software should
-use standard protocols so that it can integrate with other tools One of
-these standard protocols is the command line or shell. This is one of
-the oldest ways of interacting with computers so many programs will have
-command line interfaces. Command line languages such as Bash and Zsh
-allow you to group or chain commands together to build up complex
+<p>In the previous episode we mentioned that interoperable software
+should use standard protocols so that it can integrate with other tools.
+One of these standard protocols/tools is the command line tool or shell.
+This is one of the oldest ways of interacting with computers so many
+programs will have command line interfaces. Command line tools, such as
+Bash and Zsh, have their own language syntax that allow you to write
+scripts and/or group and chain commands together to build up complex
 workflows using several programs in different steps. They also use less
-resources than a graphical user interface like and IDE so are commonly
-used on high-performance computers and other shared systems where time,
-memory and processing power are expensive or in high demand.</p>
+resources than a graphical user interface tool like an IDE, so are
+commonly used on high-performance computers and other shared systems
+where time, memory and processing power are expensive or in high
+demand.</p>
 <p>In this course we will use the Bash shell, which is one of the most
 common and comes already installed on Mac and Linux operating systems.
 You can create a command line interface to your program which will allow
@@ -1725,7 +1762,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -1853,7 +1890,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -2013,7 +2050,7 @@ Alternatively, add screenshots from GitHub UI -->
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -2209,7 +2246,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -2788,74 +2825,11 @@ for the course.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</section></section><section id="aio-07-research-ethics"><p>Content from <a href="07-research-ethics.html">Ethical considerations for code &amp; data</a></p>
+</section></section><section id="aio-07-open-collaboration"><p>Content from <a href="07-open-collaboration.html">Open project collaboration &amp; management</a></p>
 <hr>
-<p>Last updated on 2024-04-15 |
+<p>Last updated on 2024-06-14 |
         
-        <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-research-ethics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>…</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>…</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>Content of the episode goes here.</p>
-<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
-</h2>
-<hr class="half-width">
-<p>We recommend the following resources for some additional reading on
-the topic of this episode:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-</ul>
-<p>Also check the <a href="reference.html#litref">full reference set</a>
-for the course.</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
-<div class="callout-content">
-<ul>
-<li>…</li>
-</ul>
-</div>
-</div>
-</div>
-<!-- 
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
- -->
-</section></section><section id="aio-08-open-collaboration"><p>Content from <a href="08-open-collaboration.html">Open project collaboration &amp; management</a></p>
-<hr>
-<p>Last updated on 2024-04-15 |
-        
-        <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/08-open-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-open-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -3197,6 +3171,69 @@ and adapt your code or data.</li>
 <li>Add license file to your repo, add a license to each file in case it
 gets detached</li>
 <li>Unless you are a lawyer don’t try to create your own license.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-08-code-ethics"><p>Content from <a href="08-code-ethics.html">Ethical considerations for code &amp; data</a></p>
+<hr>
+<p>Last updated on 2024-06-14 |
+        
+        <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/08-code-ethics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>…</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>…</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Content of the episode goes here.</p>
+<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</h2>
+<hr class="half-width">
+<p>We recommend the following resources for some additional reading on
+the topic of this episode:</p>
+<ul>
+<li>…</li>
+<li>…</li>
+</ul>
+<p>Also check the <a href="reference.html#litref">full reference set</a>
+for the course.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>…</li>
 </ul>
 </div>
 </div>
