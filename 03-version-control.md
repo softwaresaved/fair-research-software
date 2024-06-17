@@ -74,9 +74,10 @@ $ git status
 
 ```output
 On branch main
-Your branch is up to date with 'origin/master'.
 
-nothing to commit, working tree clean
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
 ```
 
 The exact wording of this output may be slightly different if you are using a different version of Git.
@@ -85,15 +86,15 @@ The exact wording of this output may be slightly different if you are using a di
 
 During the [setup](./index.html#astronaut-data-and-analysis-code) for this course, you have been provided with a `.zip` archive with two files:
 
-- `bad code.py`
-- `Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv`
+- `my code v2.py`
+- `data.json`
 
 We need to move these files into our git folder.
 You can either drag and drop the files from a file explorer window into the left pane of the VSCode IDE, or you can use the [`mv` command](https://linuxcommandlibrary.com/man/mv) in the terminal.
 
 ```bash
-mv /path/where/you/saved/the/file/bad\ code.py ~/Desktop/spacewalks/
-mv /path/where/you/saved/the/file/Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv ~/Desktop/spacewalks/
+mv /path/where/you/saved/the/file/my\ code\ v2.py ~/Desktop/spacewalks/
+mv /path/where/you/saved/the/file/data.json ~/Desktop/spacewalks/
 ```
 
 Let's see what that has done to our repository by running `git status` again:
@@ -109,8 +110,8 @@ No commits yet
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv
-	bad code.py
+	data.json
+	my code v2.py
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -120,8 +121,8 @@ The "untracked files" message means that there's a file in the directory that Gi
 We can tell Git to track a file using `git add`:
 
 ```bash
-$ git add bad\ code.py
-$ git add Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv
+$ git add my\ code\ v2.py
+$ git add data.json
 ```
 
 and then check the right thing happened:
@@ -137,11 +138,11 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv
-	new file:   bad code.py
+	new file:   data.json
+	new file:   my code v2.py
 ```
 
-Git now knows that it's supposed to keep track of `bad code.py` and `Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv`, but it hasn't recorded these changes as a commit yet.
+Git now knows that it's supposed to keep track of `my code v2.py` and `data.json`, but it hasn't recorded these changes as a commit yet.
 To get it to do that, we need to run one more command:
 
 ```bash
@@ -149,10 +150,10 @@ $ git commit -m "Add and example script and dataset to work on"
 ```
 
 ```output
-[main (root-commit) a5fa618] Add and example script and dataset to work on
- 2 files changed, 438 insertions(+)
- create mode 100644 Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv
- create mode 100644 bad code.py
+[main (root-commit) bf55eb7] Add and example script and dataset to work on
+ 2 files changed, 437 insertions(+)
+ create mode 100644 data.json
+ create mode 100644 my code v2.py
 ```
 
 When we run `git commit`, Git takes everything we have told it to save by using `git add` and stores a copy permanently in a special `.git` directory.
@@ -190,14 +191,14 @@ That's because Git saves information about files' history in the special `.git` 
 
 ### Make a change
 
-Did you notice how when we were typing the Python script into the terminal, we had to add a slash before the space like this: `bad\ script.py`?
+Did you notice how when we were typing the Python script into the terminal, we had to add a slash before the space like this: `my\ code\ v2.py`?
 Using a backslash in this way is called 'escaping' and it lets the terminal know to treat the space as part of the filename, and not a separate argument.
 However, it is pretty annoying and considered bad practice to have spaces in your filenames like this, especially if you'll be manipulating them from the terminal.
 So let's go ahead and remove the space from the filename altogether and replace it with a hyphen instead.
 You can use the `mv` command again like so:
 
 ```bash
-$ mv bad\ code.py bad-code.py
+$ mv my\ code\ v2.py my-code-v2.py
 ```
 
 If you run `git status` again, you'll see Git has noticed the change in the filename.
@@ -211,11 +212,11 @@ On branch main
 Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	deleted:    bad code.py
+	deleted:    my code v2.py
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	bad-code.py
+	my-code-v2.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -236,7 +237,7 @@ You can also use `git status` to check the status of your project at any time.
 To save the changes to the renamed Python file, use the following Git commands:
 
 ```bash
-$ git add bad\ code.py bad-code.py
+$ git add my\ code\ v2.py my-code-v2.py
 $ git status
 ```
 
@@ -244,26 +245,26 @@ $ git status
 On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	renamed:    bad code.py -> bad-code.py
+	renamed:    my code v2.py -> my-code-v2.py
 ```
 
 ```bash
-$ git commit -m "Replace space in Python filename with hyphen"
+$ git commit -m "Replace spaces in Python filename with hyphens"
 ```
 
 ```output
-[main ef3508f] Replace space in Python filename with hyphen
+[main 8ea2a0b] Replace spaces in Python filename with hyphens
  1 file changed, 0 insertions(+), 0 deletions(-)
- rename bad code.py => bad-code.py (100%)
+ rename my code v2.py => my-code-v2.py (100%)
 ```
 
 ### Advanced solution
 
-We initially renamed the Python file using the `mv` command, and we than had to add *both* `bad-code.py` and `bad\ code.py`.
+We initially renamed the Python file using the `mv` command, and we than had to add *both* `my-code-v2.py` and `my\ code\ v2.py`.
 Alternatively, we could have used Git's own `mv` command like so:
 
 ```bash
-$ git mv bad\ code.py bad-code.py
+$ git mv my\ code\ v2.py my-code-v2.py
 $ git status
 ```
 
@@ -271,20 +272,20 @@ $ git status
 On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	renamed:    bad code.py -> bad-code.py
+	renamed:    my code v2.py -> my-code-v2.py
 ```
 
 `git mv` is the equivalent of running `mv ...` followed immediately by `git add ...` of the old and new filenames, so the changes have been staged automatically.
 All that needs to be done is to commit them.
 
 ```bash
-$ git commit -m "Replace space in Python filename with hyphen"
+$ git commit -m "Replace spaces in Python filename with hyphens"
 ```
 
 ```output
-[main 20e7004] Replace space in Python filename with hyphen
+[main 6499bd7] Replace spaces in Python filename with hyphens
  1 file changed, 0 insertions(+), 0 deletions(-)
- rename bad code.py => bad-code.py (100%)
+ rename my code v2.py => my-code-v2.py (100%)
 ```
 
 :::::::::::::::::::::::::
@@ -371,106 +372,8 @@ begin with `-`s represent deletions. Compare these two commit `diff`s. Can you
 understand what the commit author was trying to achieve in each commit? How many
 changes have they tried to make in each commit? Discuss in pairs or small groups.
 
-<!-- FIXME: Figure out if ```diff would show diff colours here.
-Alternatively, add screenshots from GitHub UI -->
-1. ```bash
-    diff --git a/bad-code.py b/bad-code.py
-    index e804094..ba6a0f9 100644
-    --- a/bad-code.py
-    +++ b/bad-code.py
-    @@ -1,3 +1,7 @@
-    +import json
-    +import datetime as dt
-    +import matplotlib.pyplot as myplot
-    +
-    #https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data
-
-    csvfile = open('Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv', 'r')
-    @@ -13,7 +17,6 @@
-            #print(thing)
-            l[fieldnames[thing]] = line[thing]
-
-    -    import json
-        json.dump(l, jsonfile)
-        jsonfile.write('\n')
-
-    @@ -25,8 +28,6 @@
-        data.append(json.loads(line))
-    data.pop(0)
-
-    -import datetime as dt
-    -
-    time = []
-    date =[]
-
-    @@ -49,7 +50,5 @@
-    for i in time:
-        t.append(t[-1]+i)
-
-    -import matplotlib.pyplot as myplot
-    -
-    myplot.plot(date,t[1:])
-    myplot.show()
-   ```
-2. ```bash
-    diff --git a/bad-code.py b/bad-code.py
-    index e804094..333ef14 100644
-    --- a/bad-code.py
-    +++ b/bad-code.py
-    @@ -1,23 +1,25 @@
-    +import json
-    +import datetime as dt
-    +import matplotlib.pyplot as myplot
-    +
-    #https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data
-    
-    csvfile = open('Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv', 'r')
-    -jsonfile= open('file.json', 'a')
-    -fieldnames = ("EVA #", "Country", "Crew    ", "Vehicle", "Date", "Duration", "Purpose")
-    +jsonfile= open('file.json', 'w')
-    +fieldnames = ("EVA #", "Country", "Crew", "Vehicle", "Date", "Duration", "Purpose")
-    
-    for count in range(370):
-        line = csvfile.readline().split(',')
-    
-    -    #dict
-    -    l = dict()
-    -    for thing in range(len(line[:7])):
-    -        #print(thing)
-    -        l[fieldnames[thing]] = line[thing]
-    -
-    -    import json
-    -    json.dump(l, jsonfile)
-    +    # Create an empty dictionary to store cleaned data in
-    +    data = dict()
-    +    for i in range(7):
-    +        data[fieldnames[i]] = line[i]
-    +    json.dump(data, jsonfile)
-        jsonfile.write('\n')
-    
-    jsonfile.close()
-    +csvfile.close()
-    
-    data=[]
-    
-    @@ -25,8 +27,6 @@
-        data.append(json.loads(line))
-    data.pop(0)
-    
-    -import datetime as dt
-    -
-    time = []
-    date =[]
-    
-    @@ -49,7 +49,5 @@
-    for i in time:
-        t.append(t[-1]+i)
-    
-    -import matplotlib.pyplot as myplot
-    -
-    myplot.plot(date,t[1:])
-    myplot.show()
-   ```
+1. ![Example Diff 1](fig/ex-diff-1.png)
+2. ![Example Diff 2](fig/ex-diff-2.png)
 
 :::::::::::::: solution
 
@@ -494,15 +397,15 @@ $ git log
 ```
 
 ```output
-commit 20e700455d340711537651ac4b798c18feba08b3
-Author: Sarah Gibson <REDACTED>
-Date:   Mon Mar 11 16:30:13 2024 +0000
+commit 6499bd731ab50fde2731ce2642f143cea86450b6 (HEAD -> main)
+Author: Sarah Gibson <drsarahlgibson@gmail.com>
+Date:   Mon Jun 17 11:55:17 2024 +0100
 
-    Replace space in Python filename with hyphen
+    Replace spaces in Python filename with hyphens
 
-commit a5fa618f9cc9699146ac738bb439b50da6b9917d
-Author: Sarah Gibson <REDACTED>
-Date:   Thu Feb 8 14:12:44 2024 +0000
+commit bf55eb7639a6508658aaa1bfeaeb9f115d1bcc40
+Author: Sarah Gibson <drsarahlgibson@gmail.com>
+Date:   Mon Jun 17 11:52:02 2024 +0100
 
     Add and example script and dataset to work on
 ```
@@ -586,8 +489,8 @@ and [Bitbucket](https://bitbucket.org).
 
    ![*Copy the commands to sync the local and remote repositories*](fig/ep03_fig04-copy_commands.jpg){ alt-text="Copying the commands to sync the local and remote repositories" .image-with-shadow }
 
-5. If you refresh your browser window, you should now see the two files `bad-code.py`
-   and `Extra-vehicular_Activity__EVA__-_US_and_Russia_20240126.csv` visible in
+5. If you refresh your browser window, you should now see the two files `my-code-v2.py`
+   and `data.json` visible in
    the GitHub repository, matching what you have locally on your machine.
 
 Let's explain a bit more about what those commands did...
