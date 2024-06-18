@@ -58,6 +58,7 @@ TODO: Exercise - perhaps a discussion around transparency, quality and accountab
    use it.
 
 ::: solution
+
 The answers are as follows:
 
 1. False - you always need an explicit permission from the creator to use their work.
@@ -67,7 +68,8 @@ claiming it as your own, however that does not mean that you have the permission
 4. False - publicly accessible work is not the same the work in the public domain. The owner explicitly must put their 
 work in the public domain but attaching the appropriate licence to it, before you can freely reuse it.
 5. False - the use of copyright notice is optional as copyright exists implicitly from the moment the work is created.
-   :::
+
+:::
 
 ::::::
 
