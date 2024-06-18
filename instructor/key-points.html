@@ -412,36 +412,21 @@ will help transmit understanding, and verify that the code is
 correct</li>
 </ul></section><section id="05-code-testing"><h2 class="section-heading"><a href="05-code-testing.html">Code testing</a></h2>
 <hr class="half-width">
-<ul>
-<li>Formal testing of scientific code is important to demonstrate to
-ourselves and to our readers that our code does what is supposed to
-do.<br>
-</li>
-<li>An absence of tests makes our software risky for others to use and
-as a result, may reduce its impact.</li>
-<li>Unit tests are software tests intended to demonstrate that each
-component of our code e.g. individual functions work as expected. Unit
-tests typically contain assertions that specify how we expect our code
-to behave under a given set of conditions.<br>
-</li>
-<li>A good unit test should focus on verifying a single aspect of a
-function’s behaviour.<br>
-</li>
-<li>Unit testing has many benefits including: (i) it reduces the
-probability that our code contains errors and (ii) it encourages us to
-write readable, modular code.</li>
-<li>Unit tests can be automated using a unit-testing framework such
-e.g. Pytest for Python. Test automation allows us to add new
-functionality or refactor parts of our code and easily check whether it
-still works as expected after our changes.</li>
-<li>Code coverage is a metric that tells us the percentage of lines of
-code in our software that are run when our tests are executed. A code
-coverage report can help us to identify parts of our code that may need
-additional tests.</li>
-<li>If we need to prioritise where we focus our testing efforts we
-should focus on the parts of our code that are “highest risk” i.e. could
-affect the correctness of our research findings.</li>
-</ul></section><section id="06-documenting-code"><h2 class="section-heading"><a href="06-documenting-code.html">Documenting code</a></h2>
+<ol style="list-style-type: decimal">
+<li>Code testing supports the FAIR principles by improving the
+accessibility and re-usability of research code.</li>
+<li>Unit testing is crucial as it ensures each functions works
+correctly.</li>
+<li>Using the <code>pytest</code> framework, you can write basic unit
+tests for Python functions to verify their correctness.</li>
+<li>Parameterized tests in <code>pytest</code> allow you to check
+functions against multiple sets of inputs and outputs, making testing
+code easier to manage.</li>
+<li>Identifying and handling edge cases in unit tests is essential to
+ensure your code performs correctly under a variety of conditions.</li>
+<li>Test coverage can help you to identify parts of your code that
+require additional testing.</li>
+</ol></section><section id="06-documenting-code"><h2 class="section-heading"><a href="06-documenting-code.html">Documenting code</a></h2>
 <hr class="half-width">
 <ul>
 <li>…</li>
