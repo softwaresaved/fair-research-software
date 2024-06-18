@@ -57,6 +57,19 @@ any links that you are not going to use.
 [osd-definition]: https://opensource.org/osd/
 [free-software]: https://www.gnu.org/philosophy/free-sw.en.html
 [codecheck]: https://codecheck.org.uk/project/
+[python-201-documentation]: https://python-tutorial.dev/201/tutorial/documentation.html
+[python-irsd-reuse-and-release]: https://carpentries-incubator.github.io/python-intermediate-development/42-software-reuse/index.html
+[coderefinery-documenting]:https://coderefinery.github.io/documentation/
+[grch-documenting]: https://goodresearch.dev/docs
+[art-of-readme]: https://github.com/hackergrrl/art-of-readme#bonus-the-readme-checklist
+[realpython-mkdocs]: https://realpython.com/python-project-documentation-with-mkdocs/
+[ssi-blog-docs]: https://www.software.ac.uk/blog/what-are-best-practices-research-software-documentation
+[mk-docs-deploy]: https://www.mkdocs.org/user-guide/deploying-your-docs/
+[turing-way-citation]: https://book.the-turing-way.org/communication/citable/citable-cff.html
+[cffinit-webapp]: https://bit.ly/cffinit
+[write-the-docs]: https://www.writethedocs.org/
+[the-good-docs-project]: https://www.thegooddocsproject.dev/
+[diataxis-framework]: https://diataxis.fr/
 [python-novice-defensive]: https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html
 [incubator-python-testing]: https://carpentries-incubator.github.io/python-testing/
 [ssi-blog-python-check]: https://www.software.ac.uk/blog/using-python-double-check-your-work
