@@ -199,7 +199,8 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#further-reading">Further reading</a></li>
+        <ul><li><a href="#summary">Summary</a></li>
+<li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -309,7 +310,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code readability</h1>
-        <p>Last updated on 2024-05-08 |
+        <p>Last updated on 2024-06-18 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/04-code-readability.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -350,9 +351,84 @@ detail about what the code is doing</li>
 </div>
 </div>
 </div>
+<p>In this episode, we will introduce the concept of readable code and
+consider how it can help create reusable scientific software and empower
+collaboration between researchers.</p>
+<div class="section level3">
+<h3 id="motivation-for-code-readability">Motivation for code readability<a class="anchor" aria-label="anchor" href="#motivation-for-code-readability"></a></h3>
+<p>When someone writes code, they do so based on requirements that are
+likely to change in the future. Requirements change because software
+interacts with the real world, which is dynamic. When these requirements
+change, the developer (who is not necessarily the same person who wrote
+the original code) must implement the new requirements. They do this by
+reading the original code to understand the different abstractions, and
+identify what needs to change. Readable code facilitates the reading and
+understanding of the abstraction phases and, as a result, facilitates
+the evolution of the codebase. Readable code saves future developers’
+time and effort.</p>
+<p>In order to develop readable code, we should ask ourselves: “If I
+re-read this piece of code in fifteen days or one year, will I be able
+to understand what I have done and why?” Or even better: “If a new
+person who just joined the project reads my software, will they be able
+to understand what I have written here?”</p>
+<p>We will now learn about a few software best practices we can follow
+to help create readable code.</p>
+</div>
 <div class="section level3">
 <h3 id="variable-names">Variable names<a class="anchor" aria-label="anchor" href="#variable-names"></a></h3>
-<div id="give-a-descriptive-name-to-a-variable" class="callout challenge">
+<p>Variables are the most common thing you will assign when coding, and
+it’s really important that it is clear what each variable means in order
+to understand what the code is doing. If you return to your code after a
+long time doing something else, or share your code with a colleague, it
+should be easy enough to understand what variables are involved in your
+code from their names. Therefore we need to give them clear names, but
+we also want to keep them concise so the code stays readable. There are
+no “hard and fast rules” here, and it’s often a case where you will need
+to use your best judgment.</p>
+<p>Some useful tips for naming variables are:</p>
+<ul><li>Short words are better than single character names
+<ul><li>For example, if we were creating a variable to store the speed to
+read a file, <code>s</code> (for ‘speed’) is not descriptive enough but
+<code>MBReadPerSecondAverageAfterLastFlushToLog</code> is too long to
+read and prone to mispellings. <code>ReadSpeed</code> (or
+<code>read_speed</code>) would suffice.</li>
+<li>If you’re finding it difficult to come up with a variable name that
+is <em>both</em> short and descriptive, go with the short version and
+use an inline comment to desribe it further (more on those in the next
+section!)</li>
+<li>This guidance doesn’t necessarily apply if your variable is a
+well-known constant in your domain, for example, <em>c</em> represents
+the speed of light in Physics</li>
+</ul></li>
+<li>Try to be descriptive where possible, and avoid names like
+<code>foo</code>, <code>bar</code>, <code>var</code>,
+<code>thing</code>, and so on</li>
+</ul><p>There are also some gotchas to consider when naming variables:</p>
+<ul><li>There may be some restrictions on which characters you can use in
+your variable names. For instance in Python, only alphanumeric
+characters and underscores are permitted.</li>
+<li>Particularly in Python, you cannot <em>begin</em> your variable
+names with numerical characters as this will raise a syntax error.
+<ul><li>Numerical characters can be included in a variable name, just not as
+the first character. For example, <code>thing1</code> is a valid
+variable name, but <code>1thing</code> isn’t. (This behaviour may be
+different for other programming languages.)</li>
+</ul></li>
+<li>In some programming languages, such as Python, variable names are
+case sensitive. So <code>speed_of_light</code> and
+<code>Speed_Of_Light</code> will <strong>not</strong> be
+equivalent.</li>
+<li>Programming languages often have global pre-built functions, such as
+<code>input</code>, which you may accidentally overwrite if you assign a
+variable with the same name.
+<ul><li>Again in Python, you would actually reassign the <code>input</code>
+name and no longer be able to access the original <code>input</code>
+function if you used this as a variable name. So in this case opting for
+something like <code>input_data</code> would be preferable. (This
+behaviour may be explicitly disallowed in other programming
+languages.)</li>
+</ul></li>
+</ul><div id="give-a-descriptive-name-to-a-variable" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -363,8 +439,8 @@ detail about what the code is doing</li>
 <p>Below we have a variable called <code>var</code> being set the value
 of 9.81. <code>var</code> is not a very descriptive name here as it
 doesn’t tell us what 9.81 means, yet it is a very common constant in
-orbital mechanics! Go online and find out which constant 9.81 relates to
-and suggest a new name for this variable.</p>
+physics! Go online and find out which constant 9.81 relates to and
+suggest a new name for this variable.</p>
 <p>Hint: the units are <em>metres per second squared</em>!</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -398,6 +474,61 @@ be:</p>
 </div>
 <div class="section level3">
 <h3 id="inline-comments">Inline comments<a class="anchor" aria-label="anchor" href="#inline-comments"></a></h3>
+<p>Commenting is a very useful practice to help convey the context of
+the code. It can be helpful as a reminder for your future self or your
+collaborators as to why code is written in a certain way, how it is
+achieving a specific task, or the real-world implications of your
+code.</p>
+<p>There are many ways to add comments to code, the most common of which
+is inline comments.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># In Python, inline comments begin with the `#` symbol and a single space.</span></span></code></pre>
+</div>
+<p>Again, there are few hard and fast rules to using comments, just
+apply your best judgment. But here are a few things to keep in mind when
+commenting your code:</p>
+<ul><li>
+<strong>Avoid using comments to explain <em>what</em> your code
+does.</strong> If your code is too complex for other programmers to
+understand, consider rewriting it for clarity rather than adding
+comments to explain it.</li>
+<li>Focus on the <strong><em>why</em></strong> and the
+<strong><em>how</em></strong>.</li>
+<li>Make sure you’re not reiterating something that your code already
+conveys on its own. Comments shouldn’t echo your code.</li>
+<li>Keep them short and concise. Large blocks of text quickly become
+unreadable and difficult to maintain.</li>
+<li>Comments that contradict the code are worse than no comments. Always
+make a priority of keeping comments up-to-date when code changes.</li>
+</ul><div class="section level4">
+<h4 id="examples-of-helpful-vs--unhelpful-comments">Examples of helpful vs. unhelpful comments<a class="anchor" aria-label="anchor" href="#examples-of-helpful-vs--unhelpful-comments"></a></h4>
+<div class="section level5">
+<h5 id="unhelpful">Unhelpful:<a class="anchor" aria-label="anchor" href="#unhelpful"></a></h5>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>statetax <span class="op">=</span> <span class="fl">1.0625</span>  <span class="co"># Assigns the float 1.0625 to the variable 'statetax'</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>citytax <span class="op">=</span> <span class="fl">1.01</span>  <span class="co"># Assigns the float 1.01 to the variable 'citytax'</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>specialtax <span class="op">=</span> <span class="fl">1.01</span>  <span class="co"># Assigns the float 1.01 to the variable 'specialtax'</span></span></code></pre>
+</div>
+<p>The comments in this code simply tell us what the code does, which is
+easy enough to figure out without the inline comments.</p>
+</div>
+<div class="section level5">
+<h5 id="helpful">Helpful:<a class="anchor" aria-label="anchor" href="#helpful"></a></h5>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>statetax <span class="op">=</span> <span class="fl">1.0625</span>  <span class="co"># State sales tax rate is 6.25% through Jan. 1</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>citytax <span class="op">=</span> <span class="fl">1.01</span>  <span class="co"># City sales tax rate is 1% through Jan. 1</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>specialtax <span class="op">=</span> <span class="fl">1.01</span>  <span class="co"># Special sales tax rate is 1% through Jan. 1</span></span></code></pre>
+</div>
+<p>In this case, it might not be immediately obvious what each variable
+represents, so the comments offer helpful, real-world context. The date
+in the comment also indicates when the code might need to be
+updated.</p>
 <div id="add-some-comments-to-a-code-block" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -422,30 +553,28 @@ symbol.</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Some good inline comments may look like the below example.</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Loop through 370 iterations</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> count <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">370</span>):</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="co"># Read a line from the CSV file as a string, and split it up into a</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="co"># list wherever the ',' character appears</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    line <span class="op">=</span> csvfile.readline().split(<span class="st">','</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="co"># Create a temporary dictionary to store data in</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    l <span class="op">=</span> <span class="bu">dict</span>()</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="co"># Loop over the items in the line from the CSV file</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="cf">for</span> thing <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(line[:<span class="dv">7</span>])):</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>        <span class="co"># Add the item to the temporary dictionary</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>        l[fieldnames[thing]] <span class="op">=</span> line[thing]</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="co"># Using the json library, output the dictionary to a json file</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    <span class="im">import</span> json</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    json.dump(l, jsonfile)</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="co"># Add a newline to the json file ready for the next entry</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    jsonfile.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co"># Close the json file</span></span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>jsonfile.close()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">for</span> count <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">370</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    line <span class="op">=</span> csvfile.readline().split(<span class="st">','</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    <span class="co"># Create a temporary dictionary to store data in</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    l <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="co"># For each item in the line from the CSV file, store</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    <span class="co"># the item in the temporary dictionary</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    <span class="cf">for</span> thing <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(line[:<span class="dv">7</span>])):</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>        l[fieldnames[thing]] <span class="op">=</span> line[thing]</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    <span class="im">import</span> json</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>    json.dump(l, jsonfile)</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>    <span class="co"># Add a newline to the json file ready for the next entry</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>    jsonfile.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>jsonfile.close()</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -454,6 +583,23 @@ symbol.</p>
 </div>
 <div class="section level3">
 <h3 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h3>
+<p>Functions are a fundamental concept in writing software and are one
+of the core ways you can organise your code to improve its readability.
+A function is an isolated section of code that performs a single,
+<em>specific</em> task that can be simple or complex. It can then be
+called multiple times with different inputs throughout a codebase, but
+it’s definition only needs to appear once.</p>
+<p>Breaking up code into functions in this manner benefits readability
+since the smaller sections are easier to read and understand. Since
+functions can be reused, codebases naturally begin to follow the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" class="external-link">Don’t
+Repeat Yourself principle</a> which prevents software from becoming
+overly long and confusing. The software also becomes easier to maintain
+because, if the code encapsulated in a function needs to change, it only
+needs updating in one place instead of many. As we will learn in a
+future episode, testing code also becomes simpler when code is written
+in functions. Each function can be individually checked to ensure it is
+doing what is intended, which improves confidence in the software as a
+whole.</p>
 <div id="create-a-function" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -466,22 +612,22 @@ symbol.</p>
 structure using the <a href="https://pandas.pydata.org/" class="external-link"><code>pandas</code> library</a> - but
 the code is out of order! Reorder the lines of code within the function
 so that the JSON file is read in using the <code>read_json</code>
-function, any incomplete rows are <em>dropped</em>, the values are
+method, any incomplete rows are <em>dropped</em>, the values are
 <em>sorted</em> by date, and then the cleaned dataframe is
 <em>returned</em>. There is also a <code>print</code> statement that
 will display which file is being read in on the command line for
 verification.</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span></code></pre>
 </div>
 </div>
 </div>
@@ -494,18 +640,24 @@ verification.</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Here is the correct order of the code for the function.</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
 </div>
+<p>We have chosen to create a function for reading in data files since
+this is a very common task within research software. While this isn’t
+that many lines of code, thanks to using pandas inbuilt methods, it can
+be useful to package this together into a function if you need to read
+in a lot of similarly structured files and process them in the same
+way.</p>
 </div>
 </div>
 </div>
@@ -513,6 +665,65 @@ verification.</p>
 </div>
 <div class="section level3">
 <h3 id="docstrings">Docstrings<a class="anchor" aria-label="anchor" href="#docstrings"></a></h3>
+<p>Docstrings are a specific type of documentation that are provided
+within functions, and <a href="https://docs.python.org/3/tutorial/classes.html" class="external-link">classes</a> too.
+A function docstring should explain what the isolated code is doing,
+what parameters the function needs (these are inputs) and what form they
+should take, what the function outputs (you may see words like ‘returns’
+or ‘yields’ here), and errors (if any) that might be raised.</p>
+<p>Providing these docstrings helps improve code readability since it
+makes the function code more transparent and aids understanding.
+Particularly, docstrings that provide information on the input and
+output of functions makes it easier to reuse them in other parts of the
+code, without having to read the full function to understand what needs
+to be provided and what will be returned.</p>
+<p>Docstrings are another case where there are no hard and fast rules
+for writing them. Acceptable docstring formats can range from single- to
+multi-line. You can use your best judgment on how much documentation a
+particular function needs.</p>
+<div class="section level4">
+<h4 id="example-of-a-single-line-docstring">Example of a single-line docstring:<a class="anchor" aria-label="anchor" href="#example-of-a-single-line-docstring"></a></h4>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> add(x, y):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="co">"""Add two numbers together"""</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span></code></pre>
+</div>
+</div>
+<div class="section level4">
+<h4 id="example-of-a-multi-line-docstring">Example of a multi-line docstring:<a class="anchor" aria-label="anchor" href="#example-of-a-multi-line-docstring"></a></h4>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> add(x, y <span class="op">=</span> <span class="fl">1.0</span>):</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">    Add two integers together</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">    x         : A number to be included in the addition</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">    y (float) : A float number to be included in the addition. Default: 1.0.</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">    float : The sum of x and y. This value will be a float type since y takes</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">            float type.</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span></code></pre>
+</div>
+<p>Some projects may have their own guidelines on how to write
+docstrings, such as <a href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard" class="external-link">numpy</a>.
+If you are contributing code to a wider project or community, try to
+follow the guidelines and standards they provide for codestyle.</p>
+<p>As your code grows and becomes more complex, the docstrings can form
+the content of a reference guide allowing developers to quickly look up
+how to use the APIs, functions, and classes defined in your codebase.
+Hence, it is common to find tools that will automatically extract
+docstrings from your code and generate a website where people can learn
+about your code without downloading/installing and reading the code
+files - such as <a href="https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html" class="external-link">sphinx
+for Python</a>.</p>
 <div id="writing-docstrings" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -530,7 +741,7 @@ optional? Do they have default values?</li>
 <li>What output will the function produce?</li>
 </ul><p>Hint: Python docstrings are defined by enclosing the text with
 <code>"""</code> above and below. This text is also indented to the same
-level as the code defined beneath it.</p>
+level as the code defined beneath it, which is 4 whitespaces.</p>
 </div>
 </div>
 </div>
@@ -542,57 +753,79 @@ level as the code defined beneath it.</p>
 <div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>A good enough docstring for this function would look like this:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">    Read the data from a JSON file into a Pandas dataframe</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">    Clean the data by removing any incomplete rows and sort by date</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, </span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>                          convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">    Read the data from a JSON file into a Pandas dataframe</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">    Clean the data by removing any incomplete rows and sort by date</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, </span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>                          convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
 </div>
 <p>Using <a href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard" class="external-link">numpy’s
 docstring convention</a>, the docstring may look more like this:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    Ingest data from a JSON file into a pandas DataFrame.</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    input_file</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">        The path to the target JSON file</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">    eva_df : pandas.DataFrame</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">        The cleaned and sorted data as a dataframe structure</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, </span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>                          convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
-<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">def</span> read_json_to_dataframe(input_file):</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">    Ingest data from a JSON file into a pandas DataFrame.</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">    input_file</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">        The path to the target JSON file</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">    eva_df : pandas.DataFrame</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co">        The cleaned and sorted data as a dataframe structure</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>input_file<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a>    eva_df <span class="op">=</span> pd.read_json(input_file, </span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a>                          convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a>    eva_df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a>    eva_df.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a>    <span class="cf">return</span> eva_df</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</div>
+<section id="summary"><h2 class="section-heading">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h2>
+<hr class="half-width"><p>During this episode, we have discussed the importance of code
+readability and explored some software engineering practices that help
+facilitate this.</p>
+<p>Code readability is important because it makes it simpler and quicker
+for a person (future you or a collaborator) to understand what purpose
+the code is serving, and therefore begin contributing to it more easily,
+saving time and effort.</p>
+<p>Some best practices we have covered towards code readability
+include:</p>
+<ul><li>Variable naming practices for descriptive yet concise code</li>
+<li>Inline comments to provide real-world context</li>
+<li>Functions to isolate specific code sections for re-use</li>
+<li>Docstrings for documenting functions to facilitate their re-use</li>
+</ul></section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
 the topic of this episode:</p>
-<ul><li><a href="https://introtopython.org/introducing_functions.html" class="external-link">Introducing
+<ul><li><a href="https://www.theguardian.com/info/2019/jan/29/code-readability-matters" class="external-link">‘Code
+Readability Matters’ from the Guardian’s engineering blog</a></li>
+<li><a href="https://peps.python.org/pep-0008/#comments" class="external-link">PEP 8 Style
+Guide for Python</a></li>
+<li><a href="https://www.coursera.org/tutorials/python-comment#inline-commenting-in-python" class="external-link">Coursera:
+Inline commenting in Python</a></li>
+<li><a href="https://introtopython.org/introducing_functions.html" class="external-link">Introducing
 Functions from Introduction to Python</a></li>
 <li><a href="https://www.w3schools.com/python/python_functions.asp" class="external-link">W3Schools.com
 Python Functions</a></li>
@@ -681,7 +914,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/04-code-readability.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/04-code-readability.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-05-08",
+  "dateModified": "2024-06-18",
   "datePublished": "2024-06-18"
 }
 
