@@ -44,8 +44,8 @@ any links that you are not going to use.
 [git-commit-avoid]: https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits
 [9-rs-principles]: https://rsecon24.society-rse.org/about/research-software-development-principles/
 [9-rs-principles-keynote]: https://rsecon24.society-rse.org/about/research-software-development-principles/#neil-chue-hong-rse23-keynote
-[nesc-rs-support-courses]: https://esciencecenter-digital-skills.github.io/research-software-support/
-[nesc-rs-support-course-fair]: https://esciencecenter-digital-skills.github.io/research-software-support/modules/fairsoftware/info
+[nesc-rs-support-courses]: https://esciencecenter-digital-skills.github.io/software-support-essentials/
+[nesc-rs-support-course-fair]: https://esciencecenter-digital-skills.github.io/software-support-essentials/fairsoftware
 [good-enough-practices]: https://carpentries-lab.github.io/good-enough-practices/index.html
 [10-reproducible-research-things]: https://guereslib.github.io/ten-reproducible-research-things/
 [repro4everyone]: https://www.repro4everyone.org/
@@ -57,6 +57,15 @@ any links that you are not going to use.
 [osd-definition]: https://opensource.org/osd/
 [free-software]: https://www.gnu.org/philosophy/free-sw.en.html
 [codecheck]: https://codecheck.org.uk/project/
-[fair4rs-working-group/]: https://force11.org/groups/fair-4-research-software-fair4rs-working-group/
-[automated-assessment-fairrs]: https://zenodo.org/records/11096498
-[coderefinery]: https://coderefinery.org/lessons/
+[python-novice-defensive]: https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html
+[incubator-python-testing]: https://carpentries-incubator.github.io/python-testing/
+[ssi-blog-python-check]: https://www.software.ac.uk/blog/using-python-double-check-your-work
+[python-201-testing]:  https://python-tutorial.dev/201/tutorial/testing.html
+[python-irsd-automated-testing]: https://carpentries-incubator.github.io/python-intermediate-development/21-automatically-testing-software/index.html
+[york-tdd-blog]: https://researchcodingclub.github.io/2019-11-13-test-driven-development/
+[eser-testing]: https://imperialcollegelondon.github.io/grad_school_software_engineering_course/l2-02-testing_writing_unit_tests/index.html
+[grch-testing]: https://goodresearch.dev/testing.html
+[coderefinery-testing]: https://coderefinery.github.io/testing/
+[ds-testing]: https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html
+
+
