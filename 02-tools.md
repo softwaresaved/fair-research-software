@@ -12,6 +12,7 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
 - Identify some key tools for FAIR research software
 - Explain how can these tools help us work in a FAIR way

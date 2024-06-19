@@ -6,18 +6,19 @@ exercises: 30
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
--  How should we document our code?
+- How should we document our code?
+- Why are documentation and repository metadata important and how they support FAIR software?
+- What are the minimum elements of documentation needed to support FAIR software?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
-- Explain why documentation and repository metadata are important and how they support FAIR software.
-- Recognise the minimum elements of documentation needed to support FAIR software
-- Use a CITATION.cff file to add citation instructions to your code repository 
+- Use a`README` file to provide an overview and a `CITATION.cff` file to add citation instructions to a code repository 
 - Describe the main types of software documentation (tutorials, how to guides, reference and explanation).
 - Apply a documentation framework to write effective documentation of any type. 
-- Describe the different formats available for delivering software documentation (markdown files, wikis, static webpages).
+- Describe the different formats available for delivering software documentation (Markdown files, wikis, static webpages).
 - Implement MkDocs to generate and manage comprehensive project documentation
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -28,13 +29,15 @@ The purpose of software documentation is to communicate important information
 about our code to the people who need it – users and developers.   
 
 ###  Better Research
-Software documentation is often perceived as a thankless task with few tangible benefits and is often neglected in research project. 
-However, like software testing, documenting our code can help us become more productive researchers. Here are some advantages of documenting our code: 
+Software documentation is often perceived as a thankless task with few tangible benefits and is often neglected in 
+research projects. 
+However, like software testing, documenting our code can help us become more productive researchers. 
+Here are some advantages of documenting our code: 
 
-+	Good documentation captures important methodological details ready for when we come to publish our research 
-+ Good documentation  can help us return to a project seamlessly after time away. 
-+ Documentation can  facilitate collaborations by helping to onboard new project members
-+  Good documentation can save us time by answering FAQs about our code for us.
+- Good documentation captures important methodological details ready for when we come to publish our research 
+- Good documentation  can help us return to a project seamlessly after time away. 
+- Documentation can  facilitate collaborations by helping to onboard new project members
+- Good documentation can save us time by answering FAQs about our code for us.
 
 
 ### FAIR Software
@@ -64,7 +67,11 @@ Software-level technical documentation encompasses:
 + Explanation - conceptual discussion of the code to help users understand implementation decisions 
 
 #### Repository Metadata Files
-In addition to software-level technical documentation, it is also common to see repository metadata files included in a code repository. Many of these files can be described as "social documentation" i.e. they indicate how users should “behave” in relation to our software project. Some common examples of repository metadata files and their role are tabulated below:
+In addition to software-level technical documentation, it is also common to see repository metadata files included 
+in a code repository.
+Many of these files can be described as "social documentation" i.e. they indicate how users should “behave” in relation 
+to our software project. 
+Some common examples of repository metadata files and their role are tabulated below:
 
 |     File            |   Description                                                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -727,13 +734,16 @@ Also check the [full reference set](learners/reference.md#litref) for the course
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Documentation allows users to run and understand software without having to work things out for themselves directly from
-  the code.
+- Documentation allows users to run and understand software without having to work things out for themselves 
+directly from the code.
 - Software documentation supports the FAIR principles by improving the reusability of research code.
-- A (good) README, CITATION file and LICENSE file are the minimum documentation elements required to achieve FAIR research code.
-- Documentation can be provided to users in a variety of formats including a `docs` folder of markdown files, a repository Wiki and static webpages.
-- A static documentation site can be created using the tool mkdocs.
-- Documentation frameworks such as Diataxis provide content and style guidelines that can helps us write high quality documentation.
+- A (good) README, CITATION file and LICENSE file are the minimum documentation elements required to support FAIR 
+research code.
+- Documentation can be provided to users in a variety of formats including a `docs` folder of Markdown files, 
+a repository Wiki and static webpages.
+- A static documentation site can be created using the tool `mkdocs`.
+- Documentation frameworks such as Diataxis provide content and style guidelines that can helps us write high 
+quality documentation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

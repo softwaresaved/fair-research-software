@@ -12,6 +12,7 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
 - Explain the FAIR research principles in the context of research software and data
 - Explain why these principles are of value in the research community 
@@ -80,11 +81,11 @@ FAIR is not a binary metric - there is no such thing as "FAIR or not FAIR".
 FAIR is not a perfect metric, nor does it provide a full and exhaustive software quality checklist.
 Software may be FAIR but still not very good in terms of its functionality.
 
-FAIR is meant to criticise or discredit work. 
+FAIR is **not meant** to criticise or discredit work. 
 
-FAIR refers to the specific **values** of and describes a set of **principles** for open and reproducible science and 
-can be a helpful guide if you wish to stick to these principles and find out where you are 
-on the **FAIR spectrum** and help you on a **journey** to make your software more FAIR. 
+FAIR refers to the specific **values** of and describes a set of **principles** to aid open and reproducible research
+that can be a helpful guide for researchers who want to improve their practices (by helping them see where they are 
+on the **FAIR spectrum** and help them on a **journey** to make their software more FAIR). 
 
 ![*FAIR as a 4D spectrum, image by the Netherlands eScience Center licensed under CC-BY 4.0*](episodes/fig/fair-spectrum.png){alt='FAIR represented as as a 4-dimensional spectrum  with 4 axes - findable, accessible, interoperable and reusable, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
 
@@ -121,11 +122,12 @@ the new research team member was given.
 Let's unzip this archive and inspect its content in VS Code. 
 The software project contains:
 
-- a JSON file (`data.json`) - a snippet of which is shown below - with data on extra-vehicular activities (EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA via its [Open Data Portal](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data)), and
-- a Python script (`my code v2.py`) containing some analysis.
-
+(1) a JSON file (`data.json`) - a snippet of which is shown below - with data on extra-vehicular activities 
+(EVAs or spacewalks) undertaken by astronauts and cosmonauts from 1965 to 2013 (data provided by NASA 
+via its [Open Data Portal](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn/about_data))
 ![JSON data file snippet showing EVA/spacewalk data including EVA id, country, crew members, vehicle type, date of the spacewalk, duration, and purpose)](episodes/fig/astronaut-data-json-snippet.png){alt='JSON data file snippet showing EVA/spacewalk data including EVA id, country, crew members, vehicle type, date of the spacewalk, duration, and purpose'}
-
+(2) a Python script (`my code v2.py`) containing some analysis.
+![A first few lines of a Python script](episodes/fig/astronaut-analysis-bad-code-screenshot.png){alt='A first few lines of a Python script used as example code for the episode'}
 
 The code in the Python script does some common research tasks:
 
@@ -133,8 +135,6 @@ The code in the Python script does some common research tasks:
 * Change the data from one data format to another and save to a file in the new format (CSV)
 * Perform some calculations to generate summary statistics about the data
 * Make a plot to visualise the data
-
-![A first few lines of a Python script](episodes/fig/astronaut-analysis-bad-code-screenshot.png)
 
 Let's have a critical look at this code and think about how FAIR this piece of software is.
 
@@ -195,7 +195,7 @@ R - 2/5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Let's have a look into tools and practices that are commonly used in research that can help us develop software in a 
+Let's now have a look into tools and practices that are commonly used in research that can help us develop software in a 
 more FAIR way.
 
 

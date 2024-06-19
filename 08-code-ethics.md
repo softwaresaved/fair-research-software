@@ -12,6 +12,7 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
 - Understand some ethical issues around research software development and usage and how they impact others.
 

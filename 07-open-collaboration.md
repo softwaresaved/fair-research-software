@@ -5,6 +5,7 @@ exercises: 30
 ---
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
 - Explain why adding licensing information to a repository is important.
 - Understand that some licenses are intended for code and others for data. 

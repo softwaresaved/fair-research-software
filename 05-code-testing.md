@@ -15,13 +15,16 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
 - Explain why code testing is important and how this supports FAIR software.
 - Describe the different types of software tests (unit tests, integration tests, regression tests).
-- Implement unit tests to verify that your function(s) behave as expected using the Python testing framework pytest.
-- Interpret the output from pytest to identify where your function(s) are not behaving as expected. 
-- Write tests using edge cases and invalid inputs to ensure that your code can handle extreme values and invalid inputs appropriately.
-- Evaluate code coverage to identify how much of your codebase is being tested and identify areas that need further tests.
+- Implement unit tests to verify that function(s) behave as expected using the Python testing framework `pytest`.
+- Interpret the output from `pytest` to identify where function(s) are not behaving as expected. 
+- Write tests using edge cases and invalid inputs to ensure that the code can handle extreme values and invalid 
+inputs appropriately.
+- Evaluate code coverage to identify how much of the codebase is being tested and identify areas that need further 
+tests.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

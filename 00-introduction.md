@@ -13,6 +13,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
+After completing this episode, participants should be able to:
+
 - Understand the concept of open and reproducible research
 - Understand why these principles are of value in the research community 
 

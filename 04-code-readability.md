@@ -13,6 +13,7 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
 - Organise code into reusable functions that achieve a singular purpose
 - Create function and variable names that help explain the purpose of the function or variable

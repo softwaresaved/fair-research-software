@@ -13,8 +13,9 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+After completing this episode, participants should be able to:
 
-- Create self-contained commits in Git to incrementally save work
+- Create self-contained commits using Git to incrementally save work
 - Inspect logs to review the history of work
 - Push new work from a local machine to a remote server
 
@@ -48,11 +49,12 @@ makes it auditable, which is good scientific practice.
 
 Later on in this workshop, we will also see how using a version control system
 allows many people to collaborate on the same project without a lot of manual
-effortto combine different items of work.
+effort to combine different items of work.
 
 ### Create a new repository
 
-Create a new directory in the `Desktop` folder for our work, and then change the current working directory to the newly created one:
+Create a new directory in the `Desktop` folder for our work, and then change the current working directory 
+to the newly created one:
 
 ```bash
 $ cd ~/Desktop
@@ -90,7 +92,8 @@ During the [setup](./index.html#astronaut-data-and-analysis-code) for this cours
 - `data.json`
 
 We need to move these files into our git folder.
-You can either drag and drop the files from a file explorer window into the left pane of the VSCode IDE, or you can use the [`mv` command](https://linuxcommandlibrary.com/man/mv) in the terminal.
+You can either drag and drop the files from a file explorer window into the left pane of the VS Code IDE, 
+or you can use the [`mv` command](https://linuxcommandlibrary.com/man/mv) in the command line terminal.
 
 ```bash
 mv /path/where/you/saved/the/file/my\ code\ v2.py ~/Desktop/spacewalks/
@@ -117,7 +120,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 This is telling us that Git has noticed the new files.
-The "untracked files" message means that there's a file in the directory that Git isn't keeping track of.
+The "untracked files" message means that there is a file in the directory that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ```bash
@@ -156,10 +159,12 @@ $ git commit -m "Add and example script and dataset to work on"
  create mode 100644 my code v2.py
 ```
 
-When we run `git commit`, Git takes everything we have told it to save by using `git add` and stores a copy permanently in a special `.git` directory.
+When we run `git commit`, Git takes everything we have told it to save by using `git add` and stores a copy permanently 
+in a special `.git` directory.
 This permanent copy is called a commit (or revision).
 
-We use the flag `-m` (for message) to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
+We use the flag `-m` (for message) to record a short, descriptive, and specific comment that will help us remember 
+later on what we did and why.
 If we only run `git commit` without the `-m` option, Git will launch a text editor so that we can write a longer message.
 
 Good commit messages start with a brief (<50 characters) statement about the changes made in the commit.
@@ -185,15 +190,19 @@ This tells us that everything is up to date.
 ## Where are my changes?
 
 If we run `ls` at this point, we will still see only two files, the script and the dataset.
-That's because Git saves information about files' history in the special `.git` directory mentioned earlier so that our filesystem doesn't become cluttered (and so that we can't accidentally edit or delete an old version).
+That's because Git saves information about files' history in the special `.git` directory mentioned earlier 
+so that our filesystem does not become cluttered (and so that we cannot accidentally edit or delete an old version).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Make a change
 
-Did you notice how when we were typing the Python script into the terminal, we had to add a slash before the space like this: `my\ code\ v2.py`?
-Using a backslash in this way is called 'escaping' and it lets the terminal know to treat the space as part of the filename, and not a separate argument.
-However, it is pretty annoying and considered bad practice to have spaces in your filenames like this, especially if you'll be manipulating them from the terminal.
+Did you notice how when we were typing the Python script into the terminal, we had to add a slash before the space 
+like this: `my\ code\ v2.py`?
+Using a backslash in this way is called 'escaping' and it lets the terminal know to treat the space 
+as part of the filename, and not a separate argument.
+However, it is pretty annoying and considered bad practice to have spaces in your filenames like this, 
+especially if you will be manipulating them from the terminal.
 So let's go ahead and remove the space from the filename altogether and replace it with a hyphen instead.
 You can use the `mv` command again like so:
 
@@ -260,7 +269,8 @@ $ git commit -m "Replace spaces in Python filename with hyphens"
 
 ### Advanced solution
 
-We initially renamed the Python file using the `mv` command, and we than had to add *both* `my-code-v2.py` and `my\ code\ v2.py`.
+We initially renamed the Python file using the `mv` command, and we than had to add *both* `my-code-v2.py` 
+and `my\ code\ v2.py`.
 Alternatively, we could have used Git's own `mv` command like so:
 
 ```bash
@@ -275,7 +285,8 @@ Changes to be committed:
 	renamed:    my code v2.py -> my-code-v2.py
 ```
 
-`git mv` is the equivalent of running `mv ...` followed immediately by `git add ...` of the old and new filenames, so the changes have been staged automatically.
+`git mv` is the equivalent of running `mv ...` followed immediately by `git add ...` of the old and new filenames, 
+so the changes have been staged automatically.
 All that needs to be done is to commit them.
 
 ```bash
@@ -294,32 +305,31 @@ $ git commit -m "Replace spaces in Python filename with hyphens"
 
 ### Commit messages
 
-We have already met the concept of commit messages when we made and stored changes
-to our code files. Commit messages are short descriptions of, and the motivation
-for, what a commit will achieve. It's therefore important to take some time to
-ensure these commit messages are helpful and descriptive, as when work is reviewed
-(by your future self or a collaborator) they provide the context of what change
-was made and why. This can make tracking down specific changes in commits much
+We have already met the concept of commit messages when we made and stored changes to our code files. 
+Commit messages are short descriptions of, and the motivation for, what a commit will achieve. 
+It is therefore important to take some time to ensure these commit messages are helpful and descriptive, 
+as when work is reviewed (by your future self or a collaborator) they provide the context of what change
+was made and why. 
+This can make tracking down specific changes in commits much
 easier, without having to inspect the code or files themselves.
 
 Generally, commit messages should complete the sentence "If applied, this commit
-will...". Most often a short, 50 character (ish) title will suffice, but a longer-form
-description of the changes can also be provided by leaving a blank space between
-the summary line and the rest of the message. There are many different conventions
-that can be used for commit messages that range from very structured (such as
-[conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)) to the
-fun (such as [gitmoji](https://gitmoji.dev/)). The important thing is that it
-is clear to the reader what a commit is doing and why. If a project is using a
-specific commit message convention, this will often be described in their
+will...". 
+Most often a short, 50 character (ish) title will suffice, but a longer-form description of the changes can also be 
+provided by leaving a blank space between the summary line and the rest of the message. 
+There are many different conventions that can be used for commit messages that range from very structured (such as
+[conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)) to the fun (such as [gitmoji](https://gitmoji.dev/)). 
+The important thing is that it is clear to the reader what a commit is doing and why. 
+If a project is using a specific commit message convention, this will often be described in their
 [contributing guidelines](https://en.wikipedia.org/wiki/Contributing_guidelines).
 
 :::::::::::::::::::::::::::::::::::::: challenge
 
 ### Good commit messages
 
-Read the two commit messages below. In pairs or small groups, discuss which
-messages help you understand more about what the commit author did. What about
-the commit messages do you find helpful or not?
+Read the two commit messages below. In pairs or small groups, discuss which messages help you understand more 
+about what the commit author did.
+What about the commit messages do you find helpful or not?
 
 1. ```output
    [main 7cf85f6] Change variable
@@ -334,10 +344,9 @@ the commit messages do you find helpful or not?
 
 ### Solution
 
-Commit message (2) is the better commit message since it is more descriptive about
-what the author did. This message could be improved further by adding a blank line
-then further describing the change discussing, for example, why the variable name
-was changed.
+Commit message (2) is the better commit message since it is more descriptive about what the author did. 
+This message could be improved further by adding a blank line then further describing the change discussing, 
+for example, why the variable name was changed.
 
 :::::::::::::::::::::::::
 
@@ -347,11 +356,13 @@ was changed.
 
 If we want our commit messages to be descriptive and help us understand the
 changes in the project over time, then we also have to make commits that are
-very self-contained. That is to say that each commit we make should only change
-one, logical thing. By "logical" here, we mean that one aspect of updating the
+very self-contained. 
+That is to say that each commit we make should only change
+one, logical thing. 
+By "logical" here, we mean that one aspect of updating the
 files has been achieved to completion - such as adding docstrings or refactoring
-a function - we don't mean that changes are committed line-by-line. See the
-["Things to avoid when creating commits" section][git-commit-avoid]
+a function - we don't mean that changes are committed line-by-line. 
+See the ["Things to avoid when creating commits" section][git-commit-avoid]
 of [Openstack's "Git Commit Good Practice" documentation][git-commit-good-practice] for examples of logical,
 self-contained commits, and commits that don't follow this practice.
 
@@ -365,12 +376,13 @@ work along with the change you do want to remove.
 
 ### Understanding commit contents
 
-Below are the `diff`s of two commits. A `diff` shows the differences in a file
-(or files!) compared to the previous commit in the history so you can what has
-changed. The lines that begin with `+`s represent additions, and the lines that
-begin with `-`s represent deletions. Compare these two commit `diff`s. Can you
-understand what the commit author was trying to achieve in each commit? How many
-changes have they tried to make in each commit? Discuss in pairs or small groups.
+Below are the `diff`s of two commits. A `diff` shows the differences in a file (or files!) compared to the previous 
+commit in the history so you can what has changed. 
+The lines that begin with `+`s represent additions, and the lines that begin with `-`s represent deletions. 
+Compare these two commit `diff`s. 
+Can you understand what the commit author was trying to achieve in each commit? 
+How many changes have they tried to make in each commit? 
+Discuss in pairs or small groups.
 
 1. ![Example Diff 1](fig/ex-diff-1.png)
 2. ![Example Diff 2](fig/ex-diff-2.png)
@@ -380,8 +392,8 @@ changes have they tried to make in each commit? Discuss in pairs or small groups
 ### Solution
 
 The git `diff` presented in option (1) is cleaner. The author has only tackled
-one thing: placing the import statements at the top of the file. This kind of
-commit is much easier to review in isolation, and will be easier to track down
+one thing: placing the import statements at the top of the file. 
+This kind of commit is much easier to review in isolation, and will be easier to track down
 if [`git bisect`](https://git-scm.com/docs/git-bisect) is required.
 
 :::::::::::::::::::::::::
@@ -411,19 +423,21 @@ Date:   Mon Jun 17 11:52:02 2024 +0100
 ```
 
 This output demonstrates why it is important to write meaningful and descriptive
-commit messages. Without the messages, we will only have the commit hashes (the
+commit messages. 
+Without the messages, we will only have the commit hashes (the
 strings of random numbers and letters after "commit") to identify each commit,
 which would be impossible for us.
 
 We may need to inspect our recent commits to establish where a bug was introduced
-or because we've decided that our recent work isn't suitable and we wish to discard
-it and start again. Once we have identified the last commit we want to keep, we 
+or because we have decided that our recent work isn't suitable and we wish to discard
+it and start again. 
+Once we have identified the last commit we want to keep, we 
 can revert the state of our project back to that commit with a few different
 methods:
 
 - [`git revert`](https://git-scm.com/docs/git-revert): This command reverts a
   commit by creating a new commit that reverses the action of the supplied commit
-  or list of commits. Because this comand creates new commits, your git history
+  or list of commits. Because this command creates new commits, your git history
   is more complete and tells the story of exactly what work you did, i.e.,
   deciding to discard some work.
 - [`git reset`](https://git-scm.com/docs/git-reset): This command will recover
@@ -438,13 +452,16 @@ methods:
 ### Pushing to a Git server
 
 One of the benefits of using a distributed version control system, such as Git,
-is its distributed nature. So far we have have been working with a project on our
+is its distributed nature. 
+So far we have have been working with a project on our
 local machines and, even though we have been incrementally saving our work in a
 way that is recoverable (version control), if anything happened to our laptops,
-the whole project would be lost. However, we can use the distribution aspect of
+the whole project would be lost. 
+However, we can use the distribution aspect of
 Git to push our projects and histories to a server (someone else's computer) so
 that they are accessible and retrievable if the worst were to happen to our
-machines. Distributing our projects in this way also opens us up to collaboration
+machines. 
+Distributing our projects in this way also opens us up to collaboration
 since colleagues would be able to access our projects, make their own copies on
 their machines, and conduct their own work.
 
@@ -500,10 +517,13 @@ git remote add origin https://github.com/<YOUR_GITHUB_HANDLE>/spacewalks.git
 ```
 
 This command tells Git to create a `remote` called "origin" and link it to the
-URL of your GitHub repository. A `remote` is a version control concept where two
+URL of your GitHub repository. 
+A `remote` is a version control concept where two
 (or more) repositories are connected to each other in such a way that they can
-be kept in sync by exchanging commits. "origin" is a name used to refer to the
-remote repository. It could be called anything, but "origin" is a convention that
+be kept in sync by exchanging commits. 
+"origin" is a name used to refer to the
+remote repository. 
+It could be called anything, but "origin" is a convention that
 is often used by default in Git and GitHub since it indicates which repository
 is considered the "source of truth", particularly useful when many people are
 collaborating on the same repository.
@@ -512,9 +532,11 @@ collaborating on the same repository.
 git branch -M main
 ```
 
-`git branch` is a command used to manage branches. We'll discuss branches later
-on in the workshop. This command ensures the branch we are working on is called
-"main". This will be the default branch of the project for everyone working on it.
+`git branch` is a command used to manage branches. 
+We will discuss branches later
+on in the course. This command ensures the branch we are working on is called
+"main". 
+This will be the default branch of the project for everyone working on it.
 
 ```bash
 git push -u origin main
@@ -580,7 +602,8 @@ Also check the [full reference set](learners/reference.md#litref) for the course
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - A version control system is software that tracks and manages changes to a project over time
-- Using version control aids reproducibility since the exact state of the software that produced an output can be recovered
+- Using version control aids reproducibility since the exact state of the software that produced an output can be 
+recovered
 - A commit represents the smallest unit of change to a project
 - Commit messages describe what each commit contains and should be descriptive
 - Logs can be used to overview the history of a project
