@@ -302,7 +302,7 @@ responsibilities are leaving less room for misunderstanding.
 The website [choosealicense.com](https://choosealicense.com) has some great
 resources to help you choose a license that's appropriate for your needs.
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## License selection exercise
 
@@ -314,7 +314,7 @@ integrated into as many different research codes and even commercial
 products as possible. What would be a good choice of license? (hint: You
 can use the [choosealicense.com](https://choosealicense.com) website to help you)
 
-:::::::::::::::: solution
+:::  solution
 
 A: The LGPL license could be a good choice for library code. It can be
 linked to software that isn't GPL licensed but any modifications to the
@@ -376,7 +376,7 @@ Under these rules the following combinations are possible:
 * CC BY-ND - Creative Commons No Derivatives
 * CC BY-ND-NC - Creative Commons No Derivatives Non Commercial
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## License selection exercise 2
 
@@ -387,7 +387,7 @@ reason for choosing it.
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Adding a license to your code
 
@@ -461,7 +461,7 @@ projects who wish to sell the software to some customers (sometimes with
 extra custom modifications) and give it to others. 
 
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Relicensing exercise
 
@@ -469,7 +469,7 @@ Q: Find the webpage of a major open source project that is relevant to
 your research. See if you can find a contributor license agreement. Add a
 link to this in the chat/etherpad/hackmd. 
 
-:::::::::::::::: solution
+:::  solution
 
 A: Here are a few examples:
 
@@ -561,7 +561,7 @@ Here is the badge for this repository:
 
 
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Archive your repository to Zenodo
 
@@ -617,7 +617,7 @@ Although we can write the CITATION.cff file by hand, an easier opton can be to u
 tool which will ask us a series of questions and then create a file for us to download and include. We can also use this tool to validate
 an existing file is correctly formatted. 
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Add a citation file to your repository
 
@@ -664,7 +664,7 @@ A good issue description should include:
 
 After the issue is created it will be assigned a sequential ID number.
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Write an issue to describe our bug
 
@@ -847,7 +847,7 @@ inside our forked repository. Github will track that a fork has been made displa
 request that the changes on our fork are incorporated by the upstream project.
 
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Pull Request Exercise
 
@@ -862,7 +862,7 @@ They will get an email and an alert within Github to accept your invitation to w
  - Create a pull request back to the original repository
  - Your partner will now receive your pull request and can review 
 
-:::::::::::::::: solution
+:::  solution
 
 A: 
 

@@ -206,7 +206,7 @@ installed. You will also need the following libraries (minimum versions in brack
 - [pandas](https://pandas.pydata.org/) >= 2.2.0 - Spacewalks uses pandas for data frame manipulation 
 ```
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## Spacewalks README
 
@@ -214,7 +214,7 @@ Extend the README for Spacewalks by adding
 a. Installation instructions
 b. A simple usage example
 
-:::::::::::::::::::::::: solution
+:::  solution
 
 Installation instructions:
 
@@ -345,7 +345,7 @@ command line. Further information is available from the [Turing Way's guide to s
 
 
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## `Spacewalks` Software Citation
 
@@ -358,7 +358,7 @@ folder of our project.
 + Use the commit hash of your most recent commit to indicate the code
   version your citation file refers to.
 
-:::::::::::::::::::::::: solution
+:::  solution
 
 Use [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/#/version-specific),
 a web application to create your citation file using a series of online forms.
@@ -561,7 +561,7 @@ our documentation matches its purpose.
 Documentation guides such as [Write the Docs][write-the-docs], [The Good Docs Project][the-good-docs-project] and the [Diataxis framework][diataxis-framework]
 provide a range of resources including documentation templates to help to help us do this.
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ## A `Spacewalks` How-to Guide
 
@@ -572,7 +572,7 @@ b. Following the Diataxis guidelines, add a How-to Guide to the `docs` folder
 that show users how to change the destination filename for the output dataset generated
 by Spacewalks.
 
-:::::::::::::::::::::::: solution
+:::  solution
 
 An effective How-to guide should:
 

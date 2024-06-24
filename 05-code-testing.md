@@ -84,7 +84,7 @@ There are many different types of software testing including:
 
 In this course, our primary focus will be on unit testing. However, the concepts and techniques we cover will provide a solid foundation applicable to other types of testing. 
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::  challenge 
 
 ## Types of Software Tests
 
@@ -97,7 +97,7 @@ Fill in the blanks in the sentences below:
 + __________ tests check that results have not changed since the previous test run.
 + __________ tests check that two or more parts of a program are working together correctly.
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 + End-to-end tests compare the actual output of a program to the expected output
   to demonstrate correctness.
@@ -447,7 +447,7 @@ FAILED tests/test_code.py::test_text_to_duration_float - assert 13.3333333333333
 + If an assertion fails or an error occurs, the test is marked as a failure with an 'F'. 
   and the output includes details about the error to help identify what went wrong.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::  challenge 
 
 ## Interpreting pytest output
 
@@ -519,7 +519,7 @@ c. How many tests failed?
 d. Why did "test_total_duration" fail?
 e. Why did "test_mean_duration" fail?
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 a. 9 tests were detected in the test suite
 b. s - stands for "skipped"
@@ -551,14 +551,14 @@ We should aim to test that our function behaves as expected with the full range 
 + Test all values at the edge of the range
 + Test invalid values 
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::  challenge 
 
 ## Write Unit Tests
 
 Implement unit tests for the `calculate_crew_size` function. 
 Cover typical cases and edge cases.
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 ```python
 import pytest
@@ -652,7 +652,7 @@ of our code we should:
 + Focus of the the parts of our code that carry the greatest "reputational risk"
   i.e. that could affect the accuracy of our reported results.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::  challenge 
 
 ## Evaluate Code Coverage
 
@@ -662,7 +662,7 @@ and extract the following information:
 a.  What proportion of the code base is currently NOT exercised by the test suite?
 b.	Which functions in our code base are currently untested?
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 ```bash
 python -m pytest --cov --cov-report=html tests
@@ -682,7 +682,7 @@ b. The following functions in our code base are currently untested:
 
 
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::  challenge 
 
 ## Implementing a minimal test suite
 
@@ -761,7 +761,7 @@ def test_summarise_categorical_typical():
 
 ```
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 ```python
 def test_summarise_categorical():
@@ -816,7 +816,7 @@ def test_summarise_categorical_missvals():
 ```    
 
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 ```python
 def test_summarise_categorical_missvals():
@@ -846,7 +846,7 @@ def test_summarise_categorical_missvals():
 Now write a test to check that the `summarise_categorical` function raises an appropriate error 
 when asked to tabulate a column that does not exist in the data frame
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 ```python
 
@@ -877,7 +877,7 @@ b) What proportion of the code base is exercised by the test suite
 after the new tests have been added?
     
 
-:::::::::::::::::::::::: solution 
+:::  solution 
 
 **test_eva_data_analysis.py**:
 

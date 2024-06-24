@@ -230,7 +230,7 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Add and commit the changed file
 
@@ -239,7 +239,7 @@ Using the Git commands demonstrated so far, save the change you just made to the
 Remember, commit messages should be descriptive and complete the sentence "If applied, this commit will...".
 You can also use `git status` to check the status of your project at any time.
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 
@@ -323,7 +323,7 @@ The important thing is that it is clear to the reader what a commit is doing and
 If a project is using a specific commit message convention, this will often be described in their
 [contributing guidelines](https://en.wikipedia.org/wiki/Contributing_guidelines).
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Good commit messages
 
@@ -340,7 +340,7 @@ What about the commit messages do you find helpful or not?
     1 file changed, 1 insertion(+), 1 deletion(-)
    ```
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 
@@ -372,7 +372,7 @@ the specific change that caused the break is simpler; if you need to undo change
 you can remove them in small increments, rather than losing a lot of unrelated
 work along with the change you do want to remove.
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Understanding commit contents
 
@@ -387,7 +387,7 @@ Discuss in pairs or small groups.
 1. ![Example Diff 1](fig/ex-diff-1.png)
 2. ![Example Diff 2](fig/ex-diff-2.png)
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 
@@ -548,14 +548,14 @@ have made locally. This command tells Git to update the "main" branch on the
 reference, so that in the future only `git push` can be run without the need to
 specify the remote and reference name.
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Terminology
 
 In pairs or small groups, discuss the difference between the terms `remote`
 and `origin`. What is the definition of each term?
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 

@@ -94,7 +94,7 @@ on the **FAIR spectrum** and help them on a **journey** to make their software m
 We are going to explore the above practices on an example software project we will be working on as part of this
 course.
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 Think of a piece of software you use in your research - any computational tool used for data gathering, modelling & simulation, processing & visualising results or others. 
 If you have a bit of code or software you wrote yourself, in any language, feel free to use that.
@@ -169,7 +169,7 @@ Here are some questions to help you assess where on the FAIR spectrum the code i
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: solution
+:::  solution
 
 I would give the following scores:
 

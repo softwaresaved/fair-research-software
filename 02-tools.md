@@ -159,7 +159,7 @@ We will discuss later how to share your code on GitHub and make it easy for othe
 
 ## Checking your setup
 
-::::::::::::::::::::::::::::::::::::: challenge
+::::::  challenge
 
 Run the following commands in a Bash shell to check you have installed the tools listed in the Setup page. Compare the output with your neightbour and see if you can see any differences.
 
@@ -171,20 +171,17 @@ Run the following commands in a Bash shell to check you have installed the tools
 6. `git --help`
 7. `code`
 
-Solution:
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: exercise
+::: solution
 
 Open a terminal and look at the prompt. Compare what you see in the terminal with your neighbour, does it look the same or different?
 What information is it telling you and why might this be useful? What other information might you want?
 
 Hint: The prompt is the `$` character and any text that comes before it, that is shown on every new line before you type in commands.
 
-Solution:
+:::
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+::::::
+
 
 You may have noticed that our researcher has received the software project they are meant to be working as a `.zip` archive via email. 
 In the next episode, we will learn a better practice for sharing and tracking changes to a software project using version control software Git and 

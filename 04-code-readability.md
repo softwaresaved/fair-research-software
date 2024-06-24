@@ -68,7 +68,7 @@ There are also some gotchas to consider when naming variables:
     So in this case opting for something like `input_data` would be preferable.
     (This behaviour may be explicitly disallowed in other programming languages.)
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Give a descriptive name to a variable
 
@@ -82,7 +82,7 @@ Hint: the units are _metres per second squared_!
 var = 9.81
 ```
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 
@@ -145,7 +145,7 @@ specialtax = 1.01  # Special sales tax rate is 1% through Jan. 1
 In this case, it might not be immediately obvious what each variable represents, so the comments offer helpful, real-world context.
 The date in the comment also indicates when the code might need to be updated.
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Add some comments to a code block
 
@@ -154,7 +154,7 @@ Add (or change!) as many inline comments as you think is required to help yourse
 
 Hint: Inline comments in Python are denoted by a `#` symbol.
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 
@@ -196,7 +196,7 @@ The software also becomes easier to maintain because, if the code encapsulated i
 As we will learn in a future episode, testing code also becomes simpler when code is written in functions.
 Each function can be individually checked to ensure it is doing what is intended, which improves confidence in the software as a whole.
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Create a function
 
@@ -215,7 +215,7 @@ def read_json_to_dataframe(input_file):
     eva_df = pd.read_json(input_file, convert_dates=['date'])
 ```
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 
@@ -285,7 +285,7 @@ If you are contributing code to a wider project or community, try to follow the 
 As your code grows and becomes more complex, the docstrings can form the content of a reference guide allowing developers to quickly look up how to use the APIs, functions, and classes defined in your codebase.
 Hence, it is common to find tools that will automatically extract docstrings from your code and generate a website where people can learn about your code without downloading/installing and reading the code files - such as [sphinx for Python](https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html).
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::  challenge
 
 ### Writing docstrings
 
@@ -302,7 +302,7 @@ Hint: Python docstrings are defined by enclosing the text with `"""` above and
 below. This text is also indented to the same level as the code defined beneath
 it, which is 4 whitespaces.
 
-:::::::::::::: solution
+:::  solution
 
 ### Solution
 

@@ -46,7 +46,7 @@ TODO: Exercise - perhaps a discussion around transparency, quality and accountab
 - License compliance: ensuring that software use complies with licensing agreements and avoiding unlicensed
 - (and illegal) use of software and data.
 
-:::::: challenge
+:::  challenge
 
 ### Which of the following statements are true and which are false?
 
