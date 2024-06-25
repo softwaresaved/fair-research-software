@@ -1,3 +1,6 @@
+# From the episodes folder run as: python3 extract_exercises.py *.md > all_exercises.md
+# Licensed under MIT licence
+
 from sys import argv, stdout
 import re
 
