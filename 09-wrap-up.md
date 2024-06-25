@@ -53,6 +53,7 @@ on the topic of this course and the full reference set.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- ...
+- When developing software for your research, think about how it will help you and your team, your peers and domain/community and 
+the world.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
