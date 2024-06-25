@@ -74,7 +74,7 @@ same research question and a qualitatively similar or identical answer is produc
 * **Generalisable research**: combining replicable and robust findings allow us to form generalisable results 
 that are broadly applicable to different types of data or contexts.
 
-![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807][ttw-illustrations]*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Aspects of reproducible research including reproducibility, replicability, robustness and generalisability according to The Turing Way project'}
+![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807][ttw-illustrations]*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Four cartoon images depicting two researchers at two machines which take in data and output the same landscape image in 4 different ways. These visually describe the four scenarios listed above.'}
 
 In this course we mainly address reproducibility, as the first step towards generalisability 
 (the ultimate goal of research).
@@ -137,7 +137,7 @@ For example, software used to guide a telescope is not considered "research soft
 On the other hand, formulas or macros in spreadsheets used to analyse data are considered "research code" - 
 they are a form of computer programming in that allow one to create, calculate, and change data sets in a number of different ways.
 
-![*Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0*](https://esciencecenter-digital-skills.github.io/research-software-support/modules/fairsoftware/media/definition.png){alt='Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0'}
+![*Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0*](https://esciencecenter-digital-skills.github.io/research-software-support/modules/fairsoftware/media/definition.png){alt='Quote: Research Software includes source code files, algorithms, scripts, computational workflows and executables that were created during the research process or for a research purpose. Software components (e.g., operating systems, libraries, dependencies, packages, scripts, etc.) that are used for research but were not created during or with a clear research intent should be considered software in research and not Research Software.'}
 
 In the [software survey conducted by the Software Sustainability Institute in 2014][ssi-survey-2014], 
 92% of researchers indicated they used some kind of software to aid or conduct their research.
