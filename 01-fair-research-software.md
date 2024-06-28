@@ -40,7 +40,7 @@ The FAIR data principles, first published [in 2016][fair-data-principles], are w
 Similar [FAIR principles for software][fair-principles-research-software] have now been defined too. In general, they mean:
 
 * **Findable** - software and its associated metadata must be easy to discover by humans and machines.
-* **Accessible** - in order to reuse software, the software and its metadata must be retrievable by standard protocols.
+* **Accessible** - in order to reuse software, the software and its metadata must be retrievable by standard protocols, free and legally usable.
 * **Interoperable** - when interacting with other software it must be done by exchanging data and/or metadata through
   standardised protocols and application programming interfaces (APIs).
 * **Reusable** - software should be usable (can be executed) and reusable
