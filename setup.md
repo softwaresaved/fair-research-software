@@ -239,6 +239,17 @@ private key counterpart), paste the public key
 from your clipboard into the box labelled "Key" (making sure it does not contain any line breaks),
 then click the "Add SSH key" button.
 
+To test if you can successfully authenticate to GitHub using your new key pair, do:
+
+```bash
+$ ssh -T git@github.com
+```
+
+You may be asked to add GitHub to the list of trusted hosts on your machine (say 'yes' to that) and then you should see a line similar to:
+
+```output
+Hi anenadic! You've successfully authenticated, but GitHub does not provide shell access.
+```
 
 ### Python 3 Distribution
 
