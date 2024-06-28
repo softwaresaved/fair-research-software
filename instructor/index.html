@@ -813,6 +813,21 @@ key a memorable name (e.g. the name of the computer you are working on
 that contains the private key counterpart), paste the public key from
 your clipboard into the box labelled “Key” (making sure it does not
 contain any line breaks), then click the “Add SSH key” button.</p>
+<p>To test if you can successfully authenticate to GitHub using your new
+key pair, do:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> ssh <span class="at">-T</span> git@github.com</span></code></pre>
+</div>
+<p>You may be asked to add GitHub to the list of trusted hosts on your
+machine (say ‘yes’ to that) and then you should see a line similar
+to:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Hi anenadic! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+</div>
 </div>
 </div>
 <div class="section level3">
@@ -832,11 +847,11 @@ installation.</p>
 <h4 id="testing-python-3">Testing Python 3<a class="anchor" aria-label="anchor" href="#testing-python-3"></a></h4>
 <p>You can check that you have Python 3 installed correctly from the
 command line using the commands below.</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">--version</span> <span class="co"># on macOS/Linux</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span> <span class="co"># on Windows — Windows installation comes with a python.exe file rather than a python3.exe file </span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">--version</span> <span class="co"># on macOS/Linux</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span> <span class="co"># on Windows — Windows installation comes with a python.exe file rather than a python3.exe file </span></span></code></pre>
 </div>
 <p>You should see something like the output below.</p>
 <div class="codewrapper">
@@ -856,17 +871,17 @@ command line using the commands below.</p>
 causes your Git Bash terminal to hang with no error message or output,
 you may need to create an alias for the Python executable
 <code>python.exe</code> like so:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> alias python=<span class="st">"winpty python.exe"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> alias python=<span class="st">"winpty python.exe"</span></span></code></pre>
 </div>
 <p>This alias will be valid for the duration of the shell session. For a
 more permanent solution, from the shell do:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"alias python='winpty python.exe'"</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"alias python='winpty python.exe'"</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span></code></pre>
 </div>
 </div>
 </div>
