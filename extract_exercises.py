@@ -16,7 +16,7 @@ for episode in episode_files:
                 _, title = line.split(': ')
                 stdout.write(f'## Episode: {title}')
             #elif line.strip().endswith(':::  challenge'):
-            elif re.search(":::[:]*[ ]*challenge$", line.strip()):
+            elif (re.search(":::[:]*[ ]*challenge$", line.strip()) or re.search(":::[:]*[ ]*discussion", line.strip())):
                 exercise = True
             else:
                 #if line.strip().endswith(':::') or line.strip().endswith(':::  solution'):

@@ -23,7 +23,7 @@ After completing this episode, participants should be able to:
 ::::::::::::::::::::::::::::::::::::: discussion
 
 ## Motivation (10 minutes)
-Think about the questions below. Your trainers may ask you to share your answers in a shared notes document and/or
+Think about the questions below. Your instructors may ask you to share your answers in a shared notes document and/or
 discuss them with other participants.
 
 - What motivated you to attend this course? Did you come by your own choice or were you advised to attend?

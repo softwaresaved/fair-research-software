@@ -48,7 +48,7 @@ In this course, we use the term "reproducibility" as a synonym for "computationa
 
 ::: discussion
 ## What does open and reproducible research mean to you? (10 minutes)
-Think about the questions below. Your trainers may ask you to share your answers in a shared notes document and/or 
+Think about the questions below. Your instructors may ask you to share your answers in a shared notes document and/or 
 discuss them with other participants.
 
 - What do you understand by the words "open" and "reproducible" in the context of research?

@@ -97,7 +97,7 @@ A README file acts as a “landing page” for your code repository on GitHub an
 
 ## READMEs and The FAIR Principles
 
-Think about the question below. Your trainers may ask you to share your answer in a shared notes document and/or discuss them with other participants.
+Think about the question below. Your instructors may ask you to share your answer in a shared notes document and/or discuss them with other participants.
 
 Here are some of the major sections you might find in a typical README. Which are **essential** to support the FAIR principles? Which are optional?
 

@@ -176,7 +176,7 @@ form of testing.
 ::::::::::::::::::::::::::::::::::::: discussion 
 
 ## What are the limitations of informally testing code? (5 minutes)
-Think about the questions below. Your trainers may ask you to share your answers in a shared notes document and/or discuss them with other participants.
+Think about the questions below. Your instructors may ask you to share your answers in a shared notes document and/or discuss them with other participants.
 
 - What are the limitations of (only) using informat tests to verify that a piece of code is behaving as expected?
 
