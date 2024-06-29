@@ -34,8 +34,8 @@ The table below summarises some tools and practices that can help with each of t
 | Integrated development environments (e.g. VS Code) - development environments (run, test, debug) |          |            |               | x        |
 | Command line (e.g. Bash)- reproducible workflows/pipelines                                       |          |            | x             | x        |
 | Version control tools                                                                            | x        |            |               |          |
-| Testing                                                                                          |          |            |               | x        |
-| Coding conventions and documentation                                                             | x        |            | x             | x        |
+| Testing                                                                                          |          | x          |               | x        |
+| Coding conventions and documentation                                                             |          | x          | x             | x        |
 | License                                                                                          |          | x          |               | x        |
 | Citation                                                                                         | x        |            |               | x        |
 | Software repositories (e.g. GitHub)                                                              | x        | x          |               |          |
