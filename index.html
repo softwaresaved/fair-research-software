@@ -442,18 +442,18 @@ and analysis code</a> which we will be used for exercises in the
 course</li>
 </ul><p>The installation instructions for these tools are below.</p>
 <div class="section level3">
-<h3 id="command-line-tool">Command Line Tool<a class="anchor" aria-label="anchor" href="#command-line-tool"></a></h3>
-<p>You will need a command line tool (also referred to as a terminal or
-a shell) in order to run Python scripts, various commands that interact
-with your filesystem and use Git.</p>
+<h3 id="command-line-terminal">Command Line Terminal<a class="anchor" aria-label="anchor" href="#command-line-terminal"></a></h3>
+<p>You will need a command line terminal (also referred to as a shell)
+in order to run Python scripts and various command like tools (such as
+Git and tools that interact with your filesystem).</p>
 <div class="section level4">
 <h4 id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a></h4>
 <p>Windows users <em>will have to</em> install <strong>Git Bash</strong>
 (which is included in <a href="https://gitforwindows.org/" class="external-link">Git For
-Windows package</a>). This will install the Bash command line tool
+Windows package</a>). This will install the Bash command line terminal
 emulation and Git command line tool together (which will behave in the
 same way as in Linux environments).</p>
-<p>Note that the use of Windows command line tools
+<p>Note that the use of Windows command line terminals
 <strong>Powershell</strong> or <code>cmd</code> is not suitable for the
 course. We also advise against using <a href="https://learn.microsoft.com/en-us/windows/wsl/" class="external-link">Windows Subsystem
 for Linux (WSL)</a> for this course as we do not provide instructions
@@ -474,22 +474,23 @@ type the name “main” in the text field.</li>
 </ul></div>
 <div class="section level4">
 <h4 id="macos-and-linux">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux"></a></h4>
-<p>MacOS and Linux users will already have a command line tool available
-on their systems. You can use a command line tool such as <a href="https://www.gnu.org/software/bash/" class="external-link">Bash</a>, or any other <a href="https://en.wikipedia.org/wiki/Comparison_of_command_shells" class="external-link">command
-line tool that has similar syntax to Bash</a>, since none of the content
-of this course is specific to Bash. Note that starting with macOS
-Catalina, Macs will use <a href="https://www.zsh.org/" class="external-link">Zsh (Z shell)</a>
-as the default command line tool instead of Bash.</p>
+<p>MacOS and Linux users will already have a command line terminal
+available on their systems. You can use a command line terminal such as
+<a href="https://www.gnu.org/software/bash/" class="external-link">Bash</a>, or any other <a href="https://en.wikipedia.org/wiki/Comparison_of_command_shells" class="external-link">command
+line terminal that has similar syntax to Bash</a>, since none of the
+content of this course is specific to Bash. Note that starting with
+macOS Catalina, Macs will use <a href="https://www.zsh.org/" class="external-link">Zsh (Z
+shell)</a> as the default command line terminal instead of Bash.</p>
 </div>
 <div class="section level4">
-<h4 id="testing-command-line-tool">Testing Command Line Tool<a class="anchor" aria-label="anchor" href="#testing-command-line-tool"></a></h4>
-<p>To test your command line tool, start it up and type:</p>
+<h4 id="testing-command-line-terminal">Testing Command Line Terminal<a class="anchor" aria-label="anchor" href="#testing-command-line-terminal"></a></h4>
+<p>To test your command line terminal, start it up and type:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> date</span></code></pre>
 </div>
-<p>If your command line program is working - it should return the
+<p>If your command line terminal is working - it should return the
 current date and time similar to:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -500,16 +501,16 @@ current date and time similar to:</p>
 </div>
 <div class="section level3">
 <h3 id="git-version-control-program">Git Version Control Program<a class="anchor" aria-label="anchor" href="#git-version-control-program"></a></h3>
-<p>Git is a program that is run from within a command line tool to
-provide version control for your work. Git is also used to interact with
-online code and project sharing platform GitHub.</p>
+<p>Git is a command line program that is run from within a command line
+terminal to provide version control for your work. Git is also used to
+interact with online code and project sharing platform GitHub.</p>
 <p>Follow the installation instructions below, then proceed to test and
 configure Git on your machine in additional steps.</p>
 <div class="section level4">
 <h4 id="windows-1">Windows<a class="anchor" aria-label="anchor" href="#windows-1"></a></h4>
 <p>Windows users <em>will have to</em> use <strong>Git Bash</strong> -
 as explained in the <a href="index.html#command-line-tool">command line
-tool installation section</a>.</p>
+terminal installation section</a>.</p>
 </div>
 <div class="section level4">
 <h4 id="macos-and-linux-1">macOS and Linux<a class="anchor" aria-label="anchor" href="#macos-and-linux-1"></a></h4>
@@ -523,7 +524,7 @@ manager.</p>
 </div>
 <div class="section level4">
 <h4 id="testing-git">Testing Git<a class="anchor" aria-label="anchor" href="#testing-git"></a></h4>
-<p>To test your Git installation, start your command line tool and
+<p>To test your Git installation, start your command line terminal and
 type:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -592,7 +593,7 @@ will be used to identify your commits),</li>
 another text editor of your choice),</li>
 <li>whether you want to use these settings globally (i.e. for every Git
 project on your machine).</li>
-</ul><p>This can be done from a command line tool as follows:</p>
+</ul><p>This can be done from a command line terminal as follows:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -626,10 +627,10 @@ an SSH key to a GitHub account</a>.</li>
 </ul><p>A short summary of the commands you need to perform is shown
 below.</p>
 <p>To generate an SSH key pair, you will need to run the
-<code>ssh-keygen</code> command (included with your command line tool)
-and provide <strong>your identity for the key pair</strong> (e.g. the
-email address you used to register with GitHub) via the <code>-C</code>
-parameter as shown below.</p>
+<code>ssh-keygen</code> command line tool (included with your command
+line terminal) and provide <strong>your identity for the key
+pair</strong> (e.g. the email address you used to register with GitHub)
+via the <code>-C</code> parameter as shown below.</p>
 <p>You will then be prompted to answer a few questions - e.g. where to
 save the keys on your machine and a passphrase to use to protect your
 private key. Pressing ‘Enter’ on these prompts will get
@@ -669,7 +670,7 @@ The key's randomart image is:
 - this is important!</strong>) over to your GitHub account. The
 <code>ssh-keygen</code> command above will let you know where your
 public key is saved (the file should have the extension “.pub”), and you
-can get its contents from a command line tool as follows:</p>
+can get its contents from a command line terminal as follows:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -683,7 +684,8 @@ can get its contents from a command line tool as follows:</p>
 <p>Copy the line of output that starts with “ssh-ed25519” and ends with
 your email address (it may start with a different algorithm name based
 on which one you used to generate the key pair and it may have gone over
-multiple lines if your command line window is not wide enough).</p>
+multiple lines if your command line terminal window is not wide
+enough).</p>
 <p>Finally, go to your <a href="https://github.com/settings/ssh/new" class="external-link">GitHub Settings -&gt; SSH and
 GPG keys -&gt; Add New</a> page to add a new SSH public key. Give your
 key a memorable name (e.g. the name of the computer you are working on
@@ -723,7 +725,7 @@ make sure that Python executable is found after installation.</p>
 <div class="section level4">
 <h4 id="testing-python-3">Testing Python 3<a class="anchor" aria-label="anchor" href="#testing-python-3"></a></h4>
 <p>You can check that you have Python 3 installed correctly from the
-command line using the commands below.</p>
+command line terminal using the command below.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -769,38 +771,39 @@ more permanent solution, from the shell do:</p>
 <h3 id="visual-studio-code-vs-code">Visual Studio Code (VS Code)<a class="anchor" aria-label="anchor" href="#visual-studio-code-vs-code"></a></h3>
 <p>We will use Microsoft <a href="https://code.visualstudio.com/" class="external-link">Visual
 Studio Code (VS Code)</a> as an Integrated Development Environment (IDE)
-to type and execute Python code and run command line and Git commands
-(through its integrations with the tools we have installed separately so
-far).</p>
+to type and execute Python code and run command line terminal and Git
+commands (through its integrations with the tools we have installed
+separately so far).</p>
 <p>Please make sure to <a href="https://code.visualstudio.com/Download" class="external-link">download VS Code</a> for
 your platform.</p>
 <div class="section level4">
-<h4 id="command-line-tool-git-integration-in-vs-code">Command Line Tool &amp; Git Integration in VS Code<a class="anchor" aria-label="anchor" href="#command-line-tool-git-integration-in-vs-code"></a></h4>
+<h4 id="command-line-terminal-git-integration-in-vs-code">Command Line Terminal &amp; Git Integration in VS Code<a class="anchor" aria-label="anchor" href="#command-line-terminal-git-integration-in-vs-code"></a></h4>
 <p>On macOS and Linux systems, VS Code will typically recognise a
-command line tool you already have on your system (along with all
+command line terminal you already have on your system (along with all
 programs/commands such as Git you can run from it) and you will not need
 to do anything and it will be available as a “Terminal” in VS Code.</p>
 <p>On Windows, if VS Code does not automatically recognise Git Bash as a
-command line tool to be used as a “Terminal”, installing VS Code
+command line terminal to be used as a “Terminal”, installing VS Code
 extension “Start git-bash” should help (to view available and installed
 extensions, go to <code>View &gt; Extensions</code> from the top-level
 menu).</p>
 <figure><img src="fig/vscode-gitbash-extension.png" class="image-with-shadow figure mx-auto d-block" alt-text="Git Bash extension for VS Code on Windows" alt="Git Bash extension for VS Code on Window"><div class="figcaption"><em>Git Bash extension for VS Code on
 Window</em></div>
-</figure><p>To check the command line tool integration and that VS Code knows
-about different command line tool(s) installed on your system select
+</figure><p>To check the command line integration and that VS Code knows about
+different command line terminal(s) installed on your system select
 “Terminal -&gt; New Terminal” from the top level menu. This should open
-a terminal window within VS Code. Within the terminal window, the
-command line tool the terminal is using is indicated towards the right
-of the window (e.g. in the image below, the current command line tool is
-<code>bash</code>). This can be changed (provided you have more command
-line tools installed on your machine) by clicking the “+” drop-down menu
-button next to the command line tool indicator. Windows users may have
-“Powershell” selected by default here - you should select “Git Bash”
-from the list.</p>
-<p>You can also change the default command line tool from the same drop
-down menu by using the option “Select Default Profile” (so it will use
-that one next time you open a terminal window).</p>
+a terminal window within VS Code. Within the terminal window, the type
+of the current terminal is indicated towards the right of the window
+(e.g. in the image below, the current command line terminal is
+<code>bash</code> - but note that you may have different terminal types
+installed on your machine). This can be changed (provided you have
+several command line terminal programmes installed on your machine) by
+clicking the “+” drop-down menu button next to the command line terminal
+indicator. Windows users may have “Powershell” selected by default here
+- you should select “Git Bash” from the list.</p>
+<p>You can also change the default command line terminal from the same
+drop down menu by using the option “Select Default Profile” (so it will
+use that one next time you open a terminal window).</p>
 <figure><img src="fig/vscode-terminal.png" alt='Terminal window in VS Code with "Select Default Profile" option highlighted' class="figure mx-auto d-block"><div class="figcaption"><em>Terminal window in VS Code</em></div>
 </figure></div>
 <div class="section level4">
