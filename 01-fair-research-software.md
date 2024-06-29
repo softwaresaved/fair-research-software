@@ -26,7 +26,7 @@ After completing this episode, participants should be able to:
 Think about the questions below. Your instructors may ask you to share your answers in a shared notes document and/or
 discuss them with other participants.
 
-- What motivated you to attend this course? Did you come by your own choice or were you advised to attend?
+- What motivated you to attend this course? Did you come by choice or were you advised to attend?
 - What do you hope to learn or change in your current research software practice? Describe how your knowledge, 
 work or attitude may be different afterwards.
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -47,8 +47,8 @@ Similar [FAIR principles for software][fair-principles-research-software] have n
   (can be understood, modified, built upon, or incorporated into other software).
 
 Each of the above principles can be achieved by a number of practices listed below.
-This is not exact science, and by all means the list below is not exhaustive,
-but any of the practices that you employ to your research software methodology will bring you
+This is not an exact science, and by all means the list below is not exhaustive,
+but any of the practices that you employ in your research software workflow will bring you
 closer to the gold standard of a fully reproducible research.
 
 * Findable
@@ -56,7 +56,7 @@ closer to the gold standard of a fully reproducible research.
   * Place your software in a public software repository (and ideally register it in a [software registry](https://github.com/NLeSC/awesome-research-software-registries))
   * Use a unique and persistent identifier (DOI) for your software (e.g. by depositing your code on Zenodo), 
   which is also useful for citations - note that depositing your data/code on GitHub and similar software repositories 
-  may not be enough as they may change their open access model or disappear completely
+  may not be enough as they may change their open access model or disappear completely in the future
 * Accessible
   * Make sure people can freely, legally and easily get a copy your software
   * Use coding conventions and comments to make your code readable and understandable by people (once they get a copy of it)

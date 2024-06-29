@@ -58,7 +58,7 @@ This is mostly a personal choice as an experienced user of any of these tools ca
 but IDEs are popular because they are designed specifically for writing and running code.
 There are some language specific IDEs such as PyCharm, and some that can work with many languages like 
 VS Code (Visual Studio Code). 
-IDEs also have add-ons that provide extra functionality, such as checking you are code as you type 
+IDEs also have add-ons that provide extra functionality, such as checking your code as you type 
 (similar to a spell-checker in Word), highlighting when you are not following best practice, or even automatically 
 generating bits of code for you.
 
@@ -114,19 +114,19 @@ We will show different ways to test your code for different purposes. You need t
 
 ### Documentation
 
-Documentation comes in many forms - from the names of variables and functions in your code, additional comments that explain some lines, up to a whole website full of documentation in function definitions and usage, tutorials and guides. You many not need as much documentation as a large commercial software product, but making your code Reusable relies on other people being able to understand what your code does and how to use it.
+Documentation comes in many forms - from the names of variables and functions in your code, additional comments that explain some lines, up to a whole website full of documentation with function definitions, usage examples, tutorials and guides. You many not need as much documentation as a large commercial software product, but making your code Reusable relies on other people being able to understand what your code does and how to use it.
 
 ### Licences and citation
 
 A licence states what people can legally do with your code, and what restrictions you have placed on it. Whenever you want to use someone else's code you should check what license they have and make sure your use is legal. You may be restricted by your institution, your grant funding, or by other tools you use that require certain licenses for you to be compatible with them.
 
-Having a citation guidance is not a legal requirement but if you want to get academic credit for your work you can make other people's life much easier by telling them how you would like to be credited, and making sure when you use ohers code in your research that you give them credit as they want.
+Having a citation instructions is not a legal requirement but if you want to get academic credit for your work, you can make other people's life much easier by telling them how you would like to be credited. Similarly, follow citation instructions ensures that when you use others' code in your research they will be credited accordingly.
 
 Both licensing law and citation proceedures can vary depending on your country and institution, so remember to check with a local team where you are. Your local research IT or library team would be a good place to start.
 
 ### Code repositories and registries
 
-Having somewhere to share your code is fundamental to making it Findable. Your institution might have a code repository, your research field may have a practice of sharing code in a specific website or journal, or your version control system might include an online component that makes sharing different versions of your code easy. Again, remember to check the rules of your institution and grant on publising code, and any licenses for code you depend on or reuse.
+Having somewhere to share your code is fundamental to making it Findable. Your institution might have a code repository, your research field may have a practice of sharing code via a specific website or journal, or your version control system might include an online component that makes sharing different versions of your code easy. Again, remember to check the rules of your institution and grant on publising code, and any licenses for code you depend on or reuse.
 
 We will discuss later how to share your code on GitHub and make it easy for others to find and use.
 
@@ -232,8 +232,9 @@ project sharing and collaboration platform GitHub.
 
 We recommend the following resources for some additional reading on the topic of this episode:
 
-- ...
-- ...
+- [Python IDEs and Code Editors (Guide) - Real Python][real-python-ides]
+- [The Zenodo data repository][zenodo-org]
+- [The Fair Cookbook - Depositing to generic repositories - Zenodo use case][fair-cookbook-zenodo]
 
 Also check the [full reference set](learners/reference.md#litref) for the course.
 
