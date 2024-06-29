@@ -4,22 +4,19 @@ teaching: 60
 exercises: 30
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions
+-   Why does code readability matter?
+-   How can I organise my code to be more readable?
+-   What types of documentation can I include to improve the readability of my code?
+:::
 
-- Why does readable code matter?
-- How can I organise my code to be more readable?
-- What types of documentation can I include to improve the readability of my code?
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 After completing this episode, participants should be able to:
 
-- Organise code into reusable functions that achieve a singular purpose
-- Create function and variable names that help explain the purpose of the function or variable
-- Write informative inline comments and docstrings to provide more detail about what the code is doing
-
-::::::::::::::::::::::::::::::::::::::::::::::::
+-   Organise code into reusable functions that achieve a singular purpose
+-   Choose function and variable names that help explain the purpose of the function or variable
+-   Write informative inline comments and docstrings to provide more detail about what the code is doing
+:::
 
 In this episode, we will introduce the concept of readable code and consider how it can help create reusable scientific software and empower collaboration between researchers.
 
@@ -32,8 +29,7 @@ They do this by reading the original code to understand the different abstractio
 Readable code facilitates the reading and understanding of the abstraction phases and, as a result, facilitates the evolution of the codebase.
 Readable code saves future developers' time and effort.
 
-In order to develop readable code, we should ask ourselves: "If I re-read this piece of code in fifteen days or one year, will I be able to understand what I have done and why?"
-Or even better: "If a new person who just joined the project reads my software, will they be able to understand what I have written here?"
+In order to develop readable code, we should ask ourselves: "If I re-read this piece of code in fifteen days or one year, will I be able to understand what I have done and why?" Or even better: "If a new person who just joined the project reads my software, will they be able to understand what I have written here?"
 
 We will now learn about a few software best practices we can follow to help create readable code.
 
@@ -42,61 +38,50 @@ We will now learn about a few software best practices we can follow to help crea
 Variables are the most common thing you will assign when coding, and it's really important that it is clear what each variable means in order to understand what the code is doing.
 If you return to your code after a long time doing something else, or share your code with a colleague, it should be easy enough to understand what variables are involved in your code from their names.
 Therefore we need to give them clear names, but we also want to keep them concise so the code stays readable.
-There are no "hard and fast rules" here, and it's often a case where you will need to use your best judgment.
+There are no "hard and fast rules" here, and it's often a case of using your best judgment.
 
 Some useful tips for naming variables are:
 
-- Short words are better than single character names
-  - For example, if we were creating a variable to store the speed to read a file, `s` (for 'speed') is not descriptive enough but `MBReadPerSecondAverageAfterLastFlushToLog` is too long to read and prone to mispellings.
-    `ReadSpeed` (or `read_speed`) would suffice.
-  - If you're finding it difficult to come up with a variable name that is _both_ short and descriptive, go with the short version and use an inline comment to desribe it further (more on those in the next section!)
-  - This guidance doesn't necessarily apply if your variable is a well-known constant in your domain, for example, _c_ represents the speed of light in Physics
-- Try to be descriptive where possible, and avoid names like `foo`, `bar`, `var`, `thing`, and so on
+-   Short words are better than single character names
+    -   For example, if we were creating a variable to store the speed to read a file, `s` (for 'speed') is not descriptive enough but `MBReadPerSecondAverageAfterLastFlushToLog` is too long to read and prone to mispellings. `ReadSpeed` (or `read_speed`) would suffice.
+    -   If you're finding it difficult to come up with a variable name that is *both* short and descriptive, go with the short version and use an inline comment to desribe it further (more on those in the next section!)
+    -   This guidance doesn't necessarily apply if your variable is a well-known constant in your domain, for example, *c* represents the speed of light in Physics
+-   Try to be descriptive where possible, and avoid names like `foo`, `bar`, `var`, `thing`, and so on
 
 There are also some gotchas to consider when naming variables:
 
-- There may be some restrictions on which characters you can use in your variable names.
-  For instance in Python, only alphanumeric characters and underscores are permitted.
-- Particularly in Python, you cannot _begin_ your variable names with numerical characters as this will raise a syntax error.
-  - Numerical characters can be included in a variable name, just not as the first character.
-    For example, `thing1` is a valid variable name, but `1thing` isn't.
-    (This behaviour may be different for other programming languages.)
-- In some programming languages, such as Python, variable names are case sensitive.
-  So `speed_of_light` and `Speed_Of_Light` will **not** be equivalent.
-- Programming languages often have global pre-built functions, such as `input`, which you may accidentally overwrite if you assign a variable with the same name.
-  - Again in Python, you would actually reassign the `input` name and no longer be able to access the original `input` function if you used this as a variable name.
-    So in this case opting for something like `input_data` would be preferable.
-    (This behaviour may be explicitly disallowed in other programming languages.)
+-   There may be some restrictions on which characters you can use in your variable names. For instance, in Python, only alphanumeric characters and underscores are permitted.
+-   Particularly in Python, you cannot *begin* your variable names with numerical characters as this will raise a syntax error.
+    -   Numerical characters can be included in a variable name, just not as the first character. For example, `read_speed1` is a valid variable name, but `1read_speed` isn't. (This behaviour may be different for other programming languages.)
+-   In some programming languages, such as Python, variable names are case sensitive. So `speed_of_light` and `Speed_Of_Light` will **not** be equivalent.
+-   Programming languages often have global pre-built functions, such as `input`, which you may accidentally overwrite if you assign a variable with the same name.
+    -   Again in Python, you would actually reassign the `input` name and no longer be able to access the original `input` function if you used this as a variable name. So in this case opting for something like `input_data` would be preferable. (This behaviour may be explicitly disallowed in other programming languages.)
 
-:::  challenge
-
+::: challenge
 ### Give a descriptive name to a variable
 
 Below we have a variable called `var` being set the value of 9.81.
 `var` is not a very descriptive name here as it doesn't tell us what 9.81 means, yet it is a very common constant in physics!
 Go online and find out which constant 9.81 relates to and suggest a new name for this variable.
 
-Hint: the units are _metres per second squared_!
+Hint: the units are *metres per second squared*!
 
-```python
+``` python
 var = 9.81
 ```
 
-:::  solution
-
+::: solution
 ### Solution
 
-Yes, 9.81 m/s^2 is the [gravitational force exerted by the Earth](https://en.wikipedia.org/wiki/Gravity_of_Earth).
+Yes, $$9.81 m/s^2 $$ is the [gravitational force exerted by the Earth](https://en.wikipedia.org/wiki/Gravity_of_Earth).
 It is often referred to as "little g" to distinguish it from "big G" which is the [Gravitational Constant](https://en.wikipedia.org/wiki/Gravitational_constant).
 A more decriptive name for this variable therefore might be:
 
-```python
+``` python
 g_earth = 9.81
 ```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::
+:::
 
 ### Inline comments
 
@@ -105,28 +90,24 @@ It can be helpful as a reminder for your future self or your collaborators as to
 
 There are many ways to add comments to code, the most common of which is inline comments.
 
-```python
+``` python
 # In Python, inline comments begin with the `#` symbol and a single space.
 ```
 
 Again, there are few hard and fast rules to using comments, just apply your best judgment.
 But here are a few things to keep in mind when commenting your code:
 
-- **Avoid using comments to explain _what_ your code does.**
-  If your code is too complex for other programmers to understand, consider rewriting it for clarity rather than adding comments to explain it.
-- Focus on the **_why_** and the **_how_**.
-- Make sure you're not reiterating something that your code already conveys on its own.
-  Comments shouldn't echo your code.
-- Keep them short and concise.
-  Large blocks of text quickly become unreadable and difficult to maintain.
-- Comments that contradict the code are worse than no comments.
-  Always make a priority of keeping comments up-to-date when code changes.
+-   **Avoid using comments to explain *what* your code does.** If your code is too complex for other programmers to understand, consider rewriting it for clarity rather than adding comments to explain it.
+-   Focus on the ***why*** and the ***how***.
+-   Make sure you're not reiterating something that your code already conveys on its own. Comments shouldn't echo your code.
+-   Keep them short and concise. Large blocks of text quickly become unreadable and difficult to maintain.
+-   Comments that contradict the code are worse than no comments. Always make a priority of keeping comments up-to-date when code changes.
 
 #### Examples of helpful vs. unhelpful comments
 
 ##### Unhelpful:
 
-```python
+``` python
 statetax = 1.0625  # Assigns the float 1.0625 to the variable 'statetax'
 citytax = 1.01  # Assigns the float 1.01 to the variable 'citytax'
 specialtax = 1.01  # Assigns the float 1.01 to the variable 'specialtax'
@@ -136,7 +117,7 @@ The comments in this code simply tell us what the code does, which is easy enoug
 
 ##### Helpful:
 
-```python
+``` python
 statetax = 1.0625  # State sales tax rate is 6.25% through Jan. 1
 citytax = 1.01  # City sales tax rate is 1% through Jan. 1
 specialtax = 1.01  # Special sales tax rate is 1% through Jan. 1
@@ -145,8 +126,7 @@ specialtax = 1.01  # Special sales tax rate is 1% through Jan. 1
 In this case, it might not be immediately obvious what each variable represents, so the comments offer helpful, real-world context.
 The date in the comment also indicates when the code might need to be updated.
 
-:::  challenge
-
+::: challenge
 ### Add some comments to a code block
 
 Examine lines 7 to 20 of the `bad-code.py` script.
@@ -154,13 +134,12 @@ Add (or change!) as many inline comments as you think is required to help yourse
 
 Hint: Inline comments in Python are denoted by a `#` symbol.
 
-:::  solution
-
+::: solution
 ### Solution
 
 Some good inline comments may look like the below example.
 
-```python
+``` python
 for count in range(370):
     line = csvfile.readline().split(',')
 
@@ -179,15 +158,13 @@ for count in range(370):
 
 jsonfile.close()
 ```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::
+:::
 
 ### Functions
 
 Functions are a fundamental concept in writing software and are one of the core ways you can organise your code to improve its readability.
-A function is an isolated section of code that performs a single, _specific_ task that can be simple or complex.
+A function is an isolated section of code that performs a single, *specific* task that can be simple or complex.
 It can then be called multiple times with different inputs throughout a codebase, but it's definition only needs to appear once.
 
 Breaking up code into functions in this manner benefits readability since the smaller sections are easier to read and understand.
@@ -196,15 +173,14 @@ The software also becomes easier to maintain because, if the code encapsulated i
 As we will learn in a future episode, testing code also becomes simpler when code is written in functions.
 Each function can be individually checked to ensure it is doing what is intended, which improves confidence in the software as a whole.
 
-:::  challenge
-
+::: challenge
 ### Create a function
 
 Below is a function that reads in a JSON file into a dataframe structure using the [`pandas` library](https://pandas.pydata.org/) - but the code is out of order!
-Reorder the lines of code within the function so that the JSON file is read in using the `read_json` method, any incomplete rows are _dropped_, the values are _sorted_ by date, and then the cleaned dataframe is _returned_.
+Reorder the lines of code within the function so that the JSON file is read in using the `read_json` method, any incomplete rows are *dropped*, the values are *sorted* by date, and then the cleaned dataframe is *returned*.
 There is also a `print` statement that will display which file is being read in on the command line for verification.
 
-```python
+``` python
 import pandas as pd
 
 def read_json_to_dataframe(input_file):
@@ -215,13 +191,12 @@ def read_json_to_dataframe(input_file):
     eva_df = pd.read_json(input_file, convert_dates=['date'])
 ```
 
-:::  solution
-
+::: solution
 ### Solution
 
 Here is the correct order of the code for the function.
 
-```python
+``` python
 import pandas as pd
 
 def read_json_to_dataframe(input_file):
@@ -234,10 +209,8 @@ def read_json_to_dataframe(input_file):
 
 We have chosen to create a function for reading in data files since this is a very common task within research software.
 While this isn't that many lines of code, thanks to using pandas inbuilt methods, it can be useful to package this together into a function if you need to read in a lot of similarly structured files and process them in the same way.
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::
+:::
 
 ### Docstrings
 
@@ -253,7 +226,7 @@ You can use your best judgment on how much documentation a particular function n
 
 #### Example of a single-line docstring:
 
-```python
+``` python
 def add(x, y):
     """Add two numbers together"""
     return x + y
@@ -261,7 +234,7 @@ def add(x, y):
 
 #### Example of a multi-line docstring:
 
-```python
+``` python
 def add(x, y = 1.0):
     """
     Add two integers together
@@ -283,32 +256,26 @@ Some projects may have their own guidelines on how to write docstrings, such as 
 If you are contributing code to a wider project or community, try to follow the guidelines and standards they provide for codestyle.
 
 As your code grows and becomes more complex, the docstrings can form the content of a reference guide allowing developers to quickly look up how to use the APIs, functions, and classes defined in your codebase.
-Hence, it is common to find tools that will automatically extract docstrings from your code and generate a website where people can learn about your code without downloading/installing and reading the code files - such as [sphinx for Python](https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html).
+Hence, it is common to find tools that will automatically extract docstrings from your code and generate a website where people can learn about your code without downloading/installing and reading the code files - such as [MkDocs][mkdocs-org].
 
-:::  challenge
-
+::: challenge
 ### Writing docstrings
 
-Write a docstring for the `read_json_to_dataframe` function from the previous
-exercise. Things you may want to consider when writing your docstring are:
+Write a docstring for the `read_json_to_dataframe` function from the previous exercise.
+Things you may want to consider when writing your docstring are:
 
-- Describing what the function does
-- What kind of inputs does the function take?
-  Are they required or optional?
-  Do they have default values?
-- What output will the function produce?
+-   Describing what the function does
+-   What kind of inputs does the function take? Are they required or optional? Do they have default values?
+-   What output will the function produce?
 
-Hint: Python docstrings are defined by enclosing the text with `"""` above and
-below. This text is also indented to the same level as the code defined beneath
-it, which is 4 whitespaces.
+Hint: Python docstrings are defined by enclosing the text with `"""` above and below. This text is also indented to the same level as the code defined beneath it, which is 4 whitespaces.
 
-:::  solution
-
+::: solution
 ### Solution
 
 A good enough docstring for this function would look like this:
 
-```python
+``` python
 def read_json_to_dataframe(input_file):
     """
     Read the data from a JSON file into a Pandas dataframe
@@ -322,10 +289,9 @@ def read_json_to_dataframe(input_file):
     return eva_df
 ```
 
-Using [numpy's docstring convention](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard),
-the docstring may look more like this:
+Using [numpy's docstring convention](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard), the docstring may look more like this:
 
-```python
+``` python
 def read_json_to_dataframe(input_file):
     """
     Ingest data from a JSON file into a pandas DataFrame.
@@ -347,10 +313,8 @@ def read_json_to_dataframe(input_file):
     eva_df.sort_values('date', inplace=True)
     return eva_df
 ```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::
+:::
 
 ## Summary
 
@@ -360,28 +324,26 @@ Code readability is important because it makes it simpler and quicker for a pers
 
 Some best practices we have covered towards code readability include:
 
-- Variable naming practices for descriptive yet concise code
-- Inline comments to provide real-world context
-- Functions to isolate specific code sections for re-use
-- Docstrings for documenting functions to facilitate their re-use
+-   Variable naming practices for descriptive yet concise code
+-   Inline comments to provide real-world context
+-   Functions to isolate specific code sections for re-use
+-   Docstrings for documenting functions to facilitate their re-use
 
 ## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:
 
-- ['Code Readability Matters' from the Guardian's engineering blog](https://www.theguardian.com/info/2019/jan/29/code-readability-matters)
-- [PEP 8 Style Guide for Python](https://peps.python.org/pep-0008/#comments)
-- [Coursera: Inline commenting in Python](https://www.coursera.org/tutorials/python-comment#inline-commenting-in-python)
-- [Introducing Functions from Introduction to Python](https://introtopython.org/introducing_functions.html)
-- [W3Schools.com Python Functions](https://www.w3schools.com/python/python_functions.asp)
+-   ['Code Readability Matters' from the Guardian's engineering blog](https://www.theguardian.com/info/2019/jan/29/code-readability-matters)
+-   [PEP 8 Style Guide for Python](https://peps.python.org/pep-0008/#comments)
+-   [Coursera: Inline commenting in Python](https://www.coursera.org/tutorials/python-comment#inline-commenting-in-python)
+-   [Introducing Functions from Introduction to Python](https://introtopython.org/introducing_functions.html)
+-   [W3Schools.com Python Functions](https://www.w3schools.com/python/python_functions.asp)
 
 Also check the [full reference set](learners/reference.md#litref) for the course.
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- Readable code is easier to understand, maintain, debug and extend!
-- Creating functions from the smallest, reusable units of code will help compartmentalise which parts of the code are doing what actions
-- Choosing descriptive variable and function names will communicate their purpose more effectively
-- Using inline comments and docstrings to describe parts of the code will help transmit understanding, and verify that the code is correct
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+::: keypoints
+-   Readable code is easier to understand, maintain, debug and extend!
+-   Creating functions from the smallest, reusable units of code will help compartmentalise which parts of the code are doing what actions
+-   Choosing descriptive variable and function names will communicate their purpose more effectively
+-   Using inline comments and docstrings to describe parts of the code will help transmit understanding, and verify that the code is correct
+:::

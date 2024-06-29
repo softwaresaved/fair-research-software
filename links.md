@@ -37,6 +37,8 @@ any links that you are not going to use.
 [awesome-research-software-registries]: https://github.com/NLeSC/awesome-research-software-registries
 [beginner-guide-reproducible-research]: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801
 [swc-git-lesson]: https://swcarpentry.github.io/git-novice
+[swc-git-lession-track]: https://swcarpentry.github.io/git-novice/04-changes.html
+[git-diff-docs]: https://git-scm.com/docs/git-diff
 [ttw-guide-version-control]: https://the-turing-way.netlify.app/reproducible-research/vcs
 [how-git-works]: https://www.pluralsight.com/courses/how-git-works
 [good-commit-message]: https://cbea.ms/git-commit/
@@ -80,6 +82,7 @@ any links that you are not going to use.
 [grch-testing]: https://goodresearch.dev/testing.html
 [coderefinery-testing]: https://coderefinery.github.io/testing/
 [ds-testing]: https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html
+[mkdocs-org]: https://www.mkdocs.org/
 [pandas-apply-docs]: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html
 [replication-crisis-errington]: https://elifesciences.org/articles/71601
 [replication-crisis-osc]: https://www.science.org/doi/10.1126/science.aac4716
@@ -88,4 +91,3 @@ any links that you are not going to use.
 [realpython-ides]: https://realpython.com/python-ides-code-editors-guide/
 [fair-cookbook-zenodo]: https://faircookbook.elixir-europe.org/content/recipes/findability/zenodo-deposition.html
 [zenodo-org]: https://zenodo.org/
-

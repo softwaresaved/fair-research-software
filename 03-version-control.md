@@ -42,7 +42,7 @@ we make, we can more effectively restore the state of the project at any point
 in time. This is incredibly useful if we want to reproduce results from a
 specific version of the code, or track down changes that broke some functionality.
 
-The other benefit we gain is that version control provides us with provenance of
+The other benefit we gain is that version control provides us with the provenance of
 the project. As we make each change, we also leave a message about what the
 change was and why it was made. This improves the transparency of the project and
 makes it auditable, which is good scientific practice.
@@ -149,7 +149,7 @@ Git now knows that it's supposed to keep track of `my code v2.py` and `data.json
 To get it to do that, we need to run one more command:
 
 ```bash
-$ git commit -m "Add and example script and dataset to work on"
+$ git commit -m "Add an example script and dataset to work on"
 ```
 
 ```output
@@ -168,7 +168,7 @@ later on what we did and why.
 If we only run `git commit` without the `-m` option, Git will launch a text editor so that we can write a longer message.
 
 Good commit messages start with a brief (<50 characters) statement about the changes made in the commit.
-Generally, the message should complete the sentence "If applied, this commit will".
+Generally, the message should complete the sentence "If applied, this commit will...".
 If you want to go into more detail, add a blank line between the summary line and your additional notes.
 Use this additional space to explain why you made changes and/or what their impact will be.
 
@@ -203,7 +203,7 @@ Using a backslash in this way is called 'escaping' and it lets the terminal know
 as part of the filename, and not a separate argument.
 However, it is pretty annoying and considered bad practice to have spaces in your filenames like this, 
 especially if you will be manipulating them from the terminal.
-So let's go ahead and remove the space from the filename altogether and replace it with a hyphen instead.
+So, let's go ahead and remove the space from the filename altogether and replace it with a hyphen instead.
 You can use the `mv` command again like so:
 
 ```bash
@@ -269,7 +269,7 @@ $ git commit -m "Replace spaces in Python filename with hyphens"
 
 ### Advanced solution
 
-We initially renamed the Python file using the `mv` command, and we than had to add *both* `my-code-v2.py` 
+We initially renamed the Python file using the `mv` command, and we than had to `git add` *both* `my-code-v2.py` 
 and `my\ code\ v2.py`.
 Alternatively, we could have used Git's own `mv` command like so:
 
@@ -308,8 +308,7 @@ $ git commit -m "Replace spaces in Python filename with hyphens"
 We have already met the concept of commit messages when we made and stored changes to our code files. 
 Commit messages are short descriptions of, and the motivation for, what a commit will achieve. 
 It is therefore important to take some time to ensure these commit messages are helpful and descriptive, 
-as when work is reviewed (by your future self or a collaborator) they provide the context of what change
-was made and why. 
+as when work is reviewed (by your future self or a collaborator) they provide the context about what changes were made and why. 
 This can make tracking down specific changes in commits much
 easier, without having to inspect the code or files themselves.
 
@@ -376,7 +375,7 @@ work along with the change you do want to remove.
 
 ### Understanding commit contents
 
-Below are the `diff`s of two commits. A `diff` shows the differences in a file (or files!) compared to the previous 
+Below are the `diffs` of two commits. A `diff` shows the differences in a file (or files!) compared to the previous 
 commit in the history so you can what has changed. 
 The lines that begin with `+`s represent additions, and the lines that begin with `-`s represent deletions. 
 Compare these two commit `diff`s. 
@@ -386,6 +385,10 @@ Discuss in pairs or small groups.
 
 1. ![Example Diff 1](fig/ex-diff-1.png)
 2. ![Example Diff 2](fig/ex-diff-2.png)
+
+
+To find out more about how to generate `diffs`, you can read the [Git documentation](git-diff-docs) or the [Tracking Changes episode][swc-git-lesson-track]
+from the [Software Carpentry Version control with Git lesson][swc-git-lesson].
 
 :::  solution
 
@@ -442,10 +445,10 @@ methods:
   deciding to discard some work.
 - [`git reset`](https://git-scm.com/docs/git-reset): This command will recover
   the state of the project at the specified commit. What is done with the commits
-  you had made is defined by some optional flags:
-  - `--soft`: Any changes you had made would be preserved and left as "Changes to be committed"
-  - `--mixed`: Any changes you had made would be preserved but not marked for commit (this is the default action)
-  - `--hard`: All changes you had made are discarded
+  you had mave since is defined by some optional flags:
+  - `--soft`: Any changes you have made since the specified commit would be preserved and left as "Changes to be committed"
+  - `--mixed`: Any changes you have made since the specified commit would be preserved but not marked for commit (this is the default action)
+  - `--hard`: Any changes you have made since the specified commit are discarded
   Using this command produces a "cleaner" history, but does not tell the full
   story and your work.
 
@@ -461,7 +464,7 @@ However, we can use the distribution aspect of
 Git to push our projects and histories to a server (someone else's computer) so
 that they are accessible and retrievable if the worst were to happen to our
 machines. 
-Distributing our projects in this way also opens us up to collaboration
+Distributing our projects in this way also opens us up to collaboration,
 since colleagues would be able to access our projects, make their own copies on
 their machines, and conduct their own work.
 
@@ -545,7 +548,7 @@ git push -u origin main
 The `git push` command is used to update remote references with any changes you
 have made locally. This command tells Git to update the "main" branch on the
 "origin" remote. The `-u` flag (short for `--set-upstream`) will set a tracking
-reference, so that in the future only `git push` can be run without the need to
+reference, so that in the future `git push` can be run without the need to
 specify the remote and reference name.
 
 :::  challenge
