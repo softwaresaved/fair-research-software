@@ -49,6 +49,8 @@ Sci Data 9, 622 (2022). https://doi.org/10.1038/s41597-022-01710-x
 [The FAIR Guiding Principles for scientific data management and stewardship][fair-data-principles]. 
 Sci Data 3, 160018 (2016). https://doi.org/10.1038/sdata.2016.18.
 
+- [CodeRefinery: Reproducible research - preparing code to be usable by you and others in the future][coderefinery-tools]
+  
 - [The FAIR Cookbook][fair-cookbook], online recipes for life scientists that help make and keep data FAIR
 
 - [Top 10 FAIR Data & Software Things][top-10-fair-things-per-domain] - brief guides for different disciplines that 

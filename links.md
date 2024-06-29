@@ -91,3 +91,4 @@ any links that you are not going to use.
 [realpython-ides]: https://realpython.com/python-ides-code-editors-guide/
 [fair-cookbook-zenodo]: https://faircookbook.elixir-europe.org/content/recipes/findability/zenodo-deposition.html
 [zenodo-org]: https://zenodo.org/
+[coderefinery-tools]: https://coderefinery.github.io/reproducible-research/

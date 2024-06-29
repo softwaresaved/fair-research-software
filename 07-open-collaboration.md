@@ -257,7 +257,7 @@ hasn't been adopted by many projects which used GPL version 2.
 #### LGPL
 
 In order to allow library software to be combined with ("linked" in
-technical terms) other software that's no GPLed, a special version of the
+technical terms) other software that is not GPLed, a special version of the
 GPL called the LGPL (L for "Lesser" or "Library") was created. This is
 used by many popular libraries including the GNU C library that is linked
 to every C program compiled on a Linux system.  
@@ -406,8 +406,8 @@ if there is now a license listed.
 
 ### License Compatibility
 
-Generally you can relicense someone else's code under more permissive
-licenses to less permissive ones without their permission. For example
+Generally, you can relicense someone else's code under more permissive
+licenses to less permissive ones without their permission. For example,
 you could relicense code from the MIT license to the GPL. This is because
 nothing in the GPL contradicts anything in the MIT license, but you'll
 still have to display the MIT license for the original code and the GPL
@@ -426,8 +426,7 @@ patents, you won't be able to relicense Apache 2 code under MIT since it
 doesn't have an equivalent patent clause.
 
 The GNU project has a
-[https://www.gnu.org/licenses/license-list.en.html](useful guide) to
-license compatibility on their website.
+[useful guide][gnu-license-guide] to license compatibility on their website.
 
 ### Getting agreement to relicense
 
@@ -455,7 +454,7 @@ the binaries. However, under any license meeting the Open Source
 Definition or the Four Freedoms the person receiving the software can
 make copies and give (or sell) them to anybody else. 
 
-It is also possible to release software under a two licenses, one open
+It is also possible to release software under two licenses, one open
 source and one commercial. This has been done by a few open source
 projects who wish to sell the software to some customers (sometimes with
 extra custom modifications) and give it to others. 
@@ -466,8 +465,10 @@ extra custom modifications) and give it to others.
 ## Relicensing exercise
 
 Q: Find the webpage of a major open source project that is relevant to
-your research. See if you can find a contributor license agreement. Add a
+your research or the `Spacewalks` codebase we have been working with. See if you can find a contributor license agreement. Add a
 link to this in the chat/etherpad/hackmd. 
+
+Hint: try looking at Matplotlib - https://matplotlib.org which Spacewalks uses for plotting
 
 :::  solution
 
@@ -555,11 +556,13 @@ README file in your Git repository so that people can find
 the Zenodo version of the repository. 
 If you click on the DOI image in the Details section of the Zenodo page then you will be shown instructions for 
 obtaining a link to the DOI badge in various formats including Markdown.
-Here is the badge for this repository: 
+Here is the badge for this repository and the corresponding Markdown: 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11869450.svg)](https://doi.org/10.5281/zenodo.11869450)
 
-
+```text
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11869450.svg)](https://doi.org/10.5281/zenodo.11869450)
+```
 
 :::  challenge
 
@@ -634,7 +637,7 @@ We now have our code published online, licensed as open source, archived with Ze
 What else might we want to do in order to improve how findable, accessible or reusable it is?
 One further step we could take is to publish the code with a peer reviewed journal. Some traditional journals will accept software submissions, although these are usually
 as a supplementary material for a paper. There also journals which specialise in research software such as the [Journal of Open Research Software](https://openresearchsoftware.metajnl.com/),
-[The Jornal of Open Source Software](https://joss.theoj.org/) or [SoftwareX](https://www.sciencedirect.com/journal/softwarex). With these the submission will be the software
+[The Jornal of Open Source Software](https://joss.theoj.org/) or [SoftwareX](https://www.sciencedirect.com/journal/softwarex). With these venues, the submission will be the software
 itself and not a paper, although a short abstract or description of the software is often required.
 :::
 
@@ -646,7 +649,7 @@ for multiple developers to work on it independently and bring their changes toge
 
 ## Tracking Issues with Code
 
-A key feature of Github (as opposed to Git itself) is the issue tracker. This provides us a place to keep track of any problems or bugs in the code and to discuss them
+A key feature of Github (as opposed to Git itself) is the issue tracker. This provides us with a place to keep track of any problems or bugs in the code and to discuss them
 with other developers. Sometimes advanced users will also use issue trackers of public projects to report problems they are having (and sometimes this is misused by users
 seeking help using documented features of the program). 
 
@@ -679,7 +682,7 @@ Create a new issue in your repository's issue tracker by doing the following:
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-### Disscussing an issue
+### Discussing an issue
 
 Once the issue is created, further discussion can take place with additional comments. These can include code snippets and file attachments such as screenshots or logfiles.
 We can also reference other issues by writing a # symbol and the number of the other issue. This is sometimes used to identify related issues or if an issue is a duplicate.
@@ -695,13 +698,13 @@ Branching is a feature of Git that allows two or more parallel streams of
 work. Commits can be made to one branch without interferring with
 another. Branches are commonly used as a way for one developer to work on
 a new feature or a bug fix while other developers work on other features.
-When those new features or bug fixes are complete the branch will be merged back with the main (sometimes called master) branch.
+When those new features or bug fixes are complete, the branch will be merged back with the main (sometimes called master) branch.
 
 ### Creating a new Branch
 
 New git branches are created with the `git branch` command. This should be followed by the name of 
 the branch to create. It is common practice when the bug we are fixing has a corresponding issue to name the branch after the issue number and name. 
-For example we might call the branch `01-missing-values-bug` instead of something less descriptive like `bugfix`. 
+For example, we might call the branch `01-missing-values-bug` instead of something less descriptive like `bugfix`. 
 
 For example, the command:
 
@@ -776,7 +779,7 @@ And if we go back to the `01-missing-values-bug` branch it will re-appear.
 git switch 01-missing-values-bug
 ```
 
-If we want to push our changes to a remote such as Github we have to tell the `git push` command which branch to push to. If the branch doesn't exist on the remote (as it currently won't)
+If we want to push our changes to a remote such as GitHub we have to tell the `git push` command which branch to push to. If the branch doesn't exist on the remote (as it currently won't)
 then it will be created. 
 
 ```bash
@@ -812,11 +815,11 @@ git merge 01-missing-values-bug
 
 On larger projects we might need to have a code review process before changes are merged, especially before they are merged onto the main branch that might be what is being released
 as the public version of the software. Github has a process for this that it calls a "Pull Request", other Git services such as GitLab have different names for this, GitLab calls them "Merge Requests".
-Pull requests are where one developer requests that another merge code from a branch (or "pull" it from another copy of the repository). The person recveing the request then has the
+Pull requests are where one developer requests that another merge code from a branch (or "pull" it from another copy of the repository). The person receiving the request then has the
 chance to review the code, write comments suggesting changes or even change the code themselves before merging it. It is also very common for automated checks of code to be run on a pull
 request to ensure the code is of good quality and is passing automated tests.
 
-As a simple example of a pull request we can now create a pull request for the changes we made on our `01-missing-values-bug` branch and pushed to Github earlier on. The Github webpage for our repository
+As a simple example of a pull request, we can now create a pull request for the changes we made on our `01-missing-values-bug` branch and pushed to Github earlier on. The Github webpage for our repository
 will now be saying something like "bugfix had recent pushes n minutes ago - Compare & Pull request". Click on this button and create a new pull request. 
 
 Give the pull request a title and write a brief description of it, then click the green "Create pull request" button. Github will then check if we can merge this pull request without
@@ -857,7 +860,7 @@ the left hand menu and then click the green "Add People" button and enter the Gi
 They will get an email and an alert within Github to accept your invitation to work on this repository, without doing this they won't be able to access it.
 
  - Now make a fork of your partners repository. 
- - Edit the authors or citation file and add your name to it.
+ - Edit the CITATION.cff file and add your name to it.
  - Commit these changes to your fork
  - Create a pull request back to the original repository
  - Your partner will now receive your pull request and can review 
