@@ -173,7 +173,7 @@ We recommend the following resources for some additional reading on the topic of
 - [A Beginner's Guide to Conducting Reproducible Research][beginner-guide-reproducible-research],
   Jesse M. Alston, Jessica A. Rick, Bulletin of The Ecological Society of America 102 (2) (2021), https://doi.org/10.1002/bes2.1801
 - ["Ten reproducible research things" tutorial][10-reproducible-research-things]
-- [FORCE11's FAIR 4 Research Software (FAIR4RS) Working Group][fair4rs-working-group/]
+- [FORCE11's FAIR 4 Research Software (FAIR4RS) Working Group][fair4rs-working-group]
 - ["Good Enough Practices in Scientific Computing" course][good-enough-practices]
 - [Reproducibility for Everyone's (R4E) resources][repro4everyone], community-led education initiative to increase 
 adoption of open research practices at scale
