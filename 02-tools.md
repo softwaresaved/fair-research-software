@@ -169,7 +169,7 @@ What other information might you want?
 Run the following commands in a terminal to check you have installed the tools listed in the Setup page. 
 Compare the output with your neightbour and see if you can see any differences.
 
-Checking the shell/terminal:
+Checking the command line terminal:
 
 1. `date`
 2. `echo $SHELL`
