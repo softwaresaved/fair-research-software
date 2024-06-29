@@ -48,8 +48,8 @@ is not very readable, has no unit tests and only exist on Philippa's machine and
 Phillipa wants to help these colleagues and get some credit for her hard work, so she needs to improve documentation 
 for her code and set up a GitHub project to share her work and provide 
 other collaborators (and wider community) with access to it.
-She also needs to create a DOI and a citation for her code, so that people can include a reference to in their 
-work and publications.
+She also needs to create a DOI (Digital Object Identifier) and a citation for her code, so that people can 
+include a reference to it in their work and publications.
 
 ## Sam the Sociologist
 Sam is a Lecturer in sociology. 
