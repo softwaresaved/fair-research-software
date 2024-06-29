@@ -80,5 +80,7 @@ any links that you are not going to use.
 [grch-testing]: https://goodresearch.dev/testing.html
 [coderefinery-testing]: https://coderefinery.github.io/testing/
 [ds-testing]: https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html
-
+[pandas-apply-docs]: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html
+[replication-crisis-errington]: https://elifesciences.org/articles/71601
+[replication-crisis-osc]: https://www.science.org/doi/10.1126/science.aac4716
 

@@ -101,9 +101,10 @@ software engineering is used to aid solving research problems.
 Scientific transparency and rigor are key factors in research. Scientific methodology and 
 results need to be published openly and replicated and confirmed by several independent parties.
 However, research papers often lack the full details required for independent reproduction or replication. 
-Many attempts at reproducing or replicating the results of well-known scientific studies have failed in a 
-variety of disciplines [reference].
-These are called [**the reproducibility and replicability crises**][reproducibility-crisis] - ongoing 
+Many attempts at reproducing or replicating the results of scientific studies have failed in a variety of disciplines 
+ranging from psychology ([The Open Science Collaboration (2015)][replication-crisis-osc]) to 
+cancer sciences ([Errington et al (2021)][replication-crisis-errington]).
+These are called [**the reproducibility and replicability crises**][reproducibility-crisis] - ongoing
 methodological crises in which the results of many scientific studies are difficult or impossible to repeat.
 
 Reproducible research is a practice that ensures that researchers can repeat the same analysis multiple times with the 
@@ -115,8 +116,7 @@ this enables easier explanation of work to collaborators and reviewers.
 required at all stages of research and automating this process saves loads of time. 
 * Reproducible research enables reusability of previously conducted tasks so that new projects 
 that require the same or similar tasks become much easier and efficient by reusing or reconfiguring previous work. 
-* Reproducible research has greater impact on professional lives of researchers through the 
-ability to reuse and cite all research outputs - including code and data.
+* Reproducible research supports researchers' career development by facilitating the reuse and citation of all research outputs - including both code and data.
 * Reproducible research is a strong indicator of rigor, trustworthiness, and 
 transparency in scientific research. This can increase the quality and speed of peer review, because reviewers can 
 directly access the analytical process described in a manuscript. It increases the probability that errors are caught 
@@ -128,36 +128,29 @@ reproducible research.
 
 ## Software in research and research software
 Software is [fundamental to modern research][ssi-survey-2014] - some of it would even be impossible without software. 
-From short, thrown-together temporary scripts to
-solve a specific problem and help with day-to-day research tasks, 
-through an abundance of complex spreadsheets analysing collected
-data, to the hundreds of software engineers and millions of lines of code behind international
-efforts such as the Large Hadron Collider and the Square Kilometre Array, there are few areas of
+From short, thrown-together temporary scripts written to help with day-to-day research tasks, 
+through an abundance of complex data analysis spreadsheets, to the hundreds of software engineers and millions of lines of code behind international efforts such as the Large Hadron Collider, there are few areas of
 research where software does not have a fundamental role.
 
-However, it is important to note that not all software that is used in research is research software. 
+However, it is important to note that not all software that is used in research is "research software". 
 We define "research software" as software or code that is used to generate, process or analyse results of a research 
 for publication. 
 For example, software used to guide a telescope is not considered "research software". 
-On the other hand, formulas or macros in spreadsheets used to analyse data are considered "research code" - 
-they are a form of computer programming in that allow one to create, calculate, and change data sets in a number of different ways.
+On the other hand, formulas or macros in spreadsheets used to analyse data are considered "research code" as they are a form of computer programming that allow one to create, calculate, and change data sets in a number of different ways.
 
 ![*Definition of "research software" from the FAIR4RS working group, image by the Netherlands eScience Center licensed under CC-BY 4.0*](https://esciencecenter-digital-skills.github.io/research-software-support/modules/fairsoftware/media/definition.png){alt='Quote: Research Software includes source code files, algorithms, scripts, computational workflows and executables that were created during the research process or for a research purpose. Software components (e.g., operating systems, libraries, dependencies, packages, scripts, etc.) that are used for research but were not created during or with a clear research intent should be considered software in research and not Research Software.'}
 
 In the [software survey conducted by the Software Sustainability Institute in 2014][ssi-survey-2014], 
 92% of researchers indicated they used some kind of software to aid or conduct their research.
-Regardless of the type of the software used, software is not reserved for [computational science][computational-science] 
-(aka scientific computing) and “traditional” uses of computing capabilities and infrastructures (e.g.
-simulations and computational methods) any more.
-Nor is its restricted to "hard" sciences - the **use of research software is ubiquitous and 
-fairly even across all disciplines**.
+This was not limited to researchers from [computational science][computational-science] 
+(aka scientific computing), the "hard" sciences or to those involved in “traditional” uses of computing infrastructure such as running simulations or developing computational methods. The **use of research software is ubiquitous and fairly even across all disciplines**.
 
 Research software is increasingly being developed - researchers do not just use “off the shelf” software and
 the majority of researchers develop their own. 
 In order to be able to produce quality software that outputs correct and verifiable results and 
 that can be reused over time - researchers require training.
 This course teaches good practises and reproducible working methods that are agnostic of a 
-programming language (although we will use Python code as examples) and aims to provide 
+programming language (although we will use Python code in our examples) and aims to provide 
 researchers with the tools and knowledge to feel confident when writing good quality and sustainable 
 software to support their research. Typically, we think of such software as being **FAIR**.
 

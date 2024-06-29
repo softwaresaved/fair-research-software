@@ -260,8 +260,7 @@ To download the latest Python distribution for your operating system,
 please head to [Python.org](https://www.python.org/downloads/). 
 Then use an appropriate command for your platform (see below) to test your installation.
 
-Windows users should make sure to check the "Add python.exe to PATH" option to make sure that Python executable 
-is found after installation.
+Windows users should make sure to tick the "Add python.exe to PATH" check box at the bottom of the first page of the installer wizard to make sure that Python executable is found after installation.
 
 #### Testing Python 3
 

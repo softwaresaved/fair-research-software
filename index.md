@@ -34,12 +34,14 @@ code documentation, licencing and citation
 ## Prerequisites
 
 Before joining this training, participants should have foundational knowledge of Python or another programming 
-language used to write scientific code, Git and a command line (shell) tool.
-While we are not focussing on teaching you to code in Python or write Command Line tool scripts, we will be using code
+language used to write scientific code, Git and a command line (shell) tool. While we are not focussing on teaching you to code in Python or write Command Line tool scripts, we will be using code
 and command examples and will be teaching you how to use these tools in combination to make your research and 
-work more automated and reproducible so basic understanding would be very beneficial.
+work more automated and reproducible so basic understanding would be very beneficial. 
 Attending a [Software Carpentry][swc-lessons] or a similar course could help with these requirements and 
-gaining necessary prerequisite skills.
+gaining necessary prerequisite skills. 
+
+Some of our code examples use the Python library `Pandas` for manipulating data frames.
+Familiarity with this library and it's [apply() method](pandas-apply-docs) would be beneficial.    
 
 Please also make sure you have the [required software](../index.html#setup) installed before attending this course.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
