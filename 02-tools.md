@@ -161,43 +161,51 @@ We will discuss later how to share your code on GitHub and make it easy for othe
 
 ::::::  challenge
 
-Open a terminal and look at the prompt. Compare what you see in the terminal with your neighbour, does it look the same or different?
-What information is it telling you and why might this be useful? What other information might you want?
+Open a command line tool/terminal and look at the prompt. 
+Compare what you see in the terminal with your neighbour, does it look the same or different?
+What information is it telling you and why might this be useful? 
+What other information might you want?
 
-Run the following commands in a shell to check you have installed the tools listed in the Setup page. Compare the output with your neightbour and see if you can see any differences.
+Run the following commands in a terminal to check you have installed the tools listed in the Setup page. 
+Compare the output with your neightbour and see if you can see any differences.
 
 Checking the shell/terminal:
+
 1. `date`
 2. `echo $SHELL`
 3. `pwd`
 4. `whoami`
 
 Checking Python:
+
 5. `python --version`
 6. `python3 --version`
 7. `which python`
 8. `which python3`
 
 Checking Git and GitHub:
+
 9. `git --help`
 10. `git config --list`
 11. `ssh -T git@github.com`
 
 Checking VS Code:
+
 12. `code`
 13. `code --list-extensions`
 
 ::: hint
 
 The prompt is the `$` character and any text that comes before it, that is shown on every new line before you type in commands.
-
-Type each of the commands one at a time and press enter. They should give you a result by printing some text in the terminal.
+Type each of the commands one at a time and press enter. 
+They should give you a result by printing some text in the terminal.
 
 :::
 
 ::: solution
 
 The expected out put of each command is:
+
 1. Today's date
 2. `bash` or `zsh` - this tells you what shell language you are using. In this course we show examples in Bash.
 3. Your "present working directory" or the folder where your shell is running
@@ -209,8 +217,6 @@ The expected out put of each command is:
 11. This checks if you haev set up your connection to GitHub correctly. If is says `permission denied` you may need to look at the instructions for setting up SSH keys again on the Setup page.
 12. This should open VSCode in your current working directory. macOS users may need to first open VSCode and [add it to the PATH](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
 13. You should have the extensions GitLens, Git Graph, Python, JSON and Excel Viewer installed to use in this course.
-
-
 
 :::
 
