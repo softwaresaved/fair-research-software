@@ -66,13 +66,17 @@ and their different aspects and levels.
 In this course, we adopt the Turing Way's definitions: 
 
 * **Reproducible research**: a result is reproducible when the same analysis steps performed on the same data 
-consistently produce the same answer. (For example, I drop my pen 10 times and each time it falls to the floor. I run the same code multiple times (perhaps on different machines) and each time it produces the same result.)
+consistently produce the same answer.
+  * For example, two different people drop a pen 10 times each and every time it falls to the floor. Or, we run the same code multiple times on different machines and each time it produces the same result.
 * **Replicable research**: a result is replicable when the same analysis performed on different data produces 
-qualitatively similar answers. (I drop a pencil, it also falls to the floor.)
+qualitatively similar answers.
+  * For example, instead of a pen, we drop a pencil, and it also falls to the floor. Or, we collect two different datasets as part of two different studies and run the same code over these datasets with the same result each time. 
 * **Robust research**: a result is robust when the same data is subjected to different analysis workflows to answer the 
-same research question and a qualitatively similar or identical answer is produced. (For example, I lend you my pen and you drop it out the window, it still falls to the floor. I run the same analysis implemented in Python and R and it produces the same result.)
+same research question and a qualitatively similar or identical answer is produced.
+  * For example, I lend you my pen and you drop it out the window, and it still falls to the floor. Or we run the same analysis implemented in both Python and R over the same data and it produces the same result.
 * **Generalisable research**: combining replicable and robust findings allow us to form generalisable results 
-that are broadly applicable to different types of data or contexts. (For example, everything we drop falls, therefore gravity exists.)
+that are broadly applicable to different types of data or contexts.
+  * For example, everything we drop - falls, therefore gravity exists.
 
 ![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807][ttw-illustrations]*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Four cartoon images depicting two researchers at two machines which take in data and output the same landscape image in 4 different ways. These visually describe the four scenarios listed above.'}
 
