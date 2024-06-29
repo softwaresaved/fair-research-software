@@ -363,7 +363,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code readability</h1>
-        <p>Last updated on 2024-06-24 |
+        <p>Last updated on 2024-06-29 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/04-code-readability.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -384,7 +384,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>Why does readable code matter?</li>
+<ul><li>Why does code readability matter?</li>
 <li>How can I organise my code to be more readable?</li>
 <li>What types of documentation can I include to improve the readability
 of my code?</li>
@@ -398,7 +398,7 @@ of my code?</li>
 <p>After completing this episode, participants should be able to:</p>
 <ul><li>Organise code into reusable functions that achieve a singular
 purpose</li>
-<li>Create function and variable names that help explain the purpose of
+<li>Choose function and variable names that help explain the purpose of
 the function or variable</li>
 <li>Write informative inline comments and docstrings to provide more
 detail about what the code is doing</li>
@@ -439,8 +439,8 @@ long time doing something else, or share your code with a colleague, it
 should be easy enough to understand what variables are involved in your
 code from their names. Therefore we need to give them clear names, but
 we also want to keep them concise so the code stays readable. There are
-no “hard and fast rules” here, and it’s often a case where you will need
-to use your best judgment.</p>
+no “hard and fast rules” here, and it’s often a case of using your best
+judgment.</p>
 <p>Some useful tips for naming variables are:</p>
 <ul><li>Short words are better than single character names
 <ul><li>For example, if we were creating a variable to store the speed to
@@ -461,14 +461,14 @@ the speed of light in Physics</li>
 <code>thing</code>, and so on</li>
 </ul><p>There are also some gotchas to consider when naming variables:</p>
 <ul><li>There may be some restrictions on which characters you can use in
-your variable names. For instance in Python, only alphanumeric
+your variable names. For instance, in Python, only alphanumeric
 characters and underscores are permitted.</li>
 <li>Particularly in Python, you cannot <em>begin</em> your variable
 names with numerical characters as this will raise a syntax error.
 <ul><li>Numerical characters can be included in a variable name, just not as
-the first character. For example, <code>thing1</code> is a valid
-variable name, but <code>1thing</code> isn’t. (This behaviour may be
-different for other programming languages.)</li>
+the first character. For example, <code>read_speed1</code> is a valid
+variable name, but <code>1read_speed</code> isn’t. (This behaviour may
+be different for other programming languages.)</li>
 </ul></li>
 <li>In some programming languages, such as Python, variable names are
 case sensitive. So <code>speed_of_light</code> and
@@ -513,7 +513,7 @@ suggest a new name for this variable.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>Yes, 9.81 m/s^2 is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
+<p>Yes, <span class="math display">\[9.81 m/s^2 \]</span> is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
 force exerted by the Earth</a>. It is often referred to as “little g” to
 distinguish it from “big G” which is the <a href="https://en.wikipedia.org/wiki/Gravitational_constant" class="external-link">Gravitational
 Constant</a>. A more decriptive name for this variable therefore might
@@ -778,8 +778,7 @@ how to use the APIs, functions, and classes defined in your codebase.
 Hence, it is common to find tools that will automatically extract
 docstrings from your code and generate a website where people can learn
 about your code without downloading/installing and reading the code
-files - such as <a href="https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html" class="external-link">sphinx
-for Python</a>.</p>
+files - such as <a href="https://www.mkdocs.org/" class="external-link">MkDocs</a>.</p>
 <div id="writing-docstrings" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -970,7 +969,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/04-code-readability.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/04-code-readability.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-24",
+  "dateModified": "2024-06-29",
   "datePublished": "2024-06-29"
 }
 

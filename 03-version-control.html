@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Version control</h1>
-        <p>Last updated on 2024-06-24 |
+        <p>Last updated on 2024-06-29 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/03-version-control.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -427,7 +427,7 @@ incredibly useful if we want to reproduce results from a specific
 version of the code, or track down changes that broke some
 functionality.</p>
 <p>The other benefit we gain is that version control provides us with
-provenance of the project. As we make each change, we also leave a
+the provenance of the project. As we make each change, we also leave a
 message about what the change was and why it was made. This improves the
 transparency of the project and makes it auditable, which is good
 scientific practice.</p>
@@ -546,7 +546,7 @@ run one more command:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add and example script and dataset to work on"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add an example script and dataset to work on"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -567,7 +567,7 @@ what we did and why. If we only run <code>git commit</code> without the
 write a longer message.</p>
 <p>Good commit messages start with a brief (&lt;50 characters) statement
 about the changes made in the commit. Generally, the message should
-complete the sentence “If applied, this commit will”. If you want to go
+complete the sentence “If applied, this commit will…”. If you want to go
 into more detail, add a blank line between the summary line and your
 additional notes. Use this additional space to explain why you made
 changes and/or what their impact will be.</p>
@@ -610,7 +610,7 @@ terminal, we had to add a slash before the space like this:
 the filename, and not a separate argument. However, it is pretty
 annoying and considered bad practice to have spaces in your filenames
 like this, especially if you will be manipulating them from the
-terminal. So let’s go ahead and remove the space from the filename
+terminal. So, let’s go ahead and remove the space from the filename
 altogether and replace it with a hyphen instead. You can use the
 <code>mv</code> command again like so:</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -662,7 +662,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -695,9 +695,10 @@ Changes to be committed:
 <div class="section level3">
 <h3 id="advanced-solution">Advanced solution<a class="anchor" aria-label="anchor" href="#advanced-solution"></a></h3>
 <p>We initially renamed the Python file using the <code>mv</code>
-command, and we than had to add <em>both</em> <code>my-code-v2.py</code>
-and <code>my\ code\ v2.py</code>. Alternatively, we could have used
-Git’s own <code>mv</code> command like so:</p>
+command, and we than had to <code>git add</code> <em>both</em>
+<code>my-code-v2.py</code> and <code>my\ code\ v2.py</code>.
+Alternatively, we could have used Git’s own <code>mv</code> command like
+so:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -741,9 +742,9 @@ stored changes to our code files. Commit messages are short descriptions
 of, and the motivation for, what a commit will achieve. It is therefore
 important to take some time to ensure these commit messages are helpful
 and descriptive, as when work is reviewed (by your future self or a
-collaborator) they provide the context of what change was made and why.
-This can make tracking down specific changes in commits much easier,
-without having to inspect the code or files themselves.</p>
+collaborator) they provide the context about what changes were made and
+why. This can make tracking down specific changes in commits much
+easier, without having to inspect the code or files themselves.</p>
 <p>Generally, commit messages should complete the sentence “If applied,
 this commit will…”. Most often a short, 50 character (ish) title will
 suffice, but a longer-form description of the changes can also be
@@ -786,7 +787,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -823,7 +824,7 @@ change you do want to remove.</p>
 <h3 class="callout-title">Understanding commit contents<a class="anchor" aria-label="anchor" href="#understanding-commit-contents"></a>
 </h3>
 <div class="callout-content">
-<p>Below are the <code>diff</code>s of two commits. A <code>diff</code>
+<p>Below are the <code>diffs</code> of two commits. A <code>diff</code>
 shows the differences in a file (or files!) compared to the previous
 commit in the history so you can what has changed. The lines that begin
 with <code>+</code>s represent additions, and the lines that begin with
@@ -835,7 +836,11 @@ each commit? Discuss in pairs or small groups.</p>
 </figure></li>
 <li><figure><img src="fig/ex-diff-2.png" alt="Example Diff 2" class="figure mx-auto d-block"><div class="figcaption">Example Diff 2</div>
 </figure></li>
-</ol></div>
+</ol><p>To find out more about how to generate <code>diffs</code>, you can
+read the <a href="git-diff-docs">Git documentation</a> or the [Tracking
+Changes episode][swc-git-lesson-track] from the <a href="https://swcarpentry.github.io/git-novice" class="external-link">Software Carpentry
+Version control with Git lesson</a>.</p>
+</div>
 </div>
 </div>
 <div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
@@ -843,7 +848,7 @@ each commit? Discuss in pairs or small groups.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -898,18 +903,19 @@ work.</li>
 <li>
 <a href="https://git-scm.com/docs/git-reset" class="external-link"><code>git reset</code></a>:
 This command will recover the state of the project at the specified
-commit. What is done with the commits you had made is defined by some
-optional flags:
+commit. What is done with the commits you had mave since is defined by
+some optional flags:
 <ul><li>
-<code>--soft</code>: Any changes you had made would be preserved and
-left as “Changes to be committed”</li>
+<code>--soft</code>: Any changes you have made since the specified
+commit would be preserved and left as “Changes to be committed”</li>
 <li>
-<code>--mixed</code>: Any changes you had made would be preserved
-but not marked for commit (this is the default action)</li>
+<code>--mixed</code>: Any changes you have made since the specified
+commit would be preserved but not marked for commit (this is the default
+action)</li>
 <li>
-<code>--hard</code>: All changes you had made are discarded Using
-this command produces a “cleaner” history, but does not tell the full
-story and your work.</li>
+<code>--hard</code>: Any changes you have made since the specified
+commit are discarded Using this command produces a “cleaner” history,
+but does not tell the full story and your work.</li>
 </ul></li>
 </ul></div>
 <div class="section level3">
@@ -923,7 +929,7 @@ be lost. However, we can use the distribution aspect of Git to push our
 projects and histories to a server (someone else’s computer) so that
 they are accessible and retrievable if the worst were to happen to our
 machines. Distributing our projects in this way also opens us up to
-collaboration since colleagues would be able to access our projects,
+collaboration, since colleagues would be able to access our projects,
 make their own copies on their machines, and conduct their own work.</p>
 <p>We will now go through how to push a local project to <a href="https://github.com" class="external-link">GitHub</a>, though other Git hosting services
 are available, such as <a href="https://gitlab.com" class="external-link">GitLab</a> and <a href="https://bitbucket.org" class="external-link">Bitbucket</a>.</p>
@@ -1006,8 +1012,8 @@ the project for everyone working on it.</p>
 with any changes you have made locally. This command tells Git to update
 the “main” branch on the “origin” remote. The <code>-u</code> flag
 (short for <code>--set-upstream</code>) will set a tracking reference,
-so that in the future only <code>git push</code> can be run without the
-need to specify the remote and reference name.</p>
+so that in the future <code>git push</code> can be run without the need
+to specify the remote and reference name.</p>
 <div id="terminology" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1027,7 +1033,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul><li>
 <code>remote</code>: a version control concept where two (or more)
@@ -1158,7 +1164,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/03-version-control.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/03-version-control.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-24",
+  "dateModified": "2024-06-29",
   "datePublished": "2024-06-29"
 }
 
