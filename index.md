@@ -19,8 +19,8 @@ Check out a few example [learner profiles](./profiles.html), to see if this cour
 After attending this training, you will be able to:
 
 - List challenges typically faced by researchers developing software and managing data for modern computational 
-research, including requirements commensurate with the FAIR (Findable, Accessible, Interoperable, Reusable) principles
-- List some tools and practices that can help make your research, data and software open and FAIR
+research, including those commensurate with the FAIR (Findable, Accessible, Interoperable, Reusable) principles
+- List some tools and practices that can help make your research, data and software FAIR
 - Automate your research and enable replication of your research results by writing software to implement the 
 research methodology
 - Share and version control your software using Git and GitHub
@@ -28,6 +28,7 @@ research methodology
 code documentation, licencing and citation)
 - Assess if the code does what it intends to do
 - List tools and techniques for collaborative and sustainable software development and maintenance
+- Understand some ethical issues around research software development and usage and how our work impacts others
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
