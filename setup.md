@@ -17,18 +17,18 @@ you will need the following software installed and working correctly on your sys
 The installation instructions for these tools are below.
 
 
-### Command Line Tool
-You will need a command line tool (also referred to as a terminal or a shell) 
-in order to run Python scripts, various commands that interact with your filesystem and use Git.
+### Command Line Terminal
+You will need a command line terminal (also referred to as a shell) 
+in order to run Python scripts and various command like tools (such as Git and tools that interact with your filesystem).
 
 #### Windows 
 
 Windows users *will have to* install **Git Bash** 
 (which is included in [Git For Windows package](https://gitforwindows.org/)).
-This will install the Bash command line tool emulation and Git command line tool together 
+This will install the Bash command line terminal emulation and Git command line tool together 
 (which will behave in the same way as in Linux environments).
 
-Note that the use of Windows command line tools **Powershell** or `cmd` is not suitable for the course. 
+Note that the use of Windows command line terminals **Powershell** or `cmd` is not suitable for the course. 
 We also advise against using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) 
 for this course as we do not provide instructions for troubleshooting any potential issues between WSL and 
 Visual Studio Code (VS Code).
@@ -45,21 +45,21 @@ type the name "main" in the text field.
 
 #### macOS and Linux 
 
-MacOS and Linux users will already have a command line tool available on their systems. 
-You can use a command line tool such as [Bash](https://www.gnu.org/software/bash/),
-or any other [command line tool that has similar syntax to Bash](https://en.wikipedia.org/wiki/Comparison_of_command_shells),
+MacOS and Linux users will already have a command line terminal available on their systems. 
+You can use a command line terminal such as [Bash](https://www.gnu.org/software/bash/),
+or any other [command line terminal that has similar syntax to Bash](https://en.wikipedia.org/wiki/Comparison_of_command_shells),
 since none of the content of this course is specific to Bash. Note that starting with macOS Catalina,
-Macs will use [Zsh (Z shell)](https://www.zsh.org/) as the default command line tool instead of Bash.
+Macs will use [Zsh (Z shell)](https://www.zsh.org/) as the default command line terminal instead of Bash.
 
-#### Testing Command Line Tool
+#### Testing Command Line Terminal
 
-To test your command line tool, start it up and type:
+To test your command line terminal, start it up and type:
 
 ```bash
 $ date
 ```
 
-If your command line program is working - it should return the current date and time similar to:
+If your command line terminal is working - it should return the current date and time similar to:
 
 ```output
 Wed 21 Apr 2021 11:38:19 BST
@@ -67,7 +67,7 @@ Wed 21 Apr 2021 11:38:19 BST
 
 ### Git Version Control Program
 
-Git is a program that is run from within a command line tool to provide version control for your work. 
+Git is a command line program that is run from within a command line terminal to provide version control for your work. 
 Git is also used to interact with online code and project sharing platform GitHub.
 
 Follow the installation instructions below, then proceed to test and configure Git on your machine in 
@@ -76,7 +76,7 @@ additional steps.
 #### Windows
 
 Windows users *will have to* use **Git Bash** - as explained in the 
-[command line tool installation section](index.html#command-line-tool).
+[command line terminal installation section](index.html#command-line-tool).
 
 #### macOS and Linux
 
@@ -89,7 +89,7 @@ On Linux, Git can be installed using your favourite package manager.
 
 #### Testing Git
 
-To test your Git installation, start your command line tool and type:
+To test your Git installation, start your command line terminal and type:
 
 ```bash
 $ git help
@@ -153,7 +153,7 @@ which will be used to identify your commits),
 * preferred text editor for Git to use (e.g. **Nano** or another text editor of your choice),
 * whether you want to use these settings globally (i.e. for every Git project on your machine).
 
-This can be done from a command line tool as follows:
+This can be done from a command line terminal as follows:
 
 ```bash
 $ git config --global user.name "Your Name"
@@ -181,8 +181,8 @@ GitHub provides full documentation and guides on how to:
 
 A short summary of the commands you need to perform is shown below.
 
-To generate an SSH key pair, you will need to run the `ssh-keygen` command (included with your command line tool)
-and provide **your identity for the key pair** (e.g. the email address you used to register with GitHub)
+To generate an SSH key pair, you will need to run the `ssh-keygen` command line tool (included with your command line 
+terminal) and provide **your identity for the key pair** (e.g. the email address you used to register with GitHub)
 via the `-C` parameter as shown below.
 
 You will then be prompted to answer a few questions -
@@ -219,7 +219,7 @@ The key's randomart image is:
 
 Next, you need to copy your public key (**not your private key - this is important!**) over to
 your GitHub account. The `ssh-keygen` command above will let you know where your public key is saved
-(the file should have the extension ".pub"), and you can get its contents from a command line tool as follows:
+(the file should have the extension ".pub"), and you can get its contents from a command line terminal as follows:
 
 ```bash
 $ cat /Users/<YOUR_USERNAME>/.ssh/id_ed25519.pub
@@ -230,7 +230,7 @@ ssh-ed25519 AABAC3NzaC1lZDI1NTE5AAAAICWGVRsl/pZsxx85QHLwSgJWyfMB1L8RCkEvYNkP4mZC
 
 Copy the line of output that starts with "ssh-ed25519" and ends with your email address
 (it may start with a different algorithm name based on which one you used to generate the key pair
-and it may have gone over multiple lines if your command line window is not wide enough).
+and it may have gone over multiple lines if your command line terminal window is not wide enough).
 
 Finally, go to your [GitHub Settings -> SSH and GPG keys -> Add New](https://github.com/settings/ssh/new) page
 to add a new SSH public key.
@@ -264,7 +264,7 @@ Windows users should make sure to tick the "Add python.exe to PATH" check box at
 
 #### Testing Python 3
 
-You can check that you have Python 3 installed correctly from the command line using the commands below.
+You can check that you have Python 3 installed correctly from the command line terminal using the command below.
 
 ```bash
 $ python3 --version # on macOS/Linux
@@ -295,32 +295,33 @@ $ echo "alias python='winpty python.exe'" >> ~/.bashrc
 
 ### Visual Studio Code (VS Code)
 We will use Microsoft [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as an
-Integrated Development Environment (IDE) to type and execute Python code and run command line and Git commands
+Integrated Development Environment (IDE) to type and execute Python code and run command line terminal and Git commands
 (through its integrations with the tools we have installed separately so far).
 
 Please make sure to [download VS Code](https://code.visualstudio.com/Download) for your platform.
 
-#### Command Line Tool & Git Integration in VS Code
+#### Command Line Terminal & Git Integration in VS Code
 
-On macOS and Linux systems, VS Code will typically recognise a command line tool you already have on your system
+On macOS and Linux systems, VS Code will typically recognise a command line terminal you already have on your system
 (along with all programs/commands such as Git you can run from it) and you will not need to do anything and 
 it will be available as a "Terminal" in VS Code.
 
-On Windows, if VS Code does not automatically recognise Git Bash as a command line tool to be used as a "Terminal", 
+On Windows, if VS Code does not automatically recognise Git Bash as a command line terminal to be used as a "Terminal", 
 installing VS Code extension "Start git-bash" should help (to view available and installed extensions, 
 go to `View > Extensions` from the top-level menu).
 
 ![*Git Bash extension for VS Code on Window*](fig/vscode-gitbash-extension.png){ alt-text="Git Bash extension for VS Code on Windows" .image-with-shadow }
 
-To check the command line tool integration and that VS Code knows about different command line tool(s) installed 
+To check the command line integration and that VS Code knows about different command line terminal(s) installed 
 on your system select "Terminal -> New Terminal" from the top level menu.
-This should open a terminal window within VS Code. Within the terminal window, the command line tool the terminal is 
-using is indicated towards the right of the window (e.g. in the image below, the current command line tool is `bash`). 
-This can be changed (provided you have more command line tools installed on your machine) 
-by clicking the "+" drop-down menu button next to the command line tool indicator. Windows users may have 
+This should open a terminal window within VS Code. Within the terminal window, the type of the current terminal is 
+indicated towards the right of the window (e.g. in the image below, the current command line terminal is `bash` - but 
+note that you may have different terminal types installed on your machine). 
+This can be changed (provided you have several command line terminal programmes installed on your machine) 
+by clicking the "+" drop-down menu button next to the command line terminal indicator. Windows users may have 
 "Powershell" selected by default here - you should select "Git Bash" from the list.
 
-You can also change the default command line tool from the same drop down menu by using the option 
+You can also change the default command line terminal from the same drop down menu by using the option 
 "Select Default Profile" (so it will use that one next time you open a terminal window).
 
 ![*Terminal window in VS Code*](episodes/fig/vscode-terminal.png){alt='Terminal window in VS Code with "Select Default Profile" option highlighted'}

@@ -246,7 +246,7 @@ Usage instructions:
 ```text
 # Usage Example
 
-To run an analysis using the Spacewalks.py script from the command-line,
+To run an analysis using the Spacewalks.py script from the command line terminal,
 launch the script using Python as follows:
 
 \`\`\`python
@@ -340,10 +340,8 @@ To cite our software (or dataset), once a CFF file has been pushed to our remote
 GitHub's "Cite this repository"  button can be used to generate a citation in various  formats (APA, BibTeX).
 
 **Tools**
-Tools are also available to creating, validating, and converting CFF file on the
-command line. Further information is available from the [Turing Way's guide to software citation][turing-way-citation].
-
-
+Command line tools are also available for creating, validating, and converting CFF files. 
+Further information is available from the [Turing Way's guide to software citation][turing-way-citation].
 
 :::  challenge
 

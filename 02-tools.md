@@ -32,7 +32,7 @@ The table below summarises some tools and practices that can help with each of t
 | Tools and practices                                                                              | Findable | Accessible | Interoperable | Reusable |
 |--------------------------------------------------------------------------------------------------|----------|------------|---------------|----------|
 | Integrated development environments (e.g. VS Code) - development environments (run, test, debug) |          |            |               | x        |
-| Command line (e.g. Bash)- reproducible workflows/pipelines                                       |          |            | x             | x        |
+| Command line terminal (e.g. Bash)- reproducible workflows/pipelines                              |          |            | x             | x        |
 | Version control tools                                                                            | x        |            |               |          |
 | Testing                                                                                          |          | x          |               | x        |
 | Coding conventions and documentation                                                             |          | x          | x             | x        |
@@ -86,47 +86,84 @@ so you cannot guarantee that they will have the same buttons and shortcuts as yo
 
 In the previous episode we mentioned that interoperable software should use standard protocols so that it can 
 integrate with other tools.
-One of these standard protocols/tools is the command line tool or shell.
-This is one of the oldest ways of interacting with computers so many programs will have command line interfaces.
-Command line tools, such as Bash and Zsh, have their own language syntax that allow you to write scripts and/or 
+One of these standard protocols/tools is using the inputs and outputs via the command line terminal or shell.
+Command line terminal provides one of the oldest ways of interacting with operating system so many programs will 
+have command line interfaces.
+Command line terminals, such as Bash and Zsh, have their own language syntax that allow you to write scripts and/or 
 group and chain commands together to build up complex workflows using several programs in different steps. 
 They also use less resources than a graphical user interface tool like an IDE, so are commonly used on 
 high-performance computers and other shared systems where time, memory and processing power are expensive or in 
 high demand.
 
-In this course we will use the Bash shell, which is one of the most common and comes already installed on Mac and Linux operating systems.
-You can create a command line interface to your program which will allow it to be run on any system that has a Bash shell, and allow users to change things like input and output files or choose different settings or parameters without editing your code.
-With a command line interface, your code can be built into automated workflows so that the whole process from data gathering to analysis to saving publication-quality results can be written in one Bash script and saved and reused.
+In this course we will use the Bash shell, which is one of the most common and comes already installed on Mac and 
+Linux operating systems.
+You can create a command line interface to your program which will allow it to be run on any system that has a Bash 
+shell, and allow users to change things like input and output files or choose different settings or parameters 
+without editing your code.
+With a command line interface, your code can be built into automated workflows so that the whole process from data 
+gathering to analysis to saving publication-quality results can be written in one Bash script and saved and reused.
 
 ### Version control
 
-Version control means knowing what changes were made to your code and when. Many people who have worked on large documents such as essays start doing this by saving files called `essay_draft`, `essay_version1.doc`, `essay_version2.doc`, and so on. This can work on a small scale but most people find it quickly gets confusing which version a certain change was made, or which version is the one that you got feedback from a supervisor on. Using a version control system helps you keep track of changes, including when you might be working on shared code being edited by more than one person at a time.
+Version control means knowing what changes were made to your code and when. Many people who have worked on large 
+documents such as essays start doing this by saving files called `essay_draft`, `essay_version1.doc`, 
+`essay_version2.doc`, and so on. 
+This can work on a small scale but most people find it quickly gets confusing which version a certain change was made, 
+or which version is the one that you got feedback from a supervisor on. Using a version control system helps you 
+keep track of changes, including when you might be working on shared code being edited by more than one person at a time.
 
-It also lets you assign version numbers or tags to particular versions so you can then use those to refer back to them later. For example you can run your code and output some results and add a comment to your output that those results were produced by version 2.4 of your code, so if you try to run the same thing later and find it is different, you can check if it is a change in the code due to using a newer version, or a change in the data, or something else.
+It also lets you assign version numbers or tags to particular versions so you can then use those to refer back to 
+them later. 
+For example, you can run your code and output some results and add a comment to your output that those results were 
+produced by version 2.4 of your code, so if you try to run the same thing later and find it is different, you can 
+check if it is a change in the code due to using a newer version, or a change in the data, or something else.
 
-We will be using the Git version control system, which can be used through the command line, in a browser or in a desktop application.
+We will be using the Git version control system, which can be used through the command line terminal, 
+in a browser or in a desktop application.
 
 ### Testing
 
-Testing ensures that your code is correct and does what it is set out to do. When you write code you often feel very confident that it is perfect, but when writing bigger codes or code that is meant to do complex operations it is very hard to consider all possible edge cases or notice every single typing mistake. Testing also gives other people confidence in your code as they can see an example of how it is meant to run and be assured that it does work correctly on their machine.
+Testing ensures that your code is correct and does what it is set out to do. When you write code you often feel very 
+confident that it is perfect, but when writing bigger codes or code that is meant to do complex operations it is 
+very hard to consider all possible edge cases or notice every single typing mistake. 
+Testing also gives other people confidence in your code as they can see an example of how it is meant to run and 
+be assured that it does work correctly on their machine.
 
-We will show different ways to test your code for different purposes. You need to think about what it is that is important to you and any future users or collaborators to decide what kind of testing is most useful for you.
+We will show different ways to test your code for different purposes. You need to think about what it is that is 
+important to you and any future users or collaborators to decide what kind of testing is most useful for you.
 
 ### Documentation
 
-Documentation comes in many forms - from the names of variables and functions in your code, additional comments that explain some lines, up to a whole website full of documentation with function definitions, usage examples, tutorials and guides. You many not need as much documentation as a large commercial software product, but making your code Reusable relies on other people being able to understand what your code does and how to use it.
+Documentation comes in many forms - from the names of variables and functions in your code, additional comments 
+that explain some lines, up to a whole website full of documentation with function definitions, usage examples, 
+tutorials and guides. 
+You many not need as much documentation as a large commercial software product, but making your code Reusable relies 
+on other people being able to understand what your code does and how to use it.
 
 ### Licences and citation
 
-A licence states what people can legally do with your code, and what restrictions you have placed on it. Whenever you want to use someone else's code you should check what license they have and make sure your use is legal. You may be restricted by your institution, your grant funding, or by other tools you use that require certain licenses for you to be compatible with them.
+A licence states what people can legally do with your code, and what restrictions you have placed on it. 
+Whenever you want to use someone else's code you should check what license they have and make sure your use is legal. 
+You may be restricted by your institution, your grant funding, or by other tools you use that require certain licenses 
+for you to be compatible with them.
 
-Having a citation instructions is not a legal requirement but if you want to get academic credit for your work, you can make other people's life much easier by telling them how you would like to be credited. Similarly, follow citation instructions ensures that when you use others' code in your research they will be credited accordingly.
+Having a citation instructions is not a legal requirement but if you want to get academic credit for your work, 
+you can make other people's life much easier by telling them how you would like to be credited. 
+Similarly, follow citation instructions ensures that when you use others' code in your research they will be 
+credited accordingly.
 
-Both licensing law and citation proceedures can vary depending on your country and institution, so remember to check with a local team where you are. Your local research IT or library team would be a good place to start.
+Both licensing law and citation procedures can vary depending on your country and institution, 
+so remember to check with a local team where you are. 
+Your local research IT support or library teams would be a good place to start.
 
 ### Code repositories and registries
 
-Having somewhere to share your code is fundamental to making it Findable. Your institution might have a code repository, your research field may have a practice of sharing code via a specific website or journal, or your version control system might include an online component that makes sharing different versions of your code easy. Again, remember to check the rules of your institution and grant on publising code, and any licenses for code you depend on or reuse.
+Having somewhere to share your code is fundamental to making it Findable. 
+Your institution might have a code repository, your research field may have a practice of sharing code via a specific 
+website or journal, or your version control system might include an online component that makes sharing different 
+versions of your code easy. 
+Again, remember to check the rules of your institution and grant on publishing code, and any licenses for code you 
+depend on or reuse.
 
 We will discuss later how to share your code on GitHub and make it easy for others to find and use.
 
@@ -161,13 +198,13 @@ We will discuss later how to share your code on GitHub and make it easy for othe
 
 ::::::  challenge
 
-Open a command line tool/terminal and look at the prompt. 
+Open a command line terminal and look at the prompt. 
 Compare what you see in the terminal with your neighbour, does it look the same or different?
 What information is it telling you and why might this be useful? 
 What other information might you want?
 
 Run the following commands in a terminal to check you have installed the tools listed in the Setup page. 
-Compare the output with your neightbour and see if you can see any differences.
+Compare the output with your neighbour and see if you can see any differences.
 
 Checking the command line terminal:
 
@@ -196,7 +233,8 @@ Checking VS Code:
 
 ::: hint
 
-The prompt is the `$` character and any text that comes before it, that is shown on every new line before you type in commands.
+The prompt is the `$` character and any text that comes before it, that is shown on every new line before you type in 
+commands.
 Type each of the commands one at a time and press enter. 
 They should give you a result by printing some text in the terminal.
 
@@ -210,12 +248,12 @@ The expected out put of each command is:
 2. `bash` or `zsh` - this tells you what shell language you are using. In this course we show examples in Bash.
 3. Your "present working directory" or the folder where your shell is running
 4. Your username
-5 and 6. In this course we are using Python 3. If `python --version` gives you Python 2.x you may have two bversions of Python installed on your computer and need to be careful which one you are using.
+5 and 6. In this course we are using Python 3. If `python --version` gives you Python 2.x you may have two versions of Python installed on your computer and need to be careful which one you are using.
 7 and 8. The file path to where the Python version you are using is installed. If you have more than one version these should be different paths.
 9. The help message explaining how to use the `git` command.
 10. You should have `user.name`, `user.email` and `core.editor` set in your Git configuration. Check that the editor listed is one you know how to use.
 11. This checks if you haev set up your connection to GitHub correctly. If is says `permission denied` you may need to look at the instructions for setting up SSH keys again on the Setup page.
-12. This should open VSCode in your current working directory. macOS users may need to first open VSCode and [add it to the PATH](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
+12. This should open VSCode in your current working directory. macOS users may need to first open VS Code and [add it to the PATH](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
 13. You should have the extensions GitLens, Git Graph, Python, JSON and Excel Viewer installed to use in this course.
 
 :::
@@ -223,9 +261,10 @@ The expected out put of each command is:
 ::::::
 
 
-You may have noticed that our researcher has received the software project they are meant to be working as a `.zip` archive via email. 
-In the next episode, we will learn a better practice for sharing and tracking changes to a software project using version control software Git and 
-project sharing and collaboration platform GitHub.
+You may have noticed that our researcher has received the software project they are meant to be working as 
+a `.zip` archive via email. 
+In the next episode, we will learn a better practice for sharing and tracking changes to a software project using 
+version control software Git and project sharing and collaboration platform GitHub.
 
 
 ## Further reading
