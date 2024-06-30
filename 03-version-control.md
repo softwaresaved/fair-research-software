@@ -51,6 +51,48 @@ Later on in this workshop, we will also see how using a version control system
 allows many people to collaborate on the same project without a lot of manual
 effort to combine different items of work.
 
+### Git version control system 
+
+Git is one of the version control systems around and the one we will be using in this course. 
+It is primarily used for source code management in software development but it can be used to track changes in files 
+in general - it is particularly effective for tracking text-based files (e.g. source code files in any programming 
+language, CSV, Markdown, HTML, CSS, Tex, etc. files).
+
+The diagram below shows a typical software development lifecycle with Git (starting from making changes locally) and 
+the commonly used commands to interact with different parts of the Git infrastructure. 
+We will cover all of the commands below during this course, this is just a high level overview.
+
+![Software development lifecycle with Git](episodes/fig/ep03_fig05-git-lifecycle.svg){alt='Software development lifecycle with Git showing Git commands and flow of data between components of a Git system, including working directory, staging area, local and remote repository'}
+
+- **working directory** - a local directory (including any subdirectories) where your project files live and where you 
+are currently working. It is also known as the “untracked” area of Git. Any changes to files will be marked by Git in 
+the working directory. If you make changes to the working directory and do not explicitly tell Git to save them - 
+you will likely lose those changes. Using `git add filename` command, you tell Git to start tracking changes to file 
+filename within your working directory.
+- **staging area (index)** - once you tell Git to start tracking changes to files (with `git add filename command`), 
+Git saves those changes in the staging area on your local machine. Each subsequent change to the same file needs to be 
+followed by another git add filename command to tell Git to update it in the staging area. To see what is in your 
+working directory and staging area at any moment (i.e. what changes is Git tracking), run the command `git status`.
+- **local repository** - stored within the .git directory of your project locally, this is where Git wraps together 
+all your changes from the staging area and puts them using the git commit command. Each commit is a new, permanent 
+snapshot (checkpoint, record) of your project in time, which you can share or revert to.
+- **remote repository** - this is a version of your project that is hosted somewhere on the Internet 
+(e.g., on GitHub, GitLab or somewhere else). While your project is nicely version-controlled in your local repository, 
+and you have snapshots of its versions from the past, if your machine crashes - you still may lose all your work. 
+Furthermore, you cannot share or collaborate on this local work with others easily. Working with a remote repository 
+involves pushing your local changes remotely (using git push) and pulling other people’s changes from a remote 
+repository to your local copy (using `git fetch` or `git pull`) to keep the two in sync in order to collaborate 
+(with a bonus that your work also gets backed up to another machine). Note that a common best practice when 
+collaborating with others on a shared repository is to always do a `git pull` before a `git push`, to ensure you have 
+any latest changes before you push your own.
+
+
+Git is a distributed version control system allowing for multiple people to be working on the same project 
+(even the same file) at the same time. 
+Initially, we will use Git to start tracking changes to files on our local machines; later on we will start sharing our
+work on GitHub allowing other people to see and contribute to our work.
+
+
 ### Create a new repository
 
 Create a new directory in the `Desktop` folder for our work, and then change the current working directory 
@@ -440,7 +482,7 @@ methods:
 
 - [`git revert`](https://git-scm.com/docs/git-revert): This command reverts a
   commit by creating a new commit that reverses the action of the supplied commit
-  or list of commits. Because this command creates new commits, your git history
+  or list of commits. Because this command creates new commits, your Git history
   is more complete and tells the story of exactly what work you did, i.e.,
   deciding to discard some work.
 - [`git reset`](https://git-scm.com/docs/git-reset): This command will recover
@@ -448,14 +490,14 @@ methods:
   you had mave since is defined by some optional flags:
   - `--soft`: Any changes you have made since the specified commit would be preserved and left as "Changes to be committed"
   - `--mixed`: Any changes you have made since the specified commit would be preserved but not marked for commit (this is the default action)
-  - `--hard`: Any changes you have made since the specified commit are discarded
-  Using this command produces a "cleaner" history, but does not tell the full
-  story and your work.
+  - `--hard`: Any changes you have made since the specified commit are discarded.
+  
+Using `git reset` command produces a "cleaner" history, but does not tell the full story and your work.
 
 ### Pushing to a Git server
 
-One of the benefits of using a distributed version control system, such as Git,
-is its distributed nature. 
+Git is also a distributed version control system, allowing us to synchronise work between any two or more copies of 
+the same repository - the ones that are not located on your machine.
 So far we have have been working with a project on our
 local machines and, even though we have been incrementally saving our work in a
 way that is recoverable (version control), if anything happened to our laptops,
@@ -464,6 +506,9 @@ However, we can use the distribution aspect of
 Git to push our projects and histories to a server (someone else's computer) so
 that they are accessible and retrievable if the worst were to happen to our
 machines. 
+
+![Git - distributed version control system, image from W3Docs (freely available)](episodes/fig/git-distributed.png){alt='2 Git repositories belonging to 2 different developers linked to a central repository and one another showing two way flow of information in each link'}
+
 Distributing our projects in this way also opens us up to collaboration,
 since colleagues would be able to access our projects, make their own copies on
 their machines, and conduct their own work.

@@ -37,7 +37,7 @@ any links that you are not going to use.
 [awesome-research-software-registries]: https://github.com/NLeSC/awesome-research-software-registries
 [beginner-guide-reproducible-research]: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801
 [swc-git-lesson]: https://swcarpentry.github.io/git-novice
-[swc-git-lession-track]: https://swcarpentry.github.io/git-novice/04-changes.html
+[swc-git-lesson-track]: https://swcarpentry.github.io/git-novice/04-changes.html
 [git-diff-docs]: https://git-scm.com/docs/git-diff
 [ttw-guide-version-control]: https://the-turing-way.netlify.app/reproducible-research/vcs
 [how-git-works]: https://www.pluralsight.com/courses/how-git-works
