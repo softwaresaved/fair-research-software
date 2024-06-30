@@ -304,7 +304,7 @@ resources to help you choose a license that's appropriate for your needs.
 
 :::  challenge
 
-## License selection exercise
+### License selection exercise
 
 Q: You have created a library of functions that are commonly used by
 researchers in your field. You would like to share this code with your
@@ -378,7 +378,7 @@ Under these rules the following combinations are possible:
 
 :::  challenge
 
-## License selection exercise 2
+### License selection exercise 2
 
 Choose a license for your code and data from the pervious exercises.
 Discuss with your neighbour or the group your choice of license and
@@ -389,7 +389,7 @@ reason for choosing it.
 
 :::  challenge
 
-## Adding a license to your code
+### Adding a license to your code
 
 Add a LICENSE file containing the full text of the license you've chosen to the Git repository of your code from 
 previous chapters of this lesson.
@@ -462,7 +462,7 @@ extra custom modifications) and give it to others.
 
 :::  challenge
 
-## Relicensing exercise
+### Relicensing exercise
 
 Q: Find the webpage of a major open source project that is relevant to
 your research or the `Spacewalks` codebase we have been working with. See if you can find a contributor license agreement. Add a
@@ -566,7 +566,7 @@ Here is the badge for this repository and the corresponding Markdown:
 
 :::  challenge
 
-## Archive your repository to Zenodo
+### Archive your repository to Zenodo
 
  * Create an account on Zenodo that is linked to your Github account.
  * Use Zenodo to create a release for your repository and obtain a DOI for it.
@@ -622,7 +622,7 @@ an existing file is correctly formatted.
 
 :::  challenge
 
-## Add a citation file to your repository
+### Add a citation file to your repository
 
 Create a CITATION.cff file for your code and add it to your Github repository. Be sure to include the DOI you were allocated earlier on.
 
@@ -669,7 +669,7 @@ After the issue is created it will be assigned a sequential ID number.
 
 :::  challenge
 
-## Write an issue to describe our bug
+### Write an issue to describe our bug
 
 Create a new issue in your repository's issue tracker by doing the following:
 
@@ -852,7 +852,7 @@ request that the changes on our fork are incorporated by the upstream project.
 
 :::  challenge
 
-## Pull Request Exercise
+### Pull Request Exercise
 
 Q: Work in pairs for this exercise. Share the Github link of your repository with your partner. 
 If you have set your repository to private, you'll need to add them as a collaborator. Go to the settings page on your Github repository's webpage, click on Collaborators from 

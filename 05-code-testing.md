@@ -654,7 +654,7 @@ of our code we should:
 
 :::  challenge 
 
-## Evaluate Code Coverage
+## Evaluating Code Coverage
 
 Generate a code coverage report for the `Spacewalks` test suite
 and extract the following information:
@@ -682,9 +682,7 @@ b. The following functions in our code base are currently untested:
 
 
 
-:::  challenge 
-
-## Implementing a minimal test suite
+### Implementing a minimal test suite
 
 A member of our research team shares the following code
 with us to add to the Spacewalks codebase:
@@ -732,7 +730,9 @@ def summarise_categorical(df_, varname_):
 This looks like a useful tool for creating summary statistics tables, so
 let's write a minimal test suite to check that this code is behaving as expected. 
 
-### Challenge 1 - Typical Inputs
+::::::  challenge
+
+### Exercise 1 - Typical Inputs
 
 First, check that the function behaves as expected with 
 typical input values. Fill in the gaps in the skeleton test below:
@@ -785,9 +785,12 @@ def test_summarise_categorical():
     pdt.assert_frame_equal(actual_result, expected_result)
 ```
 
-:::::::::::::::::::::::::::::::::
+:::
+::::::
 
-### Challenge 2 - Edge Cases
+::::::  challenge
+
+### Exercise 2 - Edge Cases
 
 Now let's check that the function behaves as expected with edge cases.  
 Does the code behave as expected when the column of interest contains one 
@@ -816,7 +819,7 @@ def test_summarise_categorical_missvals():
 ```    
 
 
-:::  solution 
+:::  solution
 
 ```python
 def test_summarise_categorical_missvals():
@@ -839,9 +842,12 @@ def test_summarise_categorical_missvals():
     pdt.assert_frame_equal(actual_result, expected_result)
 ``` 
 
-:::::::::::::::::::::::::::::::::    
-    
-### Challenge 3 - Invalid inputs
+:::
+:::::::    
+
+::::::  challenge
+
+### Exercise 3 - Invalid inputs
 
 Now write a test to check that the `summarise_categorical` function raises an appropriate error 
 when asked to tabulate a column that does not exist in the data frame
@@ -863,10 +869,12 @@ def test_summarise_categorical_invalid():
         summarise_categorical(test_input, "vehicle")
 ```
 
-:::::::::::::::::::::::::::::::::    
+:::
+:::::: 
 
+::::::  challenge
 
-### Challenge 4 - Minimal Test Suite
+### Exercise 4 - Minimal Test Suite
 
 Finally, let's add the `summarise_categorical` code and tests to 
 the Spacewalks code base (eva_data_analysis.py).
@@ -978,12 +986,9 @@ if __name__ == '__main__':
 python -m pytest --cov=spacewalks.py --cov-report=html tests/
 ```
 
-:::::::::::::::::::::::::::::::::
+::::
+::::::
 
-:::::::::::::::::::::::::
-
-
-::::::::::::::::::::::::::::::::::::: callout
 
 ### Continuous Integration 
 
@@ -1015,7 +1020,7 @@ cd spacewalks
 + To setup continuous integration on GitHub actions, the dependencies of
   our code must be recorded in a `requirements.txt` file in the root of our repository.
 + You can find out more about creating requirements.txt files from 
-  Coderefinery's tutorial on "Recording Dependencies". 
+  CodeRefinery's tutorial on "Recording Dependencies". 
 + For now, add the following list of code dependencies to requirements.txt in the root
   of the spacewalks repository:
   
@@ -1023,8 +1028,8 @@ cd spacewalks
 touch requirements.txt
 ```
 
-Content of requirements.txt:
-```
+Content of `requirements.txt`:
+```output
 numpy
 pandas
 matplotlib
@@ -1105,7 +1110,6 @@ https://github.com/YOUR-REPOSITORY/actions
   workflow run listed here.
 
 
-::::::::::::::::::::::::::::::::::::: 
 
 ## Further reading
 

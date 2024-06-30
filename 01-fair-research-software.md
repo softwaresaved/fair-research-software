@@ -22,13 +22,14 @@ After completing this episode, participants should be able to:
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
-## Motivation (10 minutes)
+### Motivation
 Think about the questions below. Your instructors may ask you to share your answers in a shared notes document and/or
 discuss them with other participants.
 
 - What motivated you to attend this course? Did you come by choice or were you advised to attend?
 - What do you hope to learn or change in your current research software practice? Describe how your knowledge, 
 work or attitude may be different afterwards.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
