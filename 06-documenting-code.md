@@ -95,7 +95,7 @@ A README file acts as a “landing page” for your code repository on GitHub an
 
 ::::::::::::::::::::::::::::::::::::: discussion 
 
-## READMEs and The FAIR Principles
+### READMEs and The FAIR Principles
 
 Think about the question below. Your instructors may ask you to share your answer in a shared notes document and/or discuss them with other participants.
 
@@ -208,7 +208,7 @@ installed. You will also need the following libraries (minimum versions in brack
 
 :::  challenge
 
-## Spacewalks README
+### Spacewalks README
 
 Extend the README for Spacewalks by adding
 a. Installation instructions
@@ -345,7 +345,7 @@ Further information is available from the [Turing Way's guide to software citati
 
 :::  challenge
 
-## `Spacewalks` Software Citation
+### `Spacewalks` Software Citation
 
 Write a software citation file for the Spacewalks code and add it to the root
 folder of our project.

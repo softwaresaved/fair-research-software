@@ -92,3 +92,6 @@ any links that you are not going to use.
 [fair-cookbook-zenodo]: https://faircookbook.elixir-europe.org/content/recipes/findability/zenodo-deposition.html
 [zenodo-org]: https://zenodo.org/
 [coderefinery-tools]: https://coderefinery.github.io/reproducible-research/
+[google-copilot]: https://github.com/features/copilot
+[codegen]: https://www.codegen.com/
+[ai-pair-programmers]: https://www.codium.ai/glossary/pair-programming/#:~:text=Ethics%20in%20AI%20Pair%20Programming
