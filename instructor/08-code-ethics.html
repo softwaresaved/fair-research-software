@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Ethical considerations for research software</h1>
-        <p>Last updated on 2024-06-24 |
+        <p>Last updated on 2024-06-30 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/08-code-ethics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -421,36 +421,21 @@ software performs as documented and produces reliable results.</li>
 <li>Accountability: ensuring that developers are accountable for the
 software they create, particularly in terms of accuracy and
 reliability.</li>
-</ul><p>TODO: Exercise - perhaps a discussion around transparency, quality
-and accountability?</p>
-</div>
-<div class="section level3">
-<h3 id="intellectual-property-and-licensing">Intellectual property and licensing<a class="anchor" aria-label="anchor" href="#intellectual-property-and-licensing"></a></h3>
-<ul><li>Open vs closed source: balancing the benefits of open-source
-software and data with the rights of creators to protect their
-intellectual property and data privacy.</li>
-<li>License compliance: ensuring that software use complies with
-licensing agreements and avoiding unlicensed</li>
-<li>(and illegal) use of software and data.</li>
-</ul><div id="which-of-the-following-statements-are-true-and-which-are-false" class="callout challenge">
+</ul><div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="which-of-the-following-statements-are-true-and-which-are-false" class="callout-inner">
-<h3 class="callout-title">Which of the following statements are true and which are false?<a class="anchor" aria-label="anchor" href="#which-of-the-following-statements-are-true-and-which-are-false"></a>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li>I don’t need permission because I am only using the copyrighted work
-in educational or non-profit purposes.</li>
-<li>I should always know the licence of any code, data, libraries,
-pictures or other work that you reuse or redistribute.</li>
-<li>Since I’m planning to give credit to the authors who created the
-work I reuse, I do not have to worry about or need permission.</li>
-<li>Material I obtain from the Internet is publicly accessible so no
-explicit permission is required.</li>
-<li>The work I want to use does not have a copyright notice on it, so
-it’s not protected by copyright and I am free to use it.</li>
-</ol></div>
+<p>Good research software practices apply not only when we develop
+software ourselves, but also when we reuse other people’s software.
+Discuss as group and write down in the shared document your thoughts
+about what ethical considerations should we have in mind and pros and
+cons we should weigh in when choosing other people’s software for
+reuse.</p>
+</div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -460,21 +445,104 @@ it’s not protected by copyright and I am free to use it.</li>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>The answers are as follows:</p>
-<ol style="list-style-type: decimal"><li>False - you always need an explicit permission from the creator to
-use their work.</li>
-<li>True - you should make sure that you have the permission for all the
-work that you are reusing, modifying or sharing.</li>
-<li>False - if you give credit to a work’s owner, that only means you
-are not plagiarising other people’s work and claiming it as your own,
-however that does not mean that you have the permission to use it.</li>
-<li>False - publicly accessible work is not the same the work in the
-public domain. The owner explicitly must put their work in the public
-domain but attaching the appropriate licence to it, before you can
-freely reuse it.</li>
-<li>False - the use of copyright notice is optional as copyright exists
-implicitly from the moment the work is created.</li>
-</ol></div>
+<p>Here are some considerations:</p>
+<ul><li>How is software shared? Is it openly available on some code sharing
+platform or given to us on a memory stick?</li>
+<li>Are developers of the software credited for their work?</li>
+<li>Are software developers respectful to each other and other external
+contributors to or users of the codebase in their communication? Does
+the project have a code of conduct and contribution guidelines?</li>
+<li>How is the project funded? Are there any concerns about who is
+financing the work?</li>
+<li>Is the project active? How many open issues are there and how long
+have they been opened for?</li>
+<li>When we are selecting tools and libraries to include in our research
+pipelines or software, we do have a duty to check the quality and
+reliability of those components. Are they well tested? Is the project
+using outdated methods? We can also look to other indicators of
+reliability - e.g. does the project have many open unresolved issues for
+bugs that might signal unreliability?</li>
+<li>Do they support they users of their code and how is that support
+handled?</li>
+<li>Are we respecting licenses and giving proper attribution to the
+developers of the code we are reusing?</li>
+<li>When incorporating other researchers’ software into our research
+workflows we should not do it blindly but should inspect it critically
+and look closely at how the results of that component are
+generated.</li>
+</ul><p>Note: tools such as <a href="https://snyk.io/" class="external-link">Snyk</a> are available
+to help you check software projects that you intend to reuse in your
+work - they are designed to help you identify find weaknesses,
+violations, vulnerabilities and security issues in open-source software
+libraries and can help you make a decision whether or not you should use
+some software.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="intellectual-property-and-licensing">Intellectual property and licensing<a class="anchor" aria-label="anchor" href="#intellectual-property-and-licensing"></a></h3>
+<ul><li>Open vs closed source: balancing the benefits of open-source
+software and data with the rights of creators to protect their
+intellectual property and data privacy.</li>
+<li>License compliance: ensuring that software use complies with
+licensing agreements and avoiding unlicensed (and illegal) use of
+software and data.</li>
+</ul><div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+</h3>
+<div class="callout-content">
+<p>The licensing and intellectual property (IP) of code generated by
+large language models (LLMs) and <a href="https://www.codium.ai/glossary/pair-programming/#:~:text=Ethics%20in%20AI%20Pair%20Programming" class="external-link">AI
+pair programmers</a> (such as <a href="https://www.codegen.com/" class="external-link">CodeGen</a> or <a href="https://github.com/features/copilot" class="external-link">Google Copilot</a> which
+operate with an AI system as one of the code developers) raise complex
+legal and ethical questions that are not clear cut. Discuss as group and
+write down in the shared document some considerations and pros and cons
+of using AI-generated code.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>Here are some considerations:</p>
+<ul><li>Intellectual Property (IP) ownership of the AI-generated code -
+typically, IP laws assign authorship to humans, not machines. However,
+the authorship of AI-generated code is ambiguous - it could belong to
+the developer who directs the AI, the developer’s employer or the entity
+owning the AI. Furthermore, AI pair programmers can generate results
+that match or closely match code that is publicly available and
+potentially already licensed. As a result, you might end up
+incorporating someone else’s (licensed) code into your code base without
+attribution or considering license implications. Some tools like GitHub
+Copilot have taken steps to reduce the risk of this by filtering out
+code completions that match publicly available code.</li>
+<li>Intellectual Property (IP) ownership of the training data: if the AI
+model was trained on copyrighted code, the output could potentially be
+seen as a derivative work, raising IP issues regarding the training
+data’s licenses.</li>
+<li>Licensing terms of the AI-generated code - under what terms is the
+generated code to be used, for example, if the AI model is trained on
+open-source code, the generated code might need to comply with the
+open-source licenses (e.g., GPL, MIT). How can we attribute the original
+authors of the code used to train the AI model on? In addition,
+ethically, it is good practice to acknowledge the use of AI tools in
+generating code, even if not legally required.</li>
+<li>Security and bias concerns of AI-generated code - AI tools can
+generate code that is insecure, potentially destructive (e.g. deleting
+files) or use biased algorithms and data (see the section below) - so we
+should always try to understand and check any generated code before
+running it.</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -492,8 +560,81 @@ private or upsetting information.</li>
 <li>Bias mitigation: implement measures to detect and mitigate biases in
 algorithms and data, ensuring that the software treats all users
 fairly.</li>
-</ul><p>TODO: Exercise - perhaps some examples or discussion on algorithm or
-data bias.</p>
+</ul><div id="challenge3" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+</h3>
+<div class="callout-content">
+<p>You have been tasked with writing software to scrape a public forum
+to collect personal data for your study - discuss as a group and write
+down what ethical issues should you consider and how should you act in
+this case?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<ol style="list-style-type: decimal"><li>Compliance with Terms of Service (ToS) - most websites, including
+forums, have ToS that explicitly prohibit or restrict web scraping.
+Violating these terms can lead to legal action and is considered
+unethical.</li>
+<li>User privacy concerns - scraping a forum can collect a vast amount
+of user data, including personal information, opinions, and
+conversations. Avoid collecting personally identifiable information
+(PII) unless it is absolutely necessary and permissible and protecting
+user privacy (e.g. do not de-anonymize users).</li>
+<li>Lack of consent: users of the forum likely have not given explicit
+consent for their posts and data to be scraped and used by third
+parties. It’s ethical to inform users and seek consent where possible,
+or at least be transparent about data usage.</li>
+<li>Impact on website performance - scraping can put significant strain
+on the forum’s servers, cause Denial of Service attacks amd potentially
+disrupting service for regular users. Ensure your software is designed
+to be non-disruptive.</li>
+<li>Data use and sharing - clearly define and limit the purpose of data
+collection, collect only the data necessary for the intended purpose,
+and be cautious about how the scraped data is shared or sold. Ensure
+that it is used responsibly and does not harm the users from whom the
+data was collected.</li>
+<li>Data accuracy and integrity - ensure that the scraped data is used
+accurately and not misrepresented, avoid taking quotes out of context or
+using data in misleading ways, avoid modifying or altering the data in
+ways that could be deceptive.</li>
+<li>Legal considerations - forum content is often copyrighted so
+scraping content without permission can lead to copyright infringement
+so seek permission where necessary.</li>
+<li>Ethical purpose - consider the intent behind scraping the forum and
+ensure that the purpose is constructive and beneficial (and not harmful
+and unethical - e.g., for creating, fake profiles, spam, or
+harassment).</li>
+<li>Transparency and accountability - where possible, be transparent
+about your research methodology, scraping activities and their purpose,
+take responsibility for any negative consequences that may arise from
+scraping and be prepared to address and mitigate any issues.</li>
+</ol><p>Best Practices for ethical scraping:</p>
+<ul><li>Respect <code>robots.txt</code>: Always check and respect the
+robots.txt file of the forum, which indicates the site’s rules regarding
+web crawling.</li>
+<li>Rate limiting: implement rate limiting to avoid overwhelming the
+server.</li>
+<li>Data minimization: collect only the data that is necessary for your
+purpose.</li>
+<li>User-Agent identification: use a User-Agent string that identifies
+your scraper and include contact information.</li>
+<li>Ethical review: if you are scraping for research, consider
+submitting your methodology for ethical review.</li>
+</ul></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="environmental-impact-of-research-software">Environmental impact of research software<a class="anchor" aria-label="anchor" href="#environmental-impact-of-research-software"></a></h3>
@@ -505,8 +646,52 @@ non-renewable sources).</li>
 <li>Carbon footprint: the electricity used to power data centers and HPC
 systems contributes to CO2 emissions, particularly if the energy comes
 from fossil fuels.</li>
-</ul><p>TODO: Exercise: - e.g. get them to think about optimising algorithms,
-repeated runs of the untested code, etc.</p>
+</ul><div id="challenge4" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+</h3>
+<div class="callout-content">
+<p>Often our research software is written for use on HPC systems.
+Discuss as a group and write down in which way can we improve our
+practices when writing, testing and running code on HPC system to
+support more responsible and less wasteful use of resources.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div class="accordion-body">
+<p>Here are some thing to consider:</p>
+<ul><li>To make best use of resources, part of our workflow should include
+identifying the most appropriate job configurations, e.g. <a href="https://ri.itservices.manchester.ac.uk/csf3/batch/scaling/" class="external-link">job
+scaling</a> or using workflow management tools like Snakemake to ensure
+that we do not repeat expensive steps unless some upstream step in our
+workflow has changed.</li>
+<li>Avoid running untested code on a HPC system - test and debug locally
+first</li>
+<li>Run a test job on one case study or a small data set before running
+on full data (consider setting up many jobs and finding 100s of jobs
+crashed after a few hours)</li>
+<li>Avoid including an expensive data processing step in every job when
+it could be run once and set as a dependency for other jobs</li>
+<li>Using many nodes for a job that is not designed to run in parallel -
+consider refactoring your code</li>
+<li>Optimise your code and use more efficient algorithms</li>
+</ul><p>Technical topics:</p>
+<ul><li>Work-flow management</li>
+<li>Profiling jobs on HPC</li>
+<li>Profiling Python code</li>
+</ul></div>
+</div>
+</div>
+</div>
 </div>
 <section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
@@ -524,15 +709,13 @@ for the course.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Free and open source research software and data, along with FAIR,
+<ul><li>To act ethically, we have to be both responsible producers and
+consumers of research software.</li>
+<li>Free and open source research software and data, along with FAIR,
 ethical and environmental considerations, offer viable ways to make more
-transparent, reliable and accountable science, allowing other research
-scientists to verify research findings.</li>
-<li>Building research software requires a ongoing commitment to the FAIR
-principles as well as engagement with ethical principles. By adopting
-these practices, researchers and developers can create software that not
-only advances scientific knowledge but also respects and protects the
-rights and well-being of all users.</li>
+transparent, reliable and accountable science that not only advances
+scientific knowledge but also respects and protects the rights and
+well-being of all users.</li>
 </ul></div>
 </div>
 </div>
@@ -598,8 +781,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/08-code-ethics.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/08-code-ethics.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-24",
-  "datePublished": "2024-06-29"
+  "dateModified": "2024-06-30",
+  "datePublished": "2024-06-30"
 }
 
   </script><script>
