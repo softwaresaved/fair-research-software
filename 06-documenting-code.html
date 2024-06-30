@@ -367,7 +367,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Documenting code</h1>
-        <p>Last updated on 2024-06-29 |
+        <p>Last updated on 2024-06-30 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/06-documenting-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -873,7 +873,7 @@ want to add additional documentation such as a standalone tutorial or
 documentation, we need to consider how we will distribute our
 documentation to our users.</p>
 <p>Options include:</p>
-<ul><li>A <code>docs/</code> folder of markdown files.</li>
+<ul><li>A <code>docs/</code> folder of Markdown files.</li>
 <li>Adding a Wiki to our repository.</li>
 <li>Creating a set of web pages for our documentation using a static
 site generator for our documentation such as Sphinx or MkDocs</li>
@@ -882,7 +882,7 @@ benefit being able to automatically generate a reference manual from any
 docstrings we have added to our code.</p>
 <div class="section level3">
 <h3 id="mkdocs">MkDocs<a class="anchor" aria-label="anchor" href="#mkdocs"></a></h3>
-<p>Let’s setup MkDocs</p>
+<p>Let’s setup MkDocs.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -896,12 +896,13 @@ docstrings we have added to our code.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip list</span></code></pre>
 </div>
-<p>Let’s create a mkdocs.yml file to configure mkdocs</p>
+<p>Let’s create a <code>mkdocs.yml</code> file to configure
+<code>mkdocs</code> package installation.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># In ~/Desktop/spacewalks</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">$</span> touch  mkdocs.yml</span></code></pre>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">touch</span> mkdocs.yml</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -919,8 +920,9 @@ docstrings we have added to our code.</p>
 <span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Background</span><span class="kw">:</span><span class="at"> explanation.md</span></span></code></pre>
 </div>
 <p>Note font-false is for GDPR compliance</p>
-<p>Let’s add support of mkdocstrings this will allow us to automatically
-our docstrings into our documentation using a simple tag.</p>
+<p>Let’s add support for <code>mkdocstrings</code> - this will allow us
+to automatically our docstrings into our documentation using a simple
+tag.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -939,14 +941,14 @@ our docstrings into our documentation using a simple tag.</p>
 <span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="fu">plugins</span><span class="kw">:</span></span>
 <span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mkdocstrings</span></span></code></pre>
 </div>
-<p>Let’s populate our reference file with the docstrings we created</p>
+<p>Let’s populate our reference file with the docstrings we created.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>This file documents the key functions in the Spacewalks tool.</span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>It is provided as a reference manual.</span></code></pre>
 </div>
-<p>Let’s build our documentation</p>
+<p>Let’s build our documentation.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1042,7 +1044,7 @@ do this.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="a-spacewalks-how-to-guide" class="callout-inner">
-<h3 class="callout-title">A <code>Spacewalks</code> How-to Guide<a class="anchor" aria-label="anchor" href="#a-spacewalks-how-to-guide"></a>
+<h3 class="callout-title">A Spacewalks How-to Guide<a class="anchor" aria-label="anchor" href="#a-spacewalks-how-to-guide"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: lower-alpha"><li><p>Review the Diataxis guidance page on writing a How-to guide.
@@ -1328,7 +1330,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/06-documenting-code.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/06-documenting-code.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-29",
+  "dateModified": "2024-06-30",
   "datePublished": "2024-06-30"
 }
 

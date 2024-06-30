@@ -366,7 +366,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code testing</h1>
-        <p>Last updated on 2024-06-28 |
+        <p>Last updated on 2024-06-30 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/05-code-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -498,7 +498,7 @@ working together correctly.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li>End-to-end tests compare the actual output of a program to the
 expected output to demonstrate correctness.</li>
@@ -599,7 +599,7 @@ that a piece of code is behaving as expected?</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Discussion Spoilers </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>It can be tempting to test our code informally because this
 approach:</p>
@@ -967,7 +967,7 @@ mean?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: lower-alpha"><li>9 tests were detected in the test suite</li>
 <li>s - stands for “skipped”</li>
@@ -1023,7 +1023,7 @@ function. Cover typical cases and edge cases.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1122,12 +1122,12 @@ well-known and well-test libraries like Pandas or numpy.</li>
 <li>Focus of the the parts of our code that carry the greatest
 “reputational risk” i.e. that could affect the accuracy of our reported
 results.</li>
-</ul><div id="evaluate-code-coverage" class="callout challenge">
+</ul><div id="evaluating-code-coverage" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="evaluate-code-coverage" class="callout-inner">
-<h3 class="callout-title">Evaluate Code Coverage<a class="anchor" aria-label="anchor" href="#evaluate-code-coverage"></a>
+<div id="evaluating-code-coverage" class="callout-inner">
+<h3 class="callout-title">Evaluating Code Coverage<a class="anchor" aria-label="anchor" href="#evaluating-code-coverage"></a>
 </h3>
 <div class="callout-content">
 <p>Generate a code coverage report for the <code>Spacewalks</code> test
@@ -1143,7 +1143,7 @@ test suite?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1165,14 +1165,9 @@ XX%</li>
 </div>
 </div>
 </div>
-<div id="implementing-a-minimal-test-suite" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="implementing-a-minimal-test-suite" class="callout-inner">
-<h3 class="callout-title">Implementing a minimal test suite<a class="anchor" aria-label="anchor" href="#implementing-a-minimal-test-suite"></a>
-</h3>
-<div class="callout-content">
+<div class="section level3">
+<h3 id="implementing-a-minimal-test-suite">Implementing a minimal test suite<a class="anchor" aria-label="anchor" href="#implementing-a-minimal-test-suite"></a></h3>
 <p>A member of our research team shares the following code with us to
 add to the Spacewalks codebase:</p>
 <div class="codewrapper sourceCode" id="cb24">
@@ -1219,8 +1214,14 @@ add to the Spacewalks codebase:</p>
 <p>This looks like a useful tool for creating summary statistics tables,
 so let’s write a minimal test suite to check that this code is behaving
 as expected.</p>
-<div class="section level3">
-<h3 id="challenge-1---typical-inputs">Challenge 1 - Typical Inputs<a class="anchor" aria-label="anchor" href="#challenge-1---typical-inputs"></a></h3>
+<div id="exercise-1---typical-inputs" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="exercise-1---typical-inputs" class="callout-inner">
+<h3 class="callout-title">Exercise 1 - Typical Inputs<a class="anchor" aria-label="anchor" href="#exercise-1---typical-inputs"></a>
+</h3>
+<div class="callout-content">
 <p>First, check that the function behaves as expected with typical input
 values. Fill in the gaps in the skeleton test below:</p>
 <div class="codewrapper sourceCode" id="cb25">
@@ -1250,13 +1251,12 @@ values. Fill in the gaps in the skeleton test below:</p>
 </div>
 </div>
 </div>
-</div>
 <div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1285,12 +1285,12 @@ values. Fill in the gaps in the skeleton test below:</p>
 </div>
 </div>
 </div>
-<div id="challenge-2---edge-cases" class="callout challenge">
+<div id="exercise-2---edge-cases" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-2---edge-cases" class="callout-inner">
-<h3 class="callout-title">Challenge 2 - Edge Cases<a class="anchor" aria-label="anchor" href="#challenge-2---edge-cases"></a>
+<div id="exercise-2---edge-cases" class="callout-inner">
+<h3 class="callout-title">Exercise 2 - Edge Cases<a class="anchor" aria-label="anchor" href="#exercise-2---edge-cases"></a>
 </h3>
 <div class="callout-content">
 <p>Now let’s check that the function behaves as expected with edge
@@ -1327,7 +1327,7 @@ one or more missing values (pd.NA)? (write a new test).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1355,12 +1355,12 @@ one or more missing values (pd.NA)? (write a new test).</p>
 </div>
 </div>
 </div>
-<div id="challenge-3---invalid-inputs" class="callout challenge">
+<div id="exercise-3---invalid-inputs" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-3---invalid-inputs" class="callout-inner">
-<h3 class="callout-title">Challenge 3 - Invalid inputs<a class="anchor" aria-label="anchor" href="#challenge-3---invalid-inputs"></a>
+<div id="exercise-3---invalid-inputs" class="callout-inner">
+<h3 class="callout-title">Exercise 3 - Invalid inputs<a class="anchor" aria-label="anchor" href="#exercise-3---invalid-inputs"></a>
 </h3>
 <div class="callout-content">
 <p>Now write a test to check that the <code>summarise_categorical</code>
@@ -1374,7 +1374,7 @@ that does not exist in the data frame</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1396,12 +1396,12 @@ that does not exist in the data frame</p>
 </div>
 </div>
 </div>
-<div id="challenge-4---minimal-test-suite" class="callout challenge">
+<div id="exercise-4---minimal-test-suite" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-4---minimal-test-suite" class="callout-inner">
-<h3 class="callout-title">Challenge 4 - Minimal Test Suite<a class="anchor" aria-label="anchor" href="#challenge-4---minimal-test-suite"></a>
+<div id="exercise-4---minimal-test-suite" class="callout-inner">
+<h3 class="callout-title">Exercise 4 - Minimal Test Suite<a class="anchor" aria-label="anchor" href="#exercise-4---minimal-test-suite"></a>
 </h3>
 <div class="callout-content">
 <p>Finally, let’s add the <code>summarise_categorical</code> code and
@@ -1418,7 +1418,7 @@ after the new tests have been added?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p><strong>test_eva_data_analysis.py</strong>:</p>
 <div class="codewrapper sourceCode" id="cb30">
@@ -1523,14 +1523,9 @@ eva_data_analysis.py</p>
 </div>
 </div>
 </div>
-<div id="continuous-integration" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="continuous-integration" class="callout-inner">
-<h3 class="callout-title">Continuous Integration<a class="anchor" aria-label="anchor" href="#continuous-integration"></a>
-</h3>
-<div class="callout-content">
+<div class="section level3">
+<h3 id="continuous-integration">Continuous Integration<a class="anchor" aria-label="anchor" href="#continuous-integration"></a></h3>
 <p>So far, we have run our tests locally using.</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1558,7 +1553,7 @@ GitHub Actions to automatically run our tests.</p>
 of our code must be recorded in a <code>requirements.txt</code> file in
 the root of our repository.</li>
 <li>You can find out more about creating requirements.txt files from
-Coderefinery’s tutorial on “Recording Dependencies”.</li>
+CodeRefinery’s tutorial on “Recording Dependencies”.</li>
 <li>For now, add the following list of code dependencies to
 requirements.txt in the root of the spacewalks repository:</li>
 </ul><div class="codewrapper sourceCode" id="cb35">
@@ -1566,11 +1561,15 @@ requirements.txt in the root of the spacewalks repository:</li>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">touch</span> requirements.txt</span></code></pre>
 </div>
-<p>Content of requirements.txt:</p>
-<pre><code><span><span class="va">numpy</span></span>
+<p>Content of <code>requirements.txt</code>:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">numpy</span></span>
 <span><span class="va">pandas</span></span>
 <span><span class="va">matplotlib</span></span>
 <span><span class="va">pytest</span></span></code></pre>
+</div>
 <ul><li>Commit the changes to your repository:</li>
 </ul><div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1649,9 +1648,6 @@ workflows that are active in our repository. You should “CI” here (the
 runs. If the workflow was triggered successfully when we pushed to the
 repository, you should see one workflow run listed here.</li>
 </ul></div>
-</div>
-</div>
-</div>
 </section><section id="further-reading"><h2 class="section-heading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
@@ -1768,7 +1764,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/05-code-testing.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/05-code-testing.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-28",
+  "dateModified": "2024-06-30",
   "datePublished": "2024-06-30"
 }
 
