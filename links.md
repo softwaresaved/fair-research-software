@@ -95,3 +95,5 @@ any links that you are not going to use.
 [google-copilot]: https://github.com/features/copilot
 [codegen]: https://www.codegen.com/
 [ai-pair-programmers]: https://www.codium.ai/glossary/pair-programming/#:~:text=Ethics%20in%20AI%20Pair%20Programming
+[ethics-ucl]: https://www.ucl.ac.uk/research-ethics/sites/research_ethics/files/research_using_apps_guidance_1.2.docx
+[ethics-software]: https://medium.com/@zoyajahidshaikh/ethical-considerations-in-software-development-e1e4ebad2670
