@@ -83,6 +83,71 @@ g_earth = 9.81
 :::
 :::
 
+
+::: challenge
+### Improving Our Code
+
+Let's apply this to `eva_data_analysis.py`.
+
+a. Edit the code as follows to use descriptive variable names:
+
+    - Change data_f to input_file
+    - Change data_t to output_file
+    - Change g_file to graph_file
+    - Change data to eva_df
+    
+b. Commit your changes to your repository. Remember to use an informative commit message.
+
+
+::: solution
+
+Updated code:
+```python
+if __name__ == '__main__':
+
+    if len(sys.argv) < 3:
+        input_file = './eva-data.json'
+        output_file = './eva-data.csv'
+        print(f'Using default input and output filenames')
+    else:
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        print('Using custom input and output filenames')
+
+    graph_file = './cumulative_eva_graph.png'
+
+    print(f'Reading JSON file {input_file}')
+    eva_df = pd.read_json(input_file, convert_dates=['date'])
+    eva_df['eva'] = eva_df['eva'].astype(float)
+    eva_df.dropna(axis=0, inplace=True)
+    eva_df.sort_values('date', inplace=True)
+
+    print(f'Saving to CSV file {output_file}')
+    eva_df.to_csv(output_file, index=False)
+
+    print(f'Plotting cumulative spacewalk duration and saving to {graph_file}')
+    eva_df['duration_hours'] = eva_df['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
+    eva_df['cumulative_time'] = eva_df['duration_hours'].cumsum()
+    plt.plot(eva_df.date, eva_df.cumulative_time, 'ko-')
+    plt.xlabel('Year')
+    plt.ylabel('Total time spent in space to date (hours)')
+    plt.tight_layout()
+    plt.savefig(graph_file)
+    plt.show()
+    print("--END--")
+```
+
+Commit changes:
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Use descriptive variable names"
+```
+
+:::
+:::
+
+
 ### Inline comments
 
 Commenting is a very useful practice to help convey the context of the code.
@@ -129,35 +194,69 @@ The date in the comment also indicates when the code might need to be updated.
 ::: challenge
 ### Add some comments to a code block
 
-Examine lines 7 to 20 of the `bad-code.py` script.
-Add (or change!) as many inline comments as you think is required to help yourself and others understand what that code block is doing.
+a. Examine `eva_data_analysis.py`.
+Add as many inline comments as you think is required to help yourself and others understand what that code is doing.
+b. Commit your changes to your repository. Remember to use an informative commit message.
 
 Hint: Inline comments in Python are denoted by a `#` symbol.
 
 ::: solution
 ### Solution
 
-Some good inline comments may look like the below example.
+Some good inline comments may look like the example below.
 
 ``` python
-for count in range(370):
-    line = csvfile.readline().split(',')
+import pandas as pd
+import matplotlib.pyplot as plt
+import sys
 
-    # Create a temporary dictionary to store data in
-    l = dict()
-    # For each item in the line from the CSV file, store
-    # the item in the temporary dictionary
-    for thing in range(len(line[:7])):
-        l[fieldnames[thing]] = line[thing]
 
-    import json
-    json.dump(l, jsonfile)
 
-    # Add a newline to the json file ready for the next entry
-    jsonfile.write('\n')
+if __name__ == '__main__':
 
-jsonfile.close()
+    if len(sys.argv) < 3:
+        input_file = './eva-data.json'
+        output_file = './eva-data.csv'
+        print(f'Using default input and output filenames')
+    else:
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        print('Using custom input and output filenames')
+
+    graph_file = './cumulative_eva_graph.png'
+
+    print(f'Reading JSON file {input_file}')
+    # Read the data from a JSON file into a Pandas dataframe
+    eva_df = pd.read_json(input_file, convert_dates=['date'])
+    # Clean the data by removing any incomplete rows and sort by date
+    eva_df['eva'] = eva_df['eva'].astype(float)
+    eva_df.dropna(axis=0, inplace=True)
+    eva_df.sort_values('date', inplace=True)
+
+    print(f'Saving to CSV file {output_file}')
+    # Save dataframe to CSV file for later analysis
+    eva_df.to_csv(output_file, index=False)
+
+    print(f'Plotting cumulative spacewalk duration and saving to {graph_file}')
+    # Plot cumulative time spent in space over years
+    eva_df['duration_hours'] = eva_df['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
+    eva_df['cumulative_time'] = eva_df['duration_hours'].cumsum()
+    plt.plot(eva_df.date, eva_df.cumulative_time, 'ko-')
+    plt.xlabel('Year')
+    plt.ylabel('Total time spent in space to date (hours)')
+    plt.tight_layout()
+    plt.savefig(graph_file)
+    plt.show()
+    print("--END--")
 ```
+
+Commit changes:
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Add inline comments to the code"
+```
+
 :::
 :::
 
@@ -177,6 +276,7 @@ Each function can be individually checked to ensure it is doing what is intended
 ### Create a function
 
 Below is a function that reads in a JSON file into a dataframe structure using the [`pandas` library](https://pandas.pydata.org/) - but the code is out of order!
+
 Reorder the lines of code within the function so that the JSON file is read in using the `read_json` method, any incomplete rows are *dropped*, the values are *sorted* by date, and then the cleaned dataframe is *returned*.
 There is also a `print` statement that will display which file is being read in on the command line for verification.
 
@@ -235,19 +335,16 @@ def add(x, y):
 #### Example of a multi-line docstring:
 
 ``` python
-def add(x, y = 1.0):
+def add(x, y=1.0):
     """
-    Add two integers together
+    Adds two numbers together.
 
-    Parameters
-    ----------
-    x         : A number to be included in the addition
-    y (float) : A float number to be included in the addition. Default: 1.0.
+    Args:
+        x: A number to be included in the addition.
+        y (float, optional): A float number to be included in the addition. Defaults to 1.0.
 
-    Returns
-    -------
-    float : The sum of x and y. This value will be a float type since y takes
-            float type.
+    Returns:
+        float: The sum of x and y.
     """
     return x + y
 ```
@@ -289,23 +386,20 @@ def read_json_to_dataframe(input_file):
     return eva_df
 ```
 
-Using [numpy's docstring convention](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard), the docstring may look more like this:
+Using [Google's docstring convention](google-doc-string), the docstring may look more like this:
 
 ``` python
 def read_json_to_dataframe(input_file):
     """
-    Ingest data from a JSON file into a pandas DataFrame.
+    Read the data from a JSON file into a Pandas dataframe.
+    Clean the data by removing any incomplete rows and sort by date
 
-    Parameters
-    ----------
-    input_file
-        The path to the target JSON file
-    
-    Returns
-    -------
-    eva_df : pandas.DataFrame
-        The cleaned and sorted data as a dataframe structure
-    """
+    Args:
+        input_file_ (str): The path to the JSON file.
+
+    Returns:
+         eva_df (pd.DataFrame): The cleaned and sorted data as a dataframe structure
+    """        
     print(f'Reading JSON file {input_file}')
     eva_df = pd.read_json(input_file, 
                           convert_dates=['date'])
@@ -315,6 +409,142 @@ def read_json_to_dataframe(input_file):
 ```
 :::
 :::
+
+### Improving Our Code
+
+Finally, let's apply these good practices to `eva_data_analysis.py`
+and organise our code into functions with descriptive names and docstrings.
+
+``` python
+import pandas as pd
+import matplotlib.pyplot as plt
+import sys
+
+
+def read_json_to_dataframe(input_file_):
+    """
+    Read the data from a JSON file into a Pandas dataframe.
+    Clean the data by removing any incomplete rows and sort by date
+
+    Args:
+        input_file_ (str): The path to the JSON file.
+
+    Returns:
+         eva_df (pd.DataFrame): The loaded dataframe.
+    """
+    print(f'Reading JSON file {input_file_}')
+    eva_df = pd.read_json(input_file_, convert_dates=['date'])
+    eva_df['eva'] = eva_df['eva'].astype(float)
+    eva_df.dropna(axis=0, inplace=True)
+    eva_df.sort_values('date', inplace=True)
+    return eva_df
+
+
+def write_dataframe_to_csv(df_, output_file_):
+    """
+    Write the dataframe to a CSV file.
+
+    Args:
+        df_ (pd.DataFrame): The input dataframe.
+        output_file_ (str): The path to the output CSV file.
+
+    Returns:
+        None
+    """
+    print(f'Saving to CSV file {output_file_}')
+    df_.to_csv(output_file_, index=False)
+
+def text_to_duration(duration):
+    """
+    Convert a text format duration "HH:MM" to duration in hours
+
+    Args:
+        duration (str): The text format duration
+
+    Returns:
+        duration_hours (float): The duration in hours
+    """
+    hours, minutes = duration.split(":")
+    duration_hours = int(hours) + int(minutes)/60
+    return duration_hours
+
+
+def add_duration_hours_variable(df_):
+    """
+    Add duration in hours (duration_hours) variable to the dataset
+
+    Args:
+        df_ (pd.DataFrame): The input dataframe.
+
+    Returns:
+        df_copy (pd.DataFrame): A copy of df_ with the new duration_hours variable added
+    """
+    df_copy = df_.copy()
+    df_copy["duration_hours"] = df_copy["duration"].apply(
+        text_to_duration
+    )
+    return df_copy
+
+
+def plot_cumulative_time_in_space(df_, graph_file_):
+    """
+    Plot the cumulative time spent in space over years
+
+    Convert the duration column from strings to number of hours
+    Calculate cumulative sum of durations
+    Generate a plot of cumulative time spent in space over years and
+    save it to the specified location
+
+    Args:
+        df_ (pd.DataFrame): The input dataframe.
+        graph_file_ (str): The path to the output graph file.
+
+    Returns:
+        None
+    """
+    print(f'Plotting cumulative spacewalk duration and saving to {graph_file_}')
+    df_ = add_duration_hours_variable(df_)
+    df_['cumulative_time'] = df_['duration_hours'].cumsum()
+    plt.plot(df_.date, df_.cumulative_time, 'ko-')
+    plt.xlabel('Year')
+    plt.ylabel('Total time spent in space to date (hours)')
+    plt.tight_layout()
+    plt.savefig(graph_file_)
+    plt.show()
+
+
+if __name__ == '__main__':
+
+    if len(sys.argv) < 3:
+        input_file = './eva-data.json'
+        output_file = './eva-data.csv'
+        print(f'Using default input and output filenames')
+    else:
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        print('Using custom input and output filenames')
+
+    graph_file = './cumulative_eva_graph.png'
+
+    eva_data = read_json_to_dataframe(input_file)
+
+    write_dataframe_to_csv(eva_data, output_file)
+
+    plot_cumulative_time_in_space(eva_data, graph_file)
+
+    print("--END--")
+
+```
+
+Finally, let's commit these changes to our repository. Remember to use an informative commit message.
+
+Commit changes:
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Organise code into functions"
+```
+
 
 ## Summary
 

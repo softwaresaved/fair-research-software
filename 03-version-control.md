@@ -309,6 +309,8 @@ $ git commit -m "Replace spaces in Python filename with hyphens"
  rename my code v2.py => my-code-v2.py (100%)
 ```
 
+
+
 ### Advanced solution
 
 We initially renamed the Python file using the `mv` command, and we than had to `git add` *both* `my-code-v2.py` 
@@ -344,6 +346,42 @@ $ git commit -m "Replace spaces in Python filename with hyphens"
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+#### Improving Our Code
+
+Now that we've seen how to rename files in Git, let's (i) give our input data file
+and script more meaningful names and (ii) choose informative file names
+for our output data file and plot.
+
+First let's update any file names in our script.
+
+```python
+# https://data.nasa.gov/resource/eva.json (with modifications)
+data_f = open('./eva-data.json', 'r')
+data_t = open('./eva-data.csv','w')
+g_file = './cumulative_eva_graph.png'   
+```
+
+Now, let's actually rename our files with git and commit our changes
+```bash
+git mv data.json eva-data.json
+git mv my-code-v2.py eva_data_analysis.py
+git add eva_data_analysis.py
+git status
+```
+```output
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    data.json -> eva-data.json
+	renamed:    my-code-v2.py -> eva_data_analysis.py
+```
+
+Finally, let's commit out changes:
+```bash
+git commit -m "Implement informative file names"
+```
+
 
 ### Commit messages
 
@@ -615,6 +653,263 @@ and `origin`. What is the definition of each term?
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Improving Our Code
+
+Now that we have covered the essentials of version control, we can start to make
+some improvements to our Spacewalks code and use git to track our changes.
+
+In the episode on "FAIR research software" we identified
+a number of areas of where our script could be improved, including.
+
+- Reusability - following Python conventions for code layout
+- Reusability - using standard libraries e.g. Pandas to handle common tasks
+  such as reading and writing data, and manipulating data frames
+- Interoperability - adding a command-line interface
+
+Let's rework (refactor) our script to address these particular issues.
+
+#### Code Layout 
+First, let's address code layout. Our script currently places import statements
+throughout the code. Python convention is to place all import statements at the 
+top of the script - so let's move the import statements to the top.
+
+```python
+import json
+import csv
+import datetime as dt
+import matplotlib.pyplot as plt
+
+# https://data.nasa.gov/resource/eva.json (with modifications)
+data_f = open('./eva-data.json', 'r')
+data_t = open('./eva-data.csv','w')
+g_file = './cumulative_eva_graph.png'   
+fieldnames = ("EVA #", "Country", "Crew    ", "Vehicle", "Date", "Duration", "Purpose")
+
+data=[]
+
+for i in range(374):
+    line=data_f.readline()
+    print(line)
+    data.append(json.loads(line[1:-1]))
+#data.pop(0)
+## Comment out this bit if you don't want the spreadsheet
+
+w=csv.writer(data_t)
+
+time = []
+date =[]
+
+j=0
+for i in data:
+    print(data[j])
+    # and this bit
+    w.writerow(data[j].values())
+    if 'duration' in data[j].keys():
+        tt=data[j]['duration']
+        if tt == '':
+            pass
+        else:
+            t=dt.datetime.strptime(tt,'%H:%M')
+            ttt = dt.timedelta(hours=t.hour, minutes=t.minute, seconds=t.second).total_seconds()/(60*60)
+            print(t,ttt)
+            time.append(ttt)
+            if 'date' in data[j].keys():
+                date.append(dt.datetime.strptime(data[j]['date'][0:10], '%Y-%m-%d'))
+                #date.append(data[j]['date'][0:10])
+
+            else:
+                time.pop(0)
+    j+=1
+
+t=[0]
+for i in time:
+    t.append(t[-1]+i)
+
+date,time = zip(*sorted(zip(date, time)))
+
+plt.plot(date,t[1:], 'ko-')
+plt.xlabel('Year')
+plt.ylabel('Total time spent in space to date (hours)')
+plt.tight_layout()
+plt.savefig(g_file)
+plt.show()
+```
+
+Now let's commit out changes:
+
+```bash
+git add eva_data_analysis.py
+git commit -m "Move import statements to the top of the script"
+```
+
+```output
+[main a97a9e1] Move import statements to the top of the script
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+```
+
+#### Using Standard Libraries
+
+Next, let's address the use of standard libraries. Our script currently
+reads the data line-by-line from the JSON data file and uses custom code to manipulate
+the data. Variables of interest are stored in lists. By choosing custom code over
+standard libraries, we are making our code less readable and more error-prone.
+
+:::  challenge
+
+### Implementing Standard Libraries
+
+The main functionality of our code can be rewritten as follows using Pandas 
+to load and manipulate the data in data frames.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+
+data_f = './eva-data.json'
+data_t = './eva-data.csv'
+g_file = './cumulative_eva_graph.png'
+
+data = pd.read_json(data_f, convert_dates=['date'])
+data['eva'] = data['eva'].astype(float)
+data.dropna(axis=0, inplace=True)
+data.sort_values('date', inplace=True)
+
+data.to_csv(data_t, index=False)
+
+data['duration_hours'] = data['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
+data['cumulative_time'] = data['duration_hours'].cumsum()
+plt.plot(date,t[1:], 'ko-')
+plt.xlabel('Year')
+plt.ylabel('Total time spent in space to date (hours)')
+plt.tight_layout()
+plt.savefig(g_file)
+plt.show()
+
+```
+
+Replace the existing code with the above and commit the changes.
+Remember to use an informative commit message. 
+
+:::  solution
+
+### Solution
+
+- Replace the existing code with the new code
+- Commit the changes as follows
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Refactor code to use standard libraries"
+```
+```output
+[main 0ba9b04] "Refactor code to use standard libraries""
+ 1 file changed, 11 insertions(+), 46 deletions(-)
+```
+:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+#### Adding a Command-Line Interface
+
+Finally, let's add a command-line interface to our script. This will allow users
+to specify the data file to be read and the output file to be written to.
+
+This improves the interoperability of our code as it can now be run from the
+commandline and integrated into other scripts or workflows.
+
+
+We will use Sys.argv to read the command-line arguments. 
+This is a list in Python that contains the command-line arguments passed to the script.
+The first element of the list is the name of the script itself, and the following 
+elements are the arguments passed to the script.
+
+Let's modify our code as follows:
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import sys
+
+
+
+if __name__ == '__main__':
+
+    if len(sys.argv) < 3:
+        data_f = './eva-data.json'
+        data_t = './eva-data.csv'
+        print(f'Using default input and output filenames')
+    else:
+        data_f = sys.argv[1]
+        data_t = sys.argv[2]
+        print('Using custom input and output filenames')
+
+    g_file = './cumulative_eva_graph.png'
+
+    print(f'Reading JSON file {data_f}')
+    data = pd.read_json(data_f, convert_dates=['date'])
+    data['eva'] = data['eva'].astype(float)
+    data.dropna(axis=0, inplace=True)
+    data.sort_values('date', inplace=True)
+
+    print(f'Saving to CSV file {data_t}')
+    data.to_csv(data_t, index=False)
+
+    print(f'Plotting cumulative spacewalk duration and saving to {g_file}')
+    data['duration_hours'] = data['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
+    data['cumulative_time'] = data['duration_hours'].cumsum()
+    plt.plot(data.date, data.cumulative_time, 'ko-')
+    plt.xlabel('Year')
+    plt.ylabel('Total time spent in space to date (hours)')
+    plt.tight_layout()
+    plt.savefig(g_file)
+    plt.show()
+    print("--END--")
+```
+
+We can now run our script from the command line as follows
+```bash
+python eva_data_analysis.py eva_data.json eva_data.csv
+```
+
+Finally, let's commit our changes:
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Add commandline functionality to script"
+```
+```output
+[main b5883f6] Add commandline functionality to script
+ 1 file changed, 30 insertions(+), 16 deletions(-)
+```
+
+:::  challenge
+
+### Pushing Our Improvements to GitHub
+
+Check the status of your repository and push your changes to GitHub.
+
+:::  solution
+
+### Solution
+
+```bash
+git status
+git push origin main
+```
+```output
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 11 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 34.82 KiB | 8.70 MiB/s, done.
+Total 15 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/kkh451/spacewalks-dev.git
+```
+:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ### Summary
 
