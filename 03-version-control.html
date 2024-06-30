@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Version control</h1>
-        <p>Last updated on 2024-06-29 |
+        <p>Last updated on 2024-06-30 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/03-version-control.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -434,6 +434,66 @@ scientific practice.</p>
 <p>Later on in this workshop, we will also see how using a version
 control system allows many people to collaborate on the same project
 without a lot of manual effort to combine different items of work.</p>
+</div>
+<div class="section level3">
+<h3 id="git-version-control-system">Git version control system<a class="anchor" aria-label="anchor" href="#git-version-control-system"></a></h3>
+<p>Git is one of the version control systems around and the one we will
+be using in this course. It is primarily used for source code management
+in software development but it can be used to track changes in files in
+general - it is particularly effective for tracking text-based files
+(e.g. source code files in any programming language, CSV, Markdown,
+HTML, CSS, Tex, etc. files).</p>
+<p>The diagram below shows a typical software development lifecycle with
+Git (starting from making changes locally) and the commonly used
+commands to interact with different parts of the Git infrastructure. We
+will cover all of the commands below during this course, this is just a
+high level overview.</p>
+<figure><img src="fig/ep03_fig05-git-lifecycle.svg" alt="Software development lifecycle with Git showing Git commands and flow of data between components of a Git system, including working directory, staging area, local and remote repository" class="figure mx-auto d-block"><div class="figcaption">Software development lifecycle with Git</div>
+</figure><ul><li>
+<strong>working directory</strong> - a local directory (including
+any subdirectories) where your project files live and where you are
+currently working. It is also known as the “untracked” area of Git. Any
+changes to files will be marked by Git in the working directory. If you
+make changes to the working directory and do not explicitly tell Git to
+save them - you will likely lose those changes. Using
+<code>git add filename</code> command, you tell Git to start tracking
+changes to file filename within your working directory.</li>
+<li>
+<strong>staging area (index)</strong> - once you tell Git to start
+tracking changes to files (with <code>git add filename command</code>),
+Git saves those changes in the staging area on your local machine. Each
+subsequent change to the same file needs to be followed by another git
+add filename command to tell Git to update it in the staging area. To
+see what is in your working directory and staging area at any moment
+(i.e. what changes is Git tracking), run the command
+<code>git status</code>.</li>
+<li>
+<strong>local repository</strong> - stored within the .git directory
+of your project locally, this is where Git wraps together all your
+changes from the staging area and puts them using the git commit
+command. Each commit is a new, permanent snapshot (checkpoint, record)
+of your project in time, which you can share or revert to.</li>
+<li>
+<strong>remote repository</strong> - this is a version of your
+project that is hosted somewhere on the Internet (e.g., on GitHub,
+GitLab or somewhere else). While your project is nicely
+version-controlled in your local repository, and you have snapshots of
+its versions from the past, if your machine crashes - you still may lose
+all your work. Furthermore, you cannot share or collaborate on this
+local work with others easily. Working with a remote repository involves
+pushing your local changes remotely (using git push) and pulling other
+people’s changes from a remote repository to your local copy (using
+<code>git fetch</code> or <code>git pull</code>) to keep the two in sync
+in order to collaborate (with a bonus that your work also gets backed up
+to another machine). Note that a common best practice when collaborating
+with others on a shared repository is to always do a
+<code>git pull</code> before a <code>git push</code>, to ensure you have
+any latest changes before you push your own.</li>
+</ul><p>Git is a distributed version control system allowing for multiple
+people to be working on the same project (even the same file) at the
+same time. Initially, we will use Git to start tracking changes to files
+on our local machines; later on we will start sharing our work on GitHub
+allowing other people to see and contribute to our work.</p>
 </div>
 <div class="section level3">
 <h3 id="create-a-new-repository">Create a new repository<a class="anchor" aria-label="anchor" href="#create-a-new-repository"></a></h3>
@@ -662,7 +722,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -787,7 +847,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -837,8 +897,8 @@ each commit? Discuss in pairs or small groups.</p>
 <li><figure><img src="fig/ex-diff-2.png" alt="Example Diff 2" class="figure mx-auto d-block"><div class="figcaption">Example Diff 2</div>
 </figure></li>
 </ol><p>To find out more about how to generate <code>diffs</code>, you can
-read the <a href="git-diff-docs">Git documentation</a> or the [Tracking
-Changes episode][swc-git-lesson-track] from the <a href="https://swcarpentry.github.io/git-novice" class="external-link">Software Carpentry
+read the <a href="git-diff-docs">Git documentation</a> or the <a href="https://swcarpentry.github.io/git-novice/04-changes.html" class="external-link">Tracking
+Changes episode</a> from the <a href="https://swcarpentry.github.io/git-novice" class="external-link">Software Carpentry
 Version control with Git lesson</a>.</p>
 </div>
 </div>
@@ -848,7 +908,7 @@ Version control with Git lesson</a>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -897,7 +957,7 @@ our project back to that commit with a few different methods:</p>
 <a href="https://git-scm.com/docs/git-revert" class="external-link"><code>git revert</code></a>:
 This command reverts a commit by creating a new commit that reverses the
 action of the supplied commit or list of commits. Because this command
-creates new commits, your git history is more complete and tells the
+creates new commits, your Git history is more complete and tells the
 story of exactly what work you did, i.e., deciding to discard some
 work.</li>
 <li>
@@ -914,21 +974,26 @@ commit would be preserved but not marked for commit (this is the default
 action)</li>
 <li>
 <code>--hard</code>: Any changes you have made since the specified
-commit are discarded Using this command produces a “cleaner” history,
-but does not tell the full story and your work.</li>
+commit are discarded.</li>
 </ul></li>
-</ul></div>
+</ul><p>Using <code>git reset</code> command produces a “cleaner” history,
+but does not tell the full story and your work.</p>
+</div>
 <div class="section level3">
 <h3 id="pushing-to-a-git-server">Pushing to a Git server<a class="anchor" aria-label="anchor" href="#pushing-to-a-git-server"></a></h3>
-<p>One of the benefits of using a distributed version control system,
-such as Git, is its distributed nature. So far we have have been working
-with a project on our local machines and, even though we have been
-incrementally saving our work in a way that is recoverable (version
+<p>Git is also a distributed version control system, allowing us to
+synchronise work between any two or more copies of the same repository -
+the ones that are not located on your machine. So far we have have been
+working with a project on our local machines and, even though we have
+been incrementally saving our work in a way that is recoverable (version
 control), if anything happened to our laptops, the whole project would
 be lost. However, we can use the distribution aspect of Git to push our
 projects and histories to a server (someone else’s computer) so that
 they are accessible and retrievable if the worst were to happen to our
-machines. Distributing our projects in this way also opens us up to
+machines.</p>
+<figure><img src="fig/git-distributed.png" alt="2 Git repositories belonging to 2 different developers linked to a central repository and one another showing two way flow of information in each link" class="figure mx-auto d-block"><div class="figcaption">Git - distributed version control system, image
+from W3Docs (freely available)</div>
+</figure><p>Distributing our projects in this way also opens us up to
 collaboration, since colleagues would be able to access our projects,
 make their own copies on their machines, and conduct their own work.</p>
 <p>We will now go through how to push a local project to <a href="https://github.com" class="external-link">GitHub</a>, though other Git hosting services
@@ -1033,7 +1098,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul><li>
 <code>remote</code>: a version control concept where two (or more)
@@ -1164,7 +1229,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/03-version-control.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/03-version-control.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-29",
+  "dateModified": "2024-06-30",
   "datePublished": "2024-06-30"
 }
 
