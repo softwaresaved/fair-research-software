@@ -41,7 +41,7 @@ Attending a [Software Carpentry][swc-lessons] or a similar course could help wit
 gaining necessary prerequisite skills. 
 
 Some of our code examples use the Python library `Pandas` for manipulating data frames.
-Familiarity with this library and it's [apply() method](pandas-apply-docs) would be beneficial.    
+Familiarity with this library and its [apply() method](pandas-apply-docs) would be beneficial.    
 
-Please also make sure you have the [required software](../index.html#setup) installed before attending this course.
+Please also make sure you have [all the required software](../index.html#setup) installed before attending this course.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
