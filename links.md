@@ -61,7 +61,7 @@ any links that you are not going to use.
 [codecheck]: https://codecheck.org.uk/project/
 [python-201-documentation]: https://python-tutorial.dev/201/tutorial/documentation.html
 [python-irsd-reuse-and-release]: https://carpentries-incubator.github.io/python-intermediate-development/42-software-reuse/index.html
-[coderefinery-documenting]:https://coderefinery.github.io/documentation/
+[coderefinery-documentation]:https://coderefinery.github.io/documentation/
 [grch-documenting]: https://goodresearch.dev/docs
 [art-of-readme]: https://github.com/hackergrrl/art-of-readme#bonus-the-readme-checklist
 [realpython-mkdocs]: https://realpython.com/python-project-documentation-with-mkdocs/
@@ -98,3 +98,4 @@ any links that you are not going to use.
 [ai-pair-programmers]: https://www.codium.ai/glossary/pair-programming/#:~:text=Ethics%20in%20AI%20Pair%20Programming
 [ethics-ucl]: https://www.ucl.ac.uk/research-ethics/sites/research_ethics/files/research_using_apps_guidance_1.2.docx
 [ethics-software]: https://medium.com/@zoyajahidshaikh/ethical-considerations-in-software-development-e1e4ebad2670
+[cff]: https://citation-file-format.github.io/

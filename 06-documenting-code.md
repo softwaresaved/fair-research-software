@@ -726,8 +726,9 @@ We recommend the following resources for some additional reading on the topic of
   a high-quality README
 - [What are best practices for research software documentation?][ssi-blog-docs] (Software Sustainability blog post) by Stephan Druskat et al.
 - [Preparing Software for Reuse and Release episode][python-irsd-reuse-and-release] from the Intermediate Research Software Development lesson on The Carpentries Incubator by Aleksandra Nenadic et al.
-- [How to document your research software][coderefinery-documentation] Coderefinery lesson
-
+- [CodeRefinery lesson: How to document your research software][coderefinery-documentation]
+- [CITATION.cff file format][cff]
+  
 Also check the [full reference set](learners/reference.md#litref) for the course.
 
 
