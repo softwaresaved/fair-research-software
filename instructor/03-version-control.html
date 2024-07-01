@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Version control</h1>
-        <p>Last updated on 2024-06-30 |
+        <p>Last updated on 2024-07-01 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/03-version-control.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -724,7 +724,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -796,12 +796,14 @@ to be done is to commit them.</p>
 </div>
 </div>
 </div>
-<div class="section level4">
-<h4 id="improving-our-code">Improving Our Code<a class="anchor" aria-label="anchor" href="#improving-our-code"></a></h4>
-<p>Now that we’ve seen how to rename files in Git, let’s (i) give our
-input data file and script more meaningful names and (ii) choose
-informative file names for our output data file and plot.</p>
-<p>First let’s update any file names in our script.</p>
+</div>
+<div class="section level3">
+<h3 id="rename-our-data-and-output-files">Rename our data and output files<a class="anchor" aria-label="anchor" href="#rename-our-data-and-output-files"></a></h3>
+<p>Now that we have seen how to rename files in Git, let’s:</p>
+<ol style="list-style-type: lower-roman"><li>give our input data file and script more meaningful names and</li>
+<li>choose informative file names for our output data file and
+plot.</li>
+</ol><p>First let’s update file names in our script.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -810,8 +812,8 @@ informative file names for our output data file and plot.</p>
 <span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>data_t <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.csv'</span>,<span class="st">'w'</span>)</span>
 <span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>g_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span>   </span></code></pre>
 </div>
-<p>Now, let’s actually rename our files with git and commit our
-changes</p>
+<p>Now, let’s actually rename our files on the file system using git and
+commit our changes.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -834,7 +836,6 @@ Changes to be committed:
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Implement informative file names"</span></span></code></pre>
-</div>
 </div>
 </div>
 <div class="section level3">
@@ -889,7 +890,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -950,7 +951,7 @@ Version control with Git lesson</a>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -1140,7 +1141,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul><li>
 <code>remote</code>: a version control concept where two (or more)
@@ -1151,298 +1152,6 @@ sync by exchanging commits</li>
 remote repository to designate the source of truth for
 collaborators</li>
 </ul></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="improving-our-code-1">Improving Our Code<a class="anchor" aria-label="anchor" href="#improving-our-code-1"></a></h3>
-<p>Now that we have covered the essentials of version control, we can
-start to make some improvements to our Spacewalks code and use git to
-track our changes.</p>
-<p>In the episode on “FAIR research software” we identified a number of
-areas of where our script could be improved, including.</p>
-<ul><li>Reusability - following Python conventions for code layout</li>
-<li>Reusability - using standard libraries e.g. Pandas to handle common
-tasks such as reading and writing data, and manipulating data
-frames</li>
-<li>Interoperability - adding a command-line interface</li>
-</ul><p>Let’s rework (refactor) our script to address these particular
-issues.</p>
-<div class="section level4">
-<h4 id="code-layout">Code Layout<a class="anchor" aria-label="anchor" href="#code-layout"></a></h4>
-<p>First, let’s address code layout. Our script currently places import
-statements throughout the code. Python convention is to place all import
-statements at the top of the script - so let’s move the import
-statements to the top.</p>
-<div class="codewrapper sourceCode" id="cb38">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a><span class="im">import</span> csv</span>
-<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
-<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a></span>
-<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a><span class="co"># https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
-<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a>data_f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.json'</span>, <span class="st">'r'</span>)</span>
-<span id="cb38-8"><a href="#cb38-8" tabindex="-1"></a>data_t <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.csv'</span>,<span class="st">'w'</span>)</span>
-<span id="cb38-9"><a href="#cb38-9" tabindex="-1"></a>g_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span>   </span>
-<span id="cb38-10"><a href="#cb38-10" tabindex="-1"></a>fieldnames <span class="op">=</span> (<span class="st">"EVA #"</span>, <span class="st">"Country"</span>, <span class="st">"Crew    "</span>, <span class="st">"Vehicle"</span>, <span class="st">"Date"</span>, <span class="st">"Duration"</span>, <span class="st">"Purpose"</span>)</span>
-<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a></span>
-<span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a>data<span class="op">=</span>[]</span>
-<span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a></span>
-<span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">374</span>):</span>
-<span id="cb38-15"><a href="#cb38-15" tabindex="-1"></a>    line<span class="op">=</span>data_f.readline()</span>
-<span id="cb38-16"><a href="#cb38-16" tabindex="-1"></a>    <span class="bu">print</span>(line)</span>
-<span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a>    data.append(json.loads(line[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]))</span>
-<span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a><span class="co">#data.pop(0)</span></span>
-<span id="cb38-19"><a href="#cb38-19" tabindex="-1"></a><span class="co">## Comment out this bit if you don't want the spreadsheet</span></span>
-<span id="cb38-20"><a href="#cb38-20" tabindex="-1"></a></span>
-<span id="cb38-21"><a href="#cb38-21" tabindex="-1"></a>w<span class="op">=</span>csv.writer(data_t)</span>
-<span id="cb38-22"><a href="#cb38-22" tabindex="-1"></a></span>
-<span id="cb38-23"><a href="#cb38-23" tabindex="-1"></a>time <span class="op">=</span> []</span>
-<span id="cb38-24"><a href="#cb38-24" tabindex="-1"></a>date <span class="op">=</span>[]</span>
-<span id="cb38-25"><a href="#cb38-25" tabindex="-1"></a></span>
-<span id="cb38-26"><a href="#cb38-26" tabindex="-1"></a>j<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb38-27"><a href="#cb38-27" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> data:</span>
-<span id="cb38-28"><a href="#cb38-28" tabindex="-1"></a>    <span class="bu">print</span>(data[j])</span>
-<span id="cb38-29"><a href="#cb38-29" tabindex="-1"></a>    <span class="co"># and this bit</span></span>
-<span id="cb38-30"><a href="#cb38-30" tabindex="-1"></a>    w.writerow(data[j].values())</span>
-<span id="cb38-31"><a href="#cb38-31" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'duration'</span> <span class="kw">in</span> data[j].keys():</span>
-<span id="cb38-32"><a href="#cb38-32" tabindex="-1"></a>        tt<span class="op">=</span>data[j][<span class="st">'duration'</span>]</span>
-<span id="cb38-33"><a href="#cb38-33" tabindex="-1"></a>        <span class="cf">if</span> tt <span class="op">==</span> <span class="st">''</span>:</span>
-<span id="cb38-34"><a href="#cb38-34" tabindex="-1"></a>            <span class="cf">pass</span></span>
-<span id="cb38-35"><a href="#cb38-35" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb38-36"><a href="#cb38-36" tabindex="-1"></a>            t<span class="op">=</span>dt.datetime.strptime(tt,<span class="st">'%H:%M'</span>)</span>
-<span id="cb38-37"><a href="#cb38-37" tabindex="-1"></a>            ttt <span class="op">=</span> dt.timedelta(hours<span class="op">=</span>t.hour, minutes<span class="op">=</span>t.minute, seconds<span class="op">=</span>t.second).total_seconds()<span class="op">/</span>(<span class="dv">60</span><span class="op">*</span><span class="dv">60</span>)</span>
-<span id="cb38-38"><a href="#cb38-38" tabindex="-1"></a>            <span class="bu">print</span>(t,ttt)</span>
-<span id="cb38-39"><a href="#cb38-39" tabindex="-1"></a>            time.append(ttt)</span>
-<span id="cb38-40"><a href="#cb38-40" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">'date'</span> <span class="kw">in</span> data[j].keys():</span>
-<span id="cb38-41"><a href="#cb38-41" tabindex="-1"></a>                date.append(dt.datetime.strptime(data[j][<span class="st">'date'</span>][<span class="dv">0</span>:<span class="dv">10</span>], <span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">'</span>))</span>
-<span id="cb38-42"><a href="#cb38-42" tabindex="-1"></a>                <span class="co">#date.append(data[j]['date'][0:10])</span></span>
-<span id="cb38-43"><a href="#cb38-43" tabindex="-1"></a></span>
-<span id="cb38-44"><a href="#cb38-44" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb38-45"><a href="#cb38-45" tabindex="-1"></a>                time.pop(<span class="dv">0</span>)</span>
-<span id="cb38-46"><a href="#cb38-46" tabindex="-1"></a>    j<span class="op">+=</span><span class="dv">1</span></span>
-<span id="cb38-47"><a href="#cb38-47" tabindex="-1"></a></span>
-<span id="cb38-48"><a href="#cb38-48" tabindex="-1"></a>t<span class="op">=</span>[<span class="dv">0</span>]</span>
-<span id="cb38-49"><a href="#cb38-49" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> time:</span>
-<span id="cb38-50"><a href="#cb38-50" tabindex="-1"></a>    t.append(t[<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>i)</span>
-<span id="cb38-51"><a href="#cb38-51" tabindex="-1"></a></span>
-<span id="cb38-52"><a href="#cb38-52" tabindex="-1"></a>date,time <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span><span class="bu">sorted</span>(<span class="bu">zip</span>(date, time)))</span>
-<span id="cb38-53"><a href="#cb38-53" tabindex="-1"></a></span>
-<span id="cb38-54"><a href="#cb38-54" tabindex="-1"></a>plt.plot(date,t[<span class="dv">1</span>:], <span class="st">'ko-'</span>)</span>
-<span id="cb38-55"><a href="#cb38-55" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb38-56"><a href="#cb38-56" tabindex="-1"></a>plt.ylabel(<span class="st">'Total time spent in space to date (hours)'</span>)</span>
-<span id="cb38-57"><a href="#cb38-57" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb38-58"><a href="#cb38-58" tabindex="-1"></a>plt.savefig(g_file)</span>
-<span id="cb38-59"><a href="#cb38-59" tabindex="-1"></a>plt.show()</span></code></pre>
-</div>
-<p>Now let’s commit out changes:</p>
-<div class="codewrapper sourceCode" id="cb39">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">git</span> add eva_data_analysis.py</span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Move import statements to the top of the script"</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[main a97a9e1] Move import statements to the top of the script
- 1 file changed, 4 insertions(+), 4 deletions(-)</code></pre>
-</div>
-</div>
-<div class="section level4">
-<h4 id="using-standard-libraries">Using Standard Libraries<a class="anchor" aria-label="anchor" href="#using-standard-libraries"></a></h4>
-<p>Next, let’s address the use of standard libraries. Our script
-currently reads the data line-by-line from the JSON data file and uses
-custom code to manipulate the data. Variables of interest are stored in
-lists. By choosing custom code over standard libraries, we are making
-our code less readable and more error-prone.</p>
-<div id="implementing-standard-libraries" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="implementing-standard-libraries" class="callout-inner">
-<h3 class="callout-title">Implementing Standard Libraries<a class="anchor" aria-label="anchor" href="#implementing-standard-libraries"></a>
-</h3>
-<div class="callout-content">
-<p>The main functionality of our code can be rewritten as follows using
-Pandas to load and manipulate the data in data frames.</p>
-<div class="codewrapper sourceCode" id="cb41">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a></span>
-<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a></span>
-<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a>data_f <span class="op">=</span> <span class="st">'./eva-data.json'</span></span>
-<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a>data_t <span class="op">=</span> <span class="st">'./eva-data.csv'</span></span>
-<span id="cb41-8"><a href="#cb41-8" tabindex="-1"></a>g_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span></span>
-<span id="cb41-9"><a href="#cb41-9" tabindex="-1"></a></span>
-<span id="cb41-10"><a href="#cb41-10" tabindex="-1"></a>data <span class="op">=</span> pd.read_json(data_f, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
-<span id="cb41-11"><a href="#cb41-11" tabindex="-1"></a>data[<span class="st">'eva'</span>] <span class="op">=</span> data[<span class="st">'eva'</span>].astype(<span class="bu">float</span>)</span>
-<span id="cb41-12"><a href="#cb41-12" tabindex="-1"></a>data.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb41-13"><a href="#cb41-13" tabindex="-1"></a>data.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb41-14"><a href="#cb41-14" tabindex="-1"></a></span>
-<span id="cb41-15"><a href="#cb41-15" tabindex="-1"></a>data.to_csv(data_t, index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb41-16"><a href="#cb41-16" tabindex="-1"></a></span>
-<span id="cb41-17"><a href="#cb41-17" tabindex="-1"></a>data[<span class="st">'duration_hours'</span>] <span class="op">=</span> data[<span class="st">'duration'</span>].<span class="bu">str</span>.split(<span class="st">":"</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(x[<span class="dv">0</span>]) <span class="op">+</span> <span class="bu">int</span>(x[<span class="dv">1</span>])<span class="op">/</span><span class="dv">60</span>)</span>
-<span id="cb41-18"><a href="#cb41-18" tabindex="-1"></a>data[<span class="st">'cumulative_time'</span>] <span class="op">=</span> data[<span class="st">'duration_hours'</span>].cumsum()</span>
-<span id="cb41-19"><a href="#cb41-19" tabindex="-1"></a>plt.plot(date,t[<span class="dv">1</span>:], <span class="st">'ko-'</span>)</span>
-<span id="cb41-20"><a href="#cb41-20" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb41-21"><a href="#cb41-21" tabindex="-1"></a>plt.ylabel(<span class="st">'Total time spent in space to date (hours)'</span>)</span>
-<span id="cb41-22"><a href="#cb41-22" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb41-23"><a href="#cb41-23" tabindex="-1"></a>plt.savefig(g_file)</span>
-<span id="cb41-24"><a href="#cb41-24" tabindex="-1"></a>plt.show()</span></code></pre>
-</div>
-<p>Replace the existing code with the above and commit the changes.
-Remember to use an informative commit message.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
-</button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
-<div class="accordion-body">
-<ul><li>Replace the existing code with the new code</li>
-<li>Commit the changes as follows</li>
-</ul><div class="codewrapper sourceCode" id="cb42">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="fu">git</span> add eva_data_analysis.py</span>
-<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Refactor code to use standard libraries"</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[main 0ba9b04] "Refactor code to use standard libraries""
- 1 file changed, 11 insertions(+), 46 deletions(-)</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level4">
-<h4 id="adding-a-command-line-interface">Adding a Command-Line Interface<a class="anchor" aria-label="anchor" href="#adding-a-command-line-interface"></a></h4>
-<p>Finally, let’s add a command-line interface to our script. This will
-allow users to specify the data file to be read and the output file to
-be written to.</p>
-<p>This improves the interoperability of our code as it can now be run
-from the commandline and integrated into other scripts or workflows.</p>
-<p>We will use Sys.argv to read the command-line arguments. This is a
-list in Python that contains the command-line arguments passed to the
-script. The first element of the list is the name of the script itself,
-and the following elements are the arguments passed to the script.</p>
-<p>Let’s modify our code as follows:</p>
-<div class="codewrapper sourceCode" id="cb44">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a></span>
-<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a></span>
-<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a></span>
-<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a></span>
-<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
-<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a>        data_f <span class="op">=</span> <span class="st">'./eva-data.json'</span></span>
-<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a>        data_t <span class="op">=</span> <span class="st">'./eva-data.csv'</span></span>
-<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Using default input and output filenames'</span>)</span>
-<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb44-14"><a href="#cb44-14" tabindex="-1"></a>        data_f <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb44-15"><a href="#cb44-15" tabindex="-1"></a>        data_t <span class="op">=</span> sys.argv[<span class="dv">2</span>]</span>
-<span id="cb44-16"><a href="#cb44-16" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Using custom input and output filenames'</span>)</span>
-<span id="cb44-17"><a href="#cb44-17" tabindex="-1"></a></span>
-<span id="cb44-18"><a href="#cb44-18" tabindex="-1"></a>    g_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span></span>
-<span id="cb44-19"><a href="#cb44-19" tabindex="-1"></a></span>
-<span id="cb44-20"><a href="#cb44-20" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Reading JSON file </span><span class="sc">{</span>data_f<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb44-21"><a href="#cb44-21" tabindex="-1"></a>    data <span class="op">=</span> pd.read_json(data_f, convert_dates<span class="op">=</span>[<span class="st">'date'</span>])</span>
-<span id="cb44-22"><a href="#cb44-22" tabindex="-1"></a>    data[<span class="st">'eva'</span>] <span class="op">=</span> data[<span class="st">'eva'</span>].astype(<span class="bu">float</span>)</span>
-<span id="cb44-23"><a href="#cb44-23" tabindex="-1"></a>    data.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb44-24"><a href="#cb44-24" tabindex="-1"></a>    data.sort_values(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb44-25"><a href="#cb44-25" tabindex="-1"></a></span>
-<span id="cb44-26"><a href="#cb44-26" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Saving to CSV file </span><span class="sc">{</span>data_t<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb44-27"><a href="#cb44-27" tabindex="-1"></a>    data.to_csv(data_t, index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb44-28"><a href="#cb44-28" tabindex="-1"></a></span>
-<span id="cb44-29"><a href="#cb44-29" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Plotting cumulative spacewalk duration and saving to </span><span class="sc">{</span>g_file<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb44-30"><a href="#cb44-30" tabindex="-1"></a>    data[<span class="st">'duration_hours'</span>] <span class="op">=</span> data[<span class="st">'duration'</span>].<span class="bu">str</span>.split(<span class="st">":"</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(x[<span class="dv">0</span>]) <span class="op">+</span> <span class="bu">int</span>(x[<span class="dv">1</span>])<span class="op">/</span><span class="dv">60</span>)</span>
-<span id="cb44-31"><a href="#cb44-31" tabindex="-1"></a>    data[<span class="st">'cumulative_time'</span>] <span class="op">=</span> data[<span class="st">'duration_hours'</span>].cumsum()</span>
-<span id="cb44-32"><a href="#cb44-32" tabindex="-1"></a>    plt.plot(data.date, data.cumulative_time, <span class="st">'ko-'</span>)</span>
-<span id="cb44-33"><a href="#cb44-33" tabindex="-1"></a>    plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb44-34"><a href="#cb44-34" tabindex="-1"></a>    plt.ylabel(<span class="st">'Total time spent in space to date (hours)'</span>)</span>
-<span id="cb44-35"><a href="#cb44-35" tabindex="-1"></a>    plt.tight_layout()</span>
-<span id="cb44-36"><a href="#cb44-36" tabindex="-1"></a>    plt.savefig(g_file)</span>
-<span id="cb44-37"><a href="#cb44-37" tabindex="-1"></a>    plt.show()</span>
-<span id="cb44-38"><a href="#cb44-38" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--END--"</span>)</span></code></pre>
-</div>
-<p>We can now run our script from the command line as follows</p>
-<div class="codewrapper sourceCode" id="cb45">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="ex">python</span> eva_data_analysis.py eva_data.json eva_data.csv</span></code></pre>
-</div>
-<p>Finally, let’s commit our changes:</p>
-<div class="codewrapper sourceCode" id="cb46">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a><span class="fu">git</span> add eva_data_analysis.py</span>
-<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add commandline functionality to script"</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[main b5883f6] Add commandline functionality to script
- 1 file changed, 30 insertions(+), 16 deletions(-)</code></pre>
-</div>
-<div id="pushing-our-improvements-to-github" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="pushing-our-improvements-to-github" class="callout-inner">
-<h3 class="callout-title">Pushing Our Improvements to GitHub<a class="anchor" aria-label="anchor" href="#pushing-our-improvements-to-github"></a>
-</h3>
-<div class="callout-content">
-<p>Check the status of your repository and push your changes to
-GitHub.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
-</button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb48">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Enumerating objects: 15, done.
-Counting objects: 100% (15/15), done.
-Delta compression using up to 11 threads
-Compressing objects: 100% (15/15), done.
-Writing objects: 100% (15/15), 34.82 KiB | 8.70 MiB/s, done.
-Total 15 (delta 2), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/kkh451/spacewalks-dev.git</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1563,7 +1272,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/03-version-control.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/03-version-control.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-30",
+  "dateModified": "2024-07-01",
   "datePublished": "2024-07-01"
 }
 
