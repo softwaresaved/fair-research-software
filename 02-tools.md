@@ -248,11 +248,13 @@ The expected out put of each command is:
 2. `bash` or `zsh` - this tells you what shell language you are using. In this course we show examples in Bash.
 3. Your "present working directory" or the folder where your shell is running
 4. Your username
-5 and 6. In this course we are using Python 3. If `python --version` gives you Python 2.x you may have two versions of Python installed on your computer and need to be careful which one you are using.
-7 and 8. The file path to where the Python version you are using is installed. If you have more than one version these should be different paths.
+5. In this course we are using Python 3. If `python --version` gives you Python 2.x you may have two versions of Python installed on your computer and need to be careful which one you are using.
+6. Use this command to be certain you are using Python version 3, not 2, if you have both installed.
+7. The file path to where the Python version you are calling is installed.
+8. If you have more than one version these should be different paths, if both 5. and 6. gave the same result then 7. and 8. should match as well.
 9. The help message explaining how to use the `git` command.
 10. You should have `user.name`, `user.email` and `core.editor` set in your Git configuration. Check that the editor listed is one you know how to use.
-11. This checks if you haev set up your connection to GitHub correctly. If is says `permission denied` you may need to look at the instructions for setting up SSH keys again on the Setup page.
+11. This checks if you have set up your connection to GitHub correctly. If is says `permission denied` you may need to look at the instructions for setting up SSH keys again on the Setup page.
 12. This should open VSCode in your current working directory. macOS users may need to first open VS Code and [add it to the PATH](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
 13. You should have the extensions GitLens, Git Graph, Python, JSON and Excel Viewer installed to use in this course.
 
