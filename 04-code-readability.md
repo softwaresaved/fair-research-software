@@ -18,22 +18,237 @@ After completing this episode, participants should be able to:
 -   Write informative inline comments and docstrings to provide more detail about what the code is doing
 :::
 
-In this episode, we will introduce the concept of readable code and consider how it can help create reusable scientific software and empower collaboration between researchers.
+In this episode, we will introduce the concept of readable code and consider how it can help create reusable 
+scientific software and empower collaboration between researchers.
 
-### Motivation for code readability
+## Motivation for code readability
 
 When someone writes code, they do so based on requirements that are likely to change in the future.
 Requirements change because software interacts with the real world, which is dynamic.
-When these requirements change, the developer (who is not necessarily the same person who wrote the original code) must implement the new requirements.
+When these requirements change, the developer (who is not necessarily the same person who wrote the original code) 
+must implement the new requirements.
 They do this by reading the original code to understand the different abstractions, and identify what needs to change.
-Readable code facilitates the reading and understanding of the abstraction phases and, as a result, facilitates the evolution of the codebase.
+Readable code facilitates the reading and understanding of the abstraction phases and, as a result, facilitates the 
+evolution of the codebase.
 Readable code saves future developers' time and effort.
 
-In order to develop readable code, we should ask ourselves: "If I re-read this piece of code in fifteen days or one year, will I be able to understand what I have done and why?" Or even better: "If a new person who just joined the project reads my software, will they be able to understand what I have written here?"
+In order to develop readable code, we should ask ourselves: "If I re-read this piece of code in fifteen days or one 
+year, will I be able to understand what I have done and why?" 
+Or even better: "If a new person who just joined the project reads my software, will they be able to understand 
+what I have written here?"
 
 We will now learn about a few software best practices we can follow to help create readable code.
 
-### Variable names
+## Code layout
+
+Our script currently places import statements throughout the code. 
+Python convention is to place all import statements at the top of the script so that dependant libraries 
+are clearly visible and not buried inside the code (even though there are standard ways of describing dependencies - 
+e.g. using `requirements.txt` file). 
+This will help readability (accessibility) and reusability of our code.
+
+Our code after the modification should look like the following.
+
+```python
+import json
+import csv
+import datetime as dt
+import matplotlib.pyplot as plt
+
+# https://data.nasa.gov/resource/eva.json (with modifications)
+data_f = open('./eva-data.json', 'r')
+data_t = open('./eva-data.csv','w')
+g_file = './cumulative_eva_graph.png'   
+fieldnames = ("EVA #", "Country", "Crew    ", "Vehicle", "Date", "Duration", "Purpose")
+
+data=[]
+
+for i in range(374):
+    line=data_f.readline()
+    print(line)
+    data.append(json.loads(line[1:-1]))
+#data.pop(0)
+## Comment out this bit if you don't want the spreadsheet
+
+w=csv.writer(data_t)
+
+time = []
+date =[]
+
+j=0
+for i in data:
+    print(data[j])
+    # and this bit
+    w.writerow(data[j].values())
+    if 'duration' in data[j].keys():
+        tt=data[j]['duration']
+        if tt == '':
+            pass
+        else:
+            t=dt.datetime.strptime(tt,'%H:%M')
+            ttt = dt.timedelta(hours=t.hour, minutes=t.minute, seconds=t.second).total_seconds()/(60*60)
+            print(t,ttt)
+            time.append(ttt)
+            if 'date' in data[j].keys():
+                date.append(dt.datetime.strptime(data[j]['date'][0:10], '%Y-%m-%d'))
+                #date.append(data[j]['date'][0:10])
+
+            else:
+                time.pop(0)
+    j+=1
+
+t=[0]
+for i in time:
+    t.append(t[-1]+i)
+
+date,time = zip(*sorted(zip(date, time)))
+
+plt.plot(date,t[1:], 'ko-')
+plt.xlabel('Year')
+plt.ylabel('Total time spent in space to date (hours)')
+plt.tight_layout()
+plt.savefig(g_file)
+plt.show()
+```
+
+Let's make sure we commit our changes.
+
+```bash
+git add eva_data_analysis.py
+git commit -m "Move import statements to the top of the script"
+```
+
+```output
+[main a97a9e1] Move import statements to the top of the script
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+```
+
+## Standard libraries
+
+Our script currently reads the data line-by-line from the JSON data file and uses custom code to manipulate
+the data. 
+Variables of interest are stored in lists but there are more suitable data structures (e.g. data frames) 
+to store data in our case. 
+By choosing custom code over standard and well-tested libraries, we are making our code less readable and understandable
+and more error-prone.
+
+The main functionality of our code can be rewritten as follows using `Pandas` library to load and manipulate the data 
+in data frames.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+data_f = './eva-data.json'
+data_t = './eva-data.csv'
+g_file = './cumulative_eva_graph.png'
+
+data = pd.read_json(data_f, convert_dates=['date'])
+data['eva'] = data['eva'].astype(float)
+data.dropna(axis=0, inplace=True)
+data.sort_values('date', inplace=True)
+
+data.to_csv(data_t, index=False)
+
+data['duration_hours'] = data['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
+data['cumulative_time'] = data['duration_hours'].cumsum()
+plt.plot(date,t[1:], 'ko-')
+plt.xlabel('Year')
+plt.ylabel('Total time spent in space to date (hours)')
+plt.tight_layout()
+plt.savefig(g_file)
+plt.show()
+
+```
+
+We should replace the existing code in our Python script `eva_data_analysis.py` with the above code and commit the 
+changes. Remember to use an informative commit message.
+
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Refactor code to use standard libraries"
+```
+```output
+[main 0ba9b04] "Refactor code to use standard libraries""
+ 1 file changed, 11 insertions(+), 46 deletions(-)
+```
+
+## Command-line interface to code
+
+Let's add a command-line interface to our script to allow us pass the data file to be read and the output file to be 
+written to as parameters to our script and avoid hard-coding them.
+This improves interoperability and reusability of our code as it can now be run from the
+command line terminal and integrated into other scripts or workflows/pipelines (e.g. another script can produce our 
+input data and can be "chained" with our code in a data analysis pipeline).
+
+We will use `sys.argv` library to read the command line arguments passes to our script and make them available in our 
+code as a list.
+The first element of the list is the name of the script itself, and the following
+elements are the arguments passed to the script.
+
+Our modified code will now look as follows.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import sys
+
+
+if __name__ == '__main__':
+
+    if len(sys.argv) < 3:
+        data_f = './eva-data.json'
+        data_t = './eva-data.csv'
+        print(f'Using default input and output filenames')
+    else:
+        data_f = sys.argv[1]
+        data_t = sys.argv[2]
+        print('Using custom input and output filenames')
+
+    g_file = './cumulative_eva_graph.png'
+
+    print(f'Reading JSON file {data_f}')
+    data = pd.read_json(data_f, convert_dates=['date'])
+    data['eva'] = data['eva'].astype(float)
+    data.dropna(axis=0, inplace=True)
+    data.sort_values('date', inplace=True)
+
+    print(f'Saving to CSV file {data_t}')
+    data.to_csv(data_t, index=False)
+
+    print(f'Plotting cumulative spacewalk duration and saving to {g_file}')
+    data['duration_hours'] = data['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
+    data['cumulative_time'] = data['duration_hours'].cumsum()
+    plt.plot(data.date, data.cumulative_time, 'ko-')
+    plt.xlabel('Year')
+    plt.ylabel('Total time spent in space to date (hours)')
+    plt.tight_layout()
+    plt.savefig(g_file)
+    plt.show()
+    print("--END--")
+```
+
+We can now run our script from the command line passing the json input data file and csv output data file as:
+
+```bash
+python eva_data_analysis.py eva_data.json eva_data.csv
+```
+
+Remember to commit our changes.
+
+```bash
+git status
+git add eva_data_analysis.py
+git commit -m "Add commandline functionality to script"
+```
+```output
+[main b5883f6] Add commandline functionality to script
+ 1 file changed, 30 insertions(+), 16 deletions(-)
+```
+
+## Meaningful variable names
 
 Variables are the most common thing you will assign when coding, and it's really important that it is clear what each variable means in order to understand what the code is doing.
 If you return to your code after a long time doing something else, or share your code with a colleague, it should be easy enough to understand what variables are involved in your code from their names.
@@ -57,7 +272,7 @@ There are also some gotchas to consider when naming variables:
 -   Programming languages often have global pre-built functions, such as `input`, which you may accidentally overwrite if you assign a variable with the same name.
     -   Again in Python, you would actually reassign the `input` name and no longer be able to access the original `input` function if you used this as a variable name. So in this case opting for something like `input_data` would be preferable. (This behaviour may be explicitly disallowed in other programming languages.)
 
-::: challenge
+:::::: challenge
 ### Give a descriptive name to a variable
 
 Below we have a variable called `var` being set the value of 9.81.
@@ -81,11 +296,10 @@ A more decriptive name for this variable therefore might be:
 g_earth = 9.81
 ```
 :::
-:::
+::::::
 
 
-::: challenge
-### Improving Our Code
+:::::: challenge
 
 Let's apply this to `eva_data_analysis.py`.
 
@@ -145,10 +359,10 @@ git commit -m "Use descriptive variable names"
 ```
 
 :::
-:::
+::::::
 
 
-### Inline comments
+## Inline comments
 
 Commenting is a very useful practice to help convey the context of the code.
 It can be helpful as a reminder for your future self or your collaborators as to why code is written in a certain way, how it is achieving a specific task, or the real-world implications of your code.
@@ -168,9 +382,9 @@ But here are a few things to keep in mind when commenting your code:
 -   Keep them short and concise. Large blocks of text quickly become unreadable and difficult to maintain.
 -   Comments that contradict the code are worse than no comments. Always make a priority of keeping comments up-to-date when code changes.
 
-#### Examples of helpful vs. unhelpful comments
+### Examples of helpful vs. unhelpful comments
 
-##### Unhelpful:
+#### Unhelpful:
 
 ``` python
 statetax = 1.0625  # Assigns the float 1.0625 to the variable 'statetax'
@@ -180,7 +394,7 @@ specialtax = 1.01  # Assigns the float 1.01 to the variable 'specialtax'
 
 The comments in this code simply tell us what the code does, which is easy enough to figure out without the inline comments.
 
-##### Helpful:
+#### Helpful:
 
 ``` python
 statetax = 1.0625  # State sales tax rate is 6.25% through Jan. 1
@@ -209,7 +423,6 @@ Some good inline comments may look like the example below.
 import pandas as pd
 import matplotlib.pyplot as plt
 import sys
-
 
 
 if __name__ == '__main__':
@@ -260,7 +473,7 @@ git commit -m "Add inline comments to the code"
 :::
 :::
 
-### Functions
+## Functions
 
 Functions are a fundamental concept in writing software and are one of the core ways you can organise your code to improve its readability.
 A function is an isolated section of code that performs a single, *specific* task that can be simple or complex.
@@ -312,7 +525,7 @@ While this isn't that many lines of code, thanks to using pandas inbuilt methods
 :::
 :::
 
-### Docstrings
+## Docstrings
 
 Docstrings are a specific type of documentation that are provided within functions, and [classes](https://docs.python.org/3/tutorial/classes.html) too.
 A function docstring should explain what the isolated code is doing, what parameters the function needs (these are inputs) and what form they should take, what the function outputs (you may see words like 'returns' or 'yields' here), and errors (if any) that might be raised.
@@ -324,7 +537,7 @@ Docstrings are another case where there are no hard and fast rules for writing t
 Acceptable docstring formats can range from single- to multi-line.
 You can use your best judgment on how much documentation a particular function needs.
 
-#### Example of a single-line docstring:
+### Example of a single-line docstring
 
 ``` python
 def add(x, y):
@@ -332,7 +545,7 @@ def add(x, y):
     return x + y
 ```
 
-#### Example of a multi-line docstring:
+### Example of a multi-line docstring:
 
 ``` python
 def add(x, y=1.0):
@@ -410,7 +623,7 @@ def read_json_to_dataframe(input_file):
 :::
 :::
 
-### Improving Our Code
+## Improving our code
 
 Finally, let's apply these good practices to `eva_data_analysis.py`
 and organise our code into functions with descriptive names and docstrings.
@@ -536,21 +749,26 @@ if __name__ == '__main__':
 
 ```
 
-Finally, let's commit these changes to our repository. Remember to use an informative commit message.
+Finally, let's commit these changes to our local repository and then push to our remote repository on GitHub to publish 
+these changes. 
+Remember to use an informative commit message.
 
-Commit changes:
 ```bash
 git status
 git add eva_data_analysis.py
 git commit -m "Organise code into functions"
+git push origin main
 ```
 
 
 ## Summary
 
-During this episode, we have discussed the importance of code readability and explored some software engineering practices that help facilitate this.
+During this episode, we have discussed the importance of code readability and explored some software engineering 
+practices that help facilitate this.
 
-Code readability is important because it makes it simpler and quicker for a person (future you or a collaborator) to understand what purpose the code is serving, and therefore begin contributing to it more easily, saving time and effort.
+Code readability is important because it makes it simpler and quicker for a person (future you or a collaborator) 
+to understand what purpose the code is serving, and therefore begin contributing to it more easily, saving time and 
+effort.
 
 Some best practices we have covered towards code readability include:
 
