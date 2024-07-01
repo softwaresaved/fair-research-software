@@ -81,8 +81,7 @@ that are broadly applicable to different types of data or contexts.
 
 ![*The Turing Way project illustration of aspects of reproducible research by Scriberia, used under a CC-BY 4.0 licence, [DOI: 10.5281/zenodo.3332807][ttw-illustrations]*](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.svg){alt='Four cartoon images depicting two researchers at two machines which take in data and output the same landscape image in 4 different ways. These visually describe the four scenarios listed above.'}
 
-In this course we mainly address reproducibility, as the first step towards generalisability 
-(the ultimate goal of research).
+In this course we mainly address the aspect of reproducibility - i.e. enabling others to run our code to obtain the same results.
 
 We can also further differentiate between:
 
