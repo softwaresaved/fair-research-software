@@ -15,7 +15,7 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::: objectives
 After completing this episode, participants should be able to:
 
-- Use a`README` file to provide an overview and a `CITATION.cff` file to add citation instructions to a code repository 
+- Use a `README` file to provide an overview and a `CITATION.cff` file to add citation instructions to a code repository 
 - Describe the main types of software documentation (tutorials, how to guides, reference and explanation).
 - Apply a documentation framework to write effective documentation of any type. 
 - Describe the different formats available for delivering software documentation (Markdown files, wikis, static webpages).
@@ -24,7 +24,7 @@ After completing this episode, participants should be able to:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Motivation
+## Motivation for Documenting Code
 The purpose of software documentation is to communicate important information 
 about our code to the people who need it – users and developers.   
 
@@ -78,7 +78,7 @@ Some common examples of repository metadata files and their role are tabulated b
 | CONTRIBUTING.md     |   Explains to developers how to contribute code to the project including processes and   standards that should be followed. |
 | CODE_OF_CONDUCT.md  |   Defines   expected standards of conduct when engaging  in a software project.                                             |
 | LICENSE             |   Defines   the  (legal) terms of use of a piece of   code.                                                                 |
-| CITATION            |   Provides instructions on how and when to cite the code      |
+| CITATION.cff            |   Provides instructions on how and when to cite the code      |
 
 ## Just Enough Documentation
 However, for many small projects the following three pieces of documentation will be sufficient:
@@ -86,7 +86,7 @@ However, for many small projects the following three pieces of documentation wil
 +	README - A document that provides an overview of the project, including installation, usage instructions, and dependencies.
   A README may include one or more of the technical documentation types - tutorial / how-to / explanation / reference.
 +	LICENSE - A file that outlines the legal terms for using, modifying, and distributing the project.
-+	CITATION - A file that provides instructions on how to properly cite the project in academic or professional work.
++	CITATION.cff - A file that provides instructions on how to properly cite the project in academic or professional work.
 
 Let’s look at each of these in turn.
 
@@ -119,7 +119,7 @@ Here are some of the major sections you might find in a typical README. Which ar
 
 ## Discussion Spoilers
 
-To support the FAIR principles (Findability, Accessibility, Interoperability, and Reusability), certain sections in a README file are more important than others. Below is a breakdown of the sections are ESSENTIAL / OPTIONAL in a README to align with these principles. 
+To support the FAIR principles (Findability, Accessibility, Interoperability, and Reusability), certain sections in a README file are more important than others. Below is a breakdown of the sections that are ESSENTIAL / OPTIONAL in a README to align with these principles. 
 
 ### Essential
 
@@ -167,7 +167,7 @@ To support the FAIR principles (Findability, Accessibility, Interoperability, an
 Let's create a simple README for our repository.
 
 ``` bash
-$ cd ~/Desktop/spacewalks
+$ cd ~/Desktop/Spacewalks
 $ touch README.md
 ```
 
@@ -218,7 +218,10 @@ b. A simple usage example
 
 Installation instructions:
 
-  ```text
+NB: In the solution below the back ticks of each code block have been escaped to avoid rendering issues.
+
+
+```text
 # Installation instructions
 
 + Clone the Spacewalks repository to your local machine using Git.
@@ -246,12 +249,12 @@ Usage instructions:
 ```text
 # Usage Example
 
-To run an analysis using the Spacewalks.py script from the command line terminal,
+To run an analysis using the eva_data_analysis.py script from the command line terminal,
 launch the script using Python as follows:
 
 \`\`\`python
 # Usage Examples
-python spacewalks.py eva-data.json eva-data.csv
+python eva_data_analysis.py eva-data.json eva-data.csv
 \`\`\`
 
 The first argument is path to the Json data file.
@@ -281,6 +284,8 @@ new releases on Zenodo via GitHub.
 
 **Creating a CFF File**
 
+There are a few common formats used for citation files including markdown and plain text. 
+We will use the Citation File Format (CFF) for our project.
 A CFF file is written in YAML format.
 At a minimum a CFF file must contain the title of the software/data, the type of asset (software/data)
 and at least one author:
@@ -326,7 +331,7 @@ message: >-
   metadata from this file.
 type: software
 authors:
-  - given-names: Hypthesis
+  - given-names: Hypothesis
     name-particle: Max
 abstract: >-
     A simple python script to calculate time spent in Space by individual NASA astronauts
@@ -353,8 +358,6 @@ folder of our project.
 + Add the URL of the code repository as a "Related Resources"
 + Add a one-line description of the code under the "Abstract" section
 + Add at least two key words under the "Keywords" section
-+ Use the commit hash of your most recent commit to indicate the code
-  version your citation file refers to.
 
 :::  solution
 
@@ -388,7 +391,6 @@ abstract: >-
 keywords:
   - NASA
   - Extravehicular Activity
-commit: 9736ffcf257b55fd60abedabc8bb28e4e012f012
 ```
 :::::::::::::::::::::::::::::::::
 
@@ -396,7 +398,7 @@ commit: 9736ffcf257b55fd60abedabc8bb28e4e012f012
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Tools
+## Documentation Tools
 
 Once our project reaches a certain size or level of complexity we may want to add
 additional documentation such as a standalone tutorial or “Background” explaining our methodological choices.
@@ -430,12 +432,21 @@ Let's check that MkDocs has been setup correctly:
 python -m pip list
 ```
 
-Let's create a `mkdocs.yml` file to configure `mkdocs` package installation.
+Let's creates a new mkdocs project in the current directory
 
 ```bash
 # In ~/Desktop/spacewalks
-touch mkdocs.yml
+mkdocs new .    
 ```
+```output
+INFO    -  Writing config file: ./mkdocs.yml
+INFO    -  Writing initial docs: ./docs/index.md
+```
+
+This command creates a new mkdocs project in the current directory with a `docs` folder containing an `index.md` file 
+and a `mkdocs.yml` configuration file.
+
+Now, let's fill in the configuration file for our project.
 
 ```yaml
 site_name: Spacewalks Documentation
@@ -458,6 +469,7 @@ into our documentation using a simple tag.
 
 ```yaml
 site_name: Spacewalks Documentation
+use_directory_urls: false
 
 theme:
   name: "material"
@@ -474,20 +486,40 @@ plugins:
 
 ```
 
-Let's populate our reference file with the docstrings we created.
+Let's populate our `docs/` folder to match our configuration file.
+
+```bash
+touch docs/tutorials.md
+touch docs/how-to-guides.md
+touch docs/reference.md
+touch docs/explanation.md
+```
+
+Let's populate our reference file with some preamble to include
+before the reference manual that will be generated from the docstrings we created.
 
 ```markdown
 This file documents the key functions in the Spacewalks tool.
 It is provided as a reference manual.
+
+::: eva_data_analysis
+
 ```
 
-Let's build our documentation.
+Finally, let's build our documentation.
 
 ```bash
 mkdocs build
 ```
-
-Once the build step is completed, our documentation site is save to 
+```output
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/AnnResearcher/Desktop/Spacewalks/site
+WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
+WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
+WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
+INFO    -  Documentation built in 0.31 seconds
+```
+Once the build step is completed, our documentation site is saved to 
 a `site` folder in the root of our project folder.
 
 These files will be distributed with our code. We can either direct users
@@ -495,6 +527,21 @@ to read these files locally on their own device using their browser,
 or we can choose to host our documentation as a website that our
 uses can navigate to.
 
+Note that we used the setting `use_directory_urls: false` in the `mkdocs.yml` file. This setting
+ensures that the documentation site is generated with URLs that are easy to navigate
+locally on a user's device.
+
+Finally let us commit our documentation to the main branch of our git repository and push the changes to GitHub
+
+```bash
+git add mkdocs.yml 
+git add docs/
+git add site/
+git commit -m "Add project-level documentation"
+git push origin main
+```
+
+## Hosting Documentation (Optional)
 ::::::::::::::::::::::::::::::::::::: callout
 
 ## Hosting Documentation
@@ -517,13 +564,6 @@ project pages here. For information about deploying to user/organisational pages
 Project Pages deploy site files to a branch within the project repository (default is gh-pages).
 To deploy our documentation:
 
-1. First let us commit our documentation to the main branch of our git repository and push the changes to GitHub
-
-```bash
-$ git add .
-$ git commit -m "Add project-level documentation"
-$ git push origin main
-```
 
 > **Warning!**
 > Before we proceed to the next step, we MUST ensure that there are no uncommitted changes or untracked files in
@@ -531,12 +571,49 @@ $ git push origin main
 >
 > If there are, the commands used in the upcoming steps will include them in our documentation!
 
+1. (If not done already), let us commit our documentation to the main branch of our git repository and push the changes to GitHub
+
+```bash
+git add mkdocs.yml 
+git add docs/
+git add site/
+git commit -m "Add project-level documentation"
+git push origin main
+```
 2. Once we are on the main branch and all our changes are up to date, run the following command to deploy our documentation to GitHub.
 
 ```bash
+# Important: 
+# - This command will push the documentation to the gh-pages branch of your repository
+# - It will ALSO include uncommitted changes and untracked files (read the warning above!!) <- VERY IMPORTANT!!
 mkdocs gh-deploy
 ```
-This command will build our documentation with MkDocs, then commit and push the files to the gh-pages branch using the ghp-import tool.
+```output
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/AnnResearch/Desktop/Spacewalks/site
+WARNING -  griffe: eva_data_analysis.py:105: No type or annotation for returned value 'int'
+WARNING -  griffe: eva_data_analysis.py:84: No type or annotation for returned value 1
+WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned value 1
+INFO    -  Documentation built in 0.37 seconds
+WARNING -  Version check skipped: No version specified in previous deployment.
+INFO    -  Copying '/Users/AnnResearcher/Desktop/Spacewalks/site' to 'gh-pages' branch and pushing to
+           GitHub.
+Enumerating objects: 63, done.
+Counting objects: 100% (63/63), done.
+Delta compression using up to 11 threads
+Compressing objects: 100% (60/60), done.
+Writing objects: 100% (63/63), 578.91 KiB | 7.93 MiB/s, done.
+Total 63 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), done.
+remote: 
+remote: Create a pull request for 'gh-pages' on GitHub by visiting:
+remote:      https://github.com/kkh451/spacewalks/pull/new/gh-pages
+remote: 
+To https://github.com/kkh451/spacewalks-dev.git
+ * [new branch]      gh-pages -> gh-pages
+INFO    -  Your documentation should shortly be available at: https://kkh451.github.io/spacewalks/
+```
+This command will build our documentation with MkDocs, then commit and push the files to the gh-pages branch using the GitHub ghp-import tool which is installed as a dependency of MkDocs.
 
 For more options, use:
 ```bash
@@ -593,7 +670,7 @@ If you would like to modify the name or location of the output dataset, set the
 second command line argument to your chosen file path.
 
 \`\`\`python
-python spacewalks.py eva-data.json data/clean/eva-data-clean.csv
+python eva_data_analysis.py eva-data.json data/clean/eva-data-clean.csv
 \`\`\`
 
 The specified destination folder must exist before running spacewalks.
@@ -603,24 +680,14 @@ The specified destination folder must exist before running spacewalks.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
-
-::::::::::::::::::::::::::::::::::::: discussion
-
-## A Spacewalks Tutorial
-
 The Diataxis framework provides guidance for developing technical documentation
-for different purposes. Tutorials differ in purpose and scope to How-to Guides and as a result
-differs in content and style.
+for different purposes. Tutorials differ in purpose and scope to How-to Guides, and as a result,
+differ in content and style.
 
 We have adapted the How-to guide from the previous challenge into
-the tutorial below. How does the content and language of the tutorial
-differ from the how-to guide?
+the example tutorial below.
 
-
-
-### Tutorial: Changing the File Path for the Spacewalks Output Dataset
+### Example Tutorial: Changing the File Path for the Spacewalks Output Dataset
 
 #### Introduction
 In this tutorial, we will learn how to change the file path for the output dataset generated by Spacewalk.
@@ -630,7 +697,7 @@ By the end of this tutorial, you will be able to specify a custom file path for 
 Before you start, ensure you have the following:
 
 + Python installed on your system
-+ The Spacewalk script (eva_analysis.py)
++ The Spacewalk script (eva_data_analysis.py)
 + An input dataset (eva-data.json)
 
 ####  Prepare the Destination Directory
@@ -648,20 +715,25 @@ mkdir -p data/clean
 #### Run the Spacewalk Script with Custom Path
 Next, execute the Spacewalk script and specify the custom file path for the output dataset:
 ```bash
-python eva_analysis.py <input-file> <output-file>
+python eva_data_analysis.py <input-file> <output-file>
 ```
 
 Replace <input-file> with your input dataset (eva-data.json) and <output-file> with your desired output path (data/clean/eva-data-clean.csv).
 
 Here is the complete command:
 ```bash
-python eva_analysis.py eva-data.json data/clean/eva-data-clean.csv
+python eva_data_analysis.py eva-data.json data/clean/eva-data-clean.csv
 ```
 
 Notice how the output to the command line clearly indicates that we are using a custom output file path.
 
 ```output
-TODO
+Using custom input and output filenames
+Reading JSON file eva-data.json
+Saving to CSV file data/clean/eva-data-clean.csv
+Adding crew size variable (crew_size) to dataset
+Saving to CSV file data/clean/eva-data-clean.csv
+Plotting cumulative spacewalk duration and saving to ./cumulative_eva_graph.png
 ```
 
 After running the script, let us check  the data/clean directory to ensure the
@@ -686,7 +758,7 @@ You should see eva-data-clean.csv listed in the data/clean folder
 mkdir -p output/data
 
 # Run the script:
-python spacewalks.py eva-data.json output/data/cleaned-eva-data.csv
+python eva_data_analysis.py eva-data.json output/data/cleaned-eva-data.csv
 
 # Verify the output:
 ls output/data
@@ -701,22 +773,35 @@ and filename according to your needs.
 
 
 
+::::::::::::::::::::::::::::::::::::: discussion
+
+## A Spacewalks Tutorial
+
+How does the content and language of our example tutorial differ from our example how-to guide?
 :::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: spoiler
 
-## Content
+### Content
 - The tutorial clearly signposts what will be covered
 - Includes a narrative of each step and the expected output
 - Highlights important behaviour the learner should notice
 - Includes an exercise to practice skills
 
-## Language
+### Language
 - Uses "we" language
 - Uses imperative to provide clear instructions "First do x, then do y"
 
 :::::::::::::::::::::::::::::::::
 
+### Summary
+
+During this episode, we have covered the basics of documenting our code including
+how to write an effective README and how to add citation instructions to our repository.
+We saw that documentation frameworks like Diataxis can help us to write high-quality documentation for 
+different purposes, while static site generators like MkDocs can help us to distribute our documentation to our users.
+
+To find out more about this topic, please see the "Further reading" section below.
 
 ## Further reading
 
@@ -735,7 +820,7 @@ Also check the [full reference set](learners/reference.md#litref) for the course
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Documentation allows users to run and understand software without having to work things out for themselves 
-directly from the code.
+directly from the source code.
 - Software documentation supports the FAIR principles by improving the reusability of research code.
 - A (good) README, CITATION file and LICENSE file are the minimum documentation elements required to support FAIR 
 research code.
@@ -746,4 +831,5 @@ a repository Wiki and static webpages.
 quality documentation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
