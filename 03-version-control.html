@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Version control</h1>
-        <p>Last updated on 2024-07-01 |
+        <p>Last updated on 2024-07-02 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/03-version-control.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -456,23 +456,24 @@ currently working. It is also known as the “untracked” area of Git. Any
 changes to files will be marked by Git in the working directory. If you
 make changes to the working directory and do not explicitly tell Git to
 save them - you will likely lose those changes. Using
-<code>git add filename</code> command, you tell Git to start tracking
-changes to file filename within your working directory.</li>
+<code>git add FILENAME</code> command, you tell Git to start tracking
+changes to file FILENAME within your working directory.</li>
 <li>
 <strong>staging area (index)</strong> - once you tell Git to start
-tracking changes to files (with <code>git add filename command</code>),
+tracking changes to files (with <code>git add FILENAME</code> command),
 Git saves those changes in the staging area on your local machine. Each
-subsequent change to the same file needs to be followed by another git
-add filename command to tell Git to update it in the staging area. To
-see what is in your working directory and staging area at any moment
-(i.e. what changes is Git tracking), run the command
+subsequent change to the same file needs to be followed by another
+<code>git add FILENAME</code> command to tell Git to update it in the
+staging area. To see what is in your working directory and staging area
+at any moment (i.e. what changes is Git tracking), run the command
 <code>git status</code>.</li>
 <li>
-<strong>local repository</strong> - stored within the .git directory
-of your project locally, this is where Git wraps together all your
-changes from the staging area and puts them using the git commit
-command. Each commit is a new, permanent snapshot (checkpoint, record)
-of your project in time, which you can share or revert to.</li>
+<strong>local repository</strong> - stored within the
+<code>.git</code> directory of your project locally, this is where Git
+wraps together all your changes from the staging area and puts them
+using the <code>git commit</code> command. Each commit is a new,
+permanent snapshot (checkpoint, record) of your project in time, which
+you can share or revert to.</li>
 <li>
 <strong>remote repository</strong> - this is a version of your
 project that is hosted somewhere on the Internet (e.g., on GitHub,
@@ -481,12 +482,12 @@ version-controlled in your local repository, and you have snapshots of
 its versions from the past, if your machine crashes - you still may lose
 all your work. Furthermore, you cannot share or collaborate on this
 local work with others easily. Working with a remote repository involves
-pushing your local changes remotely (using git push) and pulling other
-people’s changes from a remote repository to your local copy (using
-<code>git fetch</code> or <code>git pull</code>) to keep the two in sync
-in order to collaborate (with a bonus that your work also gets backed up
-to another machine). Note that a common best practice when collaborating
-with others on a shared repository is to always do a
+pushing your local changes remotely (using <code>git push</code>) and
+pulling other people’s changes from a remote repository to your local
+copy (using <code>git fetch</code> or <code>git pull</code>) to keep the
+two in sync in order to collaborate (with a bonus that your work also
+gets backed up to another machine). Note that a common best practice
+when collaborating with others on a shared repository is to always do a
 <code>git pull</code> before a <code>git push</code>, to ensure you have
 any latest changes before you push your own.</li>
 </ul><p>Git is a distributed version control system allowing for multiple
@@ -722,7 +723,7 @@ time.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>To save the changes to the renamed Python file, use the following Git
 commands:</p>
@@ -888,7 +889,7 @@ did. What about the commit messages do you find helpful or not?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Commit message (2) is the better commit message since it is more
 descriptive about what the author did. This message could be improved
@@ -949,7 +950,7 @@ Version control with Git lesson</a>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The git <code>diff</code> presented in option (1) is cleaner. The
 author has only tackled one thing: placing the import statements at the
@@ -1139,7 +1140,7 @@ each term?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul><li>
 <code>remote</code>: a version control concept where two (or more)
@@ -1270,7 +1271,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/03-version-control.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/03-version-control.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-07-01",
+  "dateModified": "2024-07-02",
   "datePublished": "2024-07-02"
 }
 
