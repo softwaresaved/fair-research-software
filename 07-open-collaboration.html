@@ -355,7 +355,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Open project collaboration &amp; management</h1>
-        <p>Last updated on 2024-06-30 |
+        <p>Last updated on 2024-07-02 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-open-collaboration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -1023,49 +1023,51 @@ using another browser such as Chrome.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="adding-a-citation-file">Adding a citation file<a class="anchor" aria-label="anchor" href="#adding-a-citation-file"></a></h3>
-<p>Now that we have our DOI it is good practice to include a citation
-file in our Git repository to tell other people how to cite it. There
-are a few common formats used for this, we will use the <a href="https://citation-file-format.github.io/" class="external-link">Citation File Format</a>
-(CFF).</p>
-<p>Below is an example citation file, this will typically be called
-<code>CITATION.cff</code>. It is written in a YAML format with single
-line identifiers being followed by a : and multiline options being
-indented by two spaces and starting with a - symbol on the first line.
-If there need to be multiple instances of a multiline option (such as
-author) then each one will start with a new - symbol.</p>
+<h3 id="adding-a-doi-and-orcid-to-the-citation-file">Adding a DOI and ORCID to the citation file<a class="anchor" aria-label="anchor" href="#adding-a-doi-and-orcid-to-the-citation-file"></a></h3>
+<p>Now that we have our DOI it is good practice to include this
+information in our citation file. In the previous part of this lesson we
+created a <code>CITATION.cff</code> file with information about how to
+cite our code. There are a few fields we can add which are related to
+the DOI, one of these is the <code>version</code> file which covers the
+version number of the software. We can add a DOI to the file in the
+<code>identifiers</code> section with a type of <code>doi</code> and
+<code>value</code> with the URL. Optionally we can also add a
+<code>date-released</code> field indicating the date we released this
+software. Here is an updated version of our CITATION.cff from the
+previous episode with a version number, DOI and release date added.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="st">"If you use this software, please cite it as below."</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Bloggs</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="at">    </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Jo</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> https://orcid.org/1234-5678-9101-1121</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Research Software"</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="fl">2.0.1</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">identifiers</span><span class="kw">:</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> doi</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="at">    </span><span class="fu">value</span><span class="kw">:</span><span class="at"> 10.5281/zenodo.1234</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">date-released</span><span class="kw">:</span><span class="at"> 2024-06-01</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># This CITATION.cff file was generated with cffinit.</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># Visit https://bit.ly/cffinit to generate yours today!</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Software</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  If you use this software, please cite it using the</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  metadata from this file.</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Anne</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Researcher</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.0.1</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="fu">identifiers</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> doi</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="at">    </span><span class="fu">value</span><span class="kw">:</span><span class="at"> 10.5281/zenodo.1234</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="fu">date-released</span><span class="kw">:</span><span class="at"> 2024-06-01</span></span></code></pre>
 </div>
-<p>Although we can write the CITATION.cff file by hand, an easier opton
-can be to use the <a href="cff-initalizer">https://citation-file-format.github.io/cff-initializer-javascript/#/</a>
-tool which will ask us a series of questions and then create a file for
-us to download and include. We can also use this tool to validate an
-existing file is correctly formatted.</p>
-<div id="add-a-citation-file-to-your-repository" class="callout discussion">
+<div id="add-a-doi-to-your-citation-file" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="add-a-citation-file-to-your-repository" class="callout-inner">
-<h3 class="callout-title">Add a citation file to your repository<a class="anchor" aria-label="anchor" href="#add-a-citation-file-to-your-repository"></a>
+<div id="add-a-doi-to-your-citation-file" class="callout-inner">
+<h3 class="callout-title">Add a DOI to your citation file<a class="anchor" aria-label="anchor" href="#add-a-doi-to-your-citation-file"></a>
 </h3>
 <div class="callout-content">
-<p>Create a CITATION.cff file for your code and add it to your Github
-repository. Be sure to include the DOI you were allocated earlier
-on.</p>
+<p>Add the DOI you were allocated in the previous exercise to your
+CITATION.cff file and commit/push the updated version to your Github
+repository. You can remove the <code>commit</code> field from the
+CITATION.cff file as the DOI is a better way to point to given version
+of the code.</p>
 </div>
 </div>
 </div>
@@ -1376,9 +1378,9 @@ Github will track that a fork has been made displays a “Contribute”
 button to create a pull request back to the original repository. Using
 this we can request that the changes on our fork are incorporated by the
 upstream project.</p>
-<div id="pull-request-exercise" class="callout challenge">
+<div id="pull-request-exercise" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="pull-request-exercise" class="callout-inner">
 <h3 class="callout-title">Pull Request Exercise<a class="anchor" aria-label="anchor" href="#pull-request-exercise"></a>
@@ -1399,18 +1401,6 @@ it.</p>
 <li>Create a pull request back to the original repository</li>
 <li>Your partner will now receive your pull request and can review</li>
 </ul></div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-<p>A:</p>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1550,7 +1540,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/07-open-collaboration.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/07-open-collaboration.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-06-30",
+  "dateModified": "2024-07-02",
   "datePublished": "2024-07-02"
 }
 
