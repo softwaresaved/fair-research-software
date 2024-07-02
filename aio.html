@@ -983,7 +983,7 @@ then we will discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Here are some questions to help you assess where on the FAIR spectrum
 the code is:</p>
@@ -1049,7 +1049,7 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
 <p>F - 1/5</p>
@@ -2515,7 +2515,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-code-readability"><p>Content from <a href="04-code-readability.html">Code readability</a></p>
 <hr>
-<p>Last updated on 2024-07-01 |
+<p>Last updated on 2024-07-02 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/04-code-readability.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2696,7 +2696,7 @@ frames.</p>
 <span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a></span>
 <span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>data[<span class="st">'duration_hours'</span>] <span class="op">=</span> data[<span class="st">'duration'</span>].<span class="bu">str</span>.split(<span class="st">":"</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(x[<span class="dv">0</span>]) <span class="op">+</span> <span class="bu">int</span>(x[<span class="dv">1</span>])<span class="op">/</span><span class="dv">60</span>)</span>
 <span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>data[<span class="st">'cumulative_time'</span>] <span class="op">=</span> data[<span class="st">'duration_hours'</span>].cumsum()</span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>plt.plot(date,t[<span class="dv">1</span>:], <span class="st">'ko-'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>plt.plot(data[<span class="st">'date'</span>], data[<span class="st">'cumulative_time'</span>], <span class="st">'ko-'</span>)</span>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
 <span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>plt.ylabel(<span class="st">'Total time spent in space to date (hours)'</span>)</span>
 <span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>plt.tight_layout()</span>
@@ -2888,7 +2888,7 @@ suggest a new name for this variable.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Yes, <span class="math display">\[9.81 m/s^2 \]</span> is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
 force exerted by the Earth</a>. It is often referred to as “little g” to
@@ -2934,7 +2934,7 @@ informative commit message.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Updated code:</p>
 <div class="codewrapper sourceCode" id="cb13">
@@ -3073,7 +3073,7 @@ symbol.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Some good inline comments may look like the example below.</p>
 <div class="codewrapper sourceCode" id="cb18">
@@ -3192,7 +3192,7 @@ in on the command line for verification.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Here is the correct order of the code for the function.</p>
 <div class="codewrapper sourceCode" id="cb21">
@@ -3305,7 +3305,7 @@ level as the code defined beneath it, which is 4 whitespaces.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>A good enough docstring for this function would look like this:</p>
 <div class="codewrapper sourceCode" id="cb24">
@@ -6384,7 +6384,7 @@ website to help you)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>A: The LGPL license could be a good choice for library code. It can
 be linked to software that isn’t GPL licensed but any modifications to
@@ -6563,7 +6563,7 @@ plotting</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>A: Here are a few examples:</p>
 <p>Python - <a href="https://www.python.org/psf/contrib/" class="external-link uri">https://www.python.org/psf/contrib/</a></p>
@@ -7112,7 +7112,7 @@ it.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A:</p>
 </div>
