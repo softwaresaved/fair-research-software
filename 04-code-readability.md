@@ -153,7 +153,7 @@ data.to_csv(data_t, index=False)
 
 data['duration_hours'] = data['duration'].str.split(":").apply(lambda x: int(x[0]) + int(x[1])/60)
 data['cumulative_time'] = data['duration_hours'].cumsum()
-plt.plot(date,t[1:], 'ko-')
+plt.plot(data['date'], data['cumulative_time'], 'ko-')
 plt.xlabel('Year')
 plt.ylabel('Total time spent in space to date (hours)')
 plt.tight_layout()
