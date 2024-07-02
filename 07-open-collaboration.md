@@ -865,11 +865,6 @@ They will get an email and an alert within Github to accept your invitation to w
  - Create a pull request back to the original repository
  - Your partner will now receive your pull request and can review 
 
-:::  solution
-
-A: 
-
-:::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
