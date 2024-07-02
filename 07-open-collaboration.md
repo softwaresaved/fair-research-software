@@ -589,42 +589,40 @@ If this happens try disabling the extra privacy features/extensions or using ano
 
 :::
 
-### Adding a citation file
+### Adding a DOI and ORCID to the citation file
 
-Now that we have our DOI it is good practice to include a citation file in our Git repository to tell other people how to cite it. 
-There are a few common formats used for this, we will use the [Citation File Format](https://citation-file-format.github.io/) (CFF).
-
-Below is an example citation file, this will typically be called `CITATION.cff`. 
-It is written in a YAML format with single line
-identifiers being followed by a : and multiline options being indented by two spaces and 
-starting with a - symbol on the first line.
-If there need to be multiple instances of a multiline option (such as author) then each one 
-will start with a new - symbol. 
+Now that we have our DOI it is good practice to include this information
+in our citation file. In the previous part of this lesson we created a `CITATION.cff` file with information about how to cite our code.
+There are a few fields we can add which are related to the DOI, one of these is the `version` file which covers the version number of the software.
+We can add a DOI to the file in the `identifiers` section with a type of `doi` and `value` with the URL.
+Optionally we can also add a `date-released` field indicating the date we released this software.
+Here is an updated version of our CITATION.cff from the previous episode with a version number, DOI and release date added.
 
 ```yaml
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+title: My Software
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
-  - family-names: Bloggs
-    given-names: Jo
-    orcid: https://orcid.org/1234-5678-9101-1121
-title: "My Research Software"
-version: 2.0.1
+  - given-names: Anne
+    family-names: Researcher
+version: 1.0.1
 identifiers:
   - type: doi
     value: 10.5281/zenodo.1234
 date-released: 2024-06-01
 ```
 
-Although we can write the CITATION.cff file by hand, an easier opton can be to use the [https://citation-file-format.github.io/cff-initializer-javascript/#/](cff-initalizer) 
-tool which will ask us a series of questions and then create a file for us to download and include. We can also use this tool to validate
-an existing file is correctly formatted. 
-
 :::  challenge
 
-### Add a citation file to your repository
+### Add a DOI to your citation file
 
-Create a CITATION.cff file for your code and add it to your Github repository. Be sure to include the DOI you were allocated earlier on.
+Add the DOI you were allocated in the previous exercise to your CITATION.cff file and commit/push the updated version to your Github repository. 
+You can remove the `commit` field from the CITATION.cff file as the DOI is a better way to point to given version of the code.
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
