@@ -67,20 +67,20 @@ We will cover all of the commands below during this course, this is just a high 
 - **working directory** - a local directory (including any subdirectories) where your project files live and where you 
 are currently working. It is also known as the “untracked” area of Git. Any changes to files will be marked by Git in 
 the working directory. If you make changes to the working directory and do not explicitly tell Git to save them - 
-you will likely lose those changes. Using `git add filename` command, you tell Git to start tracking changes to file 
-filename within your working directory.
-- **staging area (index)** - once you tell Git to start tracking changes to files (with `git add filename command`), 
+you will likely lose those changes. Using `git add FILENAME` command, you tell Git to start tracking changes to file 
+FILENAME within your working directory.
+- **staging area (index)** - once you tell Git to start tracking changes to files (with `git add FILENAME` command), 
 Git saves those changes in the staging area on your local machine. Each subsequent change to the same file needs to be 
-followed by another git add filename command to tell Git to update it in the staging area. To see what is in your 
+followed by another `git add FILENAME` command to tell Git to update it in the staging area. To see what is in your 
 working directory and staging area at any moment (i.e. what changes is Git tracking), run the command `git status`.
-- **local repository** - stored within the .git directory of your project locally, this is where Git wraps together 
-all your changes from the staging area and puts them using the git commit command. Each commit is a new, permanent 
+- **local repository** - stored within the `.git` directory of your project locally, this is where Git wraps together 
+all your changes from the staging area and puts them using the `git commit` command. Each commit is a new, permanent 
 snapshot (checkpoint, record) of your project in time, which you can share or revert to.
 - **remote repository** - this is a version of your project that is hosted somewhere on the Internet 
 (e.g., on GitHub, GitLab or somewhere else). While your project is nicely version-controlled in your local repository, 
 and you have snapshots of its versions from the past, if your machine crashes - you still may lose all your work. 
 Furthermore, you cannot share or collaborate on this local work with others easily. Working with a remote repository 
-involves pushing your local changes remotely (using git push) and pulling other people’s changes from a remote 
+involves pushing your local changes remotely (using `git push`) and pulling other people’s changes from a remote 
 repository to your local copy (using `git fetch` or `git pull`) to keep the two in sync in order to collaborate 
 (with a bonus that your work also gets backed up to another machine). Note that a common best practice when 
 collaborating with others on a shared repository is to always do a `git pull` before a `git push`, to ensure you have 
