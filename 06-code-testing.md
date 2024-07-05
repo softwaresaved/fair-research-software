@@ -1176,10 +1176,10 @@ def test_summarise_categorical_missvals():
     }, index=[0, 1, 2, 3, 4])
 
     expected_result = pd.DataFrame({
-        'country': ["Russia", "USA", pd.NA],
+        'country': ["Russia", "USA", np.nan], # np.nan because pd.NA is cast to np.nan
         'count': [1, 3, 1],
         'percentage': [20.0, 60.0, 20.0],
-    }, index=[0, 1])
+    }, index=[0, 1, 2])
     actual_result = summarise_categorical(test_input, "country")
 
     pdt.assert_frame_equal(actual_result, expected_result)
@@ -1224,9 +1224,14 @@ At the end of this episode, our test suite in `tests` should look like this:
 
 ```python
 import pytest
+import pandas as pd
+import pandas.testing as pdt
+import numpy as np
+
 from eva_data_analysis import (
     text_to_duration,
-    calculate_crew_size
+    calculate_crew_size,
+    summarise_categorical
 )
 
 def test_text_to_duration_integer():
@@ -1302,10 +1307,10 @@ def test_summarise_categorical_missvals():
     }, index=[0, 1, 2, 3, 4])
 
     expected_result = pd.DataFrame({
-        'country': ["Russia", "USA", pd.NA],
+        'country': ["Russia", "USA", np.nan],
         'count': [1, 3, 1],
         'percentage': [20.0, 60.0, 20.0],
-    }, index=[0, 1])
+    }, index=[0, 1, 2])
     actual_result = summarise_categorical(test_input, "country")
 
     pdt.assert_frame_equal(actual_result, expected_result)
