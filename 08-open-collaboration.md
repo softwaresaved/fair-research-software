@@ -651,14 +651,14 @@ A key feature of Github (as opposed to Git itself) is the issue tracker. This pr
 with other developers. Sometimes advanced users will also use issue trackers of public projects to report problems they are having (and sometimes this is misused by users
 seeking help using documented features of the program). 
 
-In the testing chapter earlier on we identified a bug in our code with missing values or date stamps failing (***DOUBLE CHECK THIS IS REALLY THE PROBLEM***). 
+The code from the testing chapter earlier has a bug with an extra bracket in eva_data_analysis.py (and if you've fixed that a missing import of summarise_categorical in the test).
 Let's go ahead and create a new issue in our Github repository to describe this problem. We can find the issue tracker on the "Issues" tab in the top left of the Github 
 page for the repository. Click on this and then click on the green "New Issue" button on the right hand side of the screen. We can then enter a title and description of our issue.
 
 A good issue description should include:
 
  - What the problem is, including any error messages that are displayed.
- - What version of the software it occured with.
+ - What version of the software it occurred with.
  - Any relevant information about the system running it, for example the operating system being used.
  - Versions of any dependent libraries.
  - How to reproduce it.
@@ -693,7 +693,7 @@ Once an issue is solved then it can be closed. This can be done either by pressi
 ## Working in Parallel with Git Branches
 
 Branching is a feature of Git that allows two or more parallel streams of
-work. Commits can be made to one branch without interferring with
+work. Commits can be made to one branch without interfering with
 another. Branches are commonly used as a way for one developer to work on
 a new feature or a bug fix while other developers work on other features.
 When those new features or bug fixes are complete, the branch will be merged back with the main (sometimes called master) branch.
@@ -702,15 +702,15 @@ When those new features or bug fixes are complete, the branch will be merged bac
 
 New git branches are created with the `git branch` command. This should be followed by the name of 
 the branch to create. It is common practice when the bug we are fixing has a corresponding issue to name the branch after the issue number and name. 
-For example, we might call the branch `01-missing-values-bug` instead of something less descriptive like `bugfix`. 
+For example, we might call the branch `01-extra-brakcet-bug` instead of something less descriptive like `bugfix`. 
 
 For example, the command:
 
 ```bash
-git branch 01-missing-values-bug
+git branch 01-extra-brakcet-bug
 ```
 
-will create a new branch called `01-missing-values-bug`. We can view the names of all the branches, by default there should be one branch called `main` or perhaps `master` and our new `01-missing-values-bug` branch.
+will create a new branch called `01-extra-brakcet-bug`. We can view the names of all the branches, by default there should be one branch called `main` or perhaps `master` and our new `01-extra-brakcet-bug` branch.
 by running `git branch` with no parameters. This will put `*` next to the currently active branch.
 
 ```bash
@@ -719,7 +719,7 @@ git branch
 
 
 ```output
-  01-missing-values-bug
+  01-extra-brakcet-bug
 * main
 ```
 
@@ -727,7 +727,7 @@ We can see that creating a new branch has not activated that branch. To switch b
 use the `git switch` or `git checkout` command followed by the branch name. For example:
 
 ```bash
-git switch 01-missing-values-bug
+git switch 01-extra-brakcet-bug
 ```
 
 To create a branch and change to it in a single command we can use `git switch` with the `-c` option (or `git checkout` with the `-b` option, `git switch` is only found in more recent versions of Git).
@@ -762,7 +762,7 @@ git commit -m "fixed bug" eva_data_analysis.py
 In the output of `git commit -m` the first part of the output line will show the name of the branch we just made the commit to.
 
 ```output
-[01-missing-values-bug 330a2b1] fixes missing values bug, closes #01 
+[01-extra-brakcet-bug 330a2b1] fixes missing values bug, closes #01 
 ```
 
 If we now switch back to the `main` branch our new commit will no longer be there in the source file or the output of `git log`.
@@ -771,17 +771,17 @@ If we now switch back to the `main` branch our new commit will no longer be ther
 git switch main
 ```
 
-And if we go back to the `01-missing-values-bug` branch it will re-appear.
+And if we go back to the `01-extra-brakcet-bug` branch it will re-appear.
 
 ```bash
-git switch 01-missing-values-bug
+git switch 01-extra-brakcet-bug
 ```
 
 If we want to push our changes to a remote such as GitHub we have to tell the `git push` command which branch to push to. If the branch doesn't exist on the remote (as it currently won't)
 then it will be created. 
 
 ```bash
-git push origin 01-missing-values-bug
+git push origin 01-extra-brakcet-bug
 ```
 
 If we now refresh the Github webpage for this repository we should see the bugfix branch has appeared in the list of branches.
@@ -790,7 +790,7 @@ If we needed to pull changes from a branch on a remote (for example if we've mad
 command.
 
 ```bash
-git pull origin 01-missing-values-bug
+git pull origin 01-extra-brakcet-bug
 ```
 
 ## Merging Branches
@@ -806,7 +806,7 @@ git switch main
 Now we're back on the main branch we can go ahead and merge the changes from the bugfix branch:
 
 ```bash
-git merge 01-missing-values-bug
+git merge 01-extra-bracket-bug
 ```
 
 ## Pull Requests
@@ -817,7 +817,7 @@ Pull requests are where one developer requests that another merge code from a br
 chance to review the code, write comments suggesting changes or even change the code themselves before merging it. It is also very common for automated checks of code to be run on a pull
 request to ensure the code is of good quality and is passing automated tests.
 
-As a simple example of a pull request, we can now create a pull request for the changes we made on our `01-missing-values-bug` branch and pushed to Github earlier on. The Github webpage for our repository
+As a simple example of a pull request, we can now create a pull request for the changes we made on our `01-extra-bracket-bug` branch and pushed to Github earlier on. The Github webpage for our repository
 will now be saying something like "bugfix had recent pushes n minutes ago - Compare & Pull request". Click on this button and create a new pull request. 
 
 Give the pull request a title and write a brief description of it, then click the green "Create pull request" button. Github will then check if we can merge this pull request without
