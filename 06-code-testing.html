@@ -368,7 +368,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code testing</h1>
-        <p>Last updated on 2024-07-04 |
+        <p>Last updated on 2024-07-05 |
         
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/06-code-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -1700,10 +1700,10 @@ one or more missing values (pd.NA)? (write a new test).</p>
 <span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
 <span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a></span>
 <span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a>    expected_result <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">"Russia"</span>, <span class="st">"USA"</span>, pd.NA],</span>
+<span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">"Russia"</span>, <span class="st">"USA"</span>, np.nan], <span class="co"># np.nan because pd.NA is cast to np.nan</span></span>
 <span id="cb38-15"><a href="#cb38-15" tabindex="-1"></a>        <span class="st">'count'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
 <span id="cb38-16"><a href="#cb38-16" tabindex="-1"></a>        <span class="st">'percentage'</span>: [<span class="fl">20.0</span>, <span class="fl">60.0</span>, <span class="fl">20.0</span>],</span>
-<span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
 <span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a>    actual_result <span class="op">=</span> summarise_categorical(test_input, <span class="st">"country"</span>)</span>
 <span id="cb38-19"><a href="#cb38-19" tabindex="-1"></a></span>
 <span id="cb38-20"><a href="#cb38-20" tabindex="-1"></a>    pdt.assert_frame_equal(actual_result, expected_result)</span></code></pre>
@@ -1764,105 +1764,110 @@ should look like this:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> (</span>
-<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a>    text_to_duration,</span>
-<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a>    calculate_crew_size</span>
-<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a>)</span>
-<span id="cb40-6"><a href="#cb40-6" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb40-8"><a href="#cb40-8" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-9"><a href="#cb40-9" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
-<span id="cb40-10"><a href="#cb40-10" tabindex="-1"></a><span class="co">    for typical whole hour durations</span></span>
-<span id="cb40-11"><a href="#cb40-11" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-12"><a href="#cb40-12" tabindex="-1"></a>    actual_result <span class="op">=</span>  text_to_duration(<span class="st">"10:00"</span>)</span>
-<span id="cb40-13"><a href="#cb40-13" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb40-14"><a href="#cb40-14" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
-<span id="cb40-15"><a href="#cb40-15" tabindex="-1"></a></span>
-<span id="cb40-16"><a href="#cb40-16" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
-<span id="cb40-17"><a href="#cb40-17" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-18"><a href="#cb40-18" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
-<span id="cb40-19"><a href="#cb40-19" tabindex="-1"></a><span class="co">    for typical durations with a non-zero minute component</span></span>
-<span id="cb40-20"><a href="#cb40-20" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-21"><a href="#cb40-21" tabindex="-1"></a>    actual_result <span class="op">=</span> text_to_duration(<span class="st">"10:20"</span>)</span>
-<span id="cb40-22"><a href="#cb40-22" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="fl">10.33333333</span></span>
-<span id="cb40-23"><a href="#cb40-23" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> pytest.approx(expected_result)</span>
-<span id="cb40-24"><a href="#cb40-24" tabindex="-1"></a></span>
-<span id="cb40-25"><a href="#cb40-25" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size():</span>
-<span id="cb40-26"><a href="#cb40-26" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-27"><a href="#cb40-27" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
-<span id="cb40-28"><a href="#cb40-28" tabindex="-1"></a><span class="co">    for typical crew values</span></span>
-<span id="cb40-29"><a href="#cb40-29" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-30"><a href="#cb40-30" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Valentina Tereshkova;"</span>)</span>
-<span id="cb40-31"><a href="#cb40-31" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb40-32"><a href="#cb40-32" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
-<span id="cb40-33"><a href="#cb40-33" tabindex="-1"></a></span>
-<span id="cb40-34"><a href="#cb40-34" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Judith Resnik; Sally Ride;"</span>)</span>
-<span id="cb40-35"><a href="#cb40-35" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb40-36"><a href="#cb40-36" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
-<span id="cb40-37"><a href="#cb40-37" tabindex="-1"></a></span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="im">import</span> pandas.testing <span class="im">as</span> pdt</span>
+<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> (</span>
+<span id="cb40-7"><a href="#cb40-7" tabindex="-1"></a>    text_to_duration,</span>
+<span id="cb40-8"><a href="#cb40-8" tabindex="-1"></a>    calculate_crew_size,</span>
+<span id="cb40-9"><a href="#cb40-9" tabindex="-1"></a>    summarise_categorical</span>
+<span id="cb40-10"><a href="#cb40-10" tabindex="-1"></a>)</span>
+<span id="cb40-11"><a href="#cb40-11" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="#cb40-12" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb40-13"><a href="#cb40-13" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-14"><a href="#cb40-14" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
+<span id="cb40-15"><a href="#cb40-15" tabindex="-1"></a><span class="co">    for typical whole hour durations</span></span>
+<span id="cb40-16"><a href="#cb40-16" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-17"><a href="#cb40-17" tabindex="-1"></a>    actual_result <span class="op">=</span>  text_to_duration(<span class="st">"10:00"</span>)</span>
+<span id="cb40-18"><a href="#cb40-18" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb40-19"><a href="#cb40-19" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
+<span id="cb40-20"><a href="#cb40-20" tabindex="-1"></a></span>
+<span id="cb40-21"><a href="#cb40-21" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
+<span id="cb40-22"><a href="#cb40-22" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-23"><a href="#cb40-23" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
+<span id="cb40-24"><a href="#cb40-24" tabindex="-1"></a><span class="co">    for typical durations with a non-zero minute component</span></span>
+<span id="cb40-25"><a href="#cb40-25" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-26"><a href="#cb40-26" tabindex="-1"></a>    actual_result <span class="op">=</span> text_to_duration(<span class="st">"10:20"</span>)</span>
+<span id="cb40-27"><a href="#cb40-27" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="fl">10.33333333</span></span>
+<span id="cb40-28"><a href="#cb40-28" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> pytest.approx(expected_result)</span>
+<span id="cb40-29"><a href="#cb40-29" tabindex="-1"></a></span>
+<span id="cb40-30"><a href="#cb40-30" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size():</span>
+<span id="cb40-31"><a href="#cb40-31" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-32"><a href="#cb40-32" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
+<span id="cb40-33"><a href="#cb40-33" tabindex="-1"></a><span class="co">    for typical crew values</span></span>
+<span id="cb40-34"><a href="#cb40-34" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-35"><a href="#cb40-35" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Valentina Tereshkova;"</span>)</span>
+<span id="cb40-36"><a href="#cb40-36" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb40-37"><a href="#cb40-37" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
 <span id="cb40-38"><a href="#cb40-38" tabindex="-1"></a></span>
-<span id="cb40-39"><a href="#cb40-39" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size_edge_cases():</span>
-<span id="cb40-40"><a href="#cb40-40" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-41"><a href="#cb40-41" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
-<span id="cb40-42"><a href="#cb40-42" tabindex="-1"></a><span class="co">    for edge case where crew is an empty string</span></span>
-<span id="cb40-43"><a href="#cb40-43" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-44"><a href="#cb40-44" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">""</span>)</span>
-<span id="cb40-45"><a href="#cb40-45" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="kw">is</span> <span class="va">None</span></span>
-<span id="cb40-46"><a href="#cb40-46" tabindex="-1"></a></span>
-<span id="cb40-47"><a href="#cb40-47" tabindex="-1"></a></span>
-<span id="cb40-48"><a href="#cb40-48" tabindex="-1"></a><span class="kw">def</span> test_summarise_categorical():</span>
-<span id="cb40-49"><a href="#cb40-49" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-50"><a href="#cb40-50" tabindex="-1"></a><span class="co">    Test that summarise_categorical correctly tabulates</span></span>
-<span id="cb40-51"><a href="#cb40-51" tabindex="-1"></a><span class="co">    distribution of values (counts, percentages) for a simple ground truth</span></span>
-<span id="cb40-52"><a href="#cb40-52" tabindex="-1"></a><span class="co">    example</span></span>
-<span id="cb40-53"><a href="#cb40-53" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-54"><a href="#cb40-54" tabindex="-1"></a>    test_input <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb40-55"><a href="#cb40-55" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">"Russia"</span>, <span class="st">"Russia"</span>],</span>
-<span id="cb40-56"><a href="#cb40-56" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb40-57"><a href="#cb40-57" tabindex="-1"></a></span>
-<span id="cb40-58"><a href="#cb40-58" tabindex="-1"></a>    expected_result <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb40-59"><a href="#cb40-59" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">"Russia"</span>, <span class="st">"USA"</span>],</span>
-<span id="cb40-60"><a href="#cb40-60" tabindex="-1"></a>        <span class="st">'count'</span>: [<span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb40-61"><a href="#cb40-61" tabindex="-1"></a>        <span class="st">'percentage'</span>: [<span class="fl">40.0</span>, <span class="fl">60.0</span>],</span>
-<span id="cb40-62"><a href="#cb40-62" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb40-63"><a href="#cb40-63" tabindex="-1"></a></span>
-<span id="cb40-64"><a href="#cb40-64" tabindex="-1"></a>    actual_result <span class="op">=</span> summarise_categorical(test_input, <span class="st">"country"</span>)</span>
-<span id="cb40-65"><a href="#cb40-65" tabindex="-1"></a></span>
-<span id="cb40-66"><a href="#cb40-66" tabindex="-1"></a>    pdt.assert_frame_equal(actual_result, expected_result)</span>
-<span id="cb40-67"><a href="#cb40-67" tabindex="-1"></a></span>
+<span id="cb40-39"><a href="#cb40-39" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Judith Resnik; Sally Ride;"</span>)</span>
+<span id="cb40-40"><a href="#cb40-40" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb40-41"><a href="#cb40-41" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
+<span id="cb40-42"><a href="#cb40-42" tabindex="-1"></a></span>
+<span id="cb40-43"><a href="#cb40-43" tabindex="-1"></a></span>
+<span id="cb40-44"><a href="#cb40-44" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size_edge_cases():</span>
+<span id="cb40-45"><a href="#cb40-45" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-46"><a href="#cb40-46" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
+<span id="cb40-47"><a href="#cb40-47" tabindex="-1"></a><span class="co">    for edge case where crew is an empty string</span></span>
+<span id="cb40-48"><a href="#cb40-48" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-49"><a href="#cb40-49" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">""</span>)</span>
+<span id="cb40-50"><a href="#cb40-50" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="kw">is</span> <span class="va">None</span></span>
+<span id="cb40-51"><a href="#cb40-51" tabindex="-1"></a></span>
+<span id="cb40-52"><a href="#cb40-52" tabindex="-1"></a></span>
+<span id="cb40-53"><a href="#cb40-53" tabindex="-1"></a><span class="kw">def</span> test_summarise_categorical():</span>
+<span id="cb40-54"><a href="#cb40-54" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-55"><a href="#cb40-55" tabindex="-1"></a><span class="co">    Test that summarise_categorical correctly tabulates</span></span>
+<span id="cb40-56"><a href="#cb40-56" tabindex="-1"></a><span class="co">    distribution of values (counts, percentages) for a simple ground truth</span></span>
+<span id="cb40-57"><a href="#cb40-57" tabindex="-1"></a><span class="co">    example</span></span>
+<span id="cb40-58"><a href="#cb40-58" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-59"><a href="#cb40-59" tabindex="-1"></a>    test_input <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb40-60"><a href="#cb40-60" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">"Russia"</span>, <span class="st">"Russia"</span>],</span>
+<span id="cb40-61"><a href="#cb40-61" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb40-62"><a href="#cb40-62" tabindex="-1"></a></span>
+<span id="cb40-63"><a href="#cb40-63" tabindex="-1"></a>    expected_result <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb40-64"><a href="#cb40-64" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">"Russia"</span>, <span class="st">"USA"</span>],</span>
+<span id="cb40-65"><a href="#cb40-65" tabindex="-1"></a>        <span class="st">'count'</span>: [<span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb40-66"><a href="#cb40-66" tabindex="-1"></a>        <span class="st">'percentage'</span>: [<span class="fl">40.0</span>, <span class="fl">60.0</span>],</span>
+<span id="cb40-67"><a href="#cb40-67" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>])</span>
 <span id="cb40-68"><a href="#cb40-68" tabindex="-1"></a></span>
-<span id="cb40-69"><a href="#cb40-69" tabindex="-1"></a><span class="kw">def</span> test_summarise_categorical_missvals():</span>
-<span id="cb40-70"><a href="#cb40-70" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-71"><a href="#cb40-71" tabindex="-1"></a><span class="co">    Test that summarise_categorical correctly tabulates</span></span>
-<span id="cb40-72"><a href="#cb40-72" tabindex="-1"></a><span class="co">    distribution of values (counts, percentages) for a ground truth</span></span>
-<span id="cb40-73"><a href="#cb40-73" tabindex="-1"></a><span class="co">    example (edge case where column contains missing values)</span></span>
-<span id="cb40-74"><a href="#cb40-74" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-75"><a href="#cb40-75" tabindex="-1"></a>    test_input <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb40-76"><a href="#cb40-76" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">"Russia"</span>, pd.NA],</span>
-<span id="cb40-77"><a href="#cb40-77" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb40-78"><a href="#cb40-78" tabindex="-1"></a></span>
-<span id="cb40-79"><a href="#cb40-79" tabindex="-1"></a>    expected_result <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb40-80"><a href="#cb40-80" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">"Russia"</span>, <span class="st">"USA"</span>, pd.NA],</span>
-<span id="cb40-81"><a href="#cb40-81" tabindex="-1"></a>        <span class="st">'count'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
-<span id="cb40-82"><a href="#cb40-82" tabindex="-1"></a>        <span class="st">'percentage'</span>: [<span class="fl">20.0</span>, <span class="fl">60.0</span>, <span class="fl">20.0</span>],</span>
-<span id="cb40-83"><a href="#cb40-83" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb40-84"><a href="#cb40-84" tabindex="-1"></a>    actual_result <span class="op">=</span> summarise_categorical(test_input, <span class="st">"country"</span>)</span>
-<span id="cb40-85"><a href="#cb40-85" tabindex="-1"></a></span>
-<span id="cb40-86"><a href="#cb40-86" tabindex="-1"></a>    pdt.assert_frame_equal(actual_result, expected_result)</span>
-<span id="cb40-87"><a href="#cb40-87" tabindex="-1"></a>    </span>
-<span id="cb40-88"><a href="#cb40-88" tabindex="-1"></a></span>
-<span id="cb40-89"><a href="#cb40-89" tabindex="-1"></a></span>
-<span id="cb40-90"><a href="#cb40-90" tabindex="-1"></a><span class="kw">def</span> test_summarise_categorical_invalid():</span>
-<span id="cb40-91"><a href="#cb40-91" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb40-92"><a href="#cb40-92" tabindex="-1"></a><span class="co">    Test that summarise_categorical raises an</span></span>
-<span id="cb40-93"><a href="#cb40-93" tabindex="-1"></a><span class="co">    error when a non-existent column is input</span></span>
-<span id="cb40-94"><a href="#cb40-94" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb40-95"><a href="#cb40-95" tabindex="-1"></a>    test_input <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb40-96"><a href="#cb40-96" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">"Russia"</span>, <span class="st">"Russia"</span>],</span>
-<span id="cb40-97"><a href="#cb40-97" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb40-98"><a href="#cb40-98" tabindex="-1"></a></span>
-<span id="cb40-99"><a href="#cb40-99" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">KeyError</span>):</span>
-<span id="cb40-100"><a href="#cb40-100" tabindex="-1"></a>        summarise_categorical(test_input, <span class="st">"vehicle"</span>)</span></code></pre>
+<span id="cb40-69"><a href="#cb40-69" tabindex="-1"></a>    actual_result <span class="op">=</span> summarise_categorical(test_input, <span class="st">"country"</span>)</span>
+<span id="cb40-70"><a href="#cb40-70" tabindex="-1"></a></span>
+<span id="cb40-71"><a href="#cb40-71" tabindex="-1"></a>    pdt.assert_frame_equal(actual_result, expected_result)</span>
+<span id="cb40-72"><a href="#cb40-72" tabindex="-1"></a></span>
+<span id="cb40-73"><a href="#cb40-73" tabindex="-1"></a></span>
+<span id="cb40-74"><a href="#cb40-74" tabindex="-1"></a><span class="kw">def</span> test_summarise_categorical_missvals():</span>
+<span id="cb40-75"><a href="#cb40-75" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-76"><a href="#cb40-76" tabindex="-1"></a><span class="co">    Test that summarise_categorical correctly tabulates</span></span>
+<span id="cb40-77"><a href="#cb40-77" tabindex="-1"></a><span class="co">    distribution of values (counts, percentages) for a ground truth</span></span>
+<span id="cb40-78"><a href="#cb40-78" tabindex="-1"></a><span class="co">    example (edge case where column contains missing values)</span></span>
+<span id="cb40-79"><a href="#cb40-79" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-80"><a href="#cb40-80" tabindex="-1"></a>    test_input <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb40-81"><a href="#cb40-81" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">"Russia"</span>, pd.NA],</span>
+<span id="cb40-82"><a href="#cb40-82" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb40-83"><a href="#cb40-83" tabindex="-1"></a></span>
+<span id="cb40-84"><a href="#cb40-84" tabindex="-1"></a>    expected_result <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb40-85"><a href="#cb40-85" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">"Russia"</span>, <span class="st">"USA"</span>, np.nan],</span>
+<span id="cb40-86"><a href="#cb40-86" tabindex="-1"></a>        <span class="st">'count'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb40-87"><a href="#cb40-87" tabindex="-1"></a>        <span class="st">'percentage'</span>: [<span class="fl">20.0</span>, <span class="fl">60.0</span>, <span class="fl">20.0</span>],</span>
+<span id="cb40-88"><a href="#cb40-88" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb40-89"><a href="#cb40-89" tabindex="-1"></a>    actual_result <span class="op">=</span> summarise_categorical(test_input, <span class="st">"country"</span>)</span>
+<span id="cb40-90"><a href="#cb40-90" tabindex="-1"></a></span>
+<span id="cb40-91"><a href="#cb40-91" tabindex="-1"></a>    pdt.assert_frame_equal(actual_result, expected_result)</span>
+<span id="cb40-92"><a href="#cb40-92" tabindex="-1"></a>    </span>
+<span id="cb40-93"><a href="#cb40-93" tabindex="-1"></a></span>
+<span id="cb40-94"><a href="#cb40-94" tabindex="-1"></a></span>
+<span id="cb40-95"><a href="#cb40-95" tabindex="-1"></a><span class="kw">def</span> test_summarise_categorical_invalid():</span>
+<span id="cb40-96"><a href="#cb40-96" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb40-97"><a href="#cb40-97" tabindex="-1"></a><span class="co">    Test that summarise_categorical raises an</span></span>
+<span id="cb40-98"><a href="#cb40-98" tabindex="-1"></a><span class="co">    error when a non-existent column is input</span></span>
+<span id="cb40-99"><a href="#cb40-99" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb40-100"><a href="#cb40-100" tabindex="-1"></a>    test_input <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb40-101"><a href="#cb40-101" tabindex="-1"></a>        <span class="st">'country'</span>: [<span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">'USA'</span>, <span class="st">"Russia"</span>, <span class="st">"Russia"</span>],</span>
+<span id="cb40-102"><a href="#cb40-102" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb40-103"><a href="#cb40-103" tabindex="-1"></a></span>
+<span id="cb40-104"><a href="#cb40-104" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">KeyError</span>):</span>
+<span id="cb40-105"><a href="#cb40-105" tabindex="-1"></a>        summarise_categorical(test_input, <span class="st">"vehicle"</span>)</span></code></pre>
 </div>
 <p>Finally lets commit our test suite to our codebase and push the
 changes to GitHub.</p>
@@ -2141,7 +2146,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/06-code-testing.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/06-code-testing.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-07-04",
+  "dateModified": "2024-07-05",
   "datePublished": "2024-07-05"
 }
 
