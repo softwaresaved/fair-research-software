@@ -4,7 +4,7 @@ title: Learner Profiles
 
 ## Bobby the Bioinformatician
 Bobby is a postdoctoral researcher in bioinformatics who finished his PhD 2 years ago.
-He attended a Software Carpentry workshop 3 years ago during his PhD, which covered foundational knowledge of 
+He attended a [Software Carpentry][swc-lessons] workshop 3 years ago during his PhD, which covered foundational knowledge of 
 UNIX shell, version control system Git and Python programming language. 
 
 Bobby wrote a couple of Python data analysis scripts during his PhD, but has not done much coding recently. 
@@ -45,6 +45,7 @@ Another set of scripts produce visualisations out of the resulting simulation da
 Collaborators on another project have heard about Philippa's work and would like to reuse her code, 
 but she is the only one who fully understands the whole workflow, most of the code is not documented and 
 is not very readable, has no unit tests and only exist on Philippa's machine and her external back-up drive. 
+
 Phillipa wants to help these colleagues and get some credit for her hard work, so she needs to improve documentation 
 for her code and set up a GitHub project to share her work and provide 
 other collaborators (and wider community) with access to it.
@@ -61,9 +62,12 @@ Excel or SPSS (the tools that Sam has mainly used so far).
 Sam has never shared his code, apart from emailing it to a few close collaborators. 
 He has now received some funding to employ a software engineering undergraduate student over the summer, and 
 wants to be able to direct them towards best practices for building research software. 
-Sam wants the student to use Python over proprietary SPSS for this project to make the work more easily reproducible. 
+Sam wants the student to use Python over proprietary SPSS for this project to make the work more easily reproducible.
+
 In addition, members of Sam's current group all use Python and could verify and contribute to the code, 
 and maintain it after the summer placement finishes.
-In addition, a colleague has told Sam that the code should be shared on GitHub (so that the wider community can 
-access and benefit from it), but Sam does not know how to use GitHub nor how to license the code and data for reuse.
+
+Finally, a colleague has told Sam that the code should be shared on GitHub (so that the wider community can 
+access and benefit from it) and Sam has since learned the foundations of Git and version control, 
+but Sam does not know how to use GitHub nor how to license the code and data for reuse.
   
