@@ -288,7 +288,7 @@ widely as possible? Even if that means it might end up in commercial products th
 * Are you reusing code which is already under an open source license? What obligations do you have under those licenses? 
 * Is there a preferred license in your research community?
 
-Don't be tempted to write you're own license (or modify an existing one)
+Don't be tempted to write your own license (or modify an existing one)
 unless you are a copyright lawyer. The common open source licenses have
 been carefully written by copyright lawyers, many of them have undergone
 multiple iterations in response to cases that have arisen and the
