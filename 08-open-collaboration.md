@@ -237,7 +237,7 @@ community which created it.
 
 #### GPL version 2
 
-The mostly commonly known copyleft license is the GNU Public License or
+The most commonly known copyleft license is the GNU Public License or
 GPL. There are several versions of the GPL available, the oldest GPL
 version 1.0, but this version was quickly replaced with version 2.0 and
 was rarely used. Version 2 is much more common and is used by a lot of
