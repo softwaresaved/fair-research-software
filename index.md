@@ -24,7 +24,7 @@ Check out a few example [learner profiles](./profiles.html), to see if this cour
 
 Before joining this training, participants **must** have foundational knowledge of Python 
 used to write scientific code, version control system Git and a command line (shell) tool to be able to
-understand code examples used on the course.
+understand code examples used in the course.
 
 Attending a [Software Carpentry][swc-lessons] or a similar course could help with these requirements and
 gaining necessary prerequisite skills.
@@ -49,7 +49,9 @@ code documentation, licencing and citation
 - Build on top of your existing knowledge of Python, Git and command line tools and enhance your research 
 software development workflow with some good practices around structuring, sharing and reusing code to make it more FAIR 
 
-This course assumes the prior knowledge of and **does not** focus on teaching:
+## What we do not teach 
+
+This course assumes the prior knowledge of and does not focus on teaching:
 
 - Python syntax or skills (even though Python is used in code examples) 
 - the basic Git workflow
