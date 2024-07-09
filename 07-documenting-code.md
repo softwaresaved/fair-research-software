@@ -24,30 +24,36 @@ After completing this episode, participants should be able to:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Motivation for Documenting Code
-The purpose of software documentation is to communicate important information 
-about our code to the people who need it – users and developers.   
+## Motivation for documenting software
 
-###  Better Research
-Software documentation is often perceived as a thankless task with few tangible benefits and is often neglected in 
-research projects. 
-However, like software testing, documenting our code can help us become more productive researchers. 
+We have seen how writing inline comments and docstrings within our code can help with improving its readability. 
+The purpose of software documentation is to communicate other important information 
+about our software (its purpose, dependencies, how to install and run it, etc.) to the people who need it – 
+both users and developers.   
+
+###  Better research
+
+Software documentation is often perceived as a thankless and time-consuming task with few tangible benefits and 
+is often neglected in research projects. 
+However, like software testing, documenting our software can help us and others become more productive researchers. 
 Here are some advantages of documenting our code: 
 
 - Good documentation captures important methodological details ready for when we come to publish our research 
-- Good documentation  can help us return to a project seamlessly after time away. 
-- Documentation can  facilitate collaborations by helping to onboard new project members
-- Good documentation can save us time by answering FAQs about our code for us.
+- Good documentation can help us return to a project seamlessly after time away 
+- Documentation can facilitate collaborations by helping to onboard new project members
+- Good documentation can save us time by answering frequently asked questions (FAQs) about our code for us
 
-
-### FAIR Software
+### FAIR software
 Software documentation supports FAIR software by improving the re-usability of our code. 
 
-+ How-to guides and Tutorials ensure that users can install our software independently and make use of its basic features
+- Good documentation can make our software more understandable and reusable by others, and can bring us some citations
+  and credit
+- How-to guides and tutorials ensure that users can install our software independently and make use of its basic features
+- Reference guides and background information can help developers understand our code sufficiently to 
+modify/extend/repurpose it.
 
-+ Reference guides and background information  can help developers understand our code sufficiently to modify / extend / repurpose it.
+## Software-level documentation
 
-## Software-level Documentation
 In previous episodes we encountered several different forms of in-code documentation 
 including  in-line comments and docstrings.  
 
@@ -55,18 +61,19 @@ These are an excellent way to improve the readability of our code, but by themse
 are insufficient to ensure that our code is easy to use, understand and modify - 
 this requires additional software-level documentation.
 
-### Types of Documentation
 There are many different types of software-level documentation.
 
-#### Technical Documentation
+### Technical documentation
+
 Software-level technical documentation encompasses:
 
-+ Tutorials - lessons that guide learners through a series of exercises to build proficiency as using the code  
-+ How-To Guides - step by step instructions on how to accomplish specific goals using the code.
-+ Reference - a lookup manual to help users find relevant information about the software e.g. functions and their parameters.
-+ Explanation - conceptual discussion of the code to help users understand implementation decisions 
+- Tutorials - lessons that guide learners through a series of exercises to build proficiency as using the code  
+- How-To Guides - step by step instructions on how to accomplish specific goals using the code.
+- Reference - a lookup manual to help users find relevant information about the software e.g. functions and their parameters.
+- Explanation - conceptual discussion of the code to help users understand implementation decisions 
 
-#### Repository Metadata Files
+### Repository metadata files
+
 In addition to software-level technical documentation, it is also common to see repository metadata files included 
 in a code repository.
 Many of these files can be described as "social documentation" i.e. they indicate how users should “behave” in relation 
@@ -80,20 +87,21 @@ Some common examples of repository metadata files and their role are tabulated b
 | LICENSE             |   Defines   the  (legal) terms of use of a piece of   code.                                                                 |
 | CITATION.cff            |   Provides instructions on how and when to cite the code      |
 
-## Just Enough Documentation
-However, for many small projects the following three pieces of documentation will be sufficient:
+## Just enough documentation
 
-+	README - A document that provides an overview of the project, including installation, usage instructions, and dependencies.
+For many small projects the following three pieces of documentation will be sufficient:
+
++	README - a document that provides an overview of the project, including installation, usage instructions, and dependencies.
   A README may include one or more of the technical documentation types - tutorial / how-to / explanation / reference.
-+	LICENSE - A file that outlines the legal terms for using, modifying, and distributing the project.
-+	CITATION.cff - A file that provides instructions on how to properly cite the project in academic or professional work.
++	LICENSE - a file that outlines the legal terms for using, modifying, and distributing the project.
++	CITATION.cff - a file that provides instructions on how to properly cite the project in academic or professional work.
 
 Let’s look at each of these in turn.
 
-#### README
+### README file
 A README file acts as a “landing page” for your code repository on GitHub and should provide sufficient information for users to and developers to get started using your code.   
 
-::::::::::::::::::::::::::::::::::::: discussion 
+::::::::::::::::::::::::::::::::::::: challenge 
 
 ### READMEs and The FAIR Principles
 
@@ -113,11 +121,7 @@ Here are some of the major sections you might find in a typical README. Which ar
 + FAQs
 + Code of Conduct
 
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::: spoiler 
-
-## Discussion Spoilers
+:::::::::::::::::::::::: solution 
 
 To support the FAIR principles (Findability, Accessibility, Interoperability, and Reusability), certain sections in a README file are more important than others. Below is a breakdown of the sections that are ESSENTIAL / OPTIONAL in a README to align with these principles. 
 
@@ -162,7 +166,7 @@ To support the FAIR principles (Findability, Accessibility, Interoperability, an
    - **Explanation:** Sets expectations for behaviour in the community, fostering a welcoming environment and enhancing accessibility.
 
 :::::::::::::::::::::::::::::::::
-
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 Let's create a simple README for our repository.
 
@@ -181,7 +185,7 @@ Spacewalks is a python-based analysis tool for researchers to generate visualisa
 and statistical summaries of NASA's extravehicular activity datasets.
 ```
 
-Now let's add a list of Spacewalk's key features:
+Now let's add a list of Spacewalks' key features:
 
 ``` code
 ## Features
@@ -190,7 +194,7 @@ Key features of Spacewalks:
 - Generates a line plot to show the cumulative duration of space walks over time
 ```
 
-Now let's tell users about any Pre-requisites required to run the software:
+Now let's tell users about any pre-requisites required to run the software:
 
 ``` code
 ## Pre-requisites
@@ -264,30 +268,33 @@ The second argument is the path the CSV output file.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-#### LICENSE
+### LICENSE file
+
 A license file outlines the legal terms for using, modifying, and distributing the project.
-We'll talk about choosing a license in detail in later episode.
+We  will talk about choosing a license in detail in a later episode.
 
-#### CITATION File
+### CITATION file
 We can add a citation file to our repository to provide instructions on how and when to cite our code.
-
-Citation files use a special format called CFF - the Citation File Format (CFF) and are
-a way to include metadata about software or datasets in plain text files, making it easy
+A citation file can be a plain text (CITATION.txt) or a Markdown file (CITATION.md), but there are 
+certain benefits to use a special file format called the Citation File Format (CFF) which provides 
+a way to include richer metadata about software or datasets we want to cite, making it easy
 for both humans and machines to use this information.
 
-**Why Use CFF?**
+#### Why use CFF?
 
-+ For developers, using a CFF file can help to automate the process of publishing
-new releases on Zenodo via GitHub.
+For developers, using a CFF file can help to automate the process of publishing
+new releases on Zenodo via GitHub. 
+GitHub also "understands" CFF, and will display citation information prominently on the landing page 
+of a repository that contains citation info in CFF.
 
-+ For users, having a CFF file makes it easy to cite the software or dataset.  with formatted citation information available for copy-paste and direct import into reference managers like Zotero from GitHub.
+For users, having a CFF file makes it easy to cite the software or dataset 
+with formatted citation information available for copy-paste and direct import from GitHub into reference managers like 
+Zotero.
 
-**Creating a CFF File**
+#### Creating a CFF file
 
-There are a few common formats used for citation files including markdown and plain text. 
-We will use the Citation File Format (CFF) for our project.
-A CFF file is written in YAML format.
-At a minimum a CFF file must contain the title of the software/data, the type of asset (software/data)
+A CFF file is using the [YAML](https://yaml.org/) key-value pair format.
+At a minimum a CFF file must contain the title of the software/data, the type of asset (software or data)
 and at least one author:
 
 ```yaml
@@ -304,16 +311,17 @@ authors:
     family-names: Researcher
 ```
 
-Additional, optional metadata includes an Abstract, repository URL and more.
+Additional and optional metadata includes an abstract, repository URL and more.
 
-**Steps to Make Your Software Citable**
+#### Steps to make your software citable
 
-We can create (and update) a CFF file for our software using an online Web App called
+We can create (and update) a CFF file for our software using an online application called
 [`cffinit`][cffinit-webapp].
 
-Let's create a dummy citation file for a project called "Spacetravel" with Author "Max Hypothesis", follow these steps:
+Let's create a dummy citation file for a project called "Spacetravel" with Author "Max Hypothesis" by following 
+these steps:
 
-  1. First, head to `cffinit` online at [`cffinit`][cffinit-webapp].
+ 1. First, head to `cffinit` online at [`cffinit`][cffinit-webapp].
 2. Then, let's work through the metadata input form to complete the minimum information needed to generate a CFF. We'll also add the following abstract:
 
   "Spacetravel - a simple python script to calculate time spent in Space by individual NASA astronauts"
@@ -337,22 +345,23 @@ abstract: >-
     A simple python script to calculate time spent in Space by individual NASA astronauts
 ```
 
-**Updating and citing**
+#### Updating and citing
 
-CFF files can also be updated using `cffinit`.
+CFF files can also be updated using the `cffinit` online tool.
 
 To cite our software (or dataset), once a CFF file has been pushed to our remote repository,
-GitHub's "Cite this repository"  button can be used to generate a citation in various  formats (APA, BibTeX).
+GitHub's "Cite this repository" button can be used to generate a citation in various formats (APA, BibTeX).
 
-**Tools**
+#### Tools
+
 Command line tools are also available for creating, validating, and converting CFF files. 
 Further information is available from the [Turing Way's guide to software citation][turing-way-citation].
 
 :::  challenge
 
-### `Spacewalks` Software Citation
+### `Spacewalks` software citation
 
-Write a software citation file for the Spacewalks code and add it to the root
+Write a software citation file for our **spacewalks** software and add it to the root
 folder of our project.
 
 + Add the URL of the code repository as a "Related Resources"
@@ -376,21 +385,19 @@ message: >-
 type: software
 authors:
   - given-names: Jaffa
-    name-particle: Sara
+    name-particle: Sarah
   - given-names: Aleksandra
     family-names: Nenadic
-  - given-names: 'Kamilla'
+  - given-names: Kamilla
     family-names: Kopec-Harding
-  - given-names: YOUR
-    family-names: NAME-HERE
 repository-code: >-
   https://github.com/YOUR-REPOSITORY-URL/spacewalks.git
 abstract: >-
-  A python script to analyse NASA extravehicular activity
+  A Python script to analyse NASA extravehicular activity
   data
 keywords:
   - NASA
-  - Extravehicular Activity
+  - Extravehicular activity
 ```
 :::::::::::::::::::::::::::::::::
 
@@ -398,7 +405,7 @@ keywords:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Documentation Tools
+## Documentation tools
 
 Once our project reaches a certain size or level of complexity we may want to add
 additional documentation such as a standalone tutorial or “Background” explaining our methodological choices.
@@ -416,10 +423,9 @@ Options include:
 Creating a static site is a popular solution as it has the key benefit being able to
 automatically generate a reference manual from any docstrings we have added to our code.
 
-
 ### MkDocs
 
-Let's setup MkDocs.
+Let's setup the static documentation site generator tool MkDocs.
 
 ```bash
 python -m pip install mkdocs
@@ -432,7 +438,7 @@ Let's check that MkDocs has been setup correctly:
 python -m pip list
 ```
 
-Let's creates a new mkdocs project in the current directory
+Let's creates a new MkDocs project in the current directory
 
 ```bash
 # In ~/Desktop/spacewalks
@@ -443,7 +449,7 @@ INFO    -  Writing config file: ./mkdocs.yml
 INFO    -  Writing initial docs: ./docs/index.md
 ```
 
-This command creates a new mkdocs project in the current directory with a `docs` folder containing an `index.md` file 
+This command creates a new MkDocs project in the current directory with a `docs` folder containing an `index.md` file 
 and a `mkdocs.yml` configuration file.
 
 Now, let's fill in the configuration file for our project.
@@ -462,7 +468,7 @@ nav:
   - Background: explanation.md
 ```
 
-Note font-false is for GDPR compliance
+Note font-false is for GDPR compliance.
 
 Let's add support for `mkdocstrings` - this will allow us to automatically our docstrings
 into our documentation using a simple tag.
@@ -541,16 +547,18 @@ git commit -m "Add project-level documentation"
 git push origin main
 ```
 
-## Hosting Documentation (Optional)
 ::::::::::::::::::::::::::::::::::::: callout
+### Hosting documentation
 
-## Hosting Documentation
-
-In the previous section, we saw how mkdocs documentation can be distributed with our
+In the previous section, we saw how Mkdocs documentation can be distributed with our
 repository and viewed "offline"  using a browser.
 
 We can also make our documentation available as a live website by deploying our
 documentation to a hosting service.
+
+:::::: spoiler
+
+### Some options for hosting documentation
 
 ### GitHub Pages
 As our repository is hosted in GitHub, we can use GitHub Pages - a service that
@@ -563,7 +571,6 @@ project pages here. For information about deploying to user/organisational pages
 
 Project Pages deploy site files to a branch within the project repository (default is gh-pages).
 To deploy our documentation:
-
 
 > **Warning!**
 > Before we proceed to the next step, we MUST ensure that there are no uncommitted changes or untracked files in
@@ -622,13 +629,14 @@ mkdocs gh-deploy --help
 Notice that the deploy command did not allow us to preview the site before it was pushed to GitHub; so, it is a good idea to check
 changes locally with the build  commands before deploying.
 
-### Other Options
+### Other options
 You can find out about other deployment options including free documentation hosting service ReadTheDocs on the [MkDocs deployment pages][mkdocs-deploy].
 
+::::::
 :::::::::::::::::::::::::::::::::::::
 
 
-## Documentation Guides
+## Documentation guides
 
 Once we start to consider other forms of documentation beyond the README,
 we can also increase the re-usability of our code by ensuring that the content and style of
@@ -639,7 +647,7 @@ provide a range of resources including documentation templates to help to help u
 
 :::  challenge
 
-### A Spacewalks How-to Guide
+### Spacewalks how-to guide
 
 a. Review the Diataxis guidance page on writing a How-to guide. Identify
 three features of an effective how-to guide.
@@ -687,7 +695,7 @@ differ in content and style.
 We have adapted the How-to guide from the previous challenge into
 the example tutorial below.
 
-### Example Tutorial: Changing the File Path for the Spacewalks Output Dataset
+### Example tutorial: changing the file path for the Spacewalks output dataset
 
 #### Introduction
 In this tutorial, we will learn how to change the file path for the output dataset generated by Spacewalk.
@@ -700,13 +708,13 @@ Before you start, ensure you have the following:
 + The Spacewalk script (eva_data_analysis.py)
 + An input dataset (eva-data.json)
 
-####  Prepare the Destination Directory
+####  Prepare the destination directory
 First, let us decide where we want to save the cleaned dataset.
 and make sure the directory exists.
 
 For this tutorial, we will use data/clean as the destination folder.
 
-Let's create the directory if it doesn't exist:
+Let's create the directory if it does not exist:
 
 ```bash
 mkdir -p data/clean
@@ -745,7 +753,7 @@ ls data/clean
 You should see eva-data-clean.csv listed in the data/clean folder
 
 
-#### Exercise: Custom Output Path
+#### Exercise: custom output path
 
 + Create a new directory named output/data in your working directory.
 + Run the Spacewalk script to save the cleaned dataset in the newly created output/data directory with the filename cleaned-eva-data.csv.
@@ -772,36 +780,28 @@ and completed an exercise to practice the process. You can now customize the out
 and filename according to your needs.
 
 
+::::::::::::::::::::::::::::::::::::: challenge
 
-::::::::::::::::::::::::::::::::::::: discussion
-
-## A Spacewalks Tutorial
+### Spacewalks tutorial
 
 How does the content and language of our example tutorial differ from our example how-to guide?
-:::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::: spoiler
+:::::::::::::::::::::::: solution
 
-### Content
+**Content**
+
 - The tutorial clearly signposts what will be covered
 - Includes a narrative of each step and the expected output
 - Highlights important behaviour the learner should notice
 - Includes an exercise to practice skills
 
-### Language
+**Language**
+
 - Uses "we" language
 - Uses imperative to provide clear instructions "First do x, then do y"
 
 :::::::::::::::::::::::::::::::::
-
-### Summary
-
-During this episode, we have covered the basics of documenting our code including
-how to write an effective README and how to add citation instructions to our repository.
-We saw that documentation frameworks like Diataxis can help us to write high-quality documentation for 
-different purposes, while static site generators like MkDocs can help us to distribute our documentation to our users.
-
-To find out more about this topic, please see the "Further reading" section below.
+:::::::::::::::::::::::::::::::::::::
 
 ## Further reading
 
@@ -826,7 +826,7 @@ directly from the source code.
 research code.
 - Documentation can be provided to users in a variety of formats including a `docs` folder of Markdown files, 
 a repository Wiki and static webpages.
-- A static documentation site can be created using the tool `mkdocs`.
+- A static documentation site can be created using the tool MkDocs.
 - Documentation frameworks such as Diataxis provide content and style guidelines that can helps us write high 
 quality documentation.
 
