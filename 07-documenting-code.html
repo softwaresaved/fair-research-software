@@ -478,32 +478,32 @@ Many of these files can be described as “social documentation” i.e. they
 indicate how users should “behave” in relation to our software project.
 Some common examples of repository metadata files and their role are
 tabulated below:</p>
-<table class="table"><colgroup><col width="14%"><col width="85%"></colgroup><thead><tr class="header"><th>File</th>
+<table class="table"><colgroup><col width="7%"><col width="92%"></colgroup><thead><tr class="header"><th>File</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td>CONTRIBUTING.md</td>
+</tr></thead><tbody><tr class="odd"><td>README</td>
+<td>Provides an overview of the project, including installation, usage
+instructions, dependencies and links to other metadata files and
+technical documentation (tutorial/how-to/explanation/reference)</td>
+</tr><tr class="even"><td>CONTRIBUTING</td>
 <td>Explains to developers how to contribute code to the project
-including processes and standards that should be followed.</td>
-</tr><tr class="even"><td>CODE_OF_CONDUCT.md</td>
+including processes and standards that should be followed</td>
+</tr><tr class="odd"><td>CODE_OF_CONDUCT</td>
 <td>Defines expected standards of conduct when engaging in a software
-project.</td>
-</tr><tr class="odd"><td>LICENSE</td>
-<td>Defines the (legal) terms of use of a piece of code.</td>
-</tr><tr class="even"><td>CITATION.cff</td>
-<td>Provides instructions on how and when to cite the code</td>
+project</td>
+</tr><tr class="even"><td>LICENSE</td>
+<td>Defines the (legal) terms of using, modifying and distributing the
+code</td>
+</tr><tr class="odd"><td>CITATION</td>
+<td>Provides instructions on how to cite the code</td>
+</tr><tr class="even"><td>AUTHORS</td>
+<td>Provides information on who authored the code (can also be included
+in CITATION)</td>
 </tr></tbody></table></div>
 </section><section><h2 class="section-heading" id="just-enough-documentation">Just enough documentation<a class="anchor" aria-label="anchor" href="#just-enough-documentation"></a>
 <a class="anchor" aria-label="anchor" href="#just-enough-documentation"></a></h2>
 <hr class="half-width"><p>For many small projects the following three pieces of documentation
-will be sufficient:</p>
-<ul><li>README - a document that provides an overview of the project,
-including installation, usage instructions, and dependencies. A README
-may include one or more of the technical documentation types - tutorial
-/ how-to / explanation / reference.</li>
-<li>LICENSE - a file that outlines the legal terms for using, modifying,
-and distributing the project.</li>
-<li>CITATION.cff - a file that provides instructions on how to properly
-cite the project in academic or professional work.</li>
-</ul><p>Let’s look at each of these in turn.</p>
+may be sufficient: README, LICENSE and CITATION.</p>
+<p>Let’s look at each of these files in turn.</p>
 <div class="section level3">
 <h3 id="readme-file">README file<a class="anchor" aria-label="anchor" href="#readme-file"></a></h3>
 <p>A README file acts as a “landing page” for your code repository on
@@ -542,7 +542,7 @@ principles? Which are optional?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>To support the FAIR principles (Findability, Accessibility,
 Interoperability, and Reusability), certain sections in a README file
@@ -676,7 +676,7 @@ instructions b. A simple usage example</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Installation instructions:</p>
 <p>NB: In the solution below the back ticks of each code block have been
@@ -837,7 +837,7 @@ section</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Use <a href="https://citation-file-format.github.io/cff-initializer-javascript/#/version-specific" class="external-link">cffinit</a>,
 a web application to create your citation file using a series of online
@@ -1039,7 +1039,7 @@ deploying our documentation to a hosting service.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Some options for hosting documentation </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a></h3>
@@ -1165,7 +1165,7 @@ filename for the output dataset generated by Spacewalks.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>An effective How-to guide should:</p>
 <ul><li>be goal oriented and focus on action.</li>
@@ -1318,7 +1318,7 @@ our example how-to guide?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p><strong>Content</strong></p>
 <ul><li>The tutorial clearly signposts what will be covered</li>
