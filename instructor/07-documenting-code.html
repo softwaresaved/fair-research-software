@@ -270,12 +270,11 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#motivation-for-documenting-code">Motivation for Documenting Code</a></li>
-<li><a href="#software-level-documentation">Software-level Documentation</a></li>
-<li><a href="#just-enough-documentation">Just Enough Documentation</a></li>
-<li><a href="#documentation-tools">Documentation Tools</a></li>
-<li><a href="#hosting-documentation-optional">Hosting Documentation (Optional)</a></li>
-<li><a href="#documentation-guides">Documentation Guides</a></li>
+        <ul><li><a href="#motivation-for-documenting-software">Motivation for documenting software</a></li>
+<li><a href="#software-level-documentation">Software-level documentation</a></li>
+<li><a href="#just-enough-documentation">Just enough documentation</a></li>
+<li><a href="#documentation-tools">Documentation tools</a></li>
+<li><a href="#documentation-guides">Documentation guides</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -368,7 +367,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Documenting code</h1>
-        <p>Last updated on 2024-07-04 |
+        <p>Last updated on 2024-07-09 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-documenting-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -418,38 +417,41 @@ documentation</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="motivation-for-documenting-code">Motivation for Documenting Code<a class="anchor" aria-label="anchor" href="#motivation-for-documenting-code"></a>
-<a class="anchor" aria-label="anchor" href="#motivation-for-documenting-code"></a></h2>
-<hr class="half-width"><p>The purpose of software documentation is to communicate important
-information about our code to the people who need it – users and
-developers.</p>
+<section><h2 class="section-heading" id="motivation-for-documenting-software">Motivation for documenting software<a class="anchor" aria-label="anchor" href="#motivation-for-documenting-software"></a>
+<a class="anchor" aria-label="anchor" href="#motivation-for-documenting-software"></a></h2>
+<hr class="half-width"><p>We have seen how writing inline comments and docstrings within our
+code can help with improving its readability. The purpose of software
+documentation is to communicate other important information about our
+software (its purpose, dependencies, how to install and run it, etc.) to
+the people who need it – both users and developers.</p>
 <div class="section level3">
-<h3 id="better-research">Better Research<a class="anchor" aria-label="anchor" href="#better-research"></a></h3>
-<p>Software documentation is often perceived as a thankless task with
-few tangible benefits and is often neglected in research projects.
-However, like software testing, documenting our code can help us become
-more productive researchers. Here are some advantages of documenting our
-code:</p>
+<h3 id="better-research">Better research<a class="anchor" aria-label="anchor" href="#better-research"></a></h3>
+<p>Software documentation is often perceived as a thankless and
+time-consuming task with few tangible benefits and is often neglected in
+research projects. However, like software testing, documenting our
+software can help us and others become more productive researchers. Here
+are some advantages of documenting our code:</p>
 <ul><li>Good documentation captures important methodological details ready
 for when we come to publish our research</li>
 <li>Good documentation can help us return to a project seamlessly after
-time away.</li>
+time away</li>
 <li>Documentation can facilitate collaborations by helping to onboard
 new project members</li>
-<li>Good documentation can save us time by answering FAQs about our code
-for us.</li>
+<li>Good documentation can save us time by answering frequently asked
+questions (FAQs) about our code for us</li>
 </ul></div>
 <div class="section level3">
-<h3 id="fair-software">FAIR Software<a class="anchor" aria-label="anchor" href="#fair-software"></a></h3>
+<h3 id="fair-software">FAIR software<a class="anchor" aria-label="anchor" href="#fair-software"></a></h3>
 <p>Software documentation supports FAIR software by improving the
 re-usability of our code.</p>
-<ul><li><p>How-to guides and Tutorials ensure that users can install our
-software independently and make use of its basic features</p></li>
-<li><p>Reference guides and background information can help developers
-understand our code sufficiently to modify / extend / repurpose
-it.</p></li>
+<ul><li>Good documentation can make our software more understandable and
+reusable by others, and can bring us some citations and credit</li>
+<li>How-to guides and tutorials ensure that users can install our
+software independently and make use of its basic features</li>
+<li>Reference guides and background information can help developers
+understand our code sufficiently to modify/extend/repurpose it.</li>
 </ul></div>
-</section><section><h2 class="section-heading" id="software-level-documentation">Software-level Documentation<a class="anchor" aria-label="anchor" href="#software-level-documentation"></a>
+</section><section><h2 class="section-heading" id="software-level-documentation">Software-level documentation<a class="anchor" aria-label="anchor" href="#software-level-documentation"></a>
 <a class="anchor" aria-label="anchor" href="#software-level-documentation"></a></h2>
 <hr class="half-width"><p>In previous episodes we encountered several different forms of
 in-code documentation including in-line comments and docstrings.</p>
@@ -457,11 +459,9 @@ in-code documentation including in-line comments and docstrings.</p>
 but by themselves are insufficient to ensure that our code is easy to
 use, understand and modify - this requires additional software-level
 documentation.</p>
-<div class="section level3">
-<h3 id="types-of-documentation">Types of Documentation<a class="anchor" aria-label="anchor" href="#types-of-documentation"></a></h3>
 <p>There are many different types of software-level documentation.</p>
-<div class="section level4">
-<h4 id="technical-documentation">Technical Documentation<a class="anchor" aria-label="anchor" href="#technical-documentation"></a></h4>
+<div class="section level3">
+<h3 id="technical-documentation">Technical documentation<a class="anchor" aria-label="anchor" href="#technical-documentation"></a></h3>
 <p>Software-level technical documentation encompasses:</p>
 <ul><li>Tutorials - lessons that guide learners through a series of
 exercises to build proficiency as using the code<br></li>
@@ -472,8 +472,8 @@ about the software e.g. functions and their parameters.</li>
 <li>Explanation - conceptual discussion of the code to help users
 understand implementation decisions</li>
 </ul></div>
-<div class="section level4">
-<h4 id="repository-metadata-files">Repository Metadata Files<a class="anchor" aria-label="anchor" href="#repository-metadata-files"></a></h4>
+<div class="section level3">
+<h3 id="repository-metadata-files">Repository metadata files<a class="anchor" aria-label="anchor" href="#repository-metadata-files"></a></h3>
 <p>In addition to software-level technical documentation, it is also
 common to see repository metadata files included in a code repository.
 Many of these files can be described as “social documentation” i.e. they
@@ -493,28 +493,27 @@ project.</td>
 </tr><tr class="even"><td>CITATION.cff</td>
 <td>Provides instructions on how and when to cite the code</td>
 </tr></tbody></table></div>
-</div>
-</section><section><h2 class="section-heading" id="just-enough-documentation">Just Enough Documentation<a class="anchor" aria-label="anchor" href="#just-enough-documentation"></a>
+</section><section><h2 class="section-heading" id="just-enough-documentation">Just enough documentation<a class="anchor" aria-label="anchor" href="#just-enough-documentation"></a>
 <a class="anchor" aria-label="anchor" href="#just-enough-documentation"></a></h2>
-<hr class="half-width"><p>However, for many small projects the following three pieces of
-documentation will be sufficient:</p>
-<ul><li>README - A document that provides an overview of the project,
+<hr class="half-width"><p>For many small projects the following three pieces of documentation
+will be sufficient:</p>
+<ul><li>README - a document that provides an overview of the project,
 including installation, usage instructions, and dependencies. A README
 may include one or more of the technical documentation types - tutorial
 / how-to / explanation / reference.</li>
-<li>LICENSE - A file that outlines the legal terms for using, modifying,
+<li>LICENSE - a file that outlines the legal terms for using, modifying,
 and distributing the project.</li>
-<li>CITATION.cff - A file that provides instructions on how to properly
+<li>CITATION.cff - a file that provides instructions on how to properly
 cite the project in academic or professional work.</li>
 </ul><p>Let’s look at each of these in turn.</p>
-<div class="section level4">
-<h4 id="readme">README<a class="anchor" aria-label="anchor" href="#readme"></a></h4>
+<div class="section level3">
+<h3 id="readme-file">README file<a class="anchor" aria-label="anchor" href="#readme-file"></a></h3>
 <p>A README file acts as a “landing page” for your code repository on
 GitHub and should provide sufficient information for users to and
 developers to get started using your code.</p>
-<div id="readmes-and-the-fair-principles" class="callout discussion">
+<div id="readmes-and-the-fair-principles" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="readmes-and-the-fair-principles" class="callout-inner">
 <h3 class="callout-title">READMEs and The FAIR Principles<a class="anchor" aria-label="anchor" href="#readmes-and-the-fair-principles"></a>
@@ -540,12 +539,12 @@ principles? Which are optional?</p>
 </ul></div>
 </div>
 </div>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Discussion Spoilers </h3>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To support the FAIR principles (Findability, Accessibility,
 Interoperability, and Reusability), certain sections in a README file
@@ -643,12 +642,12 @@ code and who it is for.</p>
 ## Overview
 Spacewalks is a python-based analysis tool for researchers to generate visualisations
 and statistical summaries of NASA's extravehicular activity datasets.</code></pre>
-<p>Now let’s add a list of Spacewalk’s key features:</p>
+<p>Now let’s add a list of Spacewalks’ key features:</p>
 <pre class="code"><code>## Features
 Key features of Spacewalks:
 - Generates a CSV table of summary statistics of extravehicular activity crew sizes
 - Generates a line plot to show the cumulative duration of space walks over time</code></pre>
-<p>Now let’s tell users about any Pre-requisites required to run the
+<p>Now let’s tell users about any pre-requisites required to run the
 software:</p>
 <pre class="code"><code>## Pre-requisites
 
@@ -674,12 +673,12 @@ instructions b. A simple usage example</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Installation instructions:</p>
 <p>NB: In the solution below the back ticks of each code block have been
@@ -722,33 +721,37 @@ The second argument is the path the CSV output file.</code></pre>
 </div>
 </div>
 </div>
-<div class="section level4">
-<h4 id="license">LICENSE<a class="anchor" aria-label="anchor" href="#license"></a></h4>
+<div class="section level3">
+<h3 id="license-file">LICENSE file<a class="anchor" aria-label="anchor" href="#license-file"></a></h3>
 <p>A license file outlines the legal terms for using, modifying, and
-distributing the project. We’ll talk about choosing a license in detail
-in later episode.</p>
+distributing the project. We will talk about choosing a license in
+detail in a later episode.</p>
+</div>
+<div class="section level3">
+<h3 id="citation-file">CITATION file<a class="anchor" aria-label="anchor" href="#citation-file"></a></h3>
+<p>We can add a citation file to our repository to provide instructions
+on how and when to cite our code. A citation file can be a plain text
+(CITATION.txt) or a Markdown file (CITATION.md), but there are certain
+benefits to use a special file format called the Citation File Format
+(CFF) which provides a way to include richer metadata about software or
+datasets we want to cite, making it easy for both humans and machines to
+use this information.</p>
+<div class="section level4">
+<h4 id="why-use-cff">Why use CFF?<a class="anchor" aria-label="anchor" href="#why-use-cff"></a></h4>
+<p>For developers, using a CFF file can help to automate the process of
+publishing new releases on Zenodo via GitHub. GitHub also “understands”
+CFF, and will display citation information prominently on the landing
+page of a repository that contains citation info in CFF.</p>
+<p>For users, having a CFF file makes it easy to cite the software or
+dataset with formatted citation information available for copy-paste and
+direct import from GitHub into reference managers like Zotero.</p>
 </div>
 <div class="section level4">
-<h4 id="citation-file">CITATION File<a class="anchor" aria-label="anchor" href="#citation-file"></a></h4>
-<p>We can add a citation file to our repository to provide instructions
-on how and when to cite our code.</p>
-<p>Citation files use a special format called CFF - the Citation File
-Format (CFF) and are a way to include metadata about software or
-datasets in plain text files, making it easy for both humans and
-machines to use this information.</p>
-<p><strong>Why Use CFF?</strong></p>
-<ul><li><p>For developers, using a CFF file can help to automate the process
-of publishing new releases on Zenodo via GitHub.</p></li>
-<li><p>For users, having a CFF file makes it easy to cite the software
-or dataset. with formatted citation information available for copy-paste
-and direct import into reference managers like Zotero from
-GitHub.</p></li>
-</ul><p><strong>Creating a CFF File</strong></p>
-<p>There are a few common formats used for citation files including
-markdown and plain text. We will use the Citation File Format (CFF) for
-our project. A CFF file is written in YAML format. At a minimum a CFF
-file must contain the title of the software/data, the type of asset
-(software/data) and at least one author:</p>
+<h4 id="creating-a-cff-file">Creating a CFF file<a class="anchor" aria-label="anchor" href="#creating-a-cff-file"></a></h4>
+<p>A CFF file is using the <a href="https://yaml.org/" class="external-link">YAML</a>
+key-value pair format. At a minimum a CFF file must contain the title of
+the software/data, the type of asset (software or data) and at least one
+author:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -764,13 +767,15 @@ file must contain the title of the software/data, the type of asset
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Anne</span></span>
 <span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Researcher</span></span></code></pre>
 </div>
-<p>Additional, optional metadata includes an Abstract, repository URL
+<p>Additional and optional metadata includes an abstract, repository URL
 and more.</p>
-<p><strong>Steps to Make Your Software Citable</strong></p>
+</div>
+<div class="section level4">
+<h4 id="steps-to-make-your-software-citable">Steps to make your software citable<a class="anchor" aria-label="anchor" href="#steps-to-make-your-software-citable"></a></h4>
 <p>We can create (and update) a CFF file for our software using an
-online Web App called <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a>.</p>
+online application called <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a>.</p>
 <p>Let’s create a dummy citation file for a project called “Spacetravel”
-with Author “Max Hypothesis”, follow these steps:</p>
+with Author “Max Hypothesis” by following these steps:</p>
 <ol style="list-style-type: decimal"><li>First, head to <code>cffinit</code> online at <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a>.</li>
 <li>Then, let’s work through the metadata input form to complete the
 minimum information needed to generate a CFF. We’ll also add the
@@ -797,14 +802,19 @@ should look like this:</li>
 <span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
 <span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>    A simple python script to calculate time spent in Space by individual NASA astronauts</span></code></pre>
 </div>
-<p><strong>Updating and citing</strong></p>
-<p>CFF files can also be updated using <code>cffinit</code>.</p>
+</div>
+<div class="section level4">
+<h4 id="updating-and-citing">Updating and citing<a class="anchor" aria-label="anchor" href="#updating-and-citing"></a></h4>
+<p>CFF files can also be updated using the <code>cffinit</code> online
+tool.</p>
 <p>To cite our software (or dataset), once a CFF file has been pushed to
 our remote repository, GitHub’s “Cite this repository” button can be
 used to generate a citation in various formats (APA, BibTeX).</p>
-<p><strong>Tools</strong> Command line tools are also available for
-creating, validating, and converting CFF files. Further information is
-available from the <a href="https://book.the-turing-way.org/communication/citable/citable-cff.html" class="external-link">Turing
+</div>
+<div class="section level4">
+<h4 id="tools">Tools<a class="anchor" aria-label="anchor" href="#tools"></a></h4>
+<p>Command line tools are also available for creating, validating, and
+converting CFF files. Further information is available from the <a href="https://book.the-turing-way.org/communication/citable/citable-cff.html" class="external-link">Turing
 Way’s guide to software citation</a>.</p>
 <div id="spacewalks-software-citation" class="callout challenge">
 <div class="callout-square">
@@ -812,11 +822,11 @@ Way’s guide to software citation</a>.</p>
 </div>
 <div id="spacewalks-software-citation" class="callout-inner">
 <h3 class="callout-title">
-<code>Spacewalks</code> Software Citation<a class="anchor" aria-label="anchor" href="#spacewalks-software-citation"></a>
+<code>Spacewalks</code> software citation<a class="anchor" aria-label="anchor" href="#spacewalks-software-citation"></a>
 </h3>
 <div class="callout-content">
-<p>Write a software citation file for the Spacewalks code and add it to
-the root folder of our project.</p>
+<p>Write a software citation file for our <strong>spacewalks</strong>
+software and add it to the root folder of our project.</p>
 <ul><li>Add the URL of the code repository as a “Related Resources”</li>
 <li>Add a one-line description of the code under the “Abstract”
 section</li>
@@ -824,12 +834,12 @@ section</li>
 </ul></div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Use <a href="https://citation-file-format.github.io/cff-initializer-javascript/#/version-specific" class="external-link">cffinit</a>,
 a web application to create your citation file using a series of online
@@ -848,28 +858,27 @@ forms.</p>
 <span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
 <span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
 <span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Jaffa</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="at">    </span><span class="fu">name-particle</span><span class="kw">:</span><span class="at"> Sara</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="at">    </span><span class="fu">name-particle</span><span class="kw">:</span><span class="at"> Sarah</span></span>
 <span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Aleksandra</span></span>
 <span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Nenadic</span></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> </span><span class="st">'Kamilla'</span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Kamilla</span></span>
 <span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Kopec-Harding</span></span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> YOUR</span></span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> NAME-HERE</span></span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="fu">repository-code</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>  https://github.com/YOUR-REPOSITORY-URL/spacewalks.git</span>
-<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>  A python script to analyse NASA extravehicular activity</span>
-<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>  data</span>
-<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span></span>
-<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> NASA</span></span>
-<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Extravehicular Activity</span></span></code></pre>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="fu">repository-code</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>  https://github.com/YOUR-REPOSITORY-URL/spacewalks.git</span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>  A Python script to analyse NASA extravehicular activity</span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>  data</span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> NASA</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Extravehicular activity</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="documentation-tools">Documentation Tools<a class="anchor" aria-label="anchor" href="#documentation-tools"></a>
+</div>
+</section><section><h2 class="section-heading" id="documentation-tools">Documentation tools<a class="anchor" aria-label="anchor" href="#documentation-tools"></a>
 <a class="anchor" aria-label="anchor" href="#documentation-tools"></a></h2>
 <hr class="half-width"><p>Once our project reaches a certain size or level of complexity we may
 want to add additional documentation such as a standalone tutorial or
@@ -887,7 +896,7 @@ benefit being able to automatically generate a reference manual from any
 docstrings we have added to our code.</p>
 <div class="section level3">
 <h3 id="mkdocs">MkDocs<a class="anchor" aria-label="anchor" href="#mkdocs"></a></h3>
-<p>Let’s setup MkDocs.</p>
+<p>Let’s setup the static documentation site generator tool MkDocs.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -901,7 +910,7 @@ docstrings we have added to our code.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip list</span></code></pre>
 </div>
-<p>Let’s creates a new mkdocs project in the current directory</p>
+<p>Let’s creates a new MkDocs project in the current directory</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -914,7 +923,7 @@ docstrings we have added to our code.</p>
 <pre class="output" tabindex="0"><code>INFO    -  Writing config file: ./mkdocs.yml
 INFO    -  Writing initial docs: ./docs/index.md</code></pre>
 </div>
-<p>This command creates a new mkdocs project in the current directory
+<p>This command creates a new MkDocs project in the current directory
 with a <code>docs</code> folder containing an <code>index.md</code> file
 and a <code>mkdocs.yml</code> configuration file.</p>
 <p>Now, let’s fill in the configuration file for our project.</p>
@@ -933,7 +942,7 @@ and a <code>mkdocs.yml</code> configuration file.</p>
 <span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Reference</span><span class="kw">:</span><span class="at"> reference.md</span></span>
 <span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Background</span><span class="kw">:</span><span class="at"> explanation.md</span></span></code></pre>
 </div>
-<p>Note font-false is for GDPR compliance</p>
+<p>Note font-false is for GDPR compliance.</p>
 <p>Let’s add support for <code>mkdocstrings</code> - this will allow us
 to automatically our docstrings into our documentation using a simple
 tag.</p>
@@ -1014,22 +1023,26 @@ repository and push the changes to GitHub</p>
 <span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
 <span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre>
 </div>
-</div>
-</section><section><h2 class="section-heading" id="hosting-documentation-optional">Hosting Documentation (Optional)<a class="anchor" aria-label="anchor" href="#hosting-documentation-optional"></a>
-<a class="anchor" aria-label="anchor" href="#hosting-documentation-optional"></a></h2>
-<hr class="half-width"><div id="hosting-documentation" class="callout">
+<div id="hosting-documentation" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="hosting-documentation" class="callout-inner">
-<h3 class="callout-title">Hosting Documentation<a class="anchor" aria-label="anchor" href="#hosting-documentation"></a>
+<h3 class="callout-title">Hosting documentation<a class="anchor" aria-label="anchor" href="#hosting-documentation"></a>
 </h3>
 <div class="callout-content">
-<p>In the previous section, we saw how mkdocs documentation can be
+<p>In the previous section, we saw how Mkdocs documentation can be
 distributed with our repository and viewed “offline” using a
 browser.</p>
 <p>We can also make our documentation available as a live website by
 deploying our documentation to a hosting service.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Some options for hosting documentation </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
 <div class="section level3">
 <h3 id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a></h3>
 <p>As our repository is hosted in GitHub, we can use GitHub Pages - a
@@ -1111,7 +1124,7 @@ before it was pushed to GitHub; so, it is a good idea to check changes
 locally with the build commands before deploying.</p>
 </div>
 <div class="section level3">
-<h3 id="other-options">Other Options<a class="anchor" aria-label="anchor" href="#other-options"></a></h3>
+<h3 id="other-options">Other options<a class="anchor" aria-label="anchor" href="#other-options"></a></h3>
 <p>You can find out about other deployment options including free
 documentation hosting service ReadTheDocs on the [MkDocs deployment
 pages][mkdocs-deploy].</p>
@@ -1119,7 +1132,12 @@ pages][mkdocs-deploy].</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="documentation-guides">Documentation Guides<a class="anchor" aria-label="anchor" href="#documentation-guides"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="documentation-guides">Documentation guides<a class="anchor" aria-label="anchor" href="#documentation-guides"></a>
 <a class="anchor" aria-label="anchor" href="#documentation-guides"></a></h2>
 <hr class="half-width"><p>Once we start to consider other forms of documentation beyond the
 README, we can also increase the re-usability of our code by ensuring
@@ -1128,12 +1146,12 @@ that the content and style of our documentation matches its purpose.</p>
 the <a href="https://diataxis.fr/" class="external-link">Diataxis framework</a> provide a
 range of resources including documentation templates to help to help us
 do this.</p>
-<div id="a-spacewalks-how-to-guide" class="callout challenge">
+<div id="spacewalks-how-to-guide" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="a-spacewalks-how-to-guide" class="callout-inner">
-<h3 class="callout-title">A Spacewalks How-to Guide<a class="anchor" aria-label="anchor" href="#a-spacewalks-how-to-guide"></a>
+<div id="spacewalks-how-to-guide" class="callout-inner">
+<h3 class="callout-title">Spacewalks how-to guide<a class="anchor" aria-label="anchor" href="#spacewalks-how-to-guide"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: lower-alpha"><li><p>Review the Diataxis guidance page on writing a How-to guide.
@@ -1144,12 +1162,12 @@ filename for the output dataset generated by Spacewalks.</p></li>
 </ol></div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>An effective How-to guide should:</p>
 <ul><li>be goal oriented and focus on action.</li>
@@ -1184,8 +1202,8 @@ style.</p>
 <p>We have adapted the How-to guide from the previous challenge into the
 example tutorial below.</p>
 <div class="section level3">
-<h3 id="example-tutorial-changing-the-file-path-for-the-spacewalks-output-dataset">Example Tutorial: Changing the File Path for the Spacewalks Output
-Dataset<a class="anchor" aria-label="anchor" href="#example-tutorial-changing-the-file-path-for-the-spacewalks-output-dataset"></a></h3>
+<h3 id="example-tutorial-changing-the-file-path-for-the-spacewalks-output-dataset">Example tutorial: changing the file path for the Spacewalks output
+dataset<a class="anchor" aria-label="anchor" href="#example-tutorial-changing-the-file-path-for-the-spacewalks-output-dataset"></a></h3>
 <div class="section level4">
 <h4 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h4>
 <p>In this tutorial, we will learn how to change the file path for the
@@ -1200,12 +1218,12 @@ will be able to specify a custom file path for the cleaned dataset.</p>
 <li>An input dataset (eva-data.json)</li>
 </ul></div>
 <div class="section level4">
-<h4 id="prepare-the-destination-directory">Prepare the Destination Directory<a class="anchor" aria-label="anchor" href="#prepare-the-destination-directory"></a></h4>
+<h4 id="prepare-the-destination-directory">Prepare the destination directory<a class="anchor" aria-label="anchor" href="#prepare-the-destination-directory"></a></h4>
 <p>First, let us decide where we want to save the cleaned dataset. and
 make sure the directory exists.</p>
 <p>For this tutorial, we will use data/clean as the destination
 folder.</p>
-<p>Let’s create the directory if it doesn’t exist:</p>
+<p>Let’s create the directory if it does not exist:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1252,7 +1270,7 @@ ensure the cleaned dataset has been saved correctly.</p>
 <p>You should see eva-data-clean.csv listed in the data/clean folder</p>
 </div>
 <div class="section level4">
-<h4 id="exercise-custom-output-path">Exercise: Custom Output Path<a class="anchor" aria-label="anchor" href="#exercise-custom-output-path"></a></h4>
+<h4 id="exercise-custom-output-path">Exercise: custom output path<a class="anchor" aria-label="anchor" href="#exercise-custom-output-path"></a></h4>
 <ul><li>Create a new directory named output/data in your working
 directory.</li>
 <li>Run the Spacewalk script to save the cleaned dataset in the newly
@@ -1284,12 +1302,12 @@ cleaned-eva-data.csv.</li>
 Spacewalks output dataset and completed an exercise to practice the
 process. You can now customize the output location and filename
 according to your needs.</p>
-<div id="a-spacewalks-tutorial" class="callout discussion">
+<div id="spacewalks-tutorial" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="a-spacewalks-tutorial" class="callout-inner">
-<h3 class="callout-title">A Spacewalks Tutorial<a class="anchor" aria-label="anchor" href="#a-spacewalks-tutorial"></a>
+<div id="spacewalks-tutorial" class="callout-inner">
+<h3 class="callout-title">Spacewalks tutorial<a class="anchor" aria-label="anchor" href="#spacewalks-tutorial"></a>
 </h3>
 <div class="callout-content">
 <p>How does the content and language of our example tutorial differ from
@@ -1297,19 +1315,19 @@ our example how-to guide?</p>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
-  <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Content </h3>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
+<p><strong>Content</strong></p>
 <ul><li>The tutorial clearly signposts what will be covered</li>
 <li>Includes a narrative of each step and the expected output</li>
 <li>Highlights important behaviour the learner should notice</li>
 <li>Includes an exercise to practice skills</li>
-</ul><div class="section level3">
-<h3 id="language">Language<a class="anchor" aria-label="anchor" href="#language"></a></h3>
+</ul><p><strong>Language</strong></p>
 <ul><li>Uses “we” language</li>
 <li>Uses imperative to provide clear instructions “First do x, then do
 y”</li>
@@ -1317,18 +1335,6 @@ y”</li>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="summary-1">Summary<a class="anchor" aria-label="anchor" href="#summary-1"></a></h3>
-<p>During this episode, we have covered the basics of documenting our
-code including how to write an effective README and how to add citation
-instructions to our repository. We saw that documentation frameworks
-like Diataxis can help us to write high-quality documentation for
-different purposes, while static site generators like MkDocs can help us
-to distribute our documentation to our users.</p>
-<p>To find out more about this topic, please see the “Further reading”
-section below.</p>
 </div>
 </section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 <a class="anchor" aria-label="anchor" href="#further-reading"></a></h2>
@@ -1372,7 +1378,7 @@ documentation elements required to support FAIR research code.</li>
 including a <code>docs</code> folder of Markdown files, a repository
 Wiki and static webpages.</li>
 <li>A static documentation site can be created using the tool
-<code>mkdocs</code>.</li>
+MkDocs.</li>
 <li>Documentation frameworks such as Diataxis provide content and style
 guidelines that can helps us write high quality documentation.</li>
 </ul></div>
@@ -1440,7 +1446,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/07-documenting-code.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/07-documenting-code.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-07-04",
+  "dateModified": "2024-07-09",
   "datePublished": "2024-07-09"
 }
 
