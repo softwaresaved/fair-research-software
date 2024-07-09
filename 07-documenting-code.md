@@ -80,23 +80,20 @@ Many of these files can be described as "social documentation" i.e. they indicat
 to our software project. 
 Some common examples of repository metadata files and their role are tabulated below:
 
-|     File            |   Description                                                                                                               |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| CONTRIBUTING.md     |   Explains to developers how to contribute code to the project including processes and   standards that should be followed. |
-| CODE_OF_CONDUCT.md  |   Defines   expected standards of conduct when engaging  in a software project.                                             |
-| LICENSE             |   Defines   the  (legal) terms of use of a piece of   code.                                                                 |
-| CITATION.cff            |   Provides instructions on how and when to cite the code      |
+| File            | Description                                                                                                                                                                                         |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| README          | Provides an overview of the project, including installation, usage instructions, dependencies and links to other metadata files and technical documentation (tutorial/how-to/explanation/reference) |
+| CONTRIBUTING    | Explains to developers how to contribute code to the project including processes and standards that should be followed                                                                              |
+| CODE_OF_CONDUCT | Defines expected standards of conduct when engaging  in a software project                                                                                                                          |
+| LICENSE         | Defines the (legal) terms of using, modifying and distributing the code                                                                                                                             |
+| CITATION        | Provides instructions on how to cite the code                                                                                                                                                       |
+| AUTHORS         | Provides information on who authored the code (can also be included in CITATION)                                                                                                                    |
 
 ## Just enough documentation
 
-For many small projects the following three pieces of documentation will be sufficient:
+For many small projects the following three pieces of documentation may be sufficient: README, LICENSE and CITATION.
 
-+	README - a document that provides an overview of the project, including installation, usage instructions, and dependencies.
-  A README may include one or more of the technical documentation types - tutorial / how-to / explanation / reference.
-+	LICENSE - a file that outlines the legal terms for using, modifying, and distributing the project.
-+	CITATION.cff - a file that provides instructions on how to properly cite the project in academic or professional work.
-
-Let’s look at each of these in turn.
+Let’s look at each of these files in turn.
 
 ### README file
 A README file acts as a “landing page” for your code repository on GitHub and should provide sufficient information for users to and developers to get started using your code.   
