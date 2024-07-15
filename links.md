@@ -99,3 +99,12 @@ any links that you are not going to use.
 [ethics-ucl]: https://www.ucl.ac.uk/research-ethics/sites/research_ethics/files/research_using_apps_guidance_1.2.docx
 [ethics-software]: https://medium.com/@zoyajahidshaikh/ethical-considerations-in-software-development-e1e4ebad2670
 [cff]: https://citation-file-format.github.io/
+[dry-principle]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[pandas-org]: https://pandas.pydata.org/
+[python-classes]: https://docs.python.org/3/tutorial/classes.html
+[numpy-docstring]: https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard
+[guardian-code-readability]: https://www.theguardian.com/info/2019/jan/29/code-readability-matters
+[pep8-comments]: https://peps.python.org/pep-0008/#comments
+[coursera-inline-comments]: https://www.coursera.org/tutorials/python-comment#inline-commenting-in-python
+[python-functions-intro]: https://introtopython.org/introducing_functions.html
+[python-functions-w3schools]: https://www.w3schools.com/python/python_functions.asp

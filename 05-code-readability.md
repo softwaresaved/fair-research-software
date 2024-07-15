@@ -480,7 +480,7 @@ A function is an isolated section of code that performs a single, *specific* tas
 It can then be called multiple times with different inputs throughout a codebase, but it's definition only needs to appear once.
 
 Breaking up code into functions in this manner benefits readability since the smaller sections are easier to read and understand.
-Since functions can be reused, codebases naturally begin to follow the [Don't Repeat Yourself principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) which prevents software from becoming overly long and confusing.
+Since functions can be reused, codebases naturally begin to follow the [Don't Repeat Yourself principle][dry-principle] which prevents software from becoming overly long and confusing.
 The software also becomes easier to maintain because, if the code encapsulated in a function needs to change, it only needs updating in one place instead of many.
 As we will learn in a future episode, testing code also becomes simpler when code is written in functions.
 Each function can be individually checked to ensure it is doing what is intended, which improves confidence in the software as a whole.
@@ -488,7 +488,7 @@ Each function can be individually checked to ensure it is doing what is intended
 ::: challenge
 ### Create a function
 
-Below is a function that reads in a JSON file into a dataframe structure using the [`pandas` library](https://pandas.pydata.org/) - but the code is out of order!
+Below is a function that reads in a JSON file into a dataframe structure using the [`pandas` library][pandas-org] - but the code is out of order!
 
 Reorder the lines of code within the function so that the JSON file is read in using the `read_json` method, any incomplete rows are *dropped*, the values are *sorted* by date, and then the cleaned dataframe is *returned*.
 There is also a `print` statement that will display which file is being read in on the command line for verification.
@@ -527,7 +527,7 @@ While this isn't that many lines of code, thanks to using pandas inbuilt methods
 
 ## Docstrings
 
-Docstrings are a specific type of documentation that are provided within functions, and [classes](https://docs.python.org/3/tutorial/classes.html) too.
+Docstrings are a specific type of documentation that are provided within functions, and [classes][python-classes] too.
 A function docstring should explain what the isolated code is doing, what parameters the function needs (these are inputs) and what form they should take, what the function outputs (you may see words like 'returns' or 'yields' here), and errors (if any) that might be raised.
 
 Providing these docstrings helps improve code readability since it makes the function code more transparent and aids understanding.
@@ -562,7 +562,7 @@ def add(x, y=1.0):
     return x + y
 ```
 
-Some projects may have their own guidelines on how to write docstrings, such as [numpy](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard).
+Some projects may have their own guidelines on how to write docstrings, such as [numpy][numpy-docstring].
 If you are contributing code to a wider project or community, try to follow the guidelines and standards they provide for codestyle.
 
 As your code grows and becomes more complex, the docstrings can form the content of a reference guide allowing developers to quickly look up how to use the APIs, functions, and classes defined in your codebase.
@@ -781,11 +781,11 @@ Some best practices we have covered towards code readability include:
 
 We recommend the following resources for some additional reading on the topic of this episode:
 
--   ['Code Readability Matters' from the Guardian's engineering blog](https://www.theguardian.com/info/2019/jan/29/code-readability-matters)
--   [PEP 8 Style Guide for Python](https://peps.python.org/pep-0008/#comments)
--   [Coursera: Inline commenting in Python](https://www.coursera.org/tutorials/python-comment#inline-commenting-in-python)
--   [Introducing Functions from Introduction to Python](https://introtopython.org/introducing_functions.html)
--   [W3Schools.com Python Functions](https://www.w3schools.com/python/python_functions.asp)
+-   ['Code Readability Matters' from the Guardian's engineering blog][guardian-code-readability]
+-   [PEP 8 Style Guide for Python][pep8-comments]
+-   [Coursera: Inline commenting in Python][coursera-inline-comments]
+-   [Introducing Functions from Introduction to Python][python-functions-into]
+-   [W3Schools.com Python Functions][python-functions-w3schools]
 
 Also check the [full reference set](learners/reference.md#litref) for the course.
 
