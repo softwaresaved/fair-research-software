@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="licensing.html">Software licensing</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -331,7 +331,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li>
+                      <li><a href="licensing.html">Software licensing</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -367,7 +367,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Documenting code</h1>
-        <p>Last updated on 2024-07-09 |
+        <p>Last updated on 2024-08-12 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-documenting-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -542,7 +542,7 @@ principles? Which are optional?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To support the FAIR principles (Findability, Accessibility,
 Interoperability, and Reusability), certain sections in a README file
@@ -676,7 +676,7 @@ instructions b. A simple usage example</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Installation instructions:</p>
 <p>NB: In the solution below the back ticks of each code block have been
@@ -721,9 +721,101 @@ The second argument is the path the CSV output file.</code></pre>
 </div>
 <div class="section level3">
 <h3 id="license-file">LICENSE file<a class="anchor" aria-label="anchor" href="#license-file"></a></h3>
-<p>A license file outlines the legal terms for using, modifying, and
-distributing the project. We will talk about choosing a license in
-detail in a later episode.</p>
+<p>Copyright allows a creator of work (such as written text,
+photographs, films, music, software code) to state that they own the
+work they have created. Copyright is automatically implied - even if the
+creator does not explicitly assert it, copyright of the work exists from
+the moment of creation. A licence is a legal document which sets down
+the terms under which the creator is releasing what they have created
+for others to use, modify, extend or exploit.</p>
+<p>Because any creative work is copyrighted the moment it is created,
+even without any kind of licence agreement, it is important to state the
+terms under which software can be reused. The lack of a licence for your
+software implies that no one can reuse the software at all - hence it is
+imperative you declare it. A common way to declare your copyright of a
+piece of software and the license you are distributing it under is to
+include a file called LICENSE in the root directory of your code
+repository.</p>
+<p>There is an optional extra <a href="licensing.html">episode in this
+course on different open source software licences</a> that you can
+choose for your code and that we recommend for further reading.</p>
+
+<div id="tools-to-help-you-choose-a-licence" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tools-to-help-you-choose-a-licence" class="callout-inner">
+<h3 class="callout-title">Tools to help you choose a licence<a class="anchor" aria-label="anchor" href="#tools-to-help-you-choose-a-licence"></a>
+</h3>
+<div class="callout-content">
+<p>A <a href="licensing.html">short intro</a> on different open source
+software licences included as extra content to this course.</p>
+<p>Check out the <a href="https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project" class="external-link">open
+source guide</a> on applying, changing and editing licenses.</p>
+<p>The website <a href="https://choosealicense.com" class="external-link">choosealicense.com</a> has some great
+resources to help you choose a license that is appropriate for your
+needs, and can even automate adding the LICENSE file to your GitHub code
+repository.</p>
+</div>
+</div>
+</div>
+<div id="select-a-licence" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="select-a-licence" class="callout-inner">
+<h3 class="callout-title">Select a licence<a class="anchor" aria-label="anchor" href="#select-a-licence"></a>
+</h3>
+<div class="callout-content">
+<p>Choose a license for your code. Discuss with your neighbour or the
+group your choice of license and reason for choosing it.</p>
+</div>
+</div>
+</div>
+<div id="add-a-license-to-your-code" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="add-a-license-to-your-code" class="callout-inner">
+<h3 class="callout-title">Add a license to your code<a class="anchor" aria-label="anchor" href="#add-a-license-to-your-code"></a>
+</h3>
+<div class="callout-content">
+<p>Add a LICENSE file containing the full text of your chosen license to
+your code repository.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<ol style="list-style-type: decimal"><li>Licence can be done in either of the following two ways:
+<ol style="list-style-type: lower-alpha"><li>Create a LICENSE file in the root of your software repository on
+your local machine and copy into it the text of your chosen licence (you
+can find it online). Push your local changes to your GitHub
+repository.</li>
+<li>In your repository on GitHub, go to <code>Add file</code> option and
+start typing file name “LICENSE” - GitHub will recognise that you want
+to add a licence and will offer you a choice of difference licences to
+choose from. Select one and commit your changes, then do
+<code>git pull</code> locally to bring those changes to your
+machine.</li>
+</ol></li>
+<li>Add a copyright statement, the name of the license you are using and
+a mention of the LICENSE file to at least one source code file
+(e.g. <code>eva_data_analysis.py</code>)</li>
+<li>Link to your LICENSE file from README to make this information about
+your code more prominent.</li>
+</ol><p>After completing the above, check the “About” section of your
+repository’s GitHub landing webpage and see if there is now a license
+listed.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="citation-file">CITATION file<a class="anchor" aria-label="anchor" href="#citation-file"></a></h3>
@@ -777,10 +869,10 @@ with Author “Max Hypothesis” by following these steps:</p>
 <ol style="list-style-type: decimal"><li>First, head to <code>cffinit</code> online at <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a>.</li>
 <li>Then, let’s work through the metadata input form to complete the
 minimum information needed to generate a CFF. We’ll also add the
-following abstract:</li>
-</ol><p>“Spacetravel - a simple python script to calculate time spent in
-Space by individual NASA astronauts”</p>
-<ol start="3" style="list-style-type: decimal"><li>At the end of the process, download the CFF file and inspect it. It
+following abstract:
+<code>"Spacetravel - a simple python script to calculate time spent in Space by individual NASA astronauts"</code>
+</li>
+<li>At the end of the process, download the CFF file and inspect it. It
 should look like this:</li>
 </ol><div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -831,12 +923,12 @@ section</li>
 </ul></div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Use <a href="https://citation-file-format.github.io/cff-initializer-javascript/#/version-specific" class="external-link">cffinit</a>,
 a web application to create your citation file using a series of online
@@ -1038,7 +1130,7 @@ deploying our documentation to a hosting service.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Some options for hosting documentation </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a></h3>
@@ -1161,7 +1253,7 @@ filename for the output dataset generated by Spacewalks.</p></li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Discussion hints &amp; solution </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>An effective how-to guide should:</p>
 <ul><li>be goal oriented and focus on action.</li>
@@ -1210,7 +1302,7 @@ dataset when running the analysis script.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Solution </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Here is what an example tutorial may look like.</p>
 <div class="section level4">
@@ -1332,7 +1424,7 @@ our example how-to guide?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
   <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Discussion hints </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <div class="section level4">
 <h4 id="content">Content<a class="anchor" aria-label="anchor" href="#content"></a></h4>
@@ -1466,8 +1558,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/07-documenting-code.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/07-documenting-code.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-07-09",
-  "datePublished": "2024-08-06"
+  "dateModified": "2024-08-12",
+  "datePublished": "2024-08-12"
 }
 
   </script><script>
