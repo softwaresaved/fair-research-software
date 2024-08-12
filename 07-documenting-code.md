@@ -269,10 +269,80 @@ The second argument is the path the CSV output file.
 
 ### LICENSE file
 
-A license file outlines the legal terms for using, modifying, and distributing the project.
-We  will talk about choosing a license in detail in a later episode.
+Copyright allows a creator of work (such as written text, photographs, films, music, software code) to state that 
+they own the work they have created. Copyright is automatically implied - even if the creator does not explicitly 
+assert it, copyright of the work exists from the moment of creation. A licence is a legal document which sets down 
+the terms under which the creator is releasing what they have created for others to use, modify, extend or exploit.
+
+Because any creative work is copyrighted the moment it is created, even without any kind of licence agreement, 
+it is important to state the terms under which software can be reused. 
+The lack of a licence for your software implies that no one can reuse the software at all - hence it is imperative 
+you declare it. A common way to declare your copyright of a piece of software and the license you are 
+distributing it under is to include a file called LICENSE in the root directory of your code repository.
+
+There is an optional extra [episode in this course on different open source software licences](../learners/licensing.md) 
+that you can choose for your code and that we recommend for further reading. 
+
+:::::: instructor
+Make sure to mention the [extra content on different open source software licences](../learners/licensing.md), 
+briefly cover it if there is time, then focus on the technicalities of adding a license file to a 
+code repository (as there is likely not going to be enough time to spend on different license types).
+::::::
+
+:::::: callout
+#### Tools to help you choose a licence
+
+A [short intro](../learners/licensing.md) on different open source software licences included as extra content to this course. 
+
+Check out the [open source guide](https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project) 
+on applying, changing and editing licenses.
+
+The website [choosealicense.com](https://choosealicense.com) has some great
+resources to help you choose a license that is appropriate for your needs, and can even automate adding the LICENSE
+file to your GitHub code repository.
+
+:::::::
+
+
+::::::  challenge
+
+### Select a licence
+
+Choose a license for your code. 
+Discuss with your neighbour or the group your choice of license and reason for choosing it.
+
+::::::
+
+
+:::::: challenge
+
+### Add a license to your code
+
+Add a LICENSE file containing the full text of your chosen license to your code repository.
+
+::: solution
+
+1. Licence can be done in either of the following two ways:
+    a. Create a LICENSE file in the root of your software repository on your local machine and copy into it 
+    the text of your chosen licence (you can find it online). Push your local changes to your GitHub repository. 
+    b. In your repository on GitHub, go to `Add file` option and start typing file name "LICENSE" - GitHub will
+    recognise that you want to add a licence and will offer you a choice of difference licences to choose from. Select
+    one and commit your changes, then do `git pull` locally to bring those changes to your machine.
+2. Add a copyright statement, the name of the license you are using and a mention of the LICENSE file to at least 
+one source code file (e.g. `eva_data_analysis.py`)
+3. Link to your LICENSE file from README to make this information about your code more prominent.
+
+After completing the above, check the "About" section of your repository's GitHub landing webpage and see
+if there is now a license listed.
+
+
+:::
+
+::::::
+
 
 ### CITATION file
+
 We can add a citation file to our repository to provide instructions on how and when to cite our code.
 A citation file can be a plain text (CITATION.txt) or a Markdown file (CITATION.md), but there are 
 certain benefits to use a special file format called the Citation File Format (CFF) which provides 
@@ -322,9 +392,9 @@ these steps:
 
  1. First, head to `cffinit` online at [`cffinit`][cffinit-webapp].
 2. Then, let's work through the metadata input form to complete the minimum information needed to generate a CFF. We'll also add the following abstract:
-
-  "Spacetravel - a simple python script to calculate time spent in Space by individual NASA astronauts"
-
+    ```
+    "Spacetravel - a simple python script to calculate time spent in Space by individual NASA astronauts"
+   ```
 3. At the end of the process, download the CFF file and inspect it. It should look like this:
 
 ```yaml
