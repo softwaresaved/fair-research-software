@@ -318,10 +318,10 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -341,7 +341,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
+            <hr class="half-width lesson-resources"><a href="aio.html">See all in one page</a>
 
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
@@ -417,8 +417,7 @@ detail about what the code is doing</li>
 <p>In this episode, we will introduce the concept of readable code and
 consider how it can help create reusable scientific software and empower
 collaboration between researchers.</p>
-<section><h2 class="section-heading" id="motivation-for-code-readability">Motivation for code readability<a class="anchor" aria-label="anchor" href="#motivation-for-code-readability"></a>
-<a class="anchor" aria-label="anchor" href="#motivation-for-code-readability"></a></h2>
+<section><h2 class="section-heading" id="motivation-for-code-readability">Motivation for code readability<a class="anchor" aria-label="anchor" href="#motivation-for-code-readability"></a></h2>
 <hr class="half-width"><p>When someone writes code, they do so based on requirements that are
 likely to change in the future. Requirements change because software
 interacts with the real world, which is dynamic. When these requirements
@@ -436,8 +435,7 @@ person who just joined the project reads my software, will they be able
 to understand what I have written here?”</p>
 <p>We will now learn about a few software best practices we can follow
 to help create readable code.</p>
-</section><section><h2 class="section-heading" id="code-layout">Code layout<a class="anchor" aria-label="anchor" href="#code-layout"></a>
-<a class="anchor" aria-label="anchor" href="#code-layout"></a></h2>
+</section><section><h2 class="section-heading" id="code-layout">Code layout<a class="anchor" aria-label="anchor" href="#code-layout"></a></h2>
 <hr class="half-width"><p>Our script currently places import statements throughout the code.
 Python convention is to place all import statements at the top of the
 script so that dependant libraries are clearly visible and not buried
@@ -521,8 +519,7 @@ help readability (accessibility) and reusability of our code.</p>
 <pre class="output" tabindex="0"><code>[main a97a9e1] Move import statements to the top of the script
  1 file changed, 4 insertions(+), 4 deletions(-)</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="standard-libraries">Standard libraries<a class="anchor" aria-label="anchor" href="#standard-libraries"></a>
-<a class="anchor" aria-label="anchor" href="#standard-libraries"></a></h2>
+</section><section><h2 class="section-heading" id="standard-libraries">Standard libraries<a class="anchor" aria-label="anchor" href="#standard-libraries"></a></h2>
 <hr class="half-width"><p>Our script currently reads the data line-by-line from the JSON data
 file and uses custom code to manipulate the data. Variables of interest
 are stored in lists but there are more suitable data structures
@@ -575,8 +572,7 @@ changes. Remember to use an informative commit message.</p>
 <pre class="output" tabindex="0"><code>[main 0ba9b04] "Refactor code to use standard libraries""
  1 file changed, 11 insertions(+), 46 deletions(-)</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="command-line-interface-to-code">Command-line interface to code<a class="anchor" aria-label="anchor" href="#command-line-interface-to-code"></a>
-<a class="anchor" aria-label="anchor" href="#command-line-interface-to-code"></a></h2>
+</section><section><h2 class="section-heading" id="command-line-interface-to-code">Command-line interface to code<a class="anchor" aria-label="anchor" href="#command-line-interface-to-code"></a></h2>
 <hr class="half-width"><p>Let’s add a command-line interface to our script to allow us pass the
 data file to be read and the output file to be written to as parameters
 to our script and avoid hard-coding them. This improves interoperability
@@ -651,8 +647,7 @@ input data file and csv output data file as:</p>
 <pre class="output" tabindex="0"><code>[main b5883f6] Add commandline functionality to script
  1 file changed, 30 insertions(+), 16 deletions(-)</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="meaningful-variable-names">Meaningful variable names<a class="anchor" aria-label="anchor" href="#meaningful-variable-names"></a>
-<a class="anchor" aria-label="anchor" href="#meaningful-variable-names"></a></h2>
+</section><section><h2 class="section-heading" id="meaningful-variable-names">Meaningful variable names<a class="anchor" aria-label="anchor" href="#meaningful-variable-names"></a></h2>
 <hr class="half-width"><p>Variables are the most common thing you will assign when coding, and
 it’s really important that it is clear what each variable means in order
 to understand what the code is doing. If you return to your code after a
@@ -710,8 +705,7 @@ languages.)</li>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="give-a-descriptive-name-to-a-variable" class="callout-inner">
-<h3 class="callout-title">Give a descriptive name to a variable<a class="anchor" aria-label="anchor" href="#give-a-descriptive-name-to-a-variable"></a>
-</h3>
+<h3 class="callout-title">Give a descriptive name to a variable</h3>
 <div class="callout-content">
 <p>Below we have a variable called <code>var</code> being set the value
 of 9.81. <code>var</code> is not a very descriptive name here as it
@@ -732,7 +726,7 @@ suggest a new name for this variable.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Yes, <span class="math display">\[9.81 m/s^2 \]</span> is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
 force exerted by the Earth</a>. It is often referred to as “little g” to
@@ -753,8 +747,7 @@ be:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
-</h3>
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Let’s apply this to <code>eva_data_analysis.py</code>.</p>
 <ol style="list-style-type: lower-alpha"><li>
@@ -774,7 +767,7 @@ informative commit message.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Updated code:</p>
 <div class="codewrapper sourceCode" id="cb13">
@@ -825,8 +818,7 @@ informative commit message.</p></li>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="inline-comments">Inline comments<a class="anchor" aria-label="anchor" href="#inline-comments"></a>
-<a class="anchor" aria-label="anchor" href="#inline-comments"></a></h2>
+</section><section><h2 class="section-heading" id="inline-comments">Inline comments<a class="anchor" aria-label="anchor" href="#inline-comments"></a></h2>
 <hr class="half-width"><p>Commenting is a very useful practice to help convey the context of
 the code. It can be helpful as a reminder for your future self or your
 collaborators as to why code is written in a certain way, how it is
@@ -887,8 +879,7 @@ updated.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="add-some-comments-to-a-code-block" class="callout-inner">
-<h3 class="callout-title">Add some comments to a code block<a class="anchor" aria-label="anchor" href="#add-some-comments-to-a-code-block"></a>
-</h3>
+<h3 class="callout-title">Add some comments to a code block</h3>
 <div class="callout-content">
 <ol style="list-style-type: lower-alpha"><li>Examine <code>eva_data_analysis.py</code>. Add as many inline
 comments as you think is required to help yourself and others understand
@@ -905,7 +896,7 @@ symbol.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Some good inline comments may look like the example below.</p>
 <div class="codewrapper sourceCode" id="cb18">
@@ -967,8 +958,7 @@ symbol.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
-<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+</section><section><h2 class="section-heading" id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
 <hr class="half-width"><p>Functions are a fundamental concept in writing software and are one
 of the core ways you can organise your code to improve its readability.
 A function is an isolated section of code that performs a single,
@@ -991,8 +981,7 @@ whole.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="create-a-function" class="callout-inner">
-<h3 class="callout-title">Create a function<a class="anchor" aria-label="anchor" href="#create-a-function"></a>
-</h3>
+<h3 class="callout-title">Create a function</h3>
 <div class="callout-content">
 <p>Below is a function that reads in a JSON file into a dataframe
 structure using the <a href="https://pandas.pydata.org/" class="external-link"><code>pandas</code> library</a> - but
@@ -1023,7 +1012,7 @@ in on the command line for verification.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Here is the correct order of the code for the function.</p>
 <div class="codewrapper sourceCode" id="cb21">
@@ -1048,8 +1037,7 @@ way.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="docstrings">Docstrings<a class="anchor" aria-label="anchor" href="#docstrings"></a>
-<a class="anchor" aria-label="anchor" href="#docstrings"></a></h2>
+</section><section><h2 class="section-heading" id="docstrings">Docstrings<a class="anchor" aria-label="anchor" href="#docstrings"></a></h2>
 <hr class="half-width"><p>Docstrings are a specific type of documentation that are provided
 within functions, and <a href="https://docs.python.org/3/tutorial/classes.html" class="external-link">classes</a> too.
 A function docstring should explain what the isolated code is doing,
@@ -1110,8 +1098,7 @@ files - such as <a href="https://www.mkdocs.org/" class="external-link">MkDocs</
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="writing-docstrings" class="callout-inner">
-<h3 class="callout-title">Writing docstrings<a class="anchor" aria-label="anchor" href="#writing-docstrings"></a>
-</h3>
+<h3 class="callout-title">Writing docstrings</h3>
 <div class="callout-content">
 <p>Write a docstring for the <code>read_json_to_dataframe</code>
 function from the previous exercise. Things you may want to consider
@@ -1131,7 +1118,7 @@ level as the code defined beneath it, which is 4 whitespaces.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>A good enough docstring for this function would look like this:</p>
 <div class="codewrapper sourceCode" id="cb24">
@@ -1177,8 +1164,7 @@ the docstring may look more like this:</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="improving-our-code">Improving our code<a class="anchor" aria-label="anchor" href="#improving-our-code"></a>
-<a class="anchor" aria-label="anchor" href="#improving-our-code"></a></h2>
+</section><section><h2 class="section-heading" id="improving-our-code">Improving our code<a class="anchor" aria-label="anchor" href="#improving-our-code"></a></h2>
 <hr class="half-width"><p>Finally, let’s apply these good practices to
 <code>eva_data_analysis.py</code> and organise our code into functions
 with descriptive names and docstrings.</p>
@@ -1314,8 +1300,7 @@ Remember to use an informative commit message.</p>
 <span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Organise code into functions"</span></span>
 <span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
-<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
+</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
 <hr class="half-width"><p>During this episode, we have discussed the importance of code
 readability and explored some software engineering practices that help
 facilitate this.</p>
@@ -1329,8 +1314,7 @@ include:</p>
 <li>Inline comments to provide real-world context</li>
 <li>Functions to isolate specific code sections for re-use</li>
 <li>Docstrings for documenting functions to facilitate their re-use</li>
-</ul></section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
-<a class="anchor" aria-label="anchor" href="#further-reading"></a></h2>
+</ul></section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a></h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
 the topic of this episode:</p>
 <ul><li><a href="https://www.theguardian.com/info/2019/jan/29/code-readability-matters" class="external-link">‘Code
@@ -1350,8 +1334,7 @@ for the course.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>Readable code is easier to understand, maintain, debug and
 extend!</li>
@@ -1406,7 +1389,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1429,7 +1412,7 @@ any links that you are not going to use.
   "identifier": "https://softwaresaved.github.io/fair-research-software/05-code-readability.html",
   "dateCreated": "2023-10-03",
   "dateModified": "2024-07-15",
-  "datePublished": "2024-08-20"
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
