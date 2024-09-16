@@ -245,11 +245,11 @@ Using a backslash in this way is called 'escaping' and it lets the terminal know
 as part of the filename, and not a separate argument.
 However, it is pretty annoying and considered bad practice to have spaces in your filenames like this, 
 especially if you will be manipulating them from the terminal.
-So, let's go ahead and remove the space from the filename altogether and replace it with a hyphen instead.
+So, let's go ahead and remove the space from the filename altogether and replace it with an underscore `_` instead.
 You can use the `mv` command again like so:
 
 ```bash
-$ mv my\ code\ v2.py my-code-v2.py
+$ mv my\ code\ v2.py my_code_v2.py
 ```
 
 If you run `git status` again, you'll see Git has noticed the change in the filename.
@@ -267,7 +267,7 @@ Changes not staged for commit:
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	my-code-v2.py
+	my_code_v2.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -288,7 +288,7 @@ You can also use `git status` to check the status of your project at any time.
 To save the changes to the renamed Python file, use the following Git commands:
 
 ```bash
-$ git add my\ code\ v2.py my-code-v2.py
+$ git add my\ code\ v2.py my_code_v2.py
 $ git status
 ```
 
@@ -296,29 +296,29 @@ $ git status
 On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	renamed:    my code v2.py -> my-code-v2.py
+	renamed:    my code v2.py -> my_code_v2.py
 ```
 
 ```bash
-$ git commit -m "Replace spaces in Python filename with hyphens"
+$ git commit -m "Replace spaces in Python filename with underscores"
 ```
 
 ```output
-[main 8ea2a0b] Replace spaces in Python filename with hyphens
+[main 8ea2a0b] Replace spaces in Python filename with underscores
  1 file changed, 0 insertions(+), 0 deletions(-)
- rename my code v2.py => my-code-v2.py (100%)
+ rename my code v2.py => my_code_v2.py (100%)
 ```
 
 
 
 ### Advanced solution
 
-We initially renamed the Python file using the `mv` command, and we than had to `git add` *both* `my-code-v2.py` 
+We initially renamed the Python file using the `mv` command, and we than had to `git add` *both* `my_code_v2.py` 
 and `my\ code\ v2.py`.
 Alternatively, we could have used Git's own `mv` command like so:
 
 ```bash
-$ git mv my\ code\ v2.py my-code-v2.py
+$ git mv my\ code\ v2.py my_code_v2.py
 $ git status
 ```
 
@@ -326,7 +326,7 @@ $ git status
 On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	renamed:    my code v2.py -> my-code-v2.py
+	renamed:    my code v2.py -> my_code_v2.py
 ```
 
 `git mv` is the equivalent of running `mv ...` followed immediately by `git add ...` of the old and new filenames, 
@@ -334,13 +334,13 @@ so the changes have been staged automatically.
 All that needs to be done is to commit them.
 
 ```bash
-$ git commit -m "Replace spaces in Python filename with hyphens"
+$ git commit -m "Replace spaces in Python filename with underscores"
 ```
 
 ```output
-[main 6499bd7] Replace spaces in Python filename with hyphens
+[main 6499bd7] Replace spaces in Python filename with underscores
  1 file changed, 0 insertions(+), 0 deletions(-)
- rename my code v2.py => my-code-v2.py (100%)
+ rename my code v2.py => my_code_v2.py (100%)
 ```
 
 :::::::::::::::::::::::::
@@ -366,7 +366,7 @@ g_file = './cumulative_eva_graph.png'
 Now, let's actually rename our files on the file system using git and commit our changes.
 ```bash
 git mv data.json eva-data.json
-git mv my-code-v2.py eva_data_analysis.py
+git mv my_code_v2.py eva_data_analysis.py
 git add eva_data_analysis.py
 git status
 ```
@@ -375,7 +375,7 @@ On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 	renamed:    data.json -> eva-data.json
-	renamed:    my-code-v2.py -> eva_data_analysis.py
+	renamed:    my_code_v2.py -> eva_data_analysis.py
 ```
 
 Finally, let's commit out changes:
@@ -497,7 +497,7 @@ commit 6499bd731ab50fde2731ce2642f143cea86450b6 (HEAD -> main)
 Author: Sarah Gibson <drsarahlgibson@gmail.com>
 Date:   Mon Jun 17 11:55:17 2024 +0100
 
-    Replace spaces in Python filename with hyphens
+    Replace spaces in Python filename with underscores
 
 commit bf55eb7639a6508658aaa1bfeaeb9f115d1bcc40
 Author: Sarah Gibson <drsarahlgibson@gmail.com>
