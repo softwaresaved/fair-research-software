@@ -38,6 +38,12 @@ any links that you are not going to use.
 [beginner-guide-reproducible-research]: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801
 [swc-git-lesson]: https://swcarpentry.github.io/git-novice
 [swc-git-lesson-track]: https://swcarpentry.github.io/git-novice/04-changes.html
+[swc-git-lesson-licencing]: https://swcarpentry.github.io/git-novice/11-licensing.html
+[swc-git-lesson-citation]: https://swcarpentry.github.io/git-novice/12-citation.html
+[git-skillup-instructors]: https://carpentries-incubator.github.io/github-skill-up-instructors/
+[git-skillup-maintainers]: https://carpentries.github.io/github-skill-up-maintainers/
+[git-soton]: https://southampton-rsg.github.io/swc-git-novice/index.html
+[git-soton-collaboration]: https://southampton-rsg.github.io/swc-git-novice/06-collab/index.html
 [git-diff-docs]: https://git-scm.com/docs/git-diff
 [ttw-guide-version-control]: https://the-turing-way.netlify.app/reproducible-research/vcs
 [how-git-works]: https://www.pluralsight.com/courses/how-git-works
@@ -108,3 +114,4 @@ any links that you are not going to use.
 [coursera-inline-comments]: https://www.coursera.org/tutorials/python-comment#inline-commenting-in-python
 [python-functions-intro]: https://introtopython.org/introducing_functions.html
 [python-functions-w3schools]: https://www.w3schools.com/python/python_functions.asp
+[github]: https://github.com

@@ -1,5 +1,5 @@
 ---
-title: Ethical considerations for research software
+title: Ethical & environmental considerations around research software
 teaching: 45
 exercises: 15
 ---

@@ -1,17 +1,20 @@
 ---
-title: "Code testing"
+title: "Code correctness"
 teaching: 60
 exercises: 30
 ---
 
 ::: questions
+
 -   How can we verify that our code is correct?
 -   How can we automate our software tests?
 -   What makes a "good" test?
 -   Which parts of our code should we prioritize for testing?
+
 :::
 
 ::: objectives
+
 After completing this episode, participants should be able to:
 
 -   Explain why code testing is important and how this supports FAIR
@@ -27,67 +30,200 @@ After completing this episode, participants should be able to:
     appropriately.
 -   Evaluate code coverage to identify how much of the codebase is being
     tested and identify areas that need further tests.
+
 :::
 
-## Motivation for Code Testing
-
+Now that we have improved the structure and readability of our code - it is much easier to 
+test its functionality and improve it further. 
 The goal of software testing is to check that the actual results
-produced by a piece of code meet our expectations i.e. are correct.
+produced by a piece of code meet our expectations, i.e. are correct.
+
+Before we move on with further code modifications, make sure your virtual development environment is active.
+
+:::::: instructor
+
+::: callout
+
+### Activate your virtual environment
+If it is not already active, make sure to remind learners to activate their virtual environments from the root of
+the software project directory in command line terminal (e.g. Bash or GitBash):
+
+```bash
+$ source venv_spacewalks/bin/activate # Mac or Linux
+$ source venv_spacewalks/Scripts/activate # Windows
+(venv_spacewalks) $
+```
+:::
+
+At this point, the state of the software repository should be as in
+https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair/tree/08-code-correctness
+and the `eva_data_analysis.py` code should look like as follows:
+
+``` python
+import matplotlib.pyplot as plt
+import pandas as pd
+import sys
+
+# https://data.nasa.gov/resource/eva.json (with modifications)
+
+def main(input_file, output_file, graph_file):
+    print("--START--")
+
+    eva_data = read_json_to_dataframe(input_file)
+
+    write_dataframe_to_csv(eva_data, output_file)
+
+    plot_cumulative_time_in_space(eva_data, graph_file)
+
+    print("--END--")
+
+def read_json_to_dataframe(input_file):
+    """
+    Read the data from a JSON file into a Pandas dataframe.
+    Clean the data by removing any incomplete rows and sort by date
+
+    Args:
+        input_file_ (str): The path to the JSON file.
+
+    Returns:
+         eva_df (pd.DataFrame): The cleaned and sorted data as a dataframe structure
+    """
+    print(f'Reading JSON file {input_file}')
+    eva_df = pd.read_json(input_file, convert_dates=['date'])
+    eva_df['eva'] = eva_df['eva'].astype(float)
+    eva_df.dropna(axis=0, inplace=True)
+    eva_df.sort_values('date', inplace=True)
+    return eva_df
+
+
+def write_dataframe_to_csv(df, output_file):
+    """
+    Write the dataframe to a CSV file.
+
+    Args:
+        df (pd.DataFrame): The input dataframe.
+        output_file (str): The path to the output CSV file.
+
+    Returns:
+        None
+    """
+    print(f'Saving to CSV file {output_file}')
+    df.to_csv(output_file, index=False)
+
+def text_to_duration(duration):
+    """
+    Convert a text format duration "HH:MM" to duration in hours
+
+    Args:
+        duration (str): The text format duration
+
+    Returns:
+        duration_hours (float): The duration in hours
+    """
+    hours, minutes = duration.split(":")
+    duration_hours = int(hours) + int(minutes)/60
+    return duration_hours
+
+
+def add_duration_hours_variable(df):
+    """
+    Add duration in hours (duration_hours) variable to the dataset
+
+    Args:
+        df (pd.DataFrame): The input dataframe.
+
+    Returns:
+        df_copy (pd.DataFrame): A copy of df_ with the new duration_hours variable added
+    """
+    df_copy = df.copy()
+    df_copy["duration_hours"] = df_copy["duration"].apply(
+        text_to_duration
+    )
+    return df_copy
+
+
+def plot_cumulative_time_in_space(df, graph_file):
+    """
+    Plot the cumulative time spent in space over years
+
+    Convert the duration column from strings to number of hours
+    Calculate cumulative sum of durations
+    Generate a plot of cumulative time spent in space over years and
+    save it to the specified location
+
+    Args:
+        df (pd.DataFrame): The input dataframe.
+        graph_file (str): The path to the output graph file.
+
+    Returns:
+        None
+    """
+    print(f'Plotting cumulative spacewalk duration and saving to {graph_file}')
+    df = add_duration_hours_variable(df)
+    df['cumulative_time'] = df['duration_hours'].cumsum()
+    plt.plot(df.date, df.cumulative_time, 'ko-')
+    plt.xlabel('Year')
+    plt.ylabel('Total time spent in space to date (hours)')
+    plt.tight_layout()
+    plt.savefig(graph_file)
+    plt.show()
+
+
+if __name__ == "__main__":
+
+    if len(sys.argv) < 3:
+        input_file = 'data/eva-data.json'
+        output_file = 'results/eva-data.csv'
+        print(f'Using default input and output filenames')
+    else:
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        print('Using custom input and output filenames')
+
+    graph_file = 'results/cumulative_eva_graph.png'
+    main(input_file, output_file, graph_file)
+
+
+```
+
+::::::
+
+## Why use software testing?
 
 Adopting software testing as part of our research workflow helps us to
-conduct better research and produce FAIR software.
+conduct **better research** and produce **FAIR software**:
 
-### Better Research
+- Software testing can help us be more productive as it helps us to identify and fix problems with our code early and
+  quickly and allows us to demonstrate to ourselves and others that our
+  code does what we claim. More importantly, we can share our tests
+  alongside our code, allowing others to verify our software for themselves.
+- The act of writing tests encourages to structure our code as individual functions and often results in a more
+  **readable**, modular and maintainable codebase that is easier to extend or repurpose.
+- Software testing improves the **accessibility** and **reusability** of our code - well-written software tests
+  capture the expected behaviour of our code and can be used alongside documentation to help other developers
+  quickly make sense of our code. In addition, a well tested codebase allows developers to experiment with new
+  features safe in the knowledge that tests will reveal if their changes have broken any existing functionality.
+- Software testing underpins the FAIR process by giving us the
+  confidence to engage in open research practices - if we are not sure that our code works as intended and produces accurate
+  results, we are unlikely to feel confident about sharing our code with
+  others. Software testing brings piece of mind by providing a
+  step-by-step approach that we can apply to verify that our code is
+  correct.
 
-Software testing can help us be better, more productive researchers.
 
-Testing helps us to identify and fix problems with our code early and
-quickly and allows us to demonstrate to ourselves and others that our
-code does what we claim. More importantly, we can share our tests
-alongside our code, allowing others to check this for themselves.
+## Types of software tests
 
-### FAIR Software
+There are many different types of software testing.
 
-Software testing also underpins the FAIR process by giving us the
-confidence to engage in open research practices.
-
-If we are not sure that our code works as intended and produces accurate
-results, we are unlikely to feel confident about sharing our code with
-others. Software testing brings piece of mind by providing a
-step-by-step approach that we can apply to verify that our code is
-correct.
-
-Software testing also supports the FAIR process by improving the
-**accessibility** and **reusability** of our code.
-
-**Accessible**:
-
--   Well written software tests capture the expected behaviour of our
-    code and can be used alongside documentation to help developers
-    quickly make sense of our code.
-
-**Reusable**:
-
--   A well tested codebase allows developers to experiment with new
-    features safe in the knowledge that tests will reveal if their
-    changes have broken any existing functionality.\
--   The act of writing tests encourages to structure our code as
-    individual functions and often results in a more modular, readable,
-    maintainable codebase that is easier to extend or repurpose.
-
-### Types of Software Tests
-
-There are many different types of software testing including:
-
--   **Unit Tests**: Unit tests focus on testing individual functions in
+-   **Unit tests** focus on testing individual functions in
     isolation. They ensure that each small part of the software performs
     as intended. By verifying the correctness of these individual units,
     we can catch errors early in the development process.
 
--   **Integration Tests**: Integration tests, check how different parts
+-   **Integration tests** check how different parts
     of the code e.g. functions work together.
 
--   **Regression Tests**: Regression tests are used to ensure that new
+-   **Regression tests** are used to ensure that new
     changes or updates to the codebase do not adversely affect the
     existing functionality. They involve checking whether a program or
     part of a program still generates the same results after changes
@@ -101,7 +237,7 @@ concepts and techniques we cover will provide a solid foundation
 applicable to other types of testing.
 
 ::: challenge
-## Types of Software Tests
+### Types of software tests
 
 Fill in the blanks in the sentences below:
 
@@ -126,7 +262,7 @@ Fill in the blanks in the sentences below:
 :::
 :::
 
-### Informal Testing
+## Informal testing
 
 **How should we test our code?** Let’s start by considering the
 following scenario. A collaborator on our project has sent us the
@@ -244,7 +380,7 @@ However, there are limitations to this approach:
     tested and which have not
 :::
 
-## Formal Testing
+## Formal testing
 
 We can overcome some of these limitations by formalising our testing
 process. A formal approach to testing our function(s) is to write
@@ -285,8 +421,8 @@ Let's create a new python file `test_code.py` in the root of our project
 folder to store our tests.
 
 ``` bash
-cd Spacewalks
-touch test_code.py
+(venv_spacewalks) $ cd spacewalks
+(venv_spacewalks) $ touch test_code.py
 ```
 
 First, we import text_to_duration into our test script. Then, we then
@@ -417,7 +553,7 @@ and re-run the test script. As our code base and tests grow, this will
 become cumbersome. This is not ideal and can be overcome by automating
 our tests using a testing framework.
 
-## Using a Testing Framework
+## Using a testing framework
 
 Our approach so far has had two major limitations:
 
@@ -433,7 +569,16 @@ We will use the python testing framework pytest with its code coverage
 plugin pytest-cov. To install these libraries, open a terminal and type:
 
 ``` bash
-python -m pip install pytest pytest-cov
+(venv_spacewalks) $ python -m pip install pytest pytest-cov
+```
+
+Make sure to also capture the changes to our virtual development environment.
+
+```bash
+(venv_spacewalks) $ python -m pip freeze > requirements.txt
+(venv_spacewalks) $ git add requirements.txt
+(venv_spacewalks) $ git commit -m "Added pytest and pytest-cov libraries."
+(venv_spacewalks) $ git push origin main
 ```
 
 Let’s make sure that our tests are ready to work with pytest.
@@ -465,8 +610,8 @@ move it to a dedicated test folder and rename our test_code.py file to
 test_eva_analysis.py.
 
 ``` bash
-mkdir tests
-mv test_code.py tests/test_eva_analysis.py
+(venv_spacewalks) $ mkdir tests
+(venv_spacewalks) $ mv test_code.py tests/test_eva_analysis.py
 ```
 
 Before we re-run our tests using pytest, let's update our second test.
@@ -544,7 +689,7 @@ def text_to_duration(duration):
 Finally, let's run our tests:
 
 ``` bash
-python -m pytest 
+(venv_spacewalks) $ python -m pytest 
 ```
 
 ``` output
@@ -990,7 +1135,7 @@ def text_to_duration(duration):
 ```
 
 ``` bash
-python -m pytest --cov 
+(venv_spacewalks) $ python -m pytest --cov 
 ```
 
 ``` output
@@ -1018,7 +1163,7 @@ To get an in-depth report about which parts of our code are tested and
 which are not, we can add the option `--cov-report=html`.
 
 ``` bash
-python -m pytest --cov --cov-report=html 
+(venv_spacewalks) $ python -m pytest --cov --cov-report=html 
 ```
 
 This option generates a folder `htmlcov` which contains a html code
@@ -1053,7 +1198,7 @@ b.  Which functions in our code base are currently untested?
 
 ::: solution
 ``` bash
-python -m pytest --cov --cov-report=html
+(venv_spacewalks) $ python -m pytest --cov --cov-report=html
 ```
 
 a.  The proportion of the code base NOT covered by our tests is
@@ -1463,151 +1608,22 @@ Finally lets commit our test suite to our codebase and push the changes
 to GitHub.
 
 ``` bash
-git add eva_data_analysis.py 
-git commit -m "Add additional analysis functions"
-git add tests/
-git commit -m "Add test suite"
-git push origin main
+(venv_spacewalks) $ git add eva_data_analysis.py 
+(venv_spacewalks) $ git commit -m "Add additional analysis functions"
+(venv_spacewalks) $ git add tests/
+(venv_spacewalks) $ git commit -m "Add test suite"
+(venv_spacewalks) $ git push origin main
 ```
 
-## Continuous Integration (Optional)
 
-::: callout
-### Continuous Integration
+## Continuous Integration for automated testing
 
-So far, we have run our tests locally using.
+Continuous Integration (CI) services provide the infrastructure to
+automatically run the code's test suite every time changes are pushed to a remote repository.
+There is an [extra episode on configuring CI for automated tests on GitHub](../learners/ci-for-testing.md)
+for some additional reading.
 
-``` bash
-python -m pytest
-```
-
-A limitation of this approach is that we must remember to run our tests
-each time we make any changes.
-
-Continuous integration services provide the infrastructure to
-automatically run a\
-code's test suite every time changes are pushed to a remote repository.
-
-This means that each time we (or our colleagues) push to the remote, the
-test suite will be run to verify that our tests still pass.
-
-If we are using GitHub, we can use the continuous integration service
-GitHub Actions to automatically run our tests.
-
-To setup this up:
-
--   Navigate to the spacewalks folder:
-
-``` bash
-cd ~/Desktop/Spacewalks
-```
-
--   To setup continuous integration on GitHub actions, the dependencies
-    of our code must be recorded in a `requirements.txt` file in the
-    root of our repository.
--   You can find out more about creating requirements.txt files from
-    CodeRefinery's tutorial on "Recording Dependencies".
--   For now, add the following list of code dependencies to
-    requirements.txt in the root of the spacewalks repository:
-
-``` bash
-touch requirements.txt
-```
-
-Content of `requirements.txt`:
-
-``` output
-numpy
-pandas
-matplotlib
-pytest
-pytest-cov
-```
-
--   Commit the changes to your repository:
-
-``` bash
-git add requirements.txt
-git commit -m "Add requirements.txt file"
-```
-
-Now let's define out continuous integration workflow:
-
--   Create a hidden folder .github/workflows
-
-``` bash
-mkdir -p .github/workflows
-touch .github/workflows/main.yml
-```
-
--   Define the continuous integration workflow to run on GitHub actions.
-
-``` yaml
-name: CI
-
-# We can specify which Github events will trigger a CI build
-on: push
-
-# now define a single job 'build' (but could define more)
-jobs:
-
-  build:
-
-    # we can also specify the OS to run tests on
-    runs-on: ubuntu-latest
-
-    # a job is a sequence of steps
-    steps:
-
-    # Next we need to checkout out repository, and set up Python
-    # A 'name' is just an optional label shown in the log - helpful to clarify progress - and can be anything
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.12"
-
-    - name: Install Python dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r requirements.txt
-
-    - name: Test with PyTest
-      run: |
-        python3 -m pytest --cov
-```
-
-This workflow definition file instructs GitHub Actions to run our unit
-tests using python version 3.12 each time code is pushed to our
-repository,
-
--   Let's push these changes to our repository and see if the tests are
-    run on GitHub.
-
-``` bash
-git add .github/workflows/main.yml
-git commit -m "Add GitHub actions workflow"
-git push origin main
-```
-
--   To find out if the workflow has run, navigate to the following page
-    in your browser:
-
-```         
-https://github.com/YOUR-REPOSITORY/actions
-```
-
--   On the left of this page a sidebar titled "Actions" lists all the
-    workflows that are active in our repository. You should "CI" here
-    (the `name` of the workflow we just added to our repository ).
--   The body of the page lists the outcome of all historic workflow
-    runs. If the workflow was triggered successfully when we pushed to
-    the repository, you should see one workflow run listed here.
-:::
-
-### Summary
+## Summary
 
 During this episode, we have covered how to use software tests to verify
 the correctness of our code. We have seen how to write a unit test, how
@@ -1621,11 +1637,8 @@ engage in open research practices. Tests also document the intended
 behaviour of our code for other developers and mean that we can
 experiment with changes to our code knowing that our tests will let us
 know if we break any existing functionality. In other words, software
-testing suppors FAIR software by making our code more Accessible and
-Reusable.
-
-To find out more about this topic, please see the "Further reading"
-section below.
+testing supports the FAIR software principles by making our code more **accessible** and
+**reusable**.
 
 ## Further reading
 
@@ -1652,6 +1665,7 @@ Also check the [full reference set](learners/reference.md#litref) for
 the course.
 
 ::: keypoints
+
 1.  Code testing supports the FAIR principles by improving the
     accessibility and re-usability of research code.
 2.  Unit testing is crucial as it ensures each functions works
@@ -1662,4 +1676,5 @@ the course.
     ensure your code performs correctly under a variety of conditions.
 5.  Test coverage can help you to identify parts of your code that
     require additional testing.
+6. 
 :::

@@ -1,5 +1,5 @@
 ---
-title: Documenting code
+title: Code documentation
 teaching: 60
 exercises: 30
 ---
@@ -25,39 +25,49 @@ After completing this episode, participants should be able to:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Motivation for documenting software
-
 We have seen how writing inline comments and docstrings within our code can help with improving its readability. 
 The purpose of software documentation is to communicate other important information 
 about our software (its purpose, dependencies, how to install and run it, etc.) to the people who need it – 
 both users and developers.   
 
-###  Better research
+## Why document our software?
 
 Software documentation is often perceived as a thankless and time-consuming task with few tangible benefits and 
 is often neglected in research projects. 
-However, like software testing, documenting our software can help us and others become more productive researchers. 
-Here are some advantages of documenting our code: 
+However, like software testing, documenting our software can help us and others
+conduct **better research** and produce **FAIR software**:
 
 - Good documentation captures important methodological details ready for when we come to publish our research 
 - Good documentation can help us return to a project seamlessly after time away 
-- Documentation can facilitate collaborations by helping to onboard new project members
+- Documentation can facilitate collaborations by helping us onboard new project members quickly and more easily
 - Good documentation can save us time by answering frequently asked questions (FAQs) about our code for us
+- Software documentation supports the FAIR research software principles by improving the re-usability of our code. 
+  - Good documentation can make our software more understandable and reusable by others, and can bring us some citations
+    and credit
+  - How-to guides and tutorials ensure that users can install our software independently and make use of its basic features
+  - Reference guides and background information can help developers understand our code sufficiently to 
+  modify/extend/repurpose it.
 
-### FAIR software
+Before we move on with further code modifications, make sure your virtual development environment is active.
 
-Software documentation supports FAIR software by improving the re-usability of our code. 
+::: callout
 
-- Good documentation can make our software more understandable and reusable by others, and can bring us some citations
-  and credit
-- How-to guides and tutorials ensure that users can install our software independently and make use of its basic features
-- Reference guides and background information can help developers understand our code sufficiently to 
-modify/extend/repurpose it.
+### Activate your virtual environment
+If it is not already active, make sure to activate your virtual environment from the root of your project directory
+in your command line terminal (e.g. Bash or GitBash):
+
+```bash
+$ source venv_spacewalks/bin/activate # Mac or Linux
+$ source venv_spacewalks/Scripts/activate # Windows
+(venv_spacewalks) $
+```
+
+:::
 
 ## Software-level documentation
 
-In previous episodes we encountered several different forms of in-code documentation 
-including  in-line comments and docstrings.  
+In previous episodes we encountered several different forms of in-code documentation aspects, 
+including in-line comments and docstrings.  
 
 These are an excellent way to improve the readability of our code, but by themselves 
 are insufficient to ensure that our code is easy to use, understand and modify - 
@@ -102,67 +112,48 @@ A README file acts as a “landing page” for your code repository on GitHub an
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-### READMEs and The FAIR Principles
+### README and the FAIR principles
 
-Think about the question below. Your instructors may ask you to share your answer in a shared notes document and/or discuss them with other participants.
+Think about the question below. Your instructors may ask you to share your answer in a shared notes document and/or 
+discuss them with other participants.
 
-Here are some of the major sections you might find in a typical README. Which are **essential** to support the FAIR principles? Which are optional?
+Here are some of the major sections you might find in a typical README. 
+Which are **essential** to support the FAIR principles? Which are optional?
 
 + Purpose of the code
 + Audience (who the code is intended for)
-+ Installation Instructions
-+ Contribution Guide
-+ How to Get Help
++ Installation instructions
++ Contribution guide
++ How to get help
 + License
-+ Software Citation
-+ Usage Example
++ Software citation
++ Usage example
 + Dependencies and their versions
 + FAQs
 + Code of Conduct
 
 :::::::::::::::::::::::: solution 
 
-To support the FAIR principles (Findability, Accessibility, Interoperability, and Reusability), certain sections in a README file are more important than others. Below is a breakdown of the sections that are ESSENTIAL / OPTIONAL in a README to align with these principles. 
+To support the FAIR principles (Findability, Accessibility, Interoperability, and Reusability), 
+certain sections in a README file are more important than others. 
+Below is a breakdown of the sections that are *essential* or *optional* in a README to align with these principles. 
 
-### Essential
+#### Essential
 
-1. **Purpose of the code**
-   - **Explanation:** Clearly explains what the code does. This is essential for findability and reusability.
+- **Purpose of the code** - clearly explains what the code does; essential for findability and reusability.
+- **Installation instructions** - provides step-by-step instructions on how to install the software, ensuring accessibility.
+- **Usage Example** - provides examples of how to use the code, helping users understand its functionality and enhancing reusability.
+- **License**- specifies the terms under which the code can be used, which is crucial for legal clarity and reusability.
+- **Dependencies and their versions** - lists the external libraries and tools required to run the code, including their versions; essential for  reproducibility and interoperability.
+- **Software citation** - provides citation information for academic use, ensuring proper attribution and reusability.
 
-2. **Installation Instructions**
-   - **Explanation:** Provides step-by-step instructions on how to install the software, ensuring accessibility.
+#### Optional
 
-3. **Usage Example**
-   - **Explanation:** Provides examples of how to use the code, helping users understand its functionality and enhancing reusability.
-   
-4. **License**
-   - **Explanation:** Specifies the terms under which the code can be used, which is crucial for legal clarity and reusability.
-
-5. **Dependencies and their versions**
-   - **Explanation:** Lists the external libraries and tools required to run the code, including their versions. This is essential for  reproducibility and interoperability.
-
-6. **Software Citation**
-   - **Explanation:** Provides citation information for academic use, ensuring proper attribution and reusability.
-
-### Optional
-
-7. **Audience (who the code is intended for)**
-   - **Explanation:** Helps users identify if the code is relevant to them, improving findability and usability.
-   
-
-8. **How to Get Help**
-   - **Explanation:** Informs users where they can get help, ensuring better accessibility.
-
-
-9. **Contribution Guide**
-   - **Explanation:** Encourages and guides contributions from the community, enhancing the code's development and reusability.
-
-10. **FAQs**
-   - **Explanation:** Provides answers to common questions, aiding in troubleshooting and improving accessibility.
-
-
-11. **Code of Conduct**
-   - **Explanation:** Sets expectations for behaviour in the community, fostering a welcoming environment and enhancing accessibility.
+- **Audience (who the code is intended for)** - helps users identify if the code is relevant to them, improving findability and usability.
+- **How to get help** - informs users where they can get help, ensuring better accessibility.
+- **Contribution guide** - encourages and guides contributions from the community, enhancing the code's development and reusability.
+- **FAQs** - provide answers to common questions, aiding in troubleshooting and improving accessibility.
+- **Code of Conduct** - sets expectations for behaviour in the community, fostering a welcoming environment and enhancing accessibility.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -876,6 +867,21 @@ How does the content and language of our example tutorial differ from our exampl
 
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::
+
+::: callout
+
+### Commit and push your changes
+
+Do not forget to commit any uncommited changes you may have and then push your work to GitHub.
+
+```bash
+git add <your_changed_files>
+git commit -m "Your commit message"
+git push origin main
+```
+
+:::
+
 
 ## Further reading
 

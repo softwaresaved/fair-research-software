@@ -26,7 +26,7 @@ how this tool assists us in producing reproducible and sustainable scientific pr
 We will create a new software project from our existing code, make some changes to it and track them with
 version control, and then push those changes to a remote server for safe-keeping.
 
-### What is a version control system?
+## What is a version control system?
 
 Version control is the practice of tracking and managing changes to files.
 Version control systems are software tools that assist in the management of these
@@ -34,7 +34,7 @@ file changes over time. They keep track of every modification to the files in a
 special database that allows users to "travel through time" and compare earlier
 versions of the files with the current state.
 
-### Motivation for using a version control system
+## Why use a version control system?
 
 The main motivation as scientists to use version control in our projects is for
 reproducibility purposes. As hinted to above, by tracking and storing every change
@@ -51,7 +51,7 @@ Later on in this workshop, we will also see how using a version control system
 allows many people to collaborate on the same project without a lot of manual
 effort to combine different items of work.
 
-### Git version control system 
+## Git version control system 
 
 Git is one of the version control systems around and the one we will be using in this course. 
 It is primarily used for source code management in software development but it can be used to track changes in files 
@@ -91,7 +91,6 @@ Git is a distributed version control system allowing for multiple people to be w
 (even the same file) at the same time. 
 Initially, we will use Git to start tracking changes to files on our local machines; later on we will start sharing our
 work on GitHub allowing other people to see and contribute to our work.
-
 
 ### Create a new repository
 
@@ -308,8 +307,6 @@ $ git commit -m "Replace spaces in Python filename with underscores"
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename my code v2.py => my_code_v2.py (100%)
 ```
-
-
 
 ### Advanced solution
 
@@ -533,7 +530,7 @@ methods:
   
 Using `git reset` command produces a "cleaner" history, but does not tell the full story and your work.
 
-### Pushing to a Git server
+## Interacting with a remote Git server
 
 Git is also a distributed version control system, allowing us to synchronise work between any two or more copies of 
 the same repository - the ones that are not located on your machine.
@@ -548,13 +545,15 @@ machines.
 
 ![Git - distributed version control system, image from W3Docs (freely available)](episodes/fig/git-distributed.png){alt='2 Git repositories belonging to 2 different developers linked to a central repository and one another showing two way flow of information in each link'}
 
+[GitHub][github] is an online software development platform that can act as a central remote server.
+It uses Git underneath and provides facilities for storing, tracking, and collaborating on software projects.
+Other Git hosting services are available, such as [GitLab](https://gitlab.com) and [Bitbucket](https://bitbucket.org).
+
 Distributing our projects in this way also opens us up to collaboration,
 since colleagues would be able to access our projects, make their own copies on
 their machines, and conduct their own work.
 
-We will now go through how to push a local project to [GitHub](https://github.com),
-though other Git hosting services are available, such as [GitLab](https://gitlab.com)
-and [Bitbucket](https://bitbucket.org).
+We will now go through how to push a local project on [GitHub](https://github.com) and share it publicly.
 
 1. In your browser, navigate to <https://github.com> and sign into your account
 2. In the top right hand corner of the screen, there is a menu labelled "+" with

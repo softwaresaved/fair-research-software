@@ -1,5 +1,5 @@
 ---
-title: "Tools and practices for research software development"
+title: "Tools and practices for FAIR research software development"
 teaching: 60
 exercises: 30
 ---
@@ -27,23 +27,7 @@ Here we will give an overview of the tools, how they help you achieve the aims o
 they work together. 
 In later episodes we will describe some of these tools in more detail.
 
-The table below summarises some tools and practices that can help with each of the FAIR software principles.
-
-| Tools and practices                                                                              | Findable | Accessible | Interoperable | Reusable |
-|--------------------------------------------------------------------------------------------------|----------|------------|---------------|----------|
-| Integrated development environments (e.g. VS Code) - development environments (run, test, debug) |          |            |               | x        |
-| Command line terminal (e.g. Bash)- reproducible workflows/pipelines                              |          |            | x             | x        |
-| Version control tools                                                                            | x        |            |               |          |
-| Testing                                                                                          |          | x          |               | x        |
-| Coding conventions and documentation                                                             |          | x          | x             | x        |
-| License                                                                                          |          | x          |               | x        |
-| Citation                                                                                         | x        |            |               | x        |
-| Software repositories (e.g. GitHub)                                                              | x        | x          |               |          |
-
-
-## Writing your code
-
-### Development environment
+## Development environment
 
 One of the first choices we make when writing code is what tool to use to do the writing.
 You can use a simple text editor such as Notepad, a terminal based editor with syntax highlighting such as Vim or Emacs, 
@@ -78,7 +62,7 @@ It is a single tool in which we can:
 
 Use VS Code to open the Python script and the data file from our project.
 
-### Command line tool/shell
+## Command line tool/shell
 
 In VS Code and similar IDEs you can often run the code by clicking a button or pressing some keyboard shortcut.
 If you gave your code to a colleague or collaborator they might use the same IDE or something different, 
@@ -103,7 +87,7 @@ without editing your code.
 With a command line interface, your code can be built into automated workflows so that the whole process from data 
 gathering to analysis to saving publication-quality results can be written in one Bash script and saved and reused.
 
-### Version control
+## Version control
 
 Version control means knowing what changes were made to your code and when. Many people who have worked on large 
 documents such as essays start doing this by saving files called `essay_draft`, `essay_version1.doc`, 
@@ -121,7 +105,10 @@ check if it is a change in the code due to using a newer version, or a change in
 We will be using the Git version control system, which can be used through the command line terminal, 
 in a browser or in a desktop application.
 
-### Testing
+## Code structure and style guidelines
+TODO
+
+## Code correctness
 
 Testing ensures that your code is correct and does what it is set out to do. When you write code you often feel very 
 confident that it is perfect, but when writing bigger codes or code that is meant to do complex operations it is 
@@ -132,7 +119,7 @@ be assured that it does work correctly on their machine.
 We will show different ways to test your code for different purposes. You need to think about what it is that is 
 important to you and any future users or collaborators to decide what kind of testing is most useful for you.
 
-### Documentation
+## Documentation
 
 Documentation comes in many forms - from the names of variables and functions in your code, additional comments 
 that explain some lines, up to a whole website full of documentation with function definitions, usage examples, 
@@ -140,7 +127,7 @@ tutorials and guides.
 You many not need as much documentation as a large commercial software product, but making your code Reusable relies 
 on other people being able to understand what your code does and how to use it.
 
-### Licences and citation
+## Licences and citation
 
 A licence states what people can legally do with your code, and what restrictions you have placed on it. 
 Whenever you want to use someone else's code you should check what license they have and make sure your use is legal. 
@@ -156,7 +143,7 @@ Both licensing law and citation procedures can vary depending on your country an
 so remember to check with a local team where you are. 
 Your local research IT support or library teams would be a good place to start.
 
-### Code repositories and registries
+## Code repositories and registries
 
 Having somewhere to share your code is fundamental to making it Findable. 
 Your institution might have a code repository, your research field may have a practice of sharing code via a specific 
@@ -167,32 +154,26 @@ depend on or reuse.
 
 We will discuss later how to share your code on GitHub and make it easy for others to find and use.
 
-## Summary
+## Summary of tools & practices
 
-### Findable
+The table below summarises some tools and practices that can help with each of the FAIR software principles.
 
-- Describe your software - README
-- Software repository/registry - GitHub, registries
-- Unique persistent identifier - GitHub commits/tags/releases, Zenodo
+| Tools and practices                                                                               | Findable | Accessible | Interoperable | Reusable |
+|---------------------------------------------------------------------------------------------------|----------|------------|---------------|----------|
+| Virtual development environments, programming language and dependencies - run, test, debug, share |          | x          |               | x        |
+| Integrated development environments/IDEs (e.g. VS Code, PyCharm) - run, test, debug               |          |            |               | x        |
+| Command line terminal (e.g. Bash, GitBash) - reproducible workflows/pipelines                     |          |            | x             | x        |
+| Version control tools                                                                             | x        |            |               |          |
+| Testing - code correctness and reproducibility                                                    |          | x          |               | x        |
+| Coding conventions and documentation                                                              |          | x          | x             | x        |
+| Explaining functionality/installation/running - README, inline comments and documentation         |          | x          | x             | x        |
+| Standard formats - e.g. for data exchange (CSV, YAML)                                             |          | x          | x             | x        |
+| Communication protocols - Command Line Interface (CLI) or Application Programming Interface (API) |          | x          | x             | x        |
+| License                                                                                           |          | x          |               | x        |
+| Citation                                                                                          | x        |            |               | x        |
+| Software repositories (e.g. GitHub, PyPi) or registries (e.g. BioTools)                           | x        | x          |               |          |
+| Unique persistent identifier (e.g. DOIs, commits/tags/releases) - Zenodo, FigShare GitHub         | x        | x          |               |          |
 
-### Accessible
-
-- Software repository/registry
-- License
-- Language and dependencies
-
-### Interoperable
-
-- Explain functionality - readme, inline comments and documentation
-- Standard formats
-- Communication protocols - CLI/API
-
-### Reusable
-
-- Document functionality/installation/running
-- Follow best practices where appropriate
-- License
-- Citation
 
 ## Checking your setup
 

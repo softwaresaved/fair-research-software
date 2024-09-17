@@ -1,5 +1,5 @@
 ---
-title: Open project collaboration & management
+title: Open collaboration on code
 teaching: 60
 exercises: 30
 ---
@@ -22,10 +22,26 @@ After completing this episode, participants should be able to:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Sharing your code to encourage collaboration
-
 In addition to adding a license and other metadata to our code (covered in previous episode) 
 there are several other important steps to consider before sharing the code publicly.
+
+Before we move on with further code modifications, make sure your virtual development environment is active.
+
+::: callout
+
+### Activate your virtual environment
+If it is not already active, make sure to activate your virtual environment from the root of your project directory
+in your command line terminal (e.g. Bash or GitBash):
+
+```bash
+$ source venv_spacewalks/bin/activate # Mac or Linux
+$ source venv_spacewalks/Scripts/activate # Windows
+(venv_spacewalks) $
+```
+
+:::
+
+## Sharing code to encourage collaboration
 
 ### Making the code public
 
@@ -177,12 +193,12 @@ itself and not a paper, although a short abstract or description of the software
 :::
 
 
-# Working with collaborators
+## Working with collaborators
 
 The strength of online collaboration tools such as Github doesn't just lie in the ability to share code. They also allow us to track problems with that code, 
 for multiple developers to work on it independently and bring their changes together and to review those changes before they are accepted.
 
-## Tracking issues with code
+### Tracking issues with code
 
 A key feature of Github (as opposed to Git itself) is the issue tracker. This provides us with a place to keep track of any problems or bugs in the code and to discuss them
 with other developers. Sometimes advanced users will also use issue trackers of public projects to report problems they are having (and sometimes this is misused by users
@@ -213,9 +229,7 @@ Create a new issue in your repository's issue tracker by doing the following:
  - Click on the "New issue" button
  - Enter a title and description for the issue
  - Click the "Submit Issue" button to create the issue.
-
-
-:::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 ### Discussing an issue
 
@@ -227,7 +241,7 @@ We can also reference other issues by writing a # symbol and the number of the o
 Once an issue is solved then it can be closed. This can be done either by pressing the "Close" button in the Github web interface or by making a commit which includes the word
 "fixes", "fixed", "close", "closed" or "closes" followed by a # symbol and the issue number.
 
-## Working in parallel with Git branches
+### Working in parallel with Git branches
 
 Branching is a feature of Git that allows two or more parallel streams of
 work. Commits can be made to one branch without interfering with
@@ -235,7 +249,7 @@ another. Branches are commonly used as a way for one developer to work on
 a new feature or a bug fix while other developers work on other features.
 When those new features or bug fixes are complete, the branch will be merged back with the main (sometimes called master) branch.
 
-### Creating a new branch
+#### Creating a new branch
 
 New git branches are created with the `git branch` command. This should be followed by the name of 
 the branch to create. It is common practice when the bug we are fixing has a corresponding issue to name the branch after the issue number and name. 
@@ -273,7 +287,7 @@ To create a branch and change to it in a single command we can use `git switch` 
 git switch -c 02-another-bug
 ```
 
-### Committing to a branch
+#### Committing to a branch
 
 Once we have switched to a branch any further commits that are made will go to that branch. When we run a `git commit` command we'll see the name of the
 branch we're committing to in the output of `git commit`. Let's edit our code and fix the lack of default values bug that we entered into the issue tracker earlier on.
@@ -330,7 +344,7 @@ command.
 git pull origin 01-extra-brakcet-bug
 ```
 
-## Merging branches
+### Merging branches
 
 When we have completed working on a branch (for example fixing a bug) then we can merge our branch back into the main one (or any other branch). This is done with the `git merge` command.
 
@@ -346,7 +360,7 @@ Now we're back on the main branch we can go ahead and merge the changes from the
 git merge 01-extra-bracket-bug
 ```
 
-## Pull requests
+### Pull requests
 
 On larger projects we might need to have a code review process before changes are merged, especially before they are merged onto the main branch that might be what is being released
 as the public version of the software. Github has a process for this that it calls a "Pull Request", other Git services such as GitLab have different names for this, GitLab calls them "Merge Requests".
@@ -375,7 +389,7 @@ projects that you contribute to might have their own rules about what kind of me
 Go ahead and click on "Merge pull request", then "Confirm merge". The changes will now be merged together. Github gives us the option to delete the branch we were working on, since
 it's history is preserved in the main branch there isn't any reason to keep it.
 
-### Using forks instead of branches
+#### Using forks instead of branches
 
 A fork is similar to a branch, but instead of it being part of the same repository it is a entirely new copy of the repository. Forks are commonly used by Github users who wish to work
 on a project that they're not a member of. Typically forking will copy the repository to our own namespace (e.g. github.com/username/reponame instead of github.com/projectname/reponame)
@@ -399,23 +413,31 @@ They will get an email and an alert within Github to accept your invitation to w
  - Commit these changes to your fork
  - Create a pull request back to the original repository
  - Your partner will now receive your pull request and can review 
+:::
 
 
-:::::::::::::::::::::::::::::::::::::::::::::::
+::: callout
 
-## Acknowledgements
+### Commit and push your changes
 
-The content of this episode was inspired / heavily borrowed from the following resources:
+Do not forget to commit any uncommited changes you may have and then push your work to GitHub.
 
-- Software carpentry git lesson licensing and citation sections - https://swcarpentry.github.io/git-novice/11-licensing.html and https://swcarpentry.github.io/git-novice/12-citation.html
-- Carpentries Github Skill up - https://carpentries-incubator.github.io/github-skill-up-instructors/ and https://carpentries.github.io/github-skill-up-maintainers/
-- RSG Soton Git lesson - https://southampton-rsg.github.io/swc-git-novice/06-collab/index.html
+```bash
+git add <your_changed_files>
+git commit -m "Your commit message"
+git push origin main
+```
+
+:::
+
 
 ## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:
 
 - Licencing and citation episodes from the [Software Carpentry's Git Novice lesson][swc-git-lesson]
+- Carpentries Github Skill ups for [instructors][git-skillup-instructors] and [maintainers][git-skillup-maintainers]
+- [RSG Southampton Git lesson][git-soton] - [collaboration section][git-soton-collaboration]
 - [Open source definition][osd-definition], by the [Open Source Initiative][osd]
 - [What is free software?][free-software]
 

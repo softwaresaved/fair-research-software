@@ -64,16 +64,19 @@ episodes:
 - 02-fair-research-software.md
 - 03-tools.md
 - 04-version-control.md
-- 05-code-readability.md
-- 06-code-testing.md
-- 07-documenting-code.md
-- 08-open-collaboration.md
-- 09-code-ethics.md
-- 10-wrap-up.md
+- 05-code-environment.md
+- 06-code-readability.md
+- 07-code-structure.md
+- 08-code-correctness.md
+- 09-code-documentation.md
+- 10-open-collaboration.md
+- 11-wrap-up.md
 
 # Information for Learners
-learners: 
+learners:
+- ci-for-testing.md
 - licensing.md
+- ethical-environmental-considerations.md
 
 # Information for Instructors
 instructors: 
