@@ -122,7 +122,9 @@
             More <i data-feather="chevron-down"></i>
           </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<li><a class="dropdown-item" href="ci-for-testing.html">Continuous Integration for automated testing</a></li>
 <li><a class="dropdown-item" href="licensing.html">Software licensing</a></li>
+<li><a class="dropdown-item" href="ethical-environmental-considerations.html">Ethical &amp; environmental considerations around research software</a></li>
           </ul>
 </li>
       </ul>
@@ -267,7 +269,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-tools.html">3. Tools and practices for research software development</a>
+        <a href="03-tools.html">3. Tools and practices for FAIR research software development</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -291,7 +293,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-code-readability.html">5. Code readability</a>
+        <a href="05-code-environment.html">5. Reproducible development environment</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -303,7 +305,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-code-testing.html">6. Code testing</a>
+        <a href="06-code-readability.html">6. Code readability</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -315,7 +317,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-documenting-code.html">7. Documenting code</a>
+        <a href="07-code-structure.html">7. Code structure</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -327,7 +329,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08-open-collaboration.html">8. Open project collaboration &amp; management</a>
+        <a href="08-code-correctness.html">8. Code correctness</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -339,7 +341,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="09-code-ethics.html">9. Ethical considerations for research software</a>
+        <a href="09-code-documentation.html">9. Code documentation</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -351,7 +353,19 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-wrap-up.html">10. Wrap-up</a>
+        <a href="10-open-collaboration.html">10. Open collaboration on code</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush12">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading12">
+        <a href="11-wrap-up.html">11. Wrap-up</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -384,7 +398,9 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="licensing.html">Software licensing</a></li>
+                      <li><a href="ci-for-testing.html">Continuous Integration for automated testing</a></li>
+<li><a href="licensing.html">Software licensing</a></li>
+<li><a href="ethical-environmental-considerations.html">Ethical &amp; environmental considerations around research software</a></li>
                     </ul>
 </div>
                 </div>
@@ -427,7 +443,7 @@ Reusable.</li>
 <li>These principles support research and researchers by saving time,
 reducing barriers to discovery, and increasing impact of the research
 output.</li>
-</ul></section><section id="03-tools"><h2 class="section-heading"><a href="03-tools.html">Tools and practices for research software development</a></h2>
+</ul></section><section id="03-tools"><h2 class="section-heading"><a href="03-tools.html">Tools and practices for FAIR research software development</a></h2>
 <hr class="half-width">
 <ul>
 <li>Automating your analysis with shell scripts allows you to save and
@@ -453,20 +469,40 @@ the software that produced an output can be recovered</li>
 <li>Commit messages describe what each commit contains and should be
 descriptive</li>
 <li>Logs can be used to overview the history of a project</li>
-</ul></section><section id="05-code-readability"><h2 class="section-heading"><a href="05-code-readability.html">Code readability</a></h2>
+</ul></section><section id="05-code-environment"><h2 class="section-heading"><a href="05-code-environment.html">Reproducible development environment</a></h2>
 <hr class="half-width">
 <ul>
-<li>Readable code is easier to understand, maintain, debug and
-extend!</li>
-<li>Creating functions from the smallest, reusable units of code will
-help compartmentalise which parts of the code are doing what
-actions</li>
+<li>Virtual environments keep Python versions and dependencies required
+by different projects separate.</li>
+<li>A Python virtual environment is itself a directory structure.</li>
+<li>You can use <code>venv</code> to create and manage Python virtual
+environments, and <code>pip</code> to install and manage Python external
+(third-party) libraries.</li>
+<li>By convention, you can save and export your Python virtual
+environment in a <code>requirements.txt</code> in your project’s root
+directory, which can then be shared with collaborators/users and used to
+replicate your virtual environment elsewhere.</li>
+</ul></section><section id="06-code-readability"><h2 class="section-heading"><a href="06-code-readability.html">Code readability</a></h2>
+<hr class="half-width">
+<ul>
+<li>Readable code is easier to understand, maintain, debug and extend
+(reuse) - saving time and effort.</li>
 <li>Choosing descriptive variable and function names will communicate
-their purpose more effectively</li>
+their purpose more effectively.</li>
 <li>Using inline comments and docstrings to describe parts of the code
-will help transmit understanding, and verify that the code is
-correct</li>
-</ul></section><section id="06-code-testing"><h2 class="section-heading"><a href="06-code-testing.html">Code testing</a></h2>
+will help transmit understanding and context.</li>
+<li>Use libraries or packages for common functionality to avoid
+duplication.</li>
+<li>Creating functions from the smallest, reusable units of code will
+make the code more readable and help. compartmentalise which parts of
+the code are doing what actions and isolate specific code sections for
+re-use.</li>
+</ul></section><section id="07-code-structure"><h2 class="section-heading"><a href="07-code-structure.html">Code structure</a></h2>
+<hr class="half-width">
+<ul>
+<li>Good practices for code and project structure are essential for
+creating readable, accessible and reproducibile projects.</li>
+</ul></section><section id="08-code-correctness"><h2 class="section-heading"><a href="08-code-correctness.html">Code correctness</a></h2>
 <hr class="half-width">
 <ol style="list-style-type: decimal">
 <li>Code testing supports the FAIR principles by improving the
@@ -479,7 +515,9 @@ tests for Python functions to verify their correctness.</li>
 ensure your code performs correctly under a variety of conditions.</li>
 <li>Test coverage can help you to identify parts of your code that
 require additional testing.</li>
-</ol></section><section id="07-documenting-code"><h2 class="section-heading"><a href="07-documenting-code.html">Documenting code</a></h2>
+<li>
+</li>
+</ol></section><section id="09-code-documentation"><h2 class="section-heading"><a href="09-code-documentation.html">Code documentation</a></h2>
 <hr class="half-width">
 <ul>
 <li>Documentation allows users to run and understand software without
@@ -496,7 +534,7 @@ Wiki and static webpages.</li>
 MkDocs.</li>
 <li>Documentation frameworks such as Diataxis provide content and style
 guidelines that can helps us write high quality documentation.</li>
-</ul></section><section id="08-open-collaboration"><h2 class="section-heading"><a href="08-open-collaboration.html">Open project collaboration &amp; managementSharing your code to encourage collaboration<a class="anchor" aria-label="anchor" href="#sharing-your-code-to-encourage-collaboration"></a>Working with collaborators<a class="anchor" aria-label="anchor" href="#working-with-collaborators"></a></a></h2>
+</ul></section><section id="10-open-collaboration"><h2 class="section-heading"><a href="10-open-collaboration.html">Open collaboration on code</a></h2>
 <hr class="half-width">
 <ul>
 <li>Open source applies Copyright licenses permitting others to reuse
@@ -528,17 +566,7 @@ current one.</li>
 <li>Pull requests allow developers to work on their own branch/fork and
 then request other developers review their changes before they are
 merged.</li>
-</ul></section><section id="09-code-ethics"><h2 class="section-heading"><a href="09-code-ethics.html">Ethical considerations for research software</a></h2>
-<hr class="half-width">
-<ul>
-<li>To act ethically, we have to be both responsible producers and
-consumers of research software.</li>
-<li>Free and open source research software and data, along with FAIR,
-ethical and environmental considerations, offer viable ways to make more
-transparent, reliable and accountable science that not only advances
-scientific knowledge but also respects and protects the rights and
-well-being of all users.</li>
-</ul></section><section id="10-wrap-up"><h2 class="section-heading"><a href="10-wrap-up.html">Wrap-up</a></h2>
+</ul></section><section id="11-wrap-up"><h2 class="section-heading"><a href="11-wrap-up.html">Wrap-up</a></h2>
 <hr class="half-width">
 <ul>
 <li>When developing software for your research, think about how it will
