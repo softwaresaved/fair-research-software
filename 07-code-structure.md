@@ -315,7 +315,7 @@ __name__ = "__main__"
 # rest of your code
 ```
 
-However, if your source file is imported by another Python script, e.g:
+However, if your source file is imported by another Python script, e.g. in order to reuse its functions, with:
 
 ```python
 import eva_data_analysis
