@@ -859,7 +859,7 @@ Also check the [full reference set](learners/reference.md#litref) for the course
 ::: keypoints
 - Readable code is easier to understand, maintain, debug and extend (reuse) - saving time and effort.
 - Choosing descriptive variable and function names will communicate their purpose more effectively.
-- Using inline comments and docstrings to describe parts of the code will help transmit understanding and context.
+- Using comments and docstrings to describe parts of the code will help transmit understanding and context.
 - Use libraries or packages for common functionality to avoid duplication.
 - Creating functions from the smallest, reusable units of code will make the code more readable and help. 
 compartmentalise which parts of the code are doing what actions and isolate specific code sections for re-use.
