@@ -40,8 +40,6 @@ Or even better: "If a new person who just joined the project reads my software, 
 what I have written here?"
 
 We will now learn about a few software best practices we can follow to help create more readable code. 
-Before that, make sure your virtual development environment is active.
-
 Before we move on with further code modifications, make sure your virtual development environment is active.
 
 ::: instructor
