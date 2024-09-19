@@ -124,7 +124,7 @@ important to you and any future users or collaborators to decide what kind of te
 Documentation comes in many forms - from the names of variables and functions in your code, additional comments 
 that explain some lines, up to a whole website full of documentation with function definitions, usage examples, 
 tutorials and guides. 
-You many not need as much documentation as a large commercial software product, but making your code Reusable relies 
+You many not need as much documentation as a large commercial software product, but making your code reusable relies 
 on other people being able to understand what your code does and how to use it.
 
 ## Licences and citation
