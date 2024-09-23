@@ -490,47 +490,53 @@ Remember to commit our changes.
 
 ## Directory structure for software projects
 
-One of the steps to make your work more easily readable and reproducible is to organise your software projects 
-following certain conventions on consistent and informative directory structure. 
-This way, people will immediately know where to find things within your project.
-Here are some general guidelines that apply to all research projects (including software projects):
+Expanding on the code structure theme, following conventions on consistent and informative directory structure 
+for your projects will ensure people will immediately know where to find things within your project, especially helpful 
+for long-term research projects or when working in teams.
+The directory structure for organising your research software project 
+(or research projects in general) involves creating a clear and logical layout for files and data, 
+ensuring easy navigation, collaboration and reproducibility. 
 
-- Put all files related to a project into a single directory
-- Do not mix project files - different projects should have separate directories and repositories (it is OK to copy 
-files into multiple places if both projects require them)
-- Avoid spaces in directory and file names – they can cause errors when read by computers
-- If you have sensitive data - you can put it in a private repository on GitHub
-- Use .gitignore to specify what files should not be tracked - e.g. passwords, local configuration, etc.
-- Add a README file to your repository to describe the project and instructions on running the code or reproducing 
-the results (we will covered this later in this course).
+Below are some good practices for setting up and maintaining a research project directory structure.
+
+1. Top-level directory
+    - Put all files related to a project into a single directory
+    - Choose a meaningful name that reflects the project’s purpose or topic.
+2. Subdirectories - organise the project into clear, well-labeled subdirectories based on the type of content. Common categories include:
+    - Data - store raw, intermediate, and processed data in separate folders to maintain clarity and avoid accidental overwrites
+    - Code/scripts/src - store all the source code
+    - Results - store analysis outputs, summary statistics, or any data generated after processing.
+    - Documentation - include a detailed project description and documentation on how the project is organised, methodologies, and file dependencies.
+    - Figures/Plots - store all visualisations like charts, graphs, and figures generated from the analysis.
+    - References - a folder for research papers, articles, or any other literature cited or referenced in the project.
+3. Naming conventions
+    - Avoid special characters or spaces (they can cause errors when read by computers); use underscores (_) or hyphens (-) instead 
+    - Name files to reflect their contents, version, or date.
+
 
 ```output
 project_name/
 ├── README.md             # overview of the project
 ├── data/                 # data files used in the project
 │   ├── README.md         # describes where data came from
-│   └── sub-folder/       # may contain subdirectories, e.g. for intermediate files from the analysis
+│   ├── /raw/
+│   └── /processed/
 ├── manuscript/           # manuscript describing the results
-├── results/              # results of the analysis (data, tables, figures)
-├── src/                  # contains all code in the project
+├── results/              # results of the analysis (data, tables)  
+│   ├── /preliminary/
+│   └── /final/
+├── figures/              # results of the analysis (figures)
+│   ├── comparison_plot.png
+│   └── regression_chart.pdf
+├── src/                  # contains source code for the project
 │   ├── LICENSE           # license for your code
 │   ├── requirements.txt  # software requirements and dependencies
 │   └── ...
-├── src/                  # source code for your project
 ├── doc/                  # documentation for your project
-├── index.rst
+├── index.rst             # entry point into the documentation website    
 ├── main_script.py        # main script/code entry point
 └── ...
 ```
-
-- Source code is typically placed in the `src/` or `source/` directory (and its subdirectories containing hierarchical 
-libraries of your code). The main script or the main entry to your code may remain in the project root.
-- Data is typically placed under `data/` 
-    - Raw data or input files can also be placed under `raw_data/` - original data should not be modified and should be kept raw
-    - Processed or cleaned data or intermediate results from data analysis can be placed under `processed_data/`
-- Documentation is typically placed or compiled into `doc/` or `docs/`
-- Results are typically placed under results/
-- Tests are typically placed under tests/
 
 :::::: challenge
 
