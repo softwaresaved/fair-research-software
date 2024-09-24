@@ -376,7 +376,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reproducible development environment</h1>
-        <p>Last updated on 2024-09-17 |
+        <p>Last updated on 2024-09-24 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/05-code-environment.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -417,6 +417,7 @@ using <code>venv</code> and <code>pip</code>.</li>
 <p>So far we have created a local Git repository to track changes in our
 software project and pushed it to GitHub to enable others to see and
 contribute to it.</p>
+
 <p>We now want to start developing the code further. If we have a look
 at our script, we may notice a few <code>import</code> lines like the
 following:</p>
@@ -502,7 +503,7 @@ executing the following command:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> venv /path/to/new/virtual/environment</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">-m</span> venv /path/to/new/virtual/environment</span></code></pre>
 </div>
 <p>where <code>/path/to/new/virtual/environment</code> is a path to a
 directory where you want to place it - conventionally within your
@@ -520,7 +521,7 @@ directory:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> venv venv_spacewalks</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">-m</span> venv venv_spacewalks</span></code></pre>
 </div>
 <p>If you list the contents of the newly created directory
 “venv_spacewalks”, on a Mac or Linux system (slightly different on
@@ -583,7 +584,7 @@ Python by checking the path using the command <code>which</code>:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> which python</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> which python3</span></code></pre>
 </div>
 <p>When you’re done working on your project, you can exit the
 environment with:</p>
@@ -620,34 +621,34 @@ standard with Python distribution.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip install datetime</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip install matplotlib</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip install datetime</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip install matplotlib</span></code></pre>
 </div>
 <p>or like this to install multiple packages at once for short:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip install datetime matplotlib</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip install datetime matplotlib</span></code></pre>
 </div>
 <p>The above commands have installed packages <code>datetime</code> and
 <code>matplotlib</code> in our currently active
 <code>venv_spacewalks</code> environment and will not affect any other
 Python projects we may have on our machines.</p>
-<p>If you run the <code>python -m pip install</code> command on a
+<p>If you run the <code>python3 -m pip install</code> command on a
 package that is already installed, <code>pip</code> will notice this and
 do nothing.</p>
 <p>To install a specific version of a Python package give the package
 name followed by <code>==</code> and the version number,
-e.g. <code>python -m pip install matplotlib==3.5.3</code>.</p>
+e.g. <code>python3 -m pip install matplotlib==3.5.3</code>.</p>
 <p>To specify a minimum version of a Python package, you can do
-<code>python -m pip install matplotlib&gt;=3.5.1</code>.</p>
+<code>python3 -m pip install matplotlib&gt;=3.5.1</code>.</p>
 <p>To upgrade a package to the latest version,
 e.g. <code>python -m pip install --upgrade matplotlib</code>.</p>
 <p>To display information about a particular installed package do:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip show matplotlib</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip show matplotlib</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -670,7 +671,7 @@ virtual environment):</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip list</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip list</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -712,7 +713,7 @@ directory:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
 <span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> cat requirements.txt</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -768,7 +769,7 @@ from the project root one can do the following:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span></code></pre>
 </div>
 <p>As your project grows - you may need to update your environment for a
 variety of reasons, e.g.:</p>
@@ -873,7 +874,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/05-code-environment.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/05-code-environment.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-09-17",
+  "dateModified": "2024-09-24",
   "datePublished": "2024-09-24"
 }
 
