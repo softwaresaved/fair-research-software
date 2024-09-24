@@ -179,6 +179,8 @@ The table below summarises some tools and practices that can help with each of t
 
 ::::::  challenge
 
+## Checking your setup
+
 Open a command line terminal and look at the prompt. 
 Compare what you see in the terminal with your neighbour, does it look the same or different?
 What information is it telling you and why might this be useful? 

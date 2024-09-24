@@ -48,20 +48,17 @@ conduct **better research** and produce **FAIR software**:
   - Reference guides and background information can help developers understand our code sufficiently to 
   modify/extend/repurpose it.
 
-Before we move on with further code modifications, make sure your virtual development environment is active.
-
 ::: callout
 
 ### Activate your virtual environment
-If it is not already active, make sure to activate your virtual environment from the root of your project directory
-in your command line terminal (e.g. Bash or GitBash):
+If it is not already active, make sure to activate your virtual environment from the root of
+the software project directory:
 
 ```bash
 $ source venv_spacewalks/bin/activate # Mac or Linux
 $ source venv_spacewalks/Scripts/activate # Windows
 (venv_spacewalks) $
 ```
-
 :::
 
 ## Software-level documentation

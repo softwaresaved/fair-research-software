@@ -22,6 +22,13 @@ After completing this episode, participants should be able to:
 So far we have created a local Git repository to track changes in our software project and pushed it to GitHub 
 to enable others to see and contribute to it.
 
+::: instructor
+
+At this point, the code in your local software project's directory should be as in:
+https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair/tree/05-reproducible-environment.
+
+:::
+
 We now want to start developing the code further. 
 If we have a look at our script, we may notice a few `import` lines like the following:
 
@@ -105,7 +112,7 @@ So, we will use `venv` and `pip` in combination to help us create and share our 
 Creating a virtual environment with `venv` is done by executing the following command:
 
 ```bash
-$ python -m venv /path/to/new/virtual/environment
+$ python3 -m venv /path/to/new/virtual/environment
 ```
 
 where `/path/to/new/virtual/environment` is a path to a directory where you want to place it -
@@ -121,7 +128,7 @@ $ cd /path/to/spacewalks
 ```
 
 ```bash
-$ python -m venv venv_spacewalks
+$ python3 -m venv venv_spacewalks
 ```
 
 If you list the contents of the newly created directory "venv_spacewalks", on a Mac or Linux system
@@ -177,7 +184,7 @@ You can verify you are using your virtual environment's version of Python
 by checking the path using the command `which`:
 
 ```bash
-(venv_spacewalks) $ which python
+(venv_spacewalks) $ which python3
 ```
 
 When you’re done working on your project, you can exit the environment with:
@@ -212,35 +219,35 @@ To install the latest version of packages `datetime` and `matplotlib` with `pip`
 you use pip's `install` command and specify the package’s name, e.g.:
 
 ```bash
-(venv_spacewalks) $ python -m pip install datetime
-(venv_spacewalks) $ python -m pip install matplotlib
+(venv_spacewalks) $ python3 -m pip install datetime
+(venv_spacewalks) $ python3 -m pip install matplotlib
 ```
 
 or like this to install multiple packages at once for short:
 
 ```bash
-(venv_spacewalks) $ python -m pip install datetime matplotlib
+(venv_spacewalks) $ python3 -m pip install datetime matplotlib
 ```
 
 The above commands have installed packages `datetime` and `matplotlib` in our currently active `venv_spacewalks` 
 environment and will not affect any other Python projects we may have on our machines.
 
-If you run the `python -m pip install` command on a package that is already installed,
+If you run the `python3 -m pip install` command on a package that is already installed,
 `pip` will notice this and do nothing.
 
 To install a specific version of a Python package
 give the package name followed by `==` and the version number,
-e.g. `python -m pip install matplotlib==3.5.3`.
+e.g. `python3 -m pip install matplotlib==3.5.3`.
 
 To specify a minimum version of a Python package,
-you can do `python -m pip install matplotlib>=3.5.1`.
+you can do `python3 -m pip install matplotlib>=3.5.1`.
 
 To upgrade a package to the latest version, e.g. `python -m pip install --upgrade matplotlib`.
 
 To display information about a particular installed package do:
 
 ```bash
-(venv_spacewalks) $ python -m pip show matplotlib
+(venv_spacewalks) $ python3 -m pip show matplotlib
 ```
 ```output
 Name: matplotlib
@@ -260,7 +267,7 @@ Required-by:
 To list all packages installed with `pip` (in your current virtual environment):
 
 ```bash
-(venv_spacewalks) $ python -m pip list
+(venv_spacewalks) $ python3 -m pip list
 ```
 ```output
 Package         Version
@@ -299,7 +306,7 @@ use `python -m pip freeze` command to produce a list of packages installed in th
 A common convention is to put this list in a `requirements.txt` file in your project's root directory:
 
 ```bash
-(venv_spacewalks) $ python -m pip freeze > requirements.txt
+(venv_spacewalks) $ python3 -m pip freeze > requirements.txt
 (venv_spacewalks) $ cat requirements.txt
 ```
 ```output
@@ -348,7 +355,7 @@ the necessary depending packages.
 To recreate a virtual environment from `requirements.txt`, from the project root one can do the following:
 
 ```bash
-(venv_spacewalks) $ python -m pip install -r requirements.txt
+(venv_spacewalks) $ python3 -m pip install -r requirements.txt
 ```
 
 As your project grows - you may need to update your environment for a variety of reasons, e.g.:

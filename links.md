@@ -94,7 +94,7 @@ any links that you are not going to use.
 [replication-crisis-osc]: https://www.science.org/doi/10.1126/science.aac4716
 [coderefinery]: https://coderefinery.org/
 [automated-assessment-fairrs]: https://zenodo.org/records/11096498
-[realpython-ides]: https://realpython.com/python-ides-code-editors-guide/
+[real-python-ides]: https://realpython.com/python-ides-code-editors-guide/
 [fair-cookbook-zenodo]: https://faircookbook.elixir-europe.org/content/recipes/findability/zenodo-deposition.html
 [zenodo-org]: https://zenodo.org/
 [coderefinery-tools]: https://coderefinery.github.io/reproducible-research/

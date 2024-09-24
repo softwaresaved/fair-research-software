@@ -26,6 +26,14 @@ how this tool assists us in producing reproducible and sustainable scientific pr
 We will create a new software project from our existing code, make some changes to it and track them with
 version control, and then push those changes to a remote server for safe-keeping.
 
+
+::: instructor
+
+At this point, the downloaded code to start working with in this episode should be as in:
+https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair/tree/04-version-control.
+
+:::
+
 ## What is a version control system?
 
 Version control is the practice of tracking and managing changes to files.
@@ -127,12 +135,13 @@ The exact wording of this output may be slightly different if you are using a di
 
 ### Add initial files into our repository
 
-During the [setup](./index.html#astronaut-data-and-analysis-code) for this course, you have been provided with a `.zip` archive with two files:
+During the [setup](./index.html#astronaut-data-and-analysis-code) for this course, you have been provided with a `.zip` archive containing, among other things, 
+these two code and data files:
 
 - `my code v2.py`
 - `data.json`
 
-We need to move these files into our git folder.
+We need to move these files into our Git folder.
 You can either drag and drop the files from a file explorer window into the left pane of the VS Code IDE, 
 or you can use the [`mv` command](https://linuxcommandlibrary.com/man/mv) in the command line terminal.
 
