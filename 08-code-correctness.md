@@ -9,7 +9,7 @@ exercises: 30
 -   How can we verify that our code is correct?
 -   How can we automate our software tests?
 -   What makes a "good" test?
--   Which parts of our code should we prioritize for testing?
+-   Which parts of our code should we prioritise for testing?
 
 :::
 
@@ -17,19 +17,14 @@ exercises: 30
 
 After completing this episode, participants should be able to:
 
--   Explain why code testing is important and how this supports FAIR
-    software.
--   Describe the different types of software tests (unit tests,
-    integration tests, regression tests).
--   Implement unit tests to verify that function(s) behave as expected
-    using the Python testing framework `pytest`.
--   Interpret the output from `pytest` to identify which function(s) are
-    not behaving as expected.
--   Write tests using typical values, edge cases and invalid inputs to
-    ensure that the code can handle extreme values and invalid inputs
-    appropriately.
--   Evaluate code coverage to identify how much of the codebase is being
-    tested and identify areas that need further tests.
+-   Explain why code testing is important and how this supports FAIR software.
+-   Describe the different types of software tests (unit tests, integration tests, regression tests).
+-   Implement unit tests to verify that function behave as expected using the Python testing framework `pytest`.
+-   Interpret the output from `pytest` to identify which functions are not behaving as expected.
+-   Write tests using typical values, edge cases and invalid inputs to ensure that the code can handle extreme 
+values and invalid inputs appropriately.
+-   Evaluate code coverage to identify how much of the codebase is being tested and identify areas that need further 
+tests.
 
 :::
 
@@ -134,144 +129,20 @@ Fill in the blanks in the sentences below:
 
 ## Informal testing
 
-**How should we test our code?** Let’s start by considering the
-following scenario. A collaborator on our project has sent us the
-following code to add a `crew_size` variable to our data frame - a
-column which captures the number of astronauts participating in a given
-spacewalk. How do we know that it works as intended?
+How should we test our code? 
+One approach is to copy/paste the code or a function into a Python terminal (different from command line terminal), 
+which allows you to interact with the Python interpreter more directly.  
+From the Python terminal we can then run one function or a piece of code at a time and check that they behave as 
+expected. 
+As input to our code/function we are testing, we typically use some input values for which we know what the correct 
+return value should be.
 
-``` python
-import re
-import pandas
+Let's do this for our `text_to_duration` function.
+Recall that the `text_to_duration` function converts a spacewalk duration stored as a string
+in format "HH:MM" to a duration in hours - e.g. duration `01:15` (1 hour and 15 minutes) should return a numerical 
+value of `1.25`.
 
-def calculate_crew_size(crew):
-    """
-    Calculate crew_size for a single crew entry
-
-    Args:
-        crew (str): The text entry in the crew column
-
-    Returns:
-        int: The crew size
-    """
-    if crew.split() == []:
-        return None
-    else:
-        return len(re.split(r';', crew))-1
-
-
-def add_crew_size_variable(df_):
-    """
-    Add crew size (crew_size) variable to the dataset
-
-    Args:
-        df_ (pd.DataFrame): The input data frame.
-
-    Returns:
-        df_copy (pd.DataFrame): A copy of df_ with the new crew_size variable added
-    """
-    print('Adding crew size variable (crew_size) to dataset')
-    df_copy = df_.copy()
-    df_copy["crew_size"] = df_copy["crew"].apply(
-        calculate_crew_size
-    )
-    return df_copy
-    
-```
-
-One approach is to copy/paste the function(s) into a python interpreter
-and check that they behave as expected with some input values where we
-know what the correct return value should be.
-
-Since `add_crew_size_variable` contains boiler plate code for deriving
-one column from another let's start with `calculate_crew_size`:
-
-``` python
-calculate_crew_size("Valentina Tereshkova;")
-calculate_crew_size("Judith Resnik; Sally Ride;")
-```
-
-``` output
-1
-2
-```
-
-We can then explore the behaviour of `add_crew_size_variable` by
-creating a toy data frame:
-
-``` python
-# Create a toy DataFrame
-data = pd.DataFrame({
-    'crew': ['Anna Lee Fisher;', 'Marsha Ivins; Helen Sharman;']
-})
-
-add_crew_size_variable(data)
-```
-
-``` output
-Adding crew size variable (crew_size) to dataset
-                           crew  crew_size
-0              Anna Lee Fisher;          1
-1  Marsha Ivins; Helen Sharman;          2
-```
-
-Although this is an important process to go through as we draft our code
-for the first time, there are some serious drawbacks to this approach if
-used as our only form of testing.
-
-::: discussion
-## What are the limitations of informally testing code? (5 minutes)
-
-Think about the questions below. Your instructors may ask you to share
-your answers in a shared notes document and/or discuss them with other
-participants.
-
--   Why might we choose to test our code informally?
--   What are the limitations of relying solely on informal tests to
-    verify that a piece of code is behaving as expected?
-:::
-
-::: spoiler
-## Discussion Spoilers
-
-It can be tempting to test our code informally because this approach:
-
--   is quick and easy
--   provides immediate feedback
-
-However, there are limitations to this approach:
-
--   Working interactively is error prone
--   We must repeat our tests every time we update our code; this is time
-    consuming
--   We must rely on memory to keep track of how we have tested our code
-    e.g. what input values we tried
--   We must rely on memory to keep track of which functions have been
-    tested and which have not
-:::
-
-## Formal testing
-
-We can overcome some of these limitations by formalising our testing
-process. A formal approach to testing our function(s) is to write
-dedicated test functions to check our code. These test functions:
-
--   Run the function we want to test - the target function with known
-    inputs
--   Compare the output to known, valid results
--   Raises an error if the function’s actual output does not match the
-    expected output
--   Are recorded in a test script that can be re-run on demand.
-
-Let’s explore this process by writing some formal tests for our
-`text_to_duration` function. (We'll come back to our colleague's
-calculate_crew_size function later).
-
-The `text_to_duration` function converts a duration stored as a string
-(HH:MM) to a duration in hours e.g. duration "1.15" should return a
-value of 1.25.
-
-``` python
+```python
 def text_to_duration(duration):
     """
     Convert a text format duration "HH:MM" to duration in hours
@@ -280,23 +151,112 @@ def text_to_duration(duration):
         duration (str): The text format duration
 
     Returns:
-        float: The duration in hours
+        duration_hours (float): The duration in hours
     """
     hours, minutes = duration.split(":")
-    duration_hours = int(hours) + int(minutes)/60
+    duration_hours = int(hours) + int(minutes)/6
     return duration_hours
 ```
 
-Let's create a new python file `test_code.py` in the root of our project
-folder to store our tests.
+To start a Python terminal, you simply type `python3` (with no other parameters) from the root directory of your 
+project in a command line terminal.
+
+```bash
+(venv_spacewalks)$ python3
+```
+
+This will open an interactive Python terminal for you, which may look like this:
+
+```python
+(venv_spacewalks) mbassan2@C-U-LOSXQ677L astronaut-data-analysis % python3
+Python 3.11.7 (main, Dec  4 2023, 18:10:11) [Clang 15.0.0 (clang-1500.1.0.2.5)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+```
+
+Once inside the Python terminal, you can start typing Python code.
+The Python terminal will interactively run your code and return and print results.
+We could copy and paste the code of our `text_to_duration` function, but it is much simpler and more elegant 
+to import and then invoke it.
+
+```python
+>>> from eva_data_analysis import text_to_duration
+>>> text_to_duration("10:00")
+10.0
+```
+
+So, we have invoked our function with the value "10:00" and it returned the floating point value "10.0" as expected.
+
+We can then further explore the behaviour of our function by running:
+
+``` python
+>>> text_to_duration("00:00")
+0.0
+```
+
+This all seems correct so far.
+
+Testing code in this "informal" way in an important process to go through as we draft our code for the first time.
+Another tool that can help here is the [Jupyter Notebook](https://jupyter.org/) - like the Python terminal, 
+the Jupyter Notebook is an interactive environment for writing and running code. 
+It is a GUI tool which supports all kinds of interactive outputs, including many interactive visualisation libraries.
+
+However, there are some serious drawbacks to this approach if used as our only form of testing.
+
+:::::: challenge
+
+### What are the limitations of informally testing code? (5 minutes)
+
+Think about the questions below. Your instructors may ask you to share
+your answers in a shared notes document and/or discuss them with other
+participants.
+
+-   Why might we choose to test our code informally?
+-   What are the limitations of relying solely on informal tests to
+    verify that a piece of code is behaving as expected?
+
+::: solution
+### 
+
+It can be tempting to test our code informally because this approach:
+
+- is quick and easy
+- provides immediate feedback
+
+However, there are limitations to this approach:
+
+- Working interactively is error prone
+- We must reload our function in Python terminal each time we change our code
+- We must repeat our tests every time we update our code which is time consuming
+- We must rely on memory to keep track of how we have tested our code, e.g. what input values we tried
+- We must rely on memory to keep track of which functions have been tested and which have not 
+(informal testing may work well on smaller pieces of code but it becomes unpractical for a large codebase)
+- Once we close the Python terminal, we lose all the test scenarios we have tried
+:::
+::::::
+
+## Formal testing
+
+We can overcome some of these limitations by formalising our testing process. 
+A formal approach to testing our code is to write dedicated test functions to check it. 
+These test functions:
+
+-   Run the function we want to test - the target function with known inputs
+-   Compare the output to known, valid results
+-   Raise an error if the function’s actual output does not match the expected output
+-   Are recorded in a test script that can be re-run on demand.
+
+Let’s explore this process by writing some formal tests for our `text_to_duration` function. 
+
+Let's create a new Python file `test_code.py` in the root of our project directory to store our tests.
 
 ``` bash
 (venv_spacewalks) $ cd spacewalks
 (venv_spacewalks) $ touch test_code.py
 ```
 
-First, we import text_to_duration into our test script. Then, we then
-add our first test function:
+Like before in the Python terminal, we need to import `text_to_duration` into our test script. 
+Then, we add our first test function:
 
 ``` python
 
@@ -310,25 +270,28 @@ def test_text_to_duration_integer():
 test_text_to_duration()
 ```
 
-This test checks that when we apply text_to_duration to input value
-"10:00", the output matches the expected value of 10.
+We can run this code from the command line terminal as:
 
-In this example, we use a print statement to report whether the actual
-output from text_to_duration meets our expectations.
+```bash
+(venv_spacewalks)$ python3 test_code.py 
+```
 
-However, this does not meet our requirement to “Raise an error if the
-function’s output does not match the expected output” and means that we
-must carefully read our test function’s output to identify whether it
-has failed.
+This test checks that when we apply `text_to_duration` to input value `10:00`, the output matches the expected value
+of `10`.
 
-To ensure that our code raises an error if the function’s output does
-not match the expected output, we can use an assert statement.
+In this example, we use a print statement to report whether the actual output from `text_to_duration` meets our 
+expectations.
 
-The assert statement in Python checks whether a condition is True or
-False. If the statement is True, then assert does not return a value but
-if the statement is false, then assert raises an AssertError.
+However, this does not meet our requirement to “Raise an error if the function’s output does not match the expected 
+output” and means that we must carefully read our test function’s output to identify whether it has failed.
 
-Let's rewrite our test with an assert statement:
+To ensure that our code raises an error if the function’s output does not match the expected output, we use Python's 
+`assert` statement. 
+The `assert statement` in Python checks whether a condition is `True` or `False`. 
+If the statement is `True`, `assert` does not return a value and the code continues to run. 
+However, if the statement is `False`, `assert` raises an `AssertError`.
+
+Let's rewrite our test with an `assert` statement:
 
 ``` python
 
@@ -340,163 +303,171 @@ def test_text_to_duration_integer():
 test_text_to_duration_integer()
 ```
 
-Notice that when we run test_text_to_duration_integer(), nothing
+Notice that when we run `test_text_to_duration_integer()`, nothing
 happens - there is no output. That is because our function is working
 correctly and returning the expected value of 10.
 
-Let’s see what happens when we deliberately introduce a bug into
-`text_to_duration`: In the Spacewalks data analysis script let's change
-`int(hours)` to `int(hour)/60` and `int(minutes)/60` to `int(minutes)`to
-mimic a simple mistake in our code where the wrong element is divided by
-60.
+Let's add another test to check what happens when duration is not an integer number and if our function can handle 
+durations with a non-zero minute component, and rerun our test code.
 
 ``` python
-def text_to_duration(duration):
-    """
-    Convert a text format duration "HH:MM" to duration in hours
+from eva_data_analysis import text_to_duration
 
-    Args:
-        duration (str): The text format duration
+def test_text_to_duration_float():
+    assert text_to_duration("10:15") == 10.25
 
-    Returns:
-        duration (float): The duration in hours
-    """
-    hours, minutes = duration.split(":")
-    duration_hours = int(hours)/60 + int(minutes) # Divide the wrong element by 60
-    return duration_hours
-```
+def test_text_to_duration_integer():
+    assert text_to_duration("10:00") == 10
 
-Notice that this time, our test fails noisily. Our assert statement has
-raised an `AssertionError` - a clear signal that there is a problem in
-our code that we need to fix.
-
-``` python
+test_text_to_duration_float()
 test_text_to_duration_integer()
 ```
 
 ``` error
+(venv_spacewalks) $ python3 test_code.py 
 Traceback (most recent call last):
-  File "/Users/AnnResearchers/Desktop/Spacewalks/test_code.py", line 7, in <module>
-    test_text_to_duration_integer()
-  File "/Users/AnnResearchers/Desktop/Spacewalks/test_code.py", line 5, in test_text_to_duration_integer
-    assert text_to_duration("10:00") == 10
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 12, in <module>
+    test_text_to_duration_float()
+  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 5, in test_text_to_duration_float
+    assert text_to_duration("10:15") == 10.25
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
+
 ```
 
-What happens if we add another test to our test script? This time we'll
-check that our function can handle durations with a non-zero minute
-component. Notice that this time our expected value is a floating-point
-number. Importantly, we cannot use a simple double equals sign (`==`) to
-compare the equality of floating-point numbers. Floating-point
-arithmetic can introduce very small differences due to how computers
-represent these numbers internally - as a result, we check that our
-floating point numbers are equal within a very small tolerance (1e-5).
+Notice that this time, our test `test_text_to_duration_float` fails.
+Our assert statement has raised an `AssertionError` - a clear signal that there is a problem in our code that we
+need to fix.
+Python helpfully tells us which line of our code is problematic:
 
-``` python
+```python
+...
+duration_hours = int(hours) + int(minutes)/6 
+...
+```
+
+You may notice that our conversion code is wrong - the minutes component should have been divided by 60 and not 6.
+We were able to spot this tiny bug by testing our code.
+
+Let's fix the problematic line and rerun out tests. 
+
+```python
+...
+duration_hours = int(hours) + int(minutes)/60 
+...
+```
+
+This time our tests run without problem. 
+
+Should we add more tests or the tests we have so far are enough? 
+What happens if our duration value is `01:20` (one hour and 20 minutes) and our result is not a rational floating 
+point number like `10.25` but an irrational number such as `10.333333333`? 
+Let's tests for this.
+
+```python
 from eva_data_analysis import text_to_duration
+
+def test_text_to_duration_float():
+    assert text_to_duration("10:20") == 10.333333
 
 def test_text_to_duration_integer():
     assert text_to_duration("10:00") == 10
-    
-def test_text_to_duration_float():
-    assert abs(text_to_duration("10:20") - 10.33333333) < 1e-5
 
-test_text_to_duration_integer()
 test_text_to_duration_float()
+test_text_to_duration_integer()
+
 ```
 
-``` output
+```error
+(venv_spacewalks) $ python3 test_code.py
 Traceback (most recent call last):
-  File "/Users/AnnResearcher/Desktop/Spacewalks/test_code.py", line 9, in <module>
-    test_text_to_duration_integer()
-  File "/Users/AnnResearcher/Desktop/Spacewalks/test_code.py", line 4, in test_text_to_duration_integer
-    assert text_to_duration("10:00") == 10
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 17, in <module>
+    test_text_to_duration_float()
+  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 9, in test_text_to_duration_float
+    assert text_to_duration("10:20") == 10.333333
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 ```
 
-What happens when we run our updated test script? Our script stops after
-the first test failure and the second test is not run. To run our
-remaining tests we would have to manually comment out our failing test
-and re-run the test script. As our code base and tests grow, this will
-become cumbersome. This is not ideal and can be overcome by automating
-our tests using a testing framework.
+On computer systems, representation of irrational numbers is typically not exact as they do not have an exact binary 
+representation.
+For this reason, we cannot use a simple double equals sign (`==`) to compare the equality of floating point numbers. 
+Instead, we check that our floating point numbers are equal within a very small tolerance (e.g. 1e-5).
+Hence, our code should look like: 
 
-## Using a testing framework
+``` python
+...
+def test_text_to_duration_float():
+    assert abs(text_to_duration("10:20") - 10.33333333) < 1e-5
+...
+```
 
-Our approach so far has had two major limitations:
+You may have noticed that we have to repeat a lot of code to add each individual test for each test case. 
+You may also have noticed that our test script stopped after the first test failure and none of the tests after that 
+were run. 
+To run our remaining tests we would have to manually comment out our failing test and re-run the test script. 
+As our code base grows, testing in this way becomes cumbersome and error-prone. 
+These limitations can be overcome by automating our tests using a **testing framework**.
 
--   We had to carefully examine the output of our test script to work
-    out if our test failed.
--   Our test script only ran our tests up to the first test failure.
+## Testing frameworks
 
-We can do better than this! Testing frameworks can automatically find
-all the tests in our code base, run all of them and present the test
-results as a readable summary.
+Testing frameworks can automatically find all the tests in our code base, run all of them (so we do not have to invoke 
+them explicitly or, even worse, forget to invoke them), and present the test results as a readable summary.
 
-We will use the python testing framework pytest with its code coverage
-plugin pytest-cov. To install these libraries, open a terminal and type:
+We will use the Python testing framework `pytest` with its code coverage extension `pytest-cov`. 
+To install these libraries into our virtual environment, from the command line terminal do:
 
 ``` bash
-(venv_spacewalks) $ python -m pip install pytest pytest-cov
+(venv_spacewalks) $ python3 -m pip install pytest pytest-cov
 ```
 
-Make sure to also capture the changes to our virtual development environment.
+Let’s make sure that our tests are ready to work with `pytest`.
 
-```bash
-(venv_spacewalks) $ python -m pip freeze > requirements.txt
-(venv_spacewalks) $ git add requirements.txt
-(venv_spacewalks) $ git commit -m "Added pytest and pytest-cov libraries."
-(venv_spacewalks) $ git push origin main
-```
-
-Let’s make sure that our tests are ready to work with pytest.
-
--   pytest automatically discovers tests based on specific naming
-    patterns. pytest looks for files that start with `test_` or end with
-    `_test.py`. Then, within these files, pytest looks for functions
-    that start with test\_.\
+-   `pytest` automatically discovers tests based on specific naming
+    patterns. It looks for files that start with "test\_" or end with
+    "\_test.py". Then, within these files, `pytest` looks for functions
+    that start with "test_".
     Our test file already meets these requirements, so there is nothing
     to do here. However, our script does contain lines to run each of
     our test functions. These are no-longer required as pytest will run
-    our tests so we will remove them:
+    our tests so we can remove them:
 
     ``` python
-    # Delete
-    test_text_to_duration_integer()
+    # Delete these 2 lines
     test_text_to_duration_float()
+    test_text_to_duration_integer()
     ```
 
 -   It is also conventional when working with a testing framework to
-    place test files in a tests directory at the root of our project and
+    place test files in a `tests` directory at the root of our project and
     to name each test file after the code file that it targets. This
     helps in maintaining a clean structure and makes it easier for
     others to understand where the tests are located.
 
-A set of tests for a given piece of code is called a test suite. Our
-test suite is currently located in the root folder of our project. Let’s
-move it to a dedicated test folder and rename our test_code.py file to
-test_eva_analysis.py.
+A set of tests for a given piece of code is called a test suite. 
+Our test suite is currently located in the root folder of our project. 
+Let’s move it to a dedicated test folder and rename our `test_code.py` file to
+`test_eva_analysis.py`.
 
 ``` bash
 (venv_spacewalks) $ mkdir tests
 (venv_spacewalks) $ mv test_code.py tests/test_eva_analysis.py
 ```
 
-Before we re-run our tests using pytest, let's update our second test.
-to use pytest's `approx` function which is specifically intended for
+Before we re-run our tests using `pytest`, let's update our second test
+to use `pytest`'s function `approx()` which is specifically intended for
 comparing floating point numbers within a tolerance.
 
 ``` python
 import pytest
 from eva_data_analysis import text_to_duration
 
-def test_text_to_duration_integer():
-    assert text_to_duration("10:00") == 10
-    
 def test_text_to_duration_float():
     assert text_to_duration("10:20") == pytest.approx(10.33333333)
+
+def test_text_to_duration_integer():
+    assert text_to_duration("10:00") == 10
+
 ```
 
 Let's also add some inline comments to clarify what each test is doing
@@ -506,6 +477,15 @@ and expand our syntax to highlight the logic behind our approach:
 import pytest
 from eva_data_analysis import text_to_duration
 
+def test_text_to_duration_float():
+    """
+    Test that text_to_duration returns expected ground truth values
+    for typical durations with a non-zero minute component
+    """
+    actual_result = text_to_duration("10:20") 
+    expected_result = 10.33333333
+    assert actual_result == pytest.approx(expected_result)
+    
 def test_text_to_duration_integer():
     """
     Test that text_to_duration returns expected ground truth values
@@ -515,102 +495,88 @@ def test_text_to_duration_integer():
     expected_result = 10
     assert actual_result == expected_result
     
-def test_text_to_duration_float():
-    """
-    Test that text_to_duration returns expected ground truth values
-    for typical durations with a non-zero minute component
-    """
-    actual_result = text_to_duration("10:20") 
-    expected_result = 10.33333333
-    assert actual_result == pytest.approx(expected_result)
 ```
 
-Writing our tests this way highlights the key idea that each test should
-compare the actual results returned by our function with expected
-values.
+Writing our tests this way highlights the key idea that each test should compare the actual results returned by our 
+function with expected values.
 
-Similarly, writing inline comments for our tests that complete the
-sentence "Test that ..." helps us to understand what each test is doing
-and why it is needed.
+Similarly, writing inline comments for our tests that complete the sentence "Test that ..." helps us to understand 
+what each test is doing and why it is needed.
 
-Finally, let's also modify our bug to something that will affect
-durations with a non-zero minute component like "10:20" but not those
-that are whole hours e.g. "10:00".
+Before running out tests with `putest`, let's reintroduce our old bug in function `text_to_duration` that affects 
+the durations with a non-zero minute component like "10:20" but not those that are whole hours, e.g. "10:00":
 
-Let's change `int(hours)/60 + int(minutes)` to
-`int(hours) + int(minutes)/6` a simple typo.
-
-``` python
-def text_to_duration(duration):
-    """
-    Convert a text format duration "HH:MM" to duration in hours
-
-    Args:
-        duration (str): The text format duration
-
-    Returns:
-        duration (float): The duration in hours
-    """
-    hours, minutes = duration.split(":")
-    duration_hours = int(hours) + int(minutes)/6 # Divide by 6 instead of 60
-    return duration_hours
+```python
+    ...
+    duration_hours = int(hours) + int(minutes)/6  # Divide by 6 instead of 60
+    ...
 ```
 
-Finally, let's run our tests:
+Finally, let's run our tests with `pytest` from our project's root directory (and not `tests` directory):
 
 ``` bash
-(venv_spacewalks) $ python -m pytest 
+(venv_spacewalks) $ python3 -m pytest 
 ```
 
-``` output
-========================================================== test session starts 
-platform darwin -- Python 3.12.3, pytest-8.2.2, pluggy-1.5.0
-rootdir: /Users/AnnResearcher/Desktop/Spacewalks
+``` error
+========================================== test session starts ===========================================
+platform darwin -- Python 3.11.7, pytest-8.3.3, pluggy-1.5.0
+rootdir: /Users/user/work/SSI/lessons/astronaut-data-analysis-not-so-good
 plugins: cov-5.0.0
-collected 2 items                                                                                                                        
+collected 2 items                                                                                                                                                                                                                                                                                                     
 
-tests/test_eva_data_analysis.py .F                                                                                                 [100%]
+tests/test_code.py F.                                                                                                                                                                                                                                                                                           [100%]
 
-================================================================ FAILURES 
-______________________________________________________ test_text_to_duration_float 
+================================================ FAILURES ================================================
+________________________________________ test_text_to_duration_float _____________________________________
 
     def test_text_to_duration_float():
-        """
-        Test that text_to_duration returns expected ground truth values
-        for typical durations with a non-zero minute component
-        """
-        actual_result = text_to_duration("10:20")
-        expected_result = 10.33333333
->       assert actual_result == pytest.approx(expected_result)
+>       assert text_to_duration("10:20") == pytest.approx(10.33333333)
 E       assert 13.333333333333334 == 10.33333333 ± 1.0e-05
 E         
 E         comparison failed
 E         Obtained: 13.333333333333334
 E         Expected: 10.33333333 ± 1.0e-05
 
-tests/test_eva_data_analysis.py:23: AssertionError
-======================================================== short test summary info 
-FAILED tests/test_eva_data_analysis.py::test_text_to_duration_float - assert 13.333333333333334 == 10.33333333 ± 1.0e-05
-====================================================== 1 failed, 1 passed in 0.32s
+tests/test_code.py:5: AssertionError
+=========================================== short test summary info =======================================
+FAILED tests/test_code.py::test_text_to_duration_float - assert 13.333333333333334 == 10.33333333 ± 1.0e-05
+========================================= 1 failed, 1 passed in 0.67s =====================================
+
 ```
 
--   Notice how if the test function finishes without triggering an
-    assertion, the test is considered successful and is marked with a
-    dot ('.').
--   If an assertion fails or an error occurs, the test is marked as a
-    failure with an 'F'. and the output includes details about the error
-    to help identify what went wrong.
+From the above output from `pytest`'s execution of out tests, we notice that: 
+
+- If a test function finishes without triggering an assertion, the test is considered successful and is marked with a
+    dot (`.`).
+- If an assertion fails or an error occurs, the test is marked as a failure with an `F`, 
+and the output includes details about the error to help identify what went wrong.
+
+Let's fix our bug once again, and rerun our tests using `pytest`.
+
+```output
+========================================== test session starts ===========================================
+platform darwin -- Python 3.11.7, pytest-8.3.3, pluggy-1.5.0
+rootdir: /Users/user/work/SSI/lessons/astronaut-data-analysis-not-so-good
+plugins: cov-5.0.0
+collected 2 items                                                                                                                                                                                                                                                                                                     
+
+tests/test_code.py ..                                                                                                                                                                                                                                                                                           [100%]
+
+=========================================== 2 passed in 0.63s =============================================
+```
 
 ::: challenge
-## Interpreting pytest output
 
-A colleague has asked you to conduct a pre-publication review of their
-code `Spacetravel` which analyses time spent in space by various
-individual astronauts.
+### Interpreting pytest output
 
-Inspect the pytest output provided and answer the questions below.
+A colleague has asked you to conduct a pre-publication review of their code which analyses time spent in 
+space by various individual astronauts.
 
-### pytest output for `Spacetravel`
+You tested their code using `pytest`, and got the following output.
+Inspect it and answer the questions below.
+
+#### Example `pytest` output
 
 ``` output
 ============================================================ test session starts 
@@ -688,40 +654,47 @@ e.  `test_mean_duration` failed because there is a syntax error in
 :::
 :::
 
-## Test Suite Design
+## Test suite design
 
-Now that we have tooling in place to automatically run our test suite.
-What makes a good test suite?
+We now have the tools in place to automatically run tests. 
+However, that alone is not enough to properly test code.
+We will now look into what makes a good test suite and good practices for testing code.
 
-### Good Tests
-
-We should aim to test that our function behaves as expected with the
-full range of inputs that it might encounter. It is helpful to consider
-each argument of a function in turn and identify the range of typical
-values it can take. Once we have identified this typical range or ranges
-(where a function takes more than one argument), we should:
-
--   Test at least one interior point
--   Test all values at the edge of the range
--   Test invalid values
-
-Let's revisit the `crew_size` functions from our colleague's codebase.
-First let's add the the additional functions to `eva_data_analysis.py`:
-
+Let’s start by considering the following scenario. 
+A collaborator on our project has sent us the following code which adds a new column to our data containing the 
+`crew_size` values capturing the number of astronauts participating in any given spacewalk. 
+How do we know that it works as intended and that it will not break the rest of our code?
+For this, we need to write a test suite with a comprehensive coverage of the new code.
+ 
 ``` python
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 import sys
-import re
+import re # added this line
 
-...
+# https://data.nasa.gov/resource/eva.json (with modifications)
+
+def main(input_file, output_file, graph_file):
+    print("--START--")
+
+    eva_data = read_json_to_dataframe(input_file)
+
+    eva_data = add_crew_size_column(eva_data) # added this line
+
+    write_dataframe_to_csv(eva_data, output_file)
+
+    plot_cumulative_time_in_space(eva_data, graph_file)
+
+    print("--END--")
+
+... 
 
 def calculate_crew_size(crew):
     """
-    Calculate crew_size for a single crew entry
+    Calculate the size of the crew for a single crew entry
 
     Args:
-        crew (str): The text entry in the crew column
+        crew (str): The text entry in the crew column containing a list of crew member names
 
     Returns:
         int: The crew size
@@ -731,58 +704,47 @@ def calculate_crew_size(crew):
     else:
         return len(re.split(r';', crew))-1
 
-
-def add_crew_size_variable(df_):
+def add_crew_size_column(df):
     """
-    Add crew size (crew_size) variable to the dataset
+    Add crew_size column to the dataset containing the value of the crew size
 
     Args:
-        df_ (pd.DataFrame): The input data frame.
+        df (pd.DataFrame): The input data frame.
 
     Returns:
-        df_copy (pd.DataFrame): A copy of df_ with the new crew_size variable added
+        df_copy (pd.DataFrame): A copy of df with the new crew_size variable added
     """
     print('Adding crew size variable (crew_size) to dataset')
-    df_copy = df_.copy()
+    df_copy = df.copy()
     df_copy["crew_size"] = df_copy["crew"].apply(
         calculate_crew_size
     )
     return df_copy
-
-if __name__ == '__main__':
-
-    if len(sys.argv) < 3:
-        input_file = './eva-data.json'
-        output_file = './eva-data.csv'
-        print(f'Using default input and output filenames')
-    else:
-        input_file = sys.argv[1]
-        output_file = sys.argv[2]
-        print('Using custom input and output filenames')
-
-    graph_file = './cumulative_eva_graph.png'
-
-    eva_data = read_json_to_dataframe(input_file)
-
-    eva_data_prepared = add_crew_size_variable(eva_data)  # Add this line
-
-    write_dataframe_to_csv(eva_data_prepared, output_file)  # Modify this line
-
-    plot_cumulative_time_in_space(eva_data_prepared, graph_file) # Modify this line
-
-    print("--END--")
+...
+    
 ```
 
-Now, let's write some tests for `calculate_crew_size`.
+### Writing good tests
 
-::: challenge
-## Unit Tests for calculate_crew_size
+The aim of writing good tests is to verify that each of our functions behaves as expected with the full range of inputs 
+that it might encounter.
+It is helpful to consider each argument of a function in turn and identify the range of typical values it can take.
+Once we have identified this typical range or ranges (where a function takes more than one argument), we should:
 
-Implement unit tests for the `calculate_crew_size` function. Cover
-typical cases and edge cases.
+-   Test all values at the edge of the range
+-   Test at least one interior point
+-   Test invalid values
 
-Hint: use the following template:
+Let's have a look at the `calculate_crew_size` function from our colleague's new code and write some tests for it.
 
+:::::: challenge
+
+### Unit tests for calculate_crew_size
+
+Implement unit tests for the `calculate_crew_size` function. 
+Cover typical cases and edge cases.
+
+Hint - use the following template when writing tests:
 ```         
 def test_MYFUNCTION (): # FIXME
     """
@@ -802,6 +764,9 @@ def test_MYFUNCTION (): # FIXME
 ```
 
 ::: solution
+
+We can add the following test functions to out test suite.
+
 ``` python
 import pytest
 from eva_data_analysis import (
@@ -809,23 +774,7 @@ from eva_data_analysis import (
     calculate_crew_size
 )
 
-def test_text_to_duration_integer():
-    """
-    Test that text_to_duration returns expected ground truth values
-    for typical whole hour durations
-    """
-    actual_result =  text_to_duration("10:00")
-    expected_result = 10
-    assert actual_result == expected_result
-
-def test_text_to_duration_float():
-    """
-    Test that text_to_duration returns expected ground truth values
-    for typical durations with a non-zero minute component
-    """
-    actual_result = text_to_duration("10:20")
-    expected_result = 10.33333333
-    assert actual_result == pytest.approx(expected_result)
+...
 
 def test_calculate_crew_size():
     """
@@ -839,7 +788,6 @@ def test_calculate_crew_size():
     actual_result = calculate_crew_size("Judith Resnik; Sally Ride;")
     expected_result = 2
     assert actual_result == expected_result
-
 
 # Edge cases
 def test_calculate_crew_size_edge_cases():
@@ -852,49 +800,15 @@ def test_calculate_crew_size_edge_cases():
 
 ```
 
-``` output
-========================================================== test session starts 
-platform darwin -- Python 3.12.3, pytest-8.2.2, pluggy-1.5.0
-rootdir: /Users/AnnResearcher/Desktop/Spacewalks
-plugins: cov-5.0.0
-collected 4 items                                                                                                                        
-
-tests/test_eva_data_analysis.py .F..                                                                                               [100%]
-
-================================================================ FAILURES 
-______________________________________________________ test_text_to_duration_float 
-
-    def test_text_to_duration_float():
-        """
-        Test that text_to_duration returns expected ground truth values
-        for typical durations with a non-zero minute component
-        """
-        actual_result = text_to_duration("10:20")
-        expected_result = 10.33333333
->       assert actual_result == pytest.approx(expected_result)
-E       assert 13.333333333333334 == 10.33333333 ± 1.0e-05
-E         
-E         comparison failed
-E         Obtained: 13.333333333333334
-E         Expected: 10.33333333 ± 1.0e-05
-
-tests/test_eva_data_analysis.py:23: AssertionError
-======================================================== short test summary info 
-FAILED tests/test_eva_data_analysis.py::test_text_to_duration_float - assert 13.333333333333334 == 10.33333333 ± 1.0e-05
-====================================================== 1 failed, 3 passed in 0.33s 
-```
 :::
-:::
+::::::
 
-::: callout
-### Parameterising Tests
+### Parameterising tests
 
-If we revisit our test suite, we can see that some of our tests do not
-follow the [“Don't Repeat Yourself principle”][dry-principle] which
-prevents software - including testing code - from becoming overly long
-and confusing. For example, if we examine our test for
-`calculate_crew_size`, we can see that a small block of code is repeated
-twice with different input values:
+Looking at out new test functions, we may notice that they do not follow the 
+[“Don't Repeat Yourself principle”][dry-principle] which prevents software - including testing code - 
+from becoming repetitive and too long. 
+In our test code, a small block of code is repeated twice with different input values:
 
 ``` python
 def test_calculate_crew_size():
@@ -911,23 +825,11 @@ def test_calculate_crew_size():
     assert actual_result == expected_result
 ```
 
-Where the repeated code block is:
+To avoid such repetitions in our test code, we can **test parameterisation**. 
+This allows us to apply our test function to a list of input / expected output pairs without the need for repetition. 
+To parameterise the `test_calculate_crew_size` function, we can rewrite is as follows:
 
 ``` python
-actual_result = calculate_crew_size(input_value)
-expected_result = expected_value
-assert actual_result == expected_result
-```
-
-To avoid repeating ourselves, we can use an approach called test
-parameterisation. This allows us to apply our test function to a list of
-input / expected output pairs without the need for repetition. To
-parameterise the `calculate_crew_size` test, we rewrite the test
-function as follows:
-
-``` python
-import pytest
-
 @pytest.mark.parametrize("input_value, expected_result", [
     ("Valentina Tereshkova;", 1),
     ("Judith Resnik; Sally Ride;", 2),
@@ -943,69 +845,45 @@ def test_calculate_crew_size(input_value, expected_result):
 
 Notice the following key changes to our code:
 
--   Our unparameterised test function did not have any arguments
-    (`test_calculate_crew_size()`) and our input / expected values were
-    all defined the body of our test function.
+- The unparameterised version of `test_calculate_crew_size` function did not have any arguments and our input/expected values 
+were all defined in the body of our test function.
+- In the parameterised version of `test_calculate_crew_size`, the body of our test function has been rewritten as a 
+parameterised block of code that uses the variables `input_value` and `expected_result` which are now arguments of the
+test function.
+- A Python decorator `@pytest.mark.parametrize` is placed immediately before the test function and indicates that 
+it should be run once for each set of parameters provided.
 
--   In the parameterised version, the body of our test function has been
-    rewritten as a parameterised block of code that uses the variables
-    `input_value` and `expected_result` which are now arguments of the
-    test function.
+::: callout
+In Python, a decorator is a function that can modify the behaviour of another function. 
+`@pytest.mark.parametrize` is a decorator provided by `pytest` that modifies the behaviour of our test 
+function by running it multiple times - once for each set of inputs. 
+This decorator takes two main arguments:
 
--   A python decorator @pytest.mark.parametrize is placed immediately
-    before the test function and indicates that it should be run once for
-    each set of parameters provided.
-
-In Python, a decorator is a function that can modify the behaviour of
-another function. @pytest.mark.parametrize is a decorator provided by
-pytest that modifies the behaviour of our test function by running it
-multiple times - once for each set of inputs. This decorator takes two
-main arguments:
-
--   Parameter Names: A string with the names of the parameters that the
+-   Parameter names: a string with the names of the parameters that the
     test function will accept, separated by commas – in this case
     “input_value” and “expected_value”
 
--   Parameter Values: A list of tuples, where each tuple contains the
+-   Parameter values: a list of tuples, where each tuple contains the
     values for the parameters specified in the first argument.
-
-The final parameterised version of our test, is more manageable,
-readable and easier to maintain!
 :::
 
-### Enough Tests
+As you can see, the parameterised version of our test function is shorter, more readable and easier to maintain.
 
-In this episode, so far we've (only) written tests for two individual
-functions `text_to_duration` and `calculate_crew_size`.
 
-We can quantify the proportion of our code base that is run (also
-referred to as "exercised") by a given test suite using a metric called
-code coverage:
+### Just enough tests
+
+In this episode, so far we have (only) written tests for two individual functions: `text_to_duration` and 
+`calculate_crew_size`.
+
+We can quantify the proportion of our code base that is run (also referred to as "exercised") by a given test suite 
+using a metric called code coverage:
 
 $$ \text{Line Coverage} = \left( \frac{\text{Number of Executed Lines}}{\text{Total Number of Executable Lines}} \right) \times 100 $$
 
-We can calculate our test coverage using the pytest-cov library. Before
-we do so, let's fix our bug so that our output is cleaner and we can
-focus on the code coverage information.
-
-``` python
-def text_to_duration(duration):
-    """
-    Convert a text format duration "HH:MM" to duration in hours
-
-    Args:
-        duration (str): The text format duration
-
-    Returns:
-        duration (float): The duration in hours
-    """
-    hours, minutes = duration.split(":")
-    duration_hours = int(hours) + int(minutes)/60 # Bug-free line
-    return duration_hours
-```
+We can calculate our test coverage using the `pytest-cov` library as follows.
 
 ``` bash
-(venv_spacewalks) $ python -m pytest --cov 
+(venv_spacewalks) $ python3 -m pytest --cov 
 ```
 
 ``` output
@@ -1036,44 +914,45 @@ which are not, we can add the option `--cov-report=html`.
 (venv_spacewalks) $ python -m pytest --cov --cov-report=html 
 ```
 
-This option generates a folder `htmlcov` which contains a html code
-coverage report. This provides structured information about our test
-coverage including (a) a table showing the proportion of lines in each
-function that are currently tested (b) an annotated copy of our code
-where untested lines are highlighted in red.
+This option generates a folder `htmlcov` in the project root directory containing a code coverage report in HTML format. 
+This provides structured information about our test coverage including: 
 
-Ideally, all the lines of code in our code base should be exercised by
-at least one test. However, if we lack the time and resources to test
-every line of our code we should:
+- a table showing the proportion of lines in each function that are currently tested, and 
+- an annotated copy of our code where untested lines are highlighted in red.
 
--   Avoid testing Python's built-in functions or functions imported from
-    well-known and well-test libraries like Pandas or numpy.
--   Focus on the the parts of our code that carry the greatest
-    "reputational risk" i.e. that could affect the accuracy of our
-    reported results.
+Ideally, all the lines of code in our code base should be exercised by at least one test. 
+However, if we lack the time and resources to test every line of our code we should:
 
-One the other hand, it is also important to realise that althought
-coverage of less than 100% indicates that more testing may be helpful,
-test coverage of 100% does not mean that our code is bug-free!
+- avoid testing Python's built-in functions or functions imported from well-known and well-tested libraries like 
+`pandas` or `numpy`.
+- focus on the the parts of our code that carry the greatest "reputational risk", i.e. that could affect the accuracy 
+of our reported results.
+
+::: callout
+
+Test coverage of less than 100% indicates that more testing may be helpful.
+
+Test coverage of 100% does not mean that our code is bug-free.
+
+:::
 
 ::: challenge
-## Evaluating Code Coverage
 
-Generate a code coverage report for the `Spacewalks` test suite and
-extract the following information:
+### Evaluating code coverage
 
-a.  What proportion of the code base is currently NOT exercised by the
-    test suite?
+Generate the code coverage report for your software using the `python3 -m pytest --cov --cov-report=html` command, 
+inspect it and and extract the following information:
+
+a.  What proportion of the code base is currently "not" exercised by the test suite?
 b.  Which functions in our code base are currently untested?
 
 ::: solution
-``` bash
-(venv_spacewalks) $ python -m pytest --cov --cov-report=html
-```
 
-a.  The proportion of the code base NOT covered by our tests is
-    `100 - 32%` = 68%
-b.  The following functions in our code base are currently untested:
+a.  You can find this information on the "Files" tab of the HTML report. 
+The proportion of the code base NOT covered by our tests is 68% (100% - 32%) - this may differ for your 
+version of the code.
+b.  You can find this information on the "Functions" tab of the HTML report. 
+The following functions in our code base are currently untested:
     -   read_json_to_dataframe
     -   write_dataframe_to_csv
     -   add_duration_hours_variable
@@ -1082,414 +961,27 @@ b.  The following functions in our code base are currently untested:
 :::
 :::
 
-### Implementing a minimal test suite
-
-A member of our research team shares the following code with us to add
-to the Spacewalks codebase:
-
-``` python
-def summarise_categorical(df_, varname_):
-    """
-    Tabulate the distribution of a categorical variable
-
-    Args:
-        df_ (pd.DataFrame): The input dataframe.
-        varname_ (str): The name of the variable
-
-    Returns:
-        pd.DataFrame: dataframe containing the count and percentage of
-        each unique value of varname_
-        
-    Examples:
-        >>> df_example  = pd.DataFrame({
-            'vehicle': ['Apollo 16', 'Apollo 17', 'Apollo 17'],
-            }, index=[0, 1, 2)
-        >>> summarise_categorical(df_example, "vehicle")
-        Tabulating distribution of categorical variable vehicle
-             vehicle  count  percentage
-        0  Apollo 16      1        33.0
-        1  Apollo 17      2        67.0
-    """
-    print(f'Tabulating distribution of categorical variable {varname_}')
-
-    # Prepare statistical summary
-    count_variable = df_[[varname_]].copy()
-    count_summary = count_variable.value_counts()
-    percentage_summary = round(count_summary / count_variable.size, 2) * 100
-
-    # Combine results into a summary data frame
-    df_summary = pd.concat([count_summary, percentage_summary], axis=1)
-    df_summary.columns = ['count', 'percentage']
-    df_summary.sort_index(inplace=True)
-
-
-    df_summary = df_summary.reset_index()
-    return df_summary
-```
-
-This looks like a useful tool for creating summary statistics tables, so
-let's integrate this into our `eva_data_analysis.py`code and then write
-a minimal test suite to check that this code is behaving as expected.
-
-``` python
-import pandas as pd
-import matplotlib.pyplot as plt
-import sys
-import re
-
-
-...
-
-def add_crew_size_variable(df_):
-    """
-    Add crew size (crew_size) variable to the dataset
-
-    Args:
-        df_ (pd.DataFrame): The input dataframe.
-
-    Returns:
-        pd.DataFrame: A copy of df_ with the new crew_size variable added
-    """
-    print('Adding crew size variable (crew_size) to dataset')
-    df_copy = df_.copy()
-    df_copy["crew_size"] = df_copy["crew"].apply(
-        calculate_crew_size
-    )
-    return df_copy
-
-
-def summarise_categorical(df_, varname_):
-    """
-    Tabulate the distribution of a categorical variable
-
-    Args:
-        df_ (pd.DataFrame): The input dataframe.
-        varname_ (str): The name of the variable
-
-    Returns:
-        pd.DataFrame: dataframe containing the count and percentage of
-        each unique value of varname_
-    """
-    print(f'Tabulating distribution of categorical variable {varname_}')
-
-    # Prepare statistical summary
-    count_variable = df_[[varname_]].copy()
-    count_summary = count_variable.value_counts() # There is a bug here that we will fix later!
-    percentage_summary = round(count_summary / count_variable.size, 2) * 100
-
-    # Combine results into a summary data frame
-    df_summary = pd.concat([count_summary, percentage_summary], axis=1)
-    df_summary.columns = ['count', 'percentage']
-    df_summary.sort_index(inplace=True)
-
-
-    df_summary = df_summary.reset_index()
-    return df_summary
-
-
-if __name__ == '__main__':
-
-    if len(sys.argv) < 3:
-        input_file = './eva-data.json'
-        output_file = './eva-data.csv'
-        print(f'Using default input and output filenames')
-    else:
-        input_file = sys.argv[1]
-        output_file = sys.argv[2]
-        print('Using custom input and output filenames')
-
-    graph_file = './cumulative_eva_graph.png'
-
-    eva_data = read_json_to_dataframe(input_file)
-
-    eva_data_prepared = add_crew_size_variable(eva_data)
-
-    write_dataframe_to_csv(eva_data_prepared, output_file)
-
-    table_crew_size = summarise_categorical(eva_data_prepared, "crew_size")
-
-    write_dataframe_to_csv(table_crew_size, "./table_crew_size.csv")
-
-    plot_cumulative_time_in_space(eva_data_prepared, graph_file)
-
-    print("--END--")
-```
-
-To write tests for this function, we'll need to be able to compare
-dataframes. The pandas.testing module in the pandas library provides
-functions and utilities for testing pandas objects and includes a
-function `assert_frame_equal` that we can use to compare two dataframes.
-
-::: challenge
-### Exercise 1 - Typical Inputs
-
-First, check that the function behaves as expected with typical input
-values. Fill in the gaps in the skeleton test below:
-
-``` python
-import pandas.testing as pdt
-
-def test_summarise_categorical_typical():
-    """
-    Test that summarise_categorical correctly tabulates
-    distribution of values (counts, percentages) for a ground truth
-    example (typical values)
-    """
-    test_input = pd.DataFrame({
-        'country': _________________________________________, # FIX-ME
-    }, index=[0, 1, 2, 3, 4])
-
-    expected_result = pd.DataFrame({
-        'country': ["Russia", "USA"],
-        'count': [2, 3],
-        'percentage': [40.0, 60.0],
-    }, index=[0, 1])
-
-    actual_result = ____________________________________________ # FIX-ME 
-    
-    pdt.__________________(actual_result, _______________) #FIX-ME
-```
-
-::: solution
-``` python
-import pandas.testing as pdt
-
-def test_summarise_categorical():
-    """
-    Test that summarise_categorical correctly tabulates
-    distribution of values (counts, percentages) for a simple ground truth
-    example
-    """
-    test_input = pd.DataFrame({
-        'country': ['USA', 'USA', 'USA', "Russia", "Russia"],
-    }, index=[0, 1, 2, 3, 4])
-
-    expected_result = pd.DataFrame({
-        'country': ["Russia", "USA"],
-        'count': [2, 3],
-        'percentage': [40.0, 60.0],
-    }, index=[0, 1])
-
-    actual_result = summarise_categorical(test_input, "country")
-
-    pdt.assert_frame_equal(actual_result, expected_result)
-```
-:::
-:::
-
-::: challenge
-### Exercise 2 - Edge Cases
-
-Now let's check that the function behaves as expected with edge cases.\
-Does the code behave as expected when the column of interest contains
-one or more missing values (pd.NA)? (write a new test).
-
-Fill in the gaps in the skeleton test below:
-
-``` python
-import pandas.testing as pdt
-
-def test_summarise_categorical_missvals():
-    """
-    Test that summarise_categorical correctly tabulates
-    distribution of values (counts, percentages) for a ground truth
-    example (edge case where all column contains missing values)
-    """
-    test_input = _______________
-    _______________
-    _______________ # FIX-ME
-    
-    expected_result = _______________
-    _______________
-    _______________ # FIX-ME
-    
-    actual_result = summarise_categorical(test_input, "country")
-
-    pdt.assert_frame_equal(actual_result, expected_result)
-```
-
-::: solution
-``` python
-import pandas.testing as pdt
-
-def test_summarise_categorical_missvals():
-    """
-    Test that summarise_categorical correctly tabulates
-    distribution of values (counts, percentages) for a ground truth
-    example (edge case where column contains missing values)
-    """
-    test_input = pd.DataFrame({
-        'country': ['USA', 'USA', 'USA', "Russia", pd.NA],
-    }, index=[0, 1, 2, 3, 4])
-
-    expected_result = pd.DataFrame({
-        'country': ["Russia", "USA", np.nan], # np.nan because pd.NA is cast to np.nan
-        'count': [1, 3, 1],
-        'percentage': [20.0, 60.0, 20.0],
-    }, index=[0, 1, 2])
-    actual_result = summarise_categorical(test_input, "country")
-
-    pdt.assert_frame_equal(actual_result, expected_result)
-```
-:::
-:::
-
-::: challenge
-### Exercise 3 - Invalid inputs
-
-Now write a test to check that the `summarise_categorical` function
-raises an appropriate error when asked to tabulate a column that does
-not exist in the data frame.
-
-Hint: lookup `pytest.raises` in the pytest documentation.
-
-::: solution
-``` python
-
-def test_summarise_categorical_invalid():
-    """
-    Test that summarise_categorical raises an
-    error when a non-existent column is input
-    """
-    test_input = pd.DataFrame({
-        'country': ['USA', 'USA', 'USA', "Russia", "Russia"],
-    }, index=[0, 1, 2, 3, 4])
-
-    with pytest.raises(KeyError):
-        summarise_categorical(test_input, "vehicle")
-```
-:::
-:::
-
-## Improving Our Code
-
-At the end of this episode, our test suite in `tests` should look like
-this:
-
-``` python
-import pytest
-import pandas as pd
-import pandas.testing as pdt
-import numpy as np
-
-from eva_data_analysis import (
-    text_to_duration,
-    calculate_crew_size,
-    summarise_categorical
-)
-
-def test_text_to_duration_integer():
-    """
-    Test that text_to_duration returns expected ground truth values
-    for typical whole hour durations
-    """
-    actual_result =  text_to_duration("10:00")
-    expected_result = 10
-    assert actual_result == expected_result
-
-def test_text_to_duration_float():
-    """
-    Test that text_to_duration returns expected ground truth values
-    for typical durations with a non-zero minute component
-    """
-    actual_result = text_to_duration("10:20")
-    expected_result = 10.33333333
-    assert actual_result == pytest.approx(expected_result)
-
-def test_calculate_crew_size():
-    """
-    Test that calculate_crew_size returns expected ground truth values
-    for typical crew values
-    """
-    actual_result = calculate_crew_size("Valentina Tereshkova;")
-    expected_result = 1
-    assert actual_result == expected_result
-
-    actual_result = calculate_crew_size("Judith Resnik; Sally Ride;")
-    expected_result = 2
-    assert actual_result == expected_result
-
-
-def test_calculate_crew_size_edge_cases():
-    """
-    Test that calculate_crew_size returns expected ground truth values
-    for edge case where crew is an empty string
-    """
-    actual_result = calculate_crew_size("")
-    assert actual_result is None
-
-
-def test_summarise_categorical():
-    """
-    Test that summarise_categorical correctly tabulates
-    distribution of values (counts, percentages) for a simple ground truth
-    example
-    """
-    test_input = pd.DataFrame({
-        'country': ['USA', 'USA', 'USA', "Russia", "Russia"],
-    }, index=[0, 1, 2, 3, 4])
-
-    expected_result = pd.DataFrame({
-        'country': ["Russia", "USA"],
-        'count': [2, 3],
-        'percentage': [40.0, 60.0],
-    }, index=[0, 1])
-
-    actual_result = summarise_categorical(test_input, "country")
-
-    pdt.assert_frame_equal(actual_result, expected_result)
-
-
-def test_summarise_categorical_missvals():
-    """
-    Test that summarise_categorical correctly tabulates
-    distribution of values (counts, percentages) for a ground truth
-    example (edge case where column contains missing values)
-    """
-    test_input = pd.DataFrame({
-        'country': ['USA', 'USA', 'USA', "Russia", pd.NA],
-    }, index=[0, 1, 2, 3, 4])
-
-    expected_result = pd.DataFrame({
-        'country': ["Russia", "USA", np.nan],
-        'count': [1, 3, 1],
-        'percentage': [20.0, 60.0, 20.0],
-    }, index=[0, 1, 2])
-    actual_result = summarise_categorical(test_input, "country")
-
-    pdt.assert_frame_equal(actual_result, expected_result)
-    
-
-
-def test_summarise_categorical_invalid():
-    """
-    Test that summarise_categorical raises an
-    error when a non-existent column is input
-    """
-    test_input = pd.DataFrame({
-        'country': ['USA', 'USA', 'USA', "Russia", "Russia"],
-    }, index=[0, 1, 2, 3, 4])
-
-    with pytest.raises(KeyError):
-        summarise_categorical(test_input, "vehicle")
-```
-
-Finally lets commit our test suite to our codebase and push the changes
-to GitHub.
+At this point, now is a good time to commit our test suite to our codebase and push the changes to GitHub.
 
 ``` bash
 (venv_spacewalks) $ git add eva_data_analysis.py 
 (venv_spacewalks) $ git commit -m "Add additional analysis functions"
 (venv_spacewalks) $ git add tests/
 (venv_spacewalks) $ git commit -m "Add test suite"
+(venv_spacewalks) $ python3 -m pip freeze > requirements.txt
+(venv_spacewalks) $ git add requirements.txt
+(venv_spacewalks) $ git commit -m "Added pytest and pytest-cov libraries."
 (venv_spacewalks) $ git push origin main
 ```
 
+### (Optional) More practice with a test suite
+
+There is an [optional exercise](../learners/test-suite-exercise.md) to implement additional tests and practice writing tests some more.
 
 ## Continuous Integration for automated testing
 
-Continuous Integration (CI) services provide the infrastructure to
-automatically run the code's test suite every time changes are pushed to a remote repository.
+Continuous Integration (CI) services provide the infrastructure to automatically run every test function in 
+the test code suite every time changes are pushed to a remote repository.
 There is an [extra episode on configuring CI for automated tests on GitHub](../learners/ci-for-testing.md)
 for some additional reading.
 
@@ -1497,17 +989,17 @@ for some additional reading.
 
 During this episode, we have covered how to use software tests to verify
 the correctness of our code. We have seen how to write a unit test, how
-to manage and run our tests using the pytest framework and how identify
+to manage and run our tests using the `pytest` framework and how identify
 which parts of our code require additional testing using test coverage
 reports.
 
-These skills reduce the probability that there will be a "mistake in our
-code" and support reproducible research by giving us the confidence to
-engage in open research practices. Tests also document the intended
-behaviour of our code for other developers and mean that we can
+These skills reduce the probability that there will be a mistake in our
+code and support reproducible research by giving us the confidence to
+engage in open research practices. 
+Tests also document the intended behaviour of our code for other developers and mean that we can
 experiment with changes to our code knowing that our tests will let us
-know if we break any existing functionality. In other words, software
-testing supports the FAIR software principles by making our code more **accessible** and
+know if we break any existing functionality. 
+In other words, software testing supports the FAIR software principles by making our code more **accessible** and
 **reusable**.
 
 ## Further reading

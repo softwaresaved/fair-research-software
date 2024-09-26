@@ -6,9 +6,9 @@ exercises: 30
 
 :::::::::::::::::::::::::::::::::::::: questions
 
-- How can be bests structure code into reusable components with a single responsibility?
+- How can we bests structure code?
 - What is a common code structure (pattern) for creating software that can read input from command line?
-- What are conventional places to store data, code, results, tests and auxiliary information and metadata 
+- What are conventional places to store data, code, results, tests, auxiliary information and metadata 
 within our software or research project? 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -16,9 +16,9 @@ within our software or research project?
 ::::::::::::::::::::::::::::::::::::: objectives
 After completing this episode, participants should be able to:
 
-- Structure code that is modular and split into small, reusable functions.
+- Structure code into smaller, reusable components with a single responsibility/functionality.
 - Use the common code pattern for creating software that can read input from command line
-- Follow best practices in structuring code and organising software/research project directories for improved 
+- Follow best practices for organising software/research project directories for improved 
 readability, accessibility and reproducibility.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -54,16 +54,14 @@ As we have already seen in the previous episode - functions play a key role in c
 We are going to carry on improving our code following these principles:
 
 - Each function should have a single, clear responsibility. This makes functions easier to understand, test, and reuse.
-- Functions should accept parameters to allow flexibility and reusability in different contexts; avoid hard-coding 
-values inside functions/code (e.g. data files to read from/write to); instead, pass them as arguments.
-- Split complex tasks into smaller, simpler functions that can be composed; each function should handle a distinct 
-part of a larger task.
 - Write functions that can be easily combined or reused with other functions to build more complex functionality.
+- Functions should accept parameters to allow flexibility and reusability in different contexts; avoid hard-coding 
+values inside functions/code (e.g. data files to read from/write to) and pass them as arguments instead.
 
 Bearing in mind the above principles, we can further simplify our code by extracting the code to process, 
-analyse our data and plot a graph into a separate function `plot_cumulative_time_in_space`, and then further break down
-the code to convert the data column containing spacewalk durations as text into numbers which we can perform 
-arithmetic operations over, and add that numerical data as a new column in our dataset. 
+analyse our data and plot a graph into a separate function `plot_cumulative_time_in_space`.
+We can further extract (into 2 separate functions) the code to convert the spacewalk duration text into numbers for 
+calculations and add this numerical data as a new column in our dataset.
 
 The main part of our code then becomes much simpler and more readable, only 
 containing the invocation of the following three functions:
@@ -195,17 +193,22 @@ print("--END--")
 
 ```
 
+As you may notice, the main part of our code has now been majorly simplified and is much easier to follow.
+
 ## Command-line interface to code
 
-A common way to structure code is to have a command-line interface to allow the passing of input data file to be 
-read and the output file to be written to as parameters to our script and avoid hard-coding them.
-This improves interoperability and reusability of our code as it can now be run from the
-command line terminal and integrated into other scripts or workflows/pipelines. 
-For example, another script can produce 
-our input data and can be "chained" with our code in a more complex data analysis pipeline.
-Or we can invoke our script in a loop to quickly analyse a number of input data files from a directory.
+A common way to structure code is to have a command-line interface to allow the passing of various parameters. 
+For example, we can pass the input data file to be read and the output file 
+to be written to as parameters to our script and avoid hard-coding them.
+This improves interoperability and reusability of our code as it can now be run over any data file of the same structure, 
+invoked from the command line terminal and integrated into other scripts or workflows/pipelines. 
+For example, another script can produce our input data and can be "chained" with our code in a more complex data 
+analysis pipeline.
+Another use case would be invoking our script in a loop to automatically analyse a number of input data files (compare
+that to running the script manually over hundreds or thousands of files - which is slow, error-prone and requires manual
+intervention).
 
-There is a common code structure (pattern) for this:
+There is a common code structure (pattern) for writing code with a command-line interface in Python:
 
 ```python
 # import modules
@@ -218,7 +221,7 @@ if __name__ == "__main__":
     main(args)
 ```
 
-In this pattern the actions performed by the script are contained within the `main` function
+In this pattern the main actions performed by the script are contained within the `main` function
 (which does not need to be called `main`, but using this convention helps others in understanding your code).
 The `main` function is then called within the `if` statement `__name__ == "__main__"`,
 after some other actions have been performed (usually the parsing of command-line arguments, 
@@ -241,7 +244,7 @@ __name__ = "__main__"
 # rest of your code
 ```
 
-However, if your source file is imported by another Python script, e.g. in order to reuse its functions, with:
+However, if your script is imported by another Python script, e.g. in order to reuse its functions, with:
 
 ```python
 import eva_data_analysis
@@ -268,7 +271,7 @@ there are a number of situations in which you would want to do this:
 - where you want to not only be able to run your script from the command-line,
   but also provide a programmer-friendly application programming interface (API) for advanced users.
 
-We will use `sys` library to read the command line arguments passed to our script and make them available in our
+We will use the `sys` library to read the command line arguments passed to our script and make them available in our
 code as a list - remember to import this library first.
 
 Our modified code will now look as follows.
@@ -428,16 +431,22 @@ Below are some good practices for setting up and maintaining a research project 
 1. Top-level directory
     - Put all files related to a project into a single directory
     - Choose a meaningful name that reflects the project’s purpose or topic.
-2. Subdirectories - organise the project into clear, well-labeled subdirectories based on the type of content. Common categories include:
-    - Data - store raw, intermediate, and processed data in separate folders to maintain clarity and avoid accidental overwrites
-    - Code/scripts/src - store all the source code
-    - Results - store analysis outputs, summary statistics, or any data generated after processing.
+2. Subdirectories - organise the project into clear, well-labeled sub-directories based on the type of content. 
+Common categories include:
+    - Data - store raw, intermediate, and processed data in separate sub-directories to maintain clarity and avoid overwriting and losing your raw data
+    - Code/scripts/src - for storing your source code
+    - Results - for storing analysis outputs, summary statistics, or any data generated after processing.
     - Documentation - include a detailed project description and documentation on how the project is organised, methodologies, and file dependencies.
-    - Figures/Plots - store all visualisations like charts, graphs, and figures generated from the analysis.
+    - Figures/Plots - store all visualisations like charts, graphs, and figures generated from the analysis (these can also go in the results directory).
     - References - a folder for research papers, articles, or any other literature cited or referenced in the project.
 3. Naming conventions
     - Avoid special characters or spaces (they can cause errors when read by computers); use underscores (_) or hyphens (-) instead 
-    - Name files to reflect their contents, version, or date.
+    - Name files to reflect their contents, version, or date (or use version control to track different versions).
+4. Use version control
+   - Code and data should be version controlled; you can also version control manuscripts, results, etc. 
+   - If data files are too large (or contain sensitive information) to track by version control, untrack them using .gitignore 
+   - Use tags/releases to mark specific versions of results (a version submitted to a journal, dissertation version, poster version, etc.)
+   so as to avoid using version numbers in file names and proliferation of different files.
 
 
 ```output
@@ -445,22 +454,22 @@ project_name/
 ├── README.md             # overview of the project
 ├── data/                 # data files used in the project
 │   ├── README.md         # describes where data came from
-│   ├── /raw/
-│   └── /processed/
+│   ├── raw/
+│   └── processed/
 ├── manuscript/           # manuscript describing the results
 ├── results/              # results of the analysis (data, tables)  
-│   ├── /preliminary/
-│   └── /final/
+│   ├── preliminary/
+│   └── final/
 ├── figures/              # results of the analysis (figures)
 │   ├── comparison_plot.png
 │   └── regression_chart.pdf
 ├── src/                  # contains source code for the project
 │   ├── LICENSE           # license for your code
 │   ├── requirements.txt  # software requirements and dependencies
+│   ├── main_script.py    # main script/code entry point
 │   └── ...
 ├── doc/                  # documentation for your project
 ├── index.rst             # entry point into the documentation website    
-├── main_script.py        # main script/code entry point
 └── ...
 ```
 
@@ -596,15 +605,22 @@ if __name__ == "__main__":
     main(input_file, output_file, graph_file)
 
 ```
+:::
+
+::::::
+
+After the above exercise, you will be invoking your script from command line as:
+
+```bash
+(venv_spacewalks) $ python data/eva_data_analysis.py eva_data.json results/eva_data.csv
+```
+Remember to commit your latest changes:
 
 ```bash
 (venv_spacewalks) $ git status
 (venv_spacewalks) $ git add eva_data_analysis.py data results
 (venv_spacewalks) $ git commit -m "Update project's directory structure"
 ```
-:::
-
-::::::
 
 ## Further reading
 

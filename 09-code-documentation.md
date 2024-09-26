@@ -30,6 +30,26 @@ The purpose of software documentation is to communicate other important informat
 about our software (its purpose, dependencies, how to install and run it, etc.) to the people who need it – 
 both users and developers.   
 
+::: callout
+
+### Activate your virtual environment
+If it is not already active, make sure to activate your virtual environment from the root of
+the software project directory:
+
+```bash
+$ source venv_spacewalks/bin/activate # Mac or Linux
+$ source venv_spacewalks/Scripts/activate # Windows
+(venv_spacewalks) $
+```
+:::
+
+:::::: instructor
+
+At this point, the code in your local software project's directory should be as in:
+https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair/tree/09-code-documentation.
+
+::::::
+
 ## Why document our software?
 
 Software documentation is often perceived as a thankless and time-consuming task with few tangible benefits and 
@@ -47,19 +67,6 @@ conduct **better research** and produce **FAIR software**:
   - How-to guides and tutorials ensure that users can install our software independently and make use of its basic features
   - Reference guides and background information can help developers understand our code sufficiently to 
   modify/extend/repurpose it.
-
-::: callout
-
-### Activate your virtual environment
-If it is not already active, make sure to activate your virtual environment from the root of
-the software project directory:
-
-```bash
-$ source venv_spacewalks/bin/activate # Mac or Linux
-$ source venv_spacewalks/Scripts/activate # Windows
-(venv_spacewalks) $
-```
-:::
 
 ## Software-level documentation
 

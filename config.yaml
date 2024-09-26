@@ -74,6 +74,7 @@ episodes:
 
 # Information for Learners
 learners:
+- test-suite-exercise.md
 - ci-for-testing.md
 - licensing.md
 - ethical-environmental-considerations.md
