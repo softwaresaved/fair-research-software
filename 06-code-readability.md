@@ -570,7 +570,7 @@ print("--END--")
 
 We have chosen to create function for reading in and writing out data files since this is a very common task within 
 research software.
-While these functions do not contain that many lines of code due to using the `pandas` inbuilt methods that do all the 
+While these functions do not contain that many lines of code due to using the `pandas` in-built methods that do all the 
 complex data reading, converting and writing operations, 
 it can be useful to package these steps together into reusable functions if you need to read in or write out a lot of 
 similarly structured files and process them in the same way.

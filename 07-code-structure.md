@@ -58,22 +58,29 @@ We are going to carry on improving our code following these principles:
 - Functions should accept parameters to allow flexibility and reusability in different contexts; avoid hard-coding 
 values inside functions/code (e.g. data files to read from/write to) and pass them as arguments instead.
 
-Bearing in mind the above principles, we can further simplify our code by extracting the code to process, 
-analyse our data and plot a graph into a separate function `plot_cumulative_time_in_space`.
-We can further extract (into 2 separate functions) the code to convert the spacewalk duration text into numbers for 
-calculations and add this numerical data as a new column in our dataset.
+Bearing in mind the above principles, we can further simplify the main part of our code by extracting the code to 
+process, analyse our data and plot a graph into a separate function `plot_cumulative_time_in_space`.
+
+We can further extract the code to convert the spacewalk duration text into a number to allow for arithmetic 
+calculations (into a separate function `text_to_duration`) and 
+the code to add this numerical data as a new column in our dataset (into a separate function 
+`add_duration_hours_variable`).
 
 The main part of our code then becomes much simpler and more readable, only 
 containing the invocation of the following three functions:
 
 ```python
+...
 eva_data = read_json_to_dataframe(input_file)
 write_dataframe_to_csv(eva_data, output_file)
 plot_cumulative_time_in_space(eva_data, graph_file)
+...
+
 ```
 Remember to add docstrings and comments to the new functions to explain their functionalities. 
 
-Our new code may look like the following.
+Our new code (with the three new functions `plot_cumulative_time_in_space`, `text_to_duration` and 
+`add_duration_hours_variable`) may look like the following.
 
 ```python
 
@@ -126,7 +133,7 @@ def text_to_duration(duration):
         duration_hours (float): The duration in hours
     """
     hours, minutes = duration.split(":")
-    duration_hours = int(hours) + int(minutes)/60
+    duration_hours = int(hours) + int(minutes)/6  # there is an intentional bug on this line (should divide by 60 not 6)
     return duration_hours
 
 
@@ -339,7 +346,7 @@ def text_to_duration(duration):
         duration_hours (float): The duration in hours
     """
     hours, minutes = duration.split(":")
-    duration_hours = int(hours) + int(minutes)/60
+    duration_hours = int(hours) + int(minutes)/6  # there is an intentional bug on this line (should divide by 60 not 6)
     return duration_hours
 
 
@@ -542,7 +549,7 @@ def text_to_duration(duration):
         duration_hours (float): The duration in hours
     """
     hours, minutes = duration.split(":")
-    duration_hours = int(hours) + int(minutes)/60
+    duration_hours = int(hours) + int(minutes)/6  # there is an intentional bug on this line (should divide by 60 not 6)
     return duration_hours
 
 
