@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="ci-for-testing.html">Continuous Integration for automated testing</a></li><li><a class="dropdown-item" href="licensing.html">Software licensing</a></li><li><a class="dropdown-item" href="ethical-environmental-considerations.html">Ethical &amp; environmental considerations around research software</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="test-suite-exercise.html">Implementing a test suite</a></li><li><a class="dropdown-item" href="ci-for-testing.html">Continuous Integration for automated testing</a></li><li><a class="dropdown-item" href="licensing.html">Software licensing</a></li><li><a class="dropdown-item" href="ethical-environmental-considerations.html">Ethical &amp; environmental considerations around research software</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -338,7 +338,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="ci-for-testing.html">Continuous Integration for automated testing</a></li><li><a href="licensing.html">Software licensing</a></li><li><a href="ethical-environmental-considerations.html">Ethical &amp; environmental considerations around research software</a></li>
+                      <li><a href="test-suite-exercise.html">Implementing a test suite</a></li><li><a href="ci-for-testing.html">Continuous Integration for automated testing</a></li><li><a href="licensing.html">Software licensing</a></li><li><a href="ethical-environmental-considerations.html">Ethical &amp; environmental considerations around research software</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -374,7 +374,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code structure</h1>
-        <p>Last updated on 2024-09-24 |
+        <p>Last updated on 2024-09-26 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/07-code-structure.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -393,11 +393,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can be bests structure code into reusable components with a
-single responsibility?</li>
+<ul><li>How can we bests structure code?</li>
 <li>What is a common code structure (pattern) for creating software that
 can read input from command line?</li>
-<li>What are conventional places to store data, code, results, tests and
+<li>What are conventional places to store data, code, results, tests,
 auxiliary information and metadata within our software or research
 project?</li>
 </ul></div>
@@ -408,13 +407,13 @@ project?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <p>After completing this episode, participants should be able to:</p>
-<ul><li>Structure code that is modular and split into small, reusable
-functions.</li>
+<ul><li>Structure code into smaller, reusable components with a single
+responsibility/functionality.</li>
 <li>Use the common code pattern for creating software that can read
 input from command line</li>
-<li>Follow best practices in structuring code and organising
-software/research project directories for improved readability,
-accessibility and reproducibility.</li>
+<li>Follow best practices for organising software/research project
+directories for improved readability, accessibility and
+reproducibility.</li>
 </ul></div>
 </div>
 </div>
@@ -453,22 +452,19 @@ key role in creating modular and reusable code. We are going to carry on
 improving our code following these principles:</p>
 <ul><li>Each function should have a single, clear responsibility. This makes
 functions easier to understand, test, and reuse.</li>
-<li>Functions should accept parameters to allow flexibility and
-reusability in different contexts; avoid hard-coding values inside
-functions/code (e.g. data files to read from/write to); instead, pass
-them as arguments.</li>
-<li>Split complex tasks into smaller, simpler functions that can be
-composed; each function should handle a distinct part of a larger
-task.</li>
 <li>Write functions that can be easily combined or reused with other
 functions to build more complex functionality.</li>
+<li>Functions should accept parameters to allow flexibility and
+reusability in different contexts; avoid hard-coding values inside
+functions/code (e.g. data files to read from/write to) and pass them as
+arguments instead.</li>
 </ul><p>Bearing in mind the above principles, we can further simplify our
 code by extracting the code to process, analyse our data and plot a
 graph into a separate function
-<code>plot_cumulative_time_in_space</code>, and then further break down
-the code to convert the data column containing spacewalk durations as
-text into numbers which we can perform arithmetic operations over, and
-add that numerical data as a new column in our dataset.</p>
+<code>plot_cumulative_time_in_space</code>. We can further extract (into
+2 separate functions) the code to convert the spacewalk duration text
+into numbers for calculations and add this numerical data as a new
+column in our dataset.</p>
 <p>The main part of our code then becomes much simpler and more
 readable, only containing the invocation of the following three
 functions:</p>
@@ -600,17 +596,24 @@ explain their functionalities.</p>
 <span id="cb3-113"><a href="#cb3-113" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--END--"</span>)</span>
 <span id="cb3-114"><a href="#cb3-114" tabindex="-1"></a></span></code></pre>
 </div>
+<p>As you may notice, the main part of our code has now been majorly
+simplified and is much easier to follow.</p>
 </section><section><h2 class="section-heading" id="command-line-interface-to-code">Command-line interface to code<a class="anchor" aria-label="anchor" href="#command-line-interface-to-code"></a></h2>
 <hr class="half-width"><p>A common way to structure code is to have a command-line interface to
-allow the passing of input data file to be read and the output file to
-be written to as parameters to our script and avoid hard-coding them.
-This improves interoperability and reusability of our code as it can now
-be run from the command line terminal and integrated into other scripts
-or workflows/pipelines. For example, another script can produce our
-input data and can be “chained” with our code in a more complex data
-analysis pipeline. Or we can invoke our script in a loop to quickly
-analyse a number of input data files from a directory.</p>
-<p>There is a common code structure (pattern) for this:</p>
+allow the passing of various parameters. For example, we can pass the
+input data file to be read and the output file to be written to as
+parameters to our script and avoid hard-coding them. This improves
+interoperability and reusability of our code as it can now be run over
+any data file of the same structure, invoked from the command line
+terminal and integrated into other scripts or workflows/pipelines. For
+example, another script can produce our input data and can be “chained”
+with our code in a more complex data analysis pipeline. Another use case
+would be invoking our script in a loop to automatically analyse a number
+of input data files (compare that to running the script manually over
+hundreds or thousands of files - which is slow, error-prone and requires
+manual intervention).</p>
+<p>There is a common code structure (pattern) for writing code with a
+command-line interface in Python:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -623,9 +626,9 @@ analyse a number of input data files from a directory.</p>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="co"># perform some actions before main()</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    main(args)</span></code></pre>
 </div>
-<p>In this pattern the actions performed by the script are contained
-within the <code>main</code> function (which does not need to be called
-<code>main</code>, but using this convention helps others in
+<p>In this pattern the main actions performed by the script are
+contained within the <code>main</code> function (which does not need to
+be called <code>main</code>, but using this convention helps others in
 understanding your code). The <code>main</code> function is then called
 within the <code>if</code> statement
 <code>__name__ == "__main__"</code>, after some other actions have been
@@ -651,8 +654,8 @@ e.g.:</p>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>...</span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co"># rest of your code</span></span></code></pre>
 </div>
-<p>However, if your source file is imported by another Python script,
-e.g. in order to reuse its functions, with:</p>
+<p>However, if your script is imported by another Python script, e.g. in
+order to reuse its functions, with:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -681,7 +684,7 @@ the main script, and run special test functions which then call the
 <li>where you want to not only be able to run your script from the
 command-line, but also provide a programmer-friendly application
 programming interface (API) for advanced users.</li>
-</ul><p>We will use <code>sys</code> library to read the command line
+</ul><p>We will use the <code>sys</code> library to read the command line
 arguments passed to our script and make them available in our code as a
 list - remember to import this library first.</p>
 <p>Our modified code will now look as follows.</p>
@@ -844,24 +847,37 @@ research project directory structure.</p>
 topic.</li>
 </ul></li>
 <li>Subdirectories - organise the project into clear, well-labeled
-subdirectories based on the type of content. Common categories include:
+sub-directories based on the type of content. Common categories include:
 <ul><li>Data - store raw, intermediate, and processed data in separate
-folders to maintain clarity and avoid accidental overwrites</li>
-<li>Code/scripts/src - store all the source code</li>
-<li>Results - store analysis outputs, summary statistics, or any data
-generated after processing.</li>
+sub-directories to maintain clarity and avoid overwriting and losing
+your raw data</li>
+<li>Code/scripts/src - for storing your source code</li>
+<li>Results - for storing analysis outputs, summary statistics, or any
+data generated after processing.</li>
 <li>Documentation - include a detailed project description and
 documentation on how the project is organised, methodologies, and file
 dependencies.</li>
 <li>Figures/Plots - store all visualisations like charts, graphs, and
-figures generated from the analysis.</li>
+figures generated from the analysis (these can also go in the results
+directory).</li>
 <li>References - a folder for research papers, articles, or any other
 literature cited or referenced in the project.</li>
 </ul></li>
 <li>Naming conventions
 <ul><li>Avoid special characters or spaces (they can cause errors when read
 by computers); use underscores (_) or hyphens (-) instead</li>
-<li>Name files to reflect their contents, version, or date.</li>
+<li>Name files to reflect their contents, version, or date (or use
+version control to track different versions).</li>
+</ul></li>
+<li>Use version control
+<ul><li>Code and data should be version controlled; you can also version
+control manuscripts, results, etc.</li>
+<li>If data files are too large (or contain sensitive information) to
+track by version control, untrack them using .gitignore</li>
+<li>Use tags/releases to mark specific versions of results (a version
+submitted to a journal, dissertation version, poster version, etc.) so
+as to avoid using version numbers in file names and proliferation of
+different files.</li>
 </ul></li>
 </ol><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -870,22 +886,22 @@ by computers); use underscores (_) or hyphens (-) instead</li>
 ├── README.md             # overview of the project
 ├── data/                 # data files used in the project
 │   ├── README.md         # describes where data came from
-│   ├── /raw/
-│   └── /processed/
+│   ├── raw/
+│   └── processed/
 ├── manuscript/           # manuscript describing the results
 ├── results/              # results of the analysis (data, tables)
-│   ├── /preliminary/
-│   └── /final/
+│   ├── preliminary/
+│   └── final/
 ├── figures/              # results of the analysis (figures)
 │   ├── comparison_plot.png
 │   └── regression_chart.pdf
 ├── src/                  # contains source code for the project
 │   ├── LICENSE           # license for your code
 │   ├── requirements.txt  # software requirements and dependencies
+│   ├── main_script.py    # main script/code entry point
 │   └── ...
 ├── doc/                  # documentation for your project
 ├── index.rst             # entry point into the documentation website
-├── main_script.py        # main script/code entry point
 └── ...</code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
@@ -1034,16 +1050,24 @@ saved in <code>results/</code> directory.</p>
 <span id="cb13-121"><a href="#cb13-121" tabindex="-1"></a>    graph_file <span class="op">=</span> <span class="st">'results/cumulative_eva_graph.png'</span></span>
 <span id="cb13-122"><a href="#cb13-122" tabindex="-1"></a>    main(input_file, output_file, graph_file)</span></code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<p>After the above exercise, you will be invoking your script from
+command line as:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git status</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add eva_data_analysis.py data results</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Update project's directory structure"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python data/eva_data_analysis.py eva_data.json results/eva_data.csv</span></code></pre>
 </div>
-</div>
-</div>
-</div>
+<p>Remember to commit your latest changes:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git status</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add eva_data_analysis.py data results</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Update project's directory structure"</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a></h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
@@ -1131,8 +1155,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/07-code-structure.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/07-code-structure.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-09-24",
-  "datePublished": "2024-09-24"
+  "dateModified": "2024-09-26",
+  "datePublished": "2024-09-26"
 }
 
   </script><script>

@@ -241,6 +241,9 @@
     <loc>https://softwaresaved.github.io/fair-research-software/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/instructor/test-suite-exercise.html</loc>
+  </url>
+  <url>
     <loc>https://softwaresaved.github.io/fair-research-software/instructor-notes.html</loc>
   </url>
   <url>
@@ -257,5 +260,8 @@
   </url>
   <url>
     <loc>https://softwaresaved.github.io/fair-research-software/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://softwaresaved.github.io/fair-research-software/test-suite-exercise.html</loc>
   </url>
 </urlset>
