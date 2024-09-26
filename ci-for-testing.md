@@ -55,7 +55,7 @@ Before we setup GitHub Actions up, let's make sure we have committed all our lat
 including our dependencies in `requirements.txt` which should now contain `pytest` and `pytest-cov`.
 
 ```bash
-(venv_spacewalks) $ python -m pip freeze > requirements.txt
+(venv_spacewalks) $ python3 -m pip freeze > requirements.txt
 (venv_spacewalks) $ git add requirements.txt
 (venv_spacewalks) $ git add eva_data_analysis.py tests/ 
 (venv_spacewalks) $ git commit -m "Adding test suite"
