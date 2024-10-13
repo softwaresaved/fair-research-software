@@ -54,7 +54,7 @@ https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair/tre
 
 ### Making the code public
 
-By default repositories created on Github are private and only their creator can see them. 
+By default repositories created on GitHub are private and only their creator can see them. 
 Since we added an open source license to our repository we probably want to make sure people can actually 
 access it. 
 
@@ -106,7 +106,7 @@ for example v1.0 or just 1.0.
 
 The DOI does not just link to GitHub, Zenodo will have taken a copy (a snapshot) of our repository at the point 
 where we tagged the release. 
-This means that even if we delete it from GitHub or even if Github were ever to go away or remove it, 
+This means that even if we delete it from GitHub or even if GitHub were ever to go away or remove it, 
 there will still be a copy on Zenodo. 
 Zenodo will allow people to download the entire repository as a single `zip` file. 
 
@@ -146,9 +146,9 @@ if not you'll be updating this every time you make a release.
 
 ::: callout
 
-## Problems with Github and Zenodo integration
+## Problems with GitHub and Zenodo integration
 
-The integration between Github and Zenodo does not interact well with some browser privacy features and extensions. 
+The integration between GitHub and Zenodo does not interact well with some browser privacy features and extensions. 
 Firefox can be particularly problematic with this and 
 might open new tabs to login to GitHub and then give an error saying: `Your browser did something unexpected. 
 Please try again. If the error continues, try disabling all browser extensions.`
@@ -241,7 +241,7 @@ Sometimes advanced users will also use issue trackers of public projects to repo
 
 The code from the testing chapter earlier has a bug with an extra bracket in eva_data_analysis.py (and if you have fixed that a missing import of summarise_categorical in the test).
 Let's go ahead and create a new issue in our GitHub repository to describe this problem. 
-We can find the issue tracker on the "Issues" tab in the top left of the Github 
+We can find the issue tracker on the "Issues" tab in the top left of the GitHub 
 page for the repository. 
 Click on this and then click on the green "New Issue" button on the right hand side of the screen. 
 We can then enter a title and description of our issue.
@@ -262,7 +262,7 @@ After the issue is created it will be assigned a sequential ID number.
 
 Create a new issue in your repository's issue tracker by doing the following:
 
- - Go to the Github webpage for your code
+ - Go to the GitHub webpage for your code
  - Click on the Issues tab
  - Click on the "New issue" button
  - Enter a title and description for the issue
@@ -279,7 +279,7 @@ This is sometimes used to identify related issues or if an issue is a duplicate.
 ### Closing an issue
 
 Once an issue is solved then it can be closed. 
-This can be done either by pressing the "Close" button in the Github web interface or by making a commit which includes the word
+This can be done either by pressing the "Close" button in the GitHub web interface or by making a commit which includes the word
 "fixes", "fixed", "close", "closed" or "closes" followed by a # symbol and the issue number.
 
 ### Working in parallel with Git branches
@@ -471,9 +471,9 @@ request that the changes on our fork are incorporated by the upstream project.
 ### Practice pull requests
 
 Q: Work in pairs for this exercise. Share the GitHub link of your repository with your partner. 
-If you have set your repository to private, you will need to add them as a collaborator. Go to the settings page on your Github repository's webpage, click on Collaborators from 
-the left hand menu and then click the green "Add People" button and enter the Github username or email address of your partner. 
-They will get an email and an alert within Github to accept your invitation to work on this repository, without doing this they won't be able to access it.
+If you have set your repository to private, you will need to add them as a collaborator. Go to the settings page on your GitHub repository's webpage, click on Collaborators from 
+the left hand menu and then click the green "Add People" button and enter the GitHub username or email address of your partner. 
+They will get an email and an alert within GitHub to accept your invitation to work on this repository, without doing this they won't be able to access it.
 
  - Now make a fork of your partners repository. 
  - Edit the `CITATION.cff` file and add your name to it.
@@ -496,7 +496,7 @@ Do not forget to commit any uncommitted changes you may have and then push your 
 We recommend the following resources for some additional reading on the topic of this episode:
 
 - Licencing and citation episodes from the [Software Carpentry's Git Novice lesson][swc-git-lesson]
-- Carpentries Github Skill ups for [instructors][git-skillup-instructors] and [maintainers][git-skillup-maintainers]
+- Carpentries GitHub Skill ups for [instructors][git-skillup-instructors] and [maintainers][git-skillup-maintainers]
 - [RSG Southampton Git lesson][git-soton] - [collaboration section][git-soton-collaboration]
 - [Open source definition][osd-definition], by the [Open Source Initiative][osd]
 - [What is free software?][free-software]
