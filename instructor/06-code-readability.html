@@ -304,7 +304,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open-collaboration.html">10. Open collaboration on code</a>
+        <a href="10-open-collaboration.html">10. Open code &amp; collaboration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -377,7 +377,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code readability</h1>
-        <p>Last updated on 2024-09-26 |
+        <p>Last updated on 2024-10-14 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/06-code-readability.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -485,69 +485,67 @@ help readability (accessibility) and reusability of our code.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>data_f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.json'</span>, <span class="st">'r'</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>data_t <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.csv'</span>,<span class="st">'w'</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>g_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span>  </span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>fieldnames <span class="op">=</span> (<span class="st">"EVA #"</span>, <span class="st">"Country"</span>, <span class="st">"Crew    "</span>, <span class="st">"Vehicle"</span>, <span class="st">"Date"</span>, <span class="st">"Duration"</span>, <span class="st">"Purpose"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>data<span class="op">=</span>[]</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="im">import</span> json</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>data_f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.json'</span>, <span class="st">'r'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>data_t <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.csv'</span>,<span class="st">'w'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>g_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span> </span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">374</span>):</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    line<span class="op">=</span>data_f.readline()</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    <span class="bu">print</span>(line)</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    data.append(json.loads(line[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]))</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#data.pop(0)</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">## Comment out this bit if you don't want the spreadsheet</span></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="im">import</span> csv</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>w<span class="op">=</span>csv.writer(data_t)</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>time <span class="op">=</span> []</span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>date <span class="op">=</span>[]</span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>j<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> data:</span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    <span class="bu">print</span>(data[j])</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="co"># and this bit</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>    w.writerow(data[j].values())</span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'duration'</span> <span class="kw">in</span> data[j].keys():</span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>        tt<span class="op">=</span>data[j][<span class="st">'duration'</span>]</span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>        <span class="cf">if</span> tt <span class="op">==</span> <span class="st">''</span>:</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>            <span class="cf">pass</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>            t<span class="op">=</span>dt.datetime.strptime(tt,<span class="st">'%H:%M'</span>)</span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>            ttt <span class="op">=</span> dt.timedelta(hours<span class="op">=</span>t.hour, minutes<span class="op">=</span>t.minute, seconds<span class="op">=</span>t.second).total_seconds()<span class="op">/</span>(<span class="dv">60</span><span class="op">*</span><span class="dv">60</span>)</span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>            <span class="bu">print</span>(t,ttt)</span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>            time.append(ttt)</span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">'date'</span> <span class="kw">in</span> data[j].keys():</span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>                date.append(dt.datetime.strptime(data[j][<span class="st">'date'</span>][<span class="dv">0</span>:<span class="dv">10</span>], <span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">'</span>))</span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a>                <span class="co">#date.append(data[j]['date'][0:10])</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a>                time.pop(<span class="dv">0</span>)</span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>    j<span class="op">+=</span><span class="dv">1</span></span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>t<span class="op">=</span>[<span class="dv">0</span>]</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> time:</span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a>    t.append(t[<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>i)</span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a>date,time <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span><span class="bu">sorted</span>(<span class="bu">zip</span>(date, time)))</span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>plt.plot(date,t[<span class="dv">1</span>:], <span class="st">'ko-'</span>)</span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>plt.ylabel(<span class="st">'Total time spent in space to date (hours)'</span>)</span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>plt.savefig(g_file)</span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a></span></code></pre>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>fieldnames <span class="op">=</span> (<span class="st">"EVA #"</span>, <span class="st">"Country"</span>, <span class="st">"Crew    "</span>, <span class="st">"Vehicle"</span>, <span class="st">"Date"</span>, <span class="st">"Duration"</span>, <span class="st">"Purpose"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>data<span class="op">=</span>[]</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">374</span>):</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>    line<span class="op">=</span>data_f.readline()</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    <span class="bu">print</span>(line)</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    data.append(json.loads(line[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]))</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#data.pop(0)</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">## Comment out this bit if you don't want the spreadsheet</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>w<span class="op">=</span>csv.writer(data_t)</span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>time <span class="op">=</span> []</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>date <span class="op">=</span>[]</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>j<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> data:</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="bu">print</span>(data[j])</span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>    <span class="co"># and this bit</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>    w.writerow(data[j].values())</span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'duration'</span> <span class="kw">in</span> data[j].keys():</span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>        tt<span class="op">=</span>data[j][<span class="st">'duration'</span>]</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>        <span class="cf">if</span> tt <span class="op">==</span> <span class="st">''</span>:</span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>            <span class="cf">pass</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>            t<span class="op">=</span>dt.datetime.strptime(tt,<span class="st">'%H:%M'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>            ttt <span class="op">=</span> dt.timedelta(hours<span class="op">=</span>t.hour, minutes<span class="op">=</span>t.minute, seconds<span class="op">=</span>t.second).total_seconds()<span class="op">/</span>(<span class="dv">60</span><span class="op">*</span><span class="dv">60</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>            <span class="bu">print</span>(t,ttt)</span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>            time.append(ttt)</span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">'date'</span> <span class="kw">in</span> data[j].keys():</span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a>                date.append(dt.datetime.strptime(data[j][<span class="st">'date'</span>][<span class="dv">0</span>:<span class="dv">10</span>], <span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">'</span>))</span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a>                <span class="co">#date.append(data[j]['date'][0:10])</span></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>                time.pop(<span class="dv">0</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a>    j<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>t<span class="op">=</span>[<span class="dv">0</span>]</span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> time:</span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a>    t.append(t[<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>i)</span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>date,time <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span><span class="bu">sorted</span>(<span class="bu">zip</span>(date, time)))</span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a>plt.plot(date,t[<span class="dv">1</span>:], <span class="st">'ko-'</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a>plt.ylabel(<span class="st">'Total time spent in space to date (hours)'</span>)</span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>plt.savefig(g_file)</span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Let’s make sure we commit our changes.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -629,7 +627,7 @@ suggest a new name for this variable.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Yes, <span class="math display">\[9.81 m/s^2 \]</span> is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
+<p><span class="math display">\[ 9.81 m/s^2 \]</span> is the <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" class="external-link">gravitational
 force exerted by the Earth</a>. It is often referred to as “little g” to
 distinguish it from “big G” which is the <a href="https://en.wikipedia.org/wiki/Gravitational_constant" class="external-link">Gravitational
 Constant</a>. A more descriptive name for this variable therefore might
@@ -643,12 +641,12 @@ be:</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="rename-our-variables-to-be-more-descriptive" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="rename-our-variables-to-be-more-descriptive" class="callout-inner">
+<h3 class="callout-title">Rename our variables to be more descriptive</h3>
 <div class="callout-content">
 <p>Let’s apply this to <code>eva_data_analysis.py</code>.</p>
 <ol style="list-style-type: lower-alpha"><li>
@@ -675,16 +673,16 @@ informative commit message.</p></li>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="im">import</span> csv</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co"># Data source: https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>input_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.json'</span>, <span class="st">'r'</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>output_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.csv'</span>, <span class="st">'w'</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>graph_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co"># https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>input_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.json'</span>, <span class="st">'r'</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>output_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">'./eva-data.csv'</span>, <span class="st">'w'</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>graph_file <span class="op">=</span> <span class="st">'./cumulative_eva_graph.png'</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
 <span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a></span>
 <span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>fieldnames <span class="op">=</span> (<span class="st">"EVA #"</span>, <span class="st">"Country"</span>, <span class="st">"Crew    "</span>, <span class="st">"Vehicle"</span>, <span class="st">"Date"</span>, <span class="st">"Duration"</span>, <span class="st">"Purpose"</span>)</span>
 <span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
@@ -987,18 +985,19 @@ code readability and testing.</p>
 <p>Looking at our code, you may notice it contains different pieces of
 functionality:</p>
 <ol style="list-style-type: decimal"><li>reading the data from a JSON file</li>
+<li>converting and saving the data in the CSV format</li>
 <li>processing/cleaning the data and preparing it for analysis</li>
 <li>data analysis and visualising the results</li>
-<li>converting and saving the data in the CSV format</li>
 </ol><p>Let’s refactor our code so that reading the data in JSON format into
 a dataframe (step 1.) and converting it and saving to the CSV format
-(step 4.) are extracted into separate functions. Let’s name those
+(step 2.) are extracted into separate functions. Let’s name those
 functions <code>read_json_to_dataframe</code> and
 <code>write_dataframe_to_csv</code> respectively. The main part of the
 script should then be simplified to invoke these new functions, while
 the functions themselves contain the complexity of each of these two
-steps.</p>
-<p>Our code may look something like the following.</p>
+steps. We will continue to work on steps 3. and 4. above later on.</p>
+<p>After the initial refactoring, our code may look something like the
+following.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1050,17 +1049,21 @@ steps.</p>
 <span id="cb17-46"><a href="#cb17-46" tabindex="-1"></a></span>
 <span id="cb17-47"><a href="#cb17-47" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--END--"</span>)</span></code></pre>
 </div>
-<p>We have chosen to create function for reading in and writing out data
-files since this is a very common task within research software. While
-these functions do not contain that many lines of code due to using the
-<code>pandas</code> in-built methods that do all the complex data
-reading, converting and writing operations, it can be useful to package
-these steps together into reusable functions if you need to read in or
-write out a lot of similarly structured files and process them in the
-same way.</p>
+<p>We have chosen to create functions for reading in and writing out
+data files since this is a very common task within research software.
+While these functions do not contain that many lines of code due to
+using the <code>pandas</code> in-built methods that do all the complex
+data reading, converting and writing operations, it can be useful to
+package these steps together into reusable functions if you need to read
+in or write out a lot of similarly structured files and process them in
+the same way.</p>
 </section><section><h2 class="section-heading" id="use-docstrings-to-document-functions">Use docstrings to document functions<a class="anchor" aria-label="anchor" href="#use-docstrings-to-document-functions"></a></h2>
-<hr class="half-width"><p>Docstrings are a specific type of documentation that are provided
-within functions and <a href="https://docs.python.org/3/tutorial/classes.html" class="external-link">Python
+<hr class="half-width"><p>Now that we have written some functions, it is time to document them
+so that we can quickly recall (and others looking at our code in the
+future can understand) what the functions doe without having to read the
+code.</p>
+<p><em>Docstrings</em> are a specific type of documentation that are
+provided within functions and <a href="https://docs.python.org/3/tutorial/classes.html" class="external-link">Python
 classes</a>. A function docstring should explain what that particular
 code is doing, what parameters the function needs (inputs) and what form
 they should take, what the function outputs (you may see words like
@@ -1358,7 +1361,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.7" class="external-link">sandpaper (0.16.7)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.8" class="external-link">sandpaper (0.16.8)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1380,8 +1383,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/06-code-readability.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/06-code-readability.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-09-26",
-  "datePublished": "2024-10-08"
+  "dateModified": "2024-10-14",
+  "datePublished": "2024-10-14"
 }
 
   </script><script>

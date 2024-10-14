@@ -300,7 +300,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open-collaboration.html">10. Open collaboration on code</a>
+        <a href="10-open-collaboration.html">10. Open code &amp; collaboration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -373,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>FAIR research software</h1>
-        <p>Last updated on 2024-07-04 |
+        <p>Last updated on 2024-10-14 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/02-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -460,39 +460,55 @@ listed below. This is not an exact science, and by all means the list
 below is not exhaustive, but any of the practices that you employ in
 your research software workflow will bring you closer to the gold
 standard of a fully reproducible research.</p>
-<ul><li>Findable
-<ul><li>Create a description of your software</li>
+<div class="section level3">
+<h3 id="findable">Findable<a class="anchor" aria-label="anchor" href="#findable"></a></h3>
+<p>In order to make your software more findable, you should:</p>
+<ul><li>Create a description of your software to make it discoverable by
+search engines and other search tools</li>
 <li>Place your software in a public software repository (and ideally
-register it in a <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">software
-registry</a>)</li>
+register it in a [general-purpose or domain-specific software
+registry][software-registries])</li>
 <li>Use a unique and persistent identifier (DOI) for your software
-(e.g. by depositing your code on Zenodo), which is also useful for
+(e.g. by depositing your code on <a href="https://zenodo.org/" class="external-link">Zenodo</a>), which is also useful for
 citations - note that depositing your data/code on GitHub and similar
 software repositories may not be enough as they may change their open
-access model or disappear completely in the future</li>
-</ul></li>
-<li>Accessible
+access model or disappear completely in the future, so archiving your
+code means it stands a better chance at being preserved</li>
+</ul></div>
+<div class="section level3">
+<h3 id="accessible">Accessible<a class="anchor" aria-label="anchor" href="#accessible"></a></h3>
+<p>In order to make your software more accessible, you should:</p>
 <ul><li>Make sure people can freely, legally and easily get a copy your
 software</li>
-<li>Use coding conventions and comments to make your code readable and
-understandable by people (once they get a copy of it)</li>
-</ul></li>
-<li>Interoperable
-<ul><li>Explain the functionality of your software</li>
+<li>Use code style conventions and code structure patterns, use comments
+and create documentation to make your code comprehensible by people
+(once they get a copy of it) - i.e. make your code accessible in the
+<em>intelligible</em> sense</li>
+</ul></div>
+<div class="section level3">
+<h3 id="interoperable">Interoperable<a class="anchor" aria-label="anchor" href="#interoperable"></a></h3>
+<p>In order to make your software more interoperable, you should:</p>
+<ul><li>Explain the functionality of your software, so others can understand
+how other tools can interoperate with it</li>
 <li>Use standard formats for inputs and outputs</li>
 <li>Communicate with other software via standard protocols and APIs</li>
-</ul></li>
-<li>Reusable
+</ul></div>
+<div class="section level3">
+<h3 id="reusable">Reusable<a class="anchor" aria-label="anchor" href="#reusable"></a></h3>
+<p>In order to make your software more reusable, you should:</p>
 <ul><li>Document your software (including its functionality, and how to
-install and run it)</li>
-<li>Follow best practices for software development (including coding
-conventions, code readability and verifying its correctness)</li>
+install and run it) to make it more understandable by others who may
+wish to reuse or extend it</li>
+<li>Follow best practices for software development (including code
+conventions, structure, readability and correctness)</li>
 <li>Test your software and make sure it works on different
-platforms/operating systems</li>
+platforms/operating systems to make it more reusable</li>
 <li>Give a licence to your software clearly stating how it can be
 reused</li>
-<li>State how to cite your software</li>
-</ul></li>
+<li>State how to cite your software, so people can give you credit when
+they reuse it</li>
+<li>Include a contributor policy so that others can contribute to your
+code and credit for contributions is provided</li>
 </ul><div id="fair-is-a-process-not-a-perfect-metric" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -500,7 +516,7 @@ reused</li>
 <div id="fair-is-a-process-not-a-perfect-metric" class="callout-inner">
 <h3 class="callout-title">FAIR is a process, not a perfect metric</h3>
 <div class="callout-content">
-<p>FAIR is not a binary metric - there is no such thing as “FAIR or not
+<p>FAIR is not a binary metric - there is no such thing as “FAIR or”not
 FAIR”.</p>
 <p>FAIR is not a perfect metric, nor does it provide a full and
 exhaustive software quality checklist. Software may be FAIR but still
@@ -542,13 +558,15 @@ as a guide for each principle:</p>
 </ul></div>
 </div>
 </div>
+</div>
 </section><section><h2 class="section-heading" id="software-and-data-used-in-this-course">Software and data used in this course<a class="anchor" aria-label="anchor" href="#software-and-data-used-in-this-course"></a></h2>
 <hr class="half-width"><p>We are going to follow a fairly typical experience of a new PhD or
 postdoc joining a research group. They were emailed some data and
 analysis code bundled in a <code>.zip</code> archive and written by
-another group member who works on similar things. They need to be able
-to install and run this code on their machine, check they understand it
-and then adapt it to their own project.</p>
+another group member who worked on similar things but has since left the
+group. They need to be able to install and run this code on their
+machine, check they can understand it and then adapt it to their own
+project.</p>
 <p>As part of the <a href="./index.html#astronaut-data-and-analysis-code">setup for this
 course</a>, you should have downloaded a <code>.zip</code> archive
 containing the software project the new research team member was given.
@@ -577,10 +595,11 @@ piece of software is.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
-<p>Compare this data and code to the software you chose earlier. Do you
-think it is Findable, Accessible, Interoperable and Reusable? Give it a
-score from 1 to 5 in each category, as in the previous exercise, and
-then we will discuss it together.</p>
+<p>Look at our code in VS Code and compare this data and code to the
+software you chose earlier (or assess it on its own). Do you think it is
+Findable, Accessible, Interoperable and Reusable? Give it a score from 1
+to 5 in each category, as in the previous exercise, and then we will
+discuss it together.</p>
 </div>
 </div>
 </div>
@@ -758,7 +777,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.7" class="external-link">sandpaper (0.16.7)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.8" class="external-link">sandpaper (0.16.8)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -780,8 +799,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/02-fair-research-software.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/02-fair-research-software.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-07-04",
-  "datePublished": "2024-10-08"
+  "dateModified": "2024-10-14",
+  "datePublished": "2024-10-14"
 }
 
   </script><script>

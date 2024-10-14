@@ -306,7 +306,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open-collaboration.html">10. Open collaboration on code</a>
+        <a href="10-open-collaboration.html">10. Open code &amp; collaboration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -379,7 +379,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code correctness</h1>
-        <p>Last updated on 2024-09-26 |
+        <p>Last updated on 2024-10-14 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/08-code-correctness.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -551,7 +551,7 @@ working together correctly.</li>
 </div>
 </section><section><h2 class="section-heading" id="informal-testing">Informal testing<a class="anchor" aria-label="anchor" href="#informal-testing"></a></h2>
 <hr class="half-width"><p>How should we test our code? One approach is to copy/paste the code
-or a function into a Python terminal (different from command line
+or a function into a Python terminal (different from a command line
 terminal), which allows you to interact with the Python interpreter more
 directly.<br>
 From the Python terminal we can then run one function or a piece of code
@@ -686,35 +686,29 @@ expected output</li>
 <li>Are recorded in a test script that can be re-run on demand.</li>
 </ul><p>Let’s explore this process by writing some formal tests for our
 <code>text_to_duration</code> function.</p>
-<p>Let’s create a new Python file <code>test_code.py</code> in the root
-of our project directory to store our tests.</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> cd spacewalks</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch test_code.py</span></code></pre>
-</div>
+<p>In VS Code, create a new Python file <code>test_code.py</code> in the
+root of our project directory to store our tests.</p>
 <p>Like before in the Python terminal, we need to import
 <code>text_to_duration</code> into our test script. Then, we add our
 first test function:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    input_value <span class="op">=</span> <span class="st">"10:00"</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    test_result <span class="op">=</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"text_to_duration('10:00') == 10? </span><span class="sc">{</span>test_result<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>test_text_to_duration()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    input_value <span class="op">=</span> <span class="st">"10:00"</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    test_result <span class="op">=</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"text_to_duration('10:00') == 10? </span><span class="sc">{</span>test_result<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
 </div>
 <p>We can run this code from the command line terminal as:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span><span class="ex">$</span> python3 test_code.py </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span><span class="ex">$</span> python3 test_code.py </span></code></pre>
 </div>
 <p>This test checks that when we apply <code>text_to_duration</code> to
 input value <code>10:00</code>, the output matches the expected value of
@@ -735,16 +729,16 @@ the code continues to run. However, if the statement is
 <code>False</code>, <code>assert</code> raises an
 <code>AssertError</code>.</p>
 <p>Let’s rewrite our test with an <code>assert</code> statement:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
 </div>
 <p>Notice that when we run <code>test_text_to_duration_integer()</code>,
 nothing happens - there is no output. That is because our function is
@@ -752,75 +746,78 @@ working correctly and returning the expected value of 10.</p>
 <p>Let’s add another test to check what happens when duration is not an
 integer number and if our function can handle durations with a non-zero
 minute component, and rerun our test code.</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:15"</span>) <span class="op">==</span> <span class="fl">10.25</span></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>test_text_to_duration_float()</span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:15"</span>) <span class="op">==</span> <span class="fl">10.25</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>test_text_to_duration_float()</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>(venv_spacewalks) $ python3 test_code.py
 Traceback (most recent call last):
-  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 12, in &lt;module&gt;
+  File "/Users/user/Desktop/spacewalks/test_code.py", line 9, in &lt;module&gt;
     test_text_to_duration_float()
-  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 5, in test_text_to_duration_float
+  File "/Users/user/Desktop/spacewalks/test_code.py", line 4, in test_text_to_duration_float
     assert text_to_duration("10:15") == 10.25
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError
-</code></pre>
+AssertionError</code></pre>
 </div>
 <p>Notice that this time, our test
 <code>test_text_to_duration_float</code> fails. Our assert statement has
 raised an <code>AssertionError</code> - a clear signal that there is a
-problem in our code that we need to fix. Python helpfully tells us which
-line of our code is problematic:</p>
-<div class="codewrapper sourceCode" id="cb13">
+problem in our code that we need to fix. We know that duration
+<code>10:15</code> should be converted to number <code>10.25</code>.
+What is wrong with our code? If we look at our
+<code>text_to_duration</code> function, we may identify the following
+line of our code as problematic:</p>
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>...</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>duration_hours <span class="op">=</span> <span class="bu">int</span>(hours) <span class="op">+</span> <span class="bu">int</span>(minutes)<span class="op">/</span><span class="dv">6</span> </span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>...</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">def</span> text_to_duration(duration):</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    ...</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    duration_hours <span class="op">=</span> <span class="bu">int</span>(hours) <span class="op">+</span> <span class="bu">int</span>(minutes)<span class="op">/</span><span class="dv">6</span> </span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>    ...</span></code></pre>
 </div>
 <p>You may notice that our conversion code is wrong - the minutes
 component should have been divided by 60 and not 6. We were able to spot
 this tiny bug by testing our code.</p>
 <p>Let’s fix the problematic line and rerun out tests.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>...</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>duration_hours <span class="op">=</span> <span class="bu">int</span>(hours) <span class="op">+</span> <span class="bu">int</span>(minutes)<span class="op">/</span><span class="dv">60</span> </span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>...</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>...</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>duration_hours <span class="op">=</span> <span class="bu">int</span>(hours) <span class="op">+</span> <span class="bu">int</span>(minutes)<span class="op">/</span><span class="dv">60</span> </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>...</span></code></pre>
 </div>
 <p>This time our tests run without problem.</p>
 <p>Should we add more tests or the tests we have so far are enough? What
-happens if our duration value is <code>01:20</code> (one hour and 20
-minutes) and our result is not a rational floating point number like
-<code>10.25</code> but an irrational number such as
+happens if our duration value is <code>10:20</code> (ten hours and 20
+minutes) and our result is not a rational floating point number (like
+<code>10.25</code>) but an irrational number such as
 <code>10.333333333</code>? Let’s tests for this.</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:20"</span>) <span class="op">==</span> <span class="fl">10.333333</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>test_text_to_duration_float()</span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:20"</span>) <span class="op">==</span> <span class="fl">10.333333</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>test_text_to_duration_float()</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -840,13 +837,13 @@ For this reason, we cannot use a simple double equals sign
 (<code>==</code>) to compare the equality of floating point numbers.
 Instead, we check that our floating point numbers are equal within a
 very small tolerance (e.g. 1e-5). Hence, our code should look like:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>...</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">abs</span>(text_to_duration(<span class="st">"10:20"</span>) <span class="op">-</span> <span class="fl">10.33333333</span>) <span class="op">&lt;</span> <span class="fl">1e-5</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>...</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>...</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">abs</span>(text_to_duration(<span class="st">"10:20"</span>) <span class="op">-</span> <span class="fl">10.33333333</span>) <span class="op">&lt;</span> <span class="fl">1e-5</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>...</span></code></pre>
 </div>
 <p>You may have noticed that we have to repeat a lot of code to add each
 individual test for each test case. You may also have noticed that our
@@ -865,10 +862,10 @@ readable summary.</p>
 code coverage extension <code>pytest-cov</code>. To install these
 libraries into our virtual environment, from the command line terminal
 do:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip install pytest pytest-cov</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip install pytest pytest-cov</span></code></pre>
 </div>
 <p>Let’s make sure that our tests are ready to work with
 <code>pytest</code>.</p>
@@ -880,12 +877,12 @@ for functions that start with “test_”. Our test file already meets these
 requirements, so there is nothing to do here. However, our script does
 contain lines to run each of our test functions. These are no-longer
 required as pytest will run our tests so we can remove them:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># Delete these 2 lines</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>test_text_to_duration_float()</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Delete these 2 lines</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>test_text_to_duration_float()</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>test_text_to_duration_integer()</span></code></pre>
 </div>
 </li>
 <li><p>It is also conventional when working with a testing framework to
@@ -897,16 +894,33 @@ others to understand where the tests are located.</p></li>
 test suite is currently located in the root folder of our project. Let’s
 move it to a dedicated test folder and rename our
 <code>test_code.py</code> file to <code>test_eva_analysis.py</code>.</p>
-<div class="codewrapper sourceCode" id="cb20">
+<p>You can do it from VS Code or by typing the following commands in the
+command line terminal:</p>
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdir tests</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mv test_code.py tests/test_eva_analysis.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdir tests</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mv test_code.py tests/test_eva_analysis.py</span></code></pre>
 </div>
 <p>Before we re-run our tests using <code>pytest</code>, let’s update
 our second test to use <code>pytest</code>’s function
 <code>approx()</code> which is specifically intended for comparing
 floating point numbers within a tolerance.</p>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:20"</span>) <span class="op">==</span> pytest.approx(<span class="fl">10.33333333</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span></code></pre>
+</div>
+<p>Let’s also add some inline comments to clarify what each test is
+doing and expand our syntax to highlight the logic behind our
+approach:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -914,38 +928,23 @@ floating point numbers within a tolerance.</p>
 <span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
 <span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a></span>
 <span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:20"</span>) <span class="op">==</span> pytest.approx(<span class="fl">10.33333333</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a>    <span class="cf">assert</span> text_to_duration(<span class="st">"10:00"</span>) <span class="op">==</span> <span class="dv">10</span></span></code></pre>
-</div>
-<p>Let’s also add some inline comments to clarify what each test is
-doing and expand our syntax to highlight the logic behind our
-approach:</p>
-<div class="codewrapper sourceCode" id="cb22">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> text_to_duration</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_float():</span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="co">    for typical durations with a non-zero minute component</span></span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>    actual_result <span class="op">=</span> text_to_duration(<span class="st">"10:20"</span>) </span>
-<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="fl">10.33333333</span></span>
-<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> pytest.approx(expected_result)</span>
-<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>    </span>
-<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
-<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
-<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a><span class="co">    for typical whole hour durations </span></span>
-<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a>    actual_result <span class="op">=</span>  text_to_duration(<span class="st">"10:00"</span>)</span>
-<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb22-20"><a href="#cb22-20" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
-<span id="cb22-21"><a href="#cb22-21" tabindex="-1"></a>    </span></code></pre>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a><span class="co">    for typical durations with a non-zero minute component</span></span>
+<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>    actual_result <span class="op">=</span> text_to_duration(<span class="st">"10:20"</span>) </span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="fl">10.33333333</span></span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> pytest.approx(expected_result)</span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a>    </span>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a><span class="kw">def</span> test_text_to_duration_integer():</span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a><span class="co">    Test that text_to_duration returns expected ground truth values</span></span>
+<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a><span class="co">    for typical whole hour durations </span></span>
+<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a>    actual_result <span class="op">=</span>  text_to_duration(<span class="st">"10:00"</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
+<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a>    </span></code></pre>
 </div>
 <p>Writing our tests this way highlights the key idea that each test
 should compare the actual results returned by our function with expected
@@ -953,23 +952,23 @@ values.</p>
 <p>Similarly, writing inline comments for our tests that complete the
 sentence “Test that …” helps us to understand what each test is doing
 and why it is needed.</p>
-<p>Before running out tests with <code>putest</code>, let’s reintroduce
+<p>Before running out tests with <code>pytest</code>, let’s reintroduce
 our old bug in function <code>text_to_duration</code> that affects the
 durations with a non-zero minute component like “10:20” but not those
 that are whole hours, e.g. “10:00”:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>    ...</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    duration_hours <span class="op">=</span> <span class="bu">int</span>(hours) <span class="op">+</span> <span class="bu">int</span>(minutes)<span class="op">/</span><span class="dv">6</span>  <span class="co"># Divide by 6 instead of 60</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    ...</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>    ...</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>    duration_hours <span class="op">=</span> <span class="bu">int</span>(hours) <span class="op">+</span> <span class="bu">int</span>(minutes)<span class="op">/</span><span class="dv">6</span>  <span class="co"># Divide by 6 instead of 60</span></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>    ...</span></code></pre>
 </div>
 <p>Finally, let’s run our tests with <code>pytest</code> from our
 project’s root directory (and not <code>tests</code> directory):</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pytest </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pytest </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1022,6 +1021,7 @@ tests/test_code.py ..                                                           
 
 =========================================== 2 passed in 0.63s =============================================</code></pre>
 </div>
+<p>This time, all out tests passed.</p>
 <div id="interpreting-pytest-output" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1134,70 +1134,70 @@ assertion evaluates to <code>False</code>.</li>
 that alone is not enough to properly test code. We will now look into
 what makes a good test suite and good practices for testing code.</p>
 <p>Let’s start by considering the following scenario. A collaborator on
-our project has sent us the following code which adds a new column to
-our data containing the <code>crew_size</code> values capturing the
-number of astronauts participating in any given spacewalk. How do we
-know that it works as intended and that it will not break the rest of
-our code? For this, we need to write a test suite with a comprehensive
-coverage of the new code.</p>
-<div class="codewrapper sourceCode" id="cb28">
+our project has sent us the following code which adds a new column
+called <code>crew_size</code> to our data containing the number of
+astronauts participating in any given spacewalk. How do we know that it
+works as intended and that it will not break the rest of our code? For
+this, we need to write a test suite with a comprehensive coverage of the
+new code.</p>
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="im">import</span> re <span class="co"># added this line</span></span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a><span class="co"># https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a><span class="kw">def</span> main(input_file, output_file, graph_file):</span>
-<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--START--"</span>)</span>
-<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a></span>
-<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a>    eva_data <span class="op">=</span> read_json_to_dataframe(input_file)</span>
-<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a>    eva_data <span class="op">=</span> add_crew_size_column(eva_data) <span class="co"># added this line</span></span>
-<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a></span>
-<span id="cb28-15"><a href="#cb28-15" tabindex="-1"></a>    write_dataframe_to_csv(eva_data, output_file)</span>
-<span id="cb28-16"><a href="#cb28-16" tabindex="-1"></a></span>
-<span id="cb28-17"><a href="#cb28-17" tabindex="-1"></a>    plot_cumulative_time_in_space(eva_data, graph_file)</span>
-<span id="cb28-18"><a href="#cb28-18" tabindex="-1"></a></span>
-<span id="cb28-19"><a href="#cb28-19" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--END--"</span>)</span>
-<span id="cb28-20"><a href="#cb28-20" tabindex="-1"></a></span>
-<span id="cb28-21"><a href="#cb28-21" tabindex="-1"></a>... </span>
-<span id="cb28-22"><a href="#cb28-22" tabindex="-1"></a></span>
-<span id="cb28-23"><a href="#cb28-23" tabindex="-1"></a><span class="kw">def</span> calculate_crew_size(crew):</span>
-<span id="cb28-24"><a href="#cb28-24" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb28-25"><a href="#cb28-25" tabindex="-1"></a><span class="co">    Calculate the size of the crew for a single crew entry</span></span>
-<span id="cb28-26"><a href="#cb28-26" tabindex="-1"></a></span>
-<span id="cb28-27"><a href="#cb28-27" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb28-28"><a href="#cb28-28" tabindex="-1"></a><span class="co">        crew (str): The text entry in the crew column containing a list of crew member names</span></span>
-<span id="cb28-29"><a href="#cb28-29" tabindex="-1"></a></span>
-<span id="cb28-30"><a href="#cb28-30" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb28-31"><a href="#cb28-31" tabindex="-1"></a><span class="co">        int: The crew size</span></span>
-<span id="cb28-32"><a href="#cb28-32" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb28-33"><a href="#cb28-33" tabindex="-1"></a>    <span class="cf">if</span> crew.split() <span class="op">==</span> []:</span>
-<span id="cb28-34"><a href="#cb28-34" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb28-35"><a href="#cb28-35" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb28-36"><a href="#cb28-36" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(re.split(<span class="vs">r';'</span>, crew))<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb28-37"><a href="#cb28-37" tabindex="-1"></a></span>
-<span id="cb28-38"><a href="#cb28-38" tabindex="-1"></a><span class="kw">def</span> add_crew_size_column(df):</span>
-<span id="cb28-39"><a href="#cb28-39" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb28-40"><a href="#cb28-40" tabindex="-1"></a><span class="co">    Add crew_size column to the dataset containing the value of the crew size</span></span>
-<span id="cb28-41"><a href="#cb28-41" tabindex="-1"></a></span>
-<span id="cb28-42"><a href="#cb28-42" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb28-43"><a href="#cb28-43" tabindex="-1"></a><span class="co">        df (pd.DataFrame): The input data frame.</span></span>
-<span id="cb28-44"><a href="#cb28-44" tabindex="-1"></a></span>
-<span id="cb28-45"><a href="#cb28-45" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb28-46"><a href="#cb28-46" tabindex="-1"></a><span class="co">        df_copy (pd.DataFrame): A copy of df with the new crew_size variable added</span></span>
-<span id="cb28-47"><a href="#cb28-47" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb28-48"><a href="#cb28-48" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Adding crew size variable (crew_size) to dataset'</span>)</span>
-<span id="cb28-49"><a href="#cb28-49" tabindex="-1"></a>    df_copy <span class="op">=</span> df.copy()</span>
-<span id="cb28-50"><a href="#cb28-50" tabindex="-1"></a>    df_copy[<span class="st">"crew_size"</span>] <span class="op">=</span> df_copy[<span class="st">"crew"</span>].<span class="bu">apply</span>(</span>
-<span id="cb28-51"><a href="#cb28-51" tabindex="-1"></a>        calculate_crew_size</span>
-<span id="cb28-52"><a href="#cb28-52" tabindex="-1"></a>    )</span>
-<span id="cb28-53"><a href="#cb28-53" tabindex="-1"></a>    <span class="cf">return</span> df_copy</span>
-<span id="cb28-54"><a href="#cb28-54" tabindex="-1"></a>...</span>
-<span id="cb28-55"><a href="#cb28-55" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="im">import</span> re <span class="co"># added this line</span></span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a><span class="co"># https://data.nasa.gov/resource/eva.json (with modifications)</span></span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a><span class="kw">def</span> main(input_file, output_file, graph_file):</span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--START--"</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a>    eva_data <span class="op">=</span> read_json_to_dataframe(input_file)</span>
+<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a>    eva_data <span class="op">=</span> add_crew_size_column(eva_data) <span class="co"># added this line</span></span>
+<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a>    write_dataframe_to_csv(eva_data, output_file)</span>
+<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a>    plot_cumulative_time_in_space(eva_data, graph_file)</span>
+<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a></span>
+<span id="cb27-19"><a href="#cb27-19" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--END--"</span>)</span>
+<span id="cb27-20"><a href="#cb27-20" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="#cb27-21" tabindex="-1"></a>... </span>
+<span id="cb27-22"><a href="#cb27-22" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" tabindex="-1"></a><span class="kw">def</span> calculate_crew_size(crew):</span>
+<span id="cb27-24"><a href="#cb27-24" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb27-25"><a href="#cb27-25" tabindex="-1"></a><span class="co">    Calculate the size of the crew for a single crew entry</span></span>
+<span id="cb27-26"><a href="#cb27-26" tabindex="-1"></a></span>
+<span id="cb27-27"><a href="#cb27-27" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb27-28"><a href="#cb27-28" tabindex="-1"></a><span class="co">        crew (str): The text entry in the crew column containing a list of crew member names</span></span>
+<span id="cb27-29"><a href="#cb27-29" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb27-31"><a href="#cb27-31" tabindex="-1"></a><span class="co">        int: The crew size</span></span>
+<span id="cb27-32"><a href="#cb27-32" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb27-33"><a href="#cb27-33" tabindex="-1"></a>    <span class="cf">if</span> crew.split() <span class="op">==</span> []:</span>
+<span id="cb27-34"><a href="#cb27-34" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb27-35"><a href="#cb27-35" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb27-36"><a href="#cb27-36" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(re.split(<span class="vs">r';'</span>, crew))<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb27-37"><a href="#cb27-37" tabindex="-1"></a></span>
+<span id="cb27-38"><a href="#cb27-38" tabindex="-1"></a><span class="kw">def</span> add_crew_size_column(df):</span>
+<span id="cb27-39"><a href="#cb27-39" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb27-40"><a href="#cb27-40" tabindex="-1"></a><span class="co">    Add crew_size column to the dataset containing the value of the crew size</span></span>
+<span id="cb27-41"><a href="#cb27-41" tabindex="-1"></a></span>
+<span id="cb27-42"><a href="#cb27-42" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb27-43"><a href="#cb27-43" tabindex="-1"></a><span class="co">        df (pd.DataFrame): The input data frame.</span></span>
+<span id="cb27-44"><a href="#cb27-44" tabindex="-1"></a></span>
+<span id="cb27-45"><a href="#cb27-45" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb27-46"><a href="#cb27-46" tabindex="-1"></a><span class="co">        df_copy (pd.DataFrame): A copy of df with the new crew_size variable added</span></span>
+<span id="cb27-47"><a href="#cb27-47" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb27-48"><a href="#cb27-48" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Adding crew size variable (crew_size) to dataset'</span>)</span>
+<span id="cb27-49"><a href="#cb27-49" tabindex="-1"></a>    df_copy <span class="op">=</span> df.copy()</span>
+<span id="cb27-50"><a href="#cb27-50" tabindex="-1"></a>    df_copy[<span class="st">"crew_size"</span>] <span class="op">=</span> df_copy[<span class="st">"crew"</span>].<span class="bu">apply</span>(</span>
+<span id="cb27-51"><a href="#cb27-51" tabindex="-1"></a>        calculate_crew_size</span>
+<span id="cb27-52"><a href="#cb27-52" tabindex="-1"></a>    )</span>
+<span id="cb27-53"><a href="#cb27-53" tabindex="-1"></a>    <span class="cf">return</span> df_copy</span>
+<span id="cb27-54"><a href="#cb27-54" tabindex="-1"></a>...</span>
+<span id="cb27-55"><a href="#cb27-55" tabindex="-1"></a>    </span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="writing-good-tests">Writing good tests<a class="anchor" aria-label="anchor" href="#writing-good-tests"></a></h3>
@@ -1248,38 +1248,44 @@ function. Cover typical cases and edge cases.</p>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>We can add the following test functions to out test suite.</p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> (</span>
-<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>    text_to_duration,</span>
-<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>    calculate_crew_size</span>
-<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a>)</span>
-<span id="cb30-6"><a href="#cb30-6" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" tabindex="-1"></a>...</span>
-<span id="cb30-8"><a href="#cb30-8" tabindex="-1"></a></span>
-<span id="cb30-9"><a href="#cb30-9" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size():</span>
-<span id="cb30-10"><a href="#cb30-10" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb30-11"><a href="#cb30-11" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
-<span id="cb30-12"><a href="#cb30-12" tabindex="-1"></a><span class="co">    for typical crew values</span></span>
-<span id="cb30-13"><a href="#cb30-13" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb30-14"><a href="#cb30-14" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Valentina Tereshkova;"</span>)</span>
-<span id="cb30-15"><a href="#cb30-15" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb30-16"><a href="#cb30-16" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
-<span id="cb30-17"><a href="#cb30-17" tabindex="-1"></a></span>
-<span id="cb30-18"><a href="#cb30-18" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Judith Resnik; Sally Ride;"</span>)</span>
-<span id="cb30-19"><a href="#cb30-19" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb30-20"><a href="#cb30-20" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
-<span id="cb30-21"><a href="#cb30-21" tabindex="-1"></a></span>
-<span id="cb30-22"><a href="#cb30-22" tabindex="-1"></a><span class="co"># Edge cases</span></span>
-<span id="cb30-23"><a href="#cb30-23" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size_edge_cases():</span>
-<span id="cb30-24"><a href="#cb30-24" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb30-25"><a href="#cb30-25" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
-<span id="cb30-26"><a href="#cb30-26" tabindex="-1"></a><span class="co">    for edge case where crew is an empty string</span></span>
-<span id="cb30-27"><a href="#cb30-27" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb30-28"><a href="#cb30-28" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">""</span>)</span>
-<span id="cb30-29"><a href="#cb30-29" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="kw">is</span> <span class="va">None</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="im">from</span> eva_data_analysis <span class="im">import</span> (</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>    text_to_duration,</span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>    calculate_crew_size</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>)</span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>...</span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size():</span>
+<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
+<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a><span class="co">    for typical crew values</span></span>
+<span id="cb29-13"><a href="#cb29-13" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb29-14"><a href="#cb29-14" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Valentina Tereshkova;"</span>)</span>
+<span id="cb29-15"><a href="#cb29-15" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb29-16"><a href="#cb29-16" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
+<span id="cb29-17"><a href="#cb29-17" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">"Judith Resnik; Sally Ride;"</span>)</span>
+<span id="cb29-19"><a href="#cb29-19" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb29-20"><a href="#cb29-20" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span>
+<span id="cb29-21"><a href="#cb29-21" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="#cb29-22" tabindex="-1"></a><span class="co"># Edge cases</span></span>
+<span id="cb29-23"><a href="#cb29-23" tabindex="-1"></a><span class="kw">def</span> test_calculate_crew_size_edge_cases():</span>
+<span id="cb29-24"><a href="#cb29-24" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb29-25"><a href="#cb29-25" tabindex="-1"></a><span class="co">    Test that calculate_crew_size returns expected ground truth values</span></span>
+<span id="cb29-26"><a href="#cb29-26" tabindex="-1"></a><span class="co">    for edge case where crew is an empty string</span></span>
+<span id="cb29-27"><a href="#cb29-27" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb29-28"><a href="#cb29-28" tabindex="-1"></a>    actual_result <span class="op">=</span> calculate_crew_size(<span class="st">""</span>)</span>
+<span id="cb29-29"><a href="#cb29-29" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="kw">is</span> <span class="va">None</span></span></code></pre>
+</div>
+<p>Let’s run out tests:</p>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pytest</span></code></pre>
 </div>
 </div>
 </div>
@@ -1309,9 +1315,9 @@ a small block of code is repeated twice with different input values:</p>
 <span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a>    expected_result <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb31-12"><a href="#cb31-12" tabindex="-1"></a>    <span class="cf">assert</span> actual_result <span class="op">==</span> expected_result</span></code></pre>
 </div>
-<p>To avoid such repetitions in our test code, we can <strong>test
+<p>To avoid such repetitions in our test code, we use <strong>test
 parameterisation</strong>. This allows us to apply our test function to
-a list of input / expected output pairs without the need for repetition.
+a list of input/expected output pairs without the need for repetition.
 To parameterise the <code>test_calculate_crew_size</code> function, we
 can rewrite is as follows:</p>
 <div class="codewrapper sourceCode" id="cb32">
@@ -1609,7 +1615,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.7" class="external-link">sandpaper (0.16.7)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.8" class="external-link">sandpaper (0.16.8)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1631,8 +1637,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/08-code-correctness.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/08-code-correctness.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-09-26",
-  "datePublished": "2024-10-08"
+  "dateModified": "2024-10-14",
+  "datePublished": "2024-10-14"
 }
 
   </script><script>

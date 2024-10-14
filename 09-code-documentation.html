@@ -290,7 +290,7 @@
       <div class="accordion-body">
         <ul><li><a href="#why-document-our-software">Why document our software?</a></li>
 <li><a href="#software-level-documentation">Software-level documentation</a></li>
-<li><a href="#just-enough-documentation">Just enough documentation</a></li>
+<li><a href="#project-level-documentation">Project-level documentation</a></li>
 <li><a href="#documentation-tools">Documentation tools</a></li>
 <li><a href="#documentation-guides">Documentation guides</a></li>
 <li><a href="#further-reading">Further reading</a></li>
@@ -303,7 +303,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open-collaboration.html">10. Open collaboration on code</a>
+        <a href="10-open-collaboration.html">10. Open code &amp; collaboration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -370,13 +370,13 @@
           Previous: Code correctness
         </a>
         <a class="chapter-link float-end" href="10-open-collaboration.html" rel="next">
-          Next: Open collaboration...
+          Next: Open code &amp;...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code documentation</h1>
-        <p>Last updated on 2024-09-26 |
+        <p>Last updated on 2024-10-14 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/09-code-documentation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -441,8 +441,8 @@ environment from the root of the software project directory:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> source venv_spacewalks/bin/activate <span class="co"># Mac or Linux</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> source venv_spacewalks/Scripts/activate <span class="co"># Windows</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> source venv_spacewalks/bin/activate <span class="co"># Mac or Linux</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> source venv_spacewalks/Scripts/activate <span class="co"># Windows</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span></span></code></pre>
 </div>
 </div>
@@ -475,10 +475,9 @@ understand our code sufficiently to modify/extend/repurpose it.</li>
 </ul></section><section><h2 class="section-heading" id="software-level-documentation">Software-level documentation<a class="anchor" aria-label="anchor" href="#software-level-documentation"></a></h2>
 <hr class="half-width"><p>In previous episodes we encountered several different forms of
 in-code documentation aspects, including in-line comments and
-docstrings.</p>
-<p>These are an excellent way to improve the readability of our code,
-but by themselves are insufficient to ensure that our code is easy to
-use, understand and modify - this requires additional software-level
+docstrings. These are an excellent way to improve the readability of our
+code, but by themselves are insufficient to ensure that our code is easy
+to use, understand and modify - this requires additional software-level
 documentation.</p>
 <p>There are many different types of software-level documentation.</p>
 <div class="section level3">
@@ -493,14 +492,19 @@ about the software e.g. functions and their parameters.</li>
 <li>Explanation - conceptual discussion of the code to help users
 understand implementation decisions</li>
 </ul></div>
+</section><section><h2 class="section-heading" id="project-level-documentation">Project-level documentation<a class="anchor" aria-label="anchor" href="#project-level-documentation"></a></h2>
+<hr class="half-width"><p>Project-level documentation includes various information and metadata
+about software that help to discover it, explain the legal terms of
+reusing it, describe its functionality on a high level and how to
+install, run and contribute to it.</p>
 <div class="section level3">
 <h3 id="repository-metadata-files">Repository metadata files<a class="anchor" aria-label="anchor" href="#repository-metadata-files"></a></h3>
-<p>In addition to software-level technical documentation, it is also
-common to see repository metadata files included in a code repository.
-Many of these files can be described as “social documentation” i.e. they
-indicate how users should “behave” in relation to our software project.
-Some common examples of repository metadata files and their role are
-tabulated below:</p>
+<p>A common way to to provide project-level documentation is to include
+various metadata files in the software repository together with code.
+Many of these files can be described as “social documentation”,
+i.e. they indicate how users should “behave” in relation to our software
+project. Some common examples of repository metadata files and their
+role are explained below:</p>
 <table class="table"><colgroup><col width="7%"><col width="92%"></colgroup><thead><tr class="header"><th>File</th>
 <th>Description</th>
 </tr></thead><tbody><tr class="odd"><td>README</td>
@@ -521,11 +525,20 @@ code</td>
 </tr><tr class="even"><td>AUTHORS</td>
 <td>Provides information on who authored the code (can also be included
 in CITATION)</td>
-</tr></tbody></table></div>
-</section><section><h2 class="section-heading" id="just-enough-documentation">Just enough documentation<a class="anchor" aria-label="anchor" href="#just-enough-documentation"></a></h2>
-<hr class="half-width"><p>For many small projects the following three pieces of documentation
-may be sufficient: README, LICENSE and CITATION.</p>
+</tr></tbody></table><div id="just-enough-documentation" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="just-enough-documentation" class="callout-inner">
+<h3 class="callout-title">Just enough documentation</h3>
+<div class="callout-content">
+<p>For many small projects the following three pieces of project-level
+documentation may be sufficient: README, LICENSE and CITATION.</p>
+</div>
+</div>
+</div>
 <p>Let’s look at each of these files in turn.</p>
+</div>
 <div class="section level3">
 <h3 id="readme-file">README file<a class="anchor" aria-label="anchor" href="#readme-file"></a></h3>
 <p>A README file acts as a “landing page” for your code repository on
@@ -619,23 +632,20 @@ accessibility.</li>
 </div>
 </div>
 </div>
-<p>Let’s create a simple README for our repository.</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/Spacewalks</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> touch README.md</span></code></pre>
-</div>
-<p>Let’s start by adding a one-liner that explains the purpose of our
+<p>Let’s create a simple README for our repository - from VS Code or
+command line terminal create file <code>README.md</code> (in Markdown
+format) or <code>README.txt</code> (in plain text format).</p>
+<p>We can start by adding a one-liner that explains the purpose of our
 code and who it is for.</p>
 <pre class="code"><code># Spacewalks
 
 ## Overview
-Spacewalks is a python-based analysis tool for researchers to generate visualisations
+Spacewalks is a Python analysis tool for researchers to generate visualisations
 and statistical summaries of NASA's extravehicular activity datasets.</code></pre>
 <p>Now let’s add a list of Spacewalks’ key features:</p>
 <pre class="code"><code>## Features
 Key features of Spacewalks:
+
 - Generates a CSV table of summary statistics of extravehicular activity crew sizes
 - Generates a line plot to show the cumulative duration of space walks over time</code></pre>
 <p>Now let’s tell users about any pre-requisites required to run the
@@ -658,9 +668,10 @@ installed. You will also need the following libraries (minimum versions in brack
 <div id="spacewalks-readme" class="callout-inner">
 <h3 class="callout-title">Spacewalks README</h3>
 <div class="callout-content">
-<p>Extend the README for Spacewalks by adding a. Installation
-instructions b. A simple usage example</p>
-</div>
+<p>Extend the README for Spacewalks by adding:</p>
+<ol style="list-style-type: decimal"><li>Installation instructions</li>
+<li>A simple usage example</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
@@ -672,39 +683,40 @@ instructions b. A simple usage example</p>
 <div class="accordion-body">
 <p>Installation instructions:</p>
 <p>NB: In the solution below the back ticks of each code block have been
-escaped to avoid rendering issues.</p>
-<pre class="text"><code># Installation instructions
+escaped to avoid rendering issues (if you are copying and pasting the
+text, make sure you unescape them).</p>
+<pre class="text"><code>## Installation instructions
 
 + Clone the Spacewalks repository to your local machine using Git.
 If you don't have Git installed, you can download it from the official Git website.
 
-\`\`\`bash
+\`\`\`
 git clone https://github.com/your-repository-url/spacewalks.git
 cd spacewalks
 \`\`\`
 
 + Install the necessary dependencies:
-\`\`\`bash
-pip install pandas==2.2.2 matplotlib==3.8.4 numpy==2.0.0 pytest==7.4.2
+\`\`\`
+python3 -m pip install pandas==2.2.2 matplotlib==3.8.4 numpy==2.0.0 pytest==7.4.2
 \`\`\`
 
 + To ensure everything is working correctly, run the tests using pytest.
 
-\`\`\`bash
-python -m pytest
+\`\`\`
+python3 -m pytest
 \`\`\`</code></pre>
 <p>Usage instructions:</p>
-<pre class="text"><code># Usage Example
+<pre class="text"><code>## Usage Example
 
 To run an analysis using the eva_data_analysis.py script from the command line terminal,
 launch the script using Python as follows:
 
-\`\`\`python
+\`\`\`
 # Usage Examples
-python eva_data_analysis.py eva-data.json eva-data.csv
+python3 eva_data_analysis.py eva-data.json eva-data.csv
 \`\`\`
 
-The first argument is path to the Json data file.
+The first argument is path to the JSON data file.
 The second argument is the path the CSV output file.</code></pre>
 </div>
 </div>
@@ -810,146 +822,124 @@ listed.</p>
 <h3 id="citation-file">CITATION file<a class="anchor" aria-label="anchor" href="#citation-file"></a></h3>
 <p>We can add a citation file to our repository to provide instructions
 on how and when to cite our code. A citation file can be a plain text
-(CITATION.txt) or a Markdown file (CITATION.md), but there are certain
-benefits to use a special file format called the Citation File Format
-(CFF) which provides a way to include richer metadata about software or
-datasets we want to cite, making it easy for both humans and machines to
-use this information.</p>
+(<code>CITATION.txt</code>) or a Markdown file
+(<code>CITATION.md</code>), but there are certain benefits to use a
+special file format called the Citation File Format (CFF) which provides
+a way to include richer metadata about software or datasets we want to
+cite, making it easy for both humans and machines to use this
+information.</p>
 <div class="section level4">
 <h4 id="why-use-cff">Why use CFF?<a class="anchor" aria-label="anchor" href="#why-use-cff"></a></h4>
 <p>For developers, using a CFF file can help to automate the process of
-publishing new releases on Zenodo via GitHub. GitHub also “understands”
-CFF, and will display citation information prominently on the landing
-page of a repository that contains citation info in CFF.</p>
+publishing new releases on <a href="https://zenodo.org/" class="external-link">Zenodo</a> via
+GitHub. GitHub also “understands” CFF, and will display citation
+information prominently on the landing page of a repository that
+contains citation info in CFF.</p>
 <p>For users, having a CFF file makes it easy to cite the software or
 dataset with formatted citation information available for copy-paste and
 direct import from GitHub into reference managers like Zotero.</p>
 </div>
 <div class="section level4">
-<h4 id="creating-a-cff-file">Creating a CFF file<a class="anchor" aria-label="anchor" href="#creating-a-cff-file"></a></h4>
+<h4 id="cff-file-format">CFF file format<a class="anchor" aria-label="anchor" href="#cff-file-format"></a></h4>
 <p>A CFF file is using the <a href="https://yaml.org/" class="external-link">YAML</a>
 key-value pair format. At a minimum a CFF file must contain the title of
 the software/data, the type of asset (software or data) and at least one
 author:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># This CITATION.cff file was generated with cffinit.</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># Visit https://bit.ly/cffinit to generate yours today!</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Software</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  If you use this software, please cite it using the</span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  metadata from this file.</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Anne</span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Researcher</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># This CITATION.cff file was generated with cffinit.</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># Visit https://bit.ly/cffinit to generate yours today!</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Software</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  If you use this software, please cite it using the</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  metadata from this file.</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Anne</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Researcher</span></span></code></pre>
 </div>
 <p>Additional and optional metadata includes an abstract, repository URL
 and more.</p>
 </div>
 <div class="section level4">
-<h4 id="steps-to-make-your-software-citable">Steps to make your software citable<a class="anchor" aria-label="anchor" href="#steps-to-make-your-software-citable"></a></h4>
-<p>We can create (and update) a CFF file for our software using an
-online application called <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a>.</p>
-<p>Let’s create a dummy citation file for a project called “Spacetravel”
-with Author “Max Hypothesis” by following these steps:</p>
-<ol style="list-style-type: decimal"><li>First, head to <code>cffinit</code> online at <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a>.</li>
-<li>Then, let’s work through the metadata input form to complete the
-minimum information needed to generate a CFF. We’ll also add the
-following abstract:
-<code>"Spacetravel - a simple python script to calculate time spent in Space by individual NASA astronauts"</code>
+<h4 id="creating-cff-file-and-making-your-software-citable">Creating CFF file and making your software citable<a class="anchor" aria-label="anchor" href="#creating-cff-file-and-making-your-software-citable"></a></h4>
+<p>We can create (and later update) a CFF file for our software using an
+online application called <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code></a> by following
+these steps:</p>
+<ol style="list-style-type: decimal"><li><p>Head to <a href="https://bit.ly/cffinit" class="external-link"><code>cffinit</code>
+online tool</a>.</p></li>
+<li>
+<p>Then, work through the metadata input form to complete the
+minimum information needed to generate a CFF.</p>
+<p>We can use the following description as an “Abstract”: “A Python
+script to analyse NASA extravehicular activity data”</p>
+<p>Add the URL of the code repository as a “Related Resources”.</p>
+<p>Add at least two key words under the “Keywords” section.</p>
 </li>
-<li>At the end of the process, download the CFF file and inspect it. It
-should look like this:</li>
-</ol><div class="codewrapper sourceCode" id="cb9">
+<li><p>At the end of the process, download the CFF file and inspect it.
+It should look like this:</p></li>
+</ol><div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># This CITATION.cff file was generated with cffinit.</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co"># Visit https://bit.ly/cffinit to generate yours today!</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Spacetravel</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  If you use this software, please cite it using the</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>  metadata from this file.</span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Hypothesis</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="at">    </span><span class="fu">name-particle</span><span class="kw">:</span><span class="at"> Max</span></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>    A simple python script to calculate time spent in Space by individual NASA astronauts</span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># This CITATION.cff file was generated with cffinit.</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># Visit https://bit.ly/cffinit to generate yours today!</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Spacewalks</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  If you use this software, please cite it using the</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>  metadata from this file.</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Jaffa</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="at">    </span><span class="fu">name-particle</span><span class="kw">:</span><span class="at"> Sarah</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Aleksandra</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Nenadic</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Kamilla</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Kopec-Harding</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="fu">repository-code</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a>  https://github.com/YOUR-REPOSITORY-URL/spacewalks.git</span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a>  A Python script to analyse NASA extravehicular activity</span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a>  data</span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> NASA</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Extravehicular activity</span></span></code></pre>
 </div>
+<p>CFF files can also be updated using the <code>cffinit</code> online
+tool by pasting the previous version of CFF file and working through the
+form to update various fields.</p>
 </div>
 <div class="section level4">
-<h4 id="updating-and-citing">Updating and citing<a class="anchor" aria-label="anchor" href="#updating-and-citing"></a></h4>
-<p>CFF files can also be updated using the <code>cffinit</code> online
-tool.</p>
+<h4 id="citing">Citing<a class="anchor" aria-label="anchor" href="#citing"></a></h4>
 <p>To cite our software (or dataset), once a CFF file has been pushed to
 our remote repository, GitHub’s “Cite this repository” button can be
 used to generate a citation in various formats (APA, BibTeX).</p>
-</div>
-<div class="section level4">
-<h4 id="tools">Tools<a class="anchor" aria-label="anchor" href="#tools"></a></h4>
-<p>Command line tools are also available for creating, validating, and
-converting CFF files. Further information is available from the <a href="https://book.the-turing-way.org/communication/citable/citable-cff.html" class="external-link">Turing
-Way’s guide to software citation</a>.</p>
-<div id="spacewalks-software-citation" class="callout challenge">
+<div id="section" class="callout">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="section" class="callout-inner">
+<h3 class="callout-title"></h3>
+<div class="callout-content">
+<p>Further information is available from the <a href="https://book.the-turing-way.org/communication/citable/citable-cff.html" class="external-link">Turing
+Way’s guide to software citation</a>.</p>
+</div>
+</div>
+</div>
+<div id="spacewalks-software-citation" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="spacewalks-software-citation" class="callout-inner">
 <h3 class="callout-title">Spacewalks software citation</h3>
 <div class="callout-content">
-<p>Write a software citation file for our Spacewalks software and add it
-to the root folder of our project.</p>
-<ul><li>Add the URL of the code repository as a “Related Resources”</li>
-<li>Add a one-line description of the code under the “Abstract”
-section</li>
-<li>Add at least two key words under the “Keywords” section</li>
-</ul></div>
-</div>
-</div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
-</button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
-<div class="accordion-body">
-<p>Use <a href="https://citation-file-format.github.io/cff-initializer-javascript/#/version-specific" class="external-link">cffinit</a>,
-a web application to create your citation file using a series of online
-forms.</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># This CITATION.cff file was generated with cffinit.</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Visit https://bit.ly/cffinit to generate yours today!</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Spacewalks</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  If you use this software, please cite it using the</span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>  metadata from this file.</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Jaffa</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="at">    </span><span class="fu">name-particle</span><span class="kw">:</span><span class="at"> Sarah</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Aleksandra</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Nenadic</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> Kamilla</span></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="at">    </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> Kopec-Harding</span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="fu">repository-code</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>  https://github.com/YOUR-REPOSITORY-URL/spacewalks.git</span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>  A Python script to analyse NASA extravehicular activity</span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>  data</span>
-<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span></span>
-<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> NASA</span></span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Extravehicular activity</span></span></code></pre>
-</div>
-</div>
+<p>Add the citation file for our Spacewalks software to the root folder
+of our repository on GitHub. You can either do it directly on GitHub or
+creating the file locally and the committing and pushing to GitHub from
+the command line.</p>
 </div>
 </div>
 </div>
@@ -958,40 +948,33 @@ forms.</p>
 </section><section><h2 class="section-heading" id="documentation-tools">Documentation tools<a class="anchor" aria-label="anchor" href="#documentation-tools"></a></h2>
 <hr class="half-width"><p>Once our project reaches a certain size or level of complexity we may
 want to add additional documentation such as a standalone tutorial or
-“Background” explaining our methodological choices.</p>
+“background” explaining our methodological choices.</p>
 <p>Once we move beyond using a README as our primary source of
 documentation, we need to consider how we will distribute our
-documentation to our users.</p>
-<p>Options include:</p>
-<ul><li>A <code>docs/</code> folder of Markdown files.</li>
-<li>Adding a Wiki to our repository.</li>
+documentation to our users. Options include:</p>
+<ul><li>A <code>docs/</code> folder of Markdown files</li>
+<li>Adding a Wiki to our repository</li>
 <li>Creating a set of web pages for our documentation using a static
-site generator for our documentation such as Sphinx or MkDocs</li>
+site generator for our documentation such as Sphinx or MkDocs.</li>
 </ul><p>Creating a static site is a popular solution as it has the key
 benefit being able to automatically generate a reference manual from any
 docstrings we have added to our code.</p>
 <div class="section level3">
 <h3 id="mkdocs">MkDocs<a class="anchor" aria-label="anchor" href="#mkdocs"></a></h3>
 <p>Let’s setup the static documentation site generator tool MkDocs.</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install mkdocs</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="st">"mkdocstrings[python]"</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install mkdocs-material</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install mkdocs</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="st">"mkdocstrings[python]"</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install mkdocs-material</span></code></pre>
 </div>
-<p>Let’s check that MkDocs has been setup correctly:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<p>Let’s creates a new MkDocs project in the current directory:</p>
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip list</span></code></pre>
-</div>
-<p>Let’s creates a new MkDocs project in the current directory</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># In ~/Desktop/spacewalks</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="ex">mkdocs</span> new .    </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># In ~/Desktop/spacewalks</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">mkdocs</span> new .    </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1001,72 +984,76 @@ INFO    -  Writing initial docs: ./docs/index.md</code></pre>
 </div>
 <p>This command creates a new MkDocs project in the current directory
 with a <code>docs</code> folder containing an <code>index.md</code> file
-and a <code>mkdocs.yml</code> configuration file.</p>
-<p>Now, let’s fill in the configuration file for our project.</p>
-<div class="codewrapper sourceCode" id="cb15">
+and a <code>mkdocs.yml</code> configuration file in the root of our
+project.</p>
+<p>Now, let’s fill in the <code>mkdocs.yml</code> configuration file for
+our project.</p>
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">site_name</span><span class="kw">:</span><span class="at"> Spacewalks Documentation</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"material"</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="fu">font</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="fu">nav</span><span class="kw">:</span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Spacewalks Documentation</span><span class="kw">:</span><span class="at"> index.md</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Tutorials</span><span class="kw">:</span><span class="at"> tutorials.md</span></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">How-To Guides</span><span class="kw">:</span><span class="at"> how-to-guides.md</span></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Reference</span><span class="kw">:</span><span class="at"> reference.md</span></span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Background</span><span class="kw">:</span><span class="at"> explanation.md</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">site_name</span><span class="kw">:</span><span class="at"> Spacewalks Documentation</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">use_directory_urls</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"material"</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">font</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="fu">nav</span><span class="kw">:</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Spacewalks Documentation</span><span class="kw">:</span><span class="at"> index.md</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Tutorials</span><span class="kw">:</span><span class="at"> tutorials.md</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">How-To Guides</span><span class="kw">:</span><span class="at"> how-to-guides.md</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Reference</span><span class="kw">:</span><span class="at"> reference.md</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Background</span><span class="kw">:</span><span class="at"> explanation.md</span></span></code></pre>
 </div>
-<p>Note font-false is for GDPR compliance.</p>
+<p>Note <code>font: false</code> variable is for GDPR compliance;
+<code>use_directory_url: false</code> variable tells MKDocs tools how to
+handle URLs for documentation that is served as a website (we will cover
+this in a moment).</p>
 <p>Let’s add support for <code>mkdocstrings</code> - this will allow us
 to automatically our docstrings into our documentation using a simple
 tag.</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">site_name</span><span class="kw">:</span><span class="at"> Spacewalks Documentation</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">use_directory_urls</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"material"</span></span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="fu">nav</span><span class="kw">:</span></span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Spacewalks Documentation</span><span class="kw">:</span><span class="at"> index.md</span></span>
-<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Tutorials</span><span class="kw">:</span><span class="at"> tutorials.md</span></span>
-<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">How-To Guides</span><span class="kw">:</span><span class="at"> how-to-guides.md</span></span>
-<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Reference</span><span class="kw">:</span><span class="at"> reference.md</span></span>
-<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Background</span><span class="kw">:</span><span class="at"> explanation.md</span></span>
-<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a></span>
-<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="fu">plugins</span><span class="kw">:</span></span>
-<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mkdocstrings</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">site_name</span><span class="kw">:</span><span class="at"> Spacewalks Documentation</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">use_directory_urls</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"material"</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="fu">font</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="fu">nav</span><span class="kw">:</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Spacewalks Documentation</span><span class="kw">:</span><span class="at"> index.md</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Tutorials</span><span class="kw">:</span><span class="at"> tutorials.md</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">How-To Guides</span><span class="kw">:</span><span class="at"> how-to-guides.md</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Reference</span><span class="kw">:</span><span class="at"> reference.md</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Background</span><span class="kw">:</span><span class="at"> explanation.md</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="fu">plugins</span><span class="kw">:</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mkdocstrings</span></span></code></pre>
 </div>
 <p>Let’s populate our <code>docs/</code> folder to match our
 configuration file.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">touch</span> docs/tutorials.md</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">touch</span> docs/how-to-guides.md</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="fu">touch</span> docs/reference.md</span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="fu">touch</span> docs/explanation.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/tutorials.md</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/how-to-guides.md</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/reference.md</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> touch docs/explanation.md</span></code></pre>
 </div>
-<p>Let’s populate our reference file with some preamble to include
-before the reference manual that will be generated from the docstrings
-we created.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<p>Let’s populate our reference file <code>reference.md</code> with some
+preamble to include before the reference manual that will be generated
+from the docstrings we created.</p>
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>This file documents the key functions in the Spacewalks tool.</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>It is provided as a reference manual.</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>::: eva_data_analysis</span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>This file documents the key functions in the Spacewalks tool.</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>It is provided as a reference manual.</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>::: eva_data_analysis</span></code></pre>
 </div>
 <p>Finally, let’s build our documentation.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">mkdocs</span> build</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdocs build</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1079,25 +1066,43 @@ WARNING -  griffe: eva_data_analysis.py:33: No type or annotation for returned v
 INFO    -  Documentation built in 0.31 seconds</code></pre>
 </div>
 <p>Once the build step is completed, our documentation site is saved to
-a <code>site</code> folder in the root of our project folder.</p>
-<p>These files will be distributed with our code. We can either direct
-users to read these files locally on their own device using their
-browser, or we can choose to host our documentation as a website that
-our uses can navigate to.</p>
+a <code>site</code> folder in the root of our project folder. These
+files will be distributed with our code. We can either direct users to
+read these files locally on their own device using their browser, or we
+can choose to host our documentation as a website that our uses can
+navigate to.</p>
 <p>Note that we used the setting <code>use_directory_urls: false</code>
 in the <code>mkdocs.yml</code> file. This setting ensures that the
 documentation site is generated with URLs that are easy to navigate
 locally on a user’s device.</p>
-<p>Finally let us commit our documentation to the main branch of our git
-repository and push the changes to GitHub</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div id="explore-your-documentation" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="explore-your-documentation" class="callout-inner">
+<h3 class="callout-title">Explore your documentation</h3>
+<div class="callout-content">
+<p>Explore documentation in <code>site/</code> folder built with MkDocs
+for your project, starting from <code>index.html</code> file.</p>
+<p>For example, check <code>site/reference.html</code> to see how
+docstrings from your functions are provided here as a reference
+manual.</p>
+</div>
+</div>
+</div>
+<p>Finally, let us commit our documentation to the main branch of our
+git repository and push the changes to GitHub.</p>
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">git</span> add mkdocs.yml </span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="fu">git</span> add docs/</span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="fu">git</span> add site/</span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add mkdocs.yml </span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add docs/</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add site/</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 <span class="at">-m</span> pip freeze <span class="op">&gt;</span> requirements.txt</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add requirements.txt </span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Added mkdocs plugin"</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git push origin main</span></code></pre>
 </div>
 <div id="hosting-documentation" class="callout">
 <div class="callout-square">
@@ -1106,9 +1111,8 @@ repository and push the changes to GitHub</p>
 <div id="hosting-documentation" class="callout-inner">
 <h3 class="callout-title">Hosting documentation</h3>
 <div class="callout-content">
-<p>In the previous section, we saw how Mkdocs documentation can be
-distributed with our repository and viewed “offline” using a
-browser.</p>
+<p>We saw how MkDocs documentation can be distributed with our
+repository and viewed “offline” using a browser.</p>
 <p>We can also make our documentation available as a live website by
 deploying our documentation to a hosting service.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
@@ -1126,10 +1130,11 @@ GitHub repositories.</p>
 <p>There are two types of GitHub Pages: project pages and
 user/organization Pages. While similar, they have different deployment
 workflows, and we will only discuss project pages here. For information
-about deploying to user/organisational pages, see [MkDocs Deployment
-pages][mkdocs-deploy].</p>
-<p>Project Pages deploy site files to a branch within the project
-repository (default is gh-pages). To deploy our documentation:</p>
+about deploying to user/organisational pages, see <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/" class="external-link">MkDocs
+Deployment pages</a>.</p>
+<p>Project Pages deploy site files to a branch (by default the
+<code>gh-pages</code> branch, but it can be any other branch) within the
+project repository. To deploy our documentation:</p>
 <blockquote>
 <p><strong>Warning!</strong> Before we proceed to the next step, we MUST
 ensure that there are no uncommitted changes or untracked files in our
@@ -1138,25 +1143,26 @@ repository.</p>
 them in our documentation!</p>
 </blockquote>
 <ol style="list-style-type: decimal"><li>(If not done already), let us commit our documentation to the main
-branch of our git repository and push the changes to GitHub</li>
-</ol><div class="codewrapper sourceCode" id="cb22">
+branch of our git repository and push the changes to GitHub.</li>
+</ol><div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">git</span> add mkdocs.yml </span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">git</span> add docs/</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="fu">git</span> add site/</span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add mkdocs.yml </span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add docs/</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add site/</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add project-level documentation"</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git push origin main</span></code></pre>
 </div>
 <ol start="2" style="list-style-type: decimal"><li>Once we are on the main branch and all our changes are up to date,
-run the following command to deploy our documentation to GitHub.</li>
-</ol><div class="codewrapper sourceCode" id="cb23">
+run the following command from the command line termindal to deploy our
+documentation to GitHub.</li>
+</ol><div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co"># Important: </span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="co"># - This command will push the documentation to the gh-pages branch of your repository</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="co"># - It will ALSO include uncommitted changes and untracked files (read the warning above!!) &lt;- VERY IMPORTANT!!</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="ex">mkdocs</span> gh-deploy</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Important: </span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="co"># - This command will push the documentation to the gh-pages branch of your repository</span></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="co"># - It will ALSO include uncommitted changes and untracked files (read the warning above!!) &lt;- VERY IMPORTANT!!</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdocs gh-deploy</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1186,13 +1192,14 @@ To https://github.com/kkh451/spacewalks-dev.git
 INFO    -  Your documentation should shortly be available at: https://kkh451.github.io/spacewalks/</code></pre>
 </div>
 <p>This command will build our documentation with MkDocs, then commit
-and push the files to the gh-pages branch using the GitHub ghp-import
-tool which is installed as a dependency of MkDocs.</p>
+and push the files to the <code>gh-pages</code> branch using the GitHub
+<code>ghp-import</code> tool which is installed as a dependency of
+MkDocs.</p>
 <p>For more options, use:</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">mkdocs</span> gh-deploy <span class="at">--help</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">mkdocs</span> gh-deploy <span class="at">--help</span></span></code></pre>
 </div>
 <p>Notice that the deploy command did not allow us to preview the site
 before it was pushed to GitHub; so, it is a good idea to check changes
@@ -1201,8 +1208,8 @@ locally with the build commands before deploying.</p>
 <div class="section level3">
 <h3 id="other-options">Other options<a class="anchor" aria-label="anchor" href="#other-options"></a></h3>
 <p>You can find out about other deployment options including free
-documentation hosting service ReadTheDocs on the [MkDocs deployment
-pages][mkdocs-deploy].</p>
+documentation hosting service ReadTheDocs on the <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/" class="external-link">MkDocs
+deployment pages</a>.</p>
 </div>
 </div>
 </div>
@@ -1214,8 +1221,8 @@ pages][mkdocs-deploy].</p>
 </div>
 </section><section><h2 class="section-heading" id="documentation-guides">Documentation guides<a class="anchor" aria-label="anchor" href="#documentation-guides"></a></h2>
 <hr class="half-width"><p>Once we start to consider other forms of documentation beyond the
-README, we can also increase the re-usability of our code by ensuring
-that the content and style of our documentation matches its purpose.</p>
+README, we can also increase reusability of our code by ensuring that
+the content and style of our documentation matches its purpose.</p>
 <p>Documentation guides such as <a href="https://www.writethedocs.org/" class="external-link">Write the Docs</a>, <a href="https://www.thegooddocsproject.dev/" class="external-link">The Good Docs Project</a> and
 the <a href="https://diataxis.fr/" class="external-link">Diataxis framework</a> provide a
 range of resources including documentation templates to help to help us
@@ -1230,8 +1237,9 @@ do this.</p>
 <ol style="list-style-type: lower-alpha"><li><p>Review the Diataxis guidance page on writing a How-to guide.
 Identify three features of an effective how-to guide.</p></li>
 <li><p>Following the Diataxis guidelines, add a how-to guide to the
-<code>docs</code> folder that show users how to change the destination
-filename for the output dataset generated by Spacewalks.</p></li>
+<code>docs/how-to-guides.md</code> file in your documentation folder to
+show users how to change the destination filename for the output CSV
+dataset generated by the Spacewalks software.</p></li>
 </ol><div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
@@ -1244,21 +1252,30 @@ filename for the output dataset generated by Spacewalks.</p></li>
 <li>avoid teaching or explanation</li>
 <li>use appropriate language e.g. conditional imperatives</li>
 <li>have an informative title</li>
-</ul><p>An example how-to guide:</p>
+</ul><p>An example how-to guide for our project to the file
+<code>docs/how-to-guides.md</code>:</p>
 <pre><code># How to change the file path of Spacewalk's output dataset
 
 This guide shows you how to set the file path for Spacewalk's output
 data set to a location of your choice.
 
-By default, the cleaned data set generated by Spacewalk is saved to the current
-working directory with file name `eva-data.csv`.
+By default, the cleaned data set in CSV format, generated by the Spacewalk software, is saved to the `results/`
+folder within the working directory with file name `eva-data.csv`.
 
 If you would like to modify the name or location of the output dataset, set the
 second command line argument to your chosen file path.
+For example, if you want to save the output data set to the subfolder `data/clean/` you can
+invoke the script as:
 
-`python eva_data_analysis.py eva-data.json data/clean/eva-data-clean.csv`
+`(venv_spacewalks) $ python3 eva_data_analysis.py eva-data.json data/clean/eva-data-clean.csv`
 
-The specified destination folder must exist before running spacewalks analysis script.</code></pre>
+The specified destination folder `data/clean/` must exist before running spacewalks analysis script.</code></pre>
+<p>Remember to rebuild your documentation:</p>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdocs build</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1291,8 +1308,9 @@ dataset when running the analysis script.</p>
 <div class="section level4">
 <h4 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h4>
 <p>In this tutorial, we will learn how to change the file path for the
-output dataset generated by Spacewalk. By the end of this tutorial, you
-will be able to specify a custom file path for the cleaned dataset.</p>
+output dataset generated by the Spacewalk software. By the end of this
+tutorial, you will be able to specify a custom file path for the cleaned
+dataset.</p>
 </div>
 <div class="section level4">
 <h4 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a></h4>
@@ -1303,34 +1321,35 @@ will be able to specify a custom file path for the cleaned dataset.</p>
 </ul></div>
 <div class="section level4">
 <h4 id="prepare-the-destination-directory">Prepare the destination directory<a class="anchor" aria-label="anchor" href="#prepare-the-destination-directory"></a></h4>
-<p>First, let us decide where we want to save the cleaned dataset. and
+<p>First, let us decide where we want to save the cleaned dataset and
 make sure the directory exists.</p>
-<p>For this tutorial, we will use data/clean as the destination
-folder.</p>
-<p>Let’s create the directory if it does not exist:</p>
-<div class="codewrapper sourceCode" id="cb27">
+<p>For this tutorial, we will use <code>data/clean/</code> as the
+destination folder.</p>
+<p>Let’s create the directory if it does not exist - e.g. from the
+command line do:</p>
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> data/clean</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdir <span class="at">-p</span> data/clean</span></code></pre>
 </div>
 </div>
 <div class="section level4">
-<h4 id="run-the-analysis-script-with-custom-path">Run the analysis script with custom path<a class="anchor" aria-label="anchor" href="#run-the-analysis-script-with-custom-path"></a></h4>
+<h4 id="run-the-analysis-script-with-a-custom-path">Run the analysis script with a custom path<a class="anchor" aria-label="anchor" href="#run-the-analysis-script-with-a-custom-path"></a></h4>
 <p>Next, execute the Spacewalk script and specify the custom file path
 for the output dataset:</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">python</span> eva_data_analysis.py <span class="op">&lt;</span>input-file<span class="op">&gt;</span> <span class="op">&lt;</span>output-file<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 eva_data_analysis.py <span class="op">&lt;</span>input-file<span class="op">&gt;</span> <span class="op">&lt;</span>output-file<span class="op">&gt;</span></span></code></pre>
 </div>
-<p>Replace <input-file> with your input dataset (eva-data.json) and
-<output-file> with your desired output path
-(data/clean/eva-data-clean.csv).</output-file></input-file></p>
+<p>Replace <input-file> with your input dataset
+(<code>data/eva-data.json</code>) and <output-file> with your desired
+output path (<code>data/clean/eva-data-clean.csv</code>).</output-file></input-file></p>
 <p>Here is the complete command:</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">python</span> eva_data_analysis.py eva-data.json data/clean/eva-data-clean.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 eva_data_analysis.py data/eva-data.json data/clean/eva-data-clean.csv</span></code></pre>
 </div>
 <p>Notice how the output to the command line clearly indicates that we
 are using a custom output file path.</p>
@@ -1338,44 +1357,45 @@ are using a custom output file path.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Using custom input and output filenames
-Reading JSON file eva-data.json
+Reading JSON file data/eva-data.json
 Saving to CSV file data/clean/eva-data-clean.csv
 Adding crew size variable (crew_size) to dataset
 Saving to CSV file data/clean/eva-data-clean.csv
-Plotting cumulative spacewalk duration and saving to ./cumulative_eva_graph.png</code></pre>
+Plotting cumulative spacewalk duration and saving to results/cumulative_eva_graph.png</code></pre>
 </div>
-<p>After running the script, let us check the data/clean directory to
-ensure the cleaned dataset has been saved correctly.</p>
-<div class="codewrapper sourceCode" id="cb31">
+<p>After running the script, let us check the <code>data/clean</code>
+directory to ensure the cleaned dataset has been saved correctly.</p>
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">ls</span> data/clean</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> ls data/clean</span></code></pre>
 </div>
-<p>You should see eva-data-clean.csv listed in the data/clean folder</p>
+<p>You should see <code>eva-data-clean.csv</code> file listed in the
+<code>data/clean</code> folder.</p>
 </div>
 <div class="section level4">
 <h4 id="exercise-custom-output-path">Exercise: custom output path<a class="anchor" aria-label="anchor" href="#exercise-custom-output-path"></a></h4>
-<ul><li>Create a new directory named output/data in your working
-directory.</li>
+<ul><li>Create a new directory named <code>output/data</code> in your
+working directory.</li>
 <li>Run the Spacewalk script to save the cleaned dataset in the newly
-created output/data directory with the filename
-cleaned-eva-data.csv.</li>
+created <code>output/data</code> directory with the filename
+<code>cleaned-eva-data.csv</code>.</li>
 <li>Verify that the dataset has been saved correctly.</li>
 </ul><div class="section level5">
 <h5 id="solution-1">Solution<a class="anchor" aria-label="anchor" href="#solution-1"></a></h5>
-<div class="codewrapper sourceCode" id="cb32">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Create the directory:</span></span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> output/data</span>
-<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="co"># Run the script:</span></span>
-<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a><span class="ex">python</span> eva_data_analysis.py eva-data.json output/data/cleaned-eva-data.csv</span>
-<span id="cb32-6"><a href="#cb32-6" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" tabindex="-1"></a><span class="co"># Verify the output:</span></span>
-<span id="cb32-8"><a href="#cb32-8" tabindex="-1"></a><span class="fu">ls</span> output/data</span>
-<span id="cb32-9"><a href="#cb32-9" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" tabindex="-1"></a><span class="co"># You should see cleaned-eva-data.csv listed</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Create the directory:</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> mkdir <span class="at">-p</span> output/data</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="co"># Run the script:</span></span>
+<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 eva_data_analysis.py data/eva-data.json output/data/cleaned-eva-data.csv</span>
+<span id="cb30-6"><a href="#cb30-6" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" tabindex="-1"></a><span class="co"># Verify the output:</span></span>
+<span id="cb30-8"><a href="#cb30-8" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> ls output/data</span>
+<span id="cb30-9"><a href="#cb30-9" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" tabindex="-1"></a><span class="co"># You should see cleaned-eva-data.csv listed</span></span></code></pre>
 </div>
 <p>Congratulations! You have successfully changed the file path for
 Spacewalks output dataset and completed an exercise to practice the
@@ -1430,24 +1450,14 @@ e.g. “First do x, then do y”</li>
 </div>
 </div>
 </div>
-<div id="commit-and-push-your-changes" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="commit-and-push-your-changes" class="callout-inner">
-<h3 class="callout-title">Commit and push your changes</h3>
-<div class="callout-content">
-<p>Do not forget to commit any uncommited changes you may have and then
+<p>Do not forget to commit any uncommitted changes you may have and then
 push your work to GitHub.</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>your_changed_files<span class="op">&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Your commit message"</span></span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre>
-</div>
-</div>
-</div>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git add <span class="op">&lt;</span>your_changed_files<span class="op">&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Your commit message"</span></span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> git push origin main</span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a></h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
@@ -1511,7 +1521,7 @@ any links that you are not going to use.
           Previous: Code correctness
         </a>
         <a class="chapter-link float-end" href="10-open-collaboration.html" rel="next">
-          Next: Open collaboration...
+          Next: Open code &amp;...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1535,7 +1545,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.7" class="external-link">sandpaper (0.16.7)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.8" class="external-link">sandpaper (0.16.8)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1557,8 +1567,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/09-code-documentation.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/09-code-documentation.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-09-26",
-  "datePublished": "2024-10-08"
+  "dateModified": "2024-10-14",
+  "datePublished": "2024-10-14"
 }
 
   </script><script>

@@ -257,6 +257,7 @@
 <li><a href="#creating-virtual-environments">Creating virtual environments</a></li>
 <li><a href="#installing-external-packages">Installing external packages</a></li>
 <li><a href="#sharing-virtual-environments">Sharing virtual environments</a></li>
+<li><a href="#running-the-code">Running the code</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -303,7 +304,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open-collaboration.html">10. Open collaboration on code</a>
+        <a href="10-open-collaboration.html">10. Open code &amp; collaboration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -376,7 +377,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reproducible development environment</h1>
-        <p>Last updated on 2024-09-24 |
+        <p>Last updated on 2024-10-14 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/05-code-environment.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -799,6 +800,16 @@ environment) is update the contents of the <code>requirements.txt</code>
 file accordingly by re-issuing <code>pip freeze</code> command and
 propagate the updated <code>requirements.txt</code> file to your
 collaborators via your code sharing platform.</p>
+</section><section><h2 class="section-heading" id="running-the-code">Running the code<a class="anchor" aria-label="anchor" href="#running-the-code"></a></h2>
+<hr class="half-width"><p>We are now setup to run our code from the newly created virtual
+environment:</p>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="kw">(</span><span class="ex">venv_spacewalks</span><span class="kw">)</span> <span class="ex">$</span> python3 eva_data_analysis.py</span></code></pre>
+</div>
+<p>You should get a pop up window with a graph. Let’s inspect the code
+in a more detail, see if we can understand and improve it.</p>
 </section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a></h2>
 <hr class="half-width"><p>We recommend the following resources for some additional reading on
 the topic of this episode:</p>
@@ -866,7 +877,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.7" class="external-link">sandpaper (0.16.7)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.8" class="external-link">sandpaper (0.16.8)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -888,8 +899,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/05-code-environment.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/05-code-environment.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-09-24",
-  "datePublished": "2024-10-08"
+  "dateModified": "2024-10-14",
+  "datePublished": "2024-10-14"
 }
 
   </script><script>
