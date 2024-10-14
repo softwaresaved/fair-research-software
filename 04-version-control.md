@@ -360,10 +360,9 @@ Now that we have seen how to rename files in Git, let's:
 (i) give our input data file and script more meaningful names and 
 (ii) choose informative file names for our output data file and plot.
 
-First let's update file names in our script.
+First let's update file names in our script using VS Code.
 
 ```python
-# https://data.nasa.gov/resource/eva.json (with modifications)
 data_f = open('./eva-data.json', 'r')
 data_t = open('./eva-data.csv','w')
 g_file = './cumulative_eva_graph.png'   

@@ -116,3 +116,11 @@ any links that you are not going to use.
 [fair4rs-working-group]: https://force11.org/groups/fair-4-research-software-fair4rs-working-group/
 [python-functions-w3schools]: https://www.w3schools.com/python/python_functions.asp
 [github]: https://github.com
+[gitlab]: https://about.gitlab.com/
+[zenodo]: https://zenodo.org/
+[figshare]: https://figshare.com/
+[biotools]: https://biotools.us/
+[pypi]: https://pypi.org/
+[cran]: https://cran.r-project.org/web/packages/
+[awesome-rs-registries]: https://github.com/NLeSC/awesome-research-software-registries
+[mkdocs-deploy]: https://www.mkdocs.org/user-guide/deploying-your-docs/

@@ -130,7 +130,7 @@ Fill in the blanks in the sentences below:
 ## Informal testing
 
 How should we test our code? 
-One approach is to copy/paste the code or a function into a Python terminal (different from command line terminal), 
+One approach is to copy/paste the code or a function into a Python terminal (different from a command line terminal), 
 which allows you to interact with the Python interpreter more directly.  
 From the Python terminal we can then run one function or a piece of code at a time and check that they behave as 
 expected. 
@@ -248,12 +248,7 @@ These test functions:
 
 Let’s explore this process by writing some formal tests for our `text_to_duration` function. 
 
-Let's create a new Python file `test_code.py` in the root of our project directory to store our tests.
-
-``` bash
-(venv_spacewalks) $ cd spacewalks
-(venv_spacewalks) $ touch test_code.py
-```
+In VS Code, create a new Python file `test_code.py` in the root of our project directory to store our tests.
 
 Like before in the Python terminal, we need to import `text_to_duration` into our test script. 
 Then, we add our first test function:
@@ -267,7 +262,7 @@ def test_text_to_duration_integer():
     test_result = text_to_duration("10:00") == 10
     print(f"text_to_duration('10:00') == 10? {test_result}")
 
-test_text_to_duration()
+test_text_to_duration_integer()
 ```
 
 We can run this code from the command line terminal as:
@@ -326,24 +321,26 @@ test_text_to_duration_integer()
 ``` error
 (venv_spacewalks) $ python3 test_code.py 
 Traceback (most recent call last):
-  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 12, in <module>
+  File "/Users/user/Desktop/spacewalks/test_code.py", line 9, in <module>
     test_text_to_duration_float()
-  File "/Users/user/work/SSI/lessons/astronaut-data-analysis/test_code.py", line 5, in test_text_to_duration_float
+  File "/Users/user/Desktop/spacewalks/test_code.py", line 4, in test_text_to_duration_float
     assert text_to_duration("10:15") == 10.25
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
-
 ```
 
 Notice that this time, our test `test_text_to_duration_float` fails.
 Our assert statement has raised an `AssertionError` - a clear signal that there is a problem in our code that we
-need to fix.
-Python helpfully tells us which line of our code is problematic:
+need to fix. 
+We know that duration `10:15` should be converted to number `10.25`. 
+What is wrong with our code?
+If we look at our `text_to_duration` function, we may identify the following line of our code as problematic:
 
 ```python
-...
-duration_hours = int(hours) + int(minutes)/6 
-...
+def text_to_duration(duration):
+    ...
+    duration_hours = int(hours) + int(minutes)/6 
+    ...
 ```
 
 You may notice that our conversion code is wrong - the minutes component should have been divided by 60 and not 6.
@@ -360,8 +357,8 @@ duration_hours = int(hours) + int(minutes)/60
 This time our tests run without problem. 
 
 Should we add more tests or the tests we have so far are enough? 
-What happens if our duration value is `01:20` (one hour and 20 minutes) and our result is not a rational floating 
-point number like `10.25` but an irrational number such as `10.333333333`? 
+What happens if our duration value is `10:20` (ten hours and 20 minutes) and our result is not a rational floating 
+point number (like `10.25`) but an irrational number such as `10.333333333`? 
 Let's tests for this.
 
 ```python
@@ -449,6 +446,8 @@ Our test suite is currently located in the root folder of our project.
 Let’s move it to a dedicated test folder and rename our `test_code.py` file to
 `test_eva_analysis.py`.
 
+You can do it from VS Code or by typing the following commands in the command line terminal:
+
 ``` bash
 (venv_spacewalks) $ mkdir tests
 (venv_spacewalks) $ mv test_code.py tests/test_eva_analysis.py
@@ -503,7 +502,7 @@ function with expected values.
 Similarly, writing inline comments for our tests that complete the sentence "Test that ..." helps us to understand 
 what each test is doing and why it is needed.
 
-Before running out tests with `putest`, let's reintroduce our old bug in function `text_to_duration` that affects 
+Before running out tests with `pytest`, let's reintroduce our old bug in function `text_to_duration` that affects 
 the durations with a non-zero minute component like "10:20" but not those that are whole hours, e.g. "10:00":
 
 ```python
@@ -565,6 +564,8 @@ tests/test_code.py ..                                                           
 
 =========================================== 2 passed in 0.63s =============================================
 ```
+
+This time, all out tests passed.
 
 ::: challenge
 
@@ -661,8 +662,8 @@ However, that alone is not enough to properly test code.
 We will now look into what makes a good test suite and good practices for testing code.
 
 Let’s start by considering the following scenario. 
-A collaborator on our project has sent us the following code which adds a new column to our data containing the 
-`crew_size` values capturing the number of astronauts participating in any given spacewalk. 
+A collaborator on our project has sent us the following code which adds a new column called `crew_size` 
+to our data containing the number of astronauts participating in any given spacewalk. 
 How do we know that it works as intended and that it will not break the rest of our code?
 For this, we need to write a test suite with a comprehensive coverage of the new code.
  
@@ -800,6 +801,13 @@ def test_calculate_crew_size_edge_cases():
 
 ```
 
+Let's run out tests:
+
+```bash
+(venv_spacewalks) $ python3 -m pytest
+
+```
+
 :::
 ::::::
 
@@ -825,8 +833,8 @@ def test_calculate_crew_size():
     assert actual_result == expected_result
 ```
 
-To avoid such repetitions in our test code, we can **test parameterisation**. 
-This allows us to apply our test function to a list of input / expected output pairs without the need for repetition. 
+To avoid such repetitions in our test code, we use **test parameterisation**. 
+This allows us to apply our test function to a list of input/expected output pairs without the need for repetition. 
 To parameterise the `test_calculate_crew_size` function, we can rewrite is as follows:
 
 ``` python

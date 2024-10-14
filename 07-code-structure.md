@@ -6,7 +6,7 @@ exercises: 30
 
 :::::::::::::::::::::::::::::::::::::: questions
 
-- How can we bests structure code?
+- How can we best structure code?
 - What is a common code structure (pattern) for creating software that can read input from command line?
 - What are conventional places to store data, code, results, tests, auxiliary information and metadata 
 within our software or research project? 
@@ -235,7 +235,7 @@ after some other actions have been performed (usually the parsing of command-lin
 which will be explained below).
 `__name__` is a special variable which is set by the Python interpreter before the execution of any code in the 
 source file.
-What value is given by the interpreter to `__name__` is determined by the manner in which the script is loaded.
+What value is given by the interpreter to `__name__` is determined by the manner in which the script is invoked.
 
 If we run the source file directly using the Python interpreter, e.g.:
 
@@ -258,7 +258,7 @@ import eva_data_analysis
 ```
 
 then the Python interpreter will assign the name "eva_data_analysis" from the import statement to the 
-`__name__` variable:
+`__name__` variable (note that import statement matches our script's name):
 
 ```python
 __name__ = "eva_data_analysis"
@@ -273,7 +273,7 @@ allowing the rest of the code within the script to be safely imported by another
 While it may not seem very useful to have your script importable by another script,
 there are a number of situations in which you would want to do this:
 
-- for testing of your code, you can have your testing framework import the main script,
+- for testing of your code, you can have your testing framework import your script,
   and run special test functions which then call the `main` function directly;
 - where you want to not only be able to run your script from the command-line,
   but also provide a programmer-friendly application programming interface (API) for advanced users.
@@ -413,7 +413,7 @@ if __name__ == "__main__":
 We can now run our script from the command line passing the JSON input data file and CSV output data file as:
 
 ```bash
-(venv_spacewalks) $ python eva_data_analysis.py eva_data.json eva_data.csv
+(venv_spacewalks) $ python eva_data_analysis.py eva-data.json eva-data.csv
 ```
 
 Remember to commit our changes.
@@ -451,7 +451,7 @@ Common categories include:
     - Name files to reflect their contents, version, or date (or use version control to track different versions).
 4. Use version control
    - Code and data should be version controlled; you can also version control manuscripts, results, etc. 
-   - If data files are too large (or contain sensitive information) to track by version control, untrack them using .gitignore 
+   - If data files are too large (or contain sensitive information) to track by version control, untrack them using `.gitignore` 
    - Use tags/releases to mark specific versions of results (a version submitted to a journal, dissertation version, poster version, etc.)
    so as to avoid using version numbers in file names and proliferation of different files.
 
@@ -483,7 +483,8 @@ project_name/
 :::::: challenge
 
 Refactor your software project so that input data is stored in `data/` directory and results (the graph and CSV 
-data files) saved in `results/` directory.
+data files) saved in `results/` directory. 
+Remember to create the `results/` directory or your code will fail.
 
 ::: solution
 
@@ -616,11 +617,6 @@ if __name__ == "__main__":
 
 ::::::
 
-After the above exercise, you will be invoking your script from command line as:
-
-```bash
-(venv_spacewalks) $ python data/eva_data_analysis.py eva_data.json results/eva_data.csv
-```
 Remember to commit your latest changes:
 
 ```bash

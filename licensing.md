@@ -383,3 +383,12 @@ Here are a few examples:
 
 :::
 ::::::
+
+::: keypoints
+- Open source applies Copyright licenses permitting others to reuse and adapt your code or data.
+- Permissive licenses allow code to be used in other products providing the copyright statement is displayed.
+- Copyleft licenses require the source code of any modifications to be released under a copyleft license.
+- Creative commons licenses are suitable for non-code files such as documentation and images.
+- Open source software can be sold, but you must supply the source code and the people you sell it to can give it away to somebody else.
+- Add license file to your repository and add a license to each file in case it gets detached.
+:::

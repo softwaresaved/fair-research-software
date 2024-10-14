@@ -52,32 +52,46 @@ This is not an exact science, and by all means the list below is not exhaustive,
 but any of the practices that you employ in your research software workflow will bring you
 closer to the gold standard of a fully reproducible research.
 
-* Findable
-  * Create a description of your software
-  * Place your software in a public software repository (and ideally register it in a [software registry](https://github.com/NLeSC/awesome-research-software-registries))
-  * Use a unique and persistent identifier (DOI) for your software (e.g. by depositing your code on Zenodo), 
-  which is also useful for citations - note that depositing your data/code on GitHub and similar software repositories 
-  may not be enough as they may change their open access model or disappear completely in the future
-* Accessible
-  * Make sure people can freely, legally and easily get a copy your software
-  * Use coding conventions and comments to make your code readable and understandable by people (once they get a copy of it)
-* Interoperable
-  * Explain the functionality of your software
-  * Use standard formats for inputs and outputs
-  * Communicate with other software via standard protocols and APIs
-* Reusable
-  * Document your software (including its functionality, and how to install and run it)
-  * Follow best practices for software development (including coding conventions, code readability and verifying its correctness)
-  * Test your software and make sure it works on different platforms/operating systems
-  * Give a licence to your software clearly stating how it can be reused
-  * State how to cite your software
+### Findable
+In order to make your software more findable, you should:
+
+- Create a description of your software to make it discoverable by search engines and other search tools
+- Place your software in a public software repository (and ideally register it in a [general-purpose or domain-specific software registry][software-registries])
+- Use a unique and persistent identifier (DOI) for your software (e.g. by depositing your code on [Zenodo][zenodo]),
+  which is also useful for citations - note that depositing your data/code on GitHub and similar software repositories
+  may not be enough as they may change their open access model or disappear completely in the future, so archiving your code means it stands a better chance at being preserved
+
+### Accessible
+
+In order to make your software more accessible, you should:
+
+* Make sure people can freely, legally and easily get a copy your software
+* Use code style conventions and code structure patterns, use comments and create documentation to make your code 
+comprehensible by people (once they get a copy of it) - i.e. make your code accessible in the *intelligible* sense
+
+### Interoperable
+In order to make your software more interoperable, you should:
+
+- Explain the functionality of your software, so others can understand how other tools can interoperate with it
+- Use standard formats for inputs and outputs
+- Communicate with other software via standard protocols and APIs
+
+### Reusable
+In order to make your software more reusable, you should:
+
+- Document your software (including its functionality, and how to install and run it) to make it more understandable by others who may wish to reuse or extend it
+- Follow best practices for software development (including code conventions, structure, readability and correctness)
+- Test your software and make sure it works on different platforms/operating systems to make it more reusable
+- Give a licence to your software clearly stating how it can be reused
+- State how to cite your software, so people can give you credit when they reuse it
+- Include a contributor policy so that others can contribute to your code and credit for contributions is provided
 
 
 :::::: callout
 
 ## FAIR is a process, not a perfect metric
 
-FAIR is not a binary metric - there is no such thing as "FAIR or not FAIR".
+FAIR is not a binary metric - there is no such thing as "FAIR or "not FAIR".
 
 FAIR is not a perfect metric, nor does it provide a full and exhaustive software quality checklist.
 Software may be FAIR but still not very good in terms of its functionality.
@@ -114,8 +128,8 @@ Think where on the FAIR spectrum it fits, using the following scale as a guide f
 
 We are going to follow a fairly typical experience of a new PhD or postdoc joining a research group. 
 They were emailed some data and analysis code bundled in a `.zip` archive and written by another group member 
-who works on similar things. 
-They need to be able to install and run this code on their machine, check they understand it and then adapt it to 
+who worked on similar things but has since left the group. 
+They need to be able to install and run this code on their machine, check they can understand it and then adapt it to 
 their own project.
 
 As part of the [setup for this course](./index.html#astronaut-data-and-analysis-code), you should have downloaded a `.zip` archive containing the software project
@@ -141,7 +155,8 @@ Let's have a critical look at this code and think about how FAIR this piece of s
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
-Compare this data and code to the software you chose earlier.
+Look at our code in VS Code and compare this data and code to the software you chose earlier (or assess 
+it on its own).
 Do you think it is Findable, Accessible, Interoperable and Reusable? 
 Give it a score from 1 to 5 in each category, as in the previous exercise, and then we will discuss it together.
 

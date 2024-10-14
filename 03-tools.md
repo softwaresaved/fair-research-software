@@ -22,160 +22,113 @@ After completing this episode, participants should be able to:
 
 In this course we will introduce you to a group of tools and practices that are commonly used in research to help you 
 develop software in a FAIR way. 
-You should already have these tools installed on your machine following the setup instructions. 
+You should already have these tools installed on your machine following the [setup instructions](./index.html#astronaut-data-and-analysis-code). 
 Here we will give an overview of the tools, how they help you achieve the aims of FAIR research software and how 
 they work together. 
 In later episodes we will describe some of these tools in more detail.
 
-## Development environment
+### Development environments
 
-One of the first choices we make when writing code is what tool to use to do the writing.
-You can use a simple text editor such as Notepad, a terminal based editor with syntax highlighting such as Vim or Emacs, 
-or one of many Integrated Development Environments (IDEs) which give you the tools to write, run and debug your code 
-and inspect the output all in one place. 
-Note that you should not use word processing software such as Microsoft Word or Apple Pages to write code - 
-these tools are designed to create nicely formatted text for humans to read, so they may add or change formatting, 
-or insert invisible characters that the programming language cannot interpret. 
-Try opening a Word document in Notepad to see an example.
+Virtual and integrated development environments (IDEs), such as VS Code or PyCharm, help with running, testing, and debugging code.
+Virtual environments further enable us to share our working environments with others, making it easier to access, reuse and extend our code.
+IDEs often provide integrations with other tools, e.g. version control and command line terminals, enabling you to do many tasks from a single environment,
+saving time in switching between different tools.
 
-This is mostly a personal choice as an experienced user of any of these tools can write good, FAIR software efficiently, 
-but IDEs are popular because they are designed specifically for writing and running code.
-There are some language specific IDEs such as PyCharm, and some that can work with many languages like 
-VS Code (Visual Studio Code). 
-IDEs also have add-ons that provide extra functionality, such as checking your code as you type 
-(similar to a spell-checker in Word), highlighting when you are not following best practice, or even automatically 
-generating bits of code for you.
+### Command line terminals
 
-::::::::::::::::::::::::::: instructor
-At this point you could open the Python file or another file in VS Code to show all the squiggly lines suggesting 
-improvements.
-::::::::::::::::::::::::::::::::
+Command line terminals (e.g. Bash, GitBash) enable us to run and test our code without graphical user interfaces (GUI) afforded to us by IDEs -
+this is sometimes needed for accessing and running our code remotely on servers and high-performance systems without a GUI provision, where time,
+memory and processing power are expensive or in high demand.
 
-In this course we will use VS Code IDE, as it is free, available on Windows, Mac and Linux operating systems, 
-and can be used with many programming languages. 
-It is a single tool in which we can:
+Version control systems are typically provided as command line tools, making them often only accessible from command line terminals to enter commands and access
+remote version control servers to backing up and sharing our work.
 
-- view our file system
-- open many kinds of files
-- edit, compile, run and debug code
-- open a terminal to run command line tools (including version control tool Git) or view code outputs
+Finally, command line tools use standard protocols for passing parameters, inputs and outputs.
+This makes it easier to integrate ours with other command line tools, allowing us to chain them and build up complex 
+and reproducible workflows and analysis pipelines using several programs in different steps.
+If we write our software in a way which provides such an interoperable command line interface - we will be able to 
+integrate it with other command line tools to automate and speed up our work.
 
-Use VS Code to open the Python script and the data file from our project.
+### Standard input/output formats and communication protocols
 
-## Command line tool/shell
+Using standard data exchange, input and output formats and communication protocols helps create interoperable software that can more readily integrate
+with other tools into more complex pipelines - increasing its interoperability and reusability.
 
-In VS Code and similar IDEs you can often run the code by clicking a button or pressing some keyboard shortcut.
-If you gave your code to a colleague or collaborator they might use the same IDE or something different, 
-so you cannot guarantee that they will have the same buttons and shortcuts as you.
+### Version control tools
 
-In the previous episode we mentioned that interoperable software should use standard protocols so that it can 
-integrate with other tools.
-One of these standard protocols/tools is using the inputs and outputs via the command line terminal or shell.
-Command line terminal provides one of the oldest ways of interacting with operating system so many programs will 
-have command line interfaces.
-Command line terminals, such as Bash and Zsh, have their own language syntax that allow you to write scripts and/or 
-group and chain commands together to build up complex workflows using several programs in different steps. 
-They also use less resources than a graphical user interface tool like an IDE, so are commonly used on 
-high-performance computers and other shared systems where time, memory and processing power are expensive or in 
-high demand.
+Version control means knowing what changes were made to your code, when and by whom - promoting code ownership, responsibility and credit.
+When combined with software sharing and collaborative platforms such as GitHub or GitLab, it facilitates code publication, sharing and findability,
+teamwork and discussions about software and design decisions, provides backup facilities for your code and speeds up
+collaboration on shared code by allowing edits by more than one person at a time.
 
-In this course we will use the Bash shell, which is one of the most common and comes already installed on Mac and 
-Linux operating systems.
-You can create a command line interface to your program which will allow it to be run on any system that has a Bash 
-shell, and allow users to change things like input and output files or choose different settings or parameters 
-without editing your code.
-With a command line interface, your code can be built into automated workflows so that the whole process from data 
-gathering to analysis to saving publication-quality results can be written in one Bash script and saved and reused.
+### Code style and structure conventions
 
-## Version control
+Following code style conventions for your programming language and standard code structure patterns that are agreed upon 
+by the community and other programmers are important practices to ensure that others find it easy to read your code, 
+reuse or extend it in their own examples and applications.
 
-Version control means knowing what changes were made to your code and when. Many people who have worked on large 
-documents such as essays start doing this by saving files called `essay_draft`, `essay_version1.doc`, 
-`essay_version2.doc`, and so on. 
-This can work on a small scale but most people find it quickly gets confusing which version a certain change was made, 
-or which version is the one that you got feedback from a supervisor on. Using a version control system helps you 
-keep track of changes, including when you might be working on shared code being edited by more than one person at a time.
+### Code testing
 
-It also lets you assign version numbers or tags to particular versions so you can then use those to refer back to 
-them later. 
-For example, you can run your code and output some results and add a comment to your output that those results were 
-produced by version 2.4 of your code, so if you try to run the same thing later and find it is different, you can 
-check if it is a change in the code due to using a newer version, or a change in the data, or something else.
+Testing ensures that your code is correct and does what it is set out to do.
+When you write code you often feel very confident that it is perfect, but when writing bigger codes or code that is meant to do complex operations
+it is very hard to consider all possible edge cases or notice every single typing mistake.
+Testing also gives other people confidence in your code as they can see an example of how it is meant to run and be assured that it does work
+correctly on their machine - helping with code understanding and reusability.
 
-We will be using the Git version control system, which can be used through the command line terminal, 
-in a browser or in a desktop application.
+### Software- and project- level documentation
 
-## Code structure and style guidelines
-TODO
+Documentation comes in many forms - from **software-level documentation** including docstrings describing 
+functions and classes and in-line comments that explain lines of your code, to **project-level documentation** and 
+**metadata** (including README, LICENCE, CITATION, CONTRIBUTING, etc. files)
+that help to discover it, explain the legal terms of reusing it, describe its functionality and how to install, run and contribute to it,
+to whole websites full of documentation with function definitions, usage examples, tutorials and guides.
+You many not need as much documentation as a large commercial software product, but making your code reusable relies on other people being able to understand
+what your code does and how to use it.
 
-## Code correctness
+### Software repositories and registries
 
-Testing ensures that your code is correct and does what it is set out to do. When you write code you often feel very 
-confident that it is perfect, but when writing bigger codes or code that is meant to do complex operations it is 
-very hard to consider all possible edge cases or notice every single typing mistake. 
-Testing also gives other people confidence in your code as they can see an example of how it is meant to run and 
-be assured that it does work correctly on their machine.
+Having somewhere to share your code is fundamental to making it findable and accessible.
+Your institution might have a code repository, your research field may have a practice of sharing code via a specific website, archive or journal,
+or your version control system might include an online component that makes sharing different versions of your code easy.
+You should check the rules or guidelines of your institution, grant or domain on publishing code, as well as any licenses of the code your software depends on or reuses.
 
-We will show different ways to test your code for different purposes. You need to think about what it is that is 
-important to you and any future users or collaborators to decide what kind of testing is most useful for you.
+Some examples of commonly used software repositories and registries include:
 
-## Documentation
+- general-purpose software repositories, such as [GitHub][github] and [GitLab][gitlab]
+- programming language-specific software repositories, such as [PyPi][pypi] (for Python) and [CRAN][cran] (for R)
+- software registries, such as [BioTools][biotools] (for biosciences) and [Awesome Research Software Registries][awesome-rs-registries] (providing a list of research software registries by country, organisation, domain and programming language) where research software can be registered to help promote its discovery
 
-Documentation comes in many forms - from the names of variables and functions in your code, additional comments 
-that explain some lines, up to a whole website full of documentation with function definitions, usage examples, 
-tutorials and guides. 
-You many not need as much documentation as a large commercial software product, but making your code reusable relies 
-on other people being able to understand what your code does and how to use it.
+### Persistent identifiers
 
-## Licences and citation
+Unique persistent identifiers, such as Digital Object Identifiers (DOIs) provided by [Zenodo][zenodo], [FigShare][figshare] and similar digital archiving services, and commits/tags/releases used by GitHub and similar code sharing platforms,
+help with findability and accessibility of your software, and can help you get credit for your work by providing citable references.
 
-A licence states what people can legally do with your code, and what restrictions you have placed on it. 
-Whenever you want to use someone else's code you should check what license they have and make sure your use is legal. 
-You may be restricted by your institution, your grant funding, or by other tools you use that require certain licenses 
-for you to be compatible with them.
+### Tools and practices summary 
 
-Having a citation instructions is not a legal requirement but if you want to get academic credit for your work, 
-you can make other people's life much easier by telling them how you would like to be credited. 
-Similarly, follow citation instructions ensures that when you use others' code in your research they will be 
-credited accordingly.
-
-Both licensing law and citation procedures can vary depending on your country and institution, 
-so remember to check with a local team where you are. 
-Your local research IT support or library teams would be a good place to start.
-
-## Code repositories and registries
-
-Having somewhere to share your code is fundamental to making it Findable. 
-Your institution might have a code repository, your research field may have a practice of sharing code via a specific 
-website or journal, or your version control system might include an online component that makes sharing different 
-versions of your code easy. 
-Again, remember to check the rules of your institution and grant on publishing code, and any licenses for code you 
-depend on or reuse.
-
-We will discuss later how to share your code on GitHub and make it easy for others to find and use.
-
-## Summary of tools & practices
-
-The table below summarises some tools and practices that can help with each of the FAIR software principles.
+The table below provides a summary of how different tools and practices help with the FAIR software principles.
 
 | Tools and practices                                                                               | Findable | Accessible | Interoperable | Reusable |
-|---------------------------------------------------------------------------------------------------|----------|------------|---------------|----------|
-| Virtual development environments, programming language and dependencies - run, test, debug, share |          | x          |               | x        |
-| Integrated development environments/IDEs (e.g. VS Code, PyCharm) - run, test, debug               |          |            |               | x        |
-| Command line terminal (e.g. Bash, GitBash) - reproducible workflows/pipelines                     |          |            | x             | x        |
-| Version control tools                                                                             | x        |            |               |          |
-| Testing - code correctness and reproducibility                                                    |          | x          |               | x        |
-| Coding conventions and documentation                                                              |          | x          | x             | x        |
-| Explaining functionality/installation/running - README, inline comments and documentation         |          | x          | x             | x        |
+|---------------------------------------------------------------------------------------------------| -------- | ---------- | ------------- | -------- |
+| Virtual development environments                                                                  |          | x          |               | x        |
+| Integrated development environments/IDEs                                                          |          |            |               | x        |
+| Command line terminals - automated and reproducible pipelines                                     |          |            | x             | x        |
 | Standard formats - e.g. for data exchange (CSV, YAML)                                             |          | x          | x             | x        |
 | Communication protocols - Command Line Interface (CLI) or Application Programming Interface (API) |          | x          | x             | x        |
-| License                                                                                           |          | x          |               | x        |
-| Citation                                                                                          | x        |            |               | x        |
-| Software repositories (e.g. GitHub, PyPi) or registries (e.g. BioTools)                           | x        | x          |               |          |
-| Unique persistent identifier (e.g. DOIs, commits/tags/releases) - Zenodo, FigShare GitHub         | x        | x          |               |          |
+| Version control tools                                                                             | x        |            |               |          |
+| Code testing and correctness                                                                      |          | x          |               | x        |
+| Code style conventions                                                                            |          | x          | x             | x        |
+| Software-level documentation (comments and docstrings, explaining functionality)                  |          | x          | x             | x        |
+| Project-level documentation (READMEs, explaining functionality/installation/running)              |          | x          | x             | x        |
+| License - code sharing and reuse                                                                  |          | x          |               | x        |
+| Citation - code reuse and credit                                                                  | x        |            |               | x        |
+| Software repositories and registries - code sharing                                               | x        | x          |               |          |
+| Unique persistent identifiers - finding and citing software                                       | x        | x          |               |          |
+
 
 
 ## Checking your setup
+
+Let's check your setup now to make sure you are ready for the rest of this course.
 
 ::::::  challenge
 

@@ -370,6 +370,17 @@ from your virtual environment) is update the contents of the `requirements.txt` 
 by re-issuing `pip freeze` command and propagate the updated `requirements.txt` file to your collaborators
 via your code sharing platform.
 
+## Running the code
+
+We are now setup to run our code from the newly created virtual environment:
+
+```bash
+(venv_spacewalks) $ python3 eva_data_analysis.py
+```
+
+You should get a pop up window with a graph. 
+Let's inspect the code in a more detail, see if we can understand and improve it.
+
 ## Further reading
 
 We recommend the following resources for some additional reading on the topic of this episode:

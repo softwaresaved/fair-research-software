@@ -73,16 +73,20 @@ This will help readability (accessibility) and reusability of our code.
 Our code after the modification should look like the following.
 
 ```python
+import json
+import csv
+import datetime as dt
+import matplotlib.pyplot as plt
 
 # https://data.nasa.gov/resource/eva.json (with modifications)
 data_f = open('./eva-data.json', 'r')
 data_t = open('./eva-data.csv','w')
-g_file = './cumulative_eva_graph.png'  
+g_file = './cumulative_eva_graph.png' 
+
 
 fieldnames = ("EVA #", "Country", "Crew    ", "Vehicle", "Date", "Duration", "Purpose")
 
 data=[]
-import json
 
 for i in range(374):
     line=data_f.readline()
@@ -90,11 +94,8 @@ for i in range(374):
     data.append(json.loads(line[1:-1]))
 #data.pop(0)
 ## Comment out this bit if you don't want the spreadsheet
-import csv
 
 w=csv.writer(data_t)
-
-import datetime as dt
 
 time = []
 date =[]
@@ -127,16 +128,12 @@ for i in time:
 
 date,time = zip(*sorted(zip(date, time)))
 
-import matplotlib.pyplot as plt
-
 plt.plot(date,t[1:], 'ko-')
 plt.xlabel('Year')
 plt.ylabel('Total time spent in space to date (hours)')
 plt.tight_layout()
 plt.savefig(g_file)
 plt.show()
-
-
 ```
 
 Let's make sure we commit our changes.
@@ -192,7 +189,7 @@ var = 9.81
 ::: solution
 ### Solution
 
-Yes, $$9.81 m/s^2 $$ is the [gravitational force exerted by the Earth](https://en.wikipedia.org/wiki/Gravity_of_Earth).
+$$ 9.81 m/s^2 $$ is the [gravitational force exerted by the Earth](https://en.wikipedia.org/wiki/Gravity_of_Earth).
 It is often referred to as "little g" to distinguish it from "big G" which is the [Gravitational Constant](https://en.wikipedia.org/wiki/Gravitational_constant).
 A more descriptive name for this variable therefore might be:
 
@@ -204,6 +201,8 @@ g_earth = 9.81
 
 
 :::::: challenge
+
+### Rename our variables to be more descriptive
 
 Let's apply this to `eva_data_analysis.py`.
 
@@ -221,16 +220,16 @@ c. Commit your changes to your repository. Remember to use an informative commit
 
 Updated code:
 ```python
-
 import json
 import csv
 import datetime as dt
 import matplotlib.pyplot as plt
 
-# Data source: https://data.nasa.gov/resource/eva.json (with modifications)
+# https://data.nasa.gov/resource/eva.json (with modifications)
 input_file = open('./eva-data.json', 'r')
 output_file = open('./eva-data.csv', 'w')
 graph_file = './cumulative_eva_graph.png'
+
 
 fieldnames = ("EVA #", "Country", "Crew    ", "Vehicle", "Date", "Duration", "Purpose")
 
@@ -282,7 +281,6 @@ plt.ylabel('Total time spent in space to date (hours)')
 plt.tight_layout()
 plt.savefig(graph_file)
 plt.show()
-
 ```
 We should also rename variables `w`, `t`, `ttt` to be more descriptive.
 
@@ -505,17 +503,17 @@ but, equally importantly, it helps with code readability and testing.
 Looking at our code, you may notice it contains different pieces of functionality:
 
 1. reading the data from a JSON file
-2. processing/cleaning the data and preparing it for analysis 
-3. data analysis and visualising the results
-4. converting and saving the data in the CSV format
+2. converting and saving the data in the CSV format
+3. processing/cleaning the data and preparing it for analysis 
+4. data analysis and visualising the results
 
 Let's refactor our code so that reading the data in JSON format into a dataframe (step 1.) and converting it and saving 
-to the CSV format (step 4.) are extracted into separate functions.
+to the CSV format (step 2.) are extracted into separate functions.
 Let's name those functions `read_json_to_dataframe` and `write_dataframe_to_csv` respectively. 
 The main part of the script should then be simplified to invoke these new functions, while the functions themselves 
-contain the complexity of each of these two steps.
+contain the complexity of each of these two steps. We will continue to work on steps 3. and 4. above later on.
 
-Our code may look something like the following.
+After the initial refactoring, our code may look something like the following.
 
 ``` python
 
@@ -568,7 +566,7 @@ print("--END--")
 
 ```
 
-We have chosen to create function for reading in and writing out data files since this is a very common task within 
+We have chosen to create functions for reading in and writing out data files since this is a very common task within 
 research software.
 While these functions do not contain that many lines of code due to using the `pandas` in-built methods that do all the 
 complex data reading, converting and writing operations, 
@@ -577,7 +575,11 @@ similarly structured files and process them in the same way.
 
 ## Use docstrings to document functions
 
-Docstrings are a specific type of documentation that are provided within functions and [Python classes][python-classes].
+Now that we have written some functions, it is time to document them so that we can quickly recall 
+(and others looking at our code in the future can understand) what the functions doe without having to read
+the code.
+
+*Docstrings* are a specific type of documentation that are provided within functions and [Python classes][python-classes].
 A function docstring should explain what that particular code is doing, what parameters the function needs (inputs)
 and what form they should take, what the function outputs (you may see words like 'returns' or 'yields' here), 
 and errors (if any) that might be raised.
