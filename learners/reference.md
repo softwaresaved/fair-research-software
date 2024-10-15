@@ -24,6 +24,8 @@ part of the [The Turing Way: A handbook for reproducible, ethical and collaborat
 
 - [FORCE11's FAIR 4 Research Software (FAIR4RS) Working Group][fair4rs-working-group]
 
+- Gallagher K, Creswell R, Lambert B, Robinson M, Lok Lei C, Mirams GR, et al. (2024) Ten simple rules for training scientists to make better software. PLoS Comput Biol 20(9): e1012410. [https://doi.org/10.1371/journal.pcbi.1012410][10-rules-better-software] 
+
 - [Training materials on different aspects of research software engineering][intersect-rse-training] 
 (including open source, reproducibility, research software testing, engineering, design, continuous integration, 
 collaboration, version control, packaging,  etc.), compiled 
