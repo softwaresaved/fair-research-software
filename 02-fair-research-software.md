@@ -221,6 +221,7 @@ We recommend the following resources for some additional reading on the topic of
 
 - ["Five recommendations for FAIR software"][5-fair-software-recommendations]
 - ["10 easy things to make your research software FAIR"][10-easy-fair-things]
+- ["Ten simple rules for training scientists to make better software"][10-rules-better-software]
 - [Automating assessment of the FAIR Principles for Research Software (FAIR4RS)][automated-assessment-fairrs]
 - [Short online courses][nesc-rs-support-courses] on various aspects of research software 
 (including [FAIR reseach software][nesc-rs-support-course-fair] and data), by the NeSC Research Software Support

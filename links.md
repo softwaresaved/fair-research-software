@@ -124,3 +124,6 @@ any links that you are not going to use.
 [cran]: https://cran.r-project.org/web/packages/
 [awesome-rs-registries]: https://github.com/NLeSC/awesome-research-software-registries
 [mkdocs-deploy]: https://www.mkdocs.org/user-guide/deploying-your-docs/
+[opensource-licence-guide]: https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
+[choosealicense]: https://choosealicense.com/
+ [10-rules-better software]: https://doi.org/10.1371/journal.pcbi.1012410  
