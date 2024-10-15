@@ -295,14 +295,10 @@ code repository (as there is likely not going to be enough time to spend on diff
 :::::: callout
 #### Tools to help you choose a licence
 
-A [short intro](../learners/licensing.md) on different open source software licences included as extra content to this course. 
-
-Check out the [open source guide](https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project) 
-on applying, changing and editing licenses.
-
-The website [choosealicense.com](https://choosealicense.com) has some great
-resources to help you choose a license that is appropriate for your needs, and can even automate adding the LICENSE
-file to your GitHub code repository.
+- A [short intro](../learners/licensing.md) on different open source software licences included as extra content to this course. 
+- [The open source guide][opensource-licence-guide] on applying, changing and editing licenses.
+- [choosealicense.com][choosealicense] online tool has some great resources to help you choose a license that is
+appropriate for your needs, and can even automate adding the LICENSE file to your GitHub code repository.
 
 :::::::
 
@@ -346,11 +342,10 @@ if there is now a license listed.
 
 ### CITATION file
 
-We can add a citation file to our repository to provide instructions on how and when to cite our code.
-A citation file can be a plain text (`CITATION.txt`) or a Markdown file (`CITATION.md`), but there are 
-certain benefits to use a special file format called the Citation File Format (CFF) which provides 
-a way to include richer metadata about software or datasets we want to cite, making it easy
-for both humans and machines to use this information.
+We should add a citation file to our repository to provide instructions on how to cite our code. 
+A citation file can be a plain text (CITATION.txt) or a Markdown file (CITATION.md), but there are certain benefits 
+to using use a special file format called the [Citation File Format (CFF)][cff], which provides a way to include richer 
+metadata about code (or datasets) we want to cite, making it easy for both humans and machines to use this information.
 
 #### Why use CFF?
 
@@ -360,7 +355,7 @@ GitHub also "understands" CFF, and will display citation information prominently
 of a repository that contains citation info in CFF.
 
 For users, having a CFF file makes it easy to cite the software or dataset 
-with formatted citation information available for copy-paste and direct import from GitHub into reference managers like 
+with formatted citation information available for copy+paste and direct import from GitHub into reference managers like 
 Zotero.
 
 #### CFF file format
