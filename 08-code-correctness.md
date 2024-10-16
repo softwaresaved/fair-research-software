@@ -1046,5 +1046,4 @@ the course.
     ensure your code performs correctly under a variety of conditions.
 5.  Test coverage can help you to identify parts of your code that
     require additional testing.
-6. 
 :::
