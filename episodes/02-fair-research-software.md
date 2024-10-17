@@ -32,60 +32,50 @@ work or attitude may be different afterwards.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-## FAIR software
+## What is FAIR?
 
 FAIR stands for Findable, Accessible, Interoperable, and Reusable and comprises a set of principles designed to
 increase the visibility and usefulness of your research to others.
 The FAIR data principles, first published [in 2016][fair-data-principles], are widely known and applied today.
 Similar [FAIR principles for software][fair-principles-research-software] have now been defined too. In general, they mean:
 
-* **Findable** - software and its associated metadata must be easy to discover by humans and machines.
-* **Accessible** - in order to reuse software, the software and its metadata must be retrievable by standard protocols, free and legally usable.
-* **Interoperable** - when interacting with other software it must be done by exchanging data and/or metadata through
+- **Findable** - software and its associated metadata must be easy to discover by humans and machines.
+- **Accessible** - in order to reuse software, the software and its metadata must be retrievable by standard protocols, free and legally usable.
+- **Interoperable** - when interacting with other software it must be done by exchanging data and/or metadata through
   standardised protocols and application programming interfaces (APIs).
-* **Reusable** - software should be usable (can be executed) and reusable
+- **Reusable** - software should be usable (can be executed) and reusable
   (can be understood, modified, built upon, or incorporated into other software).
 
 Each of the above principles can be achieved by a number of practices listed below.
 This is not an exact science, and by all means the list below is not exhaustive,
 but any of the practices that you employ in your research software workflow will bring you
-closer to the gold standard of a fully reproducible research.
+closer to the gold standard of fully reproducible research.
 
 ### Findable
-In order to make your software more findable, you should:
-
 - Create a description of your software to make it discoverable by search engines and other search tools
+- Use standards (such as [CodeMeta][codemeta]) to describe interoperable metadata for your software (see [Research Software Metadata Guidelines][rsmg-1])
 - Place your software in a public software repository (and ideally register it in a [general-purpose or domain-specific software registry][software-registries])
 - Use a unique and persistent identifier (DOI) for your software (e.g. by depositing your code on [Zenodo][zenodo]),
   which is also useful for citations - note that depositing your data/code on GitHub and similar software repositories
   may not be enough as they may change their open access model or disappear completely in the future, so archiving your code means it stands a better chance at being preserved
 
 ### Accessible
-
-In order to make your software more accessible, you should:
-
-* Make sure people can freely, legally and easily get a copy your software
-* Use code style conventions and code structure patterns, use comments and create documentation to make your code 
-comprehensible by people (once they get a copy of it) - i.e. make your code accessible in the *intelligible* sense
+- Make sure people can obtain get a copy your software using standard communication protocols (e.g. HTTP, FTP, etc.)
+- The code and its description (metadata) has to be available even when the software is no longer actively developed (this includes earlier versions of the software)
 
 ### Interoperable
-In order to make your software more interoperable, you should:
-
-- Explain the functionality of your software, so others can understand how other tools can interoperate with it
-- Use standard formats for inputs and outputs
-- Communicate with other software via standard protocols and APIs
+- Explain the functionality of your software and protocols for interaction with it
+- Use community-agreed standard formats for inputs and outputs of your software and its metadata (e.g. [CodeMeta][codemeta])
+- Communicate with other software and tools via standard protocols and APIs
 
 ### Reusable
-In order to make your software more reusable, you should:
-
-- Document your software (including its functionality, and how to install and run it) to make it more understandable by others who may wish to reuse or extend it
-- Follow best practices for software development (including code conventions, structure, readability and correctness)
-- Test your software and make sure it works on different platforms/operating systems to make it more reusable
+- Document your software (including its functionality, how to install and run it) to make it more understandable by
+  others who may wish to reuse or extend it
+- Follow best practices for software development, e.g. structure your code using common patterns and use coding
+  conventions to make your code readable and understandable by people
+- Test your software and make sure it works on different platforms/operating systems
 - Give a licence to your software clearly stating how it can be reused
 - State how to cite your software, so people can give you credit when they reuse it
-- Include a contributor policy so that others can contribute to your code and credit for contributions is provided
-
 
 :::::: callout
 
@@ -228,7 +218,7 @@ We recommend the following resources for some additional reading on the topic of
 - [CodeRefinery][coderefinery] - training and e-Infrastructure for research software development
 - A [self-assessment checklist for FAIR research software][fair-rs-checklist], by the Netherlands eScience Center
     and Australian Research Data Commons 
-- [Awesome Research Software Registries][awesome-research-software-registries] - a list of research software 
+- [Awesome Research Software Registries][awesome-rs-registries] - a list of research software 
 registries (by country, organisation, domain and programming language) where research software can be registered 
 to help promote its discovery
 
