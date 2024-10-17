@@ -253,10 +253,6 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#virtual-development-environments">Virtual development environments</a></li>
-<li><a href="#managing-virtual-environments">Managing virtual environments</a></li>
-<li><a href="#creating-virtual-environments">Creating virtual environments</a></li>
-<li><a href="#installing-external-packages">Installing external packages</a></li>
-<li><a href="#sharing-virtual-environments">Sharing virtual environments</a></li>
 <li><a href="#running-the-code">Running the code</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -377,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reproducible development environment</h1>
-        <p>Last updated on 2024-10-14 |
+        <p>Last updated on 2024-10-17 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/05-code-environment.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -486,8 +482,9 @@ libraries that your project depends on most of the time. Virtual
 environments also enable you to always use the latest available version
 without specifying it explicitly. They also enable you to use a specific
 older version of a package for your project, should you need to.</p>
-</section><section><h2 class="section-heading" id="managing-virtual-environments">Managing virtual environments<a class="anchor" aria-label="anchor" href="#managing-virtual-environments"></a></h2>
-<hr class="half-width"><p>There are several command line tools used for managing Python virtual
+<div class="section level3">
+<h3 id="managing-virtual-environments">Managing virtual environments<a class="anchor" aria-label="anchor" href="#managing-virtual-environments"></a></h3>
+<p>There are several command line tools used for managing Python virtual
 environments - we will use <code>venv</code>, available by default from
 the standard <code>Python</code> distribution since
 <code>Python 3.3</code>.</p>
@@ -498,8 +495,10 @@ this - it interacts and obtains the packages from the central repository
 called <a href="https://pypi.org/" class="external-link">Python Package Index (PyPI)</a>.</p>
 <p>So, we will use <code>venv</code> and <code>pip</code> in combination
 to help us create and share our virtual development environments.</p>
-</section><section><h2 class="section-heading" id="creating-virtual-environments">Creating virtual environments<a class="anchor" aria-label="anchor" href="#creating-virtual-environments"></a></h2>
-<hr class="half-width"><p>Creating a virtual environment with <code>venv</code> is done by
+</div>
+<div class="section level3">
+<h3 id="creating-virtual-environments">Creating virtual environments<a class="anchor" aria-label="anchor" href="#creating-virtual-environments"></a></h3>
+<p>Creating a virtual environment with <code>venv</code> is done by
 executing the following command:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -606,8 +605,10 @@ reactivate the environment ready for the next part:</p>
 newly created virtual environment will show up in version control - we
 will see how to handle it using Git in one of the subsequent
 episodes.</p>
-</section><section><h2 class="section-heading" id="installing-external-packages">Installing external packages<a class="anchor" aria-label="anchor" href="#installing-external-packages"></a></h2>
-<hr class="half-width"><p>We noticed earlier that our code depends on four <strong>external
+</div>
+<div class="section level3">
+<h3 id="installing-external-packages">Installing external packages<a class="anchor" aria-label="anchor" href="#installing-external-packages"></a></h3>
+<p>We noticed earlier that our code depends on four <strong>external
 packages/libraries</strong> - <code>json</code>, <code>csv</code>,
 <code>datetime</code> and <code>matplotlib</code>. As of Python 3.5,
 Python comes with in-built JSON and CSV libraries - this means there is
@@ -699,8 +700,10 @@ zope.interface  7.0.1</code></pre>
 <p>To uninstall a package installed in the virtual environment do:
 <code>python -m pip uninstall &lt;package-name&gt;</code>. You can also
 supply a list of packages to uninstall at the same time.</p>
-</section><section><h2 class="section-heading" id="sharing-virtual-environments">Sharing virtual environments<a class="anchor" aria-label="anchor" href="#sharing-virtual-environments"></a></h2>
-<hr class="half-width"><p>You are collaborating on a project with a team so, naturally, you
+</div>
+<div class="section level3">
+<h3 id="sharing-virtual-environments">Sharing virtual environments<a class="anchor" aria-label="anchor" href="#sharing-virtual-environments"></a></h3>
+<p>You are collaborating on a project with a team so, naturally, you
 will want to share your environment with your collaborators so they can
 easily ‘clone’ your software project with all of its dependencies and
 everyone can replicate equivalent virtual environments on their
@@ -786,6 +789,7 @@ environment) is update the contents of the <code>requirements.txt</code>
 file accordingly by re-issuing <code>pip freeze</code> command and
 propagate the updated <code>requirements.txt</code> file to your
 collaborators via your code sharing platform.</p>
+</div>
 </section><section><h2 class="section-heading" id="running-the-code">Running the code<a class="anchor" aria-label="anchor" href="#running-the-code"></a></h2>
 <hr class="half-width"><p>We are now setup to run our code from the newly created virtual
 environment:</p>
@@ -885,7 +889,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/05-code-environment.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/05-code-environment.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-10-14",
+  "dateModified": "2024-10-17",
   "datePublished": "2024-10-17"
 }
 

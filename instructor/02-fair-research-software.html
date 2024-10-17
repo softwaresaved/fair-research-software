@@ -225,7 +225,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#fair-software">FAIR software</a></li>
+        <ul><li><a href="#what-is-fair">What is FAIR?</a></li>
 <li><a href="#software-and-data-used-in-this-course">Software and data used in this course</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -373,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>FAIR research software</h1>
-        <p>Last updated on 2024-10-15 |
+        <p>Last updated on 2024-10-17 |
 
         <a href="https://github.com/softwaresaved/fair-research-software/edit/main/episodes/02-fair-research-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -431,7 +431,7 @@ different afterwards.</li>
 </ul></div>
 </div>
 </div>
-<section><h2 class="section-heading" id="fair-software">FAIR software<a class="anchor" aria-label="anchor" href="#fair-software"></a></h2>
+<section><h2 class="section-heading" id="what-is-fair">What is FAIR?<a class="anchor" aria-label="anchor" href="#what-is-fair"></a></h2>
 <hr class="half-width"><p>FAIR stands for Findable, Accessible, Interoperable, and Reusable and
 comprises a set of principles designed to increase the visibility and
 usefulness of your research to others. The FAIR data principles, first
@@ -459,12 +459,14 @@ incorporated into other software).</li>
 listed below. This is not an exact science, and by all means the list
 below is not exhaustive, but any of the practices that you employ in
 your research software workflow will bring you closer to the gold
-standard of a fully reproducible research.</p>
+standard of fully reproducible research.</p>
 <div class="section level3">
 <h3 id="findable">Findable<a class="anchor" aria-label="anchor" href="#findable"></a></h3>
-<p>In order to make your software more findable, you should:</p>
 <ul><li>Create a description of your software to make it discoverable by
 search engines and other search tools</li>
+<li>Use standards (such as <a href="" title="https://codemeta.github.io/">CodeMeta</a>) to describe
+interoperable metadata for your software (see [Research Software
+Metadata Guidelines][rsmg-1])</li>
 <li>Place your software in a public software repository (and ideally
 register it in a [general-purpose or domain-specific software
 registry][software-registries])</li>
@@ -477,38 +479,35 @@ code means it stands a better chance at being preserved</li>
 </ul></div>
 <div class="section level3">
 <h3 id="accessible">Accessible<a class="anchor" aria-label="anchor" href="#accessible"></a></h3>
-<p>In order to make your software more accessible, you should:</p>
-<ul><li>Make sure people can freely, legally and easily get a copy your
-software</li>
-<li>Use code style conventions and code structure patterns, use comments
-and create documentation to make your code comprehensible by people
-(once they get a copy of it) - i.e. make your code accessible in the
-<em>intelligible</em> sense</li>
+<ul><li>Make sure people can obtain get a copy your software using standard
+communication protocols (e.g. HTTP, FTP, etc.)</li>
+<li>The code and its description (metadata) has to be available even
+when the software is no longer actively developed (this includes earlier
+versions of the software)</li>
 </ul></div>
 <div class="section level3">
 <h3 id="interoperable">Interoperable<a class="anchor" aria-label="anchor" href="#interoperable"></a></h3>
-<p>In order to make your software more interoperable, you should:</p>
-<ul><li>Explain the functionality of your software, so others can understand
-how other tools can interoperate with it</li>
-<li>Use standard formats for inputs and outputs</li>
-<li>Communicate with other software via standard protocols and APIs</li>
+<ul><li>Explain the functionality of your software and protocols for
+interaction with it</li>
+<li>Use community-agreed standard formats for inputs and outputs of your
+software and its metadata (e.g. <a href="" title="https://codemeta.github.io/">CodeMeta</a>)</li>
+<li>Communicate with other software and tools via standard protocols and
+APIs</li>
 </ul></div>
 <div class="section level3">
 <h3 id="reusable">Reusable<a class="anchor" aria-label="anchor" href="#reusable"></a></h3>
-<p>In order to make your software more reusable, you should:</p>
-<ul><li>Document your software (including its functionality, and how to
-install and run it) to make it more understandable by others who may
-wish to reuse or extend it</li>
-<li>Follow best practices for software development (including code
-conventions, structure, readability and correctness)</li>
+<ul><li>Document your software (including its functionality, how to install
+and run it) to make it more understandable by others who may wish to
+reuse or extend it</li>
+<li>Follow best practices for software development, e.g. structure your
+code using common patterns and use coding conventions to make your code
+readable and understandable by people</li>
 <li>Test your software and make sure it works on different
-platforms/operating systems to make it more reusable</li>
+platforms/operating systems</li>
 <li>Give a licence to your software clearly stating how it can be
 reused</li>
 <li>State how to cite your software, so people can give you credit when
 they reuse it</li>
-<li>Include a contributor policy so that others can contribute to your
-code and credit for contributions is provided</li>
 </ul><div id="fair-is-a-process-not-a-perfect-metric" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -608,7 +607,7 @@ discuss it together.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Here are some questions to help you assess where on the FAIR spectrum
 the code is:</p>
@@ -658,7 +657,7 @@ calculate a different statistic, or run on a different input file?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>I would give the following scores:</p>
 <p>F - 1/5</p>
@@ -801,7 +800,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/fair-research-software/instructor/02-fair-research-software.html",
   "identifier": "https://softwaresaved.github.io/fair-research-software/instructor/02-fair-research-software.html",
   "dateCreated": "2023-10-03",
-  "dateModified": "2024-10-15",
+  "dateModified": "2024-10-17",
   "datePublished": "2024-10-17"
 }
 

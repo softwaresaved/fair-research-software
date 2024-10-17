@@ -234,7 +234,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#checking-your-setup">Checking your setup</a></li>
+        <ul><li><a href="#tools-and-good-practices">Tools and good practices</a></li>
+<li><a href="#checking-your-setup">Checking your setup</a></li>
 <li><a href="#further-reading">Further reading</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -413,43 +414,50 @@ software</li>
 </div>
 </div>
 </div>
-<p>In this course we will introduce you to a number of tools and
-practices that are commonly used in research to help you develop
-software in a FAIR way. You should already have these tools installed on
-your machine following the <a href="./index.html#astronaut-data-and-analysis-code">setup
-instructions</a>. Here we will give an overview of the tools, how they
-help you achieve the aims of FAIR research software and how they work
-together. In later episodes we will describe some of these tools in more
-detail.</p>
+<section><h2 class="section-heading" id="tools-and-good-practices">Tools and good practices<a class="anchor" aria-label="anchor" href="#tools-and-good-practices"></a></h2>
+<hr class="half-width"><p>There are various tools and practices that support the development of
+FAIR research software, contributing to each of the four FAIR
+principles. These tools and practices work together, as no single tool
+or practice will fully address one principle, and conversely each one
+can contribute to multiple principles simultaneously. It is important to
+note that simply using these tools, without following good practice and
+guidance on how best to align their usage with the FAIR principles, is
+not enough to produce FAIR software.</p>
+<p>You should already have these tools installed on your machine by
+following the <a href="./index.html#astronaut-data-and-analysis-code">setup
+instructions</a>. Here we will give an overview of the tools and good
+practices and how, when used in combination, they can help you achieve
+the aims of FAIR research software. In later episodes we will describe
+these tools and practices in more detail.</p>
 <div class="section level3">
 <h3 id="development-environments">Development environments<a class="anchor" aria-label="anchor" href="#development-environments"></a></h3>
 <p>Virtual and integrated development environments (IDEs), such as VS
-Code or PyCharm, help with running, testing, and debugging code. Virtual
-environments further enable us to share our working environments with
-others, making it easier to access, reuse and extend our code. IDEs
-often provide integrations with other tools, e.g. version control and
-command line terminals, enabling you to do many tasks from a single
+Code or PyCharm, help with reading, running, testing, and debugging
+code. Virtual environments further enable us to share our working
+environments with others, making it easier to reuse and extend our code.
+IDEs often provide integrations with other tools, e.g. version control
+and command line terminals, enabling you to do many tasks from a single
 environment, saving time in switching between different tools.</p>
 </div>
 <div class="section level3">
 <h3 id="command-line-terminals">Command line terminals<a class="anchor" aria-label="anchor" href="#command-line-terminals"></a></h3>
 <p>Command line terminals (e.g. Bash, GitBash) enable us to run and test
 our code without graphical user interfaces (GUI) afforded to us by IDEs
-- this is sometimes needed for accessing and running our code remotely
-on servers and high-performance systems without a GUI provision, where
-time, memory and processing power are expensive or in high demand.</p>
+- this is sometimes needed for running our code remotely on servers and
+high-performance systems without a GUI provision, where time, memory and
+processing power are expensive or in high demand.</p>
 <p>Version control systems are typically provided as command line tools,
 making them often only accessible from command line terminals to enter
 commands and access remote version control servers to backing up and
 sharing our work.</p>
-<p>Finally, command line tools use standard protocols for passing
-parameters, inputs and outputs. This makes it easier to integrate ours
-with other command line tools, allowing us to chain them and build up
-complex and reproducible workflows and analysis pipelines using several
-programs in different steps. If we write our software in a way which
-provides such an interoperable command line interface - we will be able
-to integrate it with other command line tools to automate and speed up
-our work.</p>
+<p>Finally, command line tools are interoperable software that use
+standard protocols for passing parameters, inputs and outputs via the
+command line terminal. This makes it easier to integrate with other
+tools, allowing us to chain command line tools and build up complex and
+reproducible workflows and analysis pipelines using several programs in
+different steps. If we write our software in a way which provides such
+an interoperable command line interface - we will be able to integrate
+it with other command line tools to automate and speed up our work.</p>
 </div>
 <div class="section level3">
 <h3 id="standard-inputoutput-formats-and-communication-protocols">Standard input/output formats and communication protocols<a class="anchor" aria-label="anchor" href="#standard-inputoutput-formats-and-communication-protocols"></a></h3>
@@ -470,14 +478,6 @@ collaboration on shared code by allowing edits by more than one person
 at a time.</p>
 </div>
 <div class="section level3">
-<h3 id="code-style-and-structure-conventions">Code style and structure conventions<a class="anchor" aria-label="anchor" href="#code-style-and-structure-conventions"></a></h3>
-<p>Following code style conventions for your programming language and
-standard code structure patterns that are agreed upon by the community
-and other programmers are important practices to ensure that others find
-it easy to read your code, reuse or extend it in their own examples and
-applications.</p>
-</div>
-<div class="section level3">
 <h3 id="code-testing">Code testing<a class="anchor" aria-label="anchor" href="#code-testing"></a></h3>
 <p>Testing ensures that your code is correct and does what it is set out
 to do. When you write code you often feel very confident that it is
@@ -489,19 +489,49 @@ run and be assured that it does work correctly on their machine -
 helping with code understanding and reusability.</p>
 </div>
 <div class="section level3">
-<h3 id="software--and-project--level-documentation">Software- and project- level documentation<a class="anchor" aria-label="anchor" href="#software--and-project--level-documentation"></a></h3>
-<p>Documentation comes in many forms - from <strong>software-level
-documentation</strong> including docstrings describing functions and
-classes and in-line comments that explain lines of your code, to
-<strong>project-level documentation</strong> and
-<strong>metadata</strong> (including README, LICENCE, CITATION,
-CONTRIBUTING, etc. files) that help to discover it, explain the legal
-terms of reusing it, describe its functionality and how to install, run
-and contribute to it, to whole websites full of documentation with
-function definitions, usage examples, tutorials and guides. You many not
-need as much documentation as a large commercial software product, but
-making your code reusable relies on other people being able to
-understand what your code does and how to use it.</p>
+<h3 id="coding-conventions">Coding conventions<a class="anchor" aria-label="anchor" href="#coding-conventions"></a></h3>
+<p>Following coding conventions and guides for your programming language
+that is agreed upon by the community and other programmers are important
+practices to ensure that others find it easy to read your code, reuse or
+extend it in their own examples and applications.</p>
+</div>
+<div class="section level3">
+<h3 id="code-licensing">Code licensing<a class="anchor" aria-label="anchor" href="#code-licensing"></a></h3>
+<p>A licence is a legal document which sets down the terms under which
+the creator of work (such as written text, photographs, films, music,
+software code) is releasing what they have created for others to use,
+modify, extend or exploit. It is important to state the terms under
+which software can be reused - the lack of a licence for your software
+implies that no one can reuse the software at all.</p>
+<p>A common way to declare your copyright of a piece of software and the
+license you are distributing it under is to include a file called
+<strong>LICENSE</strong> in the root directory of your code
+repository.</p>
+</div>
+<div class="section level3">
+<h3 id="code-citation">Code citation<a class="anchor" aria-label="anchor" href="#code-citation"></a></h3>
+<p>We should add a <strong>CITATION</strong> file to our repository to
+provide instructions on how and when to cite our code. A citation file
+can be a plain text (CITATION.txt) or a Markdown file (CITATION.md), but
+there are certain benefits to using use a special file format called the
+<a href="https://citation-file-format.github.io/" class="external-link">Citation File Format
+(CFF)</a>, which provides a way to include richer metadata about code
+(or datasets) we want to cite, making it easy for both humans and
+machines to use this information.</p>
+</div>
+<div class="section level3">
+<h3 id="code--and-project--level-documentation">Code- and project- level documentation<a class="anchor" aria-label="anchor" href="#code--and-project--level-documentation"></a></h3>
+<p>Documentation comes in many forms - from <strong>code-level
+documentation</strong> including descriptive names of variables and
+functions and additional comments that explain lines of your code, to
+<strong>project-level documentation</strong> (including README, LICENCE,
+CITATION, CONTRIBUTING, etc. files) that help to discover it, explain
+the legal terms of reusing it, describe its functionality and how to
+install, run and contribute to it, to whole websites full of
+documentation with function definitions, usage examples, tutorials and
+guides. You many not need as much documentation as a large commercial
+software product, but making your code reusable relies on other people
+being able to understand what your code does and how to use it.</p>
 </div>
 <div class="section level3">
 <h3 id="software-repositories-and-registries">Software repositories and registries<a class="anchor" aria-label="anchor" href="#software-repositories-and-registries"></a></h3>
@@ -515,39 +545,54 @@ institution, grant or domain on publishing code, as well as any licenses
 of the code your software depends on or reuses.</p>
 <p>Some examples of commonly used software repositories and registries
 include:</p>
-<ul><li>general-purpose software repositories, such as <a href="https://github.com" class="external-link">GitHub</a> and <a href="https://about.gitlab.com/" class="external-link">GitLab</a>
+<ul><li>general-purpose software repositories - <a href="https://github.com" class="external-link">GitHub</a> and <a href="https://about.gitlab.com/" class="external-link">GitLab</a>
 </li>
-<li>programming language-specific software repositories, such as <a href="https://pypi.org/" class="external-link">PyPi</a> (for Python) and <a href="https://cran.r-project.org/web/packages/" class="external-link">CRAN</a> (for R)</li>
-<li>software registries, such as <a href="https://biotools.us/" class="external-link">BioTools</a> (for biosciences) and <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">Awesome
-Research Software Registries</a> (providing a list of research software
-registries by country, organisation, domain and programming language)
+<li>programming language-specific software repositories - <a href="https://pypi.org/" class="external-link">PyPi</a> (for Python) and <a href="https://cran.r-project.org/web/packages/" class="external-link">CRAN</a> (for R)</li>
+<li>software registries - <a href="https://biotools.us/" class="external-link">BioTools</a>
+(for biosciences) and <a href="https://github.com/NLeSC/awesome-research-software-registries" class="external-link">Awesome
+Research Software Registries</a>, providing a list of research software
+registries (by country, organisation, domain and programming language)
 where research software can be registered to help promote its
 discovery</li>
 </ul></div>
 <div class="section level3">
 <h3 id="persistent-identifiers">Persistent identifiers<a class="anchor" aria-label="anchor" href="#persistent-identifiers"></a></h3>
-<p>Unique persistent identifiers, such as Digital Object Identifiers
-(DOIs) provided by <a href="https://zenodo.org/" class="external-link">Zenodo</a>, <a href="https://figshare.com/" class="external-link">FigShare</a> and similar digital archiving
-services, and commits/tags/releases used by GitHub and similar code
-sharing platforms, help with findability and accessibility of your
-software, and can help you get credit for your work by providing citable
-references.</p>
+<p>Unique persistent identifiers, such as <strong>Digital Object
+Identifiers</strong> (DOIs) provided by <a href="https://zenodo.org/" class="external-link">Zenodo</a>, <a href="https://figshare.com/" class="external-link">FigShare</a>, etc., or <strong>SoftWare
+Heritage persistent IDentifiers</strong> (<a href="swhid">SWHID</a>)
+provided by <a href="https://www.softwareheritage.org/" class="external-link">Software
+Heritage</a>, and similar digital archiving services, and
+commits/tags/releases used by GitHub and similar code sharing platforms,
+help with findability and accessibility of your software, and can help
+you get credit for your work by providing citable references.</p>
 </div>
+<div class="section level3">
+<h3 id="tools-for-assessing-fairness-of-software">Tools for assessing FAIRness of software<a class="anchor" aria-label="anchor" href="#tools-for-assessing-fairness-of-software"></a></h3>
+<p>Here are some tools that can check your software and provide an
+assessment of its FAIRness:</p>
+<ul><li><a href="https://openebench.bsc.es/observatory/Evaluation" class="external-link">FAIRsoft
+evaluator</a></li>
+<li><a href="https://github.com/marioa/fair-test?tab=readme-ov-file" class="external-link">FAIR
+software test</a></li>
+<li><a href="https://github.com/fair-software/howfairis/" class="external-link"><code>How FAIR is your software</code>
+- command line tool to evaluate a software repository’s compliance with
+the FAIR principles</a></li>
+</ul></div>
 <div class="section level3">
 <h3 id="tools-and-practices-summary">Tools and practices summary<a class="anchor" aria-label="anchor" href="#tools-and-practices-summary"></a></h3>
 <p>The table below provides a summary of how different tools and
 practices help with the FAIR software principles.</p>
-<table class="table"><colgroup><col width="71%"><col width="5%"><col width="7%"><col width="9%"><col width="5%"></colgroup><thead><tr class="header"><th>Tools and practices</th>
+<table style="width:100%;" class="table"><colgroup><col width="69%"><col width="6%"><col width="8%"><col width="10%"><col width="5%"></colgroup><thead><tr class="header"><th>Tools and practices</th>
 <th>Findable</th>
 <th>Accessible</th>
 <th>Interoperable</th>
 <th>Reusable</th>
 </tr></thead><tbody><tr class="odd"><td>Virtual development environments</td>
 <td></td>
-<td>x</td>
+<td></td>
 <td></td>
 <td>x</td>
-</tr><tr class="even"><td>Integrated development environments/IDEs</td>
+</tr><tr class="even"><td>Integrated development environments (IDEs)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -557,15 +602,16 @@ practices help with the FAIR software principles.</p>
 <td></td>
 <td>x</td>
 <td>x</td>
-</tr><tr class="even"><td>Standard formats - e.g. for data exchange (CSV, YAML)</td>
+</tr><tr class="even"><td>Standard data exchange formats - e.g. for data exchange (CSV,
+YAML)</td>
 <td></td>
-<td>x</td>
+<td></td>
 <td>x</td>
 <td>x</td>
 </tr><tr class="odd"><td>Communication protocols - Command Line Interface (CLI) or
 Application Programming Interface (API)</td>
 <td></td>
-<td>x</td>
+<td></td>
 <td>x</td>
 <td>x</td>
 </tr><tr class="even"><td>Version control tools</td>
@@ -573,50 +619,50 @@ Application Programming Interface (API)</td>
 <td></td>
 <td></td>
 <td></td>
-</tr><tr class="odd"><td>Code testing and correctness</td>
+</tr><tr class="odd"><td>Code testing &amp; correctness</td>
+<td></td>
+<td></td>
 <td></td>
 <td>x</td>
+</tr><tr class="even"><td>Coding conventions</td>
+<td></td>
+<td></td>
 <td></td>
 <td>x</td>
-</tr><tr class="even"><td>Code style conventions</td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-</tr><tr class="odd"><td>Software-level documentation (comments and docstrings, explaining
+</tr><tr class="odd"><td>Code-level documentation (comments and docstrings, explaining
 functionality)</td>
 <td></td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-</tr><tr class="even"><td>Project-level documentation (READMEs, explaining
-functionality/installation/running)</td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-</tr><tr class="odd"><td>License - code sharing and reuse</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td>x</td>
-</tr><tr class="even"><td>Citation - code reuse and credit</td>
-<td>x</td>
 <td></td>
 <td></td>
 <td>x</td>
-</tr><tr class="odd"><td>Software repositories and registries - code sharing</td>
+</tr><tr class="even"><td>Project-level documentation &amp; metadata (README, explaining
+functionality/installation/running, etc.)</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr><tr class="odd"><td>License - code sharing &amp; reuse</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr><tr class="even"><td>Citation - code reuse &amp; credit</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr><tr class="odd"><td>Software repositories &amp; registries</td>
 <td>x</td>
 <td>x</td>
 <td></td>
 <td></td>
-</tr><tr class="even"><td>Unique persistent identifiers - finding and citing software</td>
+</tr><tr class="even"><td>Unique persistent identifiers</td>
 <td>x</td>
 <td>x</td>
 <td></td>
 <td></td>
 </tr></tbody></table></div>
-<section><h2 class="section-heading" id="checking-your-setup">Checking your setup<a class="anchor" aria-label="anchor" href="#checking-your-setup"></a></h2>
+</section><section><h2 class="section-heading" id="checking-your-setup">Checking your setup<a class="anchor" aria-label="anchor" href="#checking-your-setup"></a></h2>
 <hr class="half-width"><p>Let’s check your setup now to make sure you are ready for the rest of
 this course.</p>
 <div id="checking-your-setup-1" class="callout challenge">
@@ -634,22 +680,22 @@ useful? What other information might you want?</p>
 the tools listed in the Setup page. Compare the output with your
 neighbour and see if you can see any differences.</p>
 <p>Checking the command line terminal:</p>
-<ol style="list-style-type: decimal"><li><code>date</code></li>
-<li><code>echo $SHELL</code></li>
-<li><code>pwd</code></li>
-<li><code>whoami</code></li>
+<ol style="list-style-type: decimal"><li><code>$ date</code></li>
+<li><code>$ echo $SHELL</code></li>
+<li><code>$ pwd</code></li>
+<li><code>$ whoami</code></li>
 </ol><p>Checking Python:</p>
-<ol start="5" style="list-style-type: decimal"><li><code>python --version</code></li>
-<li><code>python3 --version</code></li>
-<li><code>which python</code></li>
-<li><code>which python3</code></li>
+<ol start="5" style="list-style-type: decimal"><li><code>$ python3 --version</code></li>
+<li><code>$ python3 --version</code></li>
+<li><code>$ which python</code></li>
+<li><code>$ which python3</code></li>
 </ol><p>Checking Git and GitHub:</p>
-<ol start="9" style="list-style-type: decimal"><li><code>git --help</code></li>
-<li><code>git config --list</code></li>
-<li><code>ssh -T git@github.com</code></li>
+<ol start="9" style="list-style-type: decimal"><li><code>$ git --help</code></li>
+<li><code>$ git config --list</code></li>
+<li><code>$ ssh -T git@github.com</code></li>
 </ol><p>Checking VS Code:</p>
-<ol start="12" style="list-style-type: decimal"><li><code>code</code></li>
-<li><code>code --list-extensions</code></li>
+<ol start="12" style="list-style-type: decimal"><li><code>$ code</code></li>
+<li><code>$ code --list-extensions</code></li>
 </ol></div>
 </div>
 </div>
@@ -658,7 +704,7 @@ neighbour and see if you can see any differences.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>The prompt is the <code>$</code> character and any text that comes
 before it, that is shown on every new line before you type in commands.
@@ -673,7 +719,7 @@ give you a result by printing some text in the terminal.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The expected out put of each command is:</p>
 <ol style="list-style-type: decimal"><li>Today’s date</li>
