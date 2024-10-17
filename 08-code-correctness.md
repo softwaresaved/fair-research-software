@@ -332,6 +332,7 @@ AssertionError
 Notice that this time, our test `test_text_to_duration_float` fails.
 Our assert statement has raised an `AssertionError` - a clear signal that there is a problem in our code that we
 need to fix. 
+
 We know that duration `10:15` should be converted to number `10.25`. 
 What is wrong with our code?
 If we look at our `text_to_duration` function, we may identify the following line of our code as problematic:
