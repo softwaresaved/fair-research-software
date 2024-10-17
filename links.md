@@ -34,7 +34,6 @@ any links that you are not going to use.
 [fair-cookbook]: https://faircookbook.elixir-europe.org/content/home.html
 [10-easy-fair-things]: https://librarycarpentry.org/Top-10-FAIR/files/poster_10things_FAIRsoftware.pdf
 [top-10-fair-things-per-domain]: https://librarycarpentry.org/Top-10-FAIR/
-[awesome-research-software-registries]: https://github.com/NLeSC/awesome-research-software-registries
 [beginner-guide-reproducible-research]: https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801
 [swc-git-lesson]: https://swcarpentry.github.io/git-novice
 [swc-git-lesson-track]: https://swcarpentry.github.io/git-novice/04-changes.html
@@ -126,4 +125,13 @@ any links that you are not going to use.
 [mkdocs-deploy]: https://www.mkdocs.org/user-guide/deploying-your-docs/
 [opensource-licence-guide]: https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
 [choosealicense]: https://choosealicense.com/
- [10-rules-better software]: https://doi.org/10.1371/journal.pcbi.1012410  
+[10-rules-better software]: https://doi.org/10.1371/journal.pcbi.1012410
+[rsmd-g1]: https://fair-impact.github.io/RSMD-guidelines/1.General/
+[software-heritage]: https://www.softwareheritage.org/
+[swhid]: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html
+[figshare]: https://figshare.com/
+[howfairis]: https://github.com/fair-software/howfairis/
+[fair-rs-evaluator]: https://openebench.bsc.es/observatory/Evaluation
+[fair-rs-test]: https://github.com/marioa/fair-test?tab=readme-ov-file
+[codemeta]: (https://codemeta.github.io/)
+

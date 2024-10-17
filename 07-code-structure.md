@@ -48,7 +48,7 @@ https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair/tre
 
 ::::::
 
-## Functions for modular and reusable Code 
+## Functions for modular and reusable code 
 
 As we have already seen in the previous episode - functions play a key role in creating modular and reusable code.
 We are going to carry on improving our code following these principles:

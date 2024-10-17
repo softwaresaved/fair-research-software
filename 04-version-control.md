@@ -42,7 +42,7 @@ file changes over time. They keep track of every modification to the files in a
 special database that allows users to "travel through time" and compare earlier
 versions of the files with the current state.
 
-## Why use a version control system?
+### Why use a version control system?
 
 The main motivation as scientists to use version control in our projects is for
 reproducibility purposes. As hinted to above, by tracking and storing every change

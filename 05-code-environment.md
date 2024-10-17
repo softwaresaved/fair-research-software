@@ -94,7 +94,7 @@ Virtual environments also enable you to always use
 the latest available version without specifying it explicitly.
 They also enable you to use a specific older version of a package for your project, should you need to.
 
-## Managing virtual environments
+### Managing virtual environments
 
 There are several command line tools used for managing Python virtual environments - we will use `venv`, 
 available by default from the standard `Python` distribution since `Python 3.3`.
@@ -107,7 +107,7 @@ it interacts and obtains the packages from the central repository called
 
 So, we will use `venv` and `pip` in combination to help us create and share our virtual development environments.
 
-## Creating virtual environments
+### Creating virtual environments
 
 Creating a virtual environment with `venv` is done by executing the following command:
 
@@ -205,7 +205,7 @@ Note that, since our software project is being tracked by Git,
 the newly created virtual environment will show up in version control -
 we will see how to handle it using Git in one of the subsequent episodes.
 
-## Installing external packages
+### Installing external packages
 
 We noticed earlier that our code depends on four **external packages/libraries** -
 `json`, `csv`, `datetime` and `matplotlib`. 
@@ -293,7 +293,7 @@ zope.interface  7.0.1
 To uninstall a package installed in the virtual environment do: `python -m pip uninstall <package-name>`.
 You can also supply a list of packages to uninstall at the same time.
 
-## Sharing virtual environments
+### Sharing virtual environments
 
 You are collaborating on a project with a team so, naturally,
 you will want to share your environment with your collaborators
