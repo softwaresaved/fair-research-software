@@ -66,7 +66,7 @@ can be used by the research community to understand how they can make their rese
 - [Short online courses on various aspects of research software (including FAIR)][nesc-rs-support-courses], by the NeSC 
 Research Software Support 
 
-- [Awesome Research Software Registries][awesome-research-software-registries], a list of research software registries 
+- [Awesome Research Software Registries][awesome-rs-registries], a list of research software registries 
 (by country, organisation, domain and programming language) where research software can be registered to help promote 
 its discovery
 
