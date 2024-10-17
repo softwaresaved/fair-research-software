@@ -14,13 +14,13 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::: objectives
 After completing this episode, participants should be able to:
 
-- Identify some key tools for FAIR research software
+- Identify some key tools to aid the development of FAIR research software
 - Explain how can these tools help us work in a FAIR way
 - Install and run these key tools on learner's machines
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In this course we will introduce you to a group of tools and practices that are commonly used in research to help you 
+In this course we will introduce you to a number of tools and practices that are commonly used in research to help you 
 develop software in a FAIR way. 
 You should already have these tools installed on your machine following the [setup instructions](./index.html#astronaut-data-and-analysis-code). 
 Here we will give an overview of the tools, how they help you achieve the aims of FAIR research software and how 
