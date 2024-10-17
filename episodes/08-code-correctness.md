@@ -345,7 +345,8 @@ def text_to_duration(duration):
 ```
 
 You may notice that our conversion code is wrong - the minutes component should have been divided by 60 and not 6.
-We were able to spot this tiny bug by testing our code.
+We were able to spot this tiny bug **only by testing our code** (note that just by looking at the result graph there 
+is not way to spot incorrect results).
 
 Let's fix the problematic line and rerun out tests. 
 
