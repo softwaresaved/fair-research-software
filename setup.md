@@ -151,7 +151,8 @@ When you use Git on a machine for the first time, you also need to configure a f
 * your email address (the one you used to open [your GitHub account](../index.html#github-account) with, 
 which will be used to identify your commits),
 * preferred text editor for Git to use (e.g. **Nano** or another text editor of your choice),
-* whether you want to use these settings globally (i.e. for every Git project on your machine).
+* the default branch name to be `main` (instead of `master`)
+* whether you want to use these settings globally (i.e. for every Git project on your machine) by using the `--global` option.
 
 This can be done from a command line terminal as follows:
 
@@ -159,6 +160,7 @@ This can be done from a command line terminal as follows:
 $ git config --global user.name "Your Name"
 $ git config --global user.email "name@example.com"
 $ git config --global core.editor "nano -w"
+$ git config --global init.defaultBranch main
 ```
 
 ### GitHub Account
