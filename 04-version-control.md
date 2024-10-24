@@ -102,10 +102,6 @@ work on GitHub allowing other people to see and contribute to our work.
 
 ### Create a new repository
 
-::: callout 
-
-### Default Git branch - `main`
-
 Before we start using Git, if you have not done this step during setup, make sure to tell Git now to use `main` 
 as the default branch (instead of `master`) which is what we use in this course:
 
@@ -113,9 +109,7 @@ as the default branch (instead of `master`) which is what we use in this course:
 $ git config --global init.defaultBranch main
 ```
 
-:::
-
-Create a new directory in the `Desktop` folder for our work, and then change the current working directory 
+Let us create a new empty directory in the `Desktop` folder for our work, and then change the current working directory 
 to the newly created one:
 
 ```bash
