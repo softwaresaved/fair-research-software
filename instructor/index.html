@@ -745,15 +745,18 @@ configure a few additional things:</p>
 will be used to identify your commits),</li>
 <li>preferred text editor for Git to use (e.g. <strong>Nano</strong> or
 another text editor of your choice),</li>
+<li>the default branch name to be <code>main</code> (instead of
+<code>master</code>)</li>
 <li>whether you want to use these settings globally (i.e. for every Git
-project on your machine).</li>
+project on your machine) by using the <code>--global</code> option.</li>
 </ul><p>This can be done from a command line terminal as follows:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.email <span class="st">"name@example.com"</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"nano -w"</span></span></code></pre>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"nano -w"</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
 </div>
 </div>
 </div>
