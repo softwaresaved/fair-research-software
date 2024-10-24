@@ -102,6 +102,19 @@ work on GitHub allowing other people to see and contribute to our work.
 
 ### Create a new repository
 
+::: callout 
+
+### Default Git branch - `main`
+
+Before we start using Git, if you have not done this step during setup, make sure to tell Git now to use `main` 
+as the default branch (instead of `master`) which is what we use in this course:
+
+```bash
+$ git config --global init.defaultBranch main
+```
+
+:::
+
 Create a new directory in the `Desktop` folder for our work, and then change the current working directory 
 to the newly created one:
 
@@ -111,10 +124,10 @@ $ mkdir spacewalks
 $ cd spacewalks
 ```
 
-We tell Git to make `spacewalks` a repository -- a place where Git can store versions of our files:
+We will now tell Git to make `spacewalks` a repository -- a place where Git can store versions of our files:
 
 ```bash
-git init
+$ git init
 ```
 
 We can check everything is setup correctly by asking Git to tell us the status of our project:
