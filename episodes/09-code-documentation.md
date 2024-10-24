@@ -575,9 +575,11 @@ locally on a user's device.
 ::: challenge
 ### Explore your documentation
 
-Explore documentation in `site/` folder built with MkDocs for your project, starting from `index.html` file.
+Explore documentation in `site/` folder built with MkDocs for your project, starting from the `index.html` file.
 
-For example, check `site/reference.html` to see how docstrings from your functions are 
+Open `index.html` file in a Web browser to see how it renders. 
+
+Check `site/reference.html` to see how docstrings from your functions are 
 provided here as a reference manual.
 :::
 
