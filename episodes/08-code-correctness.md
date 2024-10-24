@@ -921,7 +921,7 @@ To get an in-depth report about which parts of our code are tested and
 which are not, we can add the option `--cov-report=html`.
 
 ``` bash
-(venv_spacewalks) $ python -m pytest --cov --cov-report=html 
+(venv_spacewalks) $ python3 -m pytest --cov --cov-report=html 
 ```
 
 This option generates a folder `htmlcov` in the project root directory containing a code coverage report in HTML format. 
