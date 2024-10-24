@@ -85,14 +85,19 @@ Anybody can upload datasets up to 50GB to it and receive a Digital Object Identi
 Zenodo's definition of a dataset is quite broad and can include code - which gives us a way to obtain a DOI for our 
 software. 
 
-We will not look into how we can archive a GitHub repository to Zenodo. 
+Let us now look into how we can archive a GitHub repository to Zenodo. 
 Note that, instead of using the real Zenodo website, we will practice with [Zenodo Sandbox](https://sandbox.zenodo.org/).
 
 ::: callout
-[Zenodo Sandbox](https://sandbox.zenodo.org/) is a clone of Zenodo, created for testing purposes, that works exactly the same as Zenodo.
-Whatever you publish on Zenodo and DOIs you create are permanent, so if we use it for testing we pollute the DOI space with a number 
-of test DOIs which are not very useful.
-Hence, it is better to practice with Zenodo Sandbox until you are ready to publish your code officially.
+
+### Zenodo Sandbox
+[Zenodo Sandbox](https://sandbox.zenodo.org/) is a testing environment for Zenodo, a repository for research outputs, 
+allowing users to safely experiment with its features without affecting the live system.
+It is a clone of Zenodo, created for testing purposes, that works exactly the same way as Zenodo you can use it 
+for learning, training, experimenting, and preparing uploads without impacting the primary Zenodo repository until
+you are ready to publish and release your code (ot other research outputs) officially.
+It will also not create real DOIs for a number of test repositories we use for this course and saturate the DOI space
+(remember that a DOI, once created, is meant to exist forever).
 :::
 
 We can archive our GitHub repository to Zenodo (Sandbox) by doing the following:
@@ -140,11 +145,11 @@ Here is the badge for this repository and the corresponding Markdown:
 
 :::  challenge
 
-### Archive your repository to Zenodo Sandbox
+### Archive your repository to Zenodo (Sandbox)
 
-Note: for this exercise, as demonstrated earlier, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (which is a version of 
-Zenodo for testing and playing with before minting a real DOI) to avoid polluting the DOI space with test
-repositories we use for this course.
+Note: for this exercise, as demonstrated earlier, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (a version of 
+Zenodo for testing and playing with before minting a real DOI).
+For real software releases, you should use Zenodo.
 
  * Create an account on Zenodo Sandbox that is linked to your GitHub account.
  * Use Zenodo Sandbox to create a release for your repository and obtain a DOI for it.
