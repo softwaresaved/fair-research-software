@@ -78,7 +78,7 @@ conduct **better research** and produce **FAIR software**:
 
 ## Types of software tests
 
-There are many different types of software testing.
+There are many different types of software tests, including:
 
 -   **Unit tests** focus on testing individual functions in
     isolation. They ensure that each small part of the software performs
