@@ -108,7 +108,7 @@ The DOI does not just link to GitHub, Zenodo will have taken a copy (a snapshot)
 where we tagged the release. 
 This means that even if we delete it from GitHub or even if GitHub were ever to go away or remove it, 
 there will still be a copy on Zenodo. 
-Zenodo will allow people to download the entire repository as a single `zip` file. 
+Zenodo will allow people to download the entire repository (more accurately, its state at the time it was tagged for release) as a single `zip` file. 
 
 Zenodo will have actually created two DOIs for you. One represents the latest version of the software and 
 will always represent the latest if you make more releases. 
