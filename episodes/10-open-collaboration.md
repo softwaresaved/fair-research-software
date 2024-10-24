@@ -84,15 +84,31 @@ Pressing this will then prompt us as to which organisation we want to transfer t
 Anybody can upload datasets up to 50GB to it and receive a Digital Object Identifier (DOI). 
 Zenodo's definition of a dataset is quite broad and can include code - which gives us a way to obtain a DOI for our 
 software. 
-We can archive our GitHub repository to Zenodo by doing the following:
 
- 1. Go to the [Zenodo Login page](https://zenodo.org/login) and choose to login with GitHub.
- 2. Authorise Zenodo to connect to GitHub. 
- 3. Go to the [GitHub page](https://zenodo.org/account/settings/github/) in your Zenodo account. 
+Let us now look into how we can archive a GitHub repository to Zenodo. 
+Note that, instead of using the real Zenodo website, we will practice with [Zenodo Sandbox](https://sandbox.zenodo.org/).
+
+::: callout
+
+### Zenodo Sandbox
+[Zenodo Sandbox](https://sandbox.zenodo.org/) is a testing environment for Zenodo, a repository for research outputs, 
+allowing users to safely experiment with its features without affecting the live system.
+It is a clone of Zenodo, created for testing purposes, that works exactly the same way as Zenodo you can use it 
+for learning, training, experimenting, and preparing uploads without impacting the primary Zenodo repository until
+you are ready to publish and release your code (ot other research outputs) officially.
+It will also not create real DOIs for a number of test repositories we use for this course and saturate the DOI space
+(remember that a DOI, once created, is meant to exist forever).
+:::
+
+We can archive our GitHub repository to Zenodo (Sandbox) by doing the following:
+
+ 1. Go to the [Zenodo Sandbox login page](https://sandbox.zenodo.org/login) and choose to login with GitHub.
+ 2. Authorise Zenodo Sandbox to connect to GitHub. 
+ 3. Go to the [GitHub page](https://sandbox.zenodo.org/account/settings/github/) in your Zenodo Sandbox account. 
 This can be found in the pull down menu with your user name in the top right corner of the screen.
- 4. You'll now have a list of all of your GitHub repositories. Next to each will be an "On" button. 
+ 4. You will now have a list of all of your GitHub repositories. Next to each will be an "On" button. 
 If you have created a new repository you might need to press the "Sync" button to update the list of repositories 
-Zenodo knows about.
+Zenodo Sandbox knows about.
  5. Press the "On" button for the repository you want to archive. If this was successful you will be told to refresh the page.
  6. The repository should now appear in the list of "Enabled" repositories at the top of the screen, but
 it does not yet have a DOI. To get one we have to make a "release" on GitHub. Click on the repository and 
@@ -102,13 +118,13 @@ You will also have to create a "tag" for your release - a way of having a friend
 Git instead of using a long hash code. 
 Often we will create a sequential version number for each release of the software and have the tag name match this, 
 for example v1.0 or just 1.0.
- 7. If we now refresh the Zenodo page for this repository we will see that it has been assigned a DOI.
+ 7. If we now refresh the Zenodo Sandbox page for this repository we will see that it has been assigned a DOI.
 
 The DOI does not just link to GitHub, Zenodo will have taken a copy (a snapshot) of our repository at the point 
 where we tagged the release. 
 This means that even if we delete it from GitHub or even if GitHub were ever to go away or remove it, 
 there will still be a copy on Zenodo. 
-Zenodo will allow people to download the entire repository as a single `zip` file. 
+Zenodo will allow people to download the entire repository (more accurately, its state at the time it was tagged for release) as a single `zip` file. 
 
 Zenodo will have actually created two DOIs for you. One represents the latest version of the software and 
 will always represent the latest if you make more releases. 
@@ -129,17 +145,17 @@ Here is the badge for this repository and the corresponding Markdown:
 
 :::  challenge
 
-### Archive your repository to Zenodo
+### Archive your repository to Zenodo (Sandbox)
 
-Note: for this exercise, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (which is a version of 
-Zenodo for testing and playing with before minting a real DOI) to avoid polluting the DOI space with test
-repositories we use for this course.
+Note: for this exercise, as demonstrated earlier, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (a version of 
+Zenodo for testing and playing with before minting a real DOI).
+For real software releases, you should use Zenodo.
 
- * Create an account on Zenodo that is linked to your GitHub account.
- * Use Zenodo to create a release for your repository and obtain a DOI for it.
+ * Create an account on Zenodo Sandbox that is linked to your GitHub account.
+ * Use Zenodo Sandbox to create a release for your repository and obtain a DOI for it.
  * Get the link to the DOI badge for your repository and add a link to this image to your README file in 
 Markdown format. Check that this is the DOI for the latest version and not the DOI for a specific version, 
-if not you'll be updating this every time you make a release.
+if not you will be updating this every time you make a release.
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
