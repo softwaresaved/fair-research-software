@@ -125,7 +125,7 @@ any links that you are not going to use.
 [mkdocs-deploy]: https://www.mkdocs.org/user-guide/deploying-your-docs/
 [opensource-licence-guide]: https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
 [choosealicense]: https://choosealicense.com/
-[10-rules-better software]: https://doi.org/10.1371/journal.pcbi.1012410
+[10-rules-better-software]: https://doi.org/10.1371/journal.pcbi.1012410
 [rsmd-g1]: https://fair-impact.github.io/RSMD-guidelines/1.General/
 [software-heritage]: https://www.softwareheritage.org/
 [swhid]: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html
